@@ -15,7 +15,21 @@
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L8-11::s1",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L14-32::s0",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L33-50::s1",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L8-11::s1",
@@ -31,7 +45,17 @@
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L1-7::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L12-13::s2",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L12-13::s2",
@@ -47,7 +71,17 @@
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L8-11::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L14-32::s0",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L14-32::s0",
@@ -60,13 +94,33 @@
       "eq:coindef",
       "eq:rotation_coin"
     ],
-    "refs": [],
+    "refs": [
+      "eq:AMO"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "The model and results"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L12-13::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L33-50::s1",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L1-7::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L77-88::s4",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L33-50::s1",
@@ -80,13 +134,41 @@
       "eq:coindef",
       "eq:rotation_coin"
     ],
-    "refs": [],
+    "refs": [
+      "eq:AMO"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "The model and results"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L14-32::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L51-60::s2",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L1-7::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L77-88::s4",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L152-158::s5",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L159-162::s6",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L51-60::s2",
@@ -97,7 +179,8 @@
     "text": "</div>\n\nAnother important ingredient in these proofs is a unitary version of André-Aubry duality, which relates $W_{\\lambda_1,\\lambda_2}$ to its “dual” $$W_{\\lambda_1,\\lambda_2}^{\\sharp}:=W_{\\lambda_2,\\lambda_1}^\\top,$$ and which immediately implies that the spectra of $W_{\\lambda_1,\\lambda_2}$ and $W_{\\lambda_2,\\lambda_1}$ are the same.\n\nThe arithmetic properties of $\\Phi$ play a crucial role in determining spectral properties of the underlying operator. We call $\\Phi$ *Diophantine* if there exist $\\kappa>0,\\tau>1$ such that $$\\label{eq.dioCond}\n    \\|n \\Phi\\|_{{\\mathbb{T}}}:= \\inf_{p\\in{\\mathbb{Z}}} |n \\Phi-p|  \\geq\\frac\\kappa{|n|^{\\tau+2}}\\quad\\forall n\\neq0.$$ In this case, we write $\\Phi\\in {\\mathrm{DC}}(\\kappa,\\tau)$. Moreover, we shall denote the set of all Diophantine frequencies by $$\\label{eq:dioph}\n    {\\mathrm{DC}}=\\bigcup_{\\kappa>0,\\tau>1}{\\mathrm{DC}}(\\kappa,\\tau),$$ which is known to have full Lebesgue measure as a subset of ${\\mathbb{T}}$. More generally, we say $\\rho$ is *Diophantine with respect to $\\Phi$* if there exists some positive constants $\\kappa',\\tau'$ such that $$\\|\\rho - n\\Phi\\|_{{\\mathbb{T}}} \\geq \\frac{\\kappa'}{|n|^{\\tau'}}, \\qquad \\forall \\;  0 \\neq n \\in \\mathbb{Z},$$ and $\\rho$ is *rational with respect to $\\Phi$* if $\\rho - n\\Phi\\in\\mathbb{Q}$ for some $n \\in \\mathbb{Z}$ rational.\n\nIt turns out that the spectrum of $W_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ is independent of $\\theta$ by the minimality of the rigid translation $\\theta\\to \\theta+\\Phi, \\Phi\\in {\\mathbb{R}}\\setminus{\\mathbb{Q}}.$ We denote this common spectrum by $\\Sigma_{\\lambda_1,\\lambda_2,\\Phi}$. Our main result is the following:\n\n<div id=\"thm.Main1\" class=\"theorem\">",
     "labels": [
       "eq.dioCond",
-      "eq:dioph"
+      "eq:dioph",
+      "thm.Main1"
     ],
     "refs": [],
     "meta": {
@@ -105,7 +188,41 @@
         "level": 1,
         "title": "The model and results"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L33-50::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L61-76::s3",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L61-76::s3",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L115-122::s0",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L256-259::s0",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L260-285::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L294-296::s3",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L297-300::s4",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L61-76::s3",
@@ -114,14 +231,54 @@
     "start_line": 61,
     "end_line": 76,
     "text": "<div id=\"thm.Main1\" class=\"theorem\">\n\n**Theorem 1**. *For $\\Phi\\in {\\mathrm{DC}}$ and $\\lambda_1\\neq\\lambda_2$, all gaps in the spectrum of the unitary almost Mathieu operator $W_{\\lambda_1,\\lambda_2,\\Phi}$ allowed by the Gap Labeling Theorem are open.*\n\n</div>\n\n<div id=\"rem:twenty\" class=\"remark\">\n\n**Remark 2**. *The reason for the “twenty” instead of the usual “ten” in the title of the paper comes from the observation that we have “twice as many” gaps as for the AMO: phenomenologically, this can be seen in Figure <a href=\"#fig:Buttervogel\" data-reference-type=\"ref\" data-reference=\"fig:Buttervogel\">[fig:Buttervogel]</a> where we see that the spectrum of the UAMO consists of two copies of the butterfly. The reason for this is the prevalence of more symmetries: the spectrum of the AMO is real and symmetric about $0$ due to the involutive symmetry that multiplies locally by $(-1)^n$ and shifts $\\theta\\mapsto \\theta+1/2$. The UAMO has spectrum on the unit circle. It has the same symmetry as the AMO, which amounts to a reflection about the origin. In addition, the spectrum possesses an axial symmetry about the real axis due to complex conjugation .*\n\n</div>\n\n<div class=\"remark\">\n\n**Remark 3**. *Let us make some comments about Theorem <a href=\"#thm.Main1\" data-reference-type=\"ref\" data-reference=\"thm.Main1\">1</a>:*\n\n1.  *By the Ten Martini property holds in the critical case for all irrational frequencies, that is, for $0<\\lambda_1=\\lambda_2\\leq1$ the spectrum of $W_{\\lambda_1,\\lambda_2,\\Phi}$ is a Cantor set of zero Lebesgue measure for every irrational $\\Phi$. The dry version of the problem remains open.*",
-    "labels": [],
-    "refs": [],
+    "labels": [
+      "rem:twenty",
+      "thm.Main1"
+    ],
+    "refs": [
+      "fig:Buttervogel",
+      "thm.Main1"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "The model and results"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L51-60::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L77-88::s4",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L51-60::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L115-122::s0",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L256-259::s0",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L260-285::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L294-296::s3",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L297-300::s4",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L77-88::s4",
@@ -130,14 +287,40 @@
     "start_line": 77,
     "end_line": 88,
     "text": "1.  *By the Ten Martini property holds in the critical case for all irrational frequencies, that is, for $0<\\lambda_1=\\lambda_2\\leq1$ the spectrum of $W_{\\lambda_1,\\lambda_2,\\Phi}$ is a Cantor set of zero Lebesgue measure for every irrational $\\Phi$. The dry version of the problem remains open.*\n\n2.  *In the non-critical setting, the Dry Ten Martini problem for non-Diophantine $\\Phi$ is notoriously hard. For the critical AMO with Liouville frequencies, this was proved in by employing the particular structure and symmetries of the operator. The more involved structure of the UAMO seems to render impossible an adaption of the argument in . We nevertheless expect the DTMP to hold for all frequencies, see for a possible attack strategy.*\n\n3.  *We combine Avila’s almost reducible theorem with Eliasson’s reducibility for Diophantine frequencies to obtain the global reducibility except for the critical case. Therefore, this treatment does not cover the Liouville frequencies.*\n\n4.  *This is the first time a DTMP is showed for (GE)CMV matrices. Some results in Baire category for certain classes of almost periodic extended CMV matrices were previously obtained by . It is an open question whether it holds for other CMV matrices with, for example, subshift or Sturmian Verblunsky coefficients.*\n\n</div>\n\nWe base our proof on the recent understanding of Anderson localization for Diophantine frequencies obtained in and techniques developed therein: the Anderson localization for the UAMO in the supercritical setting $\\lambda_1<\\lambda_2$ proved in is a full measure result. In , an arithmetic version of Anderson localization is proved, albeit for a mosaic model where every other local coin in <a href=\"#eq:coindef\" data-reference-type=\"eqref\" data-reference=\"eq:coindef\">[eq:coindef]</a> is trivial. However, the proof of works in a straightforward way for UAMO as well, compare also .\n\n<div id=\"thm:AndersonLocal\" class=\"theorem\">",
-    "labels": [],
-    "refs": [],
+    "labels": [
+      "thm:AndersonLocal"
+    ],
+    "refs": [
+      "eq:coindef"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "The model and results"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L61-76::s3",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L89-109::s5",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L14-32::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L33-50::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L301-304::s5",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L89-109::s5",
@@ -147,7 +330,9 @@
     "end_line": 109,
     "text": "<div id=\"thm:AndersonLocal\" class=\"theorem\">\n\n**Theorem 4**. *Let $\\Phi\\in {\\mathrm{DC}}(\\kappa,\\tau)$ and $\\lambda_1<\\lambda_2$. Then for each “ $\\Phi$-nonresonant” $\\theta$, i.e., each $\\theta$ such that $$|\\sin2\\pi(\\theta+n\\Phi)|<\\exp(-|n|^{\\frac{1}{2\\tau}})$$ does not hold for infinitely many $n$, $W_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ admits Anderson localization.*\n\n</div>\n\n<div class=\"proof\">\n\n*Proof.* In the case $\\Phi\\in{\\mathbb{R}}\\setminus{\\mathbb{Q}}$ and $\\lambda_1<\\lambda_2$, according to , the Lyapunov exponent characterizing the (typical) decay of generalized eigenfunctions is positive: $$\\label{eq:positiveLyapunov}\nL_{\\lambda_1,\\lambda_2,\\Phi}(z)\\geq \\log\\left[\\frac{\\lambda_2(1+\\lambda_1')}{\\lambda_1(1+\\lambda_2')}\\right]>0,$$ with equality if and only if $z\\in\\Sigma_{\\lambda_1,\\lambda_2,\\Phi}.$ The rest of the proof follows the same outline as the proof of . ◻\n\n</div>\n\n<div class=\"remark\">\n\n**Remark 5**. *This result is a full measure result in $\\theta$. It is sharp in the sense that it cannot be strengthened to all $\\theta$ .*\n\n</div>\n\nWe shall also need the following dynamical duality formulation of Autry-André duality for the UAMO, which can be seen as the reverse statement to . As such, we expect it to be of interest beyond this paper.\n\n<div id=\"thm.reverDual\" class=\"theorem\">",
     "labels": [
-      "eq:positiveLyapunov"
+      "eq:positiveLyapunov",
+      "thm.reverDual",
+      "thm:AndersonLocal"
     ],
     "refs": [],
     "meta": {
@@ -155,7 +340,33 @@
         "level": 1,
         "title": "The model and results"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L77-88::s4",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L110-114::s6",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L297-300::s4",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L301-304::s5",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L305-313::s6",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L314-325::s7",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L110-114::s6",
@@ -165,7 +376,8 @@
     "end_line": 114,
     "text": "<div id=\"thm.reverDual\" class=\"theorem\">\n\n**Theorem 6** (Aubry-André Duality). *Let $\\varphi=\\varphi^\\xi=\\left[\\varphi^{\\xi,+},\\varphi^{\\xi,-}\\right]^\\top$, $\\xi\\in\\mathbb{T}$ be a solution to the generalized eigenvalue equation $W^{{\\sharp}}_{\\lambda_{1},\\lambda_{2},\\xi,\\Phi}\\varphi=z\\varphi$ which has the following form $$\\begin{bmatrix}\\varphi^{\\xi,+}_{n}\\\\\\varphi^{\\xi,-}_{n}\\end{bmatrix}=e^{2\\pi in\\theta}\\begin{bmatrix}\\check{\\phi}^{+}(\\xi+n\\Phi)\\\\\\check{\\phi}^{-}(\\xi+n\\Phi)\\end{bmatrix}=\\frac1{\\sqrt2}e^{2\\pi in\\theta}\\begin{bmatrix}\\check\\psi^+(\\xi+n\\Phi)+i\\check\\psi^-(\\xi+n\\Phi)\\\\i\\check\\psi^+(\\xi+n\\Phi)+\\check\\psi^-(\\xi+n\\Phi)\\end{bmatrix}.$$ Let $$\\label{eq:psi_aubr}\n    \\begin{bmatrix}\\check{\\psi}^{+}\\\\\\check{\\psi}^{-}\\end{bmatrix}=\\frac1{\\sqrt2}\\begin{bmatrix}1&-i\\\\-i&1\\end{bmatrix}\\begin{bmatrix}\\check{\\phi}^{+}\\\\\\check{\\phi}^{-}\\end{bmatrix}$$ with $n$-th Fourier coefficients $\\psi^{+}_{n}$ and $\\psi^{-}_{n}$, respectively. Then $\\psi=\\left[\\psi^{+},\\psi^{-}\\right]^\\top$ solves the eigenvalue equation $W_{\\lambda_{1},\\lambda_{2},\\Phi,\\theta}\\psi=z\\psi$.*\n\n</div>",
     "labels": [
-      "eq:psi_aubr"
+      "eq:psi_aubr",
+      "thm.reverDual"
     ],
     "refs": [],
     "meta": {
@@ -173,7 +385,37 @@
         "level": 1,
         "title": "The model and results"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L89-109::s5",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L115-122::s0",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L297-300::s4",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L301-304::s5",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L305-313::s6",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L314-325::s7",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L326-333::s8",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L115-122::s0",
@@ -186,13 +428,41 @@
       "eq:theta_mat",
       "eq:verblunsky_pair"
     ],
-    "refs": [],
+    "refs": [
+      "thm.Main1"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Preliminaries"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L110-114::s6",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L123-133::s1",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L51-60::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L61-76::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L134-135::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L136-145::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L123-133::s1",
@@ -212,7 +482,25 @@
         "level": 1,
         "title": "Preliminaries"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L115-122::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L134-135::s2",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L134-135::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L136-145::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L134-135::s2",
@@ -224,13 +512,42 @@
     "labels": [
       "eq:gecmv"
     ],
-    "refs": [],
+    "refs": [
+      "eq:szego_normalized",
+      "eq:theta_mat"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Preliminaries"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L123-133::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L136-145::s3",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L136-145::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L146-151::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L115-122::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L123-133::s1",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L136-145::s3",
@@ -246,13 +563,87 @@
       "eq:GECMV_transmat",
       "eq:szego_normalized"
     ],
-    "refs": [],
+    "refs": [
+      "eq:GECMV_transmat",
+      "eq:szego_normalized",
+      "eq:theta_mat"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Preliminaries"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L134-135::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L146-151::s4",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L134-135::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L146-151::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L115-122::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L123-133::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L146-151::s4",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L152-158::s5",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L159-162::s6",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L163-174::s7",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L215-230::s10",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L231-240::s11",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L241-249::s12",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L250-255::s13",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L260-285::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L297-300::s4",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L301-304::s5",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L146-151::s4",
@@ -270,13 +661,85 @@
       "eq:GECMV_transmat",
       "eq:szego_normalized"
     ],
-    "refs": [],
+    "refs": [
+      "eq.ConjugatedTransferMatrix",
+      "eq.Rn",
+      "eq.dualEigen",
+      "eq.solIter1",
+      "eq:GECMV_transmat"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Preliminaries"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L136-145::s3",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L152-158::s5",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L134-135::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L136-145::s3",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L136-145::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L152-158::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L152-158::s5",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L159-162::s6",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L163-174::s7",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L215-230::s10",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L231-240::s11",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L241-249::s12",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L250-255::s13",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L260-285::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L297-300::s4",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L301-304::s5",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L152-158::s5",
@@ -291,13 +754,69 @@
       "eq.uamo",
       "eq.uamo_rho_gauged"
     ],
-    "refs": [],
+    "refs": [
+      "eq.ConjugatedTransferMatrix",
+      "eq.Rn",
+      "eq.dualEigen",
+      "eq.solIter1",
+      "eq:UAMO_def"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Preliminaries"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L146-151::s4",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L159-162::s6",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L146-151::s4",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L136-145::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L146-151::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L33-50::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L159-162::s6",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L163-174::s7",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L215-230::s10",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L231-240::s11",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L297-300::s4",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L301-304::s5",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L159-162::s6",
@@ -312,13 +831,62 @@
       "eq.uamo",
       "eq.uamo_rho_gauged"
     ],
-    "refs": [],
+    "refs": [
+      "eq.ConjugatedTransferMatrix",
+      "eq.Rn",
+      "eq.Sz",
+      "eq.transposeIter",
+      "eq:GECMV_transmat",
+      "eq:UAMO_def"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Preliminaries"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L152-158::s5",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L163-174::s7",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L136-145::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L146-151::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L163-174::s7",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L152-158::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L33-50::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L163-174::s7",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L231-240::s11",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L301-304::s5",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L163-174::s7",
@@ -328,17 +896,64 @@
     "end_line": 174,
     "text": "Plugging in these Verblunsky coefficients, $R_{2n}$ defined in <a href=\"#eq.Rn\" data-reference-type=\"eqref\" data-reference=\"eq.Rn\">[eq.Rn]</a> is constant. Moreover, $A_{n,z}$ in <a href=\"#eq:GECMV_transmat\" data-reference-type=\"eqref\" data-reference=\"eq:GECMV_transmat\">[eq:GECMV_transmat]</a> defines a quasiperiodic cocycle $(\\Phi,A_z(\\cdot))$ which is is $JR$-conjugate to the quasiperiodic two-step combined Szegő-cocycle $(\\Phi,S_z^{+}(\\cdot))$, with $J$ and $R$ given in <a href=\"#eq.Rn\" data-reference-type=\"eqref\" data-reference=\"eq.Rn\">[eq.Rn]</a> and $$\\label{eq.Sz}\nS_z^{+}(\\theta)=\\frac{1}{\\lambda_1\\sqrt{1-\\lambda_2^2 \\sin^2(2\\pi \\theta)}}\\begin{bmatrix}z+\\lambda_1'\\lambda_2\\sin(2\\pi \\theta)&-\\lambda_1'z^{-1}-\\lambda_2\\sin(2\\pi \\theta)\\\\-\\lambda_1'z-\\lambda_2\\sin(2\\pi \\theta)&z^{-1}+\\lambda_1'\\lambda_2\\sin(2\\pi \\theta)\\end{bmatrix}\\in{\\mathbb{SU}}(1,1).$$ Similarly, we get the reduced Szegő cocycle for the Aubry-dual operator $W^{{\\sharp}}_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ from <a href=\"#eq.transposeIter\" data-reference-type=\"eqref\" data-reference=\"eq.transposeIter\">[eq.transposeIter]</a> and <a href=\"#eq.ConjugatedTransferMatrix\" data-reference-type=\"eqref\" data-reference=\"eq.ConjugatedTransferMatrix\">[eq.ConjugatedTransferMatrix]</a> as $$\\label{eq.reverCocy}\nS^{{\\sharp}}_{z}(\\theta)=\\frac{1}{\\lambda_2\\sqrt{1-\\lambda_1^2\\sin^2(2\\pi \\theta)}}\\begin{bmatrix}z+\\lambda_1\\lambda_2'\\sin(2\\pi\\theta)&-\\lambda_1\\sin(2\\pi \\theta)-\\lambda_2'z^{-1}\\\\-\\lambda_1\\sin(2\\pi \\theta)-\\lambda_2'z&z^{-1}+\\lambda_1\\lambda_2'\\sin(2\\pi \\theta)\\end{bmatrix}.$$ Note that this is just <a href=\"#eq.Sz\" data-reference-type=\"eqref\" data-reference=\"eq.Sz\">[eq.Sz]</a> with $\\lambda_1$ and $\\lambda_2$ exchanged. In the rest of the paper, we will use simply $(\\Phi,A_z)$, $(\\Phi,S^+_z)$ and $(\\Phi,S^{\\sharp}_z)$ to denote these cocycles when they do not cause confusion.\n\n<span class=\"smallcaps\"></span>Cocycle Dynamics<span id=\"sec:cocycle_dynamics\" label=\"sec:cocycle_dynamics\"></span>\n\nA crucial ingredient to our proof is the behaviour of the quasi-periodic cocycles associated with the UAMO. Let $\\Phi\\in{\\mathbb{R}}\\setminus{\\mathbb{Q}}$ and $A\\in C({\\mathbb{T}},{\\mathbb{SU}}(1,1))$. This pair $(\\Phi,A)$ defines a linear skew-product $(\\theta,v)\\mapsto(\\theta+\\Phi,A(\\theta)v)$ and is called a ${\\mathbb{SU}}(1,1)$-valued *cocycle*. Its iterates are defined as $(n\\Phi,A^n)$ where $$A^n(\\theta)=\\begin{cases}\nA((n-1)\\Phi+\\theta)\\cdot A((n-2)\\Phi+\\theta)\\cdots A(\\theta), & n> 0,\\\\\nA^{-1}(n\\Phi+\\theta)\\cdot A^{-1}((n-1)\\Phi+\\theta)\\cdots A^{-1}(\\Phi+\\theta), & n<0.\n\\end{cases}$$ We denote $A^0=\\mathbbm 1$, the identity matrix by usual convention. The motivation for considering ${\\mathbb{SU}}(1,1)$-cocycles comes from the fact that we are interested in cocycles induced by the Szegő transfer matrices from <a href=\"#eq:szego_normalized\" data-reference-type=\"eqref\" data-reference=\"eq:szego_normalized\">[eq:szego_normalized]</a>. We note that concepts from the theory of ${\\mathbb{SL}}(2,{\\mathbb{R}})$-cocycles carry over directly due to the isomorphism $$\\label{eq:M}\n    M^{-1}{\\mathbb{SU}}(1,1)M={\\mathbb{SL}}(2,{\\mathbb{R}}),$$ where $M$ is the constant unitary matrix $$M=\\frac{1}{1+i}\\begin{bmatrix}1&-i\\\\1&i\\end{bmatrix}.$$\n\nWe adopt the following notions of Avila : we say that $(\\Phi,A)$ is *uniformly hyperbolic* if there are $c,C>0$ such that $\\|A^n(\\theta)\\|\\geq Ce^{c|n|}$ for all $n\\in{\\mathbb{Z}}$. Moreover, if $A:X\\to \\mathrm{SU}(1,1)$ is analytic with an analytic extension to a strip $\\{\\theta+i\\epsilon:|\\epsilon|<\\delta\\}$,\n\n<div id=\"def.global\" class=\"definition\">",
     "labels": [
+      "def.global",
       "eq.Sz",
       "eq.reverCocy",
-      "eq:M"
+      "eq:M",
+      "sec:cocycle_dynamics"
     ],
-    "refs": [],
+    "refs": [
+      "eq.ConjugatedTransferMatrix",
+      "eq.Rn",
+      "eq.Sz",
+      "eq.transposeIter",
+      "eq:GECMV_transmat",
+      "eq:szego_normalized"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Preliminaries"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L159-162::s6",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L175-198::s8",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L159-162::s6",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L136-145::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L146-151::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L159-162::s6",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L152-158::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L231-240::s11",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L260-285::s1",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L175-198::s8",
@@ -347,14 +962,30 @@
     "start_line": 175,
     "end_line": 198,
     "text": "<div id=\"def.global\" class=\"definition\">\n\n**Definition 7**. *If $(\\Phi,A)$ is not uniformly hyperbolic, it is said to be*\n\n1.  **Supercritical*, if $\\sup_{\\theta\\in{\\mathbb{T}}}\\Vert A^n(\\theta)\\Vert$ grows exponentially.*\n\n2.  **Subcritical*, if there exists a uniform sub-exponential upper bound on the growth of $\\Vert A^n(\\xi)\\Vert$ through some band $|\\operatorname{Im}\\xi|<\\tilde\\epsilon$.*\n\n3.  **Critical* otherwise.*\n\n</div>\n\nThis cocycle characterization can be employed to localize the spectrum of quasiperiodic CMV matrices :\n\n<div class=\"theorem\">\n\n**Theorem 8**. *Let $\\mathcal E_\\theta$, $\\theta\\in{\\mathbb{T}}$, be a quasiperiodic CMV matrix. Then, $z\\in{\\mathbb{C}}$ is in the spectrum of $\\mathcal{E}_\\theta$ if and only if the associated Szegő cocycle $(\\Phi,S_z)$ is not uniformly hyperbolic.*\n\n</div>\n\nIn fact, this result holds in a more general setting where instead of circle shifts one merely has a dynamical system $(X,T)$ that is minimal. It can be shown in this case that there exists a common set $\\Sigma$ as the spectrum of $\\mathcal{E}_\\theta$ for every $\\theta\\in{\\mathbb{T}}.$\n\nWe call two cocycles $(\\Phi,A)$ and $(\\Phi,B)$ *analytically conjugated* if there is an analytic mapping $Z:{\\mathbb{T}}\\to\\mathrm{PSU}(1,1)$ such that $$^{-1}A(\\theta)Z(\\theta)=B(\\theta).$$ We say that $(\\Phi,A)$ is *(analytically) reducible* if it is analytically conjugated to a cocycle $(\\Phi,B)$ with $B$ constant.\n\n<div class=\"definition\">",
-    "labels": [],
+    "labels": [
+      "def.global"
+    ],
     "refs": [],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Preliminaries"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L163-174::s7",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L199-214::s9",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L260-285::s1",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L199-214::s9",
@@ -363,14 +994,42 @@
     "start_line": 199,
     "end_line": 214,
     "text": "<div class=\"definition\">\n\n**Definition 9**. *We call $(\\Phi,A)$ *almost reducible* if the closure of its analytic conjugacy class contains a constant, that is, if there exists $\\epsilon>0$ and analytic $Z_n:{\\mathbb{T}}\\to\\mathrm{PSU}(1,1)$ with holomorphic extensions to $\\{\\theta+iy:|y|<\\epsilon\\}$ such that $$\\lim_{n\\to\\infty}\\|Z_n(\\cdot+\\Phi)A(\\cdot)Z_n(\\cdot)^{-1}-B\\|_\\epsilon=0,$$ where $B\\in\\mathrm{SU}(1,1)$ is constant and $\\|A\\|_\\epsilon=\\sup_{|\\operatorname{Im}(z)|<\\epsilon}\\|A(z)\\|$.*\n\n</div>\n\nThe following result of Avila is crucial for our proof:\n\n<div id=\"thm:ARC\" class=\"theorem\">\n\n**Theorem 10** (Avila ). *Let $\\Phi\\in {\\mathbb{R}}\\setminus{\\mathbb{Q}}$. If $(\\Phi,A)$ is subcritical, then it is almost reducible.*\n\n</div>\n\nLet $(\\Phi,A)$ be an ${\\mathbb{SU}}(1,1)$-valued quasiperiodic cocycle that is homotopic to a constant, and identify ${\\mathbb{S}}^1\\subset{\\mathbb{R}}^2\\equiv{\\mathbb{C}}$ in the usual way. The cocycle $(\\Phi,A)$ induces a homeomorphism $F_A:{\\mathbb{T}}\\times {\\mathbb{S}}^1\\to {\\mathbb{T}}\\times {\\mathbb{S}}^1$ by $F_A(\\theta,v)=(\\Phi+\\theta,f_A(\\theta,v))$ where $$f_A(\\theta,v):=\\frac{A(\\theta)v}{\\|A(\\theta)v\\|}.$$ This map admits a continuous lift $\\widetilde F_A:{\\mathbb{T}}\\times {\\mathbb{R}}\\to {\\mathbb{T}}\\times {\\mathbb{R}}$, $(\\theta,t)\\mapsto(\\Phi+\\theta,\\widetilde f_A(\\theta,t))$, where $\\widetilde f_A:{\\mathbb{T}}\\times{\\mathbb{R}}\\to{\\mathbb{R}}$ is a lift of $\\widetilde f_A$ satisfying $\\widetilde f_A(\\theta,t+1)=f(\\theta,t)+1$ and, if $\\pi_2:{\\mathbb{T}}\\times{\\mathbb{R}}\\to{\\mathbb{T}}\\times{\\mathbb{S}}^1$ denotes the projection $(\\theta,\\phi)\\mapsto(\\theta,e^{2\\pi i\\phi})$, $\\pi_2\\circ\\widetilde F_A=F_A\\circ\\pi_2$.\n\n<div class=\"definition\">",
-    "labels": [],
+    "labels": [
+      "thm:ARC"
+    ],
     "refs": [],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Preliminaries"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L175-198::s8",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L215-230::s10",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L241-249::s12",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L250-255::s13",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L294-296::s3",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L297-300::s4",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L215-230::s10",
@@ -379,14 +1038,57 @@
     "start_line": 215,
     "end_line": 230,
     "text": "<div class=\"definition\">\n\n**Definition 11** (Rotation number ). *Let $(\\Phi,A)$ be a ${\\mathbb{SU}}(1,1)$-valued cocycle that is homotopic to a constant. Then, the limit $$\\mathop{\\mathrm{rot}}(\\Phi,A)=\\lim_{n\\to\\infty}\\frac{\\widetilde f_A^n(\\theta,t)-t}{n}$$ exists uniformly and is independent of $(\\theta,t)$. It is called the *fibered rotation number* of the cocycle $(\\Phi,A)$.*\n\n</div>\n\nThe regularity of rotation numbers in great generality without referring to spectral theory can be found in .\n\nWe also need the following discrete one-dimensional analog of a result by Eliasson from , compare also Hadj-Amor resp. :\n\n<div id=\"Eli92\" class=\"theorem\">\n\n**Theorem 12**. *Let $\\delta > 0$, $\\Phi \\in {\\mathrm{DC}}(\\kappa,\\tau)$, and $A_{*}\\in \\mathrm{SU}(1,1)$. Then there is a constant $\\epsilon = \\epsilon(\\gamma,\\tau,\\delta,\\| A_{0}\\|)$ such that if $A \\in C^{\\omega}_{\\delta}({\\mathbb{T}},\\mathrm{SU}(1,1))$ is analytic with $\\| A - A_{*} \\|_{\\delta} \\leq \\epsilon$ and the rotation number $\\mathop{\\mathrm{rot}}(\\Phi, A)$ is either Diophantine or rational with respect to $\\Phi/2$, then $(\\Phi,A)$ is reducible.*\n\n</div>\n\nThe cocycle corresponding to the generalized eigenvalue equation <a href=\"#eq.dualEigen\" data-reference-type=\"eqref\" data-reference=\"eq.dualEigen\">[eq.dualEigen]</a> depends on the spectral parameter $z\\in{\\mathbb{C}}$, compare <a href=\"#eq:GECMV_transmat\" data-reference-type=\"eqref\" data-reference=\"eq:GECMV_transmat\">[eq:GECMV_transmat]</a>, therefore we write $\\mathop{\\mathrm{rot}}\\equiv\\mathop{\\mathrm{rot}}(z)$ to make this dependence explicit. Indeed, and , or more recently , give a detailed characterization of the location of the spectral parameter based on the knowledge of reducibility for Schrödinger cocycles.",
-    "labels": [],
-    "refs": [],
+    "labels": [
+      "Eli92"
+    ],
+    "refs": [
+      "eq.dualEigen",
+      "eq:GECMV_transmat"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Preliminaries"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L199-214::s9",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L231-240::s11",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L146-151::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L152-158::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L136-145::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L241-249::s12",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L250-255::s13",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L294-296::s3",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L297-300::s4",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L231-240::s11",
@@ -395,14 +1097,59 @@
     "start_line": 231,
     "end_line": 240,
     "text": "The cocycle corresponding to the generalized eigenvalue equation <a href=\"#eq.dualEigen\" data-reference-type=\"eqref\" data-reference=\"eq.dualEigen\">[eq.dualEigen]</a> depends on the spectral parameter $z\\in{\\mathbb{C}}$, compare <a href=\"#eq:GECMV_transmat\" data-reference-type=\"eqref\" data-reference=\"eq:GECMV_transmat\">[eq:GECMV_transmat]</a>, therefore we write $\\mathop{\\mathrm{rot}}\\equiv\\mathop{\\mathrm{rot}}(z)$ to make this dependence explicit. Indeed, and , or more recently , give a detailed characterization of the location of the spectral parameter based on the knowledge of reducibility for Schrödinger cocycles.\n\nThe following result is the form we need; we shall provide a proof along the lines of for completeness.\n\n<div id=\"thm:gapEdgeRd\" class=\"theorem\">\n\n**Theorem 13**. *Let $\\delta>0$, $\\Phi\\in {\\mathrm{DC}}(\\kappa,\\tau)$, $z\\in{\\mathbb{C}}$, and let $A_z\\in \\mathrm{SU}(1,1)$ be a constant matrix and let $A_z(\\theta)$ be given by <a href=\"#eq:GECMV_transmat\" data-reference-type=\"eqref\" data-reference=\"eq:GECMV_transmat\">[eq:GECMV_transmat]</a> and <a href=\"#eq.uamo\" data-reference-type=\"eqref\" data-reference=\"eq.uamo\">[eq.uamo]</a>. There exists a constant $\\epsilon=\\epsilon (\\kappa,\\tau,\\delta,\\Vert A_z\\Vert)$ such that if $A_z(\\theta)\\in C^\\omega_\\delta({\\mathbb{T}},\\mathrm{SU}(1,1))$ with $\\| A_z(\\theta)-A_z\\|_\\delta<\\epsilon$, and $z\\in{\\mathbb{C}}$ locates at an edge of a spectral gap, then there exists $Z\\in C^\\omega_\\delta({\\mathbb{T}},\\mathrm{PSU}(1,1))$ such that $$M^{-1}Z(\\theta+\\Phi)^{-1}A_z(\\theta)Z(\\theta)M=\\begin{bmatrix}1&c\\\\0&1\\end{bmatrix},$$ where $M$ is the matrix in <a href=\"#eq:M\" data-reference-type=\"eqref\" data-reference=\"eq:M\">[eq:M]</a> that induces the isomorphism between $\\mathrm{SU}(1,1)$ and $\\mathrm{SL}(2,{\\mathbb{R}})$. In particular, if $\\{z\\}=\\mathop{\\mathrm{rot}}^{-1}(k\\Phi/2)$ for some $k\\in{\\mathbb{Z}}$, then $c=0.$*\n\n</div>\n\n<div class=\"proof\">",
-    "labels": [],
-    "refs": [],
+    "labels": [
+      "thm:gapEdgeRd"
+    ],
+    "refs": [
+      "eq.dualEigen",
+      "eq.uamo",
+      "eq:GECMV_transmat",
+      "eq:M"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Preliminaries"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L215-230::s10",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L241-249::s12",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L146-151::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L152-158::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L159-162::s6",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L136-145::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L163-174::s7",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L294-296::s3",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L297-300::s4",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L241-249::s12",
@@ -417,14 +1164,52 @@
       "eq:trace"
     ],
     "refs": [
-      "eq:trace"
+      "Eli92",
+      "eq.ConjugatedTransferMatrix",
+      "eq:conjEq1",
+      "eq:trace",
+      "thm:ARC"
     ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Preliminaries"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L231-240::s11",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L250-255::s13",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L215-230::s10",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L136-145::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L146-151::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L250-255::s13",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L199-214::s9",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L250-255::s13",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L250-255::s13",
@@ -439,15 +1224,53 @@
       "eq:trace"
     ],
     "refs": [
+      "Eli92",
+      "eq.ConjugatedTransferMatrix",
+      "eq:conjEq1",
       "eq:conjEqNew",
-      "eq:trace"
+      "eq:trace",
+      "thm:ARC"
     ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Preliminaries"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L241-249::s12",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L256-259::s0",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L241-249::s12",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L215-230::s10",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L136-145::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L146-151::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L241-249::s12",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L199-214::s9",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L256-259::s0",
@@ -457,13 +1280,33 @@
     "end_line": 259,
     "text": "# Proofs\n\n<span class=\"smallcaps\"></span>Proof of Theorem <a href=\"#thm.Main1\" data-reference-type=\"ref\" data-reference=\"thm.Main1\">1</a> In this section, we give a short proof of Theorem <a href=\"#thm.Main1\" data-reference-type=\"ref\" data-reference=\"thm.Main1\">1</a>. In the non-critical case $\\lambda_1\\neq \\lambda_2$, either $S^+_{z}$ or $S^{{\\sharp}}_{z}$ is subcritical. Since the corresponding operators $W_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ and $W^{{\\sharp}}_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ are isospectral by Aubry-André duality, we can start from either side. Since $\\Phi\\in {\\mathrm{DC}}$ in Theorem <a href=\"#thm.Main1\" data-reference-type=\"ref\" data-reference=\"thm.Main1\">1</a>, subcriticality essentially implies reducibility , and we can adopt Puig’s argument . The conservation of the Wronskian for the second order difference operator indicated by the transfer matrices rules out double point spectrum, i.e., point spectrum with geometric multiplicity two. To be more specific, if $W^{{\\sharp}}_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ is localized, then its eigenvectors decay to zero, leading to vanishing Wronskians, which means it cannot have two linearly independent eigenvectors corresponding to a single eigenvalue. The idea of the proof in the following context is that the transfer matrix of $W_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ being reducible to the identity violates the simplicity of the point spectrum of the corresponding Aubry-dual operator, which leads to a contradiction.",
     "labels": [],
-    "refs": [],
+    "refs": [
+      "thm.Main1"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Proofs"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L250-255::s13",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L260-285::s1",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L51-60::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L61-76::s3",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L260-285::s1",
@@ -472,14 +1315,67 @@
     "start_line": 260,
     "end_line": 285,
     "text": "<span class=\"smallcaps\"></span>Proof of Theorem <a href=\"#thm.Main1\" data-reference-type=\"ref\" data-reference=\"thm.Main1\">1</a> In this section, we give a short proof of Theorem <a href=\"#thm.Main1\" data-reference-type=\"ref\" data-reference=\"thm.Main1\">1</a>. In the non-critical case $\\lambda_1\\neq \\lambda_2$, either $S^+_{z}$ or $S^{{\\sharp}}_{z}$ is subcritical. Since the corresponding operators $W_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ and $W^{{\\sharp}}_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ are isospectral by Aubry-André duality, we can start from either side. Since $\\Phi\\in {\\mathrm{DC}}$ in Theorem <a href=\"#thm.Main1\" data-reference-type=\"ref\" data-reference=\"thm.Main1\">1</a>, subcriticality essentially implies reducibility , and we can adopt Puig’s argument . The conservation of the Wronskian for the second order difference operator indicated by the transfer matrices rules out double point spectrum, i.e., point spectrum with geometric multiplicity two. To be more specific, if $W^{{\\sharp}}_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ is localized, then its eigenvectors decay to zero, leading to vanishing Wronskians, which means it cannot have two linearly independent eigenvectors corresponding to a single eigenvalue. The idea of the proof in the following context is that the transfer matrix of $W_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ being reducible to the identity violates the simplicity of the point spectrum of the corresponding Aubry-dual operator, which leads to a contradiction.\n\nWe begin by characterizing the two-step Szegő-cocycle $(\\Phi,S^+_z)$ according to the nomenclature of Definition <a href=\"#def.global\" data-reference-type=\"ref\" data-reference=\"def.global\">7</a>. By and <a href=\"#eq.ConjugatedTransferMatrix\" data-reference-type=\"eqref\" data-reference=\"eq.ConjugatedTransferMatrix\">[eq.ConjugatedTransferMatrix]</a>, we have the following:\n\n<div id=\"thm.subcritical\" class=\"theorem\">\n\n**Theorem 14**. *Let $\\Phi\\in {\\mathbb{R}}\\setminus{\\mathbb{Q}}$ and $\\lambda_1>\\lambda_2$. Then $(\\Phi,S^+_{z})$ is subcritical for every $z\\in\\Sigma_{\\lambda_1,\\lambda_2,\\Phi}$.*\n\n</div>\n\nAs a direct corollary, we have that\n\n<div id=\"cor.subcritical\" class=\"coro\">\n\n**Corollary 15**. *Let $\\Phi\\in {\\mathbb{R}}\\setminus{\\mathbb{Q}}$ and $\\lambda_1<\\lambda_2$. Then $(\\Phi,S^{{\\sharp}}_z)$ is subcritical for every $z\\in \\Sigma_{\\lambda_1,\\lambda_2,\\Phi}$.*\n\n</div>\n\nThe following result is an analogue of Avron-Simon :\n\n<div class=\"theorem\">\n\n**Theorem 16**. *For any $|z|=1$, denote by $\\mathop{\\mathrm{rot}}_{\\lambda_1,\\lambda_2}(z)$ and $\\mathop{\\mathrm{rot}}^{\\sharp}_{\\lambda_1,\\lambda_2}(z)$ the rotation numbers of $(\\Phi,S^+_z)$ and $(\\Phi,S^{\\sharp}_z)$ respectively. Then $$\\mathop{\\mathrm{rot}}_{\\lambda_1,\\lambda_2}(z)=\\mathop{\\mathrm{rot}}^{\\sharp}_{\\lambda_1,\\lambda_2}(z).$$*\n\n</div>\n\n<div class=\"proof\">",
-    "labels": [],
-    "refs": [],
+    "labels": [
+      "cor.subcritical",
+      "thm.subcritical"
+    ],
+    "refs": [
+      "def.global",
+      "eq.ConjugatedTransferMatrix",
+      "thm.Main1"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Proofs"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L256-259::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L286-293::s2",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L163-174::s7",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L175-198::s8",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L136-145::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L146-151::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L51-60::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L61-76::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L294-296::s3",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L297-300::s4",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L301-304::s5",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L286-293::s2",
@@ -495,7 +1391,17 @@
         "level": 1,
         "title": "Proofs"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L260-285::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L294-296::s3",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L294-296::s3",
@@ -507,13 +1413,61 @@
     "labels": [
       "eq.conjugte1"
     ],
-    "refs": [],
+    "refs": [
+      "Eli92",
+      "cor.subcritical",
+      "thm.Main1",
+      "thm:ARC",
+      "thm:gapEdgeRd"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Proofs"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L286-293::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L297-300::s4",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L215-230::s10",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L260-285::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L51-60::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L61-76::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L199-214::s9",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L231-240::s11",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L297-300::s4",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L301-304::s5",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L297-300::s4",
@@ -527,13 +1481,90 @@
       "eq.conjugte1",
       "eq:UVA"
     ],
-    "refs": [],
+    "refs": [
+      "Eli92",
+      "cor.subcritical",
+      "eq.ConjugatedTransferMatrix",
+      "eq.blochW",
+      "eq.conjugte1",
+      "eq.transposeIter",
+      "thm.Main1",
+      "thm.reverDual",
+      "thm:ARC",
+      "thm:gapEdgeRd"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Proofs"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L294-296::s3",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L301-304::s5",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L215-230::s10",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L260-285::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L136-145::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L146-151::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L301-304::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L294-296::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L152-158::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L51-60::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L61-76::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L89-109::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L110-114::s6",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L199-214::s9",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L231-240::s11",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L301-304::s5",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L301-304::s5",
@@ -546,13 +1577,79 @@
       "eq.blochW",
       "eq:UVA"
     ],
-    "refs": [],
+    "refs": [
+      "cor.subcritical",
+      "eq.ConjugatedTransferMatrix",
+      "eq.blochW",
+      "eq.conjugte1",
+      "eq.solIter1",
+      "eq.transposeIter",
+      "eq.uamo",
+      "eq.uamo_rho_gauged",
+      "eq:UVA",
+      "thm.reverDual",
+      "thm:AndersonLocal"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Proofs"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L297-300::s4",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L305-313::s6",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L297-300::s4",
+        "direction": "comment"
+      },
+      {
+        "id": "2503.06710v1::L260-285::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L136-145::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L146-151::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L297-300::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L294-296::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L152-158::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L159-162::s6",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L89-109::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L110-114::s6",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L77-88::s4",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L305-313::s6",
@@ -564,13 +1661,37 @@
     "labels": [
       "eq:ft"
     ],
-    "refs": [],
+    "refs": [
+      "thm.reverDual"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Proofs"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L301-304::s5",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L314-325::s7",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L89-109::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L110-114::s6",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L314-325::s7",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L314-325::s7",
@@ -580,13 +1701,38 @@
     "end_line": 325,
     "text": "\\end{aligned}$$ Plugging in the concrete form of $\\varphi$ from Theorem <a href=\"#thm.reverDual\" data-reference-type=\"ref\" data-reference=\"thm.reverDual\">6</a>, Fourier transforming with respect to $x=\\xi+n\\Phi$ and multiplying by $\\exp[-2\\pi in\\theta]$, the first equation gives $$\\begin{aligned}\n        \\int_{\\mathbb T}\\frac{dx}{2\\pi}e^{-2\\pi i mx}z\\phi^+(x) &= \\int_{\\mathbb T}\\frac{dx}{2\\pi}e^{-2\\pi i mx}\\Big[(\\lambda_1\\cos(2\\pi x)+i\\lambda_1')(\\lambda_2e^{2\\pi i\\theta}\\phi^+(x+\\Phi) +\\lambda_2'\\phi^-(x))\\\\\n        &\\qquad+\\lambda_1\\sin(2\\pi x)(-\\lambda_2'\\phi^+(x)+\\lambda_2e^{-2\\pi i\\theta}\\phi^-(x-\\Phi))\\Big].\n\n\\end{aligned}$$ Expanding the trigonometric functions, reorganizing the terms and utilizing <a href=\"#eq:ft\" data-reference-type=\"eqref\" data-reference=\"eq:ft\">[eq:ft]</a> gives $$\\begin{aligned}\n        z\\phi_m^+ &= \\frac12\\lambda_2\\lambda_1\\left[e^{2\\pi i((m-1)\\Phi+\\theta)}\\phi_{m-1}^+-ie^{-2\\pi i((m-1)\\Phi+\\theta)}\\phi_{m-1}^-\\right]\\\\\n        &\\qquad+\\frac12\\lambda_2\\lambda_1\\left[e^{2\\pi i((m+1)\\Phi+\\theta)}\\phi_{m+1}^++ie^{-2\\pi i((m+1)\\Phi+\\theta)}\\phi_{m+1}^-\\right]\\\\\n        &\\qquad+\\lambda_2\\lambda_1'ie^{2\\pi i(m\\Phi+\\theta)}\\phi_m^++i\\lambda_2'\\lambda_1'\\phi_m^-\\\\\n        &\\qquad+\\frac12\\lambda_2'\\lambda_1\\left[\\phi_{m-1}^-+i\\phi_{m-1}^++\\phi_{m+1}^--i\\phi_{m+1}^+\\right].\n\n\\end{aligned}$$ Similarly, from Fourier transforming and expanding the trigonometric functions we obtain from the second equation $$\\begin{aligned}\n        z\\phi_m^- & = \\frac12\\lambda_2\\lambda_1(-ie^{2\\pi i ((m+1)\\Phi+\\theta)}\\phi_{m+1}^++e^{-2\\pi i ((m+1)\\Phi+\\theta)}\\phi_{m+1}^-(x))\\\\\n        &\\qquad+ \\frac12\\lambda_2\\lambda_1(ie^{2\\pi i ((m-1)\\Phi+\\theta)}\\phi_{m-1}^++e^{-2\\pi i ((m-1)\\Phi+\\theta)}\\phi_{m-1}^-(x))\\\\\n        &\\qquad+\\lambda_2\\lambda_1'(-ie^{-2\\pi i(m\\Phi+\\theta)}\\phi_m^-)+i\\lambda_2'\\lambda_1'\\phi_m^+\\\\\n        &\\qquad+\\frac12\\lambda_2'\\lambda_1\\left[i\\phi_{m-1}^--i\\phi_{m+1}^--\\phi_{m-1}^+-\\phi_{m+1}^+\\right]",
     "labels": [],
-    "refs": [],
+    "refs": [
+      "eq:ft",
+      "thm.reverDual"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Proofs"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L305-313::s6",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L326-333::s8",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L305-313::s6",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L89-109::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2503.06710v1::L110-114::s6",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L326-333::s8",
@@ -596,13 +1742,29 @@
     "end_line": 333,
     "text": "\\end{aligned}$$ Similarly, from Fourier transforming and expanding the trigonometric functions we obtain from the second equation $$\\begin{aligned}\n        z\\phi_m^- & = \\frac12\\lambda_2\\lambda_1(-ie^{2\\pi i ((m+1)\\Phi+\\theta)}\\phi_{m+1}^++e^{-2\\pi i ((m+1)\\Phi+\\theta)}\\phi_{m+1}^-(x))\\\\\n        &\\qquad+ \\frac12\\lambda_2\\lambda_1(ie^{2\\pi i ((m-1)\\Phi+\\theta)}\\phi_{m-1}^++e^{-2\\pi i ((m-1)\\Phi+\\theta)}\\phi_{m-1}^-(x))\\\\\n        &\\qquad+\\lambda_2\\lambda_1'(-ie^{-2\\pi i(m\\Phi+\\theta)}\\phi_m^-)+i\\lambda_2'\\lambda_1'\\phi_m^+\\\\\n        &\\qquad+\\frac12\\lambda_2'\\lambda_1\\left[i\\phi_{m-1}^--i\\phi_{m+1}^--\\phi_{m-1}^+-\\phi_{m+1}^+\\right]\n\n\\end{aligned}$$ Linearly combining these expressions as $a\\phi^++b\\phi^-$ for $(a,b)=(1,-i)$ and $(a,b)=(-i,1)$ we find $$\\begin{aligned}\n        z\\psi_m^+&=\\lambda_1(\\lambda_2\\cos(2\\pi((m-1)\\Phi+\\theta))+i\\lambda_2')\\psi_{m-1}^+-\\lambda_2\\lambda_1\\sin(2\\pi((m-1)\\Phi+\\theta))\\psi_{m-1}^-\\\\\n        &\\qquad-\\lambda_1'(\\lambda_2\\cos(2\\pi(m\\Phi+\\theta))-i\\lambda_2')\\psi_m^--\\lambda_2\\lambda_1'\\sin(2\\pi(m\\Phi+\\theta))\\psi_m^+\\\\\n        z\\psi_m^-&=\\lambda_1(\\lambda_2\\cos(2\\pi((m+1)\\Phi+\\theta))-i\\lambda_2')\\psi_{m+1}^-+\\lambda_2\\lambda_1\\sin(2\\pi((m+1)\\Phi+\\theta))\\psi_{m+1}^+\\\\\n        &\\qquad+\\lambda_1'(\\lambda_2\\cos(2\\pi(m\\Phi+\\theta))+i\\lambda_2')\\psi_m^+-\\lambda_2\\lambda_1'\\sin(2\\pi(m\\Phi+\\theta))\\psi_m^-\n\n\\end{aligned}$$ where we used the definition of $\\psi$ in <a href=\"#eq:psi_aubr\" data-reference-type=\"eqref\" data-reference=\"eq:psi_aubr\">[eq:psi_aubr]</a>. Comparing with we see that indeed $W_{\\lambda_1,\\lambda_2,\\Phi,\\theta}\\psi=z\\psi$.",
     "labels": [],
-    "refs": [],
+    "refs": [
+      "eq:psi_aubr"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Proofs"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L314-325::s7",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L334-361::s0",
+        "direction": "next"
+      },
+      {
+        "id": "2503.06710v1::L110-114::s6",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L334-361::s0",
@@ -618,7 +1780,17 @@
         "level": 1,
         "title": "Acknowledgements"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L326-333::s8",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L362-379::s1",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L362-379::s1",
@@ -634,7 +1806,17 @@
         "level": 1,
         "title": "Acknowledgements"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L334-361::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L380-399::s2",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L380-399::s2",
@@ -650,7 +1832,17 @@
         "level": 1,
         "title": "Acknowledgements"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L362-379::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L400-421::s3",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L400-421::s3",
@@ -666,7 +1858,17 @@
         "level": 1,
         "title": "Acknowledgements"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L380-399::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L422-447::s4",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L422-447::s4",
@@ -682,7 +1884,17 @@
         "level": 1,
         "title": "Acknowledgements"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L400-421::s3",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L448-448::s5",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2503.06710v1::L448-448::s5",
@@ -698,6 +1910,12 @@
         "level": 1,
         "title": "Acknowledgements"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L422-447::s4",
+        "direction": "previous"
+      }
+    ]
   }
 ]

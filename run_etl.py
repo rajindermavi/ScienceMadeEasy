@@ -4,6 +4,7 @@ from tqdm import tqdm
 from data.etl.etl_stage_a import build_arxiv_query, arxiv_extract
 from data.etl.etl_stage_b import prepare_latex_corpus, latex_conversion
 from data.etl.etl_stage_c_md import md_collection_chunking
+from data.etl.etl_stage_c_txt import txt_collection_chunking
 
 def run_arxiv_extract(phrases, categories, max_results):
 
@@ -24,6 +25,9 @@ def run_arxiv_extract(phrases, categories, max_results):
 
     md_chunked_files = md_collection_chunking(md_paths)
     out['md_chunked_files'] = md_chunked_files
+
+    txt_chunked_files = txt_collection_chunking(txt_paths)
+    out['txt_chunked_files'] = txt_chunked_files
 
     return out
 

@@ -12,12 +12,14 @@ TAR_EXTRACT_DIR = DATA_DIR / "latex_raw"
 TAR_EXTRACT_DIR.mkdir(parents=True,exist_ok=True)
 LATEX_FILTER_DIR = DATA_DIR / "latex_final"
 LATEX_FILTER_DIR.mkdir(parents=True,exist_ok=True)
-TEXT_VERSION_DIR = DATA_DIR / "full_text"
-TEXT_VERSION_DIR.mkdir(parents=True,exist_ok=True)
 MD_VERSION_DIR = DATA_DIR / "full_markdown"
 MD_VERSION_DIR.mkdir(parents=True,exist_ok=True)
 MD_CHUNKED_DIR = DATA_DIR / "md_chunked"
 MD_CHUNKED_DIR.mkdir(parents=True,exist_ok=True)
+TEXT_VERSION_DIR = DATA_DIR / "full_text"
+TEXT_VERSION_DIR.mkdir(parents=True,exist_ok=True)
+TXT_CHUNKED_DIR = DATA_DIR / "txt_chunked"
+TXT_CHUNKED_DIR.mkdir(parents=True,exist_ok=True)
 
 ARXIV_PDF = "https://arxiv.org/pdf/{id}.pdf"          # accepts old and new IDs; version optional
 ARXIV_EPRINT = "https://arxiv.org/e-print/{id}"       # source tarball fallback (last resort)

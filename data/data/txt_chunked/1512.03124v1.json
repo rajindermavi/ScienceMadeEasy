@@ -1,0 +1,339 @@
+[
+  {
+    "id": "1512.03124v1::L3-272::c0",
+    "file": "data/data/full_text/1512.03124v1.txt",
+    "section_path": "",
+    "start_line": 3,
+    "end_line": 272,
+    "text": "amsalpha\narrows,shapes\n\nOT2wncyr\n\nA\nB\nC\n\narea\n\nA\nB\nC\n\nd\nj\nn\nr\nl\n\nSL\nPSL\nSO\n\nTheoremTheorem[section]\nLemmaLemma[section]\nPropositionProposition[section]\nCorollaryCorollary[section]\nRemarkRemark[section]\nExampleExample[section]\nDefinitionDefinition[section]\nClaimClaim\n*conjKotani-Last's Conjecture\n\nequationsection\n\n.equation\n\ndefinition\ndefnDefinition[section]\ndefinitionDefinition[section]\n\nloc\n\nf\ng\nG\nh\nT\nj\n\n[Phase transition]Sharp Phase transitions  for the almost Mathieu operator\n\nArtur Avila\nCNRS UMR 7586, Institut de Mathematiques de Jussieu -\nParis Rive Gauche, Batiment Sophie Germain, Case 7012, 75205 Paris\nCedex 13, France  IMPA, Estrada Dona Castorina 110, 22460-320, Rio\nde Janeiro, Brazil\nartur@math.jussieu.fr\n\nJiangong You\n\nDepartment of Mathematics, Nanjing University, Nanjing 210093, China\njyou@nju.edu.cn\n\nQi Zhou\nLaboratoire de Probabilites et Modeles\naleatoires, Universite Pierre et Marie Curie, Boite courrier\n188 75252, Paris Cedex 05, France\n\nDepartment of Mathematics, Nanjing University, Nanjing 210093, China\n\nqizhou628@gmail.com\n\nIt is known that the spectral type of the almost Mathieu operator depends in a fundamental way on both the strength of the coupling constant and the arithmetic properties of the frequency.  We study the competition between those factors and locate the point where the phase transition from singular continuous spectrum to pure point spectrum takes place, which\nsolves Jitomirskaya's conjecture in\n. Together with, we give the  sharp\ndescription of phase transitions for the almost Mathieu operator.\n\nMain results",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1512.03124v1::L274-324::c1",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1512.03124v1::L274-324::c1",
+    "file": "data/data/full_text/1512.03124v1.txt",
+    "section_path": "",
+    "start_line": 274,
+    "end_line": 324,
+    "text": "Main results\n\nThis paper concerns the spectral measure of the Almost Mathieu operator:\n*\nwhere  is  the phase,  is the frequency and  is  the coupling constant,\nwhich has been extensively  studied because of its strong backgrounds in\nphysics and also because it provides interesting examples in spectral theory\n. We will find  the exact transition point from singular\ncontinuous spectrum to purely point spectrum of Almost Mathieu operator, thus solve  Jitomirskaya's conjecture in 1995(see also Problem 8 in).\nMore precisely, let  be the th convergent of  and\ndefine\nour main results are the following:\n\nLet  with , then\nwe have the following:\n\nIf  then  has\npurely absolutely continuous spectrum for all .\nIf  then  has\npurely singular continuous spectrum for all .\nIf  then  has\npurely point spectrum with exponentially decaying eigenfunctions\nfor a.e. .\n\nPart (1) is proved by Avila, we state here just for\ncompleteness. The cases  have been solved in previous works. Together with Theorem ,\none sees the sharp phase transition scenario of three types of the spectral measure. Moreover, the type of the spectral measure\nis clear for all  except the line . See Figure 1 and Figure 2 below.\n\nTheorem (3), also called Anderson localization (AL),  is optimal in the sense\nthat the result can not be true for  dense  . The\narithmetic property of  will influence the spectral measure.\n\nNow we\nbriefly recall the history of this problem. By symmetry, we just need to consider the case . In 1980, Aubry-Andre\nconjectured that the spectral measure of\ndepends on  in the following\nway:\n\nIf  then  has\npurely absolutely continuous spectrum for all , and  all .\nIf  then  has\npure point spectrum for all , and  all\n.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1512.03124v1::L3-272::c0",
+        "direction": "previous"
+      },
+      {
+        "id": "1512.03124v1::L326-362::c2",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1512.03124v1::L326-362::c2",
+    "file": "data/data/full_text/1512.03124v1.txt",
+    "section_path": "",
+    "start_line": 326,
+    "end_line": 362,
+    "text": "If  then  has\npurely absolutely continuous spectrum for all , and  all .\nIf  then  has\npure point spectrum for all , and  all\n.\n\nHowever,  Aubry and Andre overlooked the role of the arithmetic\nproperty of .   Avron-Simon soon found  that by\nGordon's lemma,   has no\neigenvalues for  any ,  if . Since then,\npeople pondered how the arithmetic property of  influences\nthe spectral type and under which condition Aubry-Andre's\nconjecture is  true.\n\nWhen  is Diophantine (i.e. there exist   such that\nfor all ), and  is large enough, the operator has\npure point spectrum, and when  is\nsmall enough, the operator has absolutely continuous spectrum\n. The common feature of the above results is that\nthey both rely on KAM-type arguments, thus the largeness or\nsmallness of  depend on Diophantine constant\n,  we therefore call such results  perturbative results.\nNon-perturbative approach to localization  problem was\ndeveloped by Jitomirskaya, based on partial advance, she\nfinally  proved that if   is Diophantine,\nhas AL for all   and a.e. . It\nfollows from  the strong version of Aubry duality,\nhas purely absolutely continuous\nspectrum for a.e. . Therefore, Jitomirskayaproved Aubry-Andre's conjecture in the measure setting, i.e. the\nconjecture holds for almost every\n.\n\nBefore Jitomirskaya's result, Last, Gesztesy-Simon,\nLast-Simonhave already  showed that  has absolutely\ncontinuous components for every ,  , so the conjecture in subcritical regime\nstill has some hope to be true, which was  also conjectured by Simon\n. Recently, Avila-Jitomirskaya showed that if\nis Diophantine, then  is purely\nabsolutely continuous for every . For\n,  Avila-Damanik proved that the conjecture (1)\nfor almost every . The complete answer of\nAubry-Andre's conjecture (1) was provided by  Avila. One thus sees\nthat  is the phase transition point from absolutely continuous spectrum to singular spectrum.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1512.03124v1::L274-324::c1",
+        "direction": "previous"
+      },
+      {
+        "id": "1512.03124v1::L364-379::c3",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1512.03124v1::L364-379::c3",
+    "file": "data/data/full_text/1512.03124v1.txt",
+    "section_path": "",
+    "start_line": 364,
+    "end_line": 379,
+    "text": "Before Jitomirskaya's result, Last, Gesztesy-Simon,\nLast-Simonhave already  showed that  has absolutely\ncontinuous components for every ,  , so the conjecture in subcritical regime\nstill has some hope to be true, which was  also conjectured by Simon\n. Recently, Avila-Jitomirskaya showed that if\nis Diophantine, then  is purely\nabsolutely continuous for every . For\n,  Avila-Damanik proved that the conjecture (1)\nfor almost every . The complete answer of\nAubry-Andre's conjecture (1) was provided by  Avila. One thus sees\nthat  is the phase transition point from absolutely continuous spectrum to singular spectrum.\n\nThe remained issue is Aubry-Andre's conjecture (2) when\nis  Liouvillean.  People already knew that the spectral measure is pure point for Diophantine  and almost every phases, while it is purely singular continuous for  and all phase. So there must be phase transition when  goes from zero to infinity.  In 1995, Jitomirskaya\nmodified the second part of the Aubry-Andre's conjecture and conjectured the following\nIf , the spectrum is purely singular continuous for all .\nIf , the spectrum is pure\npoint with exponential decaying eigenfunctions for a.e. .\nThus  is conjectured to be\nthe exact phase transition point from  continuous spectrum to pure point spectrum. There are some partial results on Jitomirskaya's conjecture. By Gordon's lemma and the\nexact formula of Lyapunov exponent, one can prove that\nhas purely singular continuous spectrum\nfor any  if , see also\nRemark  for more discussions. For the pure point part,\nAvila-Jitomirskaya showed that if\n, then\nhas AL for a.e. .  You-Zhou proved that if  with  large enough (If one check carefully the proof, it already gives .), then the eigenvalues of   with exponentially decaying eigenfunctions are dense in the spectrum.  Readers can find more discussions on these two results  in section .\nThe  main contribution of this paper is to give a full  proof of Jitomirskaya's conjecture.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1512.03124v1::L326-362::c2",
+        "direction": "previous"
+      },
+      {
+        "id": "1512.03124v1::L381-437::c4",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1512.03124v1::L381-437::c4",
+    "file": "data/data/full_text/1512.03124v1.txt",
+    "section_path": "",
+    "start_line": 381,
+    "end_line": 437,
+    "text": "The remained issue is Aubry-Andre's conjecture (2) when\nis  Liouvillean.  People already knew that the spectral measure is pure point for Diophantine  and almost every phases, while it is purely singular continuous for  and all phase. So there must be phase transition when  goes from zero to infinity.  In 1995, Jitomirskaya\nmodified the second part of the Aubry-Andre's conjecture and conjectured the following\nIf , the spectrum is purely singular continuous for all .\nIf , the spectrum is pure\npoint with exponential decaying eigenfunctions for a.e. .\nThus  is conjectured to be\nthe exact phase transition point from  continuous spectrum to pure point spectrum. There are some partial results on Jitomirskaya's conjecture. By Gordon's lemma and the\nexact formula of Lyapunov exponent, one can prove that\nhas purely singular continuous spectrum\nfor any  if , see also\nRemark  for more discussions. For the pure point part,\nAvila-Jitomirskaya showed that if\n, then\nhas AL for a.e. .  You-Zhou proved that if  with  large enough (If one check carefully the proof, it already gives .), then the eigenvalues of   with exponentially decaying eigenfunctions are dense in the spectrum.  Readers can find more discussions on these two results  in section .\nThe  main contribution of this paper is to give a full  proof of Jitomirskaya's conjecture.\n\nWe remark that the spectral type at the transition points  and  have not been completely understood so far. Partial results include the\nfollowing: in case , since the Lebesgue measure of the\nspectrum is zero for every\n,  by Aubry duality, we know  is purely singular continuous for a.e.\n. In fact, Avila has proved more: if\nis not rational w.r.t , then  is purely singular continuous. We remark that, by\nGordon's lemma, if , then  is purely  singular continuous for  and\nevery , we  include this  in Theorem (2).\nExcluding or proving the existence of point spectrum in case that\nis Diophantine is one of the major interesting problems for\nthe critical almost Mathieu operator. For the second transition\npoint , one knows almost nothing but purely\nsingular continuous spectrum  for a  set of\n. The spectral type possibly depends on the finer\nproperties of approximation of , as conjectured by\nJitomirskaya in.\n\npreliminaries\n\nFor a bounded\nanalytic (possibly matrix valued) function  defined on , let\nand denote by  the\nset of all these -valued functions ( will usually denote ,\n).\n\nContinued Fraction ExpansionLet  be irrational. Define  and inductively for ,\n\nLet  then we define inductively\n,\nThe sequence   is the  denominators of best rational\napproximations of  since we have\nand\n\nNote that  is equivalent to\nequibeta\n_k 1k 1 k_=.\n\nCocycles A cocycle  is a linear skew product:\n*\nfor , the products are defined as\n\nand  For this kind of cocycles, the Lyapunov exponent\n\nis well defined.\n\nAssume now   is homotopic to the\nidentity. Then there exists  and  such that",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1512.03124v1::L364-379::c3",
+        "direction": "previous"
+      },
+      {
+        "id": "1512.03124v1::L439-521::c5",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1512.03124v1::L439-521::c5",
+    "file": "data/data/full_text/1512.03124v1.txt",
+    "section_path": "",
+    "start_line": 439,
+    "end_line": 521,
+    "text": "Assume now   is homotopic to the\nidentity. Then there exists  and  such that\n\nThe function  is\ncalled a lift of .  Let  be any probability measure on\nwhich is invariant by the continuous map , projecting over Lebesgue measure on\nthe first coordinate (for instance, take  as any accumulation\npoint of  where  is\nLebesgue measure on ). Then the number\ndoes not depend on the\nchoices of  and , and is called the fibered rotation\nnumber of , see and.\n\nLet\nthen any  is homotopic to  for\nsome , we call  the degree of , and denote . The fibered rotation number is invariant under conjugation in the\nfollowing sense:  For cocycles  and , if there exists     , such that\nthen we say  is conjugated to . If  has degree , then we have\n\nIf furthermore   with  , then we\nhave\n\nThe cocycle  is  reducible, if it can be  conjugated to a constant cocycle.\nThe cocycle  is called   rotations reducible, if there exist  such that\n\nThe crucial reducibility results for us is the following:\n\nLet\n\nwith   , for every\nif  where\n\nthen there exist  , such that if\n\nthen there exist ,\n,\nsuch that\n\nwith estimates\n,\n\nAlmost Mathieu cocycle\n\nNote that a sequence  is a formal solution of the\neigenvalue equation  if and only if\nit satisfied  where\n*\nWe call   an almost Mathieu cocycle.\n\nDenote the spectrum of   by\n,  which  is independent of  when\n. If ,\nthen the Lyapunov exponent of almost Mathieu cocycle can be computed\ndirectly.\n\nIf , , then  we have\n\nGlobal theory of one frequency quasi-periodic   cocycle\n\nWe make a short review of  Avila's global theory of one frequency quasi-periodic   cocycle\n.  Suppose that    admits a\nholomorphic extension to , then for\nwe can define  by .\nThe cocycles which are not uniformly hyperbolic are classified\ninto three regimes: subcritical, critical, and supercritical. In\nparticular,  is said to be\nsubcritical, if there exists  such that\nfor",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1512.03124v1::L381-437::c4",
+        "direction": "previous"
+      },
+      {
+        "id": "1512.03124v1::L523-575::c6",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1512.03124v1::L523-575::c6",
+    "file": "data/data/full_text/1512.03124v1.txt",
+    "section_path": "",
+    "start_line": 523,
+    "end_line": 575,
+    "text": "We make a short review of  Avila's global theory of one frequency quasi-periodic   cocycle\n.  Suppose that    admits a\nholomorphic extension to , then for\nwe can define  by .\nThe cocycles which are not uniformly hyperbolic are classified\ninto three regimes: subcritical, critical, and supercritical. In\nparticular,  is said to be\nsubcritical, if there exists  such that\nfor\n\nThe  heart of Avila's global theory is his Almost Reducibility Conjecture(ARC), which says that subcriticality\nimplies almost reducibility.\nRecall the cocycle  is called almost reducible, if\nthere exists , and a sequence  such that  converges to constant\nuniformly in\nFor our purpose, we need this strong version of almost\nreducibility, and  should be  chosen to be  with  arbitrary small.\n\nThe full solution of ARC was recently given by Avila in.  In the case , it is the following:\n\nLet  with , ,  . If  is subcritical, then for\nany  there exists  such that if  is small\nenough, then there exist  and\nsuch that  and\n\nAubry duality\n\nSuppose that the quasi-periodic Schrodinger operator\n\nhas an\nanalytic quasi-periodic Bloch wave  for some  and .\nIt is easy to see the Fourier coefficients of  satisfy the following  Long-range operator:\n\nAlmost Mathieu operator is the only operator\nwhich is invariant under Aubry duality, and the dual of\nis  .\n\nRigorous spectral Aubry duality was founded by\nGordon-Jitomirskaya-Last-Simon in, where they proved that\nif  has pure point spectrum for a.e.\n, then  has purely\nabsolutely continuous spectrum for a.e. . Readers can find more discussions about dynamical Aubry duality in section 4.\n\nSingular continuous spectrum\n\nIn this section, we  prove Theorem  (2). We re-state it as in following\n\nLet  with . If\n, then  has\npurely singular continuous spectrum for any .\n\nWe stress again by classical Gordon's argument, one can only\nobtain result in rigime .  The\nreason why one can only obtain   is that, in the\nclassical Gordon's lemma,  one has to approximate the\nsolution by periodic ones  along double periods.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1512.03124v1::L439-521::c5",
+        "direction": "previous"
+      },
+      {
+        "id": "1512.03124v1::L582-672::c7",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1512.03124v1::L582-672::c7",
+    "file": "data/data/full_text/1512.03124v1.txt",
+    "section_path": "",
+    "start_line": 582,
+    "end_line": 672,
+    "text": "We stress again by classical Gordon's argument, one can only\nobtain result in rigime .  The\nreason why one can only obtain   is that, in the\nclassical Gordon's lemma,  one has to approximate the\nsolution by periodic ones  along double periods.\n\nIf , , then by\nTheorem , one always has .\nBy Kotani's theory, the operator\ndoesn't support any absolutely\ncontinuous spectrum, thus one only needs to exclude the point\nspectrum. In the case  , since Lebesgue measure of\nis zero for any\n, then  also doesn't support any\nabsolutely continuous spectrum, thus to prove Theorem\n, it is also enough to exclude the point spectrum.\n\nAs in classical Gordon's lemma, we approximate the quasi-periodic\ncocycles by periodic ones. Denote\nand\n\nfor\nWe also denote\n\nOur proof is based on the following\n\nLet . If\nand , then\nfor any , there exists  such\nthat if , then we have\n\nFurman's result gives\n)\nThen by Theorem\n, we know for any , there exists\n, such that for any , we have\n\nIn the following, we only consider  is positive,  the proof is similar for negative . In order to prove\nwe need the following:\nLet . If  and , then for any\n, there exists , such\nthat\nfor any ,  .\n\nClearly, for fixed  and , if  is\nsufficiently large we have\n\nThus, there exists  such that if  then  holds for . Since\nany  can be written as a sum of integers  satisfying\n, this implies that  holds for\nall .\n\nOnce we have Lemma ,  can be\nproved directly by telescoping arguments. In fact, if\nwe can write\n*\nsince for , we have  then by  and Lemma\n, we can estimate\n*\nIf  is sufficiently large, then  follows\ndirectly. Using the similar argument as above, we can prove .\n\nNow we finish the proof of Theorem  by contradiction.\nFor any fixed , we suppose that   is an eigenvalue of\n, then there exists   with   and  for  any\n, there exists\n, such that if\n, then\n\nIn particular,  for any ,  we can\nselect  , and\n, such that\nwhere\nis defined in Proposition .\n\nWhat's important is the following observation:\nThe following estimate holds:\n*\n\nBy , it is sufficient for us to prove",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1512.03124v1::L523-575::c6",
+        "direction": "previous"
+      },
+      {
+        "id": "1512.03124v1::L674-748::c8",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1512.03124v1::L674-748::c8",
+    "file": "data/data/full_text/1512.03124v1.txt",
+    "section_path": "",
+    "start_line": 674,
+    "end_line": 748,
+    "text": "By , it is sufficient for us to prove\n\nBy  Hamilton-Clay Theorem, for any , one has\n\nfor every . Take\n, then\n\nBy assumptions  and , we have\n*\nAs a result of  and , we have\n*\nthen  follows from .\n\nHowever  by Lemma , we have\n* which contradicts with\nthe assumption that  is an eigenvalue.\n\nAnderson localization\n\nIn this section, we  prove Theorem  (3). We re-state it as the following\nLet  be such that\nIf   then the almost Mathieu operator\nhas Anderson Localization for a.e. .\n\nTraditional method for Anderson Localization  is to prove the exponentially decay of Green function. Due to the limitation of the method,  Anderson Localization can be proved only for Liouvillean frequency with  so far . So there is still a gap between  and .\n\nIn this  paper, we develop a new approach  depending on the reducibility and  Aubry duality.\nWe will show that Theorem  can be obtained by\ndynamical Aubry duality and the following full measure reducibility result:\nLet  with ,  if\n,  is\nDiophantine w.r.t. , then  is\nreducible.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1512.03124v1::L582-672::c7",
+        "direction": "previous"
+      },
+      {
+        "id": "1512.03124v1::L751-799::c9",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1512.03124v1::L751-799::c9",
+    "file": "data/data/full_text/1512.03124v1.txt",
+    "section_path": "",
+    "start_line": 751,
+    "end_line": 799,
+    "text": "In this  paper, we develop a new approach  depending on the reducibility and  Aubry duality.\nWe will show that Theorem  can be obtained by\ndynamical Aubry duality and the following full measure reducibility result:\nLet  with ,  if\n,  is\nDiophantine w.r.t. , then  is\nreducible.\n\nThe dynamical Aubry duality was established by Puig,\nwho proved that Anderson\nlocalization of the Long range operator  for almost every  implies reducibility of  for almost every\nenergies.    Conversely,  to deal with localization problem by reducibility was first realized by\nYou-Zhou in. However, in they can only prove the eigenvalues of  with exponentially decaying eigenfunctions are dense in the spectrum. The main issue remained is to prove  those eigenfunctions form a complete basis. The key point in this paper is that, we find  that the quantitative estimates in the proof of Theorem  actually provides\nan asymptotical\ndistribution of the eigenvalues and eigenfunctions, which ultimately implies  pure point spectrum for almost every phases.\nCompared with tradition localization argument, the price we have to pay is that we lose precise arithmetic  control on  the localization phases.\nHowever, by this approach, one can indeed  establish a kind of  equivalence\nbetween quantitative full measure reducibility of Schrodinger\noperator (or Schrodinger cocycle) and Anderson\nlocalization of its dual Long-range operator.\n\nProof Theorem :   We\nneed the following definition:\n\nFor any fixed , a normalized eigenfunction\nis said to be  -good, if , for .\n\nWe label the -good eigenfunctions of  by ,  denote the corresponding\neigenvalue by , also we  denote\n\nand denote\nLet  be the spectral measure supported on\nwith respect to .\n\nThe following spectral analysis is completely new and  will be crucial for our proof.\nSuppose that there exists , such that for any  there\nexists , and for a.e. ,\nfor  large enough, then for a.e.\n, we have  .\n\nFix  such that () is satisfied. Denote\n\nNotice that for any fixed\n,  is finite, and also\nfor  -good\neigenfunction .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1512.03124v1::L674-748::c8",
+        "direction": "previous"
+      },
+      {
+        "id": "1512.03124v1::L801-887::c10",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1512.03124v1::L801-887::c10",
+    "file": "data/data/full_text/1512.03124v1.txt",
+    "section_path": "",
+    "start_line": 801,
+    "end_line": 887,
+    "text": "Notice that for any fixed\n,  is finite, and also\nfor  -good\neigenfunction .\n\nLet  be the\ntruncated spectral measure supported on . Then by spectral theorem and\n, we have\n*\nSince ,\nwe can rewrite the above inequalities as\nLet  go to , since  is arbitrary small,  we have\n\nby Birkhoff's ergodic theorem.\nThus for  ,\n\nLet . We have , which\nimplies that for any , there exists , such that if\nthen  By Birkhoff's ergodic theorem again, we have\n\nThus for  large enough (we take\n), we have\n\nFor any , we choose  sufficiently\nlarge such that () holds for . We will prove\nthat  has at least   different\neigenvalues  whose eigenfunctions   are -good for any . To\nprove this, we need the following quantitative version of Theorem :\n\nLet  with  and\n.  Suppose that . Then  for any fixed ,\nand small enough ,  there exist\nand , such that\n\nwith estimates:\n\nIf , , then the almost Mathieu cocycle  is subcritical in the regime\n.  To prove Proposition , we  need\nTheorem  and the following:\n\nIf , , , then for\n,\n\nThe proof can be found in Appendix A of .\n\nNow by Theorem , for ,  there exists a sequence of\nsuch that\n\nwith estimate\n\nwhich implies\n\nOne may consult footnote 5 of in proving this.\n\nIf  we have\n*\nBy   , this formula  implies that  .  Let    be the smallest denominator such that\n*\nwhere   are defined in Theorem\n. By Theorem ,  there\nexist   such that\n\nwith estimates  and\nLet  satisfy\n\nsince  , by , we know that there exists  such that  has analytic solution  with estimate\n\nLet , then there exists , such that\n\nSince  is irrational w.r.t , then  ,  one can consult  Remark 1.5 of for this proof.  Notice that    and  by , we have  .  Consequently by ,\nwe have\n\nthen follows from  and , and\nfollows from ,  and .\n\nRewrite  as\n\nand write  then\nwe have",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1512.03124v1::L751-799::c9",
+        "direction": "previous"
+      },
+      {
+        "id": "1512.03124v1::L895-981::c11",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1512.03124v1::L895-981::c11",
+    "file": "data/data/full_text/1512.03124v1.txt",
+    "section_path": "",
+    "start_line": 895,
+    "end_line": 981,
+    "text": "and write  then\nwe have\n\nTaking the Fourier\ntransformation for , we have\n*\nthen  is a eigenfunction, since . To normalize\n, we need the following observation:\n\nWe have the following:\n\nWrite\n\nthen\nsince  This implies that\n\nBy , we have\n\ntherefore, we have\n\nNormalizing  by .\nNow we prove it is in fact -good. Let\n\nwhere  Since\n,  then by Proposition  and Lemma ,\nwe\nhave\n*\nfor  , which means  is\n-good.\n\nBy Proposition  and the above estimate, we know for\n,\nhas Anderson Localization.\n\nAcknowledgements\nA.A was partially supported by the ERC Starting GrantQuasiperiodicand\nby the Balzan project of Jacob Palis. J. Y was partially supported by NNSF of China (11471155) and\n973 projects of China (2014CB340701).   Q. Z was partially supported by\nFondation Sciences Mathematiques de Paris (FSMP) and  and ERC\nStarting Grant Quasiperiodic.\n\nS. Aubry and G. Andre,\nAnalyticity breaking and Anderson localization in incommensurate\nlattices. In: Group Theoretical Methods in Physics (Proc. Eighth\nInternat. Colloq. Kiryat Anavim, 1979), Hilger, Bristol, pp. 133-164\n(1980).\n\nA. Avila, On point spectrum with critical coupling. http://w3.impa.br/ avila/\n\nA.  Avila, The absolutely continuous spectrum of the almost Mathieu operator. Preprint, 2008. arXiv:0810.2965 [math.DS].\n\nA. Avila,\nGlobal theory of one-frequency Schrodinger operators, Acta Math. 215, 1-54 (2015).\n\nA. Avila,\nAlmost reducibility and absolute continuity,\nhttp://w3.impa.br/ avila/\n\nA. Avila, KAM, Lyapunov exponents and the spectral dichotomy for one-frequency schrodinger operators. In preparation.\n\nA. Avila and D. Damanik,\nAbsolute continuity of the integrated density of states for the\nalmost Mathieu operator with non-critical coupling. Inventiones\nMathematicae 172 (2008), 439-453.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1512.03124v1::L801-887::c10",
+        "direction": "previous"
+      },
+      {
+        "id": "1512.03124v1::L988-1064::c12",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1512.03124v1::L988-1064::c12",
+    "file": "data/data/full_text/1512.03124v1.txt",
+    "section_path": "",
+    "start_line": 988,
+    "end_line": 1064,
+    "text": "A. Avila and D. Damanik,\nAbsolute continuity of the integrated density of states for the\nalmost Mathieu operator with non-critical coupling. Inventiones\nMathematicae 172 (2008), 439-453.\n\nA. Avila, B. Fayad and  R. Krikorian, A KAM scheme for\ncocycles with Liouvillean\nfrequencies,\nGeom. Funct. Anal. 21, 1001-1019  (2011)\n\nA. Avila  and  S. Jitomirskaya,\nThe Ten Martini Problem,\nAnn. Math, 170,  303-342  (2009)\n\nA. Avila  and  S. Jitomirskaya,\nAlmost localization and almost reducibility,\nJ. Eur. Math. Soc, 12, 93-131 (2010)\n\nA. Avila and R. Krikorian,\nReducibility or non-uniform hyperbolicity for quasiperiodic\nSchrodinger cocycles,\nAnn. Math,  164, 911-940  (2006)\n\nJ. Avron and B. Simon,  Singular continuous spectrum for a class of\nalmost periodic Jacobi matrices, Bull. Amer. Math. Soc. 6,\n81-85 (1982)\n\nJ. Bourgain and S. Jitomirskaya. Continuity of the Lyapunov exponent\nfor quasiperiodic operators with analytic potential. J. Statist.\nPhys. 108, 1203-1218 (2002)\n\nV. Chulaevsky and F. Delyon, Purely absolutely continuous spectrum\nfor almost Mathieu operators, J. Statist. Phys. 55 (1989),\n1279-1284.\n\nE. Dinaburg and Ya. Sinai,\nThe one-dimensional Schrodinger equation with a quasi-periodic\npotential,\nFunct. Anal. Appl. 9, 279-289  (1975).\n\nH. Eliasson,\nFloquet solutions for the one-dimensional quasiperiodic\nSchrodinger equation,\nComm.Math.Phys. 146, 447-482  (1992).\n\nH. Eliasson,\nDiscrete one-dimensional quasi-periodic Schrodinger operators with\npure point spectrum, Acta Math. 179, 153-196 (1997)\n\nA. Furman, On the multiplicative ergodic theorem for the uniquely\nergodic systems. Ann. Inst. Henri Poincare. 33(1997),\n797-815.\n\nJ.Frohlich, T.Spencer and P. Wittwer,\nLocalization for a class of one dimensional quasiperiodic\nSchrodinger operators. Commun. Math. Phys. 132, 5-25\n(1990)\n\nF. Gesztesy and B. Simon, The xi function, Acta Math. 176 (1996),\n49-71.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1512.03124v1::L895-981::c11",
+        "direction": "previous"
+      },
+      {
+        "id": "1512.03124v1::L1067-1140::c13",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1512.03124v1::L1067-1140::c13",
+    "file": "data/data/full_text/1512.03124v1.txt",
+    "section_path": "",
+    "start_line": 1067,
+    "end_line": 1140,
+    "text": "F. Gesztesy and B. Simon, The xi function, Acta Math. 176 (1996),\n49-71.\n\nA. Gordon,\nThe point spectrum of one-dimensional Schrodinger\noperator,(Russian).\nUspehi Mat.Nauk. 31, (1976), 257-258.\n\nA. Gordon, S. Jitomirskaya, Y. Last, and B. Simon, Duality and\nsingular continuous spectrum in the almost Mathieu equation. Acta\nMath. 178 (1997), 169-183.\n\nM. Herman. Une methode pour minorer les\nexposants de Lyapounov et quelques exemples montrant le caractere\nlocal d'un theoreme d'Arnol'd et de Moser sur le tore de\ndimension . Comment. Math. Helv.  58  (1983),  no. 3, 453-502.\n\nX. Hou and J. You,\nAlmost reducibility and non-perturbative reducibility of\nquasiperiodic linear systems, Invent. Math 190, 209-260\n(2012)\n\nS. Jitomirskaya and B. Simon,\nOperators with singular continuous spectrum. III. Almost periodic Schrodinger operators.\nComm. Math. Phys. 165  no. 1, 201-205 (1994)\n\nS. Jitomirskaya, Anderson localization for the almost Mathieu\nequation: a nonperturbative proof, Comm. Math. Phys. 165 (1994),\n49-57.\n\nS. Jitomirskaya, Anderson localization for the almost Mathieu equation. II. Point\nspectrum for , Comm. Math. Phys. 168 (1995), 563-570.\n\nS. Jitomirskaya,\nAlmost Everything About the Almost Mathieu Operator, II.\n\"Proceedings of XI International Congress of Mathematical\nPhysics\",Int. Press, (1995), 373-382.\n\nS. Jitomirskaya,  Metal-insulator transition for the\nalmost Mathieu operator.  Ann. of Math. (2)  150  (1999),  no. 3,\n1159-1175.\n\nS. Jitomirskaya,\nErgodic Schrodinger operator (on one foot), Proceedings of\nsymposia in pure mathematics. Volumn 76.2, 613-647 (2007)\n\nR. Johnson and J. Moser, The rotation number for almost\nperiodic potentials.  Comm. Math. Phys.  84  (1982), no. 3,\n403-438.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1512.03124v1::L988-1064::c12",
+        "direction": "previous"
+      },
+      {
+        "id": "1512.03124v1::L1150-1202::c14",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1512.03124v1::L1150-1202::c14",
+    "file": "data/data/full_text/1512.03124v1.txt",
+    "section_path": "",
+    "start_line": 1150,
+    "end_line": 1202,
+    "text": "R. Johnson and J. Moser, The rotation number for almost\nperiodic potentials.  Comm. Math. Phys.  84  (1982), no. 3,\n403-438.\n\nS. Kotani, Lyaponov indices determine absolutely continuous spectra of\nstationary random onedimensional Schrondinger operators,\nStochastic Analysis (K. Ito, ed.), North Holland, Amsterdam,\n225-248  (1984).\n\nY. Last, A relation between absolutely continuous spectrum of\nergodic Jacobi matrices and the spectra of periodic approximants,\nComm. Math. Phys. 151 (1993), 183-192.\n\nY. Last,  Zero measure spectrum for the Almost Mathieu\nOperator. Commun Math Phys, 164, 421-432 (1994)\n\nY. Last, Spectral theory of Sturm-Liouville operators on\ninfinite intervals: a review of recent developments.  In Sturm-Liouville Theory. Birkhauser Basel.\n99-120. (2005)\n\nY. Last and B. Simon, Eigenfunctions, transfer matrices,\nand absolutely continuous spectrum of one-dimensional Schrodinger\noperators, Invent. Math. 135 (1999), 329-367\n\nJ. Puig,\nA nonperturbative Eliasson's reducibility theorem,\nNonlinearity.  19, no. 2, 355-376  (2006).\n\nB. Simon, Schrodinger operators in the twenty-first\ncentury.  Mathematical physics 2000,  283-288, Imp. Coll. Press,\nLondon, 2000.\n\nYa. Sinai,\nAnderson localization for one-dimensional difference Schrodinger\noperator with quasiperiodic potential.  J. Statist. Phys.\n46, 861-909  (1987)\n\nJ. You and Q. Zhou,\nEmbedding\nof analytic quasi-periodic cocycles into analytic quasi-periodic linear systems and its\napplications.  Commun Math Phys. 323, 975-1005  (2013)",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1512.03124v1::L1067-1140::c13",
+        "direction": "previous"
+      }
+    ]
+  }
+]

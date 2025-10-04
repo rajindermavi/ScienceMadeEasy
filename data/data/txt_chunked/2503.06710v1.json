@@ -1,0 +1,477 @@
+[
+  {
+    "id": "2503.06710v1::L3-93::c0",
+    "file": "data/data/full_text/2503.06710v1.txt",
+    "section_path": "",
+    "start_line": 3,
+    "end_line": 93,
+    "text": "arrows,\npositioning,\ncalc,\ndecorations.pathreplacing,\nmatrix,\npatterns,\npatterns.meta,\nfadings,\nmath,\nfit\n\nsupp\n\ntheoremTheorem[section]\nprop[theorem]Proposition\ncoro[theorem]Corollary\nlemma[theorem]Lemma\nhyp[theorem]Hypothesis\ndefinition[theorem]Definition\nremark[theorem]Remark\nquestion[theorem]Question\n\n#1\nrot\n\nequationsection\n\nsubsection2\n.5.7.5\n\n[Twenty Dry Martinis for the UAMO]Twenty Dry Martinis for the\nunitary Almost Mathieu Operator\n\n[C. Cedzich]Christopher Cedzich\nmailto:cedzich@hhu.decedzich@hhu.de\nHeinrich Heine Universitat Dusseldorf, Universitatsstr. 1, 40225 Dusseldorf, Germany\n\n[L. Li]Long Li\nmailto:ll106@rice.edulongli@rice.edu\nDepartment of Mathematics, Rice University, Houston, TX 77005, USA\n\nWe solve the Dry Ten Martini Problem for the unitary almost Mathieu operator with Diophantine frequencies in the non-critical regime.\n\nIntroduction\nThe famous \"Ten Martini Problem\" was initially posed by Kac who promised ten Martinis for the solution of the following problem: Consider the almost Mathieu operator (AMO)\n\nwith coupling constant , frequency  and phase .\n\nKac asked \"are all the gaps [in the spectrum of the AMO] there?\" or, in other words, \"is the spectrum of the AMO a Cantor set?\". This problem was made public by Simon. It was completely solved by Avila-Jitomirskaya only decades later, building on considerable effort with partial progress along the way, compare. For an in-depth overview over the development we refer the reader to the surveys.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L95-97::c1",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2503.06710v1::L95-97::c1",
+    "file": "data/data/full_text/2503.06710v1.txt",
+    "section_path": "",
+    "start_line": 95,
+    "end_line": 97,
+    "text": "Kac asked \"are all the gaps [in the spectrum of the AMO] there?\" or, in other words, \"is the spectrum of the AMO a Cantor set?\". This problem was made public by Simon. It was completely solved by Avila-Jitomirskaya only decades later, building on considerable effort with partial progress along the way, compare. For an in-depth overview over the development we refer the reader to the surveys.\n\nThe \"Dry Ten Martini Problem\" originally asks the natural follow up question: are all gaps in the spectrum of the AMO open? Over the years, substantial partial progress for various subsets of parameters was made by Choi-Elliott-Yui, Puig, Avila-Jitomirskaya and Avila-You-Zhou, yet, the critical case  with  a Diophantine number is still open. Of course, one can ask the (Dry) Ten Martini Problem for any model of interest. Recent progress has been made for the extended Harper's model, Sturmian Hamiltonians and - and -type sampling functions. Research along this line turns out to be very fruitful, for example, the discovery of a robust property or the construction of explicit examples.\n\nWe mention in passing that one might take another step in the direction of abstraction and ask the question, how, for a family of random operators defined over an ergodic dynamical system, the base dynamics determines the topological structure of the almost sure spectrum. Clearly, the Dry Ten Martini Problem is a special case of this \"all gaps open\" problem. As for operators with quasiperiodic base dynamics such as the AMO, the set of possible gap labels is determined by the so-called Gap Labeling Theorem. The converse of this is the question whether a label predicted by the Gap Labeling Theorem labels an actual gap, i.e., a gap that is not collapsed or degenerate. This converse problem is in general very difficult since both the base dynamics and the sampling functions can affect the topological structure of the spectrum, compare.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L3-93::c0",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L99-102::c2",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2503.06710v1::L99-102::c2",
+    "file": "data/data/full_text/2503.06710v1.txt",
+    "section_path": "",
+    "start_line": 99,
+    "end_line": 102,
+    "text": "We mention in passing that one might take another step in the direction of abstraction and ask the question, how, for a family of random operators defined over an ergodic dynamical system, the base dynamics determines the topological structure of the almost sure spectrum. Clearly, the Dry Ten Martini Problem is a special case of this \"all gaps open\" problem. As for operators with quasiperiodic base dynamics such as the AMO, the set of possible gap labels is determined by the so-called Gap Labeling Theorem. The converse of this is the question whether a label predicted by the Gap Labeling Theorem labels an actual gap, i.e., a gap that is not collapsed or degenerate. This converse problem is in general very difficult since both the base dynamics and the sampling functions can affect the topological structure of the spectrum, compare.\n\nA crucial ingredient in the classical proof of the Dry Ten Martini Problem for the AMO is the Aubry-André duality, that is, a duality between different elements of the family  with respect to a twisted Fourier transform.\nIn the general case, i.e., without appealing to this duality, the property that \"all gaps are open\" is expected to hold only in generic sense. On the other hand, whenever one has this duality available for a concrete operator, one can expect the Dry Ten Martini problem to hold.\n\nWe here solve the Dry Ten Martini Problem for a model that goes beyond the class of quasiperiodic Schrödinger operators but for which one nevertheless can prove an André-Aubry duality: the so-called unitary almost Mathieu operator (UAMO) is a quantum walk that describes the motion of a single particle with two-dimensional internal degree of freedom on the integers in discrete time steps. The dynamics is described by the alternation of two types of operators: a parametrized shift and a \"coin\" operator that locally acts via a matrix-valued quasi-periodic function. This model was introduced and studied in, see also. There, among other results concerning the spectral types in various parameter regimes, the Ten Martini Problem was solved in the critical setting for all irrational frequencies. We here advance this result in two important directions: on the one hand, we \"dry\" it, and on the other, we extend it to the non-critical setting.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L95-97::c1",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L106-129::c3",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2503.06710v1::L106-129::c3",
+    "file": "data/data/full_text/2503.06710v1.txt",
+    "section_path": "",
+    "start_line": 106,
+    "end_line": 129,
+    "text": "We here solve the Dry Ten Martini Problem for a model that goes beyond the class of quasiperiodic Schrödinger operators but for which one nevertheless can prove an André-Aubry duality: the so-called unitary almost Mathieu operator (UAMO) is a quantum walk that describes the motion of a single particle with two-dimensional internal degree of freedom on the integers in discrete time steps. The dynamics is described by the alternation of two types of operators: a parametrized shift and a \"coin\" operator that locally acts via a matrix-valued quasi-periodic function. This model was introduced and studied in, see also. There, among other results concerning the spectral types in various parameter regimes, the Ten Martini Problem was solved in the critical setting for all irrational frequencies. We here advance this result in two important directions: on the one hand, we \"dry\" it, and on the other, we extend it to the non-critical setting.\n\nThe model and results\nIn this work, we establish the Dry Ten Martini property for a family of quasi-periodic operators that was introduced in and dubbed unitary almost-Mathieu operator (UAMO) due to its striking similarities with the almost-Mathieu operator  defined in eq:AMO. The UAMO is a split-step quantum walk  on  that is defined in terms of two operators:\nis the conditional shift operator\n*\nand  is a \"coin\" operator that acts coordinate-wise via a  unitary . For the UAMO, these local coins are quasi-periodically distributed according to the rule\n\nwhere  denotes a modified counterclockwise rotation through the angle , i.e.,\n\nand we abbreviated .\n\nWith these two building blocks, the UAMO is defined as\n\nand we shall abbreviate as  for fixed  and .\nAs discussed in detail in,  plays the role of a magnetic field in an associated two-dimensional model, and  plays the role of a Fourier parameter of the second lattice dimension. We shall nevertheless stick with the standard nomenclature in dynamical systems and call  the frequency and  the phase and refer to  and  as coupling constants, as they determine the \"strength\" of the shift and the coin, respectively.\n\nThe UAMO displays a metal-insulator phase transition with respect to the coupling constants for almost all  and : for  the spectrum of  is purely absolutely continuous, for  it is purely singular continuous while for  it is pure point with exponentially decaying eigenfunctions(Note that in certain regimes, the \"almost all\" can be lifted to \"all\", for details see.). This follows from a characterization of the associated eigenfunction cocycle which in the nomenclature of Avila's global theory results in the following spectral phase diagram:\n\n1.75\n0.32\n1.7\n.5\n.8ex\n-.7ex",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L99-102::c2",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L133-158::c4",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2503.06710v1::L133-158::c4",
+    "file": "data/data/full_text/2503.06710v1.txt",
+    "section_path": "",
+    "start_line": 133,
+    "end_line": 158,
+    "text": "1.75\n0.32\n1.7\n.5\n.8ex\n-.7ex\n\n[myblue  Subcritical]\n[myred  Critical]\n[myorange  Supercritical]\n\nAnother important ingredient in these proofs is a unitary version of André-Aubry duality, which relates  to its \"dual\"\n*\nand which immediately implies that the spectra of  and  are the same.\n\nThe arithmetic properties of  play a crucial role in determining spectral properties of the underlying operator. We call  Diophantine if there exist  such that\n\nIn this case, we write . Moreover, we shall denote the set of all Diophantine frequencies by\n\nwhich is known to have full Lebesgue measure as a subset of .\nMore generally, we say  is Diophantine with respect to  if there exists some positive constants  such that\n\nand  is rational with respect to  if  for some  rational.\n\nIt turns out that the spectrum of  is independent of  by the minimality of the rigid translation  We denote this common spectrum by .  Our main result is the following:\n\nFor  and , all gaps in the spectrum of the unitary almost Mathieu operator  allowed by the Gap Labeling Theorem are open.\n\nThe reason for the \"twenty\" instead of the usual \"ten\" in the title of the paper comes from the observation that we have \"twice as many\" gaps as for the AMO: phenomenologically, this can be seen in Figure  where we see that the spectrum of the UAMO consists of two copies of the butterfly. The reason for this is the prevalence of more symmetries: the spectrum of the AMO is real and symmetric about  due to the involutive symmetry that multiplies locally by  and shifts . The UAMO has spectrum on the unit circle. It has the same symmetry as the AMO, which amounts to a reflection about the origin. In addition, the spectrum possesses an axial symmetry about the real axis due to complex conjugation.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L106-129::c3",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L162-170::c5",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2503.06710v1::L162-170::c5",
+    "file": "data/data/full_text/2503.06710v1.txt",
+    "section_path": "",
+    "start_line": 162,
+    "end_line": 170,
+    "text": "The reason for the \"twenty\" instead of the usual \"ten\" in the title of the paper comes from the observation that we have \"twice as many\" gaps as for the AMO: phenomenologically, this can be seen in Figure  where we see that the spectrum of the UAMO consists of two copies of the butterfly. The reason for this is the prevalence of more symmetries: the spectrum of the AMO is real and symmetric about  due to the involutive symmetry that multiplies locally by  and shifts . The UAMO has spectrum on the unit circle. It has the same symmetry as the AMO, which amounts to a reflection about the origin. In addition, the spectrum possesses an axial symmetry about the real axis due to complex conjugation.\n\nLet us make some comments about Theorem :\n[itemsep=1ex]\nBy the Ten Martini property holds in the critical case for all irrational frequencies, that is, for  the spectrum of  is a Cantor set of zero Lebesgue measure for every irrational . The dry version of the problem remains open.\nIn the non-critical setting, the Dry Ten Martini problem for non-Diophantine  is notoriously hard. For the critical AMO with Liouville frequencies, this was proved in by employing the particular structure and symmetries of the operator. The more involved structure of the UAMO seems to render impossible an adaption of the argument in. We nevertheless expect the DTMP to hold for all frequencies, see for a possible attack strategy.\nWe combine Avila's almost reducible theorem with Eliasson's reducibility for Diophantine frequencies to obtain the global reducibility except for the critical case. Therefore, this treatment does not cover the Liouville frequencies.\nThis is the first time a DTMP is showed for (GE)CMV matrices. Some results in Baire category for certain classes of almost periodic extended CMV matrices were previously obtained by. It is an open question whether it holds for other CMV matrices with, for example, subshift or Sturmian Verblunsky coefficients.\n\nWe base our proof on the recent understanding of Anderson localization for Diophantine frequencies obtained in and techniques developed therein:\nthe Anderson localization for the UAMO in the supercritical setting  proved in is a full measure result. In, an arithmetic version of Anderson localization is proved, albeit for a mosaic model where every other local coin in eq:coindef is trivial. However, the proof of works in a straightforward way for UAMO as well, compare also.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L133-158::c4",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L172-198::c6",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2503.06710v1::L172-198::c6",
+    "file": "data/data/full_text/2503.06710v1.txt",
+    "section_path": "",
+    "start_line": 172,
+    "end_line": 198,
+    "text": "We base our proof on the recent understanding of Anderson localization for Diophantine frequencies obtained in and techniques developed therein:\nthe Anderson localization for the UAMO in the supercritical setting  proved in is a full measure result. In, an arithmetic version of Anderson localization is proved, albeit for a mosaic model where every other local coin in eq:coindef is trivial. However, the proof of works in a straightforward way for UAMO as well, compare also.\n\nLet  and . Then for each \"-nonresonant\" , i.e., each  such that\n*\ndoes not hold for infinitely many ,  admits Anderson localization.\n\nIn the case  and , according to, the Lyapunov exponent characterizing the (typical) decay of generalized eigenfunctions is positive:\n\nwith equality if and only if  The rest of the proof follows the same outline as the proof of.\n\nThis result is a full measure result in . It is sharp in the sense that it cannot be strengthened to all .\n\nWe shall also need the following dynamical duality formulation of Autry-André duality for the UAMO, which can be seen as the reverse statement to. As such, we expect it to be of interest beyond this paper.\n[Aubry-Andre Duality]Let ,  be a solution to the generalized eigenvalue equation  which has the following form\n*\nLet\nwith -th Fourier coefficients  and , respectively. Then  solves the eigenvalue equation .\n\nPreliminaries\n\nOur proof of Theorem  utilizes techniques from the theory of one-frequency cocycles of CMV matrices, which we hence review in this section to keep the present treatise as self-contained as possible. We first review the construction of so-called Cantero-Moral-Velázquez matrices (CMV matrices), whose intimate connection with quantum walks on the line was first discussed in and further generalized in. We then discuss the dynamics of the transfer matrix cocycle of the UAMO through that of the associated Szego cocycle. This cocycle is the natural one from a point of view of orthogonal polynomials on the unit circle and has the advantage that, without further ado, it lies in .\n\nThe UAMO as a generalized extended CMV matrix\nConsider the Hilbert space  with the standard basis . On , we define generalized extended CMV (GECMV) matrices  by , where  and  are specified by\n\nwith Verblunsky pairs",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L162-170::c5",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L201-221::c7",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2503.06710v1::L201-221::c7",
+    "file": "data/data/full_text/2503.06710v1.txt",
+    "section_path": "",
+    "start_line": 201,
+    "end_line": 221,
+    "text": "with Verblunsky pairs\n\nEach  acts unitarily on the subspace , hence the blocks of  and  are shifted by one basis element with respect to each other. Hence,  has the matrix representation\n\nwhere all unspecified matrix elements are zero and we boxed the  matrix element.\n\n\"Generalized\" means that compared to the definition of extended CMV matrices given in we admit the 's to be complex. By, resp., one has the freedom of changing the phase of the 's through a gauge transformation, that is, by conjugating with a diagonal unitary. This freedom has been fruitfully exploited already in several contexts to uncover hidden symmetries of the model.\nIn particular, every GECMV matrix is gauge-equivalent to a \"standard\" extended CMV matrix with  for all . We shall assume that this gauge transformation has been carried out, i.e., the 's are real, and denote the resulting standard extended CMV matrix also by . This is important, since we want the Szego transfer matrices  defined below in eq:szego_normalized to be in  and the  in eq:theta_mat to be symmetric.\n\nTo study the spectral properties of , one naturally considers the generalized eigenvalue equation\n*\nSolutions to this equation satisfy the following recurrence:\n\nwhere the eigenfunction transfer matrices  are given by\n\nfor  and . Since after gauge transforming the 's in eq:GECMV_transmat are real, by, we have the following:\n\nwhere  is determined by the normalized Szego transfer matrices\n\nand\n\nConsider the generalized eigenvalue equation of the transposed extended CMV matrix:",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L172-198::c6",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L223-238::c8",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2503.06710v1::L223-238::c8",
+    "file": "data/data/full_text/2503.06710v1.txt",
+    "section_path": "",
+    "start_line": 223,
+    "end_line": 238,
+    "text": "Consider the generalized eigenvalue equation of the transposed extended CMV matrix:\n\nSince  and  are symmetric when , one has that , and eq.dualEigen becomes . Applying  to both sides, we find that for any generalized eigenfunction  of ,  is a generalized eigenfunction for . By definition of  we have that\n*\nIt thus follows from eq.solIter1 that solutions  to eq.dualEigen satisfy the following recurrence relation:\n\nwhere  with  as in eq.Rn. This again allows us to easily deduce the Szego transfer matrices for  via eq.ConjugatedTransferMatrix.\n\nAs detailed in, the UAMO defined in eq:UAMO_def is a GECMV with dynamically defined Verblunksy coefficients\n\nwhere, as above,  and  for . Applying the gauge transformation from yields an extended CMV matrix with Verblunsky coefficients as above except\n\nPlugging in these Verblunsky coefficients,  defined in eq.Rn is constant. Moreover,  in eq:GECMV_transmat defines a quasiperiodic cocycle  which is is -conjugate to the quasiperiodic two-step combined Szego-cocycle , with  and  given in eq.Rn and\n\nSimilarly, we get the reduced Szego cocycle for the Aubry-dual operator  from eq.transposeIter and eq.ConjugatedTransferMatrix as\n\nNote that this is just eq.Sz with  and  exchanged. In the rest of the paper, we will use simply ,   and  to denote these cocycles when they do not cause confusion.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L201-221::c7",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L240-263::c9",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2503.06710v1::L240-263::c9",
+    "file": "data/data/full_text/2503.06710v1.txt",
+    "section_path": "",
+    "start_line": 240,
+    "end_line": 263,
+    "text": "Note that this is just eq.Sz with  and  exchanged. In the rest of the paper, we will use simply ,   and  to denote these cocycles when they do not cause confusion.\n\nCocycle Dynamics\nA crucial ingredient to our proof is the behaviour of the quasi-periodic cocycles associated with the UAMO. Let  and . This pair  defines a linear skew-product  and is called a -valued cocycle. Its iterates are defined as  where\n*\nWe denote , the identity matrix by usual convention. The motivation for considering -cocycles comes from the fact that we are interested in cocycles induced by the Szego transfer matrices from eq:szego_normalized. We note that concepts from the theory of -cocycles carry over directly due to the isomorphism\n\nwhere  is the constant unitary matrix\n*\n\nWe adopt the following notions of Avila: we say that  is uniformly hyperbolic if there are  such that  for all . Moreover, if  is analytic with an analytic extension to a strip ,\nIf  is not uniformly hyperbolic, it is said to be\n[itemsep=1ex]\nSupercritical, if  grows exponentially.\nSubcritical, if there exists a uniform sub-exponential upper bound on the growth of  through some band .\nCritical otherwise.\n\nThis cocycle characterization can be employed to localize the spectrum of quasiperiodic CMV matrices:\n\nLet , , be a quasiperiodic CMV matrix. Then,  is in the spectrum of  if and only if the associated Szego cocycle  is not uniformly hyperbolic.\nIn fact, this result holds in a more general setting where instead of circle shifts one merely has a dynamical system  that is minimal. It can be shown in this case that there exists a common set  as the spectrum of  for every\n\nWe call two cocycles  and  analytically conjugated if there is an analytic mapping  such that\n*\nWe say that  is (analytically) reducible if it is analytically conjugated to a cocycle  with  constant.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L223-238::c8",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L265-289::c10",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2503.06710v1::L265-289::c10",
+    "file": "data/data/full_text/2503.06710v1.txt",
+    "section_path": "",
+    "start_line": 265,
+    "end_line": 289,
+    "text": "We call two cocycles  and  analytically conjugated if there is an analytic mapping  such that\n*\nWe say that  is (analytically) reducible if it is analytically conjugated to a cocycle  with  constant.\n\nWe call  almost reducible if the closure of its analytic conjugacy class contains a constant, that is, if there exists  and analytic  with holomorphic extensions to  such that\n*\nwhere  is constant and .\n\nThe following result of Avila is crucial for our proof:\n[Avila]Let . If  is subcritical, then it is almost reducible.\n\nLet  be an -valued quasiperiodic cocycle that is homotopic to a constant, and identify  in the usual way. The cocycle  induces a homeomorphism  by  where\n*\nThis map admits a continuous lift , , where  is a lift of  satisfying  and, if  denotes the projection , .\n\n[Rotation number]\nLet  be a -valued cocycle that is homotopic to a constant. Then, the limit\n*\nexists uniformly and is independent of . It is called the fibered rotation number of the cocycle .\n\nThe regularity of rotation numbers in great generality without referring to spectral theory can be found in.\n\nWe also need the following discrete one-dimensional analog of a result by Eliasson from, compare also Hadj-Amor resp.:\nLet , , and . Then there is a constant  such that if  is analytic with\nand the rotation number  is either Diophantine or rational with respect to , then  is reducible.\n\nThe cocycle corresponding to the generalized eigenvalue equation eq.dualEigen depends on the spectral parameter , compare eq:GECMV_transmat, therefore we write  to make this dependence explicit.\nIndeed, and, or more recently, give a detailed characterization of the location of the spectral parameter based on the knowledge of reducibility for Schrodinger cocycles.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L240-263::c9",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L291-319::c11",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2503.06710v1::L291-319::c11",
+    "file": "data/data/full_text/2503.06710v1.txt",
+    "section_path": "",
+    "start_line": 291,
+    "end_line": 319,
+    "text": "The cocycle corresponding to the generalized eigenvalue equation eq.dualEigen depends on the spectral parameter , compare eq:GECMV_transmat, therefore we write  to make this dependence explicit.\nIndeed, and, or more recently, give a detailed characterization of the location of the spectral parameter based on the knowledge of reducibility for Schrodinger cocycles.\n\nThe following result is the form we need; we shall provide a proof along the lines of for completeness.\nLet , , , and let  be a constant matrix and let  be given by eq:GECMV_transmat and eq.uamo. There exists a constant  such that if  with , and  locates at an edge of a spectral gap, then there exists  such that\n\nwhere  is the matrix in eq:M that induces the isomorphism between  and . In particular, if  for some , then\n\nIt suffices to consider the Szego cocycles due to eq.ConjugatedTransferMatrix. For the case  we shall assume that , the case  is similar. One may refer to for the case . Suppose that . Then by Theorem  and Theorem , since we are not in the uniformly hyperbolic case, there exists  such that\n\nConsider the variation of the spectral parameter  where we put a factor  for convenience. Then, computing the right side of eq:conjEq1 yields\n\nwhere  with  Taking the trace and averaging yield to first order\n\nwhere  means averaging with respect to the Lebesgue measure on  It follows that if , we can pick  sufficiently small such that  and .\n\nLet us show that the system represented by eq:conjEqNew is uniformly hyperbolic for  and  with  sufficiently small.\nLet\nOne can verify that\nDenote\n*\nand let\n*\nThen for  sufficiently small satisfying , we have .\nThere exists  with  (compare, e.g.,) such that\n\nMoreover,\nwhich is uniformly hyperbolic for  sufficiently small.\nThis shows that when ,  is an edge of an open gap, which contradicts the assumption .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L265-289::c10",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L322-337::c12",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2503.06710v1::L322-337::c12",
+    "file": "data/data/full_text/2503.06710v1.txt",
+    "section_path": "",
+    "start_line": 322,
+    "end_line": 337,
+    "text": "Moreover,\nwhich is uniformly hyperbolic for  sufficiently small.\nThis shows that when ,  is an edge of an open gap, which contradicts the assumption .\n\nProofs\nProof of Theorem\nIn this section, we give a short proof of Theorem . In the non-critical case , either  or  is subcritical. Since the corresponding operators  and  are isospectral by Aubry-André duality, we can start from either side. Since  in Theorem , subcriticality essentially implies reducibility, and we can adopt Puig's argument. The conservation of the Wronskian for the second order difference operator indicated by the transfer matrices rules out double point spectrum, i.e., point spectrum with geometric multiplicity two.\nTo be more specific, if  is localized, then its eigenvectors decay to zero, leading to vanishing Wronskians, which means it cannot have two linearly independent eigenvectors corresponding to a single eigenvalue.\nThe idea of the proof in the following context is that the transfer matrix of  being reducible to the identity violates the simplicity of the point spectrum of the corresponding Aubry-dual operator, which leads to a contradiction.\n\nWe begin by characterizing the two-step Szego-cocycle  according to the nomenclature of Definition . By and eq.ConjugatedTransferMatrix, we have the following:\nLet  and . Then  is subcritical for every .\nAs a direct corollary, we have that\nLet  and . Then  is subcritical for every .\nThe following result is an analogue of Avron-Simon:\nFor any ,\ndenote by  and  the rotation numbers of  and  respectively. Then\n\nAccording to Theorem 5.1 of, there exists a unitary transformation  such that",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L291-319::c11",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L339-359::c13",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2503.06710v1::L339-359::c13",
+    "file": "data/data/full_text/2503.06710v1.txt",
+    "section_path": "",
+    "start_line": 339,
+    "end_line": 359,
+    "text": "According to Theorem 5.1 of, there exists a unitary transformation  such that\n\nwhere  are the direct integrals of  respectively. Since the base dynamics  is minimal and uniquely ergodic, the density of states measures of   and  exist and are denoted by  and  respectively, compare. Moreover, they are independent of the specific choice of . It follows that\nBy the relation of rotation numbers of Szego cocycles and the density of states measures of its associated CMV matrices, compare, since our cocycle map is obtained by combining two steps,\n\nIt is well known that the spectrum equals the subset of  where the rotation number is not locally constant, compare. Therefore,  and  are isospectral. Moreover,  is a spectral gap of the spectrum of one of them if and only if it is a spectral gap of the other, and the labels agree.\n\n[Proof of Theorem ]\nBy the discussion above, it is sufficient to consider the case .\nAssume that  is a gap boundary, that is,  for some .\nThen, by Theorem  and Corollary ,  is almost reducible. Since  is Diophantine, by Theorem , there exists  such that\n\nwhere  is constant. By Theorem ,  is unique if and only if .\n\nFix  and assume that  is a collapsed gap of the spectrum of  with  Since the cocycle  is subcritical by Corollary , eq.conjugte1 boils down to\n*\nand therefore, by eq.ConjugatedTransferMatrix and eq.transposeIter,\n*\nLet , then\n\nLet , where  are the columns of . It follows from eq.blochW that\n\nand thus  and  are independent Bloch waves of the generalized eigenvalue equation . By Theorem , these are independent solutions to  .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L322-337::c12",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L361-409::c14",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2503.06710v1::L361-409::c14",
+    "file": "data/data/full_text/2503.06710v1.txt",
+    "section_path": "",
+    "start_line": 361,
+    "end_line": 409,
+    "text": "and thus  and  are independent Bloch waves of the generalized eigenvalue equation . By Theorem , these are independent solutions to  .\n\nMoreover, by eq.solIter1, eq.ConjugatedTransferMatrix and since  and  are constant for the Verblunsky coefficients of the UAMO specified in eq.uamo and eq.uamo_rho_gauged after gauge transforming, we have , which implies the constancy of Wronskian.\nNote that we smuggled a factor  into eq:UVA: since  is -nonresonant, by Theorem  the spectrum of  for  and  is pure point and simple (by constancy of the Wronksian).\nThis contradicts the assumption that  is unique, hence the gap cannot be collapsed.\n\nProof of Theorem\nIn the AMO setting the analogous result holds by simply Fourier transforming the assumed eigenvalue equation, so let us try the same strategy here. Writing\n\nwe obtain from  and that\n*\nPlugging in the concrete form of  from Theorem , Fourier transforming with respect to  and multiplying by , the first equation gives\n\n*\nExpanding the trigonometric functions, reorganizing the terms and utilizing eq:ft gives\n*\nSimilarly, from Fourier transforming and expanding the trigonometric functions we obtain from the second equation\n*\nLinearly combining these expressions as  for  and  we find\n*\nwhere we used the definition of  in eq:psi_aubr. Comparing with we see that indeed .\n\nAcknowledgements\nThe authors thank David Damanik and Jake Fillman for inspiring discussions. L. Li is supported by AMS-Simons Travel Grant 2024-2026.\n\nabbrvArXiv\n\nS. H. Amor.\nHolder continuity of the rotation number for quasi-periodic\nco-cycles in .\nCommun. Math. Phys., 287:565-588, 2009.\n\nA. Avila.\nGlobal theory of one-frequency Schrodinger operators.\nActa Math., 215:1-54, 2015.\n\nA. Avila.\nKAM, Lyapunov exponents, and the spectral dichotomy for typical\none-frequency Schrödinger operators.\n2023.\nhttps://arxiv.org/abs/2307.11071  arXiv:2307.11071.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L339-359::c13",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L411-456::c15",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2503.06710v1::L411-456::c15",
+    "file": "data/data/full_text/2503.06710v1.txt",
+    "section_path": "",
+    "start_line": 411,
+    "end_line": 456,
+    "text": "A. Avila.\nKAM, Lyapunov exponents, and the spectral dichotomy for typical\none-frequency Schrödinger operators.\n2023.\nhttps://arxiv.org/abs/2307.11071  arXiv:2307.11071.\n\nA. Avila, J. Bochi, and D. Damanik.\nCantor spectrum for Schrodinger operators with potentials arising\nfrom generalized skew-shifts.\nDuke Math. J., 146(2):253-280, 2009.\n\nA. Avila, J. Bochi, and D. Damanik.\nOpening gaps in the spectrum of strictly ergodic Schrodinger\noperators.\nJ. Eur. Math. Soc. (JEMS), 14(1):61-106, 2012.\nhttps://arxiv.org/abs/0903.2281arXiv:0903.2281.\n\nA. Avila and S. Jitomirskaya.\nThe ten Martini problem.\nAnn. Math., 170(1):303-342, 2009.\nhttps://arxiv.org/abs/math/0503363  arXiv:math/0503363.\n\nA. Avila and S. Jitomirskaya.\nAlmost localization and almost reducibility.\nJ. Eur. Math. Soc., 12(1):93-131, 2010.\nhttps://arxiv.org/abs/0805.1761arXiv:0805.1761.\n\nA. Avila, J. You, and Q. Zhou.\nDry ten Martini problem in the non-critical case.\n2023.\nhttps://arxiv.org/abs/2306.16254  arXiv:2306.16254.\n\nJ. Avron and B. Simon.\nAlmost periodic Schrodinger operators. II. The integrated\ndensity of states.\nDuke Math. J., 50(1):369-391, 1983.\n\nR. Band, S. Beckus, B. Biber, L. Raymond, and Y. Thomas.\nA review of a work by Raymond: Sturmian Hamiltonians with a\nlarge coupling constant - periodic approximations and gap labels.\n2024.\nhttps://arxiv.org/abs/2409.10920  arXiv:2409.10920.\n\nR. Band, S. Beckus, and R. Loewy.\nThe dry ten Martini problem for Sturmian Hamiltonians.\n2024.\nhttps://arxiv.org/abs/2402.16703  arXiv:2402.16703.\n\nJ. Bellissard.\nK-theory of C*-Algebras in solid state physics.\nIn T. C. Dorlas, N. M. Hugenholtz, and M. Winnink, editors,   Statistical Mechanics and Field Theory: Mathematical Aspects,\npages 99-156, Berlin, Heidelberg, 1986. Springer.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L361-409::c14",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L458-504::c16",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2503.06710v1::L458-504::c16",
+    "file": "data/data/full_text/2503.06710v1.txt",
+    "section_path": "",
+    "start_line": 458,
+    "end_line": 504,
+    "text": "J. Bellissard.\nK-theory of C*-Algebras in solid state physics.\nIn T. C. Dorlas, N. M. Hugenholtz, and M. Winnink, editors,   Statistical Mechanics and Field Theory: Mathematical Aspects,\npages 99-156, Berlin, Heidelberg, 1986. Springer.\n\nJ. Bellissard.\nGap Labelling Theorems for Schrödinger Operators.\nIn M. Waldschmidt, P. Moussa, J.-M. Luck, and C. Itzykson, editors,\nFrom Number Theory to Physics, pages 538-630. Springer, Berlin,\nHeidelberg, 1992.\n\nJ. Bellissard and B. Simon.\nCantor spectrum for the almost Mathieu equation.\nJ. Funct. Anal., 48(3):408-419, 1982.\n\nH. Broer, J. Puig, and C. Simo.\nResonance tongues and instability pockets in the quasi-periodic\nHill-Schrodinger equation.\nComm. Math. Phys., 241(2-3):467-503, 2003.\n\nM. J. Cantero, L. Moral, F. A. Grunbaum, and L. Velazquez.\nMatrix-valued Szego polynomials and quantum random walks.\nCommun. Pure Appl. Math., 63(4):464-507, 2010.\nhttps://arxiv.org/abs/0901.2244arXiv:0901.2244.\n\nM. J. Cantero, L. Moral, and L. Velázquez.\nFive-diagonal matrices and zeros of orthogonal polynomials on the\nunit circle.\nLinear Algebra Appl., 362:29-56, 2003.\nhttps://arxiv.org/abs/math/0204300  arXiv:math/0204300.\n\nC. Cedzich and J. Fillman.\nAbsence of bound states for quantum walks and CMV matrices via\nreflections.\nJ. Spectr. Theory, 14(4):1513–1536, 2024.\nhttps://arxiv.org/abs/2402.11024  arXiv:2402.11024.\n\nC. Cedzich, J. Fillman, T. Geib, and A. H. Werner.\nSingular continuous Cantor spectrum for magnetic quantum walks.\nLett. Math. Phys., 110:1141-1158, 2020.\nhttps://arxiv.org/abs/1908.09924  arXiv:1908.09924.\n\nC. Cedzich, J. Fillman, L. Li, D. Ong, and Q. Zhou.\nExact mobility edges for almost-periodic CMV matrices via gauge\nsymmetries.\nInt. Math. Res. Notices, 2023.\nhttps://arxiv.org/abs/2307.10909  arXiv:2307.10909.\n\nC. Cedzich, J. Fillman, and D. C. Ong.\nAlmost everything about the unitary almost-Mathieu operator.\nCommun. Math. Phys., 403:745-794, 2023.\nhttps://arxiv.org/abs/2112.03216  arXiv:2112.03216.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L411-456::c15",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L506-557::c17",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2503.06710v1::L506-557::c17",
+    "file": "data/data/full_text/2503.06710v1.txt",
+    "section_path": "",
+    "start_line": 506,
+    "end_line": 557,
+    "text": "C. Cedzich, J. Fillman, and D. C. Ong.\nAlmost everything about the unitary almost-Mathieu operator.\nCommun. Math. Phys., 403:745-794, 2023.\nhttps://arxiv.org/abs/2112.03216  arXiv:2112.03216.\n\nM.-D. Choi, G. A. Elliott, and N. Yui.\nGauss polynomials and the rotation algebra.\nInvent. Math., 99(1):225-246, 1990.\n\nD. Damanik, I. Emilsdottir, and J. Fillman.\nGap labels and asymptotic gap opening for full shifts.\n2024.\nhttps://arxiv.org/abs/2412.13391  arXiv:2412.13391.\n\nD. Damanik and J. Fillman.\nGap Labelling for Discrete One-Dimensional Ergodic\nSchrödinger Operators.\nIn M. Brown, F. Gesztesy, P. Kurasov, A. Laptev, B. Simon, G. Stolz,\nand I. Wood, editors, From Complex Analysis to Operator Theory:\nA Panorama: In Memory of Sergey Naboko, pages 341-404. Springer\nInternational Publishing, Cham, 2023.\nhttps://arxiv.org/abs/2203.03696  arXiv:2203.03696.\n\nD. Damanik and J. Fillman.\nOne-Dimensional Ergodic Schrodinger Operators: II.\nSpecific Classes, volume 249.\nAmerican Mathematical Society, 2024.\n\nD. Damanik, J. Fillman, M. Lukic, and W. Yessen.\nCharacterizations of uniform hyperbolicity and spectra of CMV\nmatrices.\nDiscrete Contin. Dyn. Syst. Ser. S, 9(4):1009-1023, 2016.\nhttps://arxiv.org/abs/1409.6259arXiv:1409.6259.\n\nD. Damanik and L. Li.\nOpening gaps in the spectrum of strictly ergodic Jacobi and CMV\nmatrices.\n2024.\nhttps://arxiv.org/abs/2404.03864  arXiv:2404.03864.\n\nL. H. Eliasson.\nFloquet solutions for the 1-dimensional quasi-periodic Schrödinger\nequation.\nCommun. Math. Phys., 146(3):447-482, 1992.\n\nJ. Fillman, D. C. Ong, and Z. Zhang.\nSpectral Characteristics of the Unitary Critical\nAlmost-Mathieu Operator.\nCommun. Math. Phys., 351(2):525-561, 2017.\nhttps://arxiv.org/abs/1512.07641  arXiv:1512.07641.\n\nY. Forman and T. VandenBoom.\nLocalization and Cantor spectrum for quasiperiodic discrete\nSchrodinger operators with asymmetric, smooth, cosine-like sampling\nfunctions.\n2021.\nhttps://arxiv.org/abs/2107.05461  arXiv:2107.05461.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L458-504::c16",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L559-613::c18",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2503.06710v1::L559-613::c18",
+    "file": "data/data/full_text/2503.06710v1.txt",
+    "section_path": "",
+    "start_line": 559,
+    "end_line": 613,
+    "text": "Y. Forman and T. VandenBoom.\nLocalization and Cantor spectrum for quasiperiodic discrete\nSchrodinger operators with asymmetric, smooth, cosine-like sampling\nfunctions.\n2021.\nhttps://arxiv.org/abs/2107.05461  arXiv:2107.05461.\n\nL. Ge, S. Jitomirskaya, and J. You.\nKotani theory, Puig's argument, and stability of the ten\nMartini problem.\n2023.\nhttps://arxiv.org/abs/2308.09321  arXiv:2308.09321.\n\nJ. S. Geronimo and R. A. Johnson.\nRotation number associated with difference equations satisfied by\npolynomials orthogonal on the unit circle.\nJ. Differ. Equations, 132(1):140-178, 1996.\n\nA. Gorodetski and V. Kleptsyn.\nLog holder continuity of the rotation number, 2024.\nhttps://arxiv.org/abs/2410.15462  arXiv:2410.15462.\n\nR. Han.\nDry Ten Martini problem for the non-self-dual extended\nHarper’s model.\nT. Am. Math. Soc., 370(1):197-217, 2017.\nhttps://arxiv.org/abs/1607.08571  arXiv:1607.08571.\n\nJ. He, X. Hou, Y. Shan, and J. You.\nExplicit construction of quasi-periodic analytic Schrodinger\noperators with cantor spectrum.\nMath. Ann., 391(1):179-225, 2025.\nhttps://arxiv.org/abs/2312.16434  arXiv:2312.16434.\n\nM. Herman.\nUne methode pour minorer les exposants de Lyapounov et quelques\nexemples montrant le caractere local d'un theoreme d' Arnold et de\nMoser sur le tore de dimension 2.\nComment. Math. Helv., 58:453-502, 1983.\n\nD. R. Hofstadter.\nEnergy levels and wave functions of Bloch electrons in rational and\nirrational magnetic fields.\nPhys. Rev. B, 14:2239-2249, 1976.\n\nX. Hou, Y. Shan, and J. You.\nConstruction of quasiperiodic Schrodinger operators with Cantor\nspectrum.\nAnn. Henri Poincare, 20(11):3563-3601, 2019.\n\nR. Johnson and J. Moser.\nThe rotation number for almost periodic potentials.\nCommun. Math. Phys., 84(3):403-438, 1982.\n\nM. Kac.\npublic commun. at the 1981 AMS Annual Meeting.\n\nL. Li, D. Damanik, and Q. Zhou.\nCantor spectrum for CMV matrices with almost periodic Verblunsky\ncoefficients.\nJ. Funct. Anal., 283(12):109709, 2022.\nhttps://arxiv.org/abs/2112.14376  arXiv:2112.14376.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L506-557::c17",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L615-666::c19",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2503.06710v1::L615-666::c19",
+    "file": "data/data/full_text/2503.06710v1.txt",
+    "section_path": "",
+    "start_line": 615,
+    "end_line": 666,
+    "text": "L. Li, D. Damanik, and Q. Zhou.\nCantor spectrum for CMV matrices with almost periodic Verblunsky\ncoefficients.\nJ. Funct. Anal., 283(12):109709, 2022.\nhttps://arxiv.org/abs/2112.14376  arXiv:2112.14376.\n\nC. A. Marx and S. Jitomirskaya.\nDynamics and spectral theory of quasi-periodic Schrödinger-type\noperators.\nErgodic Theory and Dynamical Systems, 37(8):2353-2393, 2017.\nhttps://arxiv.org/abs/1503.05740  arXiv:1503.05740.\n\nJ. Moser and J. Pöschel.\nAn extension of a result by Dinaburg and Sinai on quasi-periodic\npotentials.\nComment. Math. Helv., 59(1):39-85, 1984.\n\nJ. Puig.\nCantor spectrum for the almost Mathieu operator.\nCommun. Math. Phys., 244(2):297-309, 2004.\nhttps://arxiv.org/abs/math-ph/0309004  math-ph/0309004.\n\nJ. Puig.\nA nonperturbative Eliasson’s reducibility theorem.\nNonlinearity, 19(2):355–376, 2005.\nhttps://arxiv.org/abs/math/0503356  arXiv:math/0503356.\n\nJ. Puig and C. Simo.\nAnalytic families of reducible linear quasi-periodic differential\nequations.\nErgod. Theor. and Dyn. Syst., 26(2):481–524, 2006.\n\nL. Raymond.\nA constructive gap labelling for the discrete schrodinger\noperator on a quasiperiodic chain.\npreprint, 1995.\n\nB. Simon.\nAlmost periodic Schrödinger operators: A Review.\nAdv. Appl. Math., 3(4):463-490, 1982.\n\nB. Simon.\nOrthogonal polynomials on the unit circle. Part 1, volume 54\nof American Mathematical Society Colloquium Publications.\nAmerican Mathematical Society, Providence, RI, 2005.\nClassical theory.\n\nB. Simon.\nOrthogonal polynomials on the unit circle. Part 2, volume 54\nof American Mathematical Society Colloquium Publications.\nAmerican Mathematical Society, Providence, RI, 2005.\nSpectral theory.\n\nY. Wang and Z. Zhang.\nCantor spectrum for a class of  quasiperiodic Schrodinger\noperators.\nInt. Math. Res. Notices, (8):2300-2336, 2017.\nhttps://arxiv.org/abs/1410.0101arXiv:1410.0101.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L559-613::c18",
+        "direction": "previous"
+      },
+      {
+        "id": "2503.06710v1::L668-671::c20",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2503.06710v1::L668-671::c20",
+    "file": "data/data/full_text/2503.06710v1.txt",
+    "section_path": "",
+    "start_line": 668,
+    "end_line": 671,
+    "text": "Y. Wang and Z. Zhang.\nCantor spectrum for a class of  quasiperiodic Schrodinger\noperators.\nInt. Math. Res. Notices, (8):2300-2336, 2017.\nhttps://arxiv.org/abs/1410.0101arXiv:1410.0101.\n\nF. Yang.\nAnderson localization for the unitary almost Mathieu operator.\nNonlinearity, 37(8):Paper No. 085010, 23, 2024.\nhttps://arxiv.org/abs/2201.05779  arXiv:2201.05779.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2503.06710v1::L615-666::c19",
+        "direction": "previous"
+      }
+    ]
+  }
+]

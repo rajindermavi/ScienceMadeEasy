@@ -13,7 +13,13 @@
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L11-17::s1",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "1310.8553v2::L11-17::s1",
@@ -29,7 +35,17 @@
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L1-10::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "1310.8553v2::L18-43::s2",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "1310.8553v2::L18-43::s2",
@@ -38,14 +54,39 @@
     "start_line": 18,
     "end_line": 43,
     "text": "One wonders how these properties depend on the frequency. It is already known () that $\\Sigma$ is a Cantor set of zero Lebesgue measure for all irrational values of $\\beta$. For $\\lambda$ large enough, established estimates for the Hausdorff dimension of $\\Sigma$. Let $[0;a_1,a_2,a_3,\\dots]$ be the continued fraction expansion of $\\beta$ (see for an introduction to continued fractions). Then when $\\underline{M}(\\beta) := \\liminf_{k\\to\\infty} \\sqrt[k]{a_1\\dots a_k}$ is finite, $$\\begin{gathered}\n\\max\\left\\{\\frac{\\log 2}{10 \\log 2 + 3\\log(4(\\lambda-8))}, \\frac{\\log M(\\beta) - \\log 3}{\\log M(\\beta) + \\log(12(\\lambda-8))} \\right\\} \\le \\dim_{\\mathrm{H}}(\\Sigma)\\\\\n\\le \\frac{2\\log M(\\beta) + \\log 3}{2\\log M(\\beta) + \\log(\\lambda - 8) - \\log 3}.\n\\end{gathered}$$ When $M$ is infinite, the Hausdorff dimension of the spectrum is $1$; notice that the upper bound depends on $\\lambda$ in the same way for all $\\beta$. In , Liu, Qu, and Wen derive an expression for the Hausdorff dimension of $\\Sigma$ and show that for all $\\beta$ and $\\lambda > 24$, the Hausdorff dimension is Lipschitz continuous.\n\nUsing methods like those of , this article determines how the $\\alpha$-continuity of the density of states measure depends on $\\beta$, assuming throughout that $\\overline{M}(\\beta) = \\limsup _{k\\to\\infty} \\sqrt[k]{a_1 a_2 \\dots a_k} < \\infty$ and $\\lambda > 24$ (recall that $\\overline{M}$ is finite for almost all $\\beta$).\n\nWhen the continued fraction coefficients of $\\beta$ are constant, the behavior is like the Fibonacci Hamiltonian:\n\n<div id=\"hcont-bb\" class=\"theorem\">\n\n**Theorem 1**. *Suppose $\\beta = [0;b,b,b,\\dots]$. Then for every $$\\gamma < \\begin{dcases}\n\\frac{2 \\log\\beta}{-b\\log(\\lambda+5) - 3\\log(b+2)} &b > 3 \\\\\n\\frac{\\log\\beta}{-\\log(\\lambda+5) - 3\\log(b+2)} &b=2,3 \\\\\n\\frac{3\\log\\beta}{-2\\log(27(\\lambda+5))} &b=1\n\\end{dcases},$$ there is a $\\delta > 0$ such that the density of states measure $N$ associated to the family of Schrödinger operators with frequency $\\beta$ and coupling strength $\\lambda$ obeys $$|N(x) - N(y)| \\le |x-y|^\\gamma$$ for all $x$, $y$ with $|x-y| < \\delta$.*\n\n</div>\n\n<div id=\"opt-bb\" class=\"theorem\">\n\n**Theorem 2**. *If $\\beta = [0;b,b,b,\\dots]$, then for every $$\\tilde\\gamma > \\begin{dcases}\n\\frac{2\\log\\beta}{-b\\log(\\lambda-8) - \\log(b) + b\\log 3} &b > 2 \\\\\n\\frac{\\log\\beta}{-\\log(\\lambda-8) + \\log(b) - \\log 3} &b=2 \\\\\n\\frac{3\\log\\beta}{-2\\log(\\lambda-8) + - 2\\log 3} &b=1\n\\end{dcases},$$ and any $0<\\delta<1$, there are $x$ and $y$ with $0<|x-y|<\\delta$ such that $|N(x) - N(y)| \\ge |x-y|^{\\tilde\\gamma}$.*\n\n</div>\n\n<div class=\"coro\">",
-    "labels": [],
+    "labels": [
+      "hcont-bb",
+      "opt-bb"
+    ],
     "refs": [],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L11-17::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "1310.8553v2::L44-55::s3",
+        "direction": "next"
+      },
+      {
+        "id": "1310.8553v2::L212-215::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "1310.8553v2::L216-233::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "1310.8553v2::L234-239::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "1310.8553v2::L44-55::s3",
@@ -54,14 +95,30 @@
     "start_line": 44,
     "end_line": 55,
     "text": "<div class=\"coro\">\n\n**Corollary 3**. *For constant continued fraction coefficients, this identifies the optimal asymptotic behavior of $\\gamma$ as $\\lambda \\to \\infty$. If $\\Gamma(\\lambda, b)$ is the optimal Hölder exponent, $\\gamma \\le \\Gamma \\le \\tilde\\gamma$, so that $$\\lim_{\\lambda\\to\\infty} \\Gamma(\\lambda,b)\\log\\lambda =  \\frac{-2\\log\\beta}{b}$$ when $b > 3$, and similarly for smaller values of $b$.*\n\n</div>\n\nMore generally, the qualitative behavior is determined by $\\overline{d}(\\beta) = \\limsup_{N\\to\\infty} \\frac{1}{N}\\sum _{i=1} ^N a_i$ and $\\underline{d}$, the limit inferior.\n\n<div id=\"hcont-d\" class=\"theorem\">\n\n**Theorem 4**. *If $\\overline{d}$ is finite, then $N$ is $\\alpha$-Hölder continuous for some $\\alpha$. If $\\underline{d}$ is infinite, $N$ is not Hölder continuous. It is well known that $\\overline{d} = \\underline{d} = \\infty$ almost everywhere. Thus, for Lebesgue almost all $\\beta$, $N$ is not Hölder continuous.*\n\n</div>",
-    "labels": [],
+    "labels": [
+      "hcont-d"
+    ],
     "refs": [],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L18-43::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "1310.8553v2::L56-77::s0",
+        "direction": "next"
+      },
+      {
+        "id": "1310.8553v2::L234-239::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "1310.8553v2::L56-77::s0",
@@ -70,14 +127,26 @@
     "start_line": 56,
     "end_line": 77,
     "text": "# Structure of $\\Sigma$\n\nIn , the fine structure of $\\Sigma$ is developed enough (along the lines of ) to estimate its Hausdorff dimension. This article uses many parts of the apparatus Liu and Wen develop, so we recapitulate the necessary results (without proof). The idea is to approximate $\\Sigma$ by finite unions of closed intervals, growing in number and shrinking in size at controlled rates.\n\nThe central objects to approximating $\\Sigma$ are the continued fraction approximations to $\\beta$. Let $p_k / q_k$ be the $k^{\\mathrm{th}}$ convergent to $\\beta$. For $k \\ge 1$ and $x\\in{\\mathbb R}$ define the *transfer matrix over $q_k$ sites* by $$M_k (E) = \\prod_{n=q_k} ^1 \\begin{bmatrix}\nE - V(n) & -1 \\\\ 1 & 0\n\\end{bmatrix}$$ and put $$M_{-1} (E) = \\begin{bmatrix} 1 & -\\lambda \\\\ 0 & 1\\end{bmatrix},\\ M_0 (E) = \\begin{bmatrix}E & -1 \\\\ 1 & 0\\end{bmatrix}.$$ These matrices arise in the spectral theory of a discrete Schrödinger operator because they produce the sequences that satisfy the formal difference equation $H\\psi = E\\psi$.\n\n<div id=\"basic-trace\" class=\"prop\">\n\n**Proposition 5**. *This summarizes work that first appeared in . Let $x_{(k,p)} = \\mathrm{tr}M_{k-1} M_k ^p$ and $\\sigma_{(k,p)} = \\{E \\in {\\mathbb R}: |x_{(k,p)} (E) | \\le 2\\}$. Then:*\n\n1.  *$M_{k+1} = M_{k-1} M_k^{a_k}$, so that $x_{(k+2,0)} = x_{(k,a_k)}$.*\n\n2.  *For $\\lambda > 4$, $\\sigma_{(k,p)}$ is made of disjoint closed intervals, equal in number to the degree of $x_{(k,p)}$. These intervals are called *bands*.*\n\n3.  *$\\sigma_{(k+2,0)} \\cap \\sigma_{(k+1,0)} \\subset \\sigma_{(k+1,0)} \\cap \\sigma_{(k,0)}$.*\n\n4.  *$\\sigma(H) = \\bigcap_k (\\sigma_{(k+1,0)} \\cup \\sigma_{(k,0)})$.*\n\n5.  *If $k \\in {\\mathbb N}$ and $p \\ge -1$, $\\sigma_{(k,p+1)} \\subset \\sigma_{(k+1,0)} \\cap \\sigma_{(k,p)}$.*",
-    "labels": [],
+    "labels": [
+      "basic-trace"
+    ],
     "refs": [],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Structure of $\\Sigma$"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L44-55::s3",
+        "direction": "previous"
+      },
+      {
+        "id": "1310.8553v2::L78-111::s1",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "1310.8553v2::L78-111::s1",
@@ -86,14 +155,45 @@
     "start_line": 78,
     "end_line": 111,
     "text": "5.  *If $k \\in {\\mathbb N}$ and $p \\ge -1$, $\\sigma_{(k,p+1)} \\subset \\sigma_{(k+1,0)} \\cap \\sigma_{(k,p)}$.*\n\n6.  *If $k \\in {\\mathbb N}$, $p \\ge 0$, and $\\lambda > 4$, $\\sigma_{(k+1,0)} \\cap \\sigma_{(k,p)} \\cap \\sigma_{(k,p-1)} = \\emptyset$.*\n\n</div>\n\nWe will approximate $\\Sigma$ using a certain subset of the above bands, called the *generating bands*. For $k \\in {\\mathbb N}$, define:\n\n1.  A band of type $(k,I)$ is a band of $\\sigma_{(k,1)}$ contained in a band of $\\sigma_{(k,0)}$.\n\n2.  A band of type $(k,II)$ is a band of $\\sigma_{(k+1,0)}$ contained in a band of $\\sigma_{(k,-1)}$.\n\n3.  A band of type $(k,III)$ is a band of $\\sigma_{(k+1,0)}$ contained in a band of $\\sigma_{(k,0)}$.\n\nFor each value of $k$, call the the collection of all bands of the above three kinds the *spectral generating bands at level k*, written $\\mathcal{G}_k$. These bands are useful because the combinatorial structure of $\\mathcal{G}_{k+1}$ is easy to describe if $\\mathcal{G}_k$ is known.\n\n<div id=\"band-comb\" class=\"lemma\">\n\n**Lemma 6**. *For $k\\in{\\mathbb N}$,*\n\n1.  *Each band of type $(k,I)$ contains a single generating band; it is a band of $\\sigma_{(k+2,0)}$ of type $(k+1,II)$.*\n\n2.  *Each band of type $(k,II)$ contains $a_k +1$ bands of $\\sigma_{(k+1,1)}$ of type $(k+1,I)$, and $a_k$ bands of $\\sigma_{(k+2,0)}$ of type $(k+1,III)$.*\n\n3.  *Each band of type $(k,III)$ contains $a_k$ bands of $\\sigma_{(k+1,1)}$ of type $(k+1,I)$ and $a_k -1$ bands of $\\sigma_{(k+2,0)}$ of type $(k+1,III)$.*\n\n</div>\n\nTo make use of Lemma <a href=\"#band-comb\" data-reference-type=\"ref\" data-reference=\"band-comb\">6</a>, we have to understand how $\\mathcal{G}_k$ approximates $\\Sigma$:\n\n<div id=\"gen-spect\" class=\"lemma\">\n\n**Lemma 7**. *Every generating band of level $k$ is contained in some generating band of level $k-1$, and $\\Sigma = \\bigcap_{k=0}^\\infty \\bigcup_{B\\in\\mathcal{G}_k} B$.*\n\n</div>",
-    "labels": [],
-    "refs": [],
+    "labels": [
+      "band-comb",
+      "gen-spect"
+    ],
+    "refs": [
+      "band-comb"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Structure of $\\Sigma$"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L56-77::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "1310.8553v2::L112-125::s2",
+        "direction": "next"
+      },
+      {
+        "id": "1310.8553v2::L112-125::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "1310.8553v2::L130-153::s0",
+        "direction": "comment"
+      },
+      {
+        "id": "1310.8553v2::L212-215::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "1310.8553v2::L216-233::s2",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "1310.8553v2::L112-125::s2",
@@ -102,14 +202,40 @@
     "start_line": 112,
     "end_line": 125,
     "text": "</div>\n\nLet us recast the content of Lemma <a href=\"#band-comb\" data-reference-type=\"ref\" data-reference=\"band-comb\">6</a> in a form that is more useful for calculations. Put $$T_k = \\begin{bmatrix}0 & 1 & 0 \\\\ a_k + 1 & 0 & a_k \\\\ a_k & 0 & a_k-1\\end{bmatrix}.$$ Then Lemma <a href=\"#band-comb\" data-reference-type=\"ref\" data-reference=\"band-comb\">6</a> says that for $i,j\\in\\{I,II,III\\}$, a band of type $(k,i)$ spawns $T(i,j)$ bands of type $(k+1,j)$. Given a band $B\\in\\mathcal{G}_k$, we can associate to it a *type index*, which is the sequence of the types ($I$,$II$, or $III$) of each of its forbears. That is, for $B \\in \\mathcal{G}_k$, put $\\tau(B) = i(0),i(1),\\dots,i(k)$ where $B$ is of type $(k,i(k))$ and $B$ is contained in a band of type $(l,i(l))$ for each $l<k$. Using the matrices $T_k$, the number of bands with a given type index $\\tau$ is seen to be $\\prod_{l=0} ^{k-1} T (\\tau(l),\\tau(l+1))$. Define $\\mathcal{A}$ to be the set of all one-sided infinite words $\\tau$ on $\\{I,II,III\\}$ such that each prefix of $\\tau$ is the type index of at least one band. Such type sequences are called *admissible*.\n\nBecause of the self-similarity of $\\Sigma$, estimates for the lengths of generating bands are amenable to a similar formalism. Put $$P_k = \\begin{bmatrix}\n0 & (3/(\\lambda-8))^{a_k-1} & 0 \\\\\n3/(a_k(\\lambda - 8)) & 0 & 3/(a_k(\\lambda - 8)) \\\\\n 3/(a_k(\\lambda - 8)) & 0 & 3/(a_k(\\lambda - 8))  \n\\end{bmatrix},$$ $$Q_k = \\begin{bmatrix}\n0 & (1/(\\lambda + 5))^{a_k-1} & 0\\\\\n(\\lambda + 5)^{-1}(a_k+2)^{-3} & 0 &(\\lambda + 5)^{-1}(a_k+2)^{-3} \\\\\n(\\lambda + 5)^{-1}(a_k+2)^{-3} & 0 & (\\lambda + 5)^{-1}(a_k+2)^{-3} \\\\\n\\end{bmatrix}.$$\n\n<div id=\"bl1\" class=\"lemma\">",
-    "labels": [],
-    "refs": [],
+    "labels": [
+      "bl1"
+    ],
+    "refs": [
+      "band-comb"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Structure of $\\Sigma$"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L78-111::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "1310.8553v2::L126-129::s3",
+        "direction": "next"
+      },
+      {
+        "id": "1310.8553v2::L78-111::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "1310.8553v2::L130-153::s0",
+        "direction": "comment"
+      },
+      {
+        "id": "1310.8553v2::L190-193::s2",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "1310.8553v2::L126-129::s3",
@@ -118,14 +244,34 @@
     "start_line": 126,
     "end_line": 129,
     "text": "<div id=\"bl1\" class=\"lemma\">\n\n**Lemma 8**. *Then if $B$ is a generating band and $\\tau$ its type, $$4\\prod Q_l (\\tau(l),\\tau(l+1)) \\le |B| \\le 4\\prod P_l (\\tau(l), \\tau(l+1)).$$*\n\n</div>",
-    "labels": [],
+    "labels": [
+      "bl1"
+    ],
     "refs": [],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Structure of $\\Sigma$"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L112-125::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "1310.8553v2::L130-153::s0",
+        "direction": "next"
+      },
+      {
+        "id": "1310.8553v2::L130-153::s0",
+        "direction": "comment"
+      },
+      {
+        "id": "1310.8553v2::L190-193::s2",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "1310.8553v2::L130-153::s0",
@@ -134,14 +280,54 @@
     "start_line": 130,
     "end_line": 153,
     "text": "# Band Length Estimates\n\nIn this section we consider the asymptotic scaling rate of bands in $\\sigma_k$. It is easy to treat the case $\\beta = [0;b,b,b,\\dots]$ quantitatively, so we take it up first.\n\n<div id=\"ub-bb\" class=\"lemma\">\n\n**Lemma 9**. *If $\\beta = [0;b,b,b,\\dots]$, then for all $k$ and $B \\in \\mathcal{G}_k$, $$\\log\\frac{|B|}{4} \\ge \\begin{dcases}\n-\\ceil{\\frac{k}{2}} (b-1) \\log(\\lambda+5) - 3\\floor{\\frac{k}{2}}\\log(b+2) - \\floor{\\frac{k}{2}}\\log(\\lambda+5), &b>3 \\\\\n-k\\log(\\lambda+5) - 3k\\log(b+2), &b=2,3 \\\\\n\\floor{\\frac{2k}{3}}\\left(-\\log(\\lambda+5) - 3\\log(b+2)\\right), &b=1.\n\\end{dcases}$$ Let $L(k)$ be the above bound (that is, $|B| \\ge L(k)$), and write $L(b,\\lambda)$ for $\\liminf_{k\\to\\infty} \\frac{1}{k}\\log L(k)$.*\n\n</div>\n\n<div class=\"proof\">\n\n*Proof.* Our task is to bound the lower bound in Lemma <a href=\"#bl1\" data-reference-type=\"ref\" data-reference=\"bl1\">8</a> from below as $B$ ranges over all of $\\mathcal{G}_k$. A look at the matrix $Q_k$ shows that if $b\\ge 4$ the bound in question is minimized whenever $\\tau(B)$ has the greatest admissible amount of $I$s in it. This can occur at most half the time (by Lemma <a href=\"#band-comb\" data-reference-type=\"ref\" data-reference=\"band-comb\">6</a>), proving the formula in the first case.\n\nOn the other hand, when $b < 4$ the minimum is achieved by a band with the greatest possible amount of $II$s and $III$s in its type index. When $b \\ne 1$, this is possible for every entry of $\\tau(B)$, giving the second case, and for $b=1$ it is possible $2/3$ of the time. ◻\n\n</div>\n\n<div id=\"blub-bb\" class=\"lemma\">",
-    "labels": [],
-    "refs": [],
+    "labels": [
+      "blub-bb",
+      "ub-bb"
+    ],
+    "refs": [
+      "band-comb",
+      "bl1"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Band Length Estimates"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L126-129::s3",
+        "direction": "previous"
+      },
+      {
+        "id": "1310.8553v2::L154-189::s1",
+        "direction": "next"
+      },
+      {
+        "id": "1310.8553v2::L78-111::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "1310.8553v2::L112-125::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "1310.8553v2::L126-129::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "1310.8553v2::L154-189::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "1310.8553v2::L212-215::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "1310.8553v2::L216-233::s2",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "1310.8553v2::L154-189::s1",
@@ -150,14 +336,42 @@
     "start_line": 154,
     "end_line": 189,
     "text": "<div id=\"blub-bb\" class=\"lemma\">\n\n**Lemma 10**. *If $\\beta = [0;b,b,b,\\dots]$, then for each $k$, there is a band of $\\mathcal{G}_k$ with $$\\log\\frac{|B|}{4} \\le \\begin{dcases}\n-\\ceil{\\frac{k}{2}} (b-1)(\\log(\\lambda-8)-\\log 3) - \\floor{\\frac{k}{2}}(\\log b + \\log(\\lambda-8) - \\log 3), &b>2 \\\\\n-k(\\log(\\lambda-8) - \\log(b) + \\log 3), &b=2 \\\\\n\\frac{-2k}{3}(\\log(\\lambda-8) - \\log(b) + \\log 3), &b=1.\n\\end{dcases}$$ Let $U(k)$ be the above bound and define $U(b,\\lambda)=\\limsup _{k\\to\\infty} \\frac{1}{k}\\log\\frac{U(k)}{4}$.*\n\n</div>\n\n<div class=\"proof\">\n\n*Proof.* The analysis is the same as for the previous lemma, substituting $P_k$ for $Q_k$. ◻\n\n</div>\n\nNow we consider arbitrary $a_i$s. In this case the optimization problem treated in the above estimates becomes intractable, so we focus on the qualitative behavior.\n\n<div id=\"nope-pd\" class=\"lemma\">\n\n**Lemma 11**. *If $\\underline{d}$ is infinite, the sequence of lengths of shortest bands of $\\sigma_{k+1,0}$ decays to zero faster than any geometric sequence.*\n\n</div>\n\n<div class=\"proof\">\n\n*Proof.* We argue roughly as in the proof of Lemma <a href=\"#blub-bb\" data-reference-type=\"ref\" data-reference=\"blub-bb\">10</a>. Indeed, $\\overline{d}=\\infty$ means there is a $c>0$ such that in each $\\sigma_{k+1,0}$ there is a band whose length is less than $\\exp(-c k d_k)$ (where $d_k$ is the average of the first $k$ coefficients of $\\beta$). Since $c$ is independent of $k$ and $d_k$ diverges, $\\exp(-c k d_k)$ approaches zero faster than any geometric sequence. ◻\n\n</div>\n\n<div id=\"ub-arb\" class=\"lemma\">\n\n**Lemma 12**. *If $\\overline{d}$ is finite, then there is a geometric sequence that bounds the length of every band in $\\sigma_k$ from below.*\n\n</div>\n\n<div class=\"proof\">",
-    "labels": [],
-    "refs": [],
+    "labels": [
+      "blub-bb",
+      "nope-pd",
+      "ub-arb"
+    ],
+    "refs": [
+      "blub-bb"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Band Length Estimates"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L130-153::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "1310.8553v2::L190-193::s2",
+        "direction": "next"
+      },
+      {
+        "id": "1310.8553v2::L130-153::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "1310.8553v2::L216-233::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "1310.8553v2::L234-239::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "1310.8553v2::L190-193::s2",
@@ -167,13 +381,33 @@
     "end_line": 193,
     "text": "<div class=\"proof\">\n\n*Proof.* Suppose not, so that for some faster-than-geometric sequence $l_k$, $\\sigma_k$ has a band of length less than $l_k$. This forces the lower bound of <a href=\"#bl1\" data-reference-type=\"ref\" data-reference=\"bl1\">8</a> to decay to zero faster than geometrically for some admissible type sequence. This means that $a_i$ has a subsequence $a_{i_n}$ such that $\\frac{1}{k} \\sum _{\\{n : i_n \\in [1,k]\\}} \\log c^{a_{i_n}}$ or $\\frac{1}{k} \\sum _{\\{n : i_n \\in [1,k]\\}} \\log a_{i_n}$ diverge. Both contradict $\\overline{d} < \\infty$ (and the latter also contradicts $\\overline{M} < \\infty$). ◻\n\n</div>",
     "labels": [],
-    "refs": [],
+    "refs": [
+      "bl1"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Band Length Estimates"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L154-189::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "1310.8553v2::L194-211::s0",
+        "direction": "next"
+      },
+      {
+        "id": "1310.8553v2::L112-125::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "1310.8553v2::L126-129::s3",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "1310.8553v2::L194-211::s0",
@@ -182,14 +416,30 @@
     "start_line": 194,
     "end_line": 211,
     "text": "# Hölder Continuity\n\n<div id=\"qgrow\" class=\"lemma\">\n\n**Lemma 13**. *Recalling that $\\overline{M}(\\beta) < \\infty$, the sequence $q_k$ of denominators of convergents to $\\beta$ is bounded above and below by geometric sequences.*\n\n</div>\n\n<div class=\"proof\">\n\n*Proof.* By definition, $$q_{k+1} = a_{k+1} q_k + q_{k-1}.$$ Since $q_k$ increases monotonically, it follows that $q_{k+1} \\le (a_{k+1} + 1)q_k$. Thus $$\\log q_{k+1} \\le \\sum_{i=1} ^k \\log(a_{i+1} + 1).$$ Since $\\log(x+1) \\le \\log(x) + 1/x$ and $\\sum _{i=1} ^k 1/a_i$ grows no faster than $k$, $\\log q_k$ is bounded above by an arithmetic sequence.\n\nAgain using monotonicity of $q_k$, we get $q_{k+1} \\ge a_{k+1} q_k$. Repeating the above reasoning, we finish the proof. ◻\n\n</div>\n\n<div class=\"proof\">",
-    "labels": [],
+    "labels": [
+      "qgrow"
+    ],
     "refs": [],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Hölder Continuity"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L190-193::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "1310.8553v2::L212-215::s1",
+        "direction": "next"
+      },
+      {
+        "id": "1310.8553v2::L234-239::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "1310.8553v2::L212-215::s1",
@@ -199,13 +449,40 @@
     "end_line": 215,
     "text": "<div class=\"proof\">\n\n*Proof of Theorem <a href=\"#hcont-bb\" data-reference-type=\"ref\" data-reference=\"hcont-bb\">1</a>.* For arbitrary $x_0 < y_0$ that are close enough, we want to estimate $N(y_0) - N(x_0)$ from above. Because there is one Dirichlet eigenvalue of $H_{q_k}$ associated to each band of $\\sigma_{k+1,0}$ (), $$N(y_0) - N(x_0) = \\lim_{n \\to \\infty} \\frac{\\# \\sigma(H_n) \\cap [x_0,y_0]}{n} = \\lim_{k \\to \\infty} \\frac{\\# \\sigma_{k+1,0} \\cap [x_0,y_0]}{q_k},$$ where $\\#X$ is the cardinality of $X$. This amounts to finding a bound on $\\# \\sigma_{k+1,0} \\cap [x_0,y_0]$. With $L$ the bound on band lengths of Lemma <a href=\"#ub-bb\" data-reference-type=\"ref\" data-reference=\"ub-bb\">9</a>, define $m$ by $$L(m+1) \\le y_0 - x_0 < L(m).$$ Because $N$ is supported on $\\Sigma$, the interval $[x_0, y_0]$ can be replaced with $[x_0, y_0] \\cap \\Sigma$. Every point of $\\Sigma$ is contained in a generating band (Lemma <a href=\"#gen-spect\" data-reference-type=\"ref\" data-reference=\"gen-spect\">7</a>), so it is not a loss to assume $[x_0, y_0]$ is contained in a generating band. Then, by the definition of $m$, there is a band $[x,y] \\in \\mathcal{G}_m$ containing it (notice that $y-x$ is comparable in size to $y_0 - x_0$, because of how $m$ is defined). We now have $$N(y_0) - N(x_0) \\le \\lim_{k\\to\\infty} \\frac{\\#\\sigma_{k+1,0} \\cap [x,y]}{q_k}.$$\n\nThis ratio scales like $1/q_m$. Indeed, it is equal to $1/q_m$ at $k=m$. As $k$ increases to infinity, Lemma <a href=\"#band-comb\" data-reference-type=\"ref\" data-reference=\"band-comb\">6</a> shows that every band of $\\sigma_{m+1,0}$ produces a roughly constant proportion of the bands that comprise $\\sigma_{k+1,0}$. This means the share of bands in $\\sigma_{k+1,0}$ produced by $[x,y]$ remains practically constant. So, pick $C$ so that $N(y_0) - N(x_0) \\le C/q_m$.",
     "labels": [],
-    "refs": [],
+    "refs": [
+      "band-comb",
+      "gen-spect",
+      "hcont-bb",
+      "ub-bb"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Hölder Continuity"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L194-211::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "1310.8553v2::L216-233::s2",
+        "direction": "next"
+      },
+      {
+        "id": "1310.8553v2::L78-111::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "1310.8553v2::L18-43::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "1310.8553v2::L130-153::s0",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "1310.8553v2::L216-233::s2",
@@ -217,13 +494,48 @@
     "labels": [
       "gamma-def"
     ],
-    "refs": [],
+    "refs": [
+      "band-comb",
+      "blub-bb",
+      "hcont-bb",
+      "opt-bb"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Hölder Continuity"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L212-215::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "1310.8553v2::L234-239::s3",
+        "direction": "next"
+      },
+      {
+        "id": "1310.8553v2::L78-111::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "1310.8553v2::L130-153::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "1310.8553v2::L154-189::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "1310.8553v2::L18-43::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "1310.8553v2::L234-239::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "1310.8553v2::L234-239::s3",
@@ -233,13 +545,51 @@
     "end_line": 239,
     "text": "<div class=\"proof\">\n\n*Proof of Theorem <a href=\"#hcont-d\" data-reference-type=\"ref\" data-reference=\"hcont-d\">4</a>.* We first prove that $N$ is Hölder continuous when $\\overline{d}$ is finite. The proof of Theorem <a href=\"#hcont-bb\" data-reference-type=\"ref\" data-reference=\"hcont-bb\">1</a> may be followed until <a href=\"#gamma-def\" data-reference-type=\"ref\" data-reference=\"gamma-def\">[gamma-def]</a>. By Lemma <a href=\"#ub-arb\" data-reference-type=\"ref\" data-reference=\"ub-arb\">12</a>, $\\log L(k)$ lies between two arithmetic sequences. And by Lemma <a href=\"#qgrow\" data-reference-type=\"ref\" data-reference=\"qgrow\">13</a>, the same goes for $\\log q_k$. This implies $\\liminf _{k\\to\\infty} \\gamma_k > 0$, which is the necessary input to obtain Hölder continuity.\n\nNow assume $\\underline{d}=\\infty$. We will follow the framework of the the proof of Theorem <a href=\"#opt-bb\" data-reference-type=\"ref\" data-reference=\"opt-bb\">2</a> and see that the optimal Hölder exponent is zero. Let $U(k)$ stand for the sequence of upper bounds on band length obtained in Lemma <a href=\"#nope-pd\" data-reference-type=\"ref\" data-reference=\"nope-pd\">11</a>; $\\log U$ goes to $-\\infty$ faster than any linear function. Also, recall that, by Lemma <a href=\"#qgrow\" data-reference-type=\"ref\" data-reference=\"qgrow\">13</a>, there is an $R$ so that $R^m$ grows faster than $q_m$.\n\nLet a supposed Hölder exponent $\\gamma >0$ be given. Given $\\delta$, pick $k_0$ so that $U(k_0) < \\delta$ and $$\\gamma_m = \\frac{-m\\log R}{\\log U(m)}$$ is less than $\\gamma$ for all $m \\ge k_0$. This is possible for all $\\gamma > 0$ since $\\lim_{m\\to\\infty} \\gamma_m = 0$. Now, choose $[x,y] \\in \\sigma_{k_0}$ so that $y-x \\ge U(k_0)$.",
     "labels": [],
-    "refs": [],
+    "refs": [
+      "gamma-def",
+      "hcont-bb",
+      "hcont-d",
+      "nope-pd",
+      "opt-bb",
+      "qgrow",
+      "ub-arb"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Hölder Continuity"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L216-233::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "1310.8553v2::L240-243::s4",
+        "direction": "next"
+      },
+      {
+        "id": "1310.8553v2::L216-233::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "1310.8553v2::L18-43::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "1310.8553v2::L44-55::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "1310.8553v2::L154-189::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "1310.8553v2::L194-211::s0",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "1310.8553v2::L240-243::s4",
@@ -255,7 +605,17 @@
         "level": 1,
         "title": "Hölder Continuity"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L234-239::s3",
+        "direction": "previous"
+      },
+      {
+        "id": "1310.8553v2::L244-271::s0",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "1310.8553v2::L244-271::s0",
@@ -271,7 +631,17 @@
         "level": 1,
         "title": "Acknowledgement"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L240-243::s4",
+        "direction": "previous"
+      },
+      {
+        "id": "1310.8553v2::L272-278::s1",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "1310.8553v2::L272-278::s1",
@@ -287,6 +657,12 @@
         "level": 1,
         "title": "Acknowledgement"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L244-271::s0",
+        "direction": "previous"
+      }
+    ]
   }
 ]

@@ -1,0 +1,201 @@
+[
+  {
+    "id": "1208.2674v1::L17-72::c0",
+    "file": "data/data/full_text/1208.2674v1.txt",
+    "section_path": "",
+    "start_line": 17,
+    "end_line": 72,
+    "text": "lemmaLemma[section]\ntheorem[lemma]Theorem\nhypothesis[lemma]Hypothesis\nremark[lemma]Remark\nproposition[lemma]Proposition\ncorollary[lemma]Corollary\ndefinition[lemma]Definition\nexample[lemma]Example\n\ndist\nsupp\n\nequationsection\n\nExponential dynamical localization for the almost Mathieu operator\n\n[S. Jitomirskaya]Svetlana Jitomirskaya\nUniversity of California, Irvine, CA 92717\nszhitomi@math.uci.eduszhitomi@math.uci.edu\n\n[H. Kruger]Helge Kruger\nMathematics 253-37, Caltech, Pasadena, CA 91125\nhelge@caltech.eduhelge@caltech.edu\nhttp://www.its.caltech.edu/ helge/http://www.its.caltech.edu/ helge/\n\nH. K. was supported by a fellowship of the Simons foundation.\n\nAlmost Mathieu operator, dynamical localization\n[2000]Primary 81Q10; Secondary 37D25, 47B36\n\nWe prove that the exponential moments of the position\noperator stay bounded for the supercritical almost Mathieu operator\nwith Diophantine frequency.\n\nIntroduction",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1208.2674v1::L74-104::c1",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1208.2674v1::L74-104::c1",
+    "file": "data/data/full_text/1208.2674v1.txt",
+    "section_path": "",
+    "start_line": 74,
+    "end_line": 104,
+    "text": "Introduction\n\nAs pointed out in, the spectral property of Anderson\nlocalization of a self-adjoint operator\ndoes not let us conclude much about the behavior of the\ntime evolution  (If  solves ,\nthen .), with dynamical  localization-type\nconclusions requiring either additional or separate\narguments. Various dynamical localization formulations have been\nsuggested and proved, by different methods, for most popular models,\nparticularly, for the Anderson model. Aside\nfrom uniform dynamical localization that happens rarely for ergodic families\n, the strongest dynamical localization property is\nthe exponential (in space) rate of decay of the expected overlap,\nthat is\n_t _k^- t H _\nC ^-k -\nA stronger, but equivalent in all known examples, formulation is\n() with  replaced with an arbitrary bounded\nfunction  or, equivalently, by the exponential decay of\nwhere\nis a complete set of orthonormalized eigenfunctions (and the sum may\nbe localized in energy, if needed). As pointed out in, this\nleads to various interesting physical conclusions, for example the\nexponential decay of the two-point function at the ground state and\npositive temperatures with correlation length staying uniformly\nbounded as temperature goes to zero. Moreover, it is this conclusion\nthat is often implicitly assumed as manifesting localization, in\nphysics literature. It is therefore desirable to establish it for\nphysically relevant models.\n\nIt is natural in this context to define the exponential decay rate in expectation (obviously\nconnected to the minimal inverse correlation length) as",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1208.2674v1::L17-72::c0",
+        "direction": "previous"
+      },
+      {
+        "id": "1208.2674v1::L106-137::c2",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1208.2674v1::L106-137::c2",
+    "file": "data/data/full_text/1208.2674v1.txt",
+    "section_path": "",
+    "start_line": 106,
+    "end_line": 137,
+    "text": "It is natural in this context to define the exponential decay rate in expectation (obviously\nconnected to the minimal inverse correlation length) as\n\ngamma\n:= _k( -(_s _s(0)_s (k))k)\nwith a relevant question being whether or not it is positive. This\ndefinition can be localized  to an energy range by summing over the\neigenfunctions with energies falling in the range, in which case it is\nlinked to the minimal inverse correlation length for Fermi energies\nfalling in that range.\n\nThe corresponding question for the Anderson model,\ni.e. for the potential being independent identically\ndistributed random variables, was solved infor the one-dimensional case and infor higher dimensions throughout the regimes where corresponding\nproofs of localization work, thus establishing positivity of . The corresponding\nresult for continuum operators was proven in.\n\nIn this paper we establish the first result of this type for a\nnon-random ergodic operator.( aside from families with\nuniform localization, where this conclusion holds trivially. It\nshould be noted that the existing examples with uniform localization\n(e.g.) are of a rather artificial nature and do not\ncorrespond to physical systems)\nThe most natural and popular operator\nthat fits this description is\nthe almost Mathieu operator given by\nam\nH_,, : ^2() &^2(),\n\nH_,, u(n) &= u(n+1) + u(n-1) + 2 (2(n+ )) u(n),\nwhere ,  is irrational, ,\nand  denotes the space of square summable bi-infinite\nsequences. We will be interested in the supercritical regime\nthat is  which is the regime of localization for\nalmost every value of .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1208.2674v1::L74-104::c1",
+        "direction": "previous"
+      },
+      {
+        "id": "1208.2674v1::L139-190::c3",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1208.2674v1::L139-190::c3",
+    "file": "data/data/full_text/1208.2674v1.txt",
+    "section_path": "",
+    "start_line": 139,
+    "end_line": 190,
+    "text": "H_,, u(n) &= u(n+1) + u(n-1) + 2 (2(n+ )) u(n),\nwhere ,  is irrational, ,\nand  denotes the space of square summable bi-infinite\nsequences. We will be interested in the supercritical regime\nthat is  which is the regime of localization for\nalmost every value of .\n\nThe frequency  is Diophantine\nif there exist  such that\nq = (q, ) q^\nfor all integers . We will also use the notation\nso\nfor Diophantine  Frequencies  with\nsmall  (with the quantifier depending on the context)\nare often called weakly Liouville.  It was shown in that\nfor  and  Diophantine Anderson localization\nholds, that is for almost every , the operator\nhas pure point spectrum with\nexponentially decaying eigenfunctions. This has been extended to the\nweakly Liouville case in.\n\nAs far as quantum dynamics goes,  the following\ndynamical statements are known:\n\nJitomirskaya and Last have shown in that for ,\nDiophantine, and almost every  we have\n_t _k^-t H_,, _\nC ^-k -\nwhere  is independent of , , and ,\nbut  is allowed to depend on  and , but\nis independent of .\nGerminet and Jitomirskaya have shown in that\nfor  and  Diophantine, we have that for\nevery\n_0^1 _t _n (1 + n)^q\n_n^-t H_,, _0 d    <.\nThis property is called strong dynamical localization in\nand a number of publications on the Anderson model and\nquasiperiodic operators.\nAs the conclusion of Theorem  is stronger a better name\nmight be polynomial dynamical localization in expectation.\nIt is known since that a Diophantine-type assumption\nis necessary even for spectral localization.\nBourgain and Jitomirskaya have proven\ndynamical localization results of the type (ii) for more general quasi-periodic\nmodels.\n\nIn this note we prove the above described exponential rate of decay for\nsupercritical  almost Mathieu operator with Diophantine (and even\nweakly Liouville) frequencies:\n\nLet  Then there exists  such that for\nwith  we have  with  defined\nin ().\nThis immediately implies\nUnder the conditions of Theorem  there exists\nand  such that\n_0^1 _t _^-t H_,, _k d    C ^-k-\nfor all .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1208.2674v1::L106-137::c2",
+        "direction": "previous"
+      },
+      {
+        "id": "1208.2674v1::L192-226::c4",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1208.2674v1::L192-226::c4",
+    "file": "data/data/full_text/1208.2674v1.txt",
+    "section_path": "",
+    "start_line": 192,
+    "end_line": 226,
+    "text": "Let  Then there exists  such that for\nwith  we have  with  defined\nin ().\nThis immediately implies\nUnder the conditions of Theorem  there exists\nand  such that\n_0^1 _t _^-t H_,, _k d    C ^-k-\nfor all .\n\nThe conclusion of this corollary can be best called\nexponential dynamical localization in expectation.\nIt is clear that this result implies both the results of\nand.\nThe proof of Theorem  is based on the results\nof. As the bounds on eigenfunction decay\nobtained in are nonquantitative also our\nbounds on  are.\n\nIt is an interesting and natural question if the limit in the\nright-hand side of\n() exists in general and if for one dimensional operators\ncan be equal to the minimal Lyapunov exponent as that is how the eigenfunctions often decay\n(for the Diophantine almost Mathieu case the almost Lyapunov decay of\nthe eigenfunctions was shown in). We plan to investigate\nthis question in a future work. It is also interesting to establish\npositive decay rate for other well-studied models with localization,\nfor example, for other quasiperiodic operators in the regime of\npositive Lyapunov exponents.\n\nThe proof of Theorem  splits into two parts.\nIn Section , we reduce the question to a question\nof decay estimates of eigenfunctions with a given localization\ncenter. As we hope that the results will be useful in other\ncontexts, we formulate this section for general families of\noperators acting on .\nIn Section , we deduce the appropriate\ndecay estimate from the results of.\n\nReduction to a question about eigenfunctions",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1208.2674v1::L139-190::c3",
+        "direction": "previous"
+      },
+      {
+        "id": "1208.2674v1::L228-308::c5",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1208.2674v1::L228-308::c5",
+    "file": "data/data/full_text/1208.2674v1.txt",
+    "section_path": "",
+    "start_line": 228,
+    "end_line": 308,
+    "text": "Reduction to a question about eigenfunctions\n\nAs the results in the following are valid for general families\nof operators, we state them in this generality. Let\nbe a family of self-adjoint operators on  and  a probability\nspace. Assume that for  almost every  the spectrum\nof  is pure point. Denote by  an orthonormal\nbasis of  consisting of eigenfunctions of .\nFor each , we let  be  such that\n_x;s(n_x;s) =  _x;s_^(^d).\nIt is shown for  in Section 2 of.\nthat  and  can be chosen\nto be measurable functions of . The general case\ncan be found in.\n\nFixing  and  with  sufficiently small,\nthe results of imply that the family of operators\nsatisfy the\nabove properties when  is equipped with the normalized\nLebesgue measure.\n\nWe state the next theorem in a form more general than is\nnecessary for application to the almost Mathieu operator. It\nis our hope that it will be useful in other contexts. The\nmain difference to a more naive estimate is that one\ncan exploit the orthogonality of the  when\nestimating .\n\nWe have for almost every  that\nsplit\n_k^-t H_x _\n&_s _x;s(k) _x;s()\n\n&_n   ( _n_x;s = n _x;s(k)^2\n_n_x;s = n _x;s()^2)^12\nand\nsplit\n_k^-t H_x _ d(x)&\n_s _x;s(k) _x;s() d(x)\n\n& _n (_n_x;s = n _x;s(k)^2 d(x)\n_n_x;s = n _x;s()^2 d(x))^12.\n\nDenote by  the eigenvalues of  such that\n. We have that\n\nBy the triangle inequality and reordering the sum,\nwe obtain\n\nThe first equation follows by applying the Cauchy-Schwarz\ninequality to the inner sum. The second equation\nfollows from the first by integrating and then applying the\nCauchy-Schwarz to the terms of the form\n\nFor  assume for  that\n_n_x;s = n _x;s()^2 d(x) C^-2 n-.\nThen\n_k^-t H_x _ d(x)\nC_1(,d,C)(1+k-^d-1)  ^-     k-, & d>1,\n\nC (1 +   + k-)\n^-k-, & d=1.\n\nAlmost localization\n\nThe goal of this section is to discuss consequences of the work\nand to give the proof of Theorem .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1208.2674v1::L192-226::c4",
+        "direction": "previous"
+      },
+      {
+        "id": "1208.2674v1::L311-391::c6",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1208.2674v1::L311-391::c6",
+    "file": "data/data/full_text/1208.2674v1.txt",
+    "section_path": "",
+    "start_line": 311,
+    "end_line": 391,
+    "text": "The goal of this section is to discuss consequences of the work\nand to give the proof of Theorem .\n\nLet , , and .\nThen  is called -resonant for  if\n2 - k  ^-k.\nGiven  and , we denote by  the set\nof -resonances for .\n\nRecall furthermore, that the Almost-Mathieu equation\nis given by\nh_,, u(n) = u(n+1) + u(n-1) + 2 (2(n + )) u(n).\nWe use the notation  in contrast with that\nof () to emphasize that\nthis is meant as a difference equation.\nTheorem 5.1. in states that\n\nFor  there exists  and\nso that for  with  there exist\n, such that for\nand any solution\nof  with\nand , we have\nu(n) C_1 ^-n\nfor\nwhere  denote the -resonances of .\n\nThis theorem implies\n\nWe have that\n_0^1 (_n = n_;s _; s()^2 ) d   (C_1)^2 ^-2 n -  + ^-C_0 n-.\n\nBy replacing  by  and  by ,\nwe can assume that . Then for  the functions\n\nsatisfy the assumptions of the previous theorem. So we obtain\nthat if  is not -resonant for  that\n\nBy orthogonality , thus we obtain for these\nthat\n\nHence, we obtain that\n*\nFor fixed  the set of  such that\nis -resonant for  has measure .\nAs the smallest possible choice for  in the previous\nequation is  the claim follows.\n\n[Proof of Theorem  and Corollary ]\nBy the previous theorem, the assumptions of Corollary  hold.\nThe claim follows.\n\nxxx\n\nM. Aizenman, Localization at weak disorder: Some elementary bounds.\nRev. Math. Phys. 6, 1163 (1994).\n\nM. Aizenman, A. Elgart, S. Naboko, F. Schenker, G. Stolz,\nMoment analysis for localization in random Schrödinger operators.\nInvent. Math. 163:2 (2006), 343-413.\n\nM. Aizenman, G.-M. Graf, Localization bounds for an electron gas.\n1998 J. Phys. A: Math. Gen.31 (1998) 6783-–6806.\n\nM. Aizenman, J. Schenker, R. Friedrich, D. Hundertmark,\nFinite-volume fractional-moment criteria for Anderson localization.\nComm. Math. Phys. 224:1 (2001), 219-253.\n\nA. Avila, S. Jitomirskaya, The Ten Martini problem.\nAnn. of Math. 170, 303-342 (2009).",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1208.2674v1::L228-308::c5",
+        "direction": "previous"
+      },
+      {
+        "id": "1208.2674v1::L393-437::c7",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1208.2674v1::L393-437::c7",
+    "file": "data/data/full_text/1208.2674v1.txt",
+    "section_path": "",
+    "start_line": 393,
+    "end_line": 437,
+    "text": "A. Avila, S. Jitomirskaya, The Ten Martini problem.\nAnn. of Math. 170, 303-342 (2009).\n\nA. Avila, S. Jitomirskaya, Almost localization and almost reducibility.\nJEMS 12 (2010), 93-131.\n\nAvron, J., Simon, B.: Singular continuous spectrum for a class of\nalmost periodic Jacobi matrices. Bull. AMS 6, 81-85 (1982).\n\nJ. Bourgain, S. Jitomirskaya, Anderson localization for the band model.\nGAFA, 67–79, Lecture Notes in Math., 1745, Springer, Berlin,\n2000.\n\nD. Damanik, Z. Gan,\nLimit-periodic Schrödinger operators with uniformly localized eigenfunctions.\nJ. d'Analyse Math. 115 (2011), 33-49.\n\nR. Del Rio, S. Jitomirskaya, Y. Last, B. Simon,\nWhat is localization?.\nPhys. Rev. Lett. 75 (1995) 117-119.\n\nR. Del Rio, S. Jitomirskaya, Y. Last, B. Simon,\nOperators with singular continuous spectrum IV: Hausdorff dimensions, rank one pertubations and localization.\nJ. d'Analyse Math. 69 (1996) 153-200.\n\nF. Delyon, H. Kunz, B. Souillard,\nOne-dimensional wave equations in disordered media.\nJ. Phys. A 16:1 (1983), 25-42.\n\nF. Germinet, S. Jitomirskaya, Strong dynamical localization for the almost Mathieu model.\nRev. Math. Phys. 13:6 (2001), 755-765.\nGordon, A.: On the point spectrum of the one-dimensional\nSchrodinger operator. Usp. Math. Nauk. 31, 257 (1976).\n\nA. Gordon, S. Jitomirskaya, Y. Last, B. Simon,\nDuality and singular continuous spectrum in the almost Mathieu equation.\nActa Math. 178 (1997), 169-183.\n\nA. Gordon, A. Kechris, Measurable enumeration of eigenelements.\nAppl. Anal. 71:1-4 (1999), 41-61.\n\nS. Jitomirskaya,Continuous Spectrum and Uniform Localization for Ergodic\nSchrodinger Operators. J. Funct. Anal. 145, 312-322 (1997).\n\nS. Jitomirskaya, Metal-insulator transition for the almost Mathieu operator.\nAnn. of Math. (2) 150:3 (1999), 1159-1175.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1208.2674v1::L311-391::c6",
+        "direction": "previous"
+      },
+      {
+        "id": "1208.2674v1::L439-444::c8",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1208.2674v1::L439-444::c8",
+    "file": "data/data/full_text/1208.2674v1.txt",
+    "section_path": "",
+    "start_line": 439,
+    "end_line": 444,
+    "text": "S. Jitomirskaya, Metal-insulator transition for the almost Mathieu operator.\nAnn. of Math. (2) 150:3 (1999), 1159-1175.\n\nS. Jitomirskaya, Y. Last, Anderson localization for the almost Mathieu equation. III.\nSemi-uniform localization, continuity of gaps, and measure of the spectrum.\nComm. Math. Phys. 195:1 (1998),  1-14.\n\nH. Kunz, B. Souillard, Sur le spectre des opérateurs aux differences finies aleatoires. (French) [On the spectra of random finite difference operators].\nComm. Math. Phys. 78:2 (1980/81), 201-246,",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1208.2674v1::L393-437::c7",
+        "direction": "previous"
+      }
+    ]
+  }
+]

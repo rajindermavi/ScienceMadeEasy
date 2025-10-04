@@ -1,0 +1,224 @@
+[
+  {
+    "id": "1812.02860v1::L5-77::c0",
+    "file": "data/data/full_text/1812.02860v1.txt",
+    "section_path": "",
+    "start_line": 5,
+    "end_line": 77,
+    "text": "-3.5pc\n\n[ ] Exact dynamical decay rate for the almost Mathieu operator\nSvetlana Jitomirskaya\n[ Svetlana Jitomirskaya] Department of Mathematics, University of California, Irvine, California 92697-3875, USA\n\nszhitomi@math.uci.edu\nHelge Kruger\n[Helge Kruger]Mathematics 253-37, Caltech, Pasadena, CA 91125\nhelge@caltech.edu\n\nWencai Liu\n[Wencai Liu]Department of Mathematics, University of California, Irvine, California 92697-3875, USAliuwencai1226@gmail.com\n\nessinf\nmeas\ndiv\nspan\n\nplain\ntheoremTheorem[section]\ncorollary[theorem]Corollary\nlemma[theorem]Lemma\nproposition[theorem]Proposition\nlemmaa[theorem]Lemma A.\ndefinition\ndefinition[theorem]Definition\nconjecture[theorem]Conjecture\nexample[theorem]Example\nremark[theorem]Remark\n*noteNote\ncaseCase[section]\n\nWe prove that the exponential decay rate in expectation is well defined and\nis equal to the Lyapunov exponent, for  supercritical almost Mathieu operators\nwith Diophantine frequencies.\n\nIntroduction\nIn physics literature, Lyapunov exponent is often referred to as\nthe inverse localization length, and its positivity is often considered a\nmanifestation of localization in a 1D system. At the same time,  various physically desirable conclusions, such as e.g. the\nexponential decay of the two-point function at the ground state and\npositive temperatures with correlation length staying uniformly\nbounded as temperature goes to zero, are often\nimplicitly assumed as attributes of localization. A way\nto derive them currently requires a strong form of dynamical\nlocalization: the exponential (in space) rate of decay of\nthe two point function,\nthat is\n\nwhere\nis a complete set of orthonormalized eigenfunctions (and the sum may\nbe localized in energy, if needed).\n\nIn view of this, the exponential decay rate in expectation was\ndefined  in as",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1812.02860v1::L79-112::c1",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1812.02860v1::L79-112::c1",
+    "file": "data/data/full_text/1812.02860v1.txt",
+    "section_path": "",
+    "start_line": 79,
+    "end_line": 112,
+    "text": "In view of this, the exponential decay rate in expectation was\ndefined  in as\n\nand\n\nIt is obviously\nconnected to the minimal inverse correlation length. This\ndefinition can be localized  to an energy range by summing over the\neigenfunctions with energies falling in the range, in which case it is\nlinked to the minimal inverse correlation length for Fermi energies\nfalling in that range.\n\nIt is well known that there is a long road from positive Lyapunov exponents\nto a statement like (). First, positive Lyapunov exponents\ndon't even imply pure point spectrum for a.e. phase. Even\nfor models with positive Lyapunov exponents and known pure point spectrum, dynamical localization\nmay not hold, and then an averaged statement (dubbed\nstrong dynamical localization) is\nstrictly stronger, and a result such as\nedl is stronger yet (albeit equivalent in all known\nexamples so far).\n\nYet it may be natural to expect that there is a certain reason to\nphysicists' jump in conclusions, and that for physically relevant\nmodels Lyapunov exponent is indeed related to .\n\nIn this paper we prove the first such result. It turns out that for\nalmost Mathieu operators,  that is operators on  given by\n() with potential (), arguably the most popular 1D model in\nphysics, the Lyapunov exponent precisely defines the dynamical decay\nrate.\n\nSuppose . Let  be the Lyapunov exponent of the almost Mathieu\noperator for energies in the spectrum. We have\nLet , and  be Diophantine.\nThen",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1812.02860v1::L5-77::c0",
+        "direction": "previous"
+      },
+      {
+        "id": "1812.02860v1::L115-144::c2",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1812.02860v1::L115-144::c2",
+    "file": "data/data/full_text/1812.02860v1.txt",
+    "section_path": "",
+    "start_line": 115,
+    "end_line": 144,
+    "text": "Suppose . Let  be the Lyapunov exponent of the almost Mathieu\noperator for energies in the spectrum. We have\nLet , and  be Diophantine.\nThen\n\nWithout of loss of generality, we assume .\nWe note that almost Mathieu operators have Anderson localization with\neigenfunctions decaying exactly at the Lyapunov rate if and only if\n, and  is Diophantine, thus we establish\nequality of the exponential decay rate in expectation and the\nLyapunov exponent throughout this entire regime( More\nprecisely, exact Lyapunov decay of the eigenfunctions holds if and\nonly if , and  where\nare denominators of continued fraction approximants of\n. Our result depends on Lemmas from\nthat were formulated there for the\nstandard Diophantine condition, but our proof would hold for the entire regime\nif those lemmas were\ncorrespondingly upgraded, which is a technical matter.).\n\nPrevious quantum dynamics results in the regime of localization have\nbeen limited to lower bounds for related quantities, for any model. Bounds\nfor the supercritical (that is )  almost Mathieu operator go back to\n. Dynamical localization for general analytic\nquasiperiodic potentials was obtained in.\n\nA lower bound  on , establishing its positivity, was proved, under\nthe same assumptions as in Theorem , in. Previously, lower bounds on  were obtained\nfor the Anderson model,\ni.e. for the potential being independent identically\ndistributed random variables, infor the one-dimensional case and infor higher dimensions throughout the regimes where corresponding\nproofs of localization work, thus excluding e.g. Bernoulli.  The corresponding\nresult for continuum operators was proven in. Recently, a proof of such lower bound was obtained for an\narbitrary 1D bounded Anderson model in using a more delicate\nimplementation of the method of and some ideas of.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1812.02860v1::L79-112::c1",
+        "direction": "previous"
+      },
+      {
+        "id": "1812.02860v1::L146-192::c3",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1812.02860v1::L146-192::c3",
+    "file": "data/data/full_text/1812.02860v1.txt",
+    "section_path": "",
+    "start_line": 146,
+    "end_line": 192,
+    "text": "A lower bound  on , establishing its positivity, was proved, under\nthe same assumptions as in Theorem , in. Previously, lower bounds on  were obtained\nfor the Anderson model,\ni.e. for the potential being independent identically\ndistributed random variables, infor the one-dimensional case and infor higher dimensions throughout the regimes where corresponding\nproofs of localization work, thus excluding e.g. Bernoulli.  The corresponding\nresult for continuum operators was proven in. Recently, a proof of such lower bound was obtained for an\narbitrary 1D bounded Anderson model in using a more delicate\nimplementation of the method of and some ideas of.\n\nWhile lower bounds on  are a corollary of localization, that\nis of taming the resonances,  upper bounds on   are a\ncorollary of delocalization, that is of exploiting the presence of the\nresonances. It is well known that the latter task is usually\nharder. In this paper we achieve this, at the same time making both\nestimates sharp. Our analysis uses (a small part of the) delicate\nestimates on eigenfunctions obtained in\n. The statements we need that are\nsimilar to those in are\npresented in the appendix, while the body of the paper consists of the\nnew argument needed to derive the sharp upper and lower bounds.\n\nIt is tempting to conjecture that Theorem  has a\nuniversal nature, but one should be cautious. For example, we do not\nexpect it to hold even for weakly Liouville almost Mathieu operators\nfor which localization has been established in, with\neigenfunctions decaying exponentially but at a non-Lyapunov\nrate. However, even for those a\nstatement of the form  may be plausible. Moreover,\nalmost Mathieu operators are special in that their Lyapunov exponent\nis constant on the spectrum, and without this condition the statement\nof the theorem doesn't even make sense. Yet, it is natural to expect that in many\nphysically relevant situations there should be a link between\nand , where  ()\nover  in the spectrum. For example, it is an interesting question\nto establish such a connection for the Anderson model where eigenfunctions\ndo decay at the Lyapunov rate (e.g.). In the framework of\nthe method of this would require  more delicate estimates\non the probabilities of large deviation sets.\n\nPreliminaries\nFor ,  irrational, and ,\ndefine the potential\n\nwhere  is the coupling,  is the frequency, and  is the phase.\nWe define the almost Mathieu operator by\nits action on ,",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1812.02860v1::L115-144::c2",
+        "direction": "previous"
+      },
+      {
+        "id": "1812.02860v1::L194-300::c4",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1812.02860v1::L194-300::c4",
+    "file": "data/data/full_text/1812.02860v1.txt",
+    "section_path": "",
+    "start_line": 194,
+    "end_line": 300,
+    "text": "where  is the coupling,  is the frequency, and  is the phase.\nWe define the almost Mathieu operator by\nits action on ,\n\nWe say that frequency  is Diophantine if there exist   and  such\nthat  for ,\n*\nwhere .\n\nIn the following, we will consider  and\nDiophantine fixed, and so set .\nWe know that for almost every , the spectrum\nof  is pure point.\nWe denote by  an orthonormal basis consisting of eigenfunctios of .\nLet  be the position of the leftmost maximum of\n, so\n\nA key step in the proof of Theorem  will be to prove the following localization\nresult. Below  is always small.\nLet ,  Diophantine, ,\n, and .\nLet   be such that\n\nThen  for large  (depending on ) we have\n\nif  and  are on different sides of , that is , then\n\nif   and   for  some ,\nthen\n\nTheorem  is obtained using the arguments from. We include a proof in the appendix.\nTheorem  implies the following corollary immediately.\nLet ,  Diophantine, ,\n, and .\nLet  such that\n\nSuppose\nfor some\n\nThen we have\n\nThe lower bound\nIn this part we will prove the lower bound in Theorem\n:\nThat is we will fix\nand bound\n\nfrom above.\nBy orthogonality, we have  for any ,\n\nand for any\n\nBy symmetry, we can clearly assume that .\nWe note that in order to prove the lower bound in Theorem ,\nit suffices to show\n\nLet ,  Diophantine, and .\nThen for  large enough, we have\n\nFor  and , we define the sets\n\nand\n\nWe clearly have that\nand .\n\nBy Theorem  and Corollary , we can obtain the following Lemma.\nFor any ,\nthe following estimates hold,\n\n[(i)]For  and  , we have\n\nfor large .\n[(ii)]For  and , we have\n\nfor large .\n\n[Proof of Theorem ]\nLet  be a small positive constant.  We write\n*\nWe estimate I first. In this case, fix .\nBy (i) of   Lemma  and Gauth2, we can conclude that for any\nand ,\n*\nTherefore, we have that for   and  ,\n\nLet , . Define  for      implicitly by\n.\nThen for ,  , and we have\n\nSince , for any Borel ,\nwe have\n\nThus we have\n\nThen",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1812.02860v1::L146-192::c3",
+        "direction": "previous"
+      },
+      {
+        "id": "1812.02860v1::L302-426::c5",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1812.02860v1::L302-426::c5",
+    "file": "data/data/full_text/1812.02860v1.txt",
+    "section_path": "",
+    "start_line": 302,
+    "end_line": 426,
+    "text": "Then\n\nFrom eq:layercake, Glnew1 and Gnov191,\none\nhas for large\n\nNoticing that\n, one has\n\nThus, for ,\n\nThen, we have that\n\nSimilarly,\n\nNow we  are in a position to  estimate  III.\n\nFor , by Lemma  and Gauth2, one has\n*\nIt leads to\n\nFor  , let\nbe such that\n\nNotice that   is unique by the fact that  satisfies Diophantine condition.\n\nLet\n*\nand\n*\nBy Theorem  and the fact that ,  for any ,\n*\nand\nfor any ,\n*\n\nFor\nwith ,  by  Lemma , we   have that\n\nA similar bound holds for . That is,\nfor\nand ,\n\nBy (), (), eq:layercake and Gnov191,\nwe then have  Gnov192 with  replaced by\nand also Glnew2, Glnew3, Glnew4.\nThus we also have\n*\nIt leads to\n\nBy  () and Gnov195, we get the bound of II,\n*\nPutting the bounds of I, II and III together,\nwe have\n*\nLetting  , we obtain Theorem .\nThe upper bound\nIn this part we will prove the upper bound:\nFor any  satisfying , we have for  large enough\n\nFix    and large .  Define\nsets\n\nand\n\nThen\nhas measure satisfying .\n\nLet  be  Diophantine  with  constants  . Then for any   and\nfor any ,\n\nLet  be such that the minimum in Gnov196 is attained at\n. We  split our analysis into three cases depending on the\nvalue of  .\n\nCase I. . Then the Lemma holds because of .\n\nCase II.  and . The Lemma holds because of  and DC frequencies.\n\nCase III. . The Lemma holds because of  (using ).\n\nIt clearly suffices to show that for the eigenfunctions   of\n(we ignore the dependence on\n)  we have\n\nas long as  is large enough, uniformly in .\nThe first step is\n\nFor  large enough and , we have\n\nwhere .\n\nWithout loss of generality, assume .\n\nSuppose  or .\n\nUsing    Corollary   with , , by Gnov196,\nwe have\n*\nThus\n*\nCombining with (), the result follows.\nThe following  lemma  is similar to a statement appearing in with some modifications. We present a proof in the Appendix.\nSuppose",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1812.02860v1::L194-300::c4",
+        "direction": "previous"
+      },
+      {
+        "id": "1812.02860v1::L428-575::c6",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1812.02860v1::L428-575::c6",
+    "file": "data/data/full_text/1812.02860v1.txt",
+    "section_path": "",
+    "start_line": 428,
+    "end_line": 575,
+    "text": "Using    Corollary   with , , by Gnov196,\nwe have\n*\nThus\n*\nCombining with (), the result follows.\nThe following  lemma  is similar to a statement appearing in with some modifications. We present a proof in the Appendix.\nSuppose\n\nwith . Suppose     is an   solution of . Then\n\n[Proof of Theorem ]\nFor large , by Proposition  and Lemma , one has for ,\n*\nThen\n*\nThis implies Theorem .\nProof of Theorem\nBy shifting the operator by  units we can assume . Without loss of generality, we assume .\nThen in order to prove Theorem  , it suffices to prove the following theorem.\n\nLet ,  Diophantine,   , ,\n.\nLet  be such that\n\nThen the following statements  hold for  large :\n\nIf  , then\n\nIf\nfor\n\nand , then\n\nSuppose .  Let .\nIt isa standard fact (e.g. (37) in) that for large ,\n\nLet\n. Suppose   is such that\n*\nwhere  is a   constant.\nLet  be small positive constants.\n\nLet .\nAssume  lies in   (i.e., )with   and , .\nSuppose      and , .\nThen for large enough ,\n\nFix  .\n\nSuppose\n\nThen  for  large\n\n[Proof of Theorem ]\nWe start with the proof of  Case I. Let , , , ,  and  in Lemma .\nBy Lemma , one has  and , so\n\nsince  for all .\nBy G.new18app and Gapp1, we have\n*\nIt finishes the proof  of Case I.\n\nNow weturn to Case II.\nLet  be such that .\nLet , , , ,  and  in Lemma .\nBy  Lemma  and G.new18app, one has (as in the proof of Case I), one\nhas\n\nSuppose . In this case, by the definition of , one has .\nLet  and  in Lemma  , one has\n\nIn this case,  Gminnov181 follows from Gapp3 and Gapp4.\n\nSuppose . In this case, Gminnov181 follows from Gapp3 directly since .\n\nProof of Lemma\n\nWithout loss of generality, we assume .\nSet  .\nWe  let ,\nand .\nThen by the assumption gjs, one has for all ,\n\nWe also have\n\nand\n\nLet  be the Wronskian.\nLet\n\n*\nand\n*\n\nBy a standard calculation using (), (),\n() and palindromic arguments as in(Palindromic argument of then yields   if  is even and analogous statement if  is odd. Here we want to gain a factor of .),\nwe have,\n)\nIn Lemma , let  and , then by first) one has\n\nwhere .\n\nBy  Gnov202 and Gnov203,\nwe have",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1812.02860v1::L302-426::c5",
+        "direction": "previous"
+      },
+      {
+        "id": "1812.02860v1::L577-665::c7",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1812.02860v1::L577-665::c7",
+    "file": "data/data/full_text/1812.02860v1.txt",
+    "section_path": "",
+    "start_line": 577,
+    "end_line": 665,
+    "text": "By  Gnov202 and Gnov203,\nwe have\n\nfor .\n\nNow we split  into cases, depending on whether it is  odd or even.\n\nCase 1.  is even. Let ,\nthen\n*\nApplying  () with , we have\n*\nThis implies\n\nIf () holds, by (), we also have\n\nPutting ()  and ()  together, we get\n\nIf () holds,  we have\n\nThus  in case 1  there exists   such that\n\nIn Lemma , let ,  and , then by G.new18app one has,\n\nLet  and  be the transfer matrices associated  with potentials   and , taking  to  correspondingly.\nBy (),\nthe usual uniform upper semi-continuity and telescoping, one has\n*\nand\n*\nThen by Gnov197, we have\n*\nThis completes  the proof for even  due to  the definition of  and .\n\nCase 2.  is odd. Let ,\nthen\n*\n\nCombining with (), we have\n*\nThis implies\n*\nor\n*\nThus  in case 2,  there also exists   such that\n*\nThe rest of the proof is the same as in case 1.\nAcknowledgments\n\nThis research was\nsupported by NSF DMS-1401204 and NSF DMS-1700314. S.J. and W.L.  are\nalso grateful to the Isaac Newton\nInstitute for Mathematical Sciences, Cambridge, for its hospitality, supported by\nEPSRC Grant Number EP/K032208/1, during the 2015 programme Periodic and Ergodic\nSpectral Problems where an important progress on this work was made.\n\nM. Aizenman.\nLocalization at weak disorder: Some elementary bounds.\nRev. Math. Phys., 6(5):1163-1182, 1994.\n\nM. Aizenman, A. Elgart, S. Naboko, J. H. Schenker, and G. Stolz.\nMoment analysis for localization in random Schrodinger\noperators.\nInvent. Math., 163(2):343-413, 2006.\n\nM. Aizenman and G. M. Graf.\nLocalization bounds for an electron gas.\nJournal of Physics A: Mathematical and General, 31(32):6783,\n1998.\n\nM. Aizenman, J. H. Schenker, R. M. Friedrich, and D. Hundertmark.\nFinite-volume fractional-moment criteria for Anderson localization.\nComm. Math. Phys., 224(1):219-253, 2001.\nDedicated to Joel L. Lebowitz.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1812.02860v1::L428-575::c6",
+        "direction": "previous"
+      },
+      {
+        "id": "1812.02860v1::L667-717::c8",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1812.02860v1::L667-717::c8",
+    "file": "data/data/full_text/1812.02860v1.txt",
+    "section_path": "",
+    "start_line": 667,
+    "end_line": 717,
+    "text": "M. Aizenman, J. H. Schenker, R. M. Friedrich, and D. Hundertmark.\nFinite-volume fractional-moment criteria for Anderson localization.\nComm. Math. Phys., 224(1):219-253, 2001.\nDedicated to Joel L. Lebowitz.\n\nJ. Avron and B. Simon.\nSingular continuous spectrum for a class of almost periodic Jacobi\nmatrices.\nBull. Amer. Math. Soc. (N.S.), 6(1):81-85, 1982.\n\nJ. Bourgain and S. Jitomirskaya.\nAnderson localization for the band model.\nIn Geometric aspects of functional analysis, volume 1745 of\nLecture Notes in Math., pages 67-79. Springer, Berlin, 2000.\n\nJ. Bourgain and S. Jitomirskaya.\nContinuity of the Lyapunov exponent for quasiperiodic operators\nwith analytic potential.\nJ. Statist. Phys., 108(5-6):1203-1218, 2002.\nDedicated to David Ruelle and Yasha Sinai on the occasion of their\n65th birthdays.\n\nR. Del Rio, S. Jitomirskaya, Y. Last, and B. Simon.\nWhat is localization?\nPhysical review letters, 75(1):117, 1995.\n\nF. Delyon, H. Kunz, and B. a. Souillard.\nOne-dimensional wave equations in disordered media.\nJ. Phys. A, 16(1):25-42, 1983.\n\nL. Ge and X. Zhao.\nExponential dynamical localization in expectation for the one\ndimensional Anderson model.\nJ. Spectr. Theory to appear.\n\nF. Germinet and S. Jitomirskaya.\nStrong dynamical localization for the almost Mathieu model.\nRev. Math. Phys., 13(6):755-765, 2001.\n\nS. Jitomirskaya and H. Kruger.\nExponential dynamical localization for the almost Mathieu operator.\nComm. Math. Phys., 322(3):877-882, 2013.\n\nS. Jitomirskaya and W. Liu.\nUniversal hierarchical structure of quasiperiodic eigenfunctions.\nAnn. of Math. (2), 187(3):721-776, 2018.\n\nS. Jitomirskaya and W. Liu.\nUniversal reflective-hierarchical structure of quasiperiodic\neigenfunctions and sharp spectral transition in phase.\narXiv preprint arXiv:1802.00781, 2018.\n\nS. Jitomirskaya and B. Simon.\nOperators with singular continuous spectrum. III. Almost periodic\nSchrodinger operators.\nComm. Math. Phys., 165(1):201-205, 1994.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1812.02860v1::L577-665::c7",
+        "direction": "previous"
+      },
+      {
+        "id": "1812.02860v1::L719-736::c9",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1812.02860v1::L719-736::c9",
+    "file": "data/data/full_text/1812.02860v1.txt",
+    "section_path": "",
+    "start_line": 719,
+    "end_line": 736,
+    "text": "S. Jitomirskaya and B. Simon.\nOperators with singular continuous spectrum. III. Almost periodic\nSchrodinger operators.\nComm. Math. Phys., 165(1):201-205, 1994.\n\nS. Jitomirskaya and X. Zhu.\nLarge deviations of the Lyapunov exponent and localization for the\n1D Anderson model.\narXiv preprint arXiv:1803.10697, 2018.\n\nS. Y. Jitomirskaya.\nMetal-insulator transition for the almost Mathieu operator.\nAnn. of Math. (2), 150(3):1159-1175, 1999.\n\nS. Y. Jitomirskaya and Y. Last.\nAnderson localization for the almost Mathieu equation. III.\nSemi-uniform localization, continuity of gaps, and measure of the spectrum.\nComm. Math. Phys., 195(1):1-14, 1998.\n\nH. Kunz and B. Souillard.\nSur le spectre des operateurs aux differences finies\naleatoires.\nComm. Math. Phys., 78(2):201-246, 1980/81.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1812.02860v1::L667-717::c8",
+        "direction": "previous"
+      }
+    ]
+  }
+]

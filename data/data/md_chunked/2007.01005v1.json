@@ -15,7 +15,13 @@
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L9-17::s1",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2007.01005v1::L9-17::s1",
@@ -25,15 +31,36 @@
     "end_line": 17,
     "text": "In physics literature, it also appears under the names Harper’s or the Azbel-Hofstadter model, with both names used also for the discrete magnetic Laplacian $H(\\alpha)$. In mathematics, it is universally called the critical almost Mathieu operator.[^2] In addition to importance in physics, this model is of special interest, being at the boundary of two reasonably well understood regimes: (almost) localization and (almost) reducibility, and not being amenable to methods of either side. Recently, there has been some progress in the study of the fine structure of its spectrum .\n\nDenote the spectrum of an operator $H,$ as a set, by $\\sigma(H)$. An important object is the union of $\\sigma(H_{\\alpha, \\theta})$ over $\\theta,$ which coincides with the spectrum of $H(\\alpha)$. We denote it $S(\\alpha) :=\\sigma(H(\\alpha))= \\cup_{\\theta \\in [0, 1)} \\sigma(H_{\\alpha, \\theta})$. Note that by the general theory of ergodic operators, if $\\alpha$ is irrational, $\\sigma(H_{\\alpha, \\theta})$ is independent of $\\theta$. We denote the Lebesgue measure of a set $A$ by $|A|$.\n\nFor irrational $\\alpha$, the Lebesgue measure $|S(\\alpha)|=0$, and $S(\\alpha)$ is a set of Hausdorff dimension no greater than $1/2$ . The proof of the Hausdorff dimension result in (which was a conjecture of D. J. Thouless) is based on upper bounds of the measure of the spectrum for $\\alpha\\in\\mathbb{Q}$ and a strong continuity. For rational $\\alpha=\\frac{p_0}{q_0}$, where $p_0$, $q_0$ are coprime positive integers, Last obtained the bounds : $$\\label{eq17}\n\\frac{2(\\sqrt{5}+1)}{q_0}<\\left| S\\left(\\frac{p_0}{q_0}\\right)\\right| < \\frac{8e}{q_0},$$ where $e=\\exp(1)=2.71\\dots$. While the upper bound in (<a href=\"#eq17\" data-reference-type=\"ref\" data-reference=\"eq17\">[eq17]</a>) was sufficient for the argument of , the measure of the spectrum is subject to another conjecture of Thouless : that in the limit $p_n/q_n\\to \\alpha$, we have $q_n|S(p_n/q_n)|\\to c$, where $c=32C_c/\\pi=9.32\\dots$, $C_c=\\sum_{k=0}^{\\infty}(-1)^k(2k+1)^{-2}$ being the Catalan constant. Thouless provided a partly heuristic argument in the case $p_n=1$, $q_n\\to\\infty$. A rigorous proof for $\\alpha=0$ and $p_n=1$ or $p_n=2$, $q_n$ odd, was given in .\n\nThe purpose of this note is to present a sharper upper bound, for all $\\alpha\\in\\mathbb{Q}$:\n\n<div id=\"Thm1\" class=\"theorem\">",
     "labels": [
+      "Thm1",
       "eq17"
     ],
-    "refs": [],
+    "refs": [
+      "eq17"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L1-8::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2007.01005v1::L18-23::s2",
+        "direction": "next"
+      },
+      {
+        "id": "2007.01005v1::L24-35::s0",
+        "direction": "comment"
+      },
+      {
+        "id": "2007.01005v1::L212-220::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2007.01005v1::L18-23::s2",
@@ -42,14 +69,41 @@
     "start_line": 18,
     "end_line": 23,
     "text": "<div id=\"Thm1\" class=\"theorem\">\n\n**Theorem 1**. *For all positive coprime integers $p_0$ and $q_0$, $$\\left| S\\left(\\frac{p_0}{q_0}\\right)\\right| \\leq \\frac{4\\pi}{q_0}.$$*\n\n</div>\n\nThus, the upper bound is reduced from $8e=21.74\\dots$ to $4\\pi= 12.56\\dots$. The way we prove Theorem 1 is very different from that of ; we use the chiral gauge representation and Lidskii’s inequalities. The chiral gauge representation of the almost Mathieu operator also leads to a new type of Chambers’ relation (equations <a href=\"#Chambersodd\" data-reference-type=\"eqref\" data-reference=\"Chambersodd\">[Chambersodd]</a>, <a href=\"#Chamberseven\" data-reference-type=\"eqref\" data-reference=\"Chamberseven\">[Chamberseven]</a> below).",
-    "labels": [],
-    "refs": [],
+    "labels": [
+      "Thm1"
+    ],
+    "refs": [
+      "Chamberseven",
+      "Chambersodd"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L9-17::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2007.01005v1::L24-35::s0",
+        "direction": "next"
+      },
+      {
+        "id": "2007.01005v1::L114-141::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2007.01005v1::L24-35::s0",
+        "direction": "comment"
+      },
+      {
+        "id": "2007.01005v1::L212-220::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2007.01005v1::L24-35::s0",
@@ -61,13 +115,34 @@
     "labels": [
       "cg"
     ],
-    "refs": [],
+    "refs": [
+      "Thm1",
+      "cg"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Proof of Theorem <a href=\"#Thm1\" data-reference-type=\"ref\" data-reference=\"Thm1\">1</a>"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L18-23::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "2007.01005v1::L36-56::s1",
+        "direction": "next"
+      },
+      {
+        "id": "2007.01005v1::L9-17::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2007.01005v1::L18-23::s2",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2007.01005v1::L36-56::s1",
@@ -85,7 +160,17 @@
         "level": 1,
         "title": "Proof of Theorem <a href=\"#Thm1\" data-reference-type=\"ref\" data-reference=\"Thm1\">1</a>"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L24-35::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2007.01005v1::L57-78::s0",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2007.01005v1::L57-78::s0",
@@ -96,7 +181,8 @@
     "text": "## Chambers-type formula\n\nThe celebrated Chambers’ formula presents the dependence of the determinant of the almost Mathieu operator with $\\alpha=p_0/q_0$ restricted to the period $q_0$ with Floquet boundary conditions, on the phase $\\theta$ and quasimomentum $k$. In the critical case it is given by (see, e.g., ) $$\\label{ChambersFormula}\n\\det(A_{\\theta, k, \\ell} - E) = \\Delta(E) -2 (-1)^{q_0}(\\cos(2 \\pi q_0 \\theta) + \\cos(k q_0)),$$ where $$A_{\\theta, k,\\ell} :=\n\\begin{pmatrix}\na_{\\ell} & 1 & 0 & 0 & \\cdots & 0 & 0 & e^{-i k q} \\\\\n1 & a_{\\ell+1} & 1 & 0 & \\cdots & 0 & 0 & 0 \\\\\n0 & 1 & a_{\\ell+2} & 1 & \\cdots & 0 & 0 & 0 \\\\\n\\vdots & \\vdots & \\vdots & \\vdots & \\ddots & \\vdots & \\vdots & \\vdots \\\\\n0 & 0 & 0 & 0 & \\cdots & 1 & a_{\\ell+q-2} & 1 \\\\\ne^{i k q} & 0 & 0 & 0 & \\cdots & 0 & 1 & a_{\\ell+q-1}\n\\end{pmatrix}, \\,\\,\\, \\ell \\in \\mathbb{Z},$$ $$a(x) := 2 \\cos(2 \\pi x), \\qquad a_n(\\theta) := a((p_0/q_0) n + \\theta),$$ and $\\Delta$, the discriminant[^3], is independent of $\\theta$ and $k$. An immediate corollary of this formula is that $S\\left(\\frac{p_0}{q_0}\n\\right) = \\Delta^{-1}([-4, 4])$, e.g., .\n\nHere we obtain a formula of this type for $\\det(B_{\\theta, k,\\ell} - E).$ Indeed, as usual, separating the terms containing $k$ in the determinant, we obtain, for the characteristic polynomial $D_{\\theta, k}(E) := \\det(B_{\\theta, k,\\ell} - E):$ $$\\label{eq1}\nD_{\\theta, k}(E) \n= D^{(0)}_{\\theta}(E)  - (-1)^q b_0 \\cdots b_{q-1} \\cdot 2 \\cos(kq),$$ where $D^{(0)}_{\\theta}(E)$ is independent of $k$ and equal therefore to $D_{\\theta, k = \\frac{\\pi}{2 q}}(E)$.\n\nFor the product of $b_j$’s we have:\n\n<div id=\"prod\" class=\"lemma\">",
     "labels": [
       "ChambersFormula",
-      "eq1"
+      "eq1",
+      "prod"
     ],
     "refs": [],
     "meta": {
@@ -104,7 +190,25 @@
         "level": 2,
         "title": "Chambers-type formula"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L36-56::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2007.01005v1::L79-113::s1",
+        "direction": "next"
+      },
+      {
+        "id": "2007.01005v1::L79-113::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2007.01005v1::L114-141::s2",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2007.01005v1::L79-113::s1",
@@ -115,15 +219,38 @@
     "text": "<div id=\"prod\" class=\"lemma\">\n\n**Lemma 1**. *$$\\label{bbb}\n\\begin{aligned}\nb_0 \\cdots b_{q-1} &= \\prod_{j = 0}^{q-1} 2 \\sin 2\\pi\\left(\\frac{p}{q} j + \\theta\\right)\\\\\n&=4 \\sin(\\pi q \\theta) \\sin \\pi q (\\theta + 1/2) = 2( \\cos(\\pi q/2) - \\cos \\pi q (2\\theta + 1/2) ).\n\\end{aligned}$$*\n\n</div>\n\n<div class=\"proof\">\n\n*Proof.* To evaluate the product of $b_j$’s, we expand sine in terms of exponentials and use the formula $1 - z^{-q} = \\prod_{j = 0}^{q-1} (1 - z^{-1} e^{2 \\pi i \\frac{p}{q} j})$. An alternative derivation can go along the lines of the proof of Lemma 9.6 in . ◻\n\n</div>\n\nSubstituting (<a href=\"#bbb\" data-reference-type=\"ref\" data-reference=\"bbb\">[bbb]</a>) into (<a href=\"#eq1\" data-reference-type=\"ref\" data-reference=\"eq1\">[eq1]</a>), we have $$\\label{eq2}\nD_{\\theta, k}(E) = D^{(0)}_{\\theta}(E) - 8(-1)^q \\sin(\\pi q \\theta) \\sin \\pi q (\\theta + 1/2) \\cos(kq).$$\n\nWe can further obtain the dependence of $D^{(0)}_{\\theta}(E)$ on $\\theta$:\n\n<div id=\"lemma1\" class=\"lemma\">\n\n**Lemma 2**. *$$D^{(0)}_{\\theta}(E) = \\widetilde\\Delta(E) + \\left\\{\n\\begin{array}{ll}\n0, & q \\mbox{ odd} \\\\\n4(\\cos(2 \\pi q \\theta)-1), & q \\mbox{ even},\n\\end{array} \n\\right.$$ where the discriminant $\\widetilde\\Delta(E):=D^{(0)}_{\\theta=0}(E)$ is independent of $\\theta$.*\n\n</div>\n\n<div class=\"proof\">\n\n*Proof.* Since $D_{\\theta, k}(E)$ is independent of $\\ell$, it is $1/q$ periodic in $\\theta$, i.e., $D_{\\theta,k}(E)=D_{\\theta+1/q,k}(E)$, and by <a href=\"#eq1\" data-reference-type=\"eqref\" data-reference=\"eq1\">[eq1]</a> so is $D^{(0)}_{\\theta}(E)$. Therefore, since, clearly, $D^{(0)}_{\\theta}(E)=\\sum_{n=-q}^q c_n (E)\ne^{2\\pi i \\theta n}$, the terms $c_k$ other than $k=mq$ vanish, and $D^{(0)}_{\\theta}(E)$ has the following Fourier expansion: $$D^{(0)}_{\\theta}(E) = c_0(E)+c_q e^{2\\pi i q \\theta}+c_{-q}e^{-2\\pi i q \\theta}.$$",
     "labels": [
       "bbb",
-      "eq2"
+      "eq2",
+      "lemma1",
+      "prod"
     ],
-    "refs": [],
+    "refs": [
+      "bbb",
+      "eq1"
+    ],
     "meta": {
       "heading": {
         "level": 2,
         "title": "Chambers-type formula"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L57-78::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2007.01005v1::L114-141::s2",
+        "direction": "next"
+      },
+      {
+        "id": "2007.01005v1::L57-78::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2007.01005v1::L114-141::s2",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2007.01005v1::L114-141::s2",
@@ -136,13 +263,51 @@
       "Chamberseven",
       "Chambersodd"
     ],
-    "refs": [],
+    "refs": [
+      "eq1",
+      "eq2",
+      "lemma1"
+    ],
     "meta": {
       "heading": {
         "level": 2,
         "title": "Chambers-type formula"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L79-113::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2007.01005v1::L142-145::s3",
+        "direction": "next"
+      },
+      {
+        "id": "2007.01005v1::L18-23::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "2007.01005v1::L57-78::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2007.01005v1::L79-113::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2007.01005v1::L142-145::s3",
+        "direction": "comment"
+      },
+      {
+        "id": "2007.01005v1::L146-149::s4",
+        "direction": "comment"
+      },
+      {
+        "id": "2007.01005v1::L150-163::s5",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2007.01005v1::L142-145::s3",
@@ -154,13 +319,29 @@
     "labels": [
       "eq5"
     ],
-    "refs": [],
+    "refs": [
+      "Chambersodd"
+    ],
     "meta": {
       "heading": {
         "level": 2,
         "title": "Chambers-type formula"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L114-141::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "2007.01005v1::L146-149::s4",
+        "direction": "next"
+      },
+      {
+        "id": "2007.01005v1::L114-141::s2",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2007.01005v1::L146-149::s4",
@@ -173,13 +354,30 @@
       "eq14",
       "eq5"
     ],
-    "refs": [],
+    "refs": [
+      "Chamberseven",
+      "Chambersodd"
+    ],
     "meta": {
       "heading": {
         "level": 2,
         "title": "Chambers-type formula"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L142-145::s3",
+        "direction": "previous"
+      },
+      {
+        "id": "2007.01005v1::L150-163::s5",
+        "direction": "next"
+      },
+      {
+        "id": "2007.01005v1::L114-141::s2",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2007.01005v1::L150-163::s5",
@@ -191,13 +389,29 @@
     "labels": [
       "eq14"
     ],
-    "refs": [],
+    "refs": [
+      "Chamberseven"
+    ],
     "meta": {
       "heading": {
         "level": 2,
         "title": "Chambers-type formula"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L146-149::s4",
+        "direction": "previous"
+      },
+      {
+        "id": "2007.01005v1::L164-168::s6",
+        "direction": "next"
+      },
+      {
+        "id": "2007.01005v1::L114-141::s2",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2007.01005v1::L164-168::s6",
@@ -213,7 +427,17 @@
         "level": 2,
         "title": "Chambers-type formula"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L150-163::s5",
+        "direction": "previous"
+      },
+      {
+        "id": "2007.01005v1::L169-182::s0",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2007.01005v1::L169-182::s0",
@@ -231,7 +455,21 @@
         "level": 2,
         "title": "Measure of the spectrum"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L164-168::s6",
+        "direction": "previous"
+      },
+      {
+        "id": "2007.01005v1::L183-200::s1",
+        "direction": "next"
+      },
+      {
+        "id": "2007.01005v1::L201-211::s2",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2007.01005v1::L183-200::s1",
@@ -241,7 +479,8 @@
     "end_line": 200,
     "text": "<u>Case I: q is odd.</u> Assume without loss that $(-1)^{(q+1)/2}>0$, $\\theta\\in (0,1/(4q)]$. (If $(-1)^{(q+1)/2}<0$, the analysis is similar.) Then the eigenvalues $\\{ \\lambda_i(\\theta) \\}_{i=1}^q$ of $B_{\\theta,k=0,\\ell}$ labelled in decreasing order are the edges of the spectral bands where $\\widetilde\\Delta(E)$ reaches its maximum $4 \\sin(2 \\pi q \\theta)$ on the band; and the eigenvalues $\\{ \\widehat\\lambda_i(\\theta) \\}_{i=1}^q$ of $B_{\\theta,k=\\pi/q,\\ell}$ labelled in decreasing order are the edges of the spectral bands where $\\widetilde\\Delta(E)$ reaches its minimum $-4 \\sin(2 \\pi q \\theta)$ on the band. Then $$\\label{eq4}\n\\begin{split}\n|\\sigma(\\widetilde{H}_{\\frac{p}{q}, \\theta})| &= \\sum_{j=1}^q (-1)^{q-j} (\\widehat\\lambda_j(\\theta) - \\lambda_j(\\theta))\n=\\sum_{j=1}^{(q+1)/2} (\\widehat\\lambda_{2j-1}(\\theta) - \\lambda_{2j-1}(\\theta))+\n\\sum_{j=1}^{(q-1)/2} (\\lambda_{2j}(\\theta) - \\widehat\\lambda_{2j}(\\theta))\n;\\\\\n&\\widehat\\lambda_j(\\theta) - \\lambda_j(\\theta)>0,\\quad\\mbox{if $j$ is odd} ;\\qquad \n \\widehat\\lambda_j(\\theta) - \\lambda_j(\\theta)<0,\\quad\\mbox{if $j$ is even.}\n\\end{split}$$\n\nNow we view $B_{\\theta,k=\\pi/q,\\ell}$ as $B_{\\theta,k=0,\\ell}$ with the added perturbation $$B_{\\theta,k=\\pi/q,\\ell}-B_{\\theta,k=0,\\ell}=\n\\begin{pmatrix}\n& & -2b_{\\ell+q-1} \\\\\n& & \\\\\n-2b_{\\ell+q-1} & &\n\\end{pmatrix},$$ which has the eigenvalues $\\{ E_i(\\theta) \\}_{i=1}^q$ given by: $$E_q(\\theta) = -2|b_{\\ell+q-1}(\\theta)| < 0 = E_{q-1}(\\theta) = \\cdots = E_{2}(\\theta) = 0 < 2|b_{\\ell+q-1}(\\theta)| = E_1(\\theta).$$\n\nThe Lidskii inequalities (e.g., (2.51) in ) are:\n\n<div id=\"thm1\" class=\"theorem\">\n\n**Theorem 2**. *For any $q \\times q$ self-adjoint matrix $M$, we denote is eigenvalues by $E_1(M) \\geq E_2(M) \\geq \\cdots \\geq E_q(M)$. For $q \\times q$ self-adjoint matrices $A$ and $B$, we have: $$\\begin{array}{l}\nE_{i_1}(A+B) + \\cdots + E_{i_m}(A+B) \\leq E_{i_1}(A) + \\cdots + E_{i_m}(A) + E_1(B) + \\cdots + E_m(B); \\\\\nE_{i_1}(A+B) + \\cdots + E_{i_m}(A+B) \\geq E_{i_1}(A) + \\cdots + E_{i_m}(A) + E_{q-m+1}(B) + \\cdots + E_q(B) ,\n\\end{array}$$ for any $1 \\leq i_1 < \\cdots < i_m \\leq q$.*\n\n</div>",
     "labels": [
-      "eq4"
+      "eq4",
+      "thm1"
     ],
     "refs": [],
     "meta": {
@@ -249,7 +488,25 @@
         "level": 2,
         "title": "Measure of the spectrum"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L169-182::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2007.01005v1::L201-211::s2",
+        "direction": "next"
+      },
+      {
+        "id": "2007.01005v1::L201-211::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "2007.01005v1::L212-220::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2007.01005v1::L201-211::s2",
@@ -263,13 +520,38 @@
       "eq7",
       "eq8"
     ],
-    "refs": [],
+    "refs": [
+      "eq4",
+      "eq6"
+    ],
     "meta": {
       "heading": {
         "level": 2,
         "title": "Measure of the spectrum"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L183-200::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2007.01005v1::L212-220::s3",
+        "direction": "next"
+      },
+      {
+        "id": "2007.01005v1::L169-182::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2007.01005v1::L183-200::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2007.01005v1::L212-220::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2007.01005v1::L212-220::s3",
@@ -283,13 +565,43 @@
       "eq15",
       "eq8"
     ],
-    "refs": [],
+    "refs": [
+      "Thm1",
+      "eq7",
+      "thm1"
+    ],
     "meta": {
       "heading": {
         "level": 2,
         "title": "Measure of the spectrum"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L201-211::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "2007.01005v1::L221-248::s0",
+        "direction": "next"
+      },
+      {
+        "id": "2007.01005v1::L9-17::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2007.01005v1::L18-23::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2007.01005v1::L201-211::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2007.01005v1::L183-200::s1",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2007.01005v1::L221-248::s0",
@@ -305,7 +617,17 @@
         "level": 1,
         "title": "Acknowledgment"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L212-220::s3",
+        "direction": "previous"
+      },
+      {
+        "id": "2007.01005v1::L249-267::s1",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2007.01005v1::L249-267::s1",
@@ -321,6 +643,12 @@
         "level": 1,
         "title": "Acknowledgment"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L221-248::s0",
+        "direction": "previous"
+      }
+    ]
   }
 ]

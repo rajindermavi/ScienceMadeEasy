@@ -1,0 +1,178 @@
+[
+  {
+    "id": "1310.8553v2::L14-49::c0",
+    "file": "data/data/full_text/1310.8553v2.txt",
+    "section_path": "",
+    "start_line": 14,
+    "end_line": 49,
+    "text": "theoremTheorem [section]\nremark[theorem]Remark\nlemma[theorem]Lemma\nprop[theorem]Proposition\ncoro[theorem]Corollary\ndefinition[theorem]Definition\nremarks[theorem]Remarks\nclaim[theorem]Claim\n\nFrequency dependence of Holder continuity for quasiperiodic Schrodinger operators\nPaul E. Munger\nRice University, Houston, TX\npem1@rice.edu\n\nWe prove estimates on the Holder exponent of the density of states measure for discrete Schrodinger operators with potential of the form , with  large enough, and conclude that for almost all values of , the density of states measure is not Holder continuous.\n\nIntroduction\n\nThe discovery of quasicrystals by Dan Shechtman has elicited considerable interest (for instance,) in the subject of aperiodic order from mathematicians and physicists. The Fibonacci Hamiltonian has been one of the canonical models for a quasicrystal. It is the one-dimensional discrete Schrodinger operator on  specified by\n\nThe sequence  is called the potential; for the Fibonacci Hamiltonian, , where  is called the coupling constant and  the frequency.\n\nThe spectral properties of the Fibonacci Hamiltonian qualitatively agree with those of physical quasicrystals. For example,\n\nThe spectrum  is a Cantor set of zero Lebesgue measure (). Its point spectrum is empty (,), so the spectral measure is purely singular continuous. As , the Hausdorff dimension of the spectrum behaves like ().\n\nThe spectral measure  is uniformly -Holder continuous for some . This means that there is a  such that for all  and  with ,  (). An asymptotically optimal estimate of  has not been established, but see.\n\nThe density of states measure  is also -Holder continuous (,). The distribution function of the density of states measure is given by the formula ()",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L51-87::c1",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1310.8553v2::L51-87::c1",
+    "file": "data/data/full_text/1310.8553v2.txt",
+    "section_path": "",
+    "start_line": 51,
+    "end_line": 87,
+    "text": "The density of states measure  is also -Holder continuous (,). The distribution function of the density of states measure is given by the formula ()\n\nwhere  is the restriction of  to the  sequences supported on . As , the optimal Holder exponent behaves like .\n\nOne wonders how these properties depend on the frequency. It is already known () that  is a Cantor set of zero Lebesgue measure for all irrational values of . For  large enough, established estimates for the Hausdorff dimension of . Let  be the continued fraction expansion of  (see for an introduction to continued fractions). Then when  is finite,\n*\n210 2 + 3(4(M() - 3M() + (12( ()\n\n2M() + 32M() + (- 8) - 3.\nWhen  is infinite, the Hausdorff dimension of the spectrum is ; notice that the upper bound depends on  in the same way for all . In, Liu, Qu, and Wen derive an expression for the Hausdorff dimension of  and show that for all  and , the Hausdorff dimension is Lipschitz continuous.\n\nUsing methods like those of, this article determines how the -continuity of the density of states measure depends on , assuming throughout that  and  (recall that  is finite for almost all ).\n\nWhen the continued fraction coefficients of  are constant, the behavior is like the Fibonacci Hamiltonian:\n\nSuppose . Then for every\n\nthere is a  such that the density of states measure  associated to the family of Schrodinger operators with frequency  and coupling strength  obeys\n\nfor all ,  with .\n\nIf , then for every\n\nand any , there are  and  with  such that .\n\nFor constant continued fraction coefficients, this identifies the optimal asymptotic behavior of  as . If  is the optimal Holder exponent, , so that\n\nwhen , and similarly for smaller values of .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L14-49::c0",
+        "direction": "previous"
+      },
+      {
+        "id": "1310.8553v2::L90-125::c2",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1310.8553v2::L90-125::c2",
+    "file": "data/data/full_text/1310.8553v2.txt",
+    "section_path": "",
+    "start_line": 90,
+    "end_line": 125,
+    "text": "when , and similarly for smaller values of .\n\nMore generally, the qualitative behavior is determined by  and , the limit inferior.\nIf  is finite, then  is -Holder continuous for some . If  is infinite,  is not Holder continuous. It is well known that  almost everywhere. Thus, for Lebesgue almost all ,  is not Holder continuous.\n\nStructure of\n\nIn, the fine structure of  is developed enough (along the lines of) to estimate its Hausdorff dimension. This article uses many parts of the apparatus Liu and Wen develop, so we recapitulate the necessary results (without proof). The idea is to approximate  by finite unions of closed intervals, growing in number and shrinking in size at controlled rates.\n\nThe central objects to approximating  are the continued fraction approximations to . Let  be the  convergent to . For  and  define the transfer matrix over  sites by\n\nand put\n\nThese matrices arise in the spectral theory of a discrete Schrodinger operator because they produce the sequences that satisfy the formal difference equation .\n\nThis summarizes work that first appeared in. Let  and .  Then:\n\n, so that .\nFor ,  is made of disjoint closed intervals, equal in number to the degree of . These intervals are called bands.\n.\n.\nIf  and , .\nIf , , and , .\n\nWe will approximate  using a certain subset of the above bands, called the generating bands. For , define:\n\nA band of type  is a band of  contained in a band of .\nA band of type  is a band of  contained in a band of .\nA band of type  is a band of  contained in a band of .\nFor each value of , call the the collection of all bands of the above three kinds the spectral generating bands at level k, written . These bands are useful because the combinatorial structure of  is easy to describe if  is known.\n\nFor ,",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L51-87::c1",
+        "direction": "previous"
+      },
+      {
+        "id": "1310.8553v2::L127-175::c3",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1310.8553v2::L127-175::c3",
+    "file": "data/data/full_text/1310.8553v2.txt",
+    "section_path": "",
+    "start_line": 127,
+    "end_line": 175,
+    "text": "For ,\n\nEach band of type  contains a single generating band; it is a band of  of type .\nEach band of type  contains  bands of  of type , and  bands of  of type .\nEach band of type  contains  bands of  of type  and  bands of  of type .\n\nTo make use of Lemma , we have to understand how  approximates :\n\nEvery generating band of level  is contained in some generating band of level , and .\n\nLet us recast the content of Lemma  in a form that is more useful for calculations. Put\n\nThen Lemma  says that for , a band of type  spawns  bands of type . Given a band , we can associate to it a type index, which is the sequence of the types (,, or ) of each of its forbears. That is, for , put  where  is of type  and  is contained in a band of type  for each . Using the matrices , the number of bands with a given type index  is seen to be . Define  to be the set of all one-sided infinite words  on  such that each prefix of  is the type index of at least one band. Such type sequences are called admissible.\n\nBecause of the self-similarity of , estimates for the lengths of generating bands are amenable to a similar formalism. Put\n\nThen if  is a generating band and  its type,\n\nBand Length Estimates\n\nIn this section we consider the asymptotic scaling rate of bands in . It is easy to treat the case  quantitatively, so we take it up first.\n\nIf , then for all  and ,\n\nLet  be the above bound (that is, ), and write  for .\n\nOur task is to bound the lower bound in Lemma  from below as  ranges over all of . A look at the matrix  shows that if  the bound in question is minimized whenever  has the greatest admissible amount of s in it. This can occur at most half the time (by Lemma ), proving the formula in the first case.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L90-125::c2",
+        "direction": "previous"
+      },
+      {
+        "id": "1310.8553v2::L177-220::c4",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1310.8553v2::L177-220::c4",
+    "file": "data/data/full_text/1310.8553v2.txt",
+    "section_path": "",
+    "start_line": 177,
+    "end_line": 220,
+    "text": "Our task is to bound the lower bound in Lemma  from below as  ranges over all of . A look at the matrix  shows that if  the bound in question is minimized whenever  has the greatest admissible amount of s in it. This can occur at most half the time (by Lemma ), proving the formula in the first case.\n\nOn the other hand, when  the minimum is achieved by a band with the greatest possible amount of s and s in its type index. When , this is possible for every entry of , giving the second case, and for  it is possible  of the time.\n\nIf , then for each , there is a band of  with\n\nLet  be the above bound and define .\n\nThe analysis is the same as for the previous lemma, substituting  for .\n\nNow we consider arbitrary s. In this case the optimization problem treated in the above estimates becomes intractable, so we focus on the qualitative behavior.\n\nIf  is infinite, the sequence of lengths of shortest bands of  decays to zero faster than any geometric sequence.\n\nWe argue roughly as in the proof of Lemma . Indeed,  means there is a  such that in each  there is a band whose length is less than  (where  is the average of the first  coefficients of ). Since  is independent of  and  diverges,  approaches zero faster than any geometric sequence.\n\nIf  is finite, then there is a geometric sequence that bounds the length of every band in  from below.\n\nSuppose not, so that for some faster-than-geometric sequence ,  has a band of length less than . This forces the lower bound of  to decay to zero faster than geometrically for some admissible type sequence. This means that  has a subsequence  such that  or  diverge. Both contradict  (and the latter also contradicts ).\n\nHolder Continuity\n\nRecalling that , the sequence  of denominators of convergents to  is bounded above and below by geometric sequences.\n\nBy definition,\n\nSince  increases monotonically, it follows that . Thus\n\nSince  and  grows no faster than ,  is bounded above by an arithmetic sequence.\n\nAgain using monotonicity of , we get . Repeating the above reasoning, we finish the proof.\n\n[Proof of Theorem ]",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L127-175::c3",
+        "direction": "previous"
+      },
+      {
+        "id": "1310.8553v2::L223-257::c5",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1310.8553v2::L223-257::c5",
+    "file": "data/data/full_text/1310.8553v2.txt",
+    "section_path": "",
+    "start_line": 223,
+    "end_line": 257,
+    "text": "[Proof of Theorem ]\n\nFor arbitrary  that are close enough, we want to estimate  from above. Because there is one Dirichlet eigenvalue of  associated to each band of  (),\n\nwhere  is the cardinality of . This amounts to finding a bound on . With  the bound on band lengths of Lemma , define  by\n\nBecause  is supported on , the interval  can be replaced with . Every point of  is contained in a generating band (Lemma ), so it is not a loss to assume  is contained in a generating band. Then, by the definition of , there is a band  containing it (notice that  is comparable in size to , because of how  is defined). We now have\n\nThis ratio scales like . Indeed, it is equal to  at . As  increases to infinity, Lemma  shows that every band of  produces a roughly constant proportion of the bands that comprise . This means the share of bands in  produced by  remains practically constant. So, pick  so that .\n\nDefine  by\n\nso that , which is by the definiton of  less than .\n\nTake any\n\nand choose  so that  for . Put . Then if  satisfy , , where  is the integer corresponding to . This is less than .\n\n[Proof of Theorem ]\n\nRecall  from Lemma ;  goes to  roughly linearly.\n\nLet a supposed Holder exponent  be given, satisfying the hypotheses of the theorem. Given , pick  so that  and\n\nis less than  for all . This is possible for all . Now, choose  so that .\n\nThe exponent  is constructed so that . We have already seen in the proof of  that\n\nBy construction, this is greater than .\n\n[Proof of Theorem ]\n\nWe first prove that  is Holder continuous when  is finite. The proof of Theorem  may be followed until . By Lemma ,  lies between two arithmetic sequences. And by Lemma , the same goes for . This implies , which is the necessary input to obtain Holder continuity.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L177-220::c4",
+        "direction": "previous"
+      },
+      {
+        "id": "1310.8553v2::L259-288::c6",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1310.8553v2::L259-288::c6",
+    "file": "data/data/full_text/1310.8553v2.txt",
+    "section_path": "",
+    "start_line": 259,
+    "end_line": 288,
+    "text": "We first prove that  is Holder continuous when  is finite. The proof of Theorem  may be followed until . By Lemma ,  lies between two arithmetic sequences. And by Lemma , the same goes for . This implies , which is the necessary input to obtain Holder continuity.\n\nNow assume . We will follow the framework of the the proof of Theorem  and see that the optimal Holder exponent is zero. Let  stand for the sequence of upper bounds on band length obtained in Lemma ;  goes to  faster than any linear function. Also, recall that, by Lemma , there is an  so that  grows faster than .\n\nLet a supposed Holder exponent  be given. Given , pick  so that  and\n\nis less than  for all . This is possible for all  since . Now, choose  so that .\n\nThe exponent  is constructed so that . Again,\n\nBecause of the hypothesis on , . By construction, this is greater than , proving that  is not Holder continuous.\n\nAcknowledgement\nThe author is grateful to his advisor, David Damanik, for many helpful discussions and comments.\n\nBellissard, J., Iochum, B., Scoppola, E., Testart, D., \"Spectral properties of one-dimensional quasicrystals\", Comm. Math. Phys. 125: 527-543, 1989.\nBaake, M., Moody, R., editors, Directions in Mathematical Quasicrystals, AMS, 2000.\n\nDamanik, D., Embree, M., Gorodetski, A., Tcheremchantsev, S., \"The fractal dimension of the spectrum of the Fibonacci Hamiltonian\", Comm. Math. Phys. 280 499-516, 2008.\n\nDamanik, D., Gorodetski, A., \"Holder continuity of the integrated density of states for the Fibonacci Hamiltonian\", Comm. Math. Phys. 323: 497-515, 2013.\n\nDamanik, D., Gorodetski, A., \"Spectral and quantum dynamical properties of the weakly coupled Fibonacci Hamiltonian\", Comm. Math. Phys. 305: 221-277, 2011.\n\nDamanik, D., Killip, R., Lenz, D., \"Uniform spectral properties of one-dimensional quasicrystals, III. -continuity\", Comm. Math. Phys. 212: 191-204, 2000.\n\nDamanik, D., Lenz, D., \"Uniform spectral properties of one-dimensional quasicrystals, II. the Lyapunov exponent\", Lett. Math. Phys. 50: 245-257, 1999.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L223-257::c5",
+        "direction": "previous"
+      },
+      {
+        "id": "1310.8553v2::L290-303::c7",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1310.8553v2::L290-303::c7",
+    "file": "data/data/full_text/1310.8553v2.txt",
+    "section_path": "",
+    "start_line": 290,
+    "end_line": 303,
+    "text": "Damanik, D., Lenz, D., \"Uniform spectral properties of one-dimensional quasicrystals, II. the Lyapunov exponent\", Lett. Math. Phys. 50: 245-257, 1999.\n\nHof, A., \"Some remarks on discrete aperiodic Schrodinger operators\", J. Stat. Phys. 72: no. 5-6, 1353-1374, 1993.\n\nKhinchin, A. Continued Fractions, Dover, 1992.\n\nQuing-Hui Liu, Zhi-Ying Wen, \"Hausdorff dimension of spectrum of one-dimensional Schrodinger operator with Sturmian potentials\", Potential Analysis 20: 33-59, 2004.\n\nQing-Hui Liu, Yan-Hui Qu, Zhi-Yang Wen, \"The fractal dimensions of the spectrum of Sturm Hamiltonian\", arXiv:1310.1473v1.\n\nRaymond, L., \"A constructive gap labelling for the discrete Schrodinger operator on a quasiperiodic chain\", Preprint, 1997.\nSchechtman, D., Blech, I., Gratias, D., Cahn, J., \"Metallic phase with long-range orientational order and no translational symmetry\", Phys. Rev. Lett. 53: 1951-1954, 1984.\n\nSuto, A. \"The spectrum of a quasiperiodic Schrodinger operator\", J. Stat. Phys. 56 525–-531, 1989.\n\nTrebin, H., editor,  Quasicrystals: Structure and Physical Properties, Wiley, 2003.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1310.8553v2::L259-288::c6",
+        "direction": "previous"
+      }
+    ]
+  }
+]

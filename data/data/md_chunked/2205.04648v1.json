@@ -10,13 +10,25 @@
       "g122",
       "op"
     ],
-    "refs": [],
+    "refs": [
+      "op"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L14-17::s1",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L14-17::s1",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L14-17::s1",
@@ -28,13 +40,30 @@
     "labels": [
       "g122"
     ],
-    "refs": [],
+    "refs": [
+      "g122",
+      "op"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L1-13::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L18-31::s2",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L1-13::s0",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L18-31::s2",
@@ -44,7 +73,8 @@
     "end_line": 31,
     "text": "The main goal of this paper is to initiate an approach to simultaneously treat numerators and denominators in the study of resonances arising from analytic quasi-periodic Schrödinger operators. As a starting point, we focus on a particular case, namely, completely resonant phases for the almost Mathieu operator, in which phase resonances and frequency resonances overlap. As we were finalizing this paper we learned of a preprint where the study of the numerators also plays an important role, but in a completely different setting of unbounded potentials and the so-called anti-resonances.\n\nWe say a phase $\\theta\\in \\mathbb{R}$ is completely resonant with respect to a frequency $\\alpha$ if $2\\theta\\in \\alpha \\mathbb{Z}+\\mathbb{Z}$. One of the motivations to study completely resonant phases is their critical roles in the spectral theory of quasiperiodic Schrödinger operators, for instance, spectral gap edges  . Another motivation comes from a conjecture of Avila and Jitomirskaya in   and Jitomirskaya  .\n\n**Conjecture 1:** Avila and Jitomirskaya   conjectured that the almost Mathieu operator $H_{\\lambda,\\alpha,\\theta}$ satisfies Anderson localization if $\\ln |\\lambda| >  2 \\beta(\\alpha)$ and $2\\theta\\in \\alpha \\mathbb{Z}+\\mathbb{Z}$, where $$\\label{gresf}\n        \\beta(\\alpha)=\\limsup_{k\\rightarrow \\infty}-\\frac{\\ln ||k\\alpha||_{\\mathbb{R}/\\mathbb{Z}}}{|k|},$$ and $||x||_{\\mathbb{R}/\\mathbb{Z}}={\\rm dist} (x,\\mathbb{Z})$.\n\nConjecture 1 is also a particular case of a conjecture of Jitomirskaya  . In this paper, we prove Conjecture 1 as it is.\n\n<div id=\"mainthm\" class=\"theorem\">\n\n**Theorem 1**. *Assume that $\\alpha$ satisfies $\\beta (\\alpha)<\\infty$. Then the almost Mathieu operator $H_{\\lambda,\\alpha,\\theta}$ satisfies Anderson localization if $2\\theta\\in \\alpha \\mathbb{Z}+\\mathbb{Z}$ and $\\ln |\\lambda| > 2\\beta(\\alpha)$. Moreover, if $\\phi$ is an eigenfunction, that is $H_{\\lambda,\\alpha,\n            \\theta}\\phi=E\\phi$ with $\\phi\\in\\ell^2(\\mathbb{Z})$, we have $$\\limsup_{k\\to \\infty} \\frac{\\ln (\\phi^2(k)+\\phi^2(k-1))}{2|k|} \\leq -(\\ln |\\lambda|-2\\beta(\\alpha)).$$*\n\n</div>",
     "labels": [
-      "gresf"
+      "gresf",
+      "mainthm"
     ],
     "refs": [],
     "meta": {
@@ -52,7 +82,33 @@
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L14-17::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L32-40::s3",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L32-40::s3",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L41-56::s4",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L622-631::s0",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L632-647::s1",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L32-40::s3",
@@ -64,13 +120,34 @@
     "labels": [
       "gres"
     ],
-    "refs": [],
+    "refs": [
+      "gres",
+      "gresf"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L18-31::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L41-56::s4",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L18-31::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L41-56::s4",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L41-56::s4",
@@ -80,13 +157,34 @@
     "end_line": 56,
     "text": "\\end{aligned}$$ By approximating to the infinite dimensional matrix $H_{\\lambda,\\alpha,\\theta}$ from its finite dimensional cut off, the resonances $||2\\theta+k\\alpha||_{\\mathbb{R}/\\mathbb{Z}}$ (referred to as phase resonances) and $||k\\alpha||_{\\mathbb{R}/\\mathbb{Z}}$ (referred to as frequency resonances) appear. The strength of frequency and phase resonances are essentially quantified by <a href=\"#gresf\" data-reference-type=\"eqref\" data-reference=\"gresf\">[gresf]</a> and <a href=\"#gres\" data-reference-type=\"eqref\" data-reference=\"gres\">[gres]</a>.\n\nWith recent developments, the almost Mathieu operator undergoes a clear spectral transition (called metal-insulator transition or first transition line) when $|\\lambda|$ changes from small to large.\n\n**First transition line:**\n\n- if $|\\lambda|<1$, $H_{\\lambda,\\alpha,\\theta}$ has purely absolutely continuous spectrum for every $\\alpha$ and $\\theta$  .\n\n- if $|\\lambda|=1$, $H_{\\lambda,\\alpha,\\theta}$ has purely singular continuous spectrum for any irrational $\\alpha$ and $\\theta$  .\n\n- if $|\\lambda|>1$, $H_{\\lambda,\\alpha,\\theta}$ has Anderson localization for $\\beta(\\alpha)=\\delta(\\alpha,\\theta)=0$  .\n\nUnderstanding the first transition line $|\\lambda|=1$ is now clear by Avila’s global theory  . When $|\\lambda|<1$ (subcritical regime) the Lyapunov exponent on the spectrum is $0$ even after the complexification of the phase. When $|\\lambda|= 1$ (critical regime), the Lyapunov exponent on the spectrum is $0$ and it changes to positive after the complexification. When $|\\lambda|>1$ (supercritical regime), the Lyapunov exponent is positive and equals $\\ln|\\lambda|$ on the spectrum.\n\nThe spectral theory in the supercritical regime is more delicate. By Kotani theory, $H$ does not have any absolutely continuous spectrum in the supercritical regime  . It is believed that the spectral type of $H$ (singular continuous spectrum or pure point spectrum/localization) depends on the competition between the Lyapunov exponent and resonances associated with <a href=\"#gresf\" data-reference-type=\"eqref\" data-reference=\"gresf\">[gresf]</a> and <a href=\"#gres\" data-reference-type=\"eqref\" data-reference=\"gres\">[gres]</a>. Such observations go back to  .\n\n**Second transition line in the frequency:**",
     "labels": [],
-    "refs": [],
+    "refs": [
+      "gres",
+      "gresf"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L32-40::s3",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L57-68::s5",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L32-40::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L18-31::s2",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L57-68::s5",
@@ -102,7 +200,17 @@
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L41-56::s4",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L69-70::s6",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L69-70::s6",
@@ -118,7 +226,17 @@
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L57-68::s5",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L71-74::s7",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L71-74::s7",
@@ -128,13 +246,26 @@
     "end_line": 74,
     "text": "Let us turn back to completely resonant phases. For completely resonant phases, $\\delta(\\alpha,\\theta)=\\beta(\\alpha)$. Thus both phase resonances and frequency resonances appear and have the same strength. Conjecture 1 states that when the Lyapunov exponent beats phase and frequency resonances, the operator has Anderson localization. It is natural to think that the proof of Conjecture 1 could follow from a combination of the second transition line in the phase and the frequency. However, the completely resonant phase brings many new challenges, in particular the completely resonant phenomenon. The original arguments of Jitomirskaya   do not work for completely resonant phases directly. In  , Jitomirskaya-Koslover-Schulteis found a trick to fix the gap by shrinking the size of intervals around 0 (referred to as the “shrinking scale” technique). This allows them to prove Conjecture 1 when $\\beta(\\alpha)=0$. The proof in   implies that $H_{\\lambda,\\alpha,\\theta}$ has Anderson localization if $\\ln |\\lambda|>C\\beta(\\alpha)$, where $C$ is an absolute constant. In  , Avila and Jitomirskaya proved that when $\\delta(\\alpha,\\theta)=0$ and $\\ln |\\lambda|>\\frac{16}{9}\\beta(\\alpha)$, $H_{\\lambda,\\alpha,\\theta}$ has Anderson localization, which is a key step to solve the ten Martini problem. This approach has been pushed to the limit $\\ln |\\lambda|>\\frac{3}{2}\\beta(\\alpha)$ by the author and Yuan  . By a combination of arguments in Jitomirskaya-Koslover-Schulteis  , Avila-Jitomirskaya   and Liu-Yuan  , the author and Yuan established the Anderson localization for completely resonant phases when $\\ln |\\lambda|>7\\beta(\\alpha)$  .\n\nWith localization proofs in   and methods in  , we could obtain the Anderson localization for $\\ln |\\lambda|>4\\beta(\\alpha)$ in Conjecture 1, where $4$ is the non-trivial technical limit in such an approach since we have to shrink the scale to avoid the complete resonance, doubling the numerical number. In  , the author noticed that for completely resonant phases, the phase resonance and frequency resonance are not symmetric, namely, the frequency resonance only happens at sites $k=jq_n$, $j\\in\\mathbb{Z}\\backslash\\{0\\}$ and the phase resonance happens at both $k=jq_n+\\frac{1}{2}q_n$ and $k=jq_n$, $j\\in\\mathbb{Z}$ ( $\\frac{p_n}{q_n}$ is the continued fraction approximations to $\\alpha$). See Sections <a href=\"#S4\" data-reference-type=\"ref\" data-reference=\"S4\">4</a> and <a href=\"#S5\" data-reference-type=\"ref\" data-reference=\"S5\">5</a> for more details. So, instead of using the Lagrange interpolation uniformly, the author treated the Lagrange interpolation individually during the process of finding Green’s functions without “small denominators”, which allows him to push the numerical number $4$ to $3$  .\n\nAs we mentioned earlier, all localization proofs in previous literature   are devoted to treating small denominators (establishing the lower bound of the denominators of Green’s functions) and simply bound numerators by the rate of the Lyapunov exponent. To the best of our knowledge, this paper is the first time to analyze numerators of Green’s functions arising from quasi-periodic operators. Moreover, we expand approaches in   to deal with denominators in many directions and add several significant ingredients to treat the numerators and denominators simultaneously.",
     "labels": [],
-    "refs": [],
+    "refs": [
+      "S4",
+      "S5"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L69-70::s6",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L75-78::s8",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L75-78::s8",
@@ -150,7 +281,17 @@
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L71-74::s7",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L79-80::s9",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L79-80::s9",
@@ -160,13 +301,29 @@
     "end_line": 80,
     "text": "Finally, we want to highlight another technical novelty in our proof. The Gordon type argument works along with the transfer matrices, which slightly differs from the denominators and numerators of Green’s functions. We introduce the notation $P_{[x_1,x_2]}$ to represent the denominator of the Green’s function restricting to the interval $[x_1,x_2]$. The advantage of the notation $P_{[x_1,x_2]}$ is that it inherits information from the transfer matrix from sites $x_1$ to $x_2$. This could simplify the localization proof in .\n\nThe rest of this paper is organized as follows. We list the definitions and standard facts in Section <a href=\"#S2\" data-reference-type=\"ref\" data-reference=\"S2\">2</a>. In Section <a href=\"#S3\" data-reference-type=\"ref\" data-reference=\"S3\">3</a>, we provide several technical lemmas. Sections <a href=\"#S4\" data-reference-type=\"ref\" data-reference=\"S4\">4</a> and <a href=\"#S5\" data-reference-type=\"ref\" data-reference=\"S5\">5</a> are devoted to treating resonances. In Section <a href=\"#S6\" data-reference-type=\"ref\" data-reference=\"S6\">6</a>, we complete the proof.",
     "labels": [],
-    "refs": [],
+    "refs": [
+      "S2",
+      "S3",
+      "S4",
+      "S5",
+      "S6"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L75-78::s8",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L81-89::s0",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L81-89::s0",
@@ -179,13 +336,37 @@
       "g108",
       "g68"
     ],
-    "refs": [],
+    "refs": [
+      "g68"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Some notations and known facts "
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L79-80::s9",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L90-125::s1",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L284-296::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L363-516::s9",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L517-534::s10",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L90-125::s1",
@@ -200,7 +381,8 @@
       "G.transfer1",
       "G21",
       "G34",
-      "g108"
+      "g108",
+      "lya"
     ],
     "refs": [],
     "meta": {
@@ -208,7 +390,25 @@
         "level": 1,
         "title": " Some notations and known facts "
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L81-89::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L126-129::s2",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L130-148::s3",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L284-296::s2",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L126-129::s2",
@@ -227,7 +427,25 @@
         "level": 1,
         "title": " Some notations and known facts "
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L90-125::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L130-148::s3",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L130-148::s3",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L225-246::s2",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L130-148::s3",
@@ -246,13 +464,87 @@
       "Numerator1",
       "g500"
     ],
-    "refs": [],
+    "refs": [
+      "G.new17",
+      "G24",
+      "G34"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Some notations and known facts "
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L126-129::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L149-175::s4",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L90-125::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L126-129::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L149-175::s4",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L211-224::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L225-246::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L306-315::s4",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L316-332::s5",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L341-350::s7",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L351-362::s8",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L363-516::s9",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L517-534::s10",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L535-545::s11",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L546-549::s12",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L550-561::s13",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L578-596::s15",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L149-175::s4",
@@ -263,15 +555,58 @@
     "text": "Denote by $x_1^\\prime=x_1-1$ and $x_2^\\prime=x_2+1$.\n\nBy <a href=\"#Cramer1\" data-reference-type=\"eqref\" data-reference=\"Cramer1\">[Cramer1]</a>, <a href=\"#Cramer2\" data-reference-type=\"eqref\" data-reference=\"Cramer2\">[Cramer2]</a> and <a href=\"#Block\" data-reference-type=\"eqref\" data-reference=\"Block\">[Block]</a>, one has that for any $y\\in [x_1,x_2]$, $$\\label{g100}\n        |\\phi(y)|\\leq |P_{[x_1,x_2]}|^{-1} |P_{[y+1,x_2]}|  |\\phi(x_1^{\\prime})| + |P_{[x_1,x_2]}|^{-1}  |P_{[x_1,y-1]}| |\\phi(x_2^{\\prime})|.$$\n\nGiven a set $\\{\\theta_1, \\cdots ,\\theta_{k+1}\\}$, the lagrange Interpolation terms $\\text{Lag}_m$, $m=1,2,\\cdots,k+1$, are defined by $$\\label{Def.Uniform}\n        \\text{Lag}_m= \\ln \\max_{ x\\in[-1,1]} \\prod_{ j=1 , j\\neq m }^{k+1}\\frac{|x-\\cos2\\pi\\theta_j|}\n        {|\\cos2\\pi\\theta_m-\\cos2\\pi\\theta_j|}.$$\n\nThe following lemma is another form of Lemma 9.3 in  , which has been reformulated in  .\n\n<div id=\"Le.Uniform\" class=\"lemma\">\n\n**Lemma 3**. * Given a set $\\{\\theta_1, \\cdots ,\\theta_{k+1}\\}$, there exists some $\\theta_m$ in $\\{\\theta_1, \\cdots ,\\theta_{k+1}\\}$ such that*\n\n*$$|   P_{k}(\\theta_m -\\frac{k-1}{2}\\alpha)|\\geq \\frac{e^{k L-\\rm{Lag}_m}}{k+1}.$$*\n\n</div>\n\nIn the following, we always assume\n\n- $\\varepsilon>0$ is an arbitrarily small constant and it may change even in the same equation.\n\n- $C$ is a large constant (depends on $\\lambda$ and $\\alpha$) and it may change even in the same equation.\n\n- $n$ is large enough which depends on all parameters and constants.\n\nRecall that $\\frac{p_n}{q_n}$ is the continued fraction approximations to $\\alpha$. By the definition of $\\beta(\\alpha)$, one has that $$\\beta=  \\beta(\\alpha)=\\limsup_{n\\rightarrow\\infty}\\frac{\\ln q_{n+1}}{q_n}.$$",
     "labels": [
       "Def.Uniform",
+      "Le.Uniform",
       "g100"
     ],
-    "refs": [],
+    "refs": [
+      "Block",
+      "Cramer1",
+      "Cramer2"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Some notations and known facts "
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L130-148::s3",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L176-191::s5",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L130-148::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L211-224::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L273-283::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L284-296::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L363-516::s9",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L517-534::s10",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L578-596::s15",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L176-191::s5",
@@ -282,15 +617,60 @@
     "text": "Recall that $\\frac{p_n}{q_n}$ is the continued fraction approximations to $\\alpha$. By the definition of $\\beta(\\alpha)$, one has that $$\\beta=  \\beta(\\alpha)=\\limsup_{n\\rightarrow\\infty}\\frac{\\ln q_{n+1}}{q_n}.$$\n\nLet $b_n=   10^{-5}q_{n}$. For any $\\ell \\in\\mathbb{Z}$, let $$r_{\\ell}^{\\varepsilon,n}= \\sup_{|r|\\leq 10\\varepsilon}|\\phi(\\ell q_n+rq_n)|,$$ and $$r_{\\ell+\\frac{1}{2}}^{\\varepsilon,n}= \\sup_{|r|\\leq 10\\varepsilon}|\\phi(\\ell q_n+\\lfloor\\frac{q_n}{2}\\rfloor+rq_n)|,$$ where $\\lfloor x \\rfloor$ is the largest integer that is less than or equal to $x$.\n\n<div id=\"Le.resonant\" class=\"lemma\">\n\n**Lemma 4**. *  Assume that $|\\lambda|>1$ and $2\\theta\\in\\alpha\\mathbb{Z}+\\mathbb{Z}$. Suppose $k\\in [\\ell q_n,(\\ell+\\frac{1}{2})q_n]$ or $k\\in [(\\ell+\\frac{1}{2})q_n,(\\ell+1)q_n]$ with $0\\leq |\\ell| \\leq  100\\frac{b_{n+1}}{q_n}+100$, and ${\\rm dist}(k, q_n\\mathbb{Z}+\\frac{q_n}{2}\\mathbb{Z} )\\geq     10 \\varepsilon q_n$. Let $d_t=|k-tq_n|$ for $t\\in\\{\\ell,\\ell+\\frac{1}{2},\\ell+1\\}$. Then for sufficiently large $n$, we have that*\n\n- *when $k\\in [\\ell q_n,(\\ell+\\frac{1}{2})q_n]$, $$\\label{Intervalk}\n                  |\\phi(k)|\\leq r_{\\ell}^{\\varepsilon,n}\\exp\\{-(L- \\varepsilon)(d_{\\ell}-3\\varepsilon q_n)\\} + r_{\\ell+\\frac{1}{2}}^{\\varepsilon,n}\\exp\\{-(L- \\varepsilon)(d_{\\ell+\\frac{1}{2}}-3\\varepsilon q_n)\\};$$*\n\n- *when $k\\in [(\\ell+\\frac{1}{2})q_n,(\\ell+1)q_n]$, $$\\label{Intervalk1}\n                  |\\phi(k)|\\leq r_{\\ell+\\frac{1}{2} }^{\\varepsilon,n}\\exp\\{-(L- \\varepsilon)(d_{\\ell+\\frac{1}{2}}-3\\varepsilon q_n)\\}+r_{\\ell+1}^{\\varepsilon,n}\\exp\\{-(L- \\varepsilon)(d_{\\ell+1}-3\\varepsilon q_n)\\}.$$*\n\n</div>\n\nA similar version of Lemma <a href=\"#Le.resonant\" data-reference-type=\"ref\" data-reference=\"Le.resonant\">4</a> firstly appears in  .",
     "labels": [
       "Intervalk",
-      "Intervalk1"
+      "Intervalk1",
+      "Le.resonant"
     ],
-    "refs": [],
+    "refs": [
+      "Le.resonant"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Some notations and known facts "
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L149-175::s4",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L192-210::s0",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L211-224::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L306-315::s4",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L316-332::s5",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L333-340::s6",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L363-516::s9",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L517-534::s10",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L562-577::s14",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L632-647::s1",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L192-210::s0",
@@ -302,15 +682,52 @@
     "labels": [
       "g10",
       "g101",
-      "g102"
+      "g102",
+      "klem2"
     ],
-    "refs": [],
+    "refs": [
+      "g10"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Technical preparations"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L176-191::s5",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L211-224::s1",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L211-224::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L341-350::s7",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L351-362::s8",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L363-516::s9",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L517-534::s10",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L550-561::s13",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L211-224::s1",
@@ -320,17 +737,58 @@
     "end_line": 224,
     "text": "*Proof.* We are going to prove <a href=\"#g10\" data-reference-type=\"eqref\" data-reference=\"g10\">[g10]</a> first. Let $I=[x_1,x_2]$, where $x_1=-x$ and $x_2=p_1$.\n\nBy Lemma <a href=\"#Le.resonant\" data-reference-type=\"ref\" data-reference=\"Le.resonant\">4</a>, one has $$\\label{g11}\n            |\\phi(x_1^\\prime)\\leq r_{0} e^{-L  x+C\\varepsilon q_n} +r_{-\\frac{1}{2}} e^{-L ( \\frac{q_n}{2} -x)+C\\varepsilon q_n}$$ By <a href=\"#g100\" data-reference-type=\"eqref\" data-reference=\"g100\">[g100]</a>, one has $$\\label{g13}\n            |\\phi(0)| \\leq  |   P_{ [-x,p_1]} |^{-1}  (|P_{[-x,-1]}| |\\phi (x_2^\\prime)|+\n            |P_{[1,p_1]} | |\\phi (x_1^\\prime)|).$$\n\nBy <a href=\"#Numerator1\" data-reference-type=\"eqref\" data-reference=\"Numerator1\">[Numerator1]</a>, <a href=\"#g11\" data-reference-type=\"eqref\" data-reference=\"g11\">[g11]</a> and <a href=\"#g13\" data-reference-type=\"eqref\" data-reference=\"g13\">[g13]</a>, one has $$\\label{g14}\n            |\\phi(0)| \\leq  |   P_{ [-x,p_1]} |^{-1}  e^{C\\varepsilon q_n}(e^{L(\\frac{q_n}{2}-x)}r_0+e^{L x} r_{-\\frac{1}{2}}+e^{L x} r_{\\frac{1}{2}}).$$ Since $\\phi(0)=1$ and $|\\phi(k)|\\leq 1+|k|$, by <a href=\"#g14\" data-reference-type=\"eqref\" data-reference=\"g14\">[g14]</a>, we have that $$|   P_{ [-x,p_1]} |\\leq e^{L(\\frac{1}{2}q_n-x)+C\\varepsilon q_n}.$$\n\nWe are going to prove <a href=\"#g101\" data-reference-type=\"eqref\" data-reference=\"g101\">[g101]</a> (<a href=\"#g102\" data-reference-type=\"eqref\" data-reference=\"g102\">[g102]</a>). In this case, we only need to set $I=[x_1,x_2]$, where $x_1=-p_1$ and $x_2=x$ ($x_1=-x$ and $x_2=p_2$), and repeat the proof of <a href=\"#g10\" data-reference-type=\"eqref\" data-reference=\"g10\">[g10]</a>. ◻\n\n</div>\n\n<div id=\"Lemgordonidea2\" class=\"lemma\">",
     "labels": [
+      "Lemgordonidea2",
       "g11",
       "g13",
       "g14"
     ],
-    "refs": [],
+    "refs": [
+      "Le.resonant",
+      "Numerator1",
+      "g10",
+      "g100",
+      "g101",
+      "g102",
+      "g11",
+      "g13",
+      "g14"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Technical preparations"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L192-210::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L225-246::s2",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L176-191::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L130-148::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L192-210::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L149-175::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L225-246::s2",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L225-246::s2",
@@ -340,15 +798,72 @@
     "end_line": 246,
     "text": "<div id=\"Lemgordonidea2\" class=\"lemma\">\n\n**Lemma 6**. * Let $A^1,A^2,\\cdots,A^n$ and $B^1,B^2,\\cdots,B^n$ be $2\\times2$ matrices with $||\\prod_{m=0}^{j-1}A^{k+m}||\\leq D e^{dj}$ for some constant $D$ and $d$. Then $$||(A^n+B^n)\\cdots(A^1+B^1)-A^n\\cdots A^1||\\leq De^{dn} (\\prod_{j=1}^n(1+De^{-d}||B^j||)-1).$$*\n\n</div>\n\n<div id=\"klem1\" class=\"lemma\">\n\n**Lemma 7**. *Assume that $0<k\\leq 10 q_n$ and $0<j\\leq C\\frac{q_{n+1}}{q_n}+C$. Then for large enough $k$, we have $$||A_k(\\theta)-A_k(\\theta +jq_n\\alpha)|| \\leq e^{(L+\\varepsilon)k }\\frac{j}{q_{n+1}}.$$ In particular, $$|P_k(\\theta)-P_k(\\theta +jq_n\\alpha)| \\leq e^{(L+\\varepsilon) k} \\frac{j}{q_{n+1}}.$$*\n\n</div>\n\n<div class=\"proof\">\n\n*Proof.* By the Diophantine approximation (see <a href=\"#GDC2\" data-reference-type=\"eqref\" data-reference=\"GDC2\">[GDC2]</a> in the Appendix), we have $$||{q}_n\\alpha||_{\\mathbb{R}/\\mathbb{Z}}\\leq \\frac{1}{q_{n+1}} ,$$ and hence $$||j{q}_n\\alpha||_{\\mathbb{R}/\\mathbb{Z}}\\leq \\frac{j}{q_{n+1}} .$$ This implies $$||A(\\theta+jq_n\\alpha)-A(\\theta)||\\leq \\frac{Cj}{q_{n+1}}.$$ Applying <a href=\"#G24\" data-reference-type=\"eqref\" data-reference=\"G24\">[G24]</a> and Lemma <a href=\"#Lemgordonidea2\" data-reference-type=\"ref\" data-reference=\"Lemgordonidea2\">6</a>, one has $$\\label{G.new21}\n            ||A_{k}(\\theta+ j{q}_n\\alpha)-A_{ k}(\\theta)||\\leq  e^{(L+\\varepsilon)k}((1+\\frac{Cj}{q_{n+1}})^{k}-1).$$ Using the fact $|e^y-1|\\leq ye^y$ for $y>0$, we obtain $$\\begin{aligned}\n            %\n            (1+\\frac{Cj}{q_{n+1}})^{k}-1  &\\leq& k(1+\\frac{jC}{q_{n+1}})^{k}\\ln(1+\\frac{Cj}{q_{n+1}})\\\\\n            &\\leq&  C\\frac{kj}{q_{n+1}}.\n\n\\end{aligned}$$ Combining this with (<a href=\"#G.new21\" data-reference-type=\"ref\" data-reference=\"G.new21\">[G.new21]</a>) completes the proof. ◻\n\n</div>",
     "labels": [
-      "G.new21"
+      "G.new21",
+      "Lemgordonidea2",
+      "klem1"
     ],
-    "refs": [],
+    "refs": [
+      "G.new21",
+      "G24",
+      "GDC2",
+      "Lemgordonidea2"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Technical preparations"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L211-224::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L247-272::s0",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L126-129::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L130-148::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L648-669::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L211-224::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L341-350::s7",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L351-362::s8",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L363-516::s9",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L517-534::s10",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L550-561::s13",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L562-577::s14",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L247-272::s0",
@@ -358,7 +873,8 @@
     "end_line": 272,
     "text": "#  Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$\n\nIn this section, we deal with resonances arising from sites $jq_n+\\frac{q_n}{2}$, $j\\in\\mathbb{Z}$.\n\nDenote by $$\\beta_j=\\frac{\\ln q_{n+1} -\\ln (|j|+1)}{q_n} .$$\n\nWe are going to prove\n\n<div id=\"thm1\" class=\"theorem\">\n\n**Theorem 8**. *Let $|j |\\leq 2\\frac{b_{n+1}}{q_n}+10$. Then we have $$r_{j+\\frac{1}{2}}  \\leq   \\exp\\{- \\frac{1}{2}(L-2\\beta_{j} -C\\varepsilon)q_n\\}(r_{j}+r_{j+1}).$$*\n\n</div>\n\n<div class=\"proof\">\n\n*Proof.* Take $\\phi(j q_n+\\lfloor\\frac{q_n}{2}\\rfloor+rq_n)$ with $|r|\\leq 10\\varepsilon$ into consideration. Denote by $p=j q_n+\\lfloor\\frac{q_n}{2}\\rfloor+rq_n$. Without loss of generality assume $j\\geq0$. Let $n_0$ be the least positive integer such that $$q_{n-n_0}\\leq  \\frac{ \\varepsilon}{2}  (\\frac{1}{8}-2\\varepsilon) q_n.$$ Let $s$ be the largest positive integer such that $sq_{n-n_0}\\leq (\\frac{1}{8}-2\\varepsilon) q_n$. By the fact $(s+1)q_{n-n_0}\\geq (\\frac{1}{8}-2\\varepsilon)q_n$, one has $$s\\geq \\frac{1}{\\varepsilon}$$ and $$\\label{sq}\n            (\\frac{1}{8}-3\\varepsilon)q_n \\leq sq_{n-n_0}\\leq (\\frac{1}{8}-2\\varepsilon)q_n.$$\n\nSet $I_1, I_2\\subset \\mathbb{Z}$ as follows $$\\begin{aligned}\n            %\n            I_1 &=& [-2s q_{n-n_0},-1 ], \\\\\n            I_2 &=& [ j q_n+\\lfloor\\frac{q_n}{2}\\rfloor -2sq_{n-n_0},j q_n+\\lfloor\\frac{q_n}{2}\\rfloor+2sq_{n-n_0}-1 ],\n\n\\end{aligned}$$ and let $\\theta_m=\\theta+m\\alpha$ for $m\\in I_1\\cup I_2$. The set $\\{\\theta_m\\}_{m\\in I_1\\cup I_2}$ consists of $6sq_{n-n_0}$ elements. Let $k=6s q_{n-n_0}-1$.",
     "labels": [
-      "sq"
+      "sq",
+      "thm1"
     ],
     "refs": [],
     "meta": {
@@ -366,7 +882,41 @@
         "level": 1,
         "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L225-246::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L273-283::s1",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L284-296::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L297-305::s3",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L363-516::s9",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L517-534::s10",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L622-631::s0",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L632-647::s1",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L273-283::s1",
@@ -382,13 +932,45 @@
       "g66",
       "g661"
     ],
-    "refs": [],
+    "refs": [
+      "Le.Uniform"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L247-272::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L284-296::s2",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L149-175::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L284-296::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L297-305::s3",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L363-516::s9",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L517-534::s10",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L284-296::s2",
@@ -402,13 +984,69 @@
       "g2",
       "g4"
     ],
-    "refs": [],
+    "refs": [
+      "g100",
+      "g108",
+      "g109",
+      "g110",
+      "sq"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L273-283::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L297-305::s3",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L149-175::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L81-89::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L90-125::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L273-283::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L247-272::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L297-305::s3",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L306-315::s4",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L316-332::s5",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L351-362::s8",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L363-516::s9",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L297-305::s3",
@@ -420,13 +1058,39 @@
     "labels": [
       "g250"
     ],
-    "refs": [],
+    "refs": [
+      "g250",
+      "g4",
+      "sq"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L284-296::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L306-315::s4",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L273-283::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L284-296::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L247-272::s0",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L306-315::s4",
@@ -443,13 +1107,60 @@
       "g5",
       "g6"
     ],
-    "refs": [],
+    "refs": [
+      "Iterationr_j",
+      "Le.resonant",
+      "Numerator1",
+      "g0",
+      "g1",
+      "g2",
+      "g5",
+      "g6"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L297-305::s3",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L316-332::s5",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L316-332::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L176-191::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L130-148::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L284-296::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L316-332::s5",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L333-340::s6",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L341-350::s7",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L316-332::s5",
@@ -469,13 +1180,73 @@
       "g7",
       "g8"
     ],
-    "refs": [],
+    "refs": [
+      "Iterationr_j",
+      "Le.resonant",
+      "Numerator1",
+      "g0",
+      "g1",
+      "g2",
+      "g22",
+      "g5",
+      "g6"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L306-315::s4",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L333-340::s6",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L306-315::s4",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L306-315::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L176-191::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L130-148::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L284-296::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L333-340::s6",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L341-350::s7",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L351-362::s8",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L363-516::s9",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L517-534::s10",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L333-340::s6",
@@ -489,13 +1260,47 @@
       "g8",
       "g9"
     ],
-    "refs": [],
+    "refs": [
+      "Le.resonant",
+      "g0",
+      "g7"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L316-332::s5",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L341-350::s7",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L176-191::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L306-315::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L316-332::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L341-350::s7",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L351-362::s8",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L341-350::s7",
@@ -511,13 +1316,72 @@
       "g21",
       "g9"
     ],
-    "refs": [],
+    "refs": [
+      "g0",
+      "g16",
+      "g19",
+      "g500",
+      "g7",
+      "g9",
+      "klem1",
+      "klem2"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L333-340::s6",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L351-362::s8",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L306-315::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L316-332::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L351-362::s8",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L130-148::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L333-340::s6",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L225-246::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L192-210::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L351-362::s8",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L363-516::s9",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L517-534::s10",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L351-362::s8",
@@ -533,13 +1397,75 @@
       "g19",
       "g21"
     ],
-    "refs": [],
+    "refs": [
+      "g16",
+      "g17",
+      "g18",
+      "g19",
+      "g2",
+      "g21",
+      "g500",
+      "g8",
+      "g9",
+      "klem1",
+      "klem2"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L341-350::s7",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L363-516::s9",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L341-350::s7",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L341-350::s7",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L284-296::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L130-148::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L316-332::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L333-340::s6",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L225-246::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L192-210::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L363-516::s9",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L517-534::s10",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L363-516::s9",
@@ -574,15 +1500,126 @@
       "g44",
       "g45",
       "g501",
-      "gg100"
+      "gg100",
+      "thm2"
     ],
-    "refs": [],
+    "refs": [
+      "2g0",
+      "2g2",
+      "2g30",
+      "2sq",
+      "Le.Uniform",
+      "Le.resonant",
+      "Numerator1",
+      "g100",
+      "g1091",
+      "g121",
+      "g17",
+      "g171",
+      "g18",
+      "g2",
+      "g21",
+      "g23",
+      "g24",
+      "g25",
+      "g26",
+      "g37",
+      "g38",
+      "g40",
+      "g41",
+      "g44",
+      "g501",
+      "g68",
+      "gg100",
+      "klem1",
+      "klem2",
+      "sq",
+      "thm1"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L351-362::s8",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L517-534::s10",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L517-534::s10",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L149-175::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L176-191::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L130-148::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L273-283::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L341-350::s7",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L351-362::s8",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L284-296::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L316-332::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L81-89::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L225-246::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L192-210::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L247-272::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L517-534::s10",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L615-621::s17",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L622-631::s0",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L632-647::s1",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L517-534::s10",
@@ -620,15 +1657,125 @@
       "g45",
       "g501",
       "g63",
-      "gg100"
+      "gg100",
+      "thm2"
     ],
-    "refs": [],
+    "refs": [
+      "2g0",
+      "2g2",
+      "2g30",
+      "2g44",
+      "2g45",
+      "2sq",
+      "Le.Uniform",
+      "Le.resonant",
+      "Numerator1",
+      "g100",
+      "g1091",
+      "g121",
+      "g17",
+      "g171",
+      "g23",
+      "g24",
+      "g25",
+      "g26",
+      "g37",
+      "g38",
+      "g40",
+      "g41",
+      "g44",
+      "g501",
+      "g68",
+      "gg100",
+      "klem1",
+      "klem2",
+      "sq",
+      "thm1"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L363-516::s9",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L535-545::s11",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L363-516::s9",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L363-516::s9",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L149-175::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L176-191::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L130-148::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L273-283::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L341-350::s7",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L351-362::s8",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L316-332::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L81-89::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L225-246::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L192-210::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L247-272::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L597-614::s16",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L615-621::s17",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L622-631::s0",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L632-647::s1",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L535-545::s11",
@@ -643,13 +1790,46 @@
       "gg101",
       "gg102"
     ],
-    "refs": [],
+    "refs": [
+      "Numerator1",
+      "g47"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L517-534::s10",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L546-549::s12",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L130-148::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L546-549::s12",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L546-549::s12",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L550-561::s13",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L562-577::s14",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L546-549::s12",
@@ -664,13 +1844,55 @@
       "g50",
       "g51"
     ],
-    "refs": [],
+    "refs": [
+      "Numerator1",
+      "g47",
+      "g49",
+      "g50",
+      "g500",
+      "gg101",
+      "gg102"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L535-545::s11",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L550-561::s13",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L535-545::s11",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L130-148::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L535-545::s11",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L550-561::s13",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L550-561::s13",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L597-614::s16",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L550-561::s13",
@@ -686,13 +1908,61 @@
       "g53",
       "g55"
     ],
-    "refs": [],
+    "refs": [
+      "g102",
+      "g49",
+      "g50",
+      "g500",
+      "g52",
+      "g53",
+      "gg101",
+      "gg102",
+      "klem1"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L546-549::s12",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L562-577::s14",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L546-549::s12",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L192-210::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L535-545::s11",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L546-549::s12",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L130-148::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L225-246::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L597-614::s16",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L562-577::s14",
@@ -706,13 +1976,49 @@
       "2g38",
       "g61"
     ],
-    "refs": [],
+    "refs": [
+      "2g38",
+      "Le.resonant",
+      "g61",
+      "gg101",
+      "klem1"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L550-561::s13",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L578-596::s15",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L176-191::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L535-545::s11",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L225-246::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L578-596::s15",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L597-614::s16",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L578-596::s15",
@@ -726,13 +2032,44 @@
       "g58",
       "g60"
     ],
-    "refs": [],
+    "refs": [
+      "22g30",
+      "Numerator1",
+      "g100",
+      "g58"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L562-577::s14",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L597-614::s16",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L562-577::s14",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L130-148::s3",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L149-175::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L597-614::s16",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L597-614::s16",
@@ -747,13 +2084,56 @@
       "g62",
       "g70"
     ],
-    "refs": [],
+    "refs": [
+      "g128",
+      "g51",
+      "g55",
+      "g58",
+      "g60",
+      "g61",
+      "g62",
+      "g63"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L578-596::s15",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L615-621::s17",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L546-549::s12",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L550-561::s13",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L578-596::s15",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L562-577::s14",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L517-534::s10",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L615-621::s17",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L615-621::s17",
@@ -765,13 +2145,41 @@
     "labels": [
       "g71"
     ],
-    "refs": [],
+    "refs": [
+      "g1000",
+      "g44",
+      "g45",
+      "g70",
+      "g71"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L597-614::s16",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L622-631::s0",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L363-516::s9",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L517-534::s10",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L597-614::s16",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L622-631::s0",
@@ -784,13 +2192,47 @@
       "G.r_j1",
       "G.r_j2"
     ],
-    "refs": [],
+    "refs": [
+      "mainthm",
+      "thm1",
+      "thm2"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Proof of Theorem <a href=\"#mainthm\" data-reference-type=\"ref\" data-reference=\"mainthm\">1</a>"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L615-621::s17",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L632-647::s1",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L18-31::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L247-272::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L363-516::s9",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L517-534::s10",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L632-647::s1",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L632-647::s1",
@@ -807,13 +2249,56 @@
       "radd1",
       "radd2"
     ],
-    "refs": [],
+    "refs": [
+      "G.r_j1",
+      "G.r_j2",
+      "Le.resonant",
+      "mainthm",
+      "radd1",
+      "radd2",
+      "thm1",
+      "thm2"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Proof of Theorem <a href=\"#mainthm\" data-reference-type=\"ref\" data-reference=\"mainthm\">1</a>"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L622-631::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L648-669::s0",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L622-631::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L176-191::s5",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L18-31::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L247-272::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L363-516::s9",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L517-534::s10",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L648-669::s0",
@@ -830,13 +2315,39 @@
       "GDC1",
       "GDC2"
     ],
-    "refs": [],
+    "refs": [
+      "Appenoct3",
+      "GDC1",
+      "GDC2"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Proof of Claims 1 and 2"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L632-647::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L670-680::s1",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L225-246::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L670-680::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L681-687::s2",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L670-680::s1",
@@ -849,13 +2360,43 @@
       "Appenoct11",
       "Appenoct21"
     ],
-    "refs": [],
+    "refs": [
+      "Appenoct1",
+      "Appenoct11",
+      "Appenoct21",
+      "Appenoct3",
+      "Appenoct4",
+      "GDC1",
+      "GDC2"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Proof of Claims 1 and 2"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L648-669::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L681-687::s2",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L648-669::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L681-687::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L681-687::s2",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L681-687::s2",
@@ -870,13 +2411,42 @@
       "Appenoct21",
       "Appenoct211"
     ],
-    "refs": [],
+    "refs": [
+      "Appenoct11",
+      "Appenoct111",
+      "Appenoct21",
+      "Appenoct211",
+      "GDC1",
+      "GDC2"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Proof of Claims 1 and 2"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L670-680::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L688-724::s0",
+        "direction": "next"
+      },
+      {
+        "id": "2205.04648v1::L670-680::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2205.04648v1::L670-680::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2205.04648v1::L648-669::s0",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L688-724::s0",
@@ -892,7 +2462,17 @@
         "level": 1,
         "title": "Acknowledgments"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L681-687::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L725-748::s1",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L725-748::s1",
@@ -908,7 +2488,17 @@
         "level": 1,
         "title": "Acknowledgments"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L688-724::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L749-772::s2",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L749-772::s2",
@@ -924,7 +2514,17 @@
         "level": 1,
         "title": "Acknowledgments"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L725-748::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L773-798::s3",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L773-798::s3",
@@ -940,7 +2540,17 @@
         "level": 1,
         "title": "Acknowledgments"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L749-772::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "2205.04648v1::L799-801::s4",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2205.04648v1::L799-801::s4",
@@ -956,6 +2566,12 @@
         "level": 1,
         "title": "Acknowledgments"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2205.04648v1::L773-798::s3",
+        "direction": "previous"
+      }
+    ]
   }
 ]

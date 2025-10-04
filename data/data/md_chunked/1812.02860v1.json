@@ -17,7 +17,17 @@
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1812.02860v1::L11-27::s1",
+        "direction": "next"
+      },
+      {
+        "id": "1812.02860v1::L11-27::s1",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "1812.02860v1::L11-27::s1",
@@ -27,16 +37,55 @@
     "end_line": 27,
     "text": "In view of this, the *exponential decay rate in expectation* was defined in as $$\\label{gamma1}\n \\gamma_+ := \\limsup_{k\\to\\infty}\\left( -\\frac{\\ln {\\mathbb E}(\\sum_{s} |\\varphi_s(0)|\\cdot |\\varphi_s (k)|)}{|k|}\\right),$$ and $$\\label{gamma2}\n \\gamma_-:= \\liminf_{k\\to\\infty}\\left( -\\frac{\\ln {\\mathbb E}(\\sum_{s} |\\varphi_s(0)|\\cdot |\\varphi_s (k)|)}{|k|}\\right).$$ It is obviously connected to the minimal inverse correlation length. This definition can be localized to an energy range by summing over the eigenfunctions with energies falling in the range, in which case it is linked to the minimal inverse correlation length for Fermi energies falling in that range.\n\nIt is well known that there is a long road from positive Lyapunov exponents to a statement like (<a href=\"#edl\" data-reference-type=\"ref\" data-reference=\"edl\">[edl]</a>). First, positive Lyapunov exponents don’t even imply pure point spectrum for a.e. phase . Even for models with positive Lyapunov exponents and known pure point spectrum, dynamical localization may not hold , and then an averaged statement (dubbed strong dynamical localization) is strictly stronger, and a result such as <a href=\"#edl\" data-reference-type=\"eqref\" data-reference=\"edl\">[edl]</a> is stronger yet (albeit equivalent in all known examples so far).\n\nYet it may be natural to expect that there is a certain reason to physicists’ jump in conclusions, and that for physically relevant models Lyapunov exponent is indeed related to $\\gamma_\\pm$.\n\nIn this paper we prove the first such result. It turns out that for almost Mathieu operators, that is operators on $\\ell^2(\\mathbb{Z})$ given by (<a href=\"#Def.AMO\" data-reference-type=\"ref\" data-reference=\"Def.AMO\">[Def.AMO]</a>) with potential (<a href=\"#G.potential\" data-reference-type=\"ref\" data-reference=\"G.potential\">[G.potential]</a>), arguably the most popular 1D model in physics, the Lyapunov exponent precisely defines the dynamical decay rate.\n\nSuppose $|\\lambda|>1$. Let $L:=\\ln|\\lambda|$ be the Lyapunov exponent of the almost Mathieu operator for energies in the spectrum . We have\n\n<div id=\"Maintheorem\" class=\"theorem\">\n\n**Theorem 1**. *Let $|\\lambda|>1$, and $\\alpha$ be Diophantine. Then $$%\n   %\n   %\n\\gamma_+=\\gamma_-=  L.$$*\n\n</div>",
     "labels": [
+      "Maintheorem",
       "gamma1",
       "gamma2"
     ],
-    "refs": [],
+    "refs": [
+      "Def.AMO",
+      "G.potential",
+      "edl"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1812.02860v1::L1-10::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "1812.02860v1::L28-33::s2",
+        "direction": "next"
+      },
+      {
+        "id": "1812.02860v1::L38-49::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "1812.02860v1::L1-10::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "1812.02860v1::L28-33::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "1812.02860v1::L34-37::s3",
+        "direction": "comment"
+      },
+      {
+        "id": "1812.02860v1::L38-49::s0",
+        "direction": "comment"
+      },
+      {
+        "id": "1812.02860v1::L83-102::s0",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "1812.02860v1::L28-33::s2",
@@ -46,13 +95,29 @@
     "end_line": 33,
     "text": "</div>\n\nWithout of loss of generality, we assume $\\lambda>0$. We note that almost Mathieu operators have Anderson localization with eigenfunctions decaying exactly at the Lyapunov rate *if and only if* $\\lambda>1$, and $\\alpha$ is Diophantine , thus we establish equality of the exponential decay rate in expectation and the Lyapunov exponent throughout this entire regime[^1].\n\nPrevious quantum dynamics results in the regime of localization have been limited to lower bounds for related quantities, for any model. Bounds for the supercritical (that is $\\lambda>1$) almost Mathieu operator go back to . Dynamical localization for general analytic quasiperiodic potentials was obtained in .\n\nA lower bound on $\\gamma_-$, establishing its positivity, was proved, under the same assumptions as in Theorem <a href=\"#Maintheorem\" data-reference-type=\"ref\" data-reference=\"Maintheorem\">1</a>, in . Previously, lower bounds on $\\gamma_-$ were obtained for the *Anderson model*, i.e. for the potential being independent identically distributed random variables, in for the one-dimensional case and in for higher dimensions throughout the regimes where corresponding proofs of localization work, thus excluding e.g. Bernoulli. The corresponding result for continuum operators was proven in . Recently, a proof of such lower bound was obtained for an *arbitrary* 1D bounded Anderson model in using a more delicate implementation of the method of and some ideas of .",
     "labels": [],
-    "refs": [],
+    "refs": [
+      "Maintheorem"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1812.02860v1::L11-27::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "1812.02860v1::L34-37::s3",
+        "direction": "next"
+      },
+      {
+        "id": "1812.02860v1::L11-27::s1",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "1812.02860v1::L34-37::s3",
@@ -62,13 +127,29 @@
     "end_line": 37,
     "text": "A lower bound on $\\gamma_-$, establishing its positivity, was proved, under the same assumptions as in Theorem <a href=\"#Maintheorem\" data-reference-type=\"ref\" data-reference=\"Maintheorem\">1</a>, in . Previously, lower bounds on $\\gamma_-$ were obtained for the *Anderson model*, i.e. for the potential being independent identically distributed random variables, in for the one-dimensional case and in for higher dimensions throughout the regimes where corresponding proofs of localization work, thus excluding e.g. Bernoulli. The corresponding result for continuum operators was proven in . Recently, a proof of such lower bound was obtained for an *arbitrary* 1D bounded Anderson model in using a more delicate implementation of the method of and some ideas of .\n\nWhile lower bounds on $\\gamma_-$ are a corollary of localization, that is of taming the resonances, upper bounds on $\\gamma_+$ are a corollary of delocalization, that is of exploiting the presence of the resonances. It is well known that the latter task is usually harder. In this paper we achieve this, at the same time making both estimates sharp. Our analysis uses (a small part of the) delicate estimates on eigenfunctions obtained in . The statements we need that are similar to those in are presented in the appendix, while the body of the paper consists of the new argument needed to derive the sharp upper and lower bounds.\n\nIt is tempting to conjecture that Theorem <a href=\"#Maintheorem\" data-reference-type=\"ref\" data-reference=\"Maintheorem\">1</a> has a universal nature, but one should be cautious. For example, we do not expect it to hold even for weakly Liouville almost Mathieu operators for which localization has been established in , with eigenfunctions decaying exponentially but at a *non-Lyapunov* rate . However, even for those a statement of the form $\\gamma_+=L$ may be plausible. Moreover, almost Mathieu operators are special in that their Lyapunov exponent is constant on the spectrum, and without this condition the statement of the theorem doesn’t even make sense. Yet, it is natural to expect that in many physically relevant situations there should be a link between $\\gamma_\\pm$ and $L_\\pm$, where $L_+= \\sup L(E)$ ($L_-= \\inf L(E)$) over $E$ in the spectrum. For example, it is an interesting question to establish such a connection for the Anderson model where eigenfunctions do decay at the Lyapunov rate (e.g. ). In the framework of the method of this would require more delicate estimates on the probabilities of large deviation sets.",
     "labels": [],
-    "refs": [],
+    "refs": [
+      "Maintheorem"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1812.02860v1::L28-33::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "1812.02860v1::L38-49::s0",
+        "direction": "next"
+      },
+      {
+        "id": "1812.02860v1::L11-27::s1",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "1812.02860v1::L38-49::s0",
@@ -79,15 +160,48 @@
     "text": "# Preliminaries\n\nFor $\\lambda > 0$, $\\alpha$ irrational, and $\\theta\\in\\mathbb{R}$, define the potential $$\\label{G.potential}\n V_{\\lambda,\\alpha,\\theta} (n) = 2 \\lambda \\cos2\\pi (\\theta+n\\alpha),$$ where $\\lambda$ is the coupling, $\\alpha$ is the frequency, and $\\theta$ is the phase. We define the almost Mathieu operator by its action on $u\\in\\ell^2(\\mathbb{Z})$, $$\\label{Def.AMO}\n (H_{\\lambda,\\alpha,\\theta}u)(n)=u({n+1})+u({n-1})+  V_{\\lambda,\\alpha,\\theta} (n) u(n). %$$ We say that frequency $\\alpha$ is Diophantine if there exist $\\kappa>0$ and $\\tau>0$ such that for $k\\neq 0$, $$||k\\alpha||_{\\mathbb{R}/\\mathbb{Z}}\\geq \\frac{\\tau}{|k|^{\\kappa}},$$ where $||x||_{\\mathbb{R}/\\mathbb{Z}}=\\inf_{\\ell\\in \\mathbb{Z}}|x-\\ell|$.\n\nIn the following, we will consider $\\lambda > 1$ and $\\alpha$ Diophantine fixed, and so set $H_{\\theta} : = H_{\\lambda,\\alpha,\\theta}$. We know that for almost every $\\theta$, the spectrum of $H_{\\theta}$ is pure point . We denote by $\\phi_{\\theta;s}$ an orthonormal basis consisting of eigenfunctios of $H_{\\theta}$. Let $n_{\\theta;s}$ be the position of the leftmost maximum of $\\phi_{\\theta;s}$, so $$|\\phi_{\\theta;s}(n_{\\theta;s})| = \\|\\phi_{\\theta;s}\\|_{\\ell^{\\infty}(\\mathbb{Z})}.$$\n\nA key step in the proof of Theorem <a href=\"#Maintheorem\" data-reference-type=\"ref\" data-reference=\"Maintheorem\">1</a> will be to prove the following localization result. Below $\\varepsilon$ is always small.\n\n<div id=\"Keytheorem\" class=\"theorem\">",
     "labels": [
       "Def.AMO",
-      "G.potential"
+      "G.potential",
+      "Keytheorem"
     ],
-    "refs": [],
+    "refs": [
+      "Maintheorem"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Preliminaries"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1812.02860v1::L34-37::s3",
+        "direction": "previous"
+      },
+      {
+        "id": "1812.02860v1::L50-73::s1",
+        "direction": "next"
+      },
+      {
+        "id": "1812.02860v1::L11-27::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "1812.02860v1::L11-27::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "1812.02860v1::L50-73::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "1812.02860v1::L103-118::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "1812.02860v1::L136-466::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "1812.02860v1::L50-73::s1",
@@ -96,14 +210,41 @@
     "start_line": 50,
     "end_line": 73,
     "text": "<div id=\"Keytheorem\" class=\"theorem\">\n\n**Theorem 2**. *Let $\\lambda>1$, $\\alpha$ Diophantine, $\\theta\\in\\mathbb{R}$, $\\ell\\in\\mathbb{Z}$, and $\\ell^\\prime=|\\ell-n_{\\theta;s}|$. Let $x_0\\in[-2\\ell^{\\prime},2\\ell^{\\prime}]$ be such that $$|\\sin\\pi(2\\theta+\\alpha (2n_{\\theta;s}+x_0))|=\\min_{|x|\\leq 2\\ell^{\\prime}}\n  |\\sin\\pi(2\\theta+\\alpha (2n_{\\theta;s}+x))|.$$ Then for large $\\ell^{\\prime}$ (depending on $\\varepsilon$) we have*\n\n- *if $\\ell$ and $x_0$ are on different sides of $n$, that is $(\\ell-n)(x_0-n)<0$, then $$|\\phi_{\\theta;s}(\\ell)|\\leq\n     e^{-(L -\\varepsilon)|\\ell-n_{\\theta;s}|}\n     |\\phi_{\\theta;s}(n_{\\theta;s})|.$$*\n\n- *if $(\\ell-n)(x_0-n)\\geq0$ and $|\\sin\\pi(2\\theta+\\alpha (2n_{\\theta;s}+x_0))|\\geq\n      e^{-\\eta |\\ell-n_{\\theta;s}|}$ for some $\\eta\\in(0,L-\\varepsilon)$, then $$|\\phi_{\\theta;s}(\\ell)|\\leq\n     e^{-(L -\\varepsilon-\\eta)|\\ell-n_{\\theta;s}|}\n     |\\phi_{\\theta;s}(n_{\\theta;s})|.$$*\n\n</div>\n\n<div class=\"proof\">\n\n*Proof.* Theorem <a href=\"#Keytheorem\" data-reference-type=\"ref\" data-reference=\"Keytheorem\">2</a> is obtained using the arguments from . We include a proof in the appendix. ◻\n\n</div>\n\nTheorem <a href=\"#Keytheorem\" data-reference-type=\"ref\" data-reference=\"Keytheorem\">2</a> implies the following corollary immediately.\n\n<div id=\"cornov18\" class=\"corollary\">",
-    "labels": [],
-    "refs": [],
+    "labels": [
+      "Keytheorem",
+      "cornov18"
+    ],
+    "refs": [
+      "Keytheorem"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Preliminaries"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1812.02860v1::L38-49::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "1812.02860v1::L74-82::s2",
+        "direction": "next"
+      },
+      {
+        "id": "1812.02860v1::L38-49::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "1812.02860v1::L103-118::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "1812.02860v1::L136-466::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "1812.02860v1::L74-82::s2",
@@ -112,14 +253,34 @@
     "start_line": 74,
     "end_line": 82,
     "text": "<div id=\"cornov18\" class=\"corollary\">\n\n**Corollary 3**. *Let $\\lambda>1$, $\\alpha$ Diophantine, $\\theta\\in\\mathbb{R}$, $\\ell\\in\\mathbb{Z}$, and $\\ell^\\prime=|\\ell-n_{\\theta;s}|$. Let $x_0\\in[-2\\ell^{\\prime},2\\ell^{\\prime}]$ such that $$|\\sin\\pi(2\\theta+\\alpha (2n_{\\theta;s}+x_0))|=\\min_{|x|\\leq 2\\ell^{\\prime}}\n  |\\sin\\pi(2\\theta+\\alpha (2n_{\\theta;s}+x))|.$$ Suppose for some $\\eta\\in(0,L-\\varepsilon)$ $$\\min_{|x|\\leq 2\\ell^{\\prime}}\n  |\\sin\\pi(2\\theta+\\alpha (2n_{\\theta;s}+x))|>\n    e^{-\\eta |\\ell-n_{\\theta;s}|}.$$ Then we have $$|\\phi_{\\theta;s}(\\ell)|\\leq\n   e^{-(L -\\eta-\\varepsilon)|\\ell-n_{\\theta;s}|}\n   |\\phi_{\\theta;s}(n_{\\theta;s})|.$$*\n\n</div>",
-    "labels": [],
+    "labels": [
+      "cornov18"
+    ],
     "refs": [],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Preliminaries"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1812.02860v1::L50-73::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "1812.02860v1::L83-102::s0",
+        "direction": "next"
+      },
+      {
+        "id": "1812.02860v1::L103-118::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "1812.02860v1::L136-466::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "1812.02860v1::L83-102::s0",
@@ -130,15 +291,40 @@
     "text": "#  The lower bound\n\nIn this part we will prove the lower bound in Theorem <a href=\"#Maintheorem\" data-reference-type=\"ref\" data-reference=\"Maintheorem\">1</a>: $\\gamma_-\\geq L.$ That is we will fix $\\ell\\in\\mathbb{Z}$ and bound $$\\int_0^{1} \\sum_{s} |\\phi_{\\theta;s}(0) \\phi_{\\theta;s}(\\ell)| d\\theta=\n  \\sum_{n\\in\\mathbb{Z}} \\int_0^{1}\n   \\sum_{n_{\\theta;s}=n} |\\phi_{\\theta;s}(0) \\phi_{\\theta;s}(\\ell)| d\\theta$$ from above. By orthogonality, we have for any $s$, $$\\label{Gauth1}\n  \\sum_{n} |\\phi_{\\theta;s}(n)|^2 = 1,$$ and for any $\\theta\\in \\mathbb{Z}$ $$\\label{Gauth2}\n  \\sum_{s} |\\phi_{\\theta;s}(n)|^2 = 1.$$ By symmetry, we can clearly assume that $\\ell\\geq 0$. We note that in order to prove the lower bound in Theorem <a href=\"#Maintheorem\" data-reference-type=\"ref\" data-reference=\"Maintheorem\">1</a>, it suffices to show\n\n<div id=\"Maintheoremupper\" class=\"theorem\">\n\n**Theorem 4**. *Let $\\lambda >1$, $\\alpha$ Diophantine, and $0 < \\Gamma < L$. Then for $\\ell \\geq 0$ large enough, we have $$\\sum_{n\\in\\mathbb{Z}} \\int_0^{1}\n   \\sum_{n_{\\theta;s}=n} |\\phi_{\\theta;s}(0) \\phi_{\\theta;s}(\\ell)| d\\theta\n    \\leq e^{-\\Gamma\\ell}.$$*\n\n</div>\n\nFor $n \\in \\mathbb{Z}$ and $0 < \\eta < L$, we define the sets $$A_{\\eta;n} = \\{\\theta:\\quad \\min_{|n^\\prime|\\leq 10|n|}\n  |\\sin\\pi(2 \\theta + \\alpha (2 n + n^\\prime))| \\leq e^{-\\eta |n|}\\},$$ and $$B_{\\eta;n;\\ell} = \\{\\theta:\\quad \\min_{|n^\\prime|\\leq 10 |n-\\ell|}\n  |\\sin\\pi(2 \\theta + \\alpha (2 n + n^\\prime))| \\leq e^{-\\eta |n - \\ell|}\\}$$ We clearly have that $|A_{\\eta,n}|\\leq (20|n|+1) e^{-\\eta |n|}$ and $|B_{\\eta;n;\\ell}|\\leq (20|n-\\ell|+1)e^{-\\eta|n-\\ell|}$.",
     "labels": [
       "Gauth1",
-      "Gauth2"
+      "Gauth2",
+      "Maintheoremupper"
     ],
-    "refs": [],
+    "refs": [
+      "Maintheorem"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " The lower bound"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1812.02860v1::L74-82::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "1812.02860v1::L103-118::s1",
+        "direction": "next"
+      },
+      {
+        "id": "1812.02860v1::L11-27::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "1812.02860v1::L119-135::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "1812.02860v1::L136-466::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "1812.02860v1::L103-118::s1",
@@ -147,14 +333,49 @@
     "start_line": 103,
     "end_line": 118,
     "text": "For $n \\in \\mathbb{Z}$ and $0 < \\eta < L$, we define the sets $$A_{\\eta;n} = \\{\\theta:\\quad \\min_{|n^\\prime|\\leq 10|n|}\n  |\\sin\\pi(2 \\theta + \\alpha (2 n + n^\\prime))| \\leq e^{-\\eta |n|}\\},$$ and $$B_{\\eta;n;\\ell} = \\{\\theta:\\quad \\min_{|n^\\prime|\\leq 10 |n-\\ell|}\n  |\\sin\\pi(2 \\theta + \\alpha (2 n + n^\\prime))| \\leq e^{-\\eta |n - \\ell|}\\}$$ We clearly have that $|A_{\\eta,n}|\\leq (20|n|+1) e^{-\\eta |n|}$ and $|B_{\\eta;n;\\ell}|\\leq (20|n-\\ell|+1)e^{-\\eta|n-\\ell|}$.\n\nBy Theorem <a href=\"#Keytheorem\" data-reference-type=\"ref\" data-reference=\"Keytheorem\">2</a> and Corollary <a href=\"#cornov18\" data-reference-type=\"ref\" data-reference=\"cornov18\">3</a>, we can obtain the following Lemma.\n\n<div id=\"lem:ABeta\" class=\"lemma\">\n\n**Lemma 5**. *For any $\\eta\\in(0,L-\\varepsilon)$, the following estimates hold,*\n\n1.  *For $\\theta\\notin A_{\\eta;n}$ and $n_{\\theta;s}=n$, we have $$|\\phi_{\\theta;s}(0)| \\leq e^{-(L-\\eta-\\varepsilon) |n|}\n        |\\phi_{\\theta;s}(n)|,$$ for large $|n|$.*\n\n2.  *For $\\theta\\notin B_{\\eta;n;\\ell}$ and $n_{\\theta;s}=n$, we have $$|\\phi_{\\theta;s}(\\ell)| \\leq e^{-(L-\\eta-\\varepsilon) |n-\\ell|}\n        |\\phi_{\\theta;s}(n)|,$$ for large $|n-\\ell|$.*\n\n</div>\n\n<div class=\"proof\">",
-    "labels": [],
-    "refs": [],
+    "labels": [
+      "lem:ABeta"
+    ],
+    "refs": [
+      "Keytheorem",
+      "cornov18"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " The lower bound"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1812.02860v1::L83-102::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "1812.02860v1::L119-135::s2",
+        "direction": "next"
+      },
+      {
+        "id": "1812.02860v1::L38-49::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "1812.02860v1::L50-73::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "1812.02860v1::L74-82::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "1812.02860v1::L119-135::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "1812.02860v1::L136-466::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "1812.02860v1::L119-135::s2",
@@ -166,13 +387,39 @@
     "labels": [
       "Glnew1"
     ],
-    "refs": [],
+    "refs": [
+      "Gauth2",
+      "Maintheoremupper",
+      "lem:ABeta"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " The lower bound"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1812.02860v1::L103-118::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "1812.02860v1::L136-466::s3",
+        "direction": "next"
+      },
+      {
+        "id": "1812.02860v1::L83-102::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "1812.02860v1::L103-118::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "1812.02860v1::L136-466::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "1812.02860v1::L136-466::s3",
@@ -207,6 +454,10 @@
       "Gnov201",
       "Gnov202",
       "Gnov203",
+      "JS",
+      "Keylemma1app",
+      "Keylemmaapp",
+      "Keytheoremsimple",
       "Phi1new",
       "Phi2new",
       "almostconstancyn",
@@ -217,14 +468,87 @@
       "first",
       "gjs",
       "half",
-      "ksmallG"
+      "ksmallG",
+      "prop:large",
+      "thm:lowerbdd"
     ],
-    "refs": [],
+    "refs": [
+      "Case11new",
+      "Case12new",
+      "Case13new",
+      "Eqpnew",
+      "Equinew",
+      "Equnew",
+      "G.new18app",
+      "Gapp1",
+      "Gapp3",
+      "Gapp4",
+      "Gauth2",
+      "Glnew1",
+      "Glnew2",
+      "Glnew3",
+      "Glnew4",
+      "Gminnov181",
+      "Gnov191",
+      "Gnov192",
+      "Gnov195",
+      "Gnov196",
+      "Gnov197",
+      "Gnov202",
+      "Gnov203",
+      "JS",
+      "Keylemma1app",
+      "Keylemmaapp",
+      "Keytheorem",
+      "Keytheoremsimple",
+      "Maintheoremupper",
+      "almostconstancyn",
+      "cornov18",
+      "eq:layercake",
+      "equ6",
+      "equ7",
+      "equ8",
+      "first",
+      "gjs",
+      "lem:ABeta",
+      "prop:large",
+      "thm:lowerbdd"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " The lower bound"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1812.02860v1::L119-135::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "1812.02860v1::L83-102::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "1812.02860v1::L119-135::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "1812.02860v1::L38-49::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "1812.02860v1::L50-73::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "1812.02860v1::L74-82::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "1812.02860v1::L103-118::s1",
+        "direction": "reference"
+      }
+    ]
   }
 ]

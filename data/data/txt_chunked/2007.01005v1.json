@@ -1,0 +1,178 @@
+[
+  {
+    "id": "2007.01005v1::L16-59::c0",
+    "file": "data/data/full_text/2007.01005v1.txt",
+    "section_path": "",
+    "start_line": 16,
+    "end_line": 59,
+    "text": "theoremTheorem\nlemmaLemma\n\nOn the spectrum of critical almost Mathieu operators in the rational case\nS. Jitomirskaya, L. Konstantinov, I. Krasovsky\n\nWe derive a new Chambers-type formula and prove sharper upper bounds on the\nmeasure of the spectrum of critical almost Mathieu operators with\nrational frequencies.\n\nIntroduction\nThe Harper operator, a.k.a. the discrete magnetic Laplacian(The\nname \"discrete magnetic Laplacian\" was first introduced by M. Shubin in.), is\na tight-binding model of an electron confined\nto a 2D square lattice in a\nuniform magnetic field orthogonal to the lattice plane and with flux  through an elementary cell.\nIt acts on\nand\nis usually given in the Landau gauge representation\n\nfirst considered by Peierls, who noticed that it makes the Hamiltonian separable and\nturns it into the direct integral in  of operators\non  given by:\n\nIn physics literature, it also appears under the names Harper's or  the Azbel-Hofstadter\nmodel, with both names  used also for the discrete magnetic\nLaplacian .  In mathematics, it is universally called the critical almost Mathieu\noperator.(This name was originally introduced by Barry Simon\n.) In addition to importance in physics, this model is of\nspecial interest, being at the boundary of two reasonably well\nunderstood regimes: (almost) localization and (almost) reducibility,\nand not being amenable to methods of either side. Recently, there has been some\nprogress in the study of the fine structure of its spectrum.\n\nDenote the spectrum of an operator  as a set, by . An important object is the union of   over\nwhich coincides with the spectrum of . We denote it .\nNote that by the general theory of ergodic operators, if  is irrational,\nis independent of . We denote the Lebesgue measure of a set  by .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L61-102::c1",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2007.01005v1::L61-102::c1",
+    "file": "data/data/full_text/2007.01005v1.txt",
+    "section_path": "",
+    "start_line": 61,
+    "end_line": 102,
+    "text": "Denote the spectrum of an operator  as a set, by . An important object is the union of   over\nwhich coincides with the spectrum of . We denote it .\nNote that by the general theory of ergodic operators, if  is irrational,\nis independent of . We denote the Lebesgue measure of a set  by .\n\nFor irrational , the Lebesgue measure , and\nis a set of Hausdorff dimension no greater than\n. The proof of the Hausdorff dimension result in(which was a conjecture of D. J. Thouless)  is\nbased on upper bounds of the measure of the spectrum for\nand a strong continuity. For rational , where ,  are coprime positive integers, Last obtained the bounds:\n\nwhere . While the upper bound in () was sufficient for the\nargument of, the measure of the spectrum is subject to another\nconjecture of Thouless: that\nin the limit , we have\n, where ,\nbeing  the Catalan constant.\nThouless provided a partly heuristic argument in the case , .\nA rigorous proof  for\nand  or ,  odd, was given in.\n\nThe purpose of this note is to present a sharper upper bound, for all :\nFor all positive coprime integers  and ,\n\nThus, the upper bound is reduced from  to .\nThe way we prove Theorem 1 is very different from that of; we use the chiral gauge representation\nand Lidskii's inequalities. The chiral gauge\nrepresentation of the almost Mathieu operator also leads to\na new type of Chambers' relation (equations Chambersodd, Chamberseven below).\n\nProof of Theorem\nConsider the following operator on :\n(H_,  )(n) = 2 2 ((n-1) + ) (n - 1) + 2 2 (n + ) (n + 1),  , [0, 1),\nand define .\nIt was shown in that the operators  and  are unitarily equivalent, so\nthat . (Note that  in general.) See also related partly non-rigorous considerations in\n, and an application of the rational case in.\nOperator cg corresponds to the chiral gauge representation of the Harper operator.\n\nFrom now on, we always consider the case of rational . Furthemore, the analysis below for ,  becomes especially elementary, and gives , , so that Theorem  obviously holds in these cases. From now on, we assume .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L16-59::c0",
+        "direction": "previous"
+      },
+      {
+        "id": "2007.01005v1::L104-177::c2",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2007.01005v1::L104-177::c2",
+    "file": "data/data/full_text/2007.01005v1.txt",
+    "section_path": "",
+    "start_line": 104,
+    "end_line": 177,
+    "text": "From now on, we always consider the case of rational . Furthemore, the analysis below for ,  becomes especially elementary, and gives , , so that Theorem  obviously holds in these cases. From now on, we assume .\n\nIf  is even, define  and  (note that\nis necessarily odd in this case).\n\nThis corresponds to case I below.\nIf  is odd, define  and .\nThis corresponds to case II below.\nWe note that in either case  and  are coprime and .\n\nLet , and further identify .\nFor the operator , Floquet theory\nstates\nthat  if and only if the equation  has a solution  satisfying  for all , and for some real . Therefore, for a fixed , there exist  values of  satisfying the eigenvalue equation\n\nfor any , where\nB_, k, :=\n.\nThus, the eigenvalues of  are independent of\n.\n\nChambers-type formula\n\nThe celebrated Chambers' formula presents the dependence of the\ndeterminant of the almost Mathieu operator with\nrestricted to the period  with Floquet boundary conditions, on\nthe phase  and quasimomentum . In the critical case it is\ngiven by (see, e.g.,)\n(A_, k,  - E) = (E) -2 (-1)^q_0((2 q_0 ) + (k q_0)),\nwhere\nA_, k, :=\n,  Z,\na(x) := 2 (2 x), a_n() := a((p_0/q_0) n + ),\nand , the discriminant(In, the discriminant differs from  by the factor .), is independent of  and . An\nimmediate corollary of this formula is  that , e.g.,.\n\nHere we obtain a formula of this type for\n\nIndeed, as usual, separating the terms containing  in the determinant, we\nobtain,\nfor the characteristic polynomial\n\nwhere   is  independent of  and equal therefore to .\n\nFor the product of 's we have:\n\nTo evaluate the product of 's, we expand sine in terms of exponentials and use the formula\n.\nAn alternative derivation can go along the lines of the proof\nof Lemma 9.6 in.\n\nSubstituting () into (), we have\n\nWe can further obtain the dependence of  on :\n\nwhere the discriminant  is independent of .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L61-102::c1",
+        "direction": "previous"
+      },
+      {
+        "id": "2007.01005v1::L180-239::c3",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2007.01005v1::L180-239::c3",
+    "file": "data/data/full_text/2007.01005v1.txt",
+    "section_path": "",
+    "start_line": 180,
+    "end_line": 239,
+    "text": "where the discriminant  is independent of .\n\nSince  is independent of , it is\nperiodic in , i.e.,\n, and by eq1 so is .\nTherefore, since, clearly,  , the terms  other than  vanish, and  has the following Fourier expansion:\n\nIt is easily seen that the  and  can be obtained from the expansion of\nthe determinant and that, moreover,\nthey do not depend on  Expanding  with  in rows and columns (cf.),\nwe obtain\n\nThis gives  for  odd, and  for  even. It remains to denote\nfor  odd, and  for  even, and the proof is complete.\n\nWe therefore have, by   () and Lemma :\n\n[Chambers-type formula]\n\nNote that  is a polynomial of degree  independent of  and .\nBy Floquet theory, the spectrum  is the union of the eigenvalues of\nover , a collection of  intervals.\n\nWe make the following observations.\n\nCase I: q is odd.\n\nBy Chambersodd,\nif and only if\n.\nThus,  is the preimage of\nunder the mapping .  If , ,\nis a collection of  points where . (In this case, ,\nso that  splits into the direct sum of an infinite number of copies of a -dimensional matrix.)\nWe note that the spectra  for\ndifferent  are nested in one another as  grows from  to ; in particular,\nfor each ,\n\nThis implies that all the maxima of  are no less than 4, and all the minima are no greater than .\nMoreover, taking the union over all  gives:\n\nClearly, it is sufficient to consider only .\n\nCase II: q is even.\nThis case is similar to case I, so we omit some details for brevity.\nBy Chamberseven,\nif and only if\n.\nConsidering the cases , it is easy to see that  is the\npreimage of\nunder the mapping .  If , ,\nis a collection of  points where .\nWe note that the spectra  for\ndifferent  are nested in one another as  grows from  to ; in particular,\nfor each ,",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L104-177::c2",
+        "direction": "previous"
+      },
+      {
+        "id": "2007.01005v1::L241-283::c4",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2007.01005v1::L241-283::c4",
+    "file": "data/data/full_text/2007.01005v1.txt",
+    "section_path": "",
+    "start_line": 241,
+    "end_line": 283,
+    "text": "Case II: q is even.\nThis case is similar to case I, so we omit some details for brevity.\nBy Chamberseven,\nif and only if\n.\nConsidering the cases , it is easy to see that  is the\npreimage of\nunder the mapping .  If , ,\nis a collection of  points where .\nWe note that the spectra  for\ndifferent  are nested in one another as  grows from  to ; in particular,\nfor each ,\n\nThis implies that all the maxima of  are no less than 16, and all the minima are no greater than 0.\nMoreover, taking the union over all  gives:\n\nClearly, it is sufficient to consider only .\n\nIn this case of even  we can say more about the form of . Note that\nand . Recall that by Floquet theory,  is independent\nof the choice of . For convenience, choose . It is easily seen that\ndecomposes into a direct sum,\nand moreover , where  is a polynomial\nof degree , odd if  is odd, and even if  is even (as it is a characteristic polynomial of a tridiagonal matrix with zero main diagonal). Thus  is a square.\n\nThe discriminants  and  are related in the following way:\n\nFor  odd,\n\nFor  even,\n\nCase I: q is odd.\nHere, by our definitions at the start of the section,  and .  and\nare polynomials in  of degree  with the same coefficient  of .\nSince  at the  distinct edges of the bands (cf.), these polynomials coincide:  for each .\n\nCase II: q is even.\nHere,  and .  is the preimage of  under\nand of  under , hence\nalso of  under . On the other hand, we have seen above that\nfor some polynomial  of degree .\nThus,\nand  coincide at the  (for  odd) and\n(for  even) distinct edges of\nthe bands (cf.; the central bands merge for  even), so these polynomials of degree  are equal:  for each .\n\nMeasure of the spectrum\nThe rest of the proof follows the argument of, namely it\nuses  Lidskii's inequalities to bound\n. The key observation is that choosing  appropriately, we can make the corner elements of the matrix  very small, of order  when  is large. This is not possible to do in the standard representation for the almost Mathieu operator.\nHere are the details.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L180-239::c3",
+        "direction": "previous"
+      },
+      {
+        "id": "2007.01005v1::L286-374::c5",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2007.01005v1::L286-374::c5",
+    "file": "data/data/full_text/2007.01005v1.txt",
+    "section_path": "",
+    "start_line": 286,
+    "end_line": 374,
+    "text": "Measure of the spectrum\nThe rest of the proof follows the argument of, namely it\nuses  Lidskii's inequalities to bound\n. The key observation is that choosing  appropriately, we can make the corner elements of the matrix  very small, of order  when  is large. This is not possible to do in the standard representation for the almost Mathieu operator.\nHere are the details.\n\nCase I: q is odd.\nAssume without loss that ,  . (If , the analysis is similar.)\nThen the eigenvalues   of  labelled in decreasing order\nare the edges of the spectral bands where  reaches its maximum   on the band;\nand  the eigenvalues   of  labelled in decreasing order\nare the edges of the spectral bands where  reaches its minimum  on the band.\nThen\n\nNow we view  as  with the added perturbation\n\nwhich has the eigenvalues  given by:\n\nThe Lidskii inequalities (e.g., (2.51) in) are:\nFor any  self-adjoint matrix , we denote is eigenvalues by . For  self-adjoint matrices  and , we have:\n\nfor any .\n\nApplying these inequalities with ,  gives:\n\nSubstituting these into (), we obtain:\n\nMoreover, by the invariance of  under the mapping , for  and any , we can choose any  in (), so that\n\nIn particular,\n\nTherefore, , as required.\n\nCase II: q is even. This case is similar to case I, so we omit some details for brevity.\nThis time, the Lidskii equations of Theorem  show that . Indeed, as in (), we have (note the doubling of the eigenvalues for )\n\nIn particular,\n\nTherefore, , as required.\n\nThis completes the proof of Theorem .\n\nAcknowledgment\nThe work of S.J. was\nsupported by NSF DMS-1901462. The work of I.K. was supported by  the Leverhulme Trust\nresearch programme grant RPG-2018-260.\n\nA. Avila and S. Jitomirskaya.\nThe Ten Martini Problem.\nAnn. of Math. 170, 303-342 (2009).\n\nA. Avila and R. Krikorian. Reducibility or nonuniform hyperbolicity for\nquasiperiodic Schr odinger cocycles.  Ann. of Math. 164,\n911-940 (2006).\n\nS. Becker, R. Han and S. Jitomirskaya. Cantor spectrum of graphene in magnetic fields. Invent. Math. 218.3, 979-1041 (2019).\n\nM.-D. Choi, G.A. Elliott and N. Yui. Gauss polynomials and the rotation algebra. Invent. Math. 99.2, 225-246 (1990).",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L241-283::c4",
+        "direction": "previous"
+      },
+      {
+        "id": "2007.01005v1::L376-409::c6",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2007.01005v1::L376-409::c6",
+    "file": "data/data/full_text/2007.01005v1.txt",
+    "section_path": "",
+    "start_line": 376,
+    "end_line": 409,
+    "text": "M.-D. Choi, G.A. Elliott and N. Yui. Gauss polynomials and the rotation algebra. Invent. Math. 99.2, 225-246 (1990).\n\nB. Helffer, P. Kerdelhue, On the total bandwidth for the rational Harper's equation. Comm. Math. Phys.\n173, 2 335-356 (1995).\n\nhlqz B. Helffer, Q. Liu, Y. Qu and Q. Zhou. Positive Hausdorff Dimensional Spectrum for the Critical\nAlmost Mathieu Operator. Commun. Math. Phys., to appear.\n\nj S. Jitomirskaya. On point spectrum at critical\ncoupling. Adv. Math., to appear.\n\nS. Jitomirskaya and I. Krasovsky. Critical almost Mathieu operator: hidden singularity, gap continuity, and the Hausdorff dimension of the spectrum. Preprint (2019). arXiv:1909.04429.\n\njz S. Jitomirskaya and S. Zhang. Quantitative continuity of singular continuous spectral measures and arithmetic\ncriteria for quasiperiodic Schrodinger operators, arXiv:1510.07086\n(2015).\n\nkoh M. Kohmoto, Y. Hatsugai. Peierls stabilization of magnetic-flux states\nof two-dimensional lattice electrons. Phys. Rev. B 41, 9527-9529 (1990).\n\nkprb I. V. Krasovsky. Bethe ansatz for the Harper equation: solution for a small\ncommensurability parameter. Phys. Rev. B 59, 322-328 (1999).\nkdiscr I. V. Krasovsky. On the discriminant of Harper's equation.\nLett. Math. Phys. 52, 155-163 (2000).\n\nKcentral I. Krasovsky.\nCentral spectral gaps of the almost Mathieu operator.\nCommun. Math. Phys. 351, 419-439 (2017).\n\nY. Last. Zero measure spectrum for the almost Mathieu operator. Commun. Math. Phys. 164, 421-432 (1994).\nls Y. Last and M. Shamis. Zero Hausdorff dimension spectrum for the almost Mathieu\noperator. Commun. Math. Phys. 348, 729-750 (2016).\nmz V. A. Mandelshtam, S. Ya. Zhitomirskaya. 1D-quasiperiodic operators. Latent symmetries.\nCommun. Math. Phys. 139, 589-604 (1991).",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L286-374::c5",
+        "direction": "previous"
+      },
+      {
+        "id": "2007.01005v1::L411-424::c7",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2007.01005v1::L411-424::c7",
+    "file": "data/data/full_text/2007.01005v1.txt",
+    "section_path": "",
+    "start_line": 411,
+    "end_line": 424,
+    "text": "Y. Last. Zero measure spectrum for the almost Mathieu operator. Commun. Math. Phys. 164, 421-432 (1994).\nls Y. Last and M. Shamis. Zero Hausdorff dimension spectrum for the almost Mathieu\noperator. Commun. Math. Phys. 348, 729-750 (2016).\nmz V. A. Mandelshtam, S. Ya. Zhitomirskaya. 1D-quasiperiodic operators. Latent symmetries.\nCommun. Math. Phys. 139, 589-604 (1991).\n\nR. Peierls. Zur Theorie des Diamagnetismus von\nLeitungselektronen. Zeitschrift fur Physik A: Hadrons and\nNuclei 80, 763-791 (1933).\nshuM.A. Shubin. Discrete Magnetic Laplacian,\nCommun. Math. Phys. 164, 259–275 (1994)\nB. Simon.\nAlmost periodic Schrodinger operators: a review.\nAdv. Appl. Math. 3, 463-490 (1982).\n\nT83 D.J. Thouless. Bandwidths for a quasiperiodic tight-binding model.\nPhys. Rev. B 28, 4272-4276 (1983).\n\nTcmp D.J. Thouless. Scaling for the discrete Mathieu equation. Commun. Math. Phys. 127, 187-193 (1990).\nwznp P. B. Wiegmann and A. V. Zabrodin. Quantum group and magnetic translations Bethe ansatz for the Azbel-Hofstadter problem. Nucl. Phys. B 422, 495-514 (1994).",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2007.01005v1::L376-409::c6",
+        "direction": "previous"
+      }
+    ]
+  }
+]

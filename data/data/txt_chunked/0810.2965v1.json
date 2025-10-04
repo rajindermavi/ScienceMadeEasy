@@ -1,0 +1,753 @@
+[
+  {
+    "id": "0810.2965v1::L18-301::c0",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 18,
+    "end_line": 301,
+    "text": "amsalpha\n\nMon\n\ntop\nbottom\n\nd\nj\nn\nr\n\nGrass\n\nIso\n\nSO\nGL\n\nGevrey\n\nPSL\n\n*main thmMain Theorem\n\nthmTheorem[section]\ncor[thm]Corollary\nlem[thm]Lemma\nlemma[thm]Lemma\nclaim[thm]Claim\nprop[thm]Proposition\nschwSchwarz Lemma\nsectlSector Lemma\nremark\nremRemark[section]\nnotationNotation\nexampleExample[section]\n\nproblemProblem[section]\n\nequationsection\n\n.equation\n\ndefinition\ndefnDefinition[section]\ndefinitionDefinition[section]\nProof.\n\nloc\n\nf\ng\nG\nh\nT\nj\n\n[AC spectrum of the almost Mathieu operator]\nThe absolutely continuous spectrum of the almost Mathieu operator\n\nArtur Avila\n\nCNRS UMR 7599, Laboratoire de Probabilites et Modeles aleatoires\n\nUniversite Pierre et Marie Curie-Boite courrier 188\n\n75252-Paris Cedex 05, France\n\nIMPA, Estrada Dona Castorina 110, Rio de Janeiro, 22460-320,\nBrazil\nartur@math.sunysb.edu\n\nWe prove that the spectrum of the almost Mathieu operator is absolutely\ncontinuous if and only if the coupling is subcritical.  This settles\nProblem 6 of Barry Simon's list of Schrodinger operator problems\nfor the twenty-first century.\n\nIntroduction\n\nThis work is concerned with the almost Mathieu operator\n\ndefined on   (H u)_n=u_n+1+u_n-1+2 (2[+n ])\nu_n where  is the coupling,\nis the\nfrequency and  is the phase.  This is the most studied\nquasiperiodic\nSchrodinger operator, arising naturally as a physical model (see\nfor a recent historical account and for the physics background).\n\nWe are interested in the decomposition of the spectral measures in atomic\n(corresponding to point spectrum),\nsingular continuous and absolutely continuous parts.  Our main result is the\nfollowing.\n\nthm\n\nThe spectral measures of the almost Mathieu operator\nare absolutely continuous if and only if .\n\nBackground",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L303-349::c1",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L303-349::c1",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 303,
+    "end_line": 349,
+    "text": "Background\n\nSingularity of the spectral measures for  had been\npreviously established (it follows from,,\n).  Thus the Main Theorem reduces to showing absolute continuity\nof the spectral measures for , which is Problem 6 of\nBarry Simon's list.\n\nWe recall the history of this problem (following).\nAubry-Andre conjectured the following dependence on  of the\nnature of the spectral measures:\n\n(Supercritical regime)\nFor , spectral measures are pure point,\n\n(Subcritical regime) For , spectral measures are\nabsolutely continuous.\nA measure-theoretical version of this conjecture was proved by Jitomirskaya\n: it holds for almost every  and .  Problem 6 of\n, which was formulated after (and was likely partially motivated\nby) is entirely\nabout showing that, in the subcritical regime, this\nconjecture is in fact true for all  and .\n\nThe description of the supercritical regime\nturns out to be wrong as stated.  More precisely, for generic\nthere can never be point spectrum,,\nwhatever  and  are chosen, and for every  there is\na generic set of  for which there is similarly no point\nspectrum.  Thus the result of is essentially the best\npossible in the supercritical regime (one can still look for more\noptimal conditions on the parameters, which can be sometimes useful for\nother purposes, see and).\n\nThere was some hope that the description of\nthe subcritical regime was actually correct as stated, since the work\nof Last, Gesztesy-Simon (see also\nLast-Simon)\n\nestablished that there are absolutely continuous components (of some spectral\nmeasures) for every  and  (belief in the conjecture was\nhowever not unanimous, due to lack of any further evidence for generic\n).",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L18-301::c0",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L351-398::c2",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L351-398::c2",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 351,
+    "end_line": 398,
+    "text": "established that there are absolutely continuous components (of some spectral\nmeasures) for every  and  (belief in the conjecture was\nhowever not unanimous, due to lack of any further evidence for generic\n).\n\nTwo key advances happened recently.\nIn, the problem was settled for almost every\nand every ,\nand soon later, in it was settled for every\n(to be precise, for every  that can not be dealt with by\n,) and almost every .\nThose two results are based on quite independent methods, a ramification of\nthe fact that, as usually happens in quasiperiodic problems,\nseveral aspects of the operators do depend qualitatively on the arithmetics.\n\nOutline\n\nOur proof of the complete conjecture splits into two parts that do not\ninteract.  The arithmetic properties of , more precisely whether\nit is \"well approximated by rational numbers\" or not, will decide which\nof the two methods will be applied.\n\nLet  be the continued fraction approximants to\nand let\nn\nq_n+1 q_n.\nFor our problem, the key distinction is whether  (the\nsubexponential regime) or  (the exponential regime).\n\nThe subexponential regime\n\nIn, Eliasson introduced a sophisticated KAM scheme that allowed\nhim to study the entire spectrum of one-dimensional quasiperiodic\nSchrodinger operators in the perturbative regime.  Applied to the\nalmost Mathieu operator, his results imply that, for frequencies\nsatisfying the usual Diophantine condition , that is\n, and for\nsufficiently small (depending on ), the spectral\nmeasures of the almost Mathieu operator are absolutely continuous.\n\nIn, a non-perturbative method was introduced that, when\napplied to the almost Mathieu operator, gives sharp estimates through the\nwhole subcritical regime for .  Absolute continuity of the\nspectral measures was then concluded by showing that, after an appropriate\n\"change of coordinates\", the smallness requirements of the\nKAM scheme of Eliasson were satisfied.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L303-349::c1",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L400-429::c3",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L400-429::c3",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 400,
+    "end_line": 429,
+    "text": "In, a non-perturbative method was introduced that, when\napplied to the almost Mathieu operator, gives sharp estimates through the\nwhole subcritical regime for .  Absolute continuity of the\nspectral measures was then concluded by showing that, after an appropriate\n\"change of coordinates\", the smallness requirements of the\nKAM scheme of Eliasson were satisfied.\n\nIn order to extend the conclusions of to the subexponential\nregime ,\nthere are two main difficulties.  The first is that some\nkey estimates of break down in this setting (essentially for not\nachieving exponential decay of Fourier coefficients which is needed to\naddress the entire  regime).\nThe second is that the \"easy path\" consisting of\nreducing to a KAM scheme is out of reach.  Indeed, the expected\nlimit of the KAM method is the Brjuno condition  on , but this is still stronger than\n.  Thus a novel, more robust, approach to\nabsolute continuity of the spectral measures will need to be implemented.\n\nWe notice that the discussion in the subexponential regime yields\nsignificant information which goes beyond the absolute continuity of the\nspectral measures (see for instance Remark  for an example),\nand can also be applied to the more general context considered in(see  and ).\n\nThe exponential regime\n\nIn the exponential regime, our approach will be to show that each\nexponentially close rational approximation\ngives a lower bound on the mass\nof the absolutely continuous component of a spectral measure, and that\nthis lower bound converges to the total mass of the spectral measure.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L351-398::c2",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L431-465::c4",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L431-465::c4",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 431,
+    "end_line": 465,
+    "text": "In the exponential regime, our approach will be to show that each\nexponentially close rational approximation\ngives a lower bound on the mass\nof the absolutely continuous component of a spectral measure, and that\nthis lower bound converges to the total mass of the spectral measure.\n\nIn, this approach was used to prove absolute continuity of the\nintegrated density of states, which is the average of the\nspectral measures over different  (absolute continuity of the\nspectral measures for almost every  is obtained as a consequence of\nthis result, by applying and).\nThe key point of\nwas to compare averages of the spectral measures (restricted to a large\npart of the spectrum) over long sequences\nwith the corresponding objects for\nthe periodic operator obtained by replacing  with .\nIn such approach, we clearly lose control of individual phases, and one can\nnot hope to recover a result for every phase by an abstract scheme such as\nKotani's.\n\nHere we will describe a key novel mechanism of \"cancellation\" among\ndifferent phases (which we hope will find wider applicability).  We show\nthat an abnormally small (compared with the\ntotal mass) absolutely continuous component for any  implies the\nexistence of an abnormally large absolutely continuous component for some\n.  The latter possibility giving a contradiction,\nwe conclude that all spectral measures have approximately the correct size.\n\nLet us mention that the description of the critical regime at this point is\nquite accurate but not complete.  One conjectures\n(it is explicit in) that for , for every  and\nthe spectral measures are singular continuous.\nThis is proved for every  in the exponential regime and every\n(Gordon's Lemma,,),\nalmost every  and  (),\nand it is currently known to hold for every  and\nalmost every  ().\nSee also for a recent discussion\nincluding further evidence for the conjecture.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L400-429::c3",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L468-493::c5",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L468-493::c5",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 468,
+    "end_line": 493,
+    "text": "Let us mention that the description of the critical regime at this point is\nquite accurate but not complete.  One conjectures\n(it is explicit in) that for , for every  and\nthe spectral measures are singular continuous.\nThis is proved for every  in the exponential regime and every\n(Gordon's Lemma,,),\nalmost every  and  (),\nand it is currently known to hold for every  and\nalmost every  ().\nSee also for a recent discussion\nincluding further evidence for the conjecture.\n\nQuasiperiodic Schrodinger operators\nThough this work is dedicated to the almost Mathieu operator, several of our\ntechniques apply to a more general class of\nquasiperiodic Schrodinger operators, where the cosine in\n() is replaced by an arbitrary real analytic periodic\nfunction of the circle.\nThough for such operators, we no longer have a sharp phase transition, it\nstill makes sense to focus on the characterization and understanding\nof the regions in the parameters space (including the energy) exhibiting\nsubcritical, critical and supercritical behavior.\n\nMuch recent work has been\ndeveloped regarding the \"supercritical\" regime\n(characterized, dynamically, by\npositive Lyapunov exponent), especially (but not always)\nwith Diophantine frequencies\n(,,,).  On the other hand,\nsome ongoing research (mostly still unwritten, but including\nand joint works with Fayad and Krikorian) are dedicated towards the\ntheory of the \"subcritical\" regime\n(conjectured in to be\ncharacterized, dynamically, by almost reducibility),\nhopefully without arithmetic restrictions.  Some information on\nthe intermediate \"critical\" regime can be obtained as a consequence of\nthese developments (used in conjunction with\nrenormalization techniques such as) as well.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L431-465::c4",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L495-524::c6",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L495-524::c6",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 495,
+    "end_line": 524,
+    "text": "Much recent work has been\ndeveloped regarding the \"supercritical\" regime\n(characterized, dynamically, by\npositive Lyapunov exponent), especially (but not always)\nwith Diophantine frequencies\n(,,,).  On the other hand,\nsome ongoing research (mostly still unwritten, but including\nand joint works with Fayad and Krikorian) are dedicated towards the\ntheory of the \"subcritical\" regime\n(conjectured in to be\ncharacterized, dynamically, by almost reducibility),\nhopefully without arithmetic restrictions.  Some information on\nthe intermediate \"critical\" regime can be obtained as a consequence of\nthese developments (used in conjunction with\nrenormalization techniques such as) as well.\n\nOur results in this paper extend partially to this more general setting and\nare an important part of the \"subcritical program\" (one of the goals of\nwhich is to prove pure absolutely continuous spectrum in full generality).\nIt is important to note that the division of the\nanalysis into subexponential and exponential parts is still relevant,\nwith new techniques becoming available precisely when\n.  This shows that the extension of the results offrom the usual Diophantine condition to the weaker\nsubexponential condition plays\nan equally important role in the more general setting as well.  Fortunately,\nthe subexponential part of this work extends fully to the more general\nsetting, see .\n\nOn the other hand, the analysis of the exponential regime here is still\nheavily bound by precise estimates which are only available for the\nalmost Mathieu operator, and a different analytic approach will need to be\ndeveloped to compensate for this.  However, we note that the \"cancellation\ntechnique\" we describe in this paper, which is the only tool available for\ndeducing pure absolutely continuous spectrum for every phase in the\ncase of very Liouvillean frequencies, is robust enough to be applied in the\nmore general setting once such difficulties are overcome.\n\nAcknowledgments: I would like to thank Svetlana Jitomirskaya and David\nDamanik for our joint work on and, which form the\nbasis on which this work is built on, and for several helpful suggestions\nregarding the writing of this paper.  This research was partially conducted\nduring the period the author served as a Clay Research Fellow.\n\nPreliminaries\n\nCocycles",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L468-493::c5",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L526-590::c7",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L526-590::c7",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 526,
+    "end_line": 590,
+    "text": "Cocycles\n\nLet , .  We call\na (complex) cocycle.\nThe Lyapunov exponent is given by the formula\nL(,A)=_n  1 n A_n(x) dx,\nwhere  is defined by\nA_n(x)=A(x+(n-1)) A(x).\nIt turns out (since irrational rotations are uniquely ergodic), that\nL(,A)=_n  _x /\n1 n A_n(x)\nif .\nWe say that  is uniformly hyperbolic if there exists a\ncontinuous splitting ,  such that\nfor some , , and for every ,\n,\nand , .\nIn this\ncase, of course .  We say that  is bounded\nif .\n\nGiven two cocycles  and ,\na (complex) conjugacy\nbetween them is a continuous  such that\nholds.\nThe Lyapunov exponent is clearly invariant under conjugacies.\n\nWe assume now that  is a real cocycle, that is,\n.  The notion of real conjugacy (between real\ncocycles) is the same as before except that we now ask for .\nEquivalently, one looks for\nsatisfying .  Real conjugacies still preserve the Lyapunov\nexponent.\n\nWe say that  is reducible if it is (real) conjugate to a\nconstant cocycle.\n\nThe fundamental group of  is isomorphic to .  Let\nR_(2 &-2\n2 &2 ).\nAny  is homotopic to  for some\ncalled the degree of  and denoted .\n\nAssume now that  is homotopic to the identity.  Then\nthere exists  and  such that\nA(x) (2 y\n2 y )=u(x,y)\n(2 (y+(x,y))\n2 (y+(x,y)) ).\nThe function  is called a lift of .  Let  be any\nprobability on  which is invariant by the continuous\nmap , projecting over Lebesgue\nmeasure on the first coordinate (for instance, take  as any\naccumulation point of  where\nis Lebesgue measure on ).  Then the number\n(,A)=d  does not depend on the choices of  and , and is called the\nfibered rotation number of\n, see and.\n\nThe fibered rotation number is invariant under real conjugacies which are\nhomotopic to the identity.  In general, if  and\nare real conjugate,\n, and\nhas degree  (that is, it is homotopic to ) then\n.\n\naction",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L495-524::c6",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L592-656::c8",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L592-656::c8",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 592,
+    "end_line": 656,
+    "text": "action\n\nRecall the usual action of  on , .\n\nIn the following we restrict to matrices .\nSuch matrices preserve . The Hilbert-Schmidt\nnorm of  is .\nLet\nfor .  Then .\n\nOne easily checks that , so .\n\nWe notice that ,  and  where  is the hyperbolic metric on ,\nnormalized so that  for .\n\nAlmost Mathieu operator\n\nWe consider now almost Mathieu operators\n.  The definition is the same\nas in the introduction, though we will allow  to be a rational\nnumber .\nThe spectrum  does not depend on\nfor .  We let\nbe this -independent set for , and we\nlet  in the\nrational case.\nIt is the set of  such that  is not uniformly\nhyperbolic, with  given by\nS_,E(x)=\n(E-22 x&-1\n1&0 ),\n\nThe Lyapunov exponent is defined by\n.\n\n[, Corollary 2]\nFor every , , , we have .\n\nClassical Aubry duality\nLet .\nIf  then (see) the spectrum of  is .  This reflects an\nimportant symmetry in the theory of the almost Mathieu operators, known as\nAubry duality.\n\nClassical Aubry duality expresses an algebraic relation between the\nfamilies of operators\nand  which corresponds eigenvectors\nwith Bloch waves.  In our notation, it is just the computational fact that\nif  is an\nfunction whose Fourier series satisfies\n, then\n\nsatisfies .\n\nThe spectral measure\nFixing a phase  and , we let\nbe\nthe spectral measure of\ncorresponding to .  It is defined so that\n(H-E)^-1 f,f 1 E'-E d^f(E')\nholds for  in the resolvent set .\n\nWe set\n(where  is the\ncanonical basis of ).  It is well known that  form\na generating basis of , that is, there is no proper",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L526-590::c7",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L658-720::c9",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L658-720::c9",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 658,
+    "end_line": 720,
+    "text": "We set\n(where  is the\ncanonical basis of ).  It is well known that  form\na generating basis of , that is, there is no proper\n\nclosed subspace of\nwhich is invariant by  and contains .\nIn particular the support of  is\nand if  is absolutely\ncontinuous then all , ,\nare absolutely continuous.  From now on, we restrict our consideration to\nwhich we will call just the spectral measure.  Notice that, with\nour definitions, the spectral measure has total mass .\n\nThe -functions\nThe spectral measure\ncan be studied through its Borel transform ,\nM(z)=1 E'-z d(E').\nIt maps the upper-half plane  into itself.\n\nFor , there are non-zero solutions  of\nwhich are  at , defined up to normalization.  Let\nm^u^_0 u^_-1.\nThen  and  map  holomorphically\ninto itself.  Moreover, as discussed in\n(see also),\nM=m^+ m^-1 m^++m^-.\nThe connection with the cocycle acting on\narises since\nS_,z() m^()=m^(+).\nSince the holomorphic function\nmaps the upper-half plane into itself, the non-tangential\nlimits  exist\nfor almost every , and define a measurable function of  which\nwe still denote .  We will need the following easy consequence of\nKotani Theory (see, Theorem 1.4 for a more general result).\n\n[see also the more general, Theorem 1.4]\nFor every , for almost every\nsuch that , we have\n.\n\nIt is a key result of Kotani Theory that the conclusion holds for\nalmost every .  The point here is to extend this to every .\nFix some arbitrary , and let  be some sequence\nsuch that the conclusion holds for .  Let .\n\nLet  be the conformal map\ntaking  to ,\nand\n.  Notice that  uniformly on compacts of .  Let  and\n, where  is normalized Lebesgue\nmeasure on .  By the Poisson formula,\nweakly.  Since\nand , we conclude that .  By the hypothesis on ,\nalmost everywhere in .  Thus  and passing to the limit, .  We\nconclude that  almost everywhere in , which implies\nthe result.\n\nFor almost every , for almost every\nsuch that , we have\n.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L592-656::c8",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L723-796::c10",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L723-796::c10",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 723,
+    "end_line": 796,
+    "text": "For almost every , for almost every\nsuch that , we have\n.\n\nNotice that if  is such that  we have\nd dE _,,(E)=\n1  _0 M(E+i)=1  (m(+)).\nThis\nimplies that  at almost every\nsuch that .  This estimate holds in principle for almost every\n, but it behaves well with respect to limits, and hence it holds for\nevery  (existence of an absolutely continuous component of the\nspectrum for every  also follows from).\n\nFor every , for almost every\nsuch that  (hence, for almost every  when ), we have\n.\n\nLet , .\nThen for every\nthere exists a measurable function\nsuch that\nand\nd dE _,,(E)=\n1  (m_,,(E)).\n\nLet us show that  has all the properties.  Equivariance is\nobvious.  We need to show that  for almost every ,\nand that .\n\nFirst notice that  for almost every , by\nTheorems  and .\n\nTo show that  for almost every , it is enough to\nshow that the set of  such that  has zero Lebesgue measure.  Otherwise there would be\na positive Lebesgue measure set of  such that the non-tangential\nlimit of  is  or such that the non-tangential limit of\nis , both cases giving a contradiction (using that\nif the non-tangential limit of either  or  is\nconstant in a set of positive Lebesgue measure then  or  is\nconstant everywhere).\n\nIf  is such that  we have\nd dE _,,(E)=\n1  _0 M_,,(E+i)=\n1  (m^+_,,(E)).\nThis\nimplies that .  Notice that even if\nthe relation  (almost everywhere with )\nwas only known for a dense subset\nof , the estimate  (almost everywhere with ) could then be concluded for\nevery .  Let us point out that we have not used the\n-independence of\nabsolutely continuous spectrum obtained in.\n\nWe will consider energies , , .\nThen there are non-zero solutions\nof  which\nare  at , well defined up to normalization.  We define\nby\nm^u^_1 u^_0.\nNotice that  and .\n\nLet\nM(x,E+i)=1 E'-(E+i) d_x(E').\nNotice that .\nThen, as discussed in,\nM=m^+ m^-1 m^++m^-.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L658-720::c9",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L798-870::c11",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L798-870::c11",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 798,
+    "end_line": 870,
+    "text": "Let\nM(x,E+i)=1 E'-(E+i) d_x(E').\nNotice that .\nThen, as discussed in,\nM=m^+ m^-1 m^++m^-.\n\nBy Kotani Theory, for almost every  such that , and for\nalmost every  (hence, since , for almost every  in\nthe spectrum), the non-tangential limits\nexist and\nsatisfy .  It follows that\nexists and we have\nM(x,E)=i (m^+(x,E)).\nThen\nd dE(x)=_0 M(x,E+i)=(m^+(x,E)).\nWe want thus to define .  The only difficulty\n\nSince the Lyapunov exponent\nvanishes in the spectrum, it follows from Kotani theory,, that\nthere exists a full Lebesgue measure set of ,\nsuch that  and , and\nd dE _x(E)=\n12 (m(x,E)) d.\n\nIntegrated density of states\nThe integrated density of states is the function\nsuch that\nN(E)=_/ 1 2 _(-,E] d,\nwhich is a continuous non-decreasing surjective function.\nThe Thouless formula relates the Lyapunov exponent to\nthe integrated density of states\nL(E)=_E'-E dN(E').\nThere is also a relation to the fibered rotation number\nN(E)=1-2 (,S_,E)\nwhere .\n\nPeriodic case\nLet , and let .\nThe spectrum  is the set of\nall  such that , where .\nThe set of  such that  is the union of\nintervals, and the closure of each interval is called a band.\nWe order the bands from left to right.  Inside a band,\nis a monotonic function onto .\n\nWe define .  Inside the -th band, we\nhave the formulas\nq N_,p/q,(E)=k-1+(-1)^q+k-1 2 (,E)+\n1-(-1)^q+k-1 2\nwhere  is such that .\n\nIn the interior of a band,  has a smooth density.\nSince , there is a well defined fixed point\nof  in .  Then\nd d E _,p/q,(E)= 1\n(m()).\n\nBounded eigenfunctions and absolutely continuous spectrum\n\nLet  be the set of  such that the cocycle\n\nis bounded.  Then\nis absolutely continuous for all .\n\nThis well known result follows from.  We will actually need an\nexplicit estimate, contained in\n, (see also, page 197 and).\nWe give a proof since we found no\nreference for the exact statement we need.\n\nWe have\n, where  is a\nuniversal constant.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L723-796::c10",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L875-930::c12",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L875-930::c12",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 875,
+    "end_line": 930,
+    "text": "We have\n, where  is a\nuniversal constant.\n\nWe have\n.  Since\n,  and\nM 1 2 (1+m^+^2 m^++1+m^-^2 m^- ).\nClearly\n.\nso\n1 2  (E-,E+) 1+m^(E+i)^2 m^(E+i).\nWe want thus to estimate\n1+m(E+i)^2 m(E+i) C\n_0 s C ^-1 A_s_0^2\nfor , .  By symmetry, we will only consider the case .\nLet .\n\nThose are so-called\n-functions for the corresponding half-line problem with appropriate\nboundary conditions, see, 2.\nAssume now that  is an integer (the general statement\nreduces to this case).\nBy Proposition 3.9 of (a consequence of\nTheorem 1.1 of), such -functions satisfy the bound\nm_(E+i) (5+24)\n_s=0^1+^-1 A_s_0^2.\n\nWe notice that the quantity\nis invariant under\n.  By choosing  appropriately so to maximize ,\nbecomes purely imaginary with , and .  Then () follows\nfrom ().\n\nCorona estimates\n\nGiven a non-zero vector , it is easy to find a matrix with first\ncolumn  that belongs to .  We just have to solve an equation\nof the type , and it is trivial to get estimates on the size of the\nsolutions.  If  depends holomorphically of a parameter, to obtain a\nholomorphic solution of the same problem with good estimates is much more\nchallenging, and it is related to the famous Corona Theorem of Carleson\n.\n\nThe Corona Theorem states that if  and\n,  are bounded holomorphic\nfunctions such that  pointwise then\nthere exist bounded holomorphic functions ,\nsuch that .\n\nAfter the work of Wolff, good estimates on the solutions  were\nobtained.  For instance, Uchiyama (see Trent for a\npublished generalization) showed that if\npointwise then the\ncan be chosen such that , with  independent of .  (Let us\npoint out that gives an upper bound of the form\nwith  depending on ,\nthat would be enough for our purposes.)",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L798-870::c11",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L932-966::c13",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L932-966::c13",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 932,
+    "end_line": 966,
+    "text": "After the work of Wolff, good estimates on the solutions  were\nobtained.  For instance, Uchiyama (see Trent for a\npublished generalization) showed that if\npointwise then the\ncan be chosen such that , with  independent of .  (Let us\npoint out that gives an upper bound of the form\nwith  depending on ,\nthat would be enough for our purposes.)\n\nIf instead of functions of the disk one considers functions of an annulus\n, the conclusion of the Corona Theorem (with\nthe Uchiyama estimates) is\nstill valid, and is a consequence of the disk version (because the annulus\nis uniformized by the disk and has amenable fundamental group).\n\nThe following is an equivalent convenient formulation of the case  of\nUchiyama's Theorem for the annulus.\n\nLet  be an analytic function.  Assume that  for .  Then there exists  with first column  and such that\n.\n\nThe subexponential regime\n\nThe approach to the subexponential regime centers around the notion of\nquantitative duality, first developed in: almost localization\nestimates for the dual operator yield information on the\nFourier series of a \"conjugacy\" to constant.  The almost localization\nestimate gives exponential decay away from \"resonant\" sites, but this does\nnot ensure convergence for all energies (for generic energies, it is\nactually divergent).  Still, the estimates yield a good control\nof the dynamics.\n\nThough several aspects of the basic scheme of adapt without\ndifficulties to our weaker conditions, it is clear that\nsome of the estimates in lose exponential control of the decay\nof Fourier coefficients, and hence are too weak to deal with the small\ndenominators arising in the regime  (the fight between the decay of\nFourier coefficients and the small denominators happens when we need to\nsolve the cohomological equation with small error).  This is overcome by the",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L875-930::c12",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L972-1029::c14",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L972-1029::c14",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 972,
+    "end_line": 1029,
+    "text": "Though several aspects of the basic scheme of adapt without\ndifficulties to our weaker conditions, it is clear that\nsome of the estimates in lose exponential control of the decay\nof Fourier coefficients, and hence are too weak to deal with the small\ndenominators arising in the regime  (the fight between the decay of\nFourier coefficients and the small denominators happens when we need to\nsolve the cohomological equation with small error).  This is overcome by the\n\nsystematic use of estimates in a definite strip for the truncated\n\"conjugacies\".  We then need to relate the control of the dynamics\nwith absolutely continuous spectrum (as described in the introduction,\ninvokes the KAM approach at this point, which we can not do).\nWe have good estimates on cocycle\ngrowth in terms of the resonant character of the dual phase, and\nbounds on cocycle growth yield upper\nbounds on the spectral measures.  We still need estimates connecting the\n\"parametrization by dual phase\" with the \"parametrization by\nenergy\"Each energy usually (almost everywhere)\ncorresponds to finitely many dual phases, but we have not been able to rule\nout (and it is not even heuristically clear that this should be the case,\nsee footnote 11 of)\nthat for some exceptional set of energies there could be\nuncountably many ones.  This is closely related to the\ncoexistence of both point and singular continuous spectrum for the dual\nmodel.  Happily for us, the exceptional set is very small (with Hausdorff\ndimension zero)., which is done\nthrough a third parametrization, by fibered rotation number.\n\nAnother interpretation of the proof is that we give some Holder\ncontrol (in certain scales, we do not actually show full Holder\ncontinuity here) on the spectral measures, while showing that the\nsupport of the singular part has Hausdorff dimension zero (with good\ncoverings at the right scales to match the other estimate).\n\nStrong localization estimates\n\nLet , , .\nWe say that  is an -resonance if  and .\n\nIn particular, there exists always at least one resonance, .  If\n,\nimplies  for  large.\n\nWe order the\n-resonances .  We say that\nis -resonant if the set of resonances is infinite.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L932-966::c13",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L1037-1102::c15",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L1037-1102::c15",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 1037,
+    "end_line": 1102,
+    "text": "We order the\n-resonances .  We say that\nis -resonant if the set of resonances is infinite.\n\nWe say that  (see ) satisfies a\nstrong localization estimate if there exists , ,\nsuch\nthat for every eigenfunction\nsatisfying  and , and for every  we have .\n\n[, Theorem 5.1]\nIf  and  then\n\nsatisfies a strong localization estimate.\n\nA generalization\nThis section can be ignored if one is only\ninterested in the proof of the Main Theorem.\n\nLet  be analytic and let\nbe the\nquasiperiodic Schrodinger operator given by\n.  The almost Mathieu\noperator corresponds to the special case  for some .\n\nAs for the almost Mathieu case, the spectral properties of\nare intimately connected with the\nSchrodinger cocycles , where\n, and several key\nnotions have identical development, including spectral measures ,\n-functions  (except for Corollary  which needs to be\nreformulated), integrated density of states  and bounded\neigenfunctions .\n\nMost importantly, classical Aubry duality ()\ncan be extended to this setting:\nthe operators\ngiven by , where  have the property that if\nis an  function such that\n, then , where .\n\nLet us say that  is small if the family\nis almost localized (the\ndefinition of almost localization being the same as in the almost\nMathieu case).  In particular,  is small if\n.  In\ngeneral, this notation is justified by Theorem 5.1 of which\nshows that if  then\nis\nalmost localized in the whole subexponential regime.\n\nWe will actually prove the following more general result in the\nsubexponential regime.\n\nIf  is small and  then the spectral measures of\nare absolutely continous.\n\nAll the discussion below applies essentially unchanged to operators\nwith small  and .  Besides\nreplacing mentions of  by  and of the bound\nby the condition that  is\nsmall, all the few places where\nmodifications are necessary will be explicitly pointed out in a footnote.\n\nLocalization and reducibility",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L972-1029::c14",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L1104-1143::c16",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L1104-1143::c16",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 1104,
+    "end_line": 1143,
+    "text": "Localization and reducibility\n\nUntil the end of this section\nwe fix ,\nwith .\nFor an energy , it is shown in Theorem 3.3 ofthat there exists some  and\nsuch that , ,\n.  Until the end of this section, whenever  is fixed, we will choose some arbitrary  and  with\nthose properties, and we will denote .\n\nBy the strong localization estimate, if  is non-resonant then\nis localized, that is, it is\nthe Fourier series of an analytic function.\n\nLet  and .\n\nClassical Aubry duality () yields a connection between\nlocalization and reducibility (see for instance\nTheorem 2.5 ofTheir argument only needs the\narithmetical properties of\nto solve the cohomological equation  with  analytic, and this can be always done when\n.):\n\nIf  is non-resonant then  is reducible.\n\nThen .  Let  be the matrix with columns\nand .  Then  is a constant, and if it is\nnon-zero we have .\nIf  is zero then\nwith  a real vector defined up to sign and .\nPassing possibly to a double cover,  is well defined, and  does not\nvanish over .  Take  with columns  and .  Then .\nWe can also further conjugate  to a constant parabolic matrix by\nsolving the cohomological equation  with  in  (notice that  is\ndefined in ): then\n.\n\nBounds on growth",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L1037-1102::c15",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L1157-1234::c17",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L1157-1234::c17",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 1157,
+    "end_line": 1234,
+    "text": "Bounds on growth\n\nThe starting information on the cocycle growth\nis given by Theorem , that .For the\ngeneralization, one applies Theorem 6.2 ofwhose proof is unchanged in the  regime.\nIn our context this means that for any\nthere exists ,  such that\n_x<c_ A_k(x) C_e^-k.\nThe constants  and  do not depend on , only on\nand .In the case of the\nalmost Mathieu operator it is possible to show\nthat we can take .  For the\ngeneralization, it is possible to show that it is enough to choose\nsuch that  holomorphic in a neighborhood of\nand\nwhere\nis the one in the strong localization estimate.\nAll further constants may\ndepend on  and  (respectively ).\nIn the following  is big and  is small.\n\nFor a bounded analytic function\ndefined on a strip  we\nlet .  If  is a bounded\ncontinuous function on , we let .\n\nOur goal in this section is to prove:\n\nWe have .\n\nGiven Fourier coefficients  and an interval , we let .  The\nlength of the interval  is .\n\nWe will say that a trigonometrical polynomial\nhas essential degree at most\nif its Fourier coefficients outside\nan interval  of length  are vanishing.\n\nLet  be the approximants of .  We recall the\nbasic properties:\nq_n _/=_1 k q_n+1-1\nk_/,\n1 q_n+1 q_n _/ 1/2.\nThe condition  implies\nq_n+1 e^o(q_n).\n\n[Lemma 9.7 of]\nLet  and let  be such that  is minimal.  Then\n-C q_n _l=0 l l_0^q_n-1\n(x+l )+(q_n-1) 2 C q_n.\n\n[, Theorem 6.1]\nLet .\nIf  has essential degree  and  then\np_0 C q_n+1^C r _0 j k\np(x_0+j).\n\nIn particular, under the condition\np_0 C e^o(k) _0 j k p(x+j).\n\nWe may assume that  where  is a polynomial of\ndegree .  Then by Lagrange interpolation,\np(x)=_j=0^k p(x_0+j) _0 l k, l j\ne^2 i x-e^2 i (x_0+l ) e^2 i\n(x_0+j)-e^2 i (x_0+l ).\nThus\np_0 r q_n+_0 j k\np(x+j)+_0 j k,x\n_0 l k,l j\n1-e^2 i (x+l ) 1-e^2 i\n(-j+l).",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L1104-1143::c16",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L1236-1313::c18",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L1236-1313::c18",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 1236,
+    "end_line": 1313,
+    "text": "We may assume that  where  is a polynomial of\ndegree .  Then by Lagrange interpolation,\np(x)=_j=0^k p(x_0+j) _0 l k, l j\ne^2 i x-e^2 i (x_0+l ) e^2 i\n(x_0+j)-e^2 i (x_0+l ).\nThus\np_0 r q_n+_0 j k\np(x+j)+_0 j k,x\n_0 l k,l j\n1-e^2 i (x+l ) 1-e^2 i\n(-j+l).\n\nIt is thus enough to show that for ,  and  we have\n_(s-1) q_n l s q_n-1, l j\n1-e^2 i (x+l ) C q_n+1,\n_(s-1) q_n l s q_n-1, l j\n1-e^2 i (-j+l) -C q_n+1.\n\nConsider first the case .  Then\n_(s-1) q_n l s q_n-1, l j\n1-e^2 i (x+l ) _(s-1) q_n l s q_n-1, l l_0\n1-e^2 i (x+l ),\nwhere  is minimal.\nUsing that  and Lemma , we get\n().  The same argument gives () even\nmore directly, since the sum to be estimated is already of the form\nconsidered in Lemma .\n\nConsider now the case .  Writing\n_(s-1) q_n l s q_n-1, l j\n1-e^2 i (x+l )=\n_(s-1) q_n l s q_n-1\n1-e^2 i (x+l )+1-e^2 i (x+l_0),\nwhere  is such that\nis minimal, we see that\n()\nfollows from Lemma .  To obtain () from\nthe previous lemma, we must also show that\n_(s-1) q_n l s\nq_n-1 1-e^2 i (l-j) -C q_n+1.\nBut this follows\nfrom (), () and ().\nThis concludes the proof of ().\n\nTo get () from (\n), we notice that () implies .\n\n)\nWe have .\n\nThis follows immediately from .\n\nChoose  of the form , let\n\nand define .  Let\n.  Then\nA(x) U(x)-e^2 i  U(x+)=e^4 i\n(h(x)\n0 ),\nwhere\nh_k=_I(k) 2 2 (+k ) u_k+_j -1,1 _I(k-j) u_k-j,For the generalization one has\n.\nwhere  is the characteristic function of .\nSince , we also have\n-h_k=_I(k) 2 2 (+k )\nu_k+_j -1,1 _I(k-j)\nu_k-j.For the generalization one has\n.\nThe estimates  for ,  for all  then\nimply that , that is .\n\nIn the following,  and\nwill be suitably small constants (much smaller\nthan the  that appeared so far).\n\nWe have .\n\nOtherwise, by (),\nfor some  with ,  and .  Then\nby\nTheorem , where .\nThis contradicts .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L1157-1234::c17",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L1315-1397::c19",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L1315-1397::c19",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 1315,
+    "end_line": 1397,
+    "text": "Otherwise, by (),\nfor some  with ,  and .  Then\nby\nTheorem , where .\nThis contradicts .\n\nLet  be the matrix whose first column  given by\nTheorem .\nThen\nB(x+)^-1 A(x) B(x)=(e^2 i &0\n0&e^-2 i\n)+(_1(x)&b(x)\n_3(x)&_4(x)\n).\nwhere , and\n.  Taking  the product of\nand a constant diagonal matrix, , where\n, with , we get\n(x+) A(x) (x)^-1=\n(e^2 i &0\n0&e^-2 i\n)+Q(x),\nwhere  and\n.  Thus\n_0 s c e^c n A_s__0 C e^c n.\n\nProof of Theorem .\nLet .  By Lemma we can choose\nso that  and  for some\nand .  By (), .\n\nTriangularization in a definite strip\n\nFix some  and let  if defined, otherwise let\n.  Then there exists\nanalytic with  such that\nB(x+)A(x)B(x)^-1=(e^2 i  & 0\n0 & e^-2\ni  )+(_1(x)&b(x)\n\n_3(x)&_4(x) ),\nwith  and .\nIn particular\nA_s_c C e^o(n), 0 s e^c n.\n\nLet  for .  Let  be minimal with  and let\n.  Define  as before, and define\nalso\n.  Then our previous estimate Theorem  can be\nimproved to .\nThe estimate is better since we can use Theorem instead of the weaker estimate ().\nSince , we get\n_x<c U(x) e^-o(n).\nMoreover, we have  with\n.\nTaking  given by Theorem , we get\nB(x+)A(x)B(x)^-1=\n(e^2 i  & 0\n0 & e^-2\ni  )+(_1(x)&b(x)\n\n_3(x)&_4(x) ),\nwith  and .  If  we are\ndone, otherwise let  be obtained by truncating the\nFourier series of\n, so that it has the Fourier coefficients with .\nWe solve exactly\nW(x+) (e^2 i &b^(1)(x)\n0&e^-2 i\n)W(x)^-1=\n(e^2 i &0\n0&e^-2 i\n)\nwith , that is\n, or in terms of Fourier coefficients,\n.\nSo we get .  Let .  Noticing that\n, we obtain the estimates on the coefficients of\n.  The second statement follows immediately from\nthe first.\n\nThis estimate is much weaker than what is obtained in.  Their\nargument is of course much more complicated than what we have done so far,\nbut the more complicated parts break down anyway.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L1236-1313::c18",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L1399-1457::c20",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L1399-1457::c20",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 1399,
+    "end_line": 1457,
+    "text": "This estimate is much weaker than what is obtained in.  Their\nargument is of course much more complicated than what we have done so far,\nbut the more complicated parts break down anyway.\n\nThe estimate we have obtained is quite useful, but not nearly enough.  To\nproceed, we will need to obtain estimates in a definite strip.  The use of\nformula () is a major impediment on this (it would forces us to\nwork in a strip of size ), so we first turn our\nattention to it.\n\nWe continue with the discussion before Theorem .\nUsing (), we can choose  such that\n,\n,\n.\nIndeed, if we look at the set of \"bad\"  for\nin an interval of size  then\nthe bad set of\nhas area at most .\n\nWe will assume for simplicity that the zeroes of  and of\nare simple (the general case\ncan be obtained from this one by perturbing and passing to the limit when\nthe perturbation disappears).\n\nLet  be the points  with  and .\nIn order to estimate the number of , we truncate the\nFourier series of , keeping the Fourier coefficients with .\nThe truncation is sufficiently close to  when  to guarantee\nthat they have the same number of zeroes in , which must be\nbounded by .\n\nLet  be a polynomial of minimal\ndegree vanishing at  such that .  In other words, take\n(x)=(1+^2) 1-x y_j.\nBy () we get , so .\nLet  with\n(x)=(e^2 i  u(x)+u(x-)&\n(u(x-)-e^2 i\nu(x))-1-^2\nu(x-)-e^2 i  u(x)\n\nu(x-)-e^2 i  u(x) &\n(u(x-)-e^2 i  u(x))\ne^2 i  u(x)+u(x-) ).\nClearly  and , and  and  are\nholomorphic in .  We have , so .\n\nWe will assume now that .  We conclude that\nB(x+)^-1 A(x) B(x)=(e^2 i  & 0\n0&e^-2 i\n)+(_1 & b\n_3 & _4 )\nwith ,\n.\n\nThis triangularization result can be used to get subpolynomial bound on the\ngrowth of the cocycle for long time scales.\nWrite  where\nhas the Fourier coefficients  with .  Then\n.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L1315-1397::c19",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L1459-1594::c21",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L1459-1594::c21",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 1459,
+    "end_line": 1594,
+    "text": "This triangularization result can be used to get subpolynomial bound on the\ngrowth of the cocycle for long time scales.\nWrite  where\nhas the Fourier coefficients  with .  Then\n.\n\nWe solve exactly\n(1&-w(x+)\n0&1 )\n(e^2 i &b^(1)(x)\n0&e^-2 i\n)\n(1&w(x)\n0&1 )=\n(e^2 i &0\n0&e^-2 i\n).\nThis corresponds to solving\nb^(1)(x)-e^-2 i  w(x+)+e^2 i\nw(x)=0,\nor in terms of Fourier coefficients,\nw_k=-b_k e^-2 i\n1-e^-2 i(2 for  and  for .\nIt follows that .  Since ,\nwe conclude that with  we have\nW(x+)A(x)W(x)^-1=\n(e^2 i &0\n\n0&e^-2 i  )+(x)\nwith  and\n.\nThis implies that\n, for .\nShifting back one scale we get:\n\nFix some .  Then\nA_s_c C e^o(n), 0 s e^c n.\n\nGood resonances\n\nThe condition  is not always satisfied, but it happens\nquite often.\n\nWe have .\n\nLet  be maximal less than .  Then we have\nq_k_j+1 e^c n_j,\nq_k_j+1>n_j+1-n_j,\nwhich implies the result.\n\nWe say that  is a good resonance if .\n\nIf  is resonant then there are infinitely many good resonances.\n\nWe can now go back to some straightforward generalizations of.\n\nLower bounds on the integrated density of states\n\nLet  and let  if defined, otherwise let .\nLet .  Then there exists\nanalytic with\nsuch that\nsatisfies\nQ_0 1+C ^1/2\n\nLet  be given by Theorem .  Let  where\n.  Let .  If\nwe have .\nMoreover\nW(x+)A(x)W(x)^-1=(e^2 i  & 0\n0 & e^-2\ni  )+(q_1(x)&q_2(x)\n\nq_3(x)&q_4(x) ),\nwith  and .\nIf  then .\n\nIf  is continuous then\n.\n\nIt is enough to consider the case when .  Then\nis in the range specified by Theorem  for some\n.  Let .  Then\n.\nThen .\n\nThe integrated density of states is -Holder.\n\nBy (),  for every .  So it is enough to\nshow that for , .  The\ncondition  implies that  belongs to the range\nspecified by Theorem  for some .\nLet  and  be given by Theorem .\nThen  where .  Clearly , so the result follows.\n\nIf  then for ,\n.\n\nLet .\nSince , by Thouless formula we have\nL(E+i)=1 2 1+^2 E-E'^2 dN(E').\nWe split the integral in ,\n,\nand\n.  We clearly have .  By Corollary ,\nit easily follows that .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L1399-1457::c20",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L1596-1670::c22",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L1596-1670::c22",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 1596,
+    "end_line": 1670,
+    "text": "Let .\nSince , by Thouless formula we have\nL(E+i)=1 2 1+^2 E-E'^2 dN(E').\nWe split the integral in ,\n,\nand\n.  We clearly have .  By Corollary ,\nit easily follows that .\n\nUsing Corollary , we can also estimate, with ,\n\nIt follows that .  It is well known that\nfor  (see Theorem 1.7 of\n).  Thus .\nSince ,\nthe result follows.\n\nReal conjugacies\n\nAgain, fix ,  and let , .\nLet  be defined as before,\nand let .\nLet .\nLet  be the matrix with columns\nand .  Let\n.\nNotice that\nA(x) U(x)=e^2 i  U(x+)+(h(x)\n0 )\nwith .  Notice that in the considerations below,\nwe must pass to a double cover where the dynamics is like , but the condition  is independent of working with\nor .\n\nWe have\n_x / B(x) c L^-C.\n\nRecall the estimate\n_x / U(x) e^-o(n).\nMinimize over\n,  the quantity .  This gives some\n, .  If the result does not hold then\ne^-2 i j\nU(x_0+j)-e^2 i j  _0 U\n(x_0+j) c L^-C, 0 j C L^C.\nThis implies that\nfor , and as before (first truncating\nthe Fourier series at scale )\n.  But taking\nin (), we get , so that\n.  This contradicts\n.\n\nTake now , , and let\nbe the matrix with columns  and , so to have .\nThen\nA(x) W(x)=\nW(x+) R_+\nO(e^-c N), x /.\nLet  so to have .  Then\nA(x) W(x)=B(x+)^1/2 B(x)^1/2\nW(x+) R_+\nO(e^-c N), x /.\nSince , this gives\nA(x) W(x)=W(x+) R_+\nO(e^-c N), x /.\n\nAssume first that  is even so that\nand everything is defined in .\nLetting , we get\n.\nAssume now that  is odd, so that\n.  Letting , we get  defined in  with\n(x)=R_ 2+O(e^-c N),\nx<c L^-C.\nThen .\n\nIn either case, for some  with\n2_/-2 (,)-k _/ 2_//10.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L1459-1594::c21",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L1672-1745::c23",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L1672-1745::c23",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 1672,
+    "end_line": 1745,
+    "text": "In either case, for some  with\n2_/-2 (,)-k _/ 2_//10.\n\nTo estimate the topological degree of , it is enough to estimate the\ndegree of  for  or for .\nNotice that , and select\nor  so that .  We have of course , ,\nwhich allows us to estimate\n_x / M(x) c e^-o(n).\nas before.\nTruncating the Fourier series of  keeping the  the\nresulting  is such that , so we just have to estimate the degree of\n.  We do this by counting the number of zeroes of the coordinates of\n, and we get .  Then\n2_/-2 (,A)-m _/ 2_//10,  for some  m C n.\nThis implies the following result.\n\nIf  has a resonance  then there exists  such\nthat .\n\nProof of the Main Theorem in the case\n\nLet  be the set of  such that\nis bounded,\nand  be the set of  such that\nis reducible.\nBy Theorem ,\nit is enough to prove that for every ,\n\nis such that .\n\nNotice that\nhas only  such that\nis analytically\nreducible to parabolic.  It follows that  is countable: indeed for any such  there exists  such that  in .\nIf ,\nany non-zero solution  satisfies\n.  In particular there are no\neigenvalues in ,\nand .  Thus it is enough to prove that\n.\n\nLet ,\nbe the set of  such that there exists  and a bounded normalized solution\nwith a\nresonance .  We are going to show that\n.  By Theorem\n, .  By the Borel-Cantelli Lemma,  implies that .\n\nTo every , let  be an open\nneighborhood of .  This is chosen so to have  by (\n).  By Lemma ,\n(J_m(E)) C e^o(2^m) J_m(E),\nwhere  is used for Lebesgue measure.\nTake a finite subcover\n.\nRefining this subcover if necessary,\nwe may assume that every  is contained in at most  different\n.\n\nBy Lemma , .  By Lemma\n, if  then  for some .  This shows that\ncan be covered by  intervals  of length\n.  Since\nfor any , ,\nthere are at most  intervals  such that\nintersects .  We conclude that there are at most  intervals\n.  Then\n(K_m) _j=0^r (J_m(E_j)) C 2^m e^o(2^m) e^-c 2^m,\nwhich gives .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L1596-1670::c22",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L1748-1774::c24",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L1748-1774::c24",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 1748,
+    "end_line": 1774,
+    "text": "By Lemma , .  By Lemma\n, if  then  for some .  This shows that\ncan be covered by  intervals  of length\n.  Since\nfor any , ,\nthere are at most  intervals  such that\nintersects .  We conclude that there are at most  intervals\n.  Then\n(K_m) _j=0^r (J_m(E_j)) C 2^m e^o(2^m) e^-c 2^m,\nwhich gives .\n\nIn fact this argument shows that the set of energies for which the cocycle\nis unbounded has Hausdorff dimension zero.  By Theorem , this set\ncontains the set of energies where the spectral measures (and the integrated\ndensity of states) are not Lipschitz.\n\nThe exponential regime\n\nOur approach to the exponential regime centers around the \"parameter\nexclusion\" of energies to achieve control on the dynamics by consideration\nof rational approximations.  A key difficulty is that our current\nunderstanding does not lead to a uniform (over the phase space) control, but\nmerely an integrated control.  While the integrated control is\nenough to obtain results\nalmost sure , it is certainly dangerous when trying\nto obtain results for all .\n\nLet us recall the idea of\nto prove absolute continuity of the\nintegrated density of states.  There it is shown that for a\nrational approximant, a large set of the spectrum can be selected where\nwe have the pointwise estimate\nd dE N_,p/q (1+o(1)) d dE\nN_,,\nas long as  is exponentially close to ,\nwhich easily implies that the absolutely continuous part of\nhas mass close to .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L1672-1745::c23",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L1776-1858::c25",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L1776-1858::c25",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 1776,
+    "end_line": 1858,
+    "text": "Let us recall the idea of\nto prove absolute continuity of the\nintegrated density of states.  There it is shown that for a\nrational approximant, a large set of the spectrum can be selected where\nwe have the pointwise estimate\nd dE N_,p/q (1+o(1)) d dE\nN_,,\nas long as  is exponentially close to ,\nwhich easily implies that the absolutely continuous part of\nhas mass close to .\n\nIt seems a very hard problem to obtain pointwise estimates for the spectral\nmeasures themselves, and we are still unable to show that, for\na large set of energies, the dynamics is under control for every\n, that is, for the moment we can not prevent\nd dE _,p/q, (1+) d dE\n_,,.\nOur approach will be to show that this can not happen for too many energies,\nthough which small set of energies must be excluded is not explicit\nand could depend on .\nThe idea is to show that such bad situation leads to improved estimates\nd dE _,p/q,(1-) d dE\n_,,for some other .  Then, integrating on , we conclude that if\nfor some phase  the total mass of the absolutely continuous part is\nless than  (we recall that our spectral measure has total\nmass )\nthen we can find another  for which the total mass of\nthe absolutely continuous part is greater than , which is clearly\nimpossible.\n\nProof of the Main Theorem assuming\n\nThroughout this section, we fix ,  and ,\nand we assume .\n\nFor every , , let\n(defined for almost every ), where  is\ngiven by Corollary .  It is enough to prove that\n1 2  __,\n(m(,E)) dE=1.\n\nThe hypothesis implies that\n- pq  < e^-(q\nfor arbitrarily large . Fix some  with this property and\nlarge.\n\nFor a fixed energy , write ,\nand\n.\n\nLet .\n\nLet  be the set of  such that\nwith .\n\nThe following plays the role of Lemma 3.1 of.\n\nWe have .\n\nWe have  and\n.\n\n[, Lemma 3.2]\n\nWe have\n_,p/q _, e^-(c-o(1))\nq.\n\nIn particular,\n\nX_,p/q, _,\ne^-(c-o(1)) q.\n\nThe following is the appropriate version of Lemma 3.3 of that we\nneed.  Though the claim is formally different, since our set\nis somewhat\nlarger than the set\ngiven in, the proof is exactly the same.\n\nIf  belongs to the interior of , let\nbe the fixed point of\nin , as in .\n\nWe have\n_E X_,p/q, _x\n(m(x,E))=o(q).",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L1748-1774::c24",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L1861-1953::c26",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L1861-1953::c26",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 1861,
+    "end_line": 1953,
+    "text": "We have\n_E X_,p/q, _x\n(m(x,E))=o(q).\n\nThe analog of Lemma 3.4 of holds again with same proof.\n\nWe have .\n\nIt follows from Lemmas  and  that\n_X_,p/q, _, (m(,E)) dE 2 -o(1).\n\nWe will need to estimate how well the cocycle can be compared with the\nrational case.\nBy Lemma , we have\nwith , by taking\n. We have\n.\nThe following is the appropriate version of\nLemma 4.1 of.  Let .\n\nFor  we have .\n\nWrite\nA_k()=_i=k-1^0\nA(+i)=_i=k-1^0\nB(+(i+1)p/q) Q_i B(+i p/q)^-1.\nThen  for .\nThus  where\nsatisfies\n.\n\nWe now diverge from.  The cancellation mechanism will evolve\nalong the next four lemmas.  The basis is an\nequality for periodic elliptic matrices in :\n\nLet  be a rational number which is not an integer multiple of ,\nand let .  If\n1 s _k=0^s-1 (B_0 R_r k/s z_0)=(z_0)\n(B_0 i).\n\nLet  be a matrix taking  to .  We want to estimate\n1 s _k=0^s-1 B_0 R_r k/s Z^2_1 2 Z_^2 B_0^2_.\nBy considering rotations, this is the same as showing\n1 s _k=0^s-1 ( & 0\n0 & ^-1\n) R_x+k r/s ( & 0\n0 & -1 )^2_1 2 ( & 0\n0 & -1)_^2 ( & 0\n0 & ^-1 )^2_,\nfor any ,  and .  A direct computation gives\n\nsince\n1 s _k=0^s-1 ^2 2 (x+k r/s)=1 s\n_k=0^s-1 1+4 (x+k r/s) 2=1/2.\n\nNext we obtain an estimate on general elliptic  matrices:\n\nFor every  there exists  such that\nif  with ,\n,  with\nand  then as  grows we have\n1 b_0\n_k=0^b_0-1 (B_0 R_k  z_0)>(1-o(1)) (z_0) (B_0 i).\n\nLet ,  maximal, be an approximant of .\nLet , .\nWe can break the sum  into  parts of the form\n, , plus a non-negative remainder.\nSince , it is enough to show that\n1 s\n_k=0^s-1 (B_0 R_k  z_j)>\n(1-o(1)) (z_j) (B_0 i)\nfor each  (using that  for every ).\nConsider the points , .  Then , .\nIt follows that it is enough to show that\n1 s _k=0^s-1 (w'_k)>(1-o(1)) (z_j) (B_0 i).\nThis follows from Lemma .\n\nWe now apply the previous estimates to the cocycle, using that it is well\nshadowed by rotations by Lemma .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L1776-1858::c25",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L1955-2032::c27",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L1955-2032::c27",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 1955,
+    "end_line": 2032,
+    "text": "We now apply the previous estimates to the cocycle, using that it is well\nshadowed by rotations by Lemma .\n\n[Cancellation along orbits, fixed energy]\nLet , .\nIf  is such that\n(z)-(m(,E)) then\n1 b _k=0^b-1 (A_kq() z) (1+^2 2-o(1)) (m(,E)).\n\nThere are two cases to consider.  If  is not , then by\nLemma ,\nis not  for .  On the other hand,\nby Lemma , hence\n\n1 b _k=0^b-1 (A_kq() z) 2\n(m(,E)).\n\nAssume now that .  Set ,\n, ,  in the previous\nlemma.  Then\n1 b\n_k=0^b-1 (B() R_k () B()^-1\nz)>(1-o(1)) (z_0) (B() i).\nWe have .\nMoreover  (since  is -Lipschitz in the hyperbolic metric), so\nwe also have .  It follows that , so we have\n1 b\n_k=0^b-1 (B() R_k () B()^-1\nz)>(1-o(1)) 1+^2 2 (m(,E)).\nWe now notice that  by Lemma and , so\n, which gives\n1 b\n_k=0^b-1 (A_kq\nz)>(1-o(1)) 1+^2 2 (m(,E)).\n\nThis estimate can be applied to the case  and integrated\nto yield:\n\n[Cancellation along orbits, integrated version]\n\nFor every  there exists  such that if\n_X_,p/q, _,\n(m(,E))<\n(1-2then\n1 b _k=0^b-1 _X_,p/q, _,\n(m(+k,E))>(1+2 .\n\nLet\nbe the set such that\n.  Then by (\n)\n_W (m(,E))>Applying the previous lemma with  we get\n1 b _k=0^b-1 (m(+k,E))>(1+(m(,E)),E X_,p/q, _, W,\n1 b _k=0^b-1 (m(+k,E))>(1+(m(,E)),E W,\nIntegrating and using () we get\n1 b _k=0^b-1 _X_,p/q, _,\n(m(+k,E))>(1-o(1)) 2 +((\nThe conclusion of this lemma being obviously impossible for\nlarge, we must have\n_X_,p/q, _, (m(,E))>(1-o(1)) 2 ,\nwhich implies () as  grows.\n\nExponentially small gaps\n\nWe will work in the more general context of .  Let\nbe the spectrum of .  A non-collapsed\ngap is the closure of a connected component of .  The\ngap-labelling theorem states that if  belongs to a non-collapsed gap then\nfor some .  This\nmotivates the definition of the -th gap as the set of energies such that\n.  With this definition a\ngap could be collapsed, that is, it could reduce to a point.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L1861-1953::c26",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L2034-2076::c28",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L2034-2076::c28",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 2034,
+    "end_line": 2076,
+    "text": "We will work in the more general context of .  Let\nbe the spectrum of .  A non-collapsed\ngap is the closure of a connected component of .  The\ngap-labelling theorem states that if  belongs to a non-collapsed gap then\nfor some .  This\nmotivates the definition of the -th gap as the set of energies such that\n.  With this definition a\ngap could be collapsed, that is, it could reduce to a point.\n\nIt is an interesting problem to get bounds on the size of the gaps.  The Dry\nTen Martini problem asks to show that in the case of the almost Mathieu\noperator, the gaps are all non-collapsed.  An approach, successful in the\nLiouville regime, is to obtain explicit lower bounds on the size of gaps, by\nperiodic approximations,.  But it is difficult to\nextend this approach to the Diophantine case since the existing lower bounds\nare exponentially small.\n\nHere we will be concerned with upper bounds.  We will show that the -th\ngap is indeed exponentially small whenever  is small and .\n\nLet  be such that there exists  continuous with\nwith\nand .  Then  belongs to a gap of\nlength at most .\n\nlet  be small and let  be such that .  Let\nbe the spectrum of\n\nMore on the subexponential regime\n\nQuasiperiodic Schrodinger operators with small coupling\n\nLet  be analytic and let\nbe the\nquasiperiodic Schrodinger operator given by\n.  The almost Mathieu\noperator corresponds to the special case  for some .\n\nA substantial part of\nthe theory of the almost Mathieu operator\ncan be extended to this more general setting.  Though we have\nrestricted our attention to the case of the\nalmost Mathieu operator to avoid distraction from the main result of this\npaper, our analysis in the subexponential regime does extend to this larger\nclass, in parallel with the work of in the Diophantine regime.\nThe extension to the more general setting\nis essentially automatic given the correct definitions, up to the proof of\nthe almost localization estimate (which is not a problem for us since it was\nproved in for the subexponential regime).",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L1955-2032::c27",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L2078-2138::c29",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L2078-2138::c29",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 2078,
+    "end_line": 2138,
+    "text": "A substantial part of\nthe theory of the almost Mathieu operator\ncan be extended to this more general setting.  Though we have\nrestricted our attention to the case of the\nalmost Mathieu operator to avoid distraction from the main result of this\npaper, our analysis in the subexponential regime does extend to this larger\nclass, in parallel with the work of in the Diophantine regime.\nThe extension to the more general setting\nis essentially automatic given the correct definitions, up to the proof of\nthe almost localization estimate (which is not a problem for us since it was\nproved in for the subexponential regime).\n\nAs for the almost Mathieu case, the spectral properties of\nare intimately connected with the\nSchrodinger cocycles , where\n.  Moreover,\nAubry duality can be extended to this setting.\nConsider operators\ngiven by , where .  It has the property that if\nis an  function such that\n, then , where .\n\nLet us say that  is small if the family\nis almost localized (the\ndefinition of almost localization being the same as in the almost\nMathieu case ).  This is justified by Theorem 5.1 ofshows that if  then\nis\nalmost localized in the whole subexponential regime.\n\nAlmost reducibility\n\n-Holder continuity\n\nExponentially small gaps\n\nOpen gaps for the almost Mathieu operator\n\nStrong localization estimate\n\nThis section is here only for completeness, the result itself is obtained by\nmaking the obvious modifications in the argument of.\n\nBKNS\n\nAubry, S.; Andre, G.\nAnalyticity breaking and\nAnderson localization in incommensurate lattices.  Group theoretical methods\nin physics (Proc. Eighth Internat. Colloq., Kiryat Anavim, 1979),  pp.\n133-164, Ann. Israel Phys. Soc., 3, Hilger, Bristol, 1980.\n\nAvila, A.\nOn point spectrum at critical coupling.  In preparation.\n\nAvila, A.;Damanik, D.\nAbsolute continuity of the integrated density of states for the almost\nMathieu operator.  Inv. Math. 172 (2008), 439-453.\n\nAvila, A.;Jitomirskaya, S.\nThe Ten Martini Problem.  Preprint (www.arXiv.org).\nTo appear in Annals of Math.\n\nAvila, A.;Jitomirskaya, S.\nAlmost localization and almost reducibility.  To appear in Journal of the\nEuropean Mathematical Society.\n\nAvila, A.; Krikorian, R.\nReducibility or non-uniform\nhyperbolicity for quasiperiodic Schrodinger cocycles.  Annals of Math. 164\n(2006), 911-940.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L2034-2076::c28",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L2156-2214::c30",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L2156-2214::c30",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 2156,
+    "end_line": 2214,
+    "text": "Avila, A.; Krikorian, R.\nReducibility or non-uniform\nhyperbolicity for quasiperiodic Schrodinger cocycles.  Annals of Math. 164\n(2006), 911-940.\n\nAvron J.;Simon, B.\nSingular continuous spectrum for a class of almost periodic\nJacobi matrices.  Bull. Amer. Math. Soc. 6 (1982),\n81-85.\n\nBourgain, J.; Goldstein, M. On nonperturbative localization\nwith quasi-periodic potential.  Ann. of Math. (2)  152  (2000),\n835-879.\n\nBourgain, J.; Jitomirskaya, S. Continuity of the Lyapunov\nexponent for quasiperiodic operators with analytic potential.\n\nJ. Statist. Phys.  108  (2002), 1203-1218.\n\nCarleson, Lennart Interpolations by bounded analytic\nfunctions and the corona problem.  Ann. of Math. (2)  76  1962 547-559.\n\nCarmona, Rene; Lacroix, Jean Spectral theory of random\nSchrödinger operators. Probability and its Applications.\nBirkhauser Boston, Inc., Boston, MA, 1990. xxvi+587 pp.\n\nDamanik, David; Killip, Rowan; Lenz, Daniel Uniform\nspectral properties of one-dimensional quasicrystals. III.\n-continuity.  Comm. Math. Phys.  212  (2000), 191-204.\n\nDeift, P.; Simon, B.\nAlmost periodic Schrodinger operators. III. The absolutely continuous\nspectrum in one dimension.  Comm. Math. Phys.  90  (1983), 389-411.\n\nEliasson, L. H.\nFloquet solutions for the -dimensional quasi-periodic\nSchrodinger equation.\nComm. Math. Phys. 146 (1992), 447-482.\n\nGesztesy, Fritz; Simon, Barry The xi function.\nActa Math. 176 (1996), 49-71.\n\nGilbert, D.J., On subordinacy and analysis of the spectrum\nof one-dimensional Schrodinger operators.  J. Math. Anal. Appl. 128\n(1987), 30-56.\n\nGoldstein, Michael; Schlag, Wilhelm Holder\ncontinuity of the integrated density of states for quasi-periodic\nSchrodinger equations\nand averages of shifts of subharmonic functions.  Ann. of Math. (2)  154\n(2001), 155-203.\n\nGoldstein, Michael; Schlag, Wilhelm\nOn resonances and the formation of gaps in the spectrum of quasi-periodic\nSchrodinger equations.  Preprint (www.arXiv.org).",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L2078-2138::c29",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L2216-2271::c31",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L2216-2271::c31",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 2216,
+    "end_line": 2271,
+    "text": "Goldstein, Michael; Schlag, Wilhelm\nOn resonances and the formation of gaps in the spectrum of quasi-periodic\nSchrodinger equations.  Preprint (www.arXiv.org).\n\nGordon, A.\nOn the point spectrum of the one-dimensional Schrodinger operator.\nUsp. Math. Nauk. 31 (1976), 257-258.\n\nGordon, A. Y.; Jitomirskaya, S.; Last, Y.; Simon, B.\nDuality and singular continuous spectrum in the almost Mathieu equation.\nActa Math. 178 (1997), 169-183.\n\nHerman, Michael-R. Une methode pour minorer les\nexposants de Lyapounov et quelques exemples montrant le caractere local\nd'un theoreme\nd'Arnol'd et de Moser sur le tore de dimension .\nComment. Math. Helv.  58  (1983), 453-502.\n\nJitomirskaya, Svetlana Ya. Metal-insulator transition for the\nalmost Mathieu operator.  Ann. of Math. (2)  150  (1999),\n1159-1175.\n\nJitomirskaya, Svetlana; Last, Yoram Power-law subordinacy\nand singular spectra. I. Half-line operators.  Acta Math.  183  (1999),\n171-189.\n\nJitomirskaya, Svetlana; Last, Yoram\nPower law subordinacy and singular spectra. II. Line operators.  Comm. Math.\nPhys.  211  (2000), 643-658.\n\nJitomirskaya, Svetlana; Simon, Barry\nOperators with singular continuous spectrum: III. Almost periodic\nSchrodinger operators.  Comm. Math. Phys. 165 (1994), 201-205.\n\nJohnson, R.; Moser, J. The rotation number for almost\nperiodic potentials.  Comm. Math. Phys.  84  (1982), 403-438.\n\nLast, Y.\nZero measure spectrum for the almost Mathieu operator.  Comm.\nMath. Phys.  164  (1994), 421-432.\n\nLast, Y. A relation between a.c. spectrum of ergodic Jacobi\nmatrices and the spectra of periodic approximants.  Comm. Math. Phys.  151\n(1993), 183-192.\n\nLast, Y. Spectral theory of Sturm-Liouville operators on\ninfinite intervals: a review of recent developments.  Sturm-Liouville\ntheory,  99-120, Birkhauser, Basel, 2005.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L2156-2214::c30",
+        "direction": "previous"
+      },
+      {
+        "id": "0810.2965v1::L2273-2301::c32",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0810.2965v1::L2273-2301::c32",
+    "file": "data/data/full_text/0810.2965v1.txt",
+    "section_path": "",
+    "start_line": 2273,
+    "end_line": 2301,
+    "text": "Last, Y. Spectral theory of Sturm-Liouville operators on\ninfinite intervals: a review of recent developments.  Sturm-Liouville\ntheory,  99-120, Birkhauser, Basel, 2005.\n\nLast, Yoram; Simon, Barry\nEigenfunctions, transfer matrices, and absolutely continuous spectrum of\none-dimensional Schrodinger operators.  Invent. Math.  135  (1999),\n329-367.\n\nKotani, S. Generalized Floquet theory for stationary\nSchrödinger operators in one dimension.  Chaos Solitons Fractals  8  (1997),\n1817-1854.\n\nRemling, C. The absolutely continuous spectrum of Jacobi\nmatrices.  Preprint (www.arXiv.org).\n\nSimon, Barry Kotani theory for one-dimensional\nstochastic Jacobi matrices.  Comm. Math. Phys.  89  (1983),\n227-234.\n\nSimon, Barry Bounded eigenfunctions and absolutely\ncontinuous spectra for one-dimensional Schrodinger operators.  Proc. Amer.\nMath. Soc.  124  (1996), 3361-3369.\n\nSimon, Barry Schrodinger operators in the twenty-first\ncentury.  Mathematical physics 2000,  283-288, Imp. Coll. Press, London,\n2000.\n\nTrent, Tavan T. A new estimate for the vector valued corona\nproblem.  J. Funct. Anal.  189  (2002), 267-282.\n\nUchiyama, A., Corona theorems for countably\nmany functions and estimates for their solutions, preprint, 1980.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0810.2965v1::L2216-2271::c31",
+        "direction": "previous"
+      }
+    ]
+  }
+]

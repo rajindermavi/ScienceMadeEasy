@@ -15,7 +15,17 @@
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L12-13::s1",
+        "direction": "next"
+      },
+      {
+        "id": "2107.08547v1::L343-363::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L12-13::s1",
@@ -31,7 +41,17 @@
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L1-11::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L14-15::s2",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L14-15::s2",
@@ -47,7 +67,17 @@
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L12-13::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L16-38::s0",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L16-38::s0",
@@ -57,7 +87,8 @@
     "end_line": 38,
     "text": "## Statement of the main results\n\nBefore formulating our results, we first give precise arithmetic description on $\\alpha$ and $\\theta$. A frequency $\\alpha\\in {\\mathbb R}$ is called ($\\kappa,\\tau$)-*Diophantine* (denoted by $\\alpha\\in \\rm{DC}(\\kappa,\\tau))$ if $$\\label{dc_def}\n\\operatorname{dist}(k\\alpha,{\\mathbb Z})\\ge \\gamma|k|^{-\\tau},\\quad \\forall k\\in {\\mathbb Z}\\backslash\\{0\\}.$$ We will use the notation $$\\rm{DC}=\\bigcup_{\\kappa>0;\\,\\tau>1} \\rm{DC}(\\kappa,\\tau).$$ For a given irrational number $\\alpha$, we say $\\theta\\in (0,1)$ is ($\\gamma,\\tau$)–Diophantine with respect to $\\alpha$ (denoted by $\\Theta_\\gamma^\\tau$) if $$\\|2\\theta+k\\alpha\\|_{{\\mathbb R}/{\\mathbb Z}}>\\frac{\\gamma}{(|k|+1)^\\tau},$$ for any $k\\in{\\mathbb Z}$, where $\\|x\\|_{{\\mathbb R}/{\\mathbb Z}}=\\text{dist}(x,{\\mathbb Z}).$ Let $\\Theta=\\bigcup_{\\gamma>0;\\,\\tau>1}\\Theta_\\gamma^\\tau.$ Clearly, $\\Theta$ is a set of full Lebesgue measure for any fixed irrational number $\\alpha$.\n\n<div id=\"main\" class=\"Theorem\">\n\n**Theorem 1**. *Given $\\alpha\\in DC$ and an even $C^2$ cosine type potential $v$, there exists $\\lambda_0(\\alpha,v)$ such that $H_{\\lambda v,\\alpha,\\theta}$ has Anderson localization for all $\\theta\\in \\Theta$ provided that $\\lambda>\\lambda_0$.*\n\n</div>\n\n<div class=\"Remark\">\n\n*Remark 1*. To give a simple arithmetic description of the localization phases (i.e., the Diophantine phases), the eveness condition seems to be necessary.\n\n</div>\n\n<div class=\"Remark\">\n\n*Remark 2*. If $\\alpha$ is very Liouvillean or $\\theta$ is very $\\alpha$-Liouvillean (i.e., for generic $\\alpha$ and $\\theta$), $H_{\\lambda v,\\alpha,\\theta}$ has purely singular continuous spectrum . Thus to prove localization type results, the arithmetic assumptions on both $\\alpha$ and $\\theta$ are necessary.\n\n</div>",
     "labels": [
-      "dc_def"
+      "dc_def",
+      "main"
     ],
     "refs": [],
     "meta": {
@@ -65,7 +96,29 @@
         "level": 2,
         "title": "Statement of the main results"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L14-15::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L39-60::s1",
+        "direction": "next"
+      },
+      {
+        "id": "2107.08547v1::L39-60::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L61-64::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L320-324::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L39-60::s1",
@@ -75,13 +128,29 @@
     "end_line": 60,
     "text": "</div>\n\nWe also have a precise estimate on the decay rate of all eigenfunctions.\n\n<div class=\"Theorem\">\n\n**Theorem 2**. *Given $\\alpha\\in DC$, $\\varepsilon>0$ and an even $C^2$ cosine type potential $v$, there exists $\\lambda_0(\\alpha,v,\\varepsilon)$ such that all eigenfunctions of the operator $H_{\\lambda v,\\alpha,\\theta}$ satisfy $$\\liminf\\limits_{|n|\\rightarrow\\infty}-\\frac{\\ln\\left(u^2_E(n)+u^2_E(n+1)\\right)}{2|n|}\\geq (1-\\varepsilon)\\ln\\lambda$$ provided that $\\lambda>\\lambda_0$.*\n\n</div>\n\n<div class=\"Remark\">\n\n*Remark 3*. For the almost Mathieu operator (a typical example), Jitomirskaya proved $$\\liminf\\limits_{|n|\\rightarrow\\infty}-\\frac{\\ln\\left(u^2_E(n)+u^2_E(n+1)\\right)}{2|n|}=\\ln\\lambda.$$ Thus, the decay rate in the above theorem is almost sharp.\n\n</div>\n\nWe point out an interesting phenomenon based on Theorem <a href=\"#main\" data-reference-type=\"ref\" data-reference=\"main\">1</a>: The localization phases do not sensitively depend on the space of even $C^2$ cosine type $v$. This phenomenon can be viewed as the robustness of localization phases introduced in .\n\n<div class=\"Definition\">\n\n*Definition 1*. For fixed $\\alpha$, $H_{V,\\alpha,\\theta}$ is said to have $C^r$ robust Anderson localization if there is a $C^r$ neighborhood $B(V)$ of $V$ and a subset $\\tilde{\\Theta}$, such that $$\\bigcap_{\\tilde V \\in B(V)}\\{ \\theta \\, | H_{\\tilde{V},\\alpha,\\theta}\\ \\  has \\ \\ AL\\}=\\tilde\\Theta,$$ moreover $|\\tilde \\Theta|=1$.\n\n</div>",
     "labels": [],
-    "refs": [],
+    "refs": [
+      "main"
+    ],
     "meta": {
       "heading": {
         "level": 2,
         "title": "Statement of the main results"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L16-38::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L61-64::s2",
+        "direction": "next"
+      },
+      {
+        "id": "2107.08547v1::L16-38::s0",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L61-64::s2",
@@ -91,13 +160,29 @@
     "end_line": 64,
     "text": "</div>\n\nTheorem <a href=\"#main\" data-reference-type=\"ref\" data-reference=\"main\">1</a> proved that $H_{\\lambda v,\\alpha,\\theta}$ with even cosine like potential has $C^2$ robust Anderson localization in the space of even potentials. It seems that both the symmetry (eveness) and the profile ($C^2$ cosine type) of the potential play key roles in robust Anderson localization.\n\nWe also mention some important results related to Anderson localization. Eliasson proved that if $v$ is a Gevrey function satisfying non-degenerate conditions, for any fixed Diophantine $\\alpha$, $H_{\\lambda v,\\alpha,\\theta}$ has pure point spectrum for $a.e.$ $\\theta$ and large enough $\\lambda$ (depending on $\\alpha$). Bourgain and Goldstein proved that, in the positive Lyapunov exponent regime, for any fixed $\\theta$, $H_{\\lambda v,\\alpha,\\theta}$ has AL for $a.e.$ Diophantine $\\alpha$ provided that $v$ is a non-constant real analytic function. See for more results.",
     "labels": [],
-    "refs": [],
+    "refs": [
+      "main"
+    ],
     "meta": {
       "heading": {
         "level": 2,
         "title": "Statement of the main results"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L39-60::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L65-68::s0",
+        "direction": "next"
+      },
+      {
+        "id": "2107.08547v1::L16-38::s0",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L65-68::s0",
@@ -113,7 +198,17 @@
         "level": 2,
         "title": "Strategy of the proof"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L61-64::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L69-70::s1",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L69-70::s1",
@@ -129,7 +224,17 @@
         "level": 2,
         "title": "Strategy of the proof"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L65-68::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L71-84::s0",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L71-84::s0",
@@ -145,7 +250,17 @@
         "level": 1,
         "title": " Wang-Zhang’s induction theorem"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L69-70::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L85-106::s1",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L85-106::s1",
@@ -157,13 +272,33 @@
     "labels": [
       "schcon"
     ],
-    "refs": [],
+    "refs": [
+      "schcon"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Wang-Zhang’s induction theorem"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L71-84::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L107-129::s2",
+        "direction": "next"
+      },
+      {
+        "id": "2107.08547v1::L200-215::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L216-228::s2",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L107-129::s2",
@@ -176,7 +311,8 @@
       "cwc",
       "jiaoducha",
       "mzz",
-      "new"
+      "new",
+      "theorem12"
     ],
     "refs": [],
     "meta": {
@@ -184,7 +320,49 @@
         "level": 1,
         "title": " Wang-Zhang’s induction theorem"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L85-106::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L130-131::s3",
+        "direction": "next"
+      },
+      {
+        "id": "2107.08547v1::L130-131::s3",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L132-135::s0",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L136-160::s0",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L161-171::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L172-179::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L180-183::s3",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L293-311::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L312-319::s2",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L130-131::s3",
@@ -194,13 +372,29 @@
     "end_line": 131,
     "text": "</div>\n\nTheorem <a href=\"#theorem12\" data-reference-type=\"ref\" data-reference=\"theorem12\">3</a> is a simplified version of Theorem 3 in . See (57)-(59) in Theorem 3 and Lemma 6 of .",
     "labels": [],
-    "refs": [],
+    "refs": [
+      "theorem12"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": " Wang-Zhang’s induction theorem"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L107-129::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L132-135::s0",
+        "direction": "next"
+      },
+      {
+        "id": "2107.08547v1::L107-129::s2",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L132-135::s0",
@@ -210,13 +404,29 @@
     "end_line": 135,
     "text": "# Construction of eigenfunctions\n\nIn this section, we construct sufficiently many “good\" eigenfunctions of $H_{\\lambda v,\\alpha,\\theta}$ by Theorem <a href=\"#theorem12\" data-reference-type=\"ref\" data-reference=\"theorem12\">3</a>. We denote by $\\Sigma_{\\lambda v,\\alpha}$ the spectral set of $H_{\\lambda v,\\alpha,\\theta}$ (It does not depend on $\\theta$ since $\\alpha$ is irrational).",
     "labels": [],
-    "refs": [],
+    "refs": [
+      "theorem12"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Construction of eigenfunctions"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L130-131::s3",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L136-160::s0",
+        "direction": "next"
+      },
+      {
+        "id": "2107.08547v1::L107-129::s2",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L136-160::s0",
@@ -231,13 +441,58 @@
       "C3",
       "C4"
     ],
-    "refs": [],
+    "refs": [
+      "cwc",
+      "theorem12"
+    ],
     "meta": {
       "heading": {
         "level": 2,
         "title": "The critical points and growth of the transfer matrix"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L132-135::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L161-171::s1",
+        "direction": "next"
+      },
+      {
+        "id": "2107.08547v1::L107-129::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L161-171::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L172-179::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L180-183::s3",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L200-215::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L216-228::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L231-244::s0",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L277-292::s0",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L161-171::s1",
@@ -252,13 +507,51 @@
       "use2",
       "use3"
     ],
-    "refs": [],
+    "refs": [
+      "C4",
+      "cwc",
+      "mzz",
+      "new",
+      "theorem12",
+      "use1",
+      "use2"
+    ],
     "meta": {
       "heading": {
         "level": 2,
         "title": "The critical points and growth of the transfer matrix"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L136-160::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L172-179::s2",
+        "direction": "next"
+      },
+      {
+        "id": "2107.08547v1::L136-160::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L107-129::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L172-179::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L172-179::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L180-183::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L172-179::s2",
@@ -275,14 +568,48 @@
       "use4"
     ],
     "refs": [
-      "C5"
+      "C4",
+      "C5",
+      "mzz",
+      "new",
+      "theorem12",
+      "use1",
+      "use2",
+      "use3",
+      "use4"
     ],
     "meta": {
       "heading": {
         "level": 2,
         "title": "The critical points and growth of the transfer matrix"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L161-171::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L180-183::s3",
+        "direction": "next"
+      },
+      {
+        "id": "2107.08547v1::L161-171::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L136-160::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L161-171::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L107-129::s2",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L180-183::s3",
@@ -292,13 +619,43 @@
     "end_line": 183,
     "text": "We are now ready to prove the monotonicity of $c_{\\infty}(t)$. We prove this by contradiction, otherwise, there exists $t_1<t_2$ such that $c_{\\infty}(t_1)>c_{\\infty}(t_2)$, for $\\gamma\\ll |c_{\\infty}(t_1)- c_{\\infty}(t_2)|$, there exists $y\\in \\Theta_\\gamma^\\tau\\cap (c_{\\infty}(t_2),c_{\\infty}(t_1))$, let $t'=\\sup \\{t\\in (t_1,t_2): c_{\\infty}(t)=y\\}$ and for $t\\in (t',t_2)$, we have $$c_{\\infty}(t)<y.$$ Thus there exists sequence $t_1>\\cdots>t_n>\\cdots$ with $t_n\\rightarrow t'$, such that $c_{\\infty}(t_n)< c_{\\infty}(t')$ for all $n$ sufficiently large which is a contradiction.\n\nWe omit the dependence on $t$ in the following. For any $n\\geq q^{100C\\tau}_{N+j_0-1}$, let $j_0<j_1<\\cdots<j_k=n$ be the return times of $c_{\\infty}(t)$ to $I_{N+j_0}$, by <a href=\"#mzz\" data-reference-type=\"eqref\" data-reference=\"mzz\">[mzz]</a>, <a href=\"#new\" data-reference-type=\"eqref\" data-reference=\"new\">[new]</a> in Theorem <a href=\"#theorem12\" data-reference-type=\"ref\" data-reference=\"theorem12\">3</a> and <a href=\"#C4\" data-reference-type=\"eqref\" data-reference=\"C4\">[C4]</a>, we have $$\\|A_n(c_{\\infty})\\|\\geq\\prod\\limits_{i=0}^{k-1}\\|A_{j_i-j_{i-1}}(c_{\\infty}+j_{i-1}\\alpha)\\|q_{N+j_0-1}^{6k\\tau}\\lambda^{-n+j_{k-1}}\\geq c\\lambda^{(1-\\varepsilon)|n|}, \\footnote{Here we use the fact that $|n-j_{k-1}|\\leq q_{N+j_0-1}^C$, it follows from Lemma 3 of \\cite{adz}. }$$ for some $c=c(\\kappa,\\gamma,\\tau,v,\\varepsilon)>0$. Thus we have proved <a href=\"#C3\" data-reference-type=\"eqref\" data-reference=\"C3\">[C3]</a>. Finally, <a href=\"#C1\" data-reference-type=\"eqref\" data-reference=\"C1\">[C1]</a> follows from <a href=\"#jiaoducha\" data-reference-type=\"eqref\" data-reference=\"jiaoducha\">[jiaoducha]</a> in Theorem <a href=\"#theorem12\" data-reference-type=\"ref\" data-reference=\"theorem12\">3</a>.\n\n\u00070◻",
     "labels": [],
-    "refs": [],
+    "refs": [
+      "C1",
+      "C3",
+      "C4",
+      "jiaoducha",
+      "mzz",
+      "new",
+      "theorem12"
+    ],
     "meta": {
       "heading": {
         "level": 2,
         "title": "The critical points and growth of the transfer matrix"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L172-179::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L184-199::s0",
+        "direction": "next"
+      },
+      {
+        "id": "2107.08547v1::L136-160::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L161-171::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L107-129::s2",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L184-199::s0",
@@ -307,14 +664,35 @@
     "start_line": 184,
     "end_line": 199,
     "text": "## Construction of good eigenfunctions\n\nRecall that $t=\\lambda^{-1}E$.\n\n<div id=\"good\" class=\"Definition\">\n\n*Definition 2*. For any $\\gamma>0$ and $C>0$, a normalized eigenfunction [^7] $u(n)$ is said to be $(C,\\gamma)$-good, if $$|u(n)|\\leq Ce^{-\\gamma |n|}$$ for any $n\\in{\\mathbb Z}$.\n\n</div>\n\n<div id=\"C2\" class=\"Proposition\">\n\n**Proposition 1**. *Assume $\\alpha\\in DC(\\kappa,\\tau)$ and $v$ is an even $C^2$ cosine type potential, for any $\\varepsilon>0$, there exists $\\lambda_0(\\varepsilon,\\alpha,v)$ and $C(\\kappa,\\gamma,\\tau,v,\\varepsilon)$ such that if $\\lambda>\\lambda_0$ and $c_{\\infty}(t)\\in \\Theta_\\gamma^\\tau$, then $H_{\\lambda v,\\alpha,c_{\\infty}(t)}$ has a $(C,(1-\\varepsilon)\\ln\\lambda)$-good eigenfunction corresponding to eigenvalue $E=\\lambda t$.*\n\n</div>",
-    "labels": [],
+    "labels": [
+      "C2",
+      "good"
+    ],
     "refs": [],
     "meta": {
       "heading": {
         "level": 2,
         "title": "Construction of good eigenfunctions"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L180-183::s3",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L200-215::s1",
+        "direction": "next"
+      },
+      {
+        "id": "2107.08547v1::L231-244::s0",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L277-292::s0",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L200-215::s1",
@@ -324,13 +702,34 @@
     "end_line": 215,
     "text": "</div>\n\nWe denote by $A^{E,\\lambda}(\\theta)=\\begin{pmatrix}E-\\lambda v(\\theta)&-1\\\\ 1&0\\end{pmatrix}$, for $n\\geq 0$, by <a href=\"#schcon\" data-reference-type=\"eqref\" data-reference=\"schcon\">[schcon]</a>, we have $$\\left|A^{E,\\lambda}_{n+1}(c_\\infty(t))\\cdot \\left(B^{-1}(c_\\infty(t),t)\\cdot s_{n+1}(c_\\infty(t),t)\\right)\\right|\\leq C\\left\\|A_{n+1}(c_\\infty(t),t)\\right\\|^{-1},$$ $$\\begin{aligned}\n&\\left|A^{E,\\lambda}_{n+1}(c_\\infty(t))\\cdot \\left(B^{-1}(c_\\infty(t),t)\\cdot s_{n}(c_\\infty(t),t)\\right)\\right|\\\\\n=&\\left|A^{E,\\lambda}(c_\\infty(t)+n\\alpha)A^{E,\\lambda}_{n}(c_\\infty(t))\\cdot \\left(B^{-1}(c_\\infty(t),t)\\cdot s_{n}(c_\\infty(t),t)\\right)\\right|\\\\\n\\leq &C\\left\\|A_n(c_\\infty(t),t)\\right\\|^{-1}.\n\\end{aligned}$$ Hence $$\\begin{aligned}\n&\\left|\\left(B^{-1}(c_\\infty(t),t)\\cdot s_{n+1}(c_\\infty(t),t)\\right)-\\left(B^{-1}(c_\\infty(t),t)\\cdot s_{n}(c_\\infty(t),t)\\right)\\right|\\\\\n\\leq& 2C\\left\\|A_n(c_\\infty(t),t)\\right\\|^{-1}\\left\\|A_{n+1}(c_\\infty(t),t)\\right\\|^{-1}.\n\\end{aligned}$$ This implies that $$\\begin{aligned}\n&\\left|\\left(B^{-1}(c_\\infty(t),t)\\cdot s_{\\infty}(c_\\infty(t),t)\\right)-\\left(B^{-1}(c_\\infty(t),t)\\cdot s_{n}(c_\\infty(t),t)\\right)\\right|\\\\\n\\leq &\\sum\\limits_{k\\geq n}2C\\left\\|A_k(c_\\infty(t))\\right\\|^{-1}\\left\\|A_{k+1}(c_\\infty(t))\\right\\|^{-1}.\n\\end{aligned}$$ We have $$\\begin{aligned}\n&\\left|A^{E,\\lambda}_{-n}(c_\\infty)\\cdot \\left(B^{-1}(c_\\infty(t),t)\\cdot u_{\\infty}(c_\\infty(t),t)\\right)\\right|\\\\\n\\leq &C\\left\\|A_{n}(c_\\infty(t),t)\\right\\|^{-1}+\\left\\|A^{E,\\lambda}_{n}(c_\\infty(t))\\cdot \\left(B^{-1}(c_\\infty(t),t)\\cdot (s_{n}(c_\\infty(t),t)-s_{\\infty}(c_\\infty(t),t))\\right)\\right\\|\\\\\n\\leq &C\\left(\\left\\|A_{n}(c_\\infty(t),t)\\right\\|^{-1}+\\left\\|A_{n}(c_\\infty(t),t)\\right\\|\\sum\\limits_{k\\geq n}\\left\\|A_k(c_\\infty(t),t)\\right\\|^{-1}\\left\\|A_{k+1}(c_\\infty(t),t)\\right\\|^{-1}\\right).\n\\end{aligned}$$ By <a href=\"#C3\" data-reference-type=\"eqref\" data-reference=\"C3\">[C3]</a>, we have $$\\sum\\limits_{k\\geq n}\\left\\|A_k(c_\\infty(t),t)\\right\\|^{-1}\\left\\|A_{k+1}(c_\\infty(t),t)\\right\\|^{-1}\\leq C\\lambda^{-2(1-\\varepsilon)|n|},$$ for some $C=C(\\kappa,\\gamma,\\tau,v,\\varepsilon)$.",
     "labels": [],
-    "refs": [],
+    "refs": [
+      "C3",
+      "schcon"
+    ],
     "meta": {
       "heading": {
         "level": 2,
         "title": "Construction of good eigenfunctions"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L184-199::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L216-228::s2",
+        "direction": "next"
+      },
+      {
+        "id": "2107.08547v1::L136-160::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L85-106::s1",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L216-228::s2",
@@ -340,13 +739,35 @@
     "end_line": 228,
     "text": "We denote by $A^{E,\\lambda}(\\theta)=\\begin{pmatrix}E-\\lambda v(\\theta)&-1\\\\ 1&0\\end{pmatrix}$, for $n\\geq 0$, by <a href=\"#schcon\" data-reference-type=\"eqref\" data-reference=\"schcon\">[schcon]</a>, we have $$\\left|A^{E,\\lambda}_{n+1}(c_\\infty(t))\\cdot \\left(B^{-1}(c_\\infty(t),t)\\cdot s_{n+1}(c_\\infty(t),t)\\right)\\right|\\leq C\\left\\|A_{n+1}(c_\\infty(t),t)\\right\\|^{-1},$$ $$\\begin{aligned}\n&\\left|A^{E,\\lambda}_{n+1}(c_\\infty(t))\\cdot \\left(B^{-1}(c_\\infty(t),t)\\cdot s_{n}(c_\\infty(t),t)\\right)\\right|\\\\\n=&\\left|A^{E,\\lambda}(c_\\infty(t)+n\\alpha)A^{E,\\lambda}_{n}(c_\\infty(t))\\cdot \\left(B^{-1}(c_\\infty(t),t)\\cdot s_{n}(c_\\infty(t),t)\\right)\\right|\\\\\n\\leq &C\\left\\|A_n(c_\\infty(t),t)\\right\\|^{-1}.\n\\end{aligned}$$ Hence $$\\begin{aligned}\n&\\left|\\left(B^{-1}(c_\\infty(t),t)\\cdot s_{n+1}(c_\\infty(t),t)\\right)-\\left(B^{-1}(c_\\infty(t),t)\\cdot s_{n}(c_\\infty(t),t)\\right)\\right|\\\\\n\\leq& 2C\\left\\|A_n(c_\\infty(t),t)\\right\\|^{-1}\\left\\|A_{n+1}(c_\\infty(t),t)\\right\\|^{-1}.\n\\end{aligned}$$ This implies that $$\\begin{aligned}\n&\\left|\\left(B^{-1}(c_\\infty(t),t)\\cdot s_{\\infty}(c_\\infty(t),t)\\right)-\\left(B^{-1}(c_\\infty(t),t)\\cdot s_{n}(c_\\infty(t),t)\\right)\\right|\\\\\n\\leq &\\sum\\limits_{k\\geq n}2C\\left\\|A_k(c_\\infty(t))\\right\\|^{-1}\\left\\|A_{k+1}(c_\\infty(t))\\right\\|^{-1}.\n\\end{aligned}$$ We have $$\\begin{aligned}\n&\\left|A^{E,\\lambda}_{-n}(c_\\infty)\\cdot \\left(B^{-1}(c_\\infty(t),t)\\cdot u_{\\infty}(c_\\infty(t),t)\\right)\\right|\\\\\n\\leq &C\\left\\|A_{n}(c_\\infty(t),t)\\right\\|^{-1}+\\left\\|A^{E,\\lambda}_{n}(c_\\infty(t))\\cdot \\left(B^{-1}(c_\\infty(t),t)\\cdot (s_{n}(c_\\infty(t),t)-s_{\\infty}(c_\\infty(t),t))\\right)\\right\\|\\\\\n\\leq &C\\left(\\left\\|A_{n}(c_\\infty(t),t)\\right\\|^{-1}+\\left\\|A_{n}(c_\\infty(t),t)\\right\\|\\sum\\limits_{k\\geq n}\\left\\|A_k(c_\\infty(t),t)\\right\\|^{-1}\\left\\|A_{k+1}(c_\\infty(t),t)\\right\\|^{-1}\\right).\n\\end{aligned}$$ By <a href=\"#C3\" data-reference-type=\"eqref\" data-reference=\"C3\">[C3]</a>, we have $$\\sum\\limits_{k\\geq n}\\left\\|A_k(c_\\infty(t),t)\\right\\|^{-1}\\left\\|A_{k+1}(c_\\infty(t),t)\\right\\|^{-1}\\leq C\\lambda^{-2(1-\\varepsilon)|n|},$$ for some $C=C(\\kappa,\\gamma,\\tau,v,\\varepsilon)$.\n\nSimilarly, $$\\begin{aligned}\n&\\left|A^{E,\\lambda}_{n}(c_\\infty)\\cdot \\left(B^{-1}(c_\\infty(t),t)\\cdot s_{\\infty}(c_\\infty(t),t)\\right)\\right|\\\\\n\\leq &C\\left\\|A_{-n}(c_\\infty(t),t)\\right\\|^{-1}+\\left\\|A^{E,\\lambda}_{-n}(c_\\infty(t))\\cdot \\left(B^{-1}(c_\\infty(t),t)\\cdot (u_{n}(c_\\infty(t),t)-u_{\\infty}(c_\\infty(t),t))\\right)\\right\\|\\\\\n\\leq &C\\left(\\left\\|A_{-n}(c_\\infty(t),t)\\right\\|^{-1}+\\left\\|A_{-n}(c_\\infty(t),t)\\right\\|\\sum\\limits_{k\\geq n}\\left\\|A_{-k}(c_\\infty(t),t)\\right\\|^{-1}\\left\\|A_{-k-11}(c_\\infty(t),t)\\right\\|^{-1}\\right).\n\\end{aligned}$$ For $E=\\lambda t$, we denote by $$\\begin{pmatrix}\nu_E(n+1)\\\\ u_E(n)\n\\end{pmatrix}=A_n^{E,\\lambda}(c_\\infty(t))B^{-1}(c_\\infty(t),t)\\cdot s_{\\infty}(c_\\infty(t),t),$$ then for $n\\in{\\mathbb Z}$, by <a href=\"#C1\" data-reference-type=\"eqref\" data-reference=\"C1\">[C1]</a>, we have $$\\begin{aligned}\n\\left\\|\\begin{pmatrix}\nu_E(n+1)\\\\ u_E(n)\n\\end{pmatrix}\\right\\|&=\\|A_n^{E,\\lambda}(c_\\infty(t))B^{-1}(c_\\infty(t),t)\\cdot s_{\\infty}(c_\\infty(t),t)\\|\\\\\n&\\leq C\\lambda^{-(1-\\varepsilon)|n|}.\n\\end{aligned}$$ Thus $(u_E)_n$ is a $(C,(1-\\varepsilon)\\ln\\lambda)$-good eigenfunction for $H_{\\lambda v,\\alpha,c_{\\infty}(t)}$. \u00070◻",
     "labels": [],
-    "refs": [],
+    "refs": [
+      "C1",
+      "C3",
+      "schcon"
+    ],
     "meta": {
       "heading": {
         "level": 2,
         "title": "Construction of good eigenfunctions"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L200-215::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L229-230::s0",
+        "direction": "next"
+      },
+      {
+        "id": "2107.08547v1::L136-160::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L85-106::s1",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L229-230::s0",
@@ -362,7 +783,17 @@
         "level": 1,
         "title": "Completeness arguments"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L216-228::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L231-244::s0",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L231-244::s0",
@@ -372,15 +803,44 @@
     "end_line": 244,
     "text": "## $\\mathcal{L}$-measure\n\nIn , the authors introduced $\\mathcal{R}$-measure to prove the arithmetic version of Anderson localization. Inspired by the idea, we introduce similarly a measure by Proposition <a href=\"#C2\" data-reference-type=\"ref\" data-reference=\"C2\">1</a> in stead of reducibility in . The measure, we call it $\\mathcal{L}$-measure, will play an important role in the proof of arithmetic version of Anderson localization. We next define $E:{\\mathbb T}\\rightarrow \\Sigma_{\\lambda v,\\alpha}$ as the following: $$E(\\theta)=\\begin{cases}\n\\lambda c_\\infty^{-1}(\\theta)&\\theta\\in [0,\\frac{1}{2}],\\\\\n\\lambda c_\\infty^{-1}(1-\\theta)& \\theta\\in (\\frac{1}{2},1].\n\\end{cases}$$ Since $c_\\infty$ is increasing in the spectrum, $E(\\theta)$ takes one value\n\nFor every $\\tau>1$ and $\\gamma>0$, we define $\\mathcal{E}^\\tau_\\gamma=E(\\Theta_\\gamma^\\tau)$. For any $E\\in \\mathcal{E}_\\gamma^\\tau$, we define a vector-valued function $u_E:\\mathcal{E}^\\tau_\\gamma\\rightarrow \\ell^2({\\mathbb Z})$ as the following, $$\\label{def1}\nu_E(n)=\\frac{v_E(n)}{\\|v_E\\|_{L^2}},$$ where $v^E$ is the eigenfunction of $H_{\\lambda v,\\alpha,c_{\\infty}(t)}$ constructed in Proposition <a href=\"#C2\" data-reference-type=\"ref\" data-reference=\"C2\">1</a>.\n\nFor any fixed $\\theta\\in \\Theta^\\tau=\\cup_{\\gamma>0}\\Theta^\\tau_\\gamma$, we denote by $E_m(\\theta)=\\lambda c_{\\infty}^{-1}(T^m\\theta)$. We can define the following $\\mathcal{L}$-measure,\n\n<div id=\"defR\" class=\"Definition\">",
     "labels": [
-      "def1"
+      "def1",
+      "defR"
     ],
-    "refs": [],
+    "refs": [
+      "C2"
+    ],
     "meta": {
       "heading": {
         "level": 2,
         "title": "$\\mathcal{L}$-measure"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L229-230::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L245-258::s1",
+        "direction": "next"
+      },
+      {
+        "id": "2107.08547v1::L136-160::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L184-199::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L293-311::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L312-319::s2",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L245-258::s1",
@@ -389,14 +849,40 @@
     "start_line": 245,
     "end_line": 258,
     "text": "<div id=\"defR\" class=\"Definition\">\n\n*Definition 3* ($\\mathcal{L}$-measure). <span id=\"Rm\" label=\"Rm\"></span> $\\nu_{\\theta}:\\mathcal{B}\\rightarrow {\\mathbb R}$ is defined as: $$\\nu_{\\theta}(B)=\\sum\\limits_{m\\in N_\\theta^B}\\frac{|u_{E_m(\\theta)}(m)|^2+|u_{E_m(\\theta)}(m+1)|^2}{2},$$ for all $B$ in the Borel $\\sigma$-algebra $\\mathcal{B}$ of ${\\mathbb R}$, where $N_\\theta^B=\\{m| E_m(\\theta)\\in B\\}$.\n\n</div>\n\nThe $\\mathcal{L}$-measure is well defined since the eigenvalues are simple and has the following property.\n\n<div id=\"property\" class=\"Lemma\">\n\n**Lemma 1**. *For $a.e.$ $\\theta$, $$\\nu_{\\theta}(\\mathcal{E}^\\tau_\\gamma)\\geq|\\Theta_\\gamma^\\tau|$$ where $|\\cdot|$ is the Lebesgue measure.*\n\n</div>\n\nNote that $\\nu_{\\theta}(\\mathcal{E}^\\tau_\\gamma)$ is measurable in $\\theta$ and $\\nu_{\\theta}(\\mathcal{E}^\\tau_\\gamma)=\\nu_{\\theta+\\alpha}(\\mathcal{E}^\\tau_\\gamma)$. Thus $\\nu_{\\theta}(\\mathcal{E}^\\tau_\\gamma)=C$ for a.e. $\\theta$.",
-    "labels": [],
+    "labels": [
+      "Rm",
+      "defR",
+      "property"
+    ],
     "refs": [],
     "meta": {
       "heading": {
         "level": 2,
         "title": "$\\mathcal{L}$-measure"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L231-244::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L259-276::s2",
+        "direction": "next"
+      },
+      {
+        "id": "2107.08547v1::L293-311::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L312-319::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L320-324::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L259-276::s2",
@@ -412,7 +898,17 @@
         "level": 2,
         "title": "$\\mathcal{L}$-measure"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L245-258::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L277-292::s0",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L277-292::s0",
@@ -421,14 +917,49 @@
     "start_line": 277,
     "end_line": 292,
     "text": "## Arithmetic version of Anderson localization\n\n<div id=\"tail\" class=\"Lemma\">\n\n**Lemma 2**. *For any $\\epsilon>0$, there exists $N_0(\\gamma,\\tau,v,\\alpha,\\epsilon)>0$ such that for all $\\theta\\in \\Theta_\\gamma^\\tau$, we have $$\\mathcal{R}_{N_0}\\nu_{\\theta}(\\mathcal{E}^\\tau_\\gamma):=\\sum\\limits_{|m|>N_0:T^m\\theta\\in\\Theta_\\gamma^\\tau}\\frac{|u_{E_m(\\theta)}(m)|^2+|u_{E_m(\\theta)}(m+1)|^2}{2}\\leq \\epsilon.$$*\n\n</div>\n\nNote that for any $T^m\\theta\\in\\Theta_\\gamma^\\tau$, by Proposition <a href=\"#C2\" data-reference-type=\"ref\" data-reference=\"C2\">1</a>, $$\\frac{|u_{E_m(\\theta)}(m)|^2+|u_{E_m(\\theta)}(m+1)|^2}{2}\\leq Ce^{-\\frac{\\ln\\lambda}{2}|m|}.$$ Thus for any $\\epsilon>0$, there exists $N_0(\\gamma,\\tau,v,\\alpha,\\epsilon)>0$ such that for all $\\theta\\in \\Theta_\\gamma^\\tau$, $$\\sum\\limits_{|m|>N_0:T^m\\theta\\in\\Theta_\\gamma^\\tau}\\frac{|u_{E_m(\\theta)}(m)|^2+|u_{E_m(\\theta)}(m+1)|^2}{2}\\leq \\epsilon.$$ \u00070◻ We define $\\mathcal{E}^\\tau=\\bigcup_{\\gamma>0}\\mathcal{E}_\\gamma^\\tau$. Then\n\n<div id=\"continuity\" class=\"Lemma\">\n\n**Lemma 3**. *For any $N>0$ and $\\epsilon>0$, there exists $\\delta(\\gamma,\\tau,v,\\alpha,N,\\epsilon)>0$ such that $$\\left|\\mathcal{T}_N\\nu_{\\theta}(\\mathcal{E}^\\tau)-\\mathcal{T}_N\\nu_{\\theta'}(\\mathcal{E}^\\tau)\\right|\\leq \\epsilon$$ for any $\\theta,\\theta'\\in\\Theta^\\tau_\\gamma$ with $|\\theta-\\theta'|\\leq \\delta$ where $\\mathcal{T}_N\\nu_{\\theta}(\\mathcal{E}^\\tau):=\\nu_{\\theta}(\\mathcal{E}^\\tau)-\\mathcal{R}_N\\nu_{\\theta}(\\mathcal{E}^\\tau)$.*\n\n</div>",
-    "labels": [],
-    "refs": [],
+    "labels": [
+      "continuity",
+      "tail"
+    ],
+    "refs": [
+      "C2"
+    ],
     "meta": {
       "heading": {
         "level": 2,
         "title": "Arithmetic version of Anderson localization"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L259-276::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L293-311::s1",
+        "direction": "next"
+      },
+      {
+        "id": "2107.08547v1::L136-160::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L184-199::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L293-311::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L312-319::s2",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L320-324::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L293-311::s1",
@@ -441,13 +972,54 @@
       "redest10",
       "redest11"
     ],
-    "refs": [],
+    "refs": [
+      "def1",
+      "defR",
+      "redest10",
+      "redest11",
+      "tail",
+      "theorem12"
+    ],
     "meta": {
       "heading": {
         "level": 2,
         "title": "Arithmetic version of Anderson localization"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L277-292::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L312-319::s2",
+        "direction": "next"
+      },
+      {
+        "id": "2107.08547v1::L231-244::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L245-258::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L312-319::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L277-292::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L107-129::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L312-319::s2",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L312-319::s2",
@@ -457,16 +1029,62 @@
     "end_line": 319,
     "text": "For any fixed $N$ and any $\\theta\\in\\Theta^\\tau_\\gamma$, we have $$\\|\\theta+k\\alpha+n\\alpha\\|_{{\\mathbb R}/{\\mathbb Z}}\\geq \\frac{\\gamma}{(|k+n|+1)^\\tau}\\geq \\frac{\\gamma(1+N)^{-\\tau}}{(|n|+1)^\\tau},\\ \\  |k|\\leq N.$$ Thus $T^k\\theta\\in \\Theta^\\tau$ for $|k|\\leq N$. By Proposition <a href=\"#theorem12\" data-reference-type=\"ref\" data-reference=\"theorem12\">3</a>, we have $$\\|v_{E_m(\\theta)}\\|_{\\ell^2}\\leq C(\\gamma,\\tau,v,\\alpha).$$ By telescoping and Lemma <a href=\"#tail\" data-reference-type=\"ref\" data-reference=\"tail\">2</a>, there exists $\\delta(\\gamma,\\tau,v,\\alpha,N,\\epsilon)$, such that if $|\\theta-\\theta'|<\\delta$, then $$\\begin{aligned}\n\\label{redest10}\n\\left|\\|v_{E_k(\\theta)}\\|^2_{\\ell^2}-\\|v_{E_k(\\theta')}\\|^2_{\\ell^2}\\right|\\leq  \\frac{\\epsilon C^{-4}}{500(2N+1)}.\n\\end{aligned}$$ $$\\begin{aligned}\n\\label{redest11}\n\\left|v_{E_k(\\theta)}(k)-v_{E_k(\\theta')}(k)\\right|\\leq \\frac{\\epsilon C^{-4}}{500(2N+1)}, \\ \\ \\forall |k|\\leq 2N+1.\n\\end{aligned}$$ <a href=\"#redest10\" data-reference-type=\"eqref\" data-reference=\"redest10\">[redest10]</a> and <a href=\"#redest11\" data-reference-type=\"eqref\" data-reference=\"redest11\">[redest11]</a> imply for any $|k|\\leq N$, $$\\begin{aligned}\n|u_{E_k(\\theta)}(k)-u_{E_k(\\theta')}(k)|&=\\left|\\frac{v_{E_k(\\theta)}(k)}{\\|v_{E_k(\\theta)}\\|_{\\ell^2}}-\\frac{v_{E_k(\\theta')}(k)}{\\|v_{E_k(\\theta')}\\|_{\\ell^2}}\\right|\\\\\n&=\\frac{\\left|v_{E_k(\\theta)}(k)\\|v_{E_k(\\theta')}\\|_{\\ell^2}-v_{E_k(\\theta')}(k)\\|v_{E_k(\\theta)}\\|_{\\ell^2}\\right|}{\\|v_{E_k(\\theta)}\\|_{\\ell^2}\\|v_{E_k(\\theta')}\\|_{\\ell^2}}\\\\\n&\\leq \\frac{\\epsilon C^{-4}}{500(2N+1)}\\frac{\\|v_{E_k(\\theta)}\\|_{\\ell^2}+C}{\\|v_{E_k(\\theta)}\\|_{\\ell^2}\\|v_{E_k(\\theta')}\\|_{\\ell^2}}.\n\\end{aligned}$$ Thus we have $$\\begin{aligned}\n|u_{E_k(\\theta)}(k)-u_{E_k(\\theta')}(k)|\\leq \\frac{\\epsilon}{100(2N+1)}.\n\\end{aligned}$$ By Definition <a href=\"#defR\" data-reference-type=\"ref\" data-reference=\"defR\">3</a> and <a href=\"#def1\" data-reference-type=\"eqref\" data-reference=\"def1\">[def1]</a>, one has $$\\begin{aligned}\n&\\ \\ \\ \\ |\\mathcal{T}_N\\nu_{\\theta}(\\mathcal{E}^\\tau)-\\mathcal{T}_N\\nu_{\\theta'}(\\mathcal{E}^\\tau)|\\\\\n&=\\left|\\sum\\limits_{|k|\\leq N}|u_{E(T^k\\theta)}(k)|^2-\\sum\\limits_{|k|\\leq N}|u_{E(T^k\\theta')}(k)|^2\\right|\\\\&\n+\\left|\\sum\\limits_{|k|\\leq N}|u_{E(T^k\\theta)}(k+1)|^2-\\sum\\limits_{|k|\\leq N}|u_{E(T^k\\theta')}(k+1)|^2\\right|\\\\\n&\\leq \\frac{\\epsilon}{50(2N+1)}(2N+1)\\leq \\epsilon.\n\\end{aligned}$$ \u00070◻\n\n<div id=\"diophantine\" class=\"Lemma\">\n\n**Lemma 4**. *For any $\\theta\\in \\Theta_\\gamma^\\tau$, we have $\\theta$ is $\\Theta^{100\\tau}_{\\gamma/100}$- homogenous, i.e., $|(\\theta-\\sigma,\\theta+\\sigma)\\cap \\Theta^{100\\tau}_{\\gamma/100}|\\geq \\sigma$ for any $\\sigma>0$.*\n\n</div>\n\nLet $\\Theta_k=\\{\\theta\\in[0,1):\\|2\\theta+k\\alpha\\|_{{\\mathbb R}/{\\mathbb Z}}<\\frac{\\gamma}{100(|k|+1)^{100\\tau}}\\}$, then $\\Theta^{100\\tau}_{\\gamma/100}=[0,1)\\backslash\\cup_{k\\in{\\mathbb Z}}\\Theta_k$. Thus for any $\\sigma>0$ sufficiently small, we have $$(\\theta-\\sigma,\\theta+\\sigma)\\cap \\Theta^{100\\tau}_{\\gamma/100}=(\\theta-\\sigma,\\theta+\\sigma)\\backslash\\cup_{k\\in{\\mathbb Z}}\\Theta_k.$$ Notice that if $\\Theta_{k}\\cap (\\theta-\\sigma,\\theta+\\sigma)\\neq \\emptyset$, then $$\\frac{\\gamma}{(|k|+1)^\\tau}\\leq\\|k\\alpha+2\\theta\\|_{{\\mathbb R}/{\\mathbb Z}}\\leq 4\\sigma.$$ It follows that $|k|\\geq (\\frac{\\gamma}{4\\sigma})^{\\frac{1}{\\tau}}$, thus $|\\Theta_k|\\leq C(\\gamma,\\tau)\\sigma^{100}$ which implies that $$|(\\theta-\\sigma,\\theta+\\sigma)\\cap \\Theta^{100\\tau}_{\\gamma/100}|\\geq 2\\sigma-\\sum\\limits_{k\\geq (\\frac{\\gamma}{\\sigma})^{\\frac{1}{\\tau}}}\\Theta_k\\geq \\sigma.$$ \u00070◻",
     "labels": [
+      "diophantine",
       "redest10",
       "redest11"
     ],
-    "refs": [],
+    "refs": [
+      "def1",
+      "defR",
+      "redest10",
+      "redest11",
+      "tail",
+      "theorem12"
+    ],
     "meta": {
       "heading": {
         "level": 2,
         "title": "Arithmetic version of Anderson localization"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L293-311::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L320-324::s3",
+        "direction": "next"
+      },
+      {
+        "id": "2107.08547v1::L293-311::s1",
+        "direction": "comment"
+      },
+      {
+        "id": "2107.08547v1::L231-244::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L245-258::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L293-311::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L277-292::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L107-129::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L320-324::s3",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L320-324::s3",
@@ -476,13 +1094,45 @@
     "end_line": 324,
     "text": "Let $\\Theta_k=\\{\\theta\\in[0,1):\\|2\\theta+k\\alpha\\|_{{\\mathbb R}/{\\mathbb Z}}<\\frac{\\gamma}{100(|k|+1)^{100\\tau}}\\}$, then $\\Theta^{100\\tau}_{\\gamma/100}=[0,1)\\backslash\\cup_{k\\in{\\mathbb Z}}\\Theta_k$. Thus for any $\\sigma>0$ sufficiently small, we have $$(\\theta-\\sigma,\\theta+\\sigma)\\cap \\Theta^{100\\tau}_{\\gamma/100}=(\\theta-\\sigma,\\theta+\\sigma)\\backslash\\cup_{k\\in{\\mathbb Z}}\\Theta_k.$$ Notice that if $\\Theta_{k}\\cap (\\theta-\\sigma,\\theta+\\sigma)\\neq \\emptyset$, then $$\\frac{\\gamma}{(|k|+1)^\\tau}\\leq\\|k\\alpha+2\\theta\\|_{{\\mathbb R}/{\\mathbb Z}}\\leq 4\\sigma.$$ It follows that $|k|\\geq (\\frac{\\gamma}{4\\sigma})^{\\frac{1}{\\tau}}$, thus $|\\Theta_k|\\leq C(\\gamma,\\tau)\\sigma^{100}$ which implies that $$|(\\theta-\\sigma,\\theta+\\sigma)\\cap \\Theta^{100\\tau}_{\\gamma/100}|\\geq 2\\sigma-\\sum\\limits_{k\\geq (\\frac{\\gamma}{\\sigma})^{\\frac{1}{\\tau}}}\\Theta_k\\geq \\sigma.$$ \u00070◻\n\n**Proof of Theorem <a href=\"#main\" data-reference-type=\"ref\" data-reference=\"main\">1</a>**: For any fixed $\\theta\\in \\Theta_\\gamma^\\tau$, by Lemma <a href=\"#diophantine\" data-reference-type=\"ref\" data-reference=\"diophantine\">4</a> and Lemma <a href=\"#property\" data-reference-type=\"ref\" data-reference=\"property\">1</a>, for any $\\gamma_1<\\gamma/100$, there exists a sequence $\\theta_k\\in\\Theta^{100\\tau}_{\\gamma_1}$ such that $\\theta_k\\rightarrow\\theta$ and $$\\nu_{\\theta_k}(\\mathcal{E}^{100\\tau}_{\\gamma_1})\\geq\\left|\\Theta^{100\\tau}_{\\gamma_1}\\right|.$$ By Lemma <a href=\"#tail\" data-reference-type=\"ref\" data-reference=\"tail\">2</a>, there exists $N_0(\\gamma_1,\\tau,,\\alpha)>0$ such that $$\\mathcal{R}_{N_0}\\nu_{\\theta_k}(\\mathcal{E}^{100\\tau}_{\\gamma_1})\\leq \\gamma_1.$$ By Lemma <a href=\"#continuity\" data-reference-type=\"ref\" data-reference=\"continuity\">3</a>, $$\\mathcal{T}_{N_0}\\nu_{\\theta}(\\mathcal{E}^{100\\tau})=\\lim\\limits_{k\\rightarrow \\infty}\\mathcal{T}_{N_0}\\nu_{\\theta_k}(\\mathcal{E}^{100\\tau}).$$ Thus $$\\begin{aligned}\n\\nu_{\\theta}(\\mathcal{E}^{100\\tau})&\\geq \\mathcal{T}_{N_0}\\nu_{\\theta}(\\mathcal{E}^{100\\tau})\\geq \\limsup\\limits_{k\\rightarrow\\infty}\\mathcal{T}_{N_0}\\nu_{\\theta_k}(\\mathcal{E}^{100\\tau}_{\\gamma_1})\\\\\n&\\geq \\left|\\Theta^{100\\tau}_{\\gamma_1}\\right|-\\gamma_1\\geq 1-2\\gamma_1.\n\\end{aligned}$$ Let $\\gamma_1\\rightarrow 0$, we have $$1\\leq \\nu_{\\theta}(\\mathcal{E}^{100\\tau})\\leq\\mu^{pp}_{\\theta}(\\mathcal{E}^{100\\tau})\\leq\\mu_{\\theta}(\\mathcal{E}^{100\\tau})\\leq1,  \\footnote{We refer readers to Lemma 3.2 in \\cite{gy} for the proof of the second inequality.}$$ where $\\mu_{\\theta}$ is the spectral measure of $H_{\\lambda v,\\alpha,\\theta}$ defined by $$\\frac{1}{2}\\left(\\langle\\delta_0,\\chi_{B}(H_{\\lambda v,\\alpha,\\theta})\\delta_0\\rangle+\\langle\\delta_1,\\chi_{B}(H_{\\lambda v,\\alpha,\\theta})\\delta_1\\rangle\\right)=\\int_{{\\mathbb R}}\\chi_{B} d\\mu_{\\theta},$$ and $\\mu^{pp}_{\\theta}$ is pure point piece of $\\mu_{\\theta}$. It follows that $\\mu_{\\theta}=\\mu_{\\theta}^{pp}$ for any $\\theta\\in \\Theta_\\gamma^\\tau$. Thus we finish the proof. \u00070◻",
     "labels": [],
-    "refs": [],
+    "refs": [
+      "continuity",
+      "diophantine",
+      "main",
+      "property",
+      "tail"
+    ],
     "meta": {
       "heading": {
         "level": 2,
         "title": "Arithmetic version of Anderson localization"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L312-319::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L325-336::s0",
+        "direction": "next"
+      },
+      {
+        "id": "2107.08547v1::L277-292::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L312-319::s2",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L16-38::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "2107.08547v1::L245-258::s1",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L325-336::s0",
@@ -498,7 +1148,17 @@
         "level": 1,
         "title": "Acknowledgement"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L320-324::s3",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L337-340::s1",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L337-340::s1",
@@ -514,7 +1174,17 @@
         "level": 1,
         "title": "Acknowledgement"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L325-336::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L341-342::s2",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L341-342::s2",
@@ -530,7 +1200,17 @@
         "level": 1,
         "title": "Acknowledgement"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L337-340::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L343-363::s3",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "2107.08547v1::L343-363::s3",
@@ -540,12 +1220,24 @@
     "end_line": 363,
     "text": "L. Ge and I. Kachkovskiy. Ballistic transport for one-dimensional quasiperiodic Schrödinger operators. arXiv:2009.02896. To appear in *Comm. Pure Appl. Math*. L. Ge and J. You. Arithmetic version of Anderson localization via reducibility. *Geom. Funct. Anal.* **30(5)** (2020), 1370-1401. L. Ge, J. You and X. Zhao. The arithmetic transition conjecture: new proof and generalization. Preprint. L. Ge, J. You and Q. Zhou. Exponential dynamical localization: Criterion and applications. arXiv:1901.04258. To appear in *Ann. Sci. Ec. Norm. Super. (4)*. B.I. Halperin. Quantized Hall conductance, current-carrying edge states, and the existence of extended states in a two-dimensional disordered potential. *Phys. Rev. B.* **25** (1982), 2185-2190. S. Jitomirskaya. Almost everything about the almost Mathieu operator, II in Proc. of XI Int. Congress of Math. Physics. *Int. Press, Somerville, Mass.* (1995), 373-382. S. Jitomirskaya. Metal-Insulator Transition for the almost Mathieu operator. *Ann. of Math.* **150** (1999), 1159-1175. S. Jitomirskaya and I. Kachkovskiy. *$L^2$-reducibility and localization for quasiperiodic operators.* *Math. Res. Lett.* **23** (2016), 431-444. S. Jitomirskaya and W. Liu. Universal hierarchical structure of quasi-periodic eigenfuctions. *Ann. of Math.* **187(3)** (2018), 721-776. S. Jitomirskaya and W. Liu. Universal reflective-hierarchical structure of quasiperiodic eigenfunctions and sharp spectral transition in phase. arXiv:1802.00781. S. Jitormiskya and B. Simon. Operators with singular continuous spectrum. III. Almost periodic Schrödinger operators. *Commun. Math. Phys.* **165** (1994), 201-105. A. Klein and A. Figotin. Midgap defect modes in dielectric and acoustic media. *SIAM. J. Appl. Math.* **58** (1998), 1748-1773. S. Klein. Anderson localization for the discrete one-dimensional quasi-periodic Schrödinger operator with potential defined by a Gevrey-class function. *J. Funct. Anal.* **218** (2005), 255-292.\n\nH. Kunz and B. Souillard. Sur le spectre des op$\\acute{e}$rateurs aux diff$\\acute{e}$rences finies al$\\acute{e}$atoires. *Commun. Math. Phys.* **78** (1980/81), 201-246. Q. Niu, D.J. Thouless and. Y.S. Wu. Quantized Hall conductance as a topological invariant. *Phys.Rev. B.* **31** (1985), 3372-3377.\n\nD. Osadchy and J.E. Avron. Hofstadter butterfly as quantum phase diagram. *J. Math Phys.* **42** (2001), 5665-5671. Ya. G. Sinai. Anderson localization for one-dimensional difference Schrödinger operator with quasi-periodic potential. *J. Stat. Phys.* **46** (1987), 861-909. Y. Wang and Z. Zhang. Uniform positivity and continuity of Lyapunov exponents for a class of $C^2$ quasiperiodic Schrödinger cocycles. *J. Funct. Anal.* **268** (2015), 2525-2585. Y. Wang and Z. Zhang. Cantor spectrum for a class of $C^2$ quasiperiodic Schrödinger operators. *Int. Math. Res. Not.* **8** (2017), 2300-2336. L.-S. Young. Lyapunov exponent fir some quasi-periodic cocycles. *Ergodic Theory Dynam. Systems* **17** (1997), 483-504.\n\n</div>\n\n[^1]: Pure point spectrum with exponentially decaying eigenfunctions\n\n[^2]: Anderson localization for almost every phase.\n\n[^3]: Fröhlich-Spencer-Wittwer requires the potential to be even.\n\n[^4]: Operator <a href=\"#1.1\" data-reference-type=\"eqref\" data-reference=\"1.1\">[1.1]</a> with $v(\\theta)=2\\cos2\\pi\\theta$.\n\n[^5]: In , Anderson localization was proved for almost every phase without an arithmetic description.\n\n[^6]: the pure point piece of the spectral measure\n\n[^7]: We say $u(n)$ is normalized if $\\sum_n|u(n)|^2=1$.\n\n[^8]: $T_{-m}$ is a translation defined by $T_{-m}u(n):=u(n+m)$.",
     "labels": [],
-    "refs": [],
+    "refs": [
+      "1.1"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Acknowledgement"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L341-342::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L1-11::s0",
+        "direction": "reference"
+      }
+    ]
   }
 ]

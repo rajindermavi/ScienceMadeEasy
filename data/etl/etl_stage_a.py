@@ -113,77 +113,111 @@ def download_pdf(result, out_path: Path, sleep: float = 0.2) -> Path | None:
 
 
 def download_latex(base_id: str, sanitized_id: str, version: str) -> Path | None:
+    """Fetch the LaTeX source archive for an arXiv paper and unpack it."""
+
     tar_path = Path(config.TAR_DIR) / f"{sanitized_id}.tar"
     tar_path.parent.mkdir(parents=True, exist_ok=True)
-
-    header_name = ""
-    if tar_path.exists():
-        pass
-    else:
-        candidate_ids = [f"{base_id}{version}"]
-        if "/" in base_id:
-            candidate_ids.append(base_id)
-
-        for candidate in candidate_ids:
-            response = requests.get(ARXIV_EPRINT.format(id=candidate), stream=True, allow_redirects=True, timeout=30)
-            if response.status_code == 200:
-                header_name = response.headers.get("content-disposition", "")
-                save_stream(response, tar_path)
-                break
-        else:
-            print(f"error on {base_id}{version}")
-            return None
 
     extract_dir = Path(config.TAR_EXTRACT_DIR) / sanitized_id
     extract_dir.mkdir(parents=True, exist_ok=True)
 
+    header_name = _ensure_source_archive(base_id, version, tar_path)
+    if header_name is None:
+        return None
+
+    archive_root = extract_dir.resolve()
     if tarfile.is_tarfile(tar_path):
-
-        with tarfile.open(tar_path, mode="r:*") as tf:
-            for member in tf.getmembers():
-                target = (extract_dir / member.name).resolve()
-                if not target.is_relative_to(extract_dir.resolve()):
-                    continue
-                tf.extract(member, path=extract_dir)
-
+        _extract_tar_archive(tar_path, archive_root)
     elif is_gzip_file(tar_path):
-        with gzip.open(tar_path, "rb") as gz:
-            match = re.search(r'filename="?([^";]+)"?', header_name)
-            if match and match.group(1):
-                inner_name = match.group(1)
-            else:
-                inner_name = f"{sanitized_id}.tex"
-            if inner_name.endswith(".gz"):
-                inner_name = inner_name[:-3]
-            if not inner_name.lower().endswith(".tex"):
-                inner_name = f"{inner_name}.tex"
-            target = (extract_dir / Path(inner_name).name).resolve()
-            if target.is_relative_to(extract_dir.resolve()):
-                with open(target, "wb") as out:
-                    shutil.copyfileobj(gz, out)
+        _extract_single_gzip(tar_path, archive_root, header_name, sanitized_id)
     else:
-        # Some legacy e-prints ship a single TeX file (no archive compression).
-        raw_bytes = tar_path.read_bytes()
-        if b"\x00" in raw_bytes:
-            print(f"[warn] {tar_path} is neither a tar archive nor plain text")
-            return None
-        try:
-            raw_text = raw_bytes.decode("utf-8")
-        except UnicodeDecodeError:
-            raw_text = raw_bytes.decode("latin-1")
-
-        match = re.search(r'filename="?([^";]+)"?', header_name)
-        inner_name = match.group(1) if match and match.group(1) else f"{sanitized_id}.tex"
-        if not inner_name.lower().endswith(".tex"):
-            inner_name = f"{inner_name}.tex"
-        inner_path = (extract_dir / Path(inner_name).name).resolve()
-        if not inner_path.is_relative_to(extract_dir.resolve()):
-            print(f"[warn] refusing to write outside extract dir for {tar_path}")
-            return None
-        inner_path.parent.mkdir(parents=True, exist_ok=True)
-        inner_path.write_text(raw_text, encoding="utf-8")
+        _write_plain_tex(tar_path, archive_root, header_name, sanitized_id)
 
     return extract_dir
+
+
+def _ensure_source_archive(base_id: str, version: str, tar_path: Path) -> str | None:
+    """Download the source archive if needed, returning the response header."""
+
+    if tar_path.exists() and tar_path.stat().st_size > 0:
+        return ""
+
+    if tar_path.exists():
+        tar_path.unlink()
+
+    candidate_ids = [f"{base_id}{version}"]
+    if "/" in base_id:
+        candidate_ids.append(base_id)
+
+    for candidate in candidate_ids:
+        url = ARXIV_EPRINT.format(id=candidate)
+        response = requests.get(url, stream=True, allow_redirects=True, timeout=30)
+        if response.status_code == 200:
+            header = response.headers.get("content-disposition", "")
+            save_stream(response, tar_path)
+            return header or ""
+
+    print(f"error on {base_id}{version}")
+    return None
+
+
+def _safe_resolved_path(base: Path, member_name: str) -> Path | None:
+    """Resolve `member_name` under `base`, guarding against path traversal."""
+
+    target = (base / member_name).resolve()
+    if not target.is_relative_to(base):
+        return None
+    return target
+
+
+def _extract_tar_archive(tar_path: Path, extract_root: Path) -> None:
+    with tarfile.open(tar_path, mode="r:*") as tf:
+        for member in tf.getmembers():
+            target = _safe_resolved_path(extract_root, member.name)
+            if target is None:
+                continue
+            tf.extract(member, path=extract_root)
+
+
+def _infer_inner_name(header_name: str, sanitized_id: str) -> str:
+    match = re.search(r'filename="?([^";]+)"?', header_name or "")
+    inner_name = match.group(1) if match and match.group(1) else f"{sanitized_id}.tex"
+    if inner_name.endswith(".gz"):
+        inner_name = inner_name[:-3]
+    if not inner_name.lower().endswith(".tex"):
+        inner_name = f"{inner_name}.tex"
+    return Path(inner_name).name
+
+
+def _extract_single_gzip(tar_path: Path, extract_root: Path, header_name: str, sanitized_id: str) -> None:
+    target_name = _infer_inner_name(header_name, sanitized_id)
+    target = _safe_resolved_path(extract_root, target_name)
+    if target is None:
+        return
+
+    with gzip.open(tar_path, "rb") as gz, open(target, "wb") as out:
+        shutil.copyfileobj(gz, out)
+
+
+def _write_plain_tex(tar_path: Path, extract_root: Path, header_name: str, sanitized_id: str) -> None:
+    raw_bytes = tar_path.read_bytes()
+    if b"\x00" in raw_bytes:
+        print(f"[warn] {tar_path} is neither a tar archive nor plain text")
+        return
+
+    try:
+        raw_text = raw_bytes.decode("utf-8")
+    except UnicodeDecodeError:
+        raw_text = raw_bytes.decode("latin-1")
+
+    target_name = _infer_inner_name(header_name, sanitized_id)
+    target = _safe_resolved_path(extract_root, target_name)
+    if target is None:
+        print(f"[warn] refusing to write outside extract dir for {tar_path}")
+        return
+
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(raw_text, encoding="utf-8")
 
 
 def get_citations(arxiv_id: str) -> int:

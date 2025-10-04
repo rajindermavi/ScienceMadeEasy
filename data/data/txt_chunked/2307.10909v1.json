@@ -1,0 +1,1075 @@
+[
+  {
+    "id": "2307.10909v1::L7-126::c0",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 7,
+    "end_line": 126,
+    "text": "calc,matrix,fadings,fit,math,arrows.meta\nlambdaprime1\nsqrt(1-pow(#1,2))\n\nlyapexp2\nacos(pow(#1,2) * ((1+lambdaprime(#2))/(lambdaprime(#1)*#2)-(lambdaprime(#1)*#2)/(1+lambdaprime(#2)))/4)\n\ntheoremTheorem[section]\nlemma[theorem]Lemma\nprop[theorem]Proposition\ncoro[theorem]Corollary\nconj[theorem]Conjecture\nclaimClaim[theorem]\n\ndefinition\nremark[theorem]Remark\ndefinition[theorem]Definition\n\nequationsection\n\nsupp\n*s-lim\nIPR\narcsinh\n\nsubsection2\n.5.7.5\n\ncompat=1.18\n\n[CMV matrices with Mobility Edges]Exact Mobility Edges for almost-periodic CMV matrices\nvia Gauge Symmetries\n\n[C. Cedzich]Christopher Cedzich\nmailto:cedzich@hhu.decedzich@hhu.de\nQuantum Technology Group, Heinrich Heine Universitat Dusseldorf, Universitatsstr. 1, 40225 Dusseldorf, Germany\n\n[J. Fillman]Jake Fillman\nmailto:fillman@txstate.edufillman@txstate.edu\nDepartment of Mathematics, Texas State University, San Marcos, TX 78666, USA\n\n[L. Li]Long Li\nmailto:ll106@rice.edulongli@rice.edu\nDepartment of Mathematics, Rice University, Houston, TX 77005, USA\n\n[D. C. Ong]Darren C. Ong\nmailto:darrenong@xmu.edu.mydarrenong@xmu.edu.my\nDepartment of Mathematics, Xiamen University Malaysia, Jalan Sunsuria, Bandar Sunsuria, 43900 Selangor, Malaysia\n\n[Q. Zhou]Qi Zhou\nmailto:qizhou@nankai.edu.cnqizhou@nankai.edu.cn\nChern Institute of Mathematics and LPMC, Nankai University, Tianjin 300071, China\n\nquantum walks, mobility edges, CMV matrices, gauge symmetry, Anderson localization",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L129-139::c1",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L129-139::c1",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 129,
+    "end_line": 139,
+    "text": "quantum walks, mobility edges, CMV matrices, gauge symmetry, Anderson localization\n\nWe investigate the symmetries of so-called generalized extended CMV matrices. It is well-documented that problems involving reflection symmetries of standard extended CMV matrices can be subtle. We show how to deal with this in an elegant fashion by passing to the class of generalized extended CMV matrices via explicit diagonal unitaries in the spirit of Cantero-Grunbaum-Moral-Velazquez.\nAs an application of these ideas, we construct an explicit family of almost-periodic CMV matrices, which we call the mosaic unitary almost-Mathieu operator, and prove the occurrence of exact mobility edges. That is, we show the existence of energies that separate spectral regions with absolutely continuous and pure point spectrum and exactly calculate them.\n\nIntroduction",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L7-126::c0",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L141-141::c2",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L141-141::c2",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 141,
+    "end_line": 141,
+    "text": "Introduction\n\nCantero-Moral-Velazquez (CMV) matrices which arise in the study of orthogonal polynomials on the unit circle (OPUC), play a fundamental role in the spectral theory of unitary operators, analogous to the role played by Jacobi matrices and discrete Schrodinger operators in the theory of self-adjoint operators. For background, we direct the reader to the monographs and references therein. CMV matrices also play an important role in mathematical physics due to their connections with important models, notably, with quantum walks in one spatial dimension. Quantum walks, which function as quantum-mechanical analogs of classical random walks, are fundamental models in spectral theory and modern mathematical physics. Due to the fast spreading rate of quantum walks compared to classical random walks, they have shown promise in quantum algorithms and quantum computing. Additionally, they provide an excellent set of test cases to study discrete-time quantum dynamics and model topological phases. Quantum walks also represent a rich collection of objects on which one can study the interplay between spectral theory and discrete-time quantum dynamics.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L129-139::c1",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L143-143::c3",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L143-143::c3",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 143,
+    "end_line": 143,
+    "text": "Cantero-Moral-Velazquez (CMV) matrices which arise in the study of orthogonal polynomials on the unit circle (OPUC), play a fundamental role in the spectral theory of unitary operators, analogous to the role played by Jacobi matrices and discrete Schrodinger operators in the theory of self-adjoint operators. For background, we direct the reader to the monographs and references therein. CMV matrices also play an important role in mathematical physics due to their connections with important models, notably, with quantum walks in one spatial dimension. Quantum walks, which function as quantum-mechanical analogs of classical random walks, are fundamental models in spectral theory and modern mathematical physics. Due to the fast spreading rate of quantum walks compared to classical random walks, they have shown promise in quantum algorithms and quantum computing. Additionally, they provide an excellent set of test cases to study discrete-time quantum dynamics and model topological phases. Quantum walks also represent a rich collection of objects on which one can study the interplay between spectral theory and discrete-time quantum dynamics.\n\nThere is a mismatch between the two classes of objects which played a role in the work and which we want to make explicit here. In the self-adjoint setting, the physical objects (discrete Schrodinger operators) comprise a subset of the collection of natural inverse spectral objects (Jacobi matrices); that is to say, every discrete Schrodinger operator is a Jacobi matrix. However, in the unitary setting, the situation is reversed: the inverse spectral objects (CMV matrices) comprise a subset of the physical objects (quantum walks). More precisely, a quantum walk has the form of a CMV matrix as long as the quantum coins have unit determinant and real and positive diagonal entries, which is not always a natural condition to impose on the associated physical system. In the present manuscript, we identify a split-step quantum walk with an operator having the general appearance of an extended CMV matrix with complexified 's; we called these generalized extended CMV matrices (GECMV matrices) in (see also). This additional freedom within the family of GECMV matrices is important; for example, it is what allowed the authors of to make room for important techniques from the quasi-periodic theory including coupling constants, the Herman estimate, Aubry duality, and more. Also, it allowed for the introduction of randomly chosen phases in and the discussion of the density of states, fractional moment estimates and Anderson and dynamical localization in and, respectively.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L141-141::c2",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L145-147::c4",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L145-147::c4",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 145,
+    "end_line": 147,
+    "text": "There is a mismatch between the two classes of objects which played a role in the work and which we want to make explicit here. In the self-adjoint setting, the physical objects (discrete Schrodinger operators) comprise a subset of the collection of natural inverse spectral objects (Jacobi matrices); that is to say, every discrete Schrodinger operator is a Jacobi matrix. However, in the unitary setting, the situation is reversed: the inverse spectral objects (CMV matrices) comprise a subset of the physical objects (quantum walks). More precisely, a quantum walk has the form of a CMV matrix as long as the quantum coins have unit determinant and real and positive diagonal entries, which is not always a natural condition to impose on the associated physical system. In the present manuscript, we identify a split-step quantum walk with an operator having the general appearance of an extended CMV matrix with complexified 's; we called these generalized extended CMV matrices (GECMV matrices) in (see also). This additional freedom within the family of GECMV matrices is important; for example, it is what allowed the authors of to make room for important techniques from the quasi-periodic theory including coupling constants, the Herman estimate, Aubry duality, and more. Also, it allowed for the introduction of randomly chosen phases in and the discussion of the density of states, fractional moment estimates and Anderson and dynamical localization in and, respectively.\n\nThis mismatch between the physical and spectral objects has serious consequences: while the spectral theory of extended CMV matrices is well-developed with many useful tools such as subordinacy theory, Kotani theory, Avila's global theory, and others, less is known about the spectral theory of GECMV matrices and quantum walks. Some of these issues were dealt with by the authors of in an ad-hoc manner. Thus, we seek to introduce suitable tools to establish the spectral theory of GECMV matrices in  a more systematic way, which is one motivation of our paper.\n\nBuilding on ideas of Cantero-Grunbaum-Moral-Velazquez, we close this gap by showing that any GECMV matrix can be transformed to a standard CMV matrix by a diagonal gauge. Moreover, there is a crucial point here: in the case of coins with unit determinant, we show that one can do this without altering the Verblunsky coefficients. The ability to fix Verblunsky coefficients and vary other parameters within a family of GECMV matrices is important from the dynamical systems perspective, since, if the Verblunsky coefficients are dynamically defined over suitable base dynamics (e.g. a torus translation), then we can produce isospectral GECMV matrices that also fiber over the same base dynamics.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L143-143::c3",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L149-149::c5",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L149-149::c5",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 149,
+    "end_line": 149,
+    "text": "Building on ideas of Cantero-Grunbaum-Moral-Velazquez, we close this gap by showing that any GECMV matrix can be transformed to a standard CMV matrix by a diagonal gauge. Moreover, there is a crucial point here: in the case of coins with unit determinant, we show that one can do this without altering the Verblunsky coefficients. The ability to fix Verblunsky coefficients and vary other parameters within a family of GECMV matrices is important from the dynamical systems perspective, since, if the Verblunsky coefficients are dynamically defined over suitable base dynamics (e.g. a torus translation), then we can produce isospectral GECMV matrices that also fiber over the same base dynamics.\n\nLet us explain one way that we get some additional mileage out of the variation of the phases, beyond just showing that generalized CMV matrices are equivalent to \"standard\" CMV matrices. A technique that often plays a crucial role in the study of discrete Schrodinger operators is the presence and use of suitable reflection symmetries. These symmetries are well-documented and manifest in a variety of ways, such as the symplectic symmetry of the associated transfer matrix cocycle. Indeed, these symmetries play a key role in, for instance, the study of localization with fixed frequency. On the other hand, it is known that techniques centering on reflection symmetries of CMV matrices are more delicate, which makes it difficult, if not impossible, to study the mentioned localization phenomena strictly in this class of operators. However, in the class of GECMV matrices, one can work directly with operators having purely imaginary -values, which enjoy a particularly simple reflection symmetry. This observation and its application to models of interest seems to be new, as well, and holds promise for studying other aspects of quasi-periodic CMV matrices. Thus, we use the gauge freedom to pass to a GECMV matrix, reveal the hidden symmetry, and then use the gauge freedom again to deduce associated spectral consequences for the initial operator.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L145-147::c4",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L151-157::c6",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L151-157::c6",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 151,
+    "end_line": 157,
+    "text": "Let us explain one way that we get some additional mileage out of the variation of the phases, beyond just showing that generalized CMV matrices are equivalent to \"standard\" CMV matrices. A technique that often plays a crucial role in the study of discrete Schrodinger operators is the presence and use of suitable reflection symmetries. These symmetries are well-documented and manifest in a variety of ways, such as the symplectic symmetry of the associated transfer matrix cocycle. Indeed, these symmetries play a key role in, for instance, the study of localization with fixed frequency. On the other hand, it is known that techniques centering on reflection symmetries of CMV matrices are more delicate, which makes it difficult, if not impossible, to study the mentioned localization phenomena strictly in this class of operators. However, in the class of GECMV matrices, one can work directly with operators having purely imaginary -values, which enjoy a particularly simple reflection symmetry. This observation and its application to models of interest seems to be new, as well, and holds promise for studying other aspects of quasi-periodic CMV matrices. Thus, we use the gauge freedom to pass to a GECMV matrix, reveal the hidden symmetry, and then use the gauge freedom again to deduce associated spectral consequences for the initial operator.\n\nAnother motivation comes from two important topics in spectral theory: mobility edges and localization with fixed frequency. One of the most notable phenomena in spectral theory is the spectral phase transition between absolutely continuous and pure point spectral types as one varies a parameter within a given system. A significant instance of this phase transition occurs when several spectral types coexist simultaneously for the same operator, that is, the phase transition happens in the energy. On account of the RAGE theorem, the quantum dynamics in the pure point part of the spectrum is localized whereas the dynamics in the absolutely continuous part of the spectrum exhibits transport in a suitable sense. Thus, one refers to an energy separating pure point and absolutely continuous spectral regimes as a mobility edge. Proving the existence of a mobility edge for multidimensional random operators remains a serious open problem in spectral theory and mathematical physics (compare). One of the most important families in which spectral phase transitions have been observed is the almost-Mathieu operator\n*\nwhere  for . The almost-Mathieu operator is known to exhibit phase transitions as the relevant parameters (coupling constant, frequency and phase) are varied. Furthermore, the mosaic almost-Mathieu operator and the \"generalized\" André-Aubry model display exact mobility edges.\nSpectral phase transitions have been observed lately also in the unitary almost-Mathieu operator (UAMO), which is defined as the GECMV matrix with Verblunsky coefficients\n*\nwhere  and .\nHowever, it is unknown whether there exist  GECMV matrices and extended CMV matrices which have exact mobility edges.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L149-149::c5",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L160-160::c7",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L160-160::c7",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 160,
+    "end_line": 160,
+    "text": "Another motivation comes from two important topics in spectral theory: mobility edges and localization with fixed frequency. One of the most notable phenomena in spectral theory is the spectral phase transition between absolutely continuous and pure point spectral types as one varies a parameter within a given system. A significant instance of this phase transition occurs when several spectral types coexist simultaneously for the same operator, that is, the phase transition happens in the energy. On account of the RAGE theorem, the quantum dynamics in the pure point part of the spectrum is localized whereas the dynamics in the absolutely continuous part of the spectrum exhibits transport in a suitable sense. Thus, one refers to an energy separating pure point and absolutely continuous spectral regimes as a mobility edge. Proving the existence of a mobility edge for multidimensional random operators remains a serious open problem in spectral theory and mathematical physics (compare). One of the most important families in which spectral phase transitions have been observed is the almost-Mathieu operator\n*\nwhere  for . The almost-Mathieu operator is known to exhibit phase transitions as the relevant parameters (coupling constant, frequency and phase) are varied. Furthermore, the mosaic almost-Mathieu operator and the \"generalized\" André-Aubry model display exact mobility edges.\nSpectral phase transitions have been observed lately also in the unitary almost-Mathieu operator (UAMO), which is defined as the GECMV matrix with Verblunsky coefficients\n*\nwhere  and .\nHowever, it is unknown whether there exist  GECMV matrices and extended CMV matrices which have exact mobility edges.\n\nSpecifically, to establish the presence of mobility edges for extended CMV matrices, the key issue is to obtain Anderson localization for fixed frequency, since establishing the presence of purely absolutely continuous spectrum is well-developed for quasi-periodic extended CMV matrices.  We should point out that in the Schrodinger case, Anderson localization for fixed frequency is quite an important issue in establishing the Ten Martini Problem, the universal  hierarchical structure of eigenfunctions and the sharp arithmetic phase transition. In the quasi-periodic extended CMV setting and in the positive Lyapunov exponent regime, Anderson localization with fixed phase is given by Damanik-Wang (in the same spirit as in Bourgain-Goldstein). However, it is still a major challenge to establish Anderson localization for fixed Diophantine frequency for general almost-periodic extended CMV matrices.(See, however, for a result in the case of specific  generalized extended CMV.) Our main results give a profitable step forward and a new set of tools in this regard.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L151-157::c6",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L164-166::c8",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L164-166::c8",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 164,
+    "end_line": 166,
+    "text": "Specifically, to establish the presence of mobility edges for extended CMV matrices, the key issue is to obtain Anderson localization for fixed frequency, since establishing the presence of purely absolutely continuous spectrum is well-developed for quasi-periodic extended CMV matrices.  We should point out that in the Schrodinger case, Anderson localization for fixed frequency is quite an important issue in establishing the Ten Martini Problem, the universal  hierarchical structure of eigenfunctions and the sharp arithmetic phase transition. In the quasi-periodic extended CMV setting and in the positive Lyapunov exponent regime, Anderson localization with fixed phase is given by Damanik-Wang (in the same spirit as in Bourgain-Goldstein). However, it is still a major challenge to establish Anderson localization for fixed Diophantine frequency for general almost-periodic extended CMV matrices.(See, however, for a result in the case of specific  generalized extended CMV.) Our main results give a profitable step forward and a new set of tools in this regard.\n\nIn this manuscript, we construct a family of GECMV matrices that is derived from a quantum walk with quasi-periodic coins which are periodically inserted into an otherwise fully transmitting medium. Using the ideas discussed above, we prove an exact mobility edge result in the case in which every other coin is generated by the quasi-periodic sequence, which we call the mosaic UAMO (see Section  for detailed definitions and Section  for the physical background). The idea of potentials taking different values at even and odd sites as in the mosaic UAMO has a natural physical background. For example, it appeared in the study of the classical Su-Schrieffer-Heeger (SSH) model and driven conformal field theory. Recently, the quasi-periodic mosaic model has been experimentally realized to detect exact mobility edges.\n\nThe remainder of the paper is structured as follows: In the next section we introduce the model(s) we consider, that is, the GECMV matrices and the mosaic UAMO as a special case thereof, and state our main results. Section  provides the physical background on the mosaic UAMO model. In Section  we prove the main structural result relating different GECMV matrices and discuss their symmetries. In Section  we classify the cocycles corresponding to the mosaic UAMO and calculate its Lyapunov exponent. In Sections  and  we prove the exact mobility edges for the mosaic UAMO by showing that the spectral type is pure point and absolutely continuous in the super- and subcritical regime, respectively.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L160-160::c7",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L169-180::c9",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L169-180::c9",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 169,
+    "end_line": 180,
+    "text": "The remainder of the paper is structured as follows: In the next section we introduce the model(s) we consider, that is, the GECMV matrices and the mosaic UAMO as a special case thereof, and state our main results. Section  provides the physical background on the mosaic UAMO model. In Section  we prove the main structural result relating different GECMV matrices and discuss their symmetries. In Section  we classify the cocycles corresponding to the mosaic UAMO and calculate its Lyapunov exponent. In Sections  and  we prove the exact mobility edges for the mosaic UAMO by showing that the spectral type is pure point and absolutely continuous in the super- and subcritical regime, respectively.\n\nAcknowledgements  D. C. O. was supported in part by a grant from the Fundamental Research Grant Scheme from the Malaysian Ministry of Education (grant number FRGS/1/2022/TK07/XMU/01/1), a grant from the National Natural Science Foundation of China  (grant number 12201524), and a Xiamen University Malaysia Research Fund (grant number XMUMRF/2023C11/IMAT/0024). C. C. was supported in part by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) under the grant number 441423094. J. F. was supported in part by National Science Foundation grant DMS-2213196 and Simons Foundation Collaboration Grant 711663.  Q. Z. was partially supported by National Key RD Program of China (2020YFA0713300)  NSFC grant (12071232), the Science Fund for Distinguished Young Scholars of Tianjin (No. 19JCJQJC61300) and Nankai Zhide Foundation.\n\nModel and Results\nGeneralized Extended CMV Matrices\n\nConsider the Hilbert space  with the standard basis . On , we consider generalized extended CMV matrices  defined by , where  and  are specified by\n\nwith Verblunsky pairs\n\nIn the definitions of  and , we note that  acts on the subspace . In the standard basis  of , such a GECMV matrix takes the form\n\nwhere we boxed the  matrix element of .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L164-166::c8",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L183-191::c10",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L183-191::c10",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 183,
+    "end_line": 191,
+    "text": "where we boxed the  matrix element of .\n\n\"Generalized\" here means that the 's are allowed to take complex values inside the closed unit disk , in contrast to standard extended CMV matrices as defined in, where the 's merely take real values in . Let us mention that this complexification of extended CMV matrices was originally motivated by physical models. Moreover, this class of operators is motivated by the study of split-step quantum walks whose quantum coins have determinant one; indeed, if one takes such a split step walk and writes down the matrix with respect to the ordered basis\n*\nthen the associated matrix is exactly a GECMV matrix with suitable ; see Section . As discussed in the introduction, this generalization turned out to be essential to the work since the complexification of the  parameters (which was motivated by the choice of magnetic translations for an associated 2D model) was absolutely crucial to make room for the magic of duality, the Herman estimate, and other techniques.\n\nTo study the spectral properties of , one naturally considers the generalized eigenvalue equation  for . Solutions to this equation satisfy the iterative relation\n*\nwhere the transfer matrices  are given by\n\nfor  and . This follows from direct calculations, which are carried out in detail in.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L169-180::c9",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L193-199::c11",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L193-199::c11",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 193,
+    "end_line": 199,
+    "text": "for  and . This follows from direct calculations, which are carried out in detail in.\n\nWe will relate isospectral families of GECMV matrices at two levels: First, we show that any two GECMV matrices with the same 's are unitarily equivalent via a diagonal unitary. Thus, the spectral type and properties of solutions to the eigenvalue equation are independent of the phase of the 's. Second, later in the paper, we show how to relate the transfer matrix cocycle as in eq:GECMV_transmat to the the Szego cocycle. These are also related to the Gesztesy-Zinchenko cocycle via an identity elucidated in, but we will not need that connection here. We give precise definitions of these objects later. We anticipate that these ideas and connections will be useful in other contexts.\n\nAny two GECMV matrices with the same 's are unitarily equivalent, and thus isospectral. More precisely, given a set of Verblunsky coefficients , let . Then, for any two sequences , the GECMVs  and  associated to coefficient sequences  and , respectively, are gauge equivalent, i.e., there exists a diagonal unitary matrix  so that .\n\nVerblunsky's Theorem (also called Favard's Theorem on the circle, compare,) sets up a one-to-one correspondence  between non-trivial probability measures on the unit circle  and . This correspondence does not care about the values of 's. Theorem   shows the isospectral nature of GECMVs associated to the phased 's.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L183-191::c10",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L201-207::c12",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L201-207::c12",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 201,
+    "end_line": 207,
+    "text": "Verblunsky's Theorem (also called Favard's Theorem on the circle, compare,) sets up a one-to-one correspondence  between non-trivial probability measures on the unit circle  and . This correspondence does not care about the values of 's. Theorem   shows the isospectral nature of GECMVs associated to the phased 's.\n\nThis immediately implies that every GECMV matrix can be turned into a standard extended CMV matrix. This requires transforming the 's to nonnegative real numbers, which can be achieved via a diagonal gauge transformation, and thus generalizes the technique in:\nEvery GECMV matrix  is gauge-equivalent to a standard extended CMV matrix. More precisely, for any GECMV matrix  determined by Verblunsky pairs , there is a diagonal unitary operator  such that  is a standard extended CMV matrix with Verblunsky pairs .\n\nThe matrix form of  given in eq:gecmv and the condition eq:verblunsky_pair are essential for the the ability to choose the diagonal conjugation in such a way that the 's remain fixed. As discussed above, this corresponds to split-step walks with unimodular coins. In the more general setting, one is led to operators such that ; see Appendix  for details. Here, one has to be slightly more careful, but the basic idea still works; compare. As a word of warning, however, it is sometimes not possible to choose the gauge in such a manner as to fix the 's in this general setting, and in particular, the base dynamics may no longer be gauge invariant within the class of isospectral GECMV. For instance, the CMV matrix corresponding to the quasi-periodic quantum walk in is not quasi-periodic anymore; instead, its Verblunsky coefficients are generated by the skew-shift.\n\nAs discussed above, one of the pleasant outcomes of this approach is that it enables us to deal with reflection symmetries in a useful way. See Section  for detailed statements, and note that the desired reflection symmetry for the  terms is given by eq.newReflectionProp, which forces one to consider  values outside of . We anticipate that this perspective will lead to useful results in other contexts.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L193-199::c11",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L209-233::c13",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L209-233::c13",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 209,
+    "end_line": 233,
+    "text": "As discussed above, one of the pleasant outcomes of this approach is that it enables us to deal with reflection symmetries in a useful way. See Section  for detailed statements, and note that the desired reflection symmetry for the  terms is given by eq.newReflectionProp, which forces one to consider  values outside of . We anticipate that this perspective will lead to useful results in other contexts.\n\nAlmost-periodic GECMV matrices\n\nOur work is motivated by the study of certain almost-periodic (but not quasi-periodic) quantum walks, which lead to the following GECMV matrices. We will explain the origin of this model in Section .  We here consider a model where all even Verblunsky pairs are constant, every -th odd one is given by a quasi-periodic function, and all others are \"trivial\" from a dynamical perspective. Concretely, let , and , and consider\n\nwhere .\nThe case  corresponds to the unitary almost-Mathieu operator (UAMO) and was studied extensively in.\nFor reasons that will become clear later, we will call GECMV matrices with coefficients as in eq:mosaicVerblunskies the mosaic UAMO (see Section ) and denote them by  or  for short when all parameters are fixed.\n\nBy a well-known argument using minimality of  on  and strong operator approximation, there is a fixed set  such that (compare for a discussion in the case of standard (half-line) CMV matrices and for a proof in the case of discrete Schrodinger operators)\n*\n\nFor physical reasons given in, we call  \"coupling constants\",  the \"frequency\" and  the \"phase\".\nThe arithmetic properties of  play a crucial role in determining spectral properties of the underlying operator. We call  Diophantine if there exist  such that\n\nIn this case, we write . Moreover, we shall denote the set of all Diophantine frequencies by\n\nWe are mostly interested in the simplest non-trivial case  for which eq:mosaicVerblunskieS reduces to\n\nIn order to compactly refer to arcs on the circle , we write  to denote the open arc of  from  to  in the positive (counterclockwise) direction. The following establishes the presence of exact mobility edges for the mosaic UAMO and is one of the main results of this paper:\n\n0.6\n0.7\n0.8",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L201-207::c12",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L238-259::c14",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L238-259::c14",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 238,
+    "end_line": 259,
+    "text": "0.6\n0.7\n0.8\n\nFix  and , satisfying\n\nFor each , define  and  by eq:mosaicVerblunskies and consider the associated GECMV matrix  as in eq:gecmv.\nChoose\nsuch that\n\nThen, for any ,\n[label=(*), ref= (*), itemsep=1ex]\nhas purely absolutely continuous spectrum in\n*\nfor every .\nexhibits Anderson localization in\n*\nfor every  that is non-resonant with respect to  (in particular, for a.e. ).\n\n[itemsep=1ex]\nTo the best of our knowledge, this gives the first explicit example of almost-periodic (GE)CMV matrices/quantum walks enjoying an exact mobility edge.  Part (b) is of particular interest. Recalling Corollary , this gives the first family of almost-periodic extended CMV matrices that has Anderson localization for fixed frequency.\nThe condition on the coupling constant  and  in the statement of the theorem ensures that there is a genuine mobility edge, i.e. that  is well-defined.\nThe reader may consult Figure  for an illustration of the different spectral regions for varying coupling constants, and Figure  for numerical simulation thereof.\nWe compute exactly the Lyapunov exponent on the spectrum (see Theorem  for a detailed statement) and show that the eigenfunctions decay at the Lyapunov rate (see Theorem )",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L209-233::c13",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L262-280::c15",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L262-280::c15",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 262,
+    "end_line": 280,
+    "text": "[itemsep=1ex]\nTo the best of our knowledge, this gives the first explicit example of almost-periodic (GE)CMV matrices/quantum walks enjoying an exact mobility edge.  Part (b) is of particular interest. Recalling Corollary , this gives the first family of almost-periodic extended CMV matrices that has Anderson localization for fixed frequency.\nThe condition on the coupling constant  and  in the statement of the theorem ensures that there is a genuine mobility edge, i.e. that  is well-defined.\nThe reader may consult Figure  for an illustration of the different spectral regions for varying coupling constants, and Figure  for numerical simulation thereof.\nWe compute exactly the Lyapunov exponent on the spectrum (see Theorem  for a detailed statement) and show that the eigenfunctions decay at the Lyapunov rate (see Theorem )\n\nPhysical Motivation: The Mosaic UAMO\nLet us describe the physical model that motivates both our study of GECMV matrices and of mobility edges for the mosaic UAMO, that is, one-dimensional quantum walks of split-step type. These systems are specified by a generalized shift and a coin sequence, which for the mosaic UAMO  alternates between a quasi-periodic coin and  perfectly transmitting coins. The generalized shift as well as the quasi-periodic coin sequences are derived from the unitary almost-Mathieu operator (UAMO) which describes the discrete time evolution of a particle on two-dimensional lattice with perpendicular magnetic field.\n\nLet . On this Hilbert space, we consider a split-step quantum walk  that is given as a product of a conditional shift operator that additionally depends on a coupling constant and a coin operator. To define these operators, let us write the standard basis of  as\n\nwhere  is the standard basis of  and  is the standard basis of .\nWith respect to this basis, we denote the coordinates of an element  as , so that .\n\nThe conditional shift operator with coupling constant  is specified by its action on basis elements as\n*\nand a coin operator  which acts coordinatewise via a sequence of local unitary coins\n*\nthat is, , where . With these definitions, the split-step walk operator  is given by\n\nIdentifying  with  by ordering the basis in eq:base as\nwe may identify the split-step walk  defined in eq:RandWalk with the GECMV matrix  with Verblunsky parameters by setting\n\nUsing this connection, the authors of introduced a new coupling constant in the definition of quasi-periodic coin sequences to create room for the magic of Andre-Aubry duality. More specifically, in the local coins  are generated in a dynamical way as",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L238-259::c14",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L282-297::c16",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L282-297::c16",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 282,
+    "end_line": 297,
+    "text": "Using this connection, the authors of introduced a new coupling constant in the definition of quasi-periodic coin sequences to create room for the magic of Andre-Aubry duality. More specifically, in the local coins  are generated in a dynamical way as\n\nwhere , ,  is the frequency and  is the phase.\nThe constant appearing in the shift in eq:RandWalk will be denoted as  and the shift operator will accordingly be denoted by . The resulting quantum walk  was dubbed the unitary almost-Mathieu oparator (UAMO) in due to the close parallels between this model and the almost-Mathieu operator (AMO).\n\nIn the same spirit, plugging the Verblunsky coefficients from eq:mosaicVerblunskies into GECMV identifies the GECMV matrix  defined in eq:mosaicVerblunskies as a mosaic model derived from the UAMO with local coins determined by\n\nHere,  is a fixed integer that determines the \"step size\": every -th coin is the same as in the UAMO, and all others are replaced by perfectly transmitting coins. More precisely, we set  at lattice sites .\n\nThe resulting walk  with coin operator  corresponding to the sequence of local coins defined in eq:mosaic_coins  will be denoted . This model can be thought of as a unitary analogue of the almost-periodic mosaic model studied in, that is, the discrete Schrodinger operator    with onsite potential\n*\n\nIn view of the connection between the AMO and the UAMO, we thus call  the mosaic unitary almost-Mathieu operator, or the mosaic UAMO for short.\n\nIn contrast to the UAMO, the coin sequence for the mosaic UAMO is almost-periodic, but no longer quasi-periodic. However, we can still recover quasi-periodicity in the study of the eigenvalue equation by passing to steps of length , an idea which has been fruitfully applied in several similar models, see, e.g. .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L262-280::c15",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L299-324::c17",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L299-324::c17",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 299,
+    "end_line": 324,
+    "text": "In contrast to the UAMO, the coin sequence for the mosaic UAMO is almost-periodic, but no longer quasi-periodic. However, we can still recover quasi-periodicity in the study of the eigenvalue equation by passing to steps of length , an idea which has been fruitfully applied in several similar models, see, e.g. .\n\nLet us make a few comments.\n[itemsep=1ex]\nWith the single coupling constant of the AMO being replaced by two independent coupling constants for the UAMO, one might be tempted to consider another mosaic model by setting  at every -th site. However, as noted in the quantity that most closely parallels the coupling constant of the AMO is\n*\nIn view of this, the only way to make  vanish within the admitted parameter ranges  is to set , which motivates the definition of the mosaic model that we use here.\nSetting  in eq:mosaic_coins one recovers exactly the UAMO from.\n\nTheorem  thus shows that the mosaic UAMO exhibits an explicit mobility edge for suitable choices of the parameters. As said before, this gives a new type of phase transition in the world of one-dimensional quasi-periodic quantum walk operators: a phase transition in the spectral parameter.\n\nGeneralized Extended CMV Matrices\n\nGauge transformation\n\nWe first prove that the phases of the 's that define a GECMV matrix can be freely changed via a diagonal gauge transformation:\n\n[Proof of Theorem .]\nFirst, note that to prove the statement it is sufficient to show that any GECMV matrix  with Verblunsky coefficients  can be transformed by a diagonal unitary into a \"reference\" GECMV matrix  with the same 's. This readily implies the statement by combining two such steps: if  and  are two such GECMV matrices with  and , respectively, then .\nA particularly natural choice for  turns out to be the standard extended CMV matrix with Verblunksy coefficients  and .\n\nLet  be a GECMV matrix  as in eq:gecmv that is specified by the Verblunsky coefficients  and . We show that  is unitarily equivalent to  via a diagonal unitary operator.\nFix  and define the entries of  recursively by\n\nWe then define the new Verblunsky coefficients",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L282-297::c16",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L326-354::c18",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L326-354::c18",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 326,
+    "end_line": 354,
+    "text": "We then define the new Verblunsky coefficients\n\nand denote by  the extended CMV matrix corresponding to  and . To conclude, we will  demonstrate\n\nFrom the recursion relation eq:lambdas we get\n*\nWe then calculate that for all integers ,\n\nThis suffices to prove eq:ERealified.\n\nThe statement of the theorem follows from eq:alpha_realified by noting that we may choose  and  so that  which yields .\n\nReflection Symmetries\tConsider the GECMV matrix in eq:gecmv with Verblunsky pairs . For , let  be the unitary involution on  that reflects through the center , that is, .\nIn particular,  and .\nNotice that  maps  to itself.\n\n[Reflection]\tWe call  the reflection of  with center . One can check that  is obtained from  by exchanging the positions of the elements that are symmetric with respect to the center of the square\n*\nwhen  is even, and\n*\nwhen  is odd.\n\n[itemsep=1ex]\nWe restrict ourselves to centers from . This is mostly for convenience so that the reflected GECMV matrix is again a GECMV matrix. If one reflects through an integer center, the reflected matrix is the transpose of a GECMV matrix.\nIn the quantum walks language of Section , if  is even, the center of reflection lies \"between\" the cells at  and , whereas if  is odd, the center of reflection lies \"within\" the cell at .\n\nA direct consequence of this definition is that  and  have the same spectrum with similar statements for suitable finite cutoffs. In particular, for the finite restriction (or \"cutoff\" GECMV matrix)  one has for the reflection  with center  that",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L299-324::c17",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L357-377::c19",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L357-377::c19",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 357,
+    "end_line": 377,
+    "text": "A direct consequence of this definition is that  and  have the same spectrum with similar statements for suitable finite cutoffs. In particular, for the finite restriction (or \"cutoff\" GECMV matrix)  one has for the reflection  with center  that\n\nLet us see how one can take advantage of some of these ideas in the setting of GECMV matrices generated by sampling functions with suitable symmetries. Concretely, assume that  is a family of GECMV matrices that depends on the variable , and let us furthermore assume that the coefficients possess the following reflection property with respect to the reflection center :\n\nThen, the corresponding GECMV matrix  satisfies  where  denotes the bilateral shift on . That is, reflecting with center  is equivalent to shifting by  up to a sign-change of .\n\nThis yields the following result:\nLet  be a GECMV matrix with Verblunsky coefficients satisfying eq.newReflectionProp for . Then   is an even function of .\n\nAs a consequence of the reflection pairs above, eq.determinant and eq.newReflectionProp we have\n\nWe shall apply this result in Section  to prove localization of the mosaic UAMO in the supercritical regime.\nWe remark that when applied to the UAMO from, Proposition  provides an alternate proof for.\n\nCocycle Dynamics and Lyapunov Exponents\nA crucial ingredient in the study of the properties of a GECMV matrix is the classification of cocycle behavior via Avila's global theory of one-frequency analytic cocycles.\nWe first review this theory and then show the equivalence between transfer matrix cocycles as defined in eq:GECMV_transmat and Szego cocycles. This will provide the necessary tools to calculate the Lyapunov exponent on the spectrum.\n\nReview of Avila's global theory\n\nGiven  irrational and  continuous, consider the skew product",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L326-354::c18",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L379-417::c20",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L379-417::c20",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 379,
+    "end_line": 417,
+    "text": "Given  irrational and  continuous, consider the skew product\n\nThe iterates of this quasi-periodic cocycle are given by  where for\n*\nThe Lyapunov exponent of the cocycle  is defined by\n*\nIf  is analytic with an analytic extension to a strip , for  we may consider the complexified cocycle  and define  as the Lyapunov exponent associated with the complexified cocycle map , that is,\n\nUnder the analyticity assumption, we define the acceleration for  by\n*\nand abbreviate\n*\n\nA central property of the acceleration that we shall need further below is its quantization, that is,\n*\nfor all . Moreover, if  for all , we have  for all .\n\nA -cocycle  is called uniformly hyperbolic if for some constants  one has\n\nuniformly in  and . From the spectral perspective, uniform hyperbolicity corresponds to the resolvent set of the underlying operator in the sense that a given spectral parameter  belongs to the resolvent set if and only if the associated transfer matrix cocycle is uniformly hyperbolic; see also.\n\nAssume that  is a  cocycle that is not uniformly hyperbolic. Then   is said to be\n[itemsep=1ex]\nSupercritical, if .\nSubcritical, if there exists  such that  for all  with\nCritical; otherwise.\n\nCalculations of Lyapunov exponent\nIn this section, we compute the Lyapunov exponent of the mosaic UAMO model. Let us first introduce the basic notations and definitions:\nFor the mosaic UAMO with  and  Verblunsky coefficients given in eq:mosaicVerblunskies, the transfer matrices from eq:GECMV_transmat take the form:\n\nand\n\nThese transfer matrices naturally define a transfer matrix cocycle of the form above: define  by\n\nwhere we adopted the notation\n\nWith this definition, one readily checks that\n\nWe remark that this construction generalizes in a straightforward fashion to .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L357-377::c19",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L419-455::c21",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L419-455::c21",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 419,
+    "end_line": 455,
+    "text": "We remark that this construction generalizes in a straightforward fashion to .\n\nIn order to formulate results for a genuine quasi-periodic cocycle instead of the merely almost-periodic , let us define the two-step cocycle map by\n\nFrom the definitions,  establishes a quasi-periodic cocycle in the sense of eq:qp_cocycle, i.e.,\n*\nFrom the definitions above, the reader can confirm that its iterates are given by\n\nConsequentially, the Lyapunov exponent associated to the mosaic UAMO is defined to be half of the Lyapunov exponent of the quasi-periodic cocycle , that is,\n\nFor , any , , and , the Lyapunov exponent  of the associated mosaic UAMO model is given by\n\nwhere we denote\n*\nMoreover, for any , the cocycle  is\n[label=(*), itemsep=1ex]\nsubcritical  if and only if .\ncritical if and only if .\nsupercritical if and only if .\n\nAccording to Corollary , it suffices to  compute the Lyapunov exponents for the corresponding extended CMV matrix. Although the calculations can be done with the initial cocycle maps , it is more convenient to put the question into  which allows one to directly apply Avila's global theory:\nGiven  and , let  be the transfer matrix cocycle given by eq:GECMV_transmat with  replaced by . Then we have the following:\n\nwhere  is determined by the normalized Szego cocycle maps\n\nand\n\nThis follows from a direct computation.\n\nDue to eq.ConjugatedTransferMatrix, it suffices to consider the four-step combined quasi-periodic cocycle  instead of , where\n\nBy direct calculations, one verifies that",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L379-417::c20",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L458-515::c22",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L458-515::c22",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 458,
+    "end_line": 515,
+    "text": "By direct calculations, one verifies that\n\nWe denote\n*\nNote that the analytic extension of  is  and not . This could affect calculations of the matrix norm, since, for , one can check that  and  need not coincide. To calculate the Lyapunov exponent of the cocycle , we first deal with the normalizing factor in front. By inspection,  is real-analytic on , and has an analytic extension to the strip  given by\n*\nThus, this is the expression whose integral one needs to calculate:\n\nGiven , denote  and . Then\n\nNote that\n*\nwhere\n*\nSolving  gives the four roots\n*\nFor , the only roots of  in  are\n*\nApplying Jensen's formula to , we obtain\n*)\nwhich yields the desired result.\n\nThe case  is similar.\n\nFor  none of the roots of  lie in . Applying Jensen's formula for  gives\n*\nSimilarly, we get for\n*\n\nDefine\n\nIt follows immediately from the above lemma that the contribution of the scalar factors of the cocycle maps to the Lyapunov exponent is given by the following quantity:\n\n[Proof of Theorem ]\nDenote ,\nin view of Lemma , it suffices to show that\n\nWe first complexify the phase by letting . Then, by the definition of Lyapunov exponent and eq:defMz,\n\nFrom this and Lemma , it is easy to check that   admits a holomorphic extension to the strip .\nWe conclude that  and  have the same acceleration whenever , that is,\n\nNow let us calculate the Lyapunov exponent of   as . For large , we have by the definition of  in eq:defMz\n*\nBy continuity of Lyapunov exponent,\n*\nand by quantization of acceleration ,\n\nfor  large enough. The case  can be dealt with in a similar fashion.\n\nOn the other hand,\nby convexity,   for any . Since , one cannot conclude  directly. Nevertheless,\nsince\n*\none may conclude that   for   by Avila's global theory.  We distinguish two cases:",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L419-455::c21",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L519-551::c23",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L519-551::c23",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 519,
+    "end_line": 551,
+    "text": "On the other hand,\nby convexity,   for any . Since , one cannot conclude  directly. Nevertheless,\nsince\n*\none may conclude that   for   by Avila's global theory.  We distinguish two cases:\n\nCase 1:  is subcritical. Assume\nis subcritical in the regime . Let us note in passing that it is unknown whether the subcritical radius  is exactly . From the choice of , we have\n\nCase 2:  is supercritical or critical. From rela1 and the convexity of   it follows that  for , and   for all . This implies that\n*\nfor all , where the case  follows by real-symmetry.\nAs a consequence, by eq:lyap_scalar_contribution and rela, we have\n\nThen lya1 follows from super and sub.\n\nBy Corollary  and,   if and only if   is uniformly hyperbolic. Consequently, by Avila’s global theory, for any ,  the corresponding cocycle   is either supercritical, critical, or subcritical. We thus only need to\nlocate the spectral parameter  which is supercritical or critical.  Then  and   follows immediately from super, and\nfollows from  and  , finally lya1 follows from  super and sub.\n\nIf  for given coupling constants  we define\n\nA direct consequence of Theorem  is the following\nSuppose that . Then\n\nfor , and\nfor .\n\nLocalization in the Supercritical Regime\tIn this section, we prove that for Diophantine frequency  and non-resonant phase , the generalized eigenfunctions of the mosaic UAMO decay exponentially for .\nThis implies Anderson localization by a standard argument and thus proves Theorem .\nAs discussed above, the mosaic UAMO can be transformed into a standard extended CMV matrix by a suitable gauge, so our main result also gives an interesting example (Anderson localization for fixed frequency) in the theory of OPUC.\nMoreover, we calculate the exact decay rate of the eigenfunctions.\n\nLocalization",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L458-515::c22",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L553-562::c24",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L553-562::c24",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 553,
+    "end_line": 562,
+    "text": "Localization\n\nWe would like to utilize the evenness of the characteristic polynomial of the mosaic UAMO as a function of the phase . However, inspecting Proposition  we find that the Verblunsky coefficients of the mosaic UAMO given in eq:mosaicVerblunskies do not possess the required symmetry property eq.newReflectionProp.\nSince we want to nevertheless utilize Proposition  we again leverage the gauge transformation in Theorem , yet, this time in the reverse direction: it turns out that by rotating each  with even index by  anti-clockwise reveals the hidden symmetry. As a consequence, we establish the evenness of suitable characteristic polynomials, a key ingredient in the proof of localization in, in our proof of localization for (GE)CMV matrices.\n\nRotating the 's with even index as prescribed above, we introduce the following \"complexified twin\" of the mosaic UAMO model:\n\nWe denote the corresponding GECMV matrix by  and similarly its building blocks by  and  such that .\nComparing eq:mosaicVerblunskies with eq.blockDef3, we emphasize that the tiny change  paves the way for applying the reflection symmetry argument introduced in Section :\nOne easily verifies that after the coordinate shift  the coefficients eq.blockDef3 satisfy eq.newReflectionProp for , since the only non-constant terms have index  for which indeed\n\nand",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L519-551::c23",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L565-584::c25",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L565-584::c25",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 565,
+    "end_line": 584,
+    "text": "and\n\nWe will also need the associated \"standard\" extended CMV matrix   with every complex  replaced by its absolute value, and we shall write .\nThe role of  is to connect existing theory for extended CMV matrices to our setting.\nThe following observation is an elementary consequence of Theorem :\nLet  be the GECMV matrices with coefficients eq:mosaicVerblunskies and eq.blockDef3, respectively, and let  be the associated extended CMV matrix. Then\n[label=(*), itemsep=1ex]\n,  and  are mutually unitarily equivalent.\nThe Lyapunov exponents of the cocycles corresponding to ,  and  are identical.\nThe spectra and spectral measures of ,  and  are identical.\nThe dynamics of the solutions to the eigenvalue equations of ,  and  are identical.\n\nRecall the definition of Diophantine numbers in eq:diophsigmagamma and eq:dioph.\n[-resonant]\nGiven , , ,  is called resonant with respect to  if\n*\nholds for infinitely many . Otherwise,  is called non-resonant with respect to .\nIt is known that the collection of all Diophantine frequencies has full Lebesgue measure in , and the set of -resonant phases is a dense -subset with zero Lebesgue measure in  (see). Note that  and  depend on  for fixed . We will use  to make such dependence explicit, yet, we sometimes suppress them from the notations to make things look concise.\nThe main purpose of this subsection is to prove the following theorem:\nLet  be the associated extended CMV matrix of eq.blockDef3, and assume that  is fixed and . If  is non-resonant with respect to ,  then  displays Anderson localization.\n\nOnce we have this,  Theorem  (b) follows as a consequence of Proposition  (4). To prove Theorem , it suffices to show that every generalized eigenfunction of  decays exponentially.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L553-562::c24",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L586-616::c26",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L586-616::c26",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 586,
+    "end_line": 616,
+    "text": "Once we have this,  Theorem  (b) follows as a consequence of Proposition  (4). To prove Theorem , it suffices to show that every generalized eigenfunction of  decays exponentially.\n\nWe say that a nonzero sequence  is a generalized eigenfunction of the  extended CMV matrix  with corresponding generalized eigenvalue  if\n*\nand there exist constants  such that , i.e.,  is polynomially bounded.\n\nSchnol's theorem asserts that the generalized eigenvalues sit in the spectrum and that they comprise spectrally almost every  in the spectrum. To formulate this precisely, one needs the following notion. It is well-known and not hard to check that for any ,  is a cyclic set for any CMV matrix with nonvanishing 's. The reader may find a detailed proof for the CMV case in, or in the more general matrix-valued version in. Thus, the spectral measure  given by\n\nserves as a universal spectral measure of  in the sense that every other spectral measure of  is absolutely continuous with respect to .\nThen one has that\t[Schnol's Theorem]\tLet  be an extended CMV matrix,   the set of its generalized eigenvalues, and  its spectrum. Then we have the following:\n\nTo deduce the desired localization statements, the key is to prove the exponential decay of the Green's functions. Let us first introduce some necessary notations. Let  be a finite interval and . Given , define  as follows:\n\nLet  be the GECMV matrix with Verblunsky coefficients  and let  be the projection onto .\nDefine . One can verify that  is unitary when . We will also use  and  to denote the finite restrictions where the boundary conditions are chosen in  on one side of  and open on the other. The finite unitary restrictions  and  are defined in the same way.\n\nLet\n*\nand define\n\nfor the GECMV matrix .\nFor the case , we just take .\nAnalogously, define\n\nfor the CMV matrix . Then we have the following invariance property:\n\nLet  be as above. Then\n*",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L565-584::c25",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L618-663::c27",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L618-663::c27",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 618,
+    "end_line": 663,
+    "text": "Let  be as above. Then\n*\n\nThis follows from two observations: (1) By Theorem , there exists a unitary diagonal gauge transformation  such that . (2)  and  are both diagonal matrices, such that .\nTherefore,\n*\nMultiplying with  on both sides concludes the proof .\n\nWe emphasize that this equivalence is crucial since it connects the current setting of GECMV matrices to the existing theory for extended CMV matrices in that it allows us to transfer statements about  to .\nMore concretely, our main application of Lemma  will be to write down the exact relations eq.GreenToTransfer and eq.GreentoTransfer1 below for GECMV matrices.\n\nThis is important, since  possesses a reflection symmetry which will allow us to conclude the evenness of . We henceforth do not distinguish explicitly eq.Polynomial from eq.Polynomial1, and in slight abuse of notation just write  .\n\nRecalling  given in eq.scalarFactorCont, we need the following estimates:\nFor any , there exists  such that for any\n*\n\nSince  and  by eq:mosaicVerblunskies, and  is ergodic in , by the Ergodic Theorem and eq:lyap_scalar_contribution,\n*\nFor any , let  be the integer such that  with  Then\n*\nTherefore, we have\n*\nThus for any , there exists  such that for any\n*\n\nConsider the equation . Since , it follows equivalently that .\nDefine the finite-volume Green's function as\n\nand denote its matrix elements for  by . Then, by we have for ,\n\nwhere the values at the endpoints of  are given by\n*\nand\n*\nBy and the correction note in,\n\nThe next step is to connect the Green's function to the Szego transfer matrix.\nLet  be the Szego cocycle map of the extended CMV matrix  which has all 's real.\nBy and Lemma  we have that\n\nand\n\nIt follows that\n\nFix ,  and .\nWe say that  is -regular if",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L586-616::c26",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L665-687::c28",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L665-687::c28",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 665,
+    "end_line": 687,
+    "text": "Fix ,  and .\nWe say that  is -regular if\n\nthere exists  containing  such that , that is, there is an interval of size  that contains ,\n, , that is, the distance of  to the boundary of  is at least ,\n, , that is, the Green's function decays exponentially with a rate at least .\nOtherwise, we call  -singular.\nIt is well known that if  is a non-zero generalized eigenfunction, then any   with  is -singular for sufficiently large . Thus, we usually assume , and replace  with  otherwise.\n\nTo prove the exponential decay of the generalized eigenfunction corresponding to the generalized eigenvalue , we need the following lemma which guarantees that there exists a  for which  is close to being -regular:\nSuppose that ,  is non-resonant w.r.t.  and . Then for any  and  large enough, there exists , such that  is -regular.\nWe prove this lemma at the end of this section. In the following, we will take  for simplicity, and we will fix  and  and suppress them from the notation. Assuming that Lemma  holds, we can prove Theorem .\n\n[Proof of Theorem ]\tBy Schnol's theorem (Theorem ), it is enough to prove that any generalized eigenfunction decays exponentially.\nFor , since  is regular by Lemma , we have\n*\nSince  for any , we obtain the following estimate from eq.solGreen:\n*\nSince  for , we have\n*\nsuch that in both cases we have the exponential decay estimate\n*\nFrom this the result follows.\n\nIt remains to to prove Lemma , which we do in a sequence of steps.\nMore concretely, we need to establish the exponential upper bound on the absolute value of the Green's function  in the definition of regularity (Definition ). To this end, we consult eq.GreenToPolynomial and bound the numerator from above and the denominator from below.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L618-663::c27",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L689-733::c29",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L689-733::c29",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 689,
+    "end_line": 733,
+    "text": "It remains to to prove Lemma , which we do in a sequence of steps.\nMore concretely, we need to establish the exponential upper bound on the absolute value of the Green's function  in the definition of regularity (Definition ). To this end, we consult eq.GreenToPolynomial and bound the numerator from above and the denominator from below.\n\nDefine  as the four-step quasi-periodic cocycle of  in the same fashion as in eq.combinedSzego. It is readily verified that for ,\nwe have , where  is the Lyapunov exponent given in Theorem .\nFor any , , there exists  such that\n*\nif .\n\nBy eq:twoblockAzdef, eq.ConjugatedTransferMatrix and eq.combinedSzego, we have\n*\nTherefore\n*\nSince  are four combined steps of  this implies that\nThen the statement follows from Furman's well-known result and eq.PolynomialUpperBound.\n\nRecall that  in eq.Polynomial and eq.Polynomial1 depends on the phase parameter . In the following, we will write  to make this dependence explicit.\nNow let us give the lower bound on the denominator in eq.GreenToPolynomial by following the idea of. To facilitate the proof, we restrict to the concrete interval  which is the only interval we shall require:\nFor any , , there exists  such that\n*\nfor any .\n\nLet  with  given by eq.Zego. Direct computation gives\n*\nwhere we recall from eq:cstwopi the notation  and we set . Writing  and , where ,  then  can be written as\n*\nLet  be given by eq.scalarFactorCont and\nlet\n*\nThen, by eq.GreenToTransfer,\n\nThe last inequality is due to subharmonicity.\nBy eq.blockDef3,\n*\nand\n*\nwhere  is the normalized diagonalization matrix (), and\n*\nDirect computations give the right side of eq.midCal as a linear combination of the log of\nwith non-zero constant coefficients (independent of ). Thus, for any  and  large enough, we have\n*\nLet us denote\n*\nto facilitate the statement of the results. In deriving the following statement, we want to use the reflection symmetry. Since we want to use the results of Section , we fix the boundary conditions  for eq.newReflectionProp to hold.\nThe key ingredient of proving localization is the following lemma:\nis a polynomial of  of degree at most .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L665-687::c28",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L736-777::c30",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L736-777::c30",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 736,
+    "end_line": 777,
+    "text": "The last inequality is due to subharmonicity.\nBy eq.blockDef3,\n*\nand\n*\nwhere  is the normalized diagonalization matrix (), and\n*\nDirect computations give the right side of eq.midCal as a linear combination of the log of\nwith non-zero constant coefficients (independent of ). Thus, for any  and  large enough, we have\n*\nLet us denote\n*\nto facilitate the statement of the results. In deriving the following statement, we want to use the reflection symmetry. Since we want to use the results of Section , we fix the boundary conditions  for eq.newReflectionProp to hold.\nThe key ingredient of proving localization is the following lemma:\nis a polynomial of  of degree at most .\n\nFirst note that  is a polynomial in  and  of degree at most .\nThis is a direct consequence of eq.Polynomial1, Lemma , eq.GreenToTransfer and our specific model eq.blockDef3.\n\nNext, we show that  is an even function of : Recall the reflection symmetry of the  and  established in eq:alpha_i_sym and eq:rho_i_sym, respectively.\nThen, evenness in  follows from applying Proposition  to . The change of variable  concludes the proof.\n\nBy Lemma , there exists a polynomial  of degree  such that .\nFor any positive integer  and , define\n*\nDefine\n\nThen, similar to, the following holds:\nAssume that  is -singular for some  and . Then for each  with\n*\nwe have , where  is given by eq.newExponent, provided  is sufficiently large.\n\nLet us take  with , ,  from Lemma , Lemma , Lemma  and Lemma , respectively. Then, by Lemma , for any ,\n\nSince  is -singular, then without loss of generality, for any  such that  with , we  assume\n*\nSuppose that there exists some  with\n*\nsuch that , that is, . Let . Then  by Lemma . By eq.GreenToPolynomial and eq.PupperB, we conclude that\n*\nBy Lemma , if , we have\n*\nPutting the above inequalities together yields\n*\nwhenever we take .  This contradicts the -singularity of .\n\nWe can write a  polynomial  of degree  in the following Lagrange interpolation form\n\n[-uniform]\nThe set  is called -uniform if and only if\n\nThen the following result holds:\nLet ,  and . If , then  can not be uniform for any sufficiently large  such that .\n\nIf  is -uniform, then as a result of langrange, we have the following estimates:\nCompare this with Lemma  and Lemma :",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L689-733::c29",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L779-800::c31",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L779-800::c31",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 779,
+    "end_line": 800,
+    "text": "If  is -uniform, then as a result of langrange, we have the following estimates:\nCompare this with Lemma  and Lemma :\n\nwhere  is arbitrarily small and  sufficiently large. Then eq.Pestimate and eq.PlowerBound lead to a contradiction if we pick .\nLet  be the sequence of continued fraction approximants of , let  be large enough, let  be such that  and let  be the largest positive integer with . Define\n*\nNote that  is empty, the elements of  are all distinct, and the number of points in  is . Actually, the elements of  are also distinct.  Moreover the following  property holds:\nFor any , the set\nis -uniform for  sufficiently large.\nThe proof is standard, and we thus leave it to Appendix . Once we have this, we are  ready to prove Lemma :\n[Proof of Lemma ]\nLet  and let  be sufficiently large such that . By Lemma  and Lemma ,  cannot be inside the set  . Since  is -singular by the assumption ,  must be -regular, since if  would be -2singular, the clusters of points given by Lemma  with respect to  and  would cover  and . This is a contradiction. Notice also that , so the proof can be completed.\n\nDecay Rate of Eigenfunctions\n\nIn this section we prove that the eigenfunctions in the supercritical case decay at the Lyapunov rate:\nFor Diophantine , non-resonant , and every eigenvalue  of\nas in Theorem , the corresponding  eigenfunction  satisfies\n\nSince every GECMV matrix is gauge equivalent to an extended CMV matrix  via a diagonal unitary transformation (see Theorem ), we can use the normalized Szego cocycle maps  from eq:szego_normalized to compute the decay rate.\nBy eq.ConjugatedTransferMatrix and Theorem , the corresponding Lyapunov exponent is .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L736-777::c30",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L802-813::c32",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L802-813::c32",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 802,
+    "end_line": 813,
+    "text": "Since every GECMV matrix is gauge equivalent to an extended CMV matrix  via a diagonal unitary transformation (see Theorem ), we can use the normalized Szego cocycle maps  from eq:szego_normalized to compute the decay rate.\nBy eq.ConjugatedTransferMatrix and Theorem , the corresponding Lyapunov exponent is .\n\nLet  be the solution to the eigenvalue equation of the extended CMV matrix\n*\nIt is a general result that\n*\nNote that the factor  on the right-hand side is due to our specific way of defining the Lyapunov exponent. Thus we only need to give an upper bound to prove Theorem . Such an upper bound follows from the block-resolvent expansion of, with the power law growth of the scales counteracting the combinatorial factor. However, in the present context this expansion is more involved.\n\nTo be more specific, let  and  be such that any  with  is - regular. To make the expansion clear, we use  to track the times or levels of expansions, and  to denote the index of endpoints of the interval in the definition of -regularity (Definition ). Let  stand for the -th endpoint of -th level of expansion counting from left to right, let  be the interval containing the -regular  given in the definition of regularity, and  be either  or the interior neighbor of  that belongs to the interval which takes  as one of its endpoints.\n\nDenote  the Green's function defined in eq.GreenFunction. It is immediate to check that if  is -regular, then it is contained in an interval  with , where  or  standing for the left or right boundary, respectively.\nLet , we start from a  large enough and  let  be such that   and . Since  is -regular, there exists  containing   and satisfies . Therefore,  is -regular, and there exists  containing . We continue this expansion until either some  or the number of the  terms in the product in eq.blockResolExp below exceeds .\n\nThis yields the following expansion for the generalized eigenfunction in eq.solGreen",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L779-800::c31",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L815-830::c33",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L815-830::c33",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 815,
+    "end_line": 830,
+    "text": "This yields the following expansion for the generalized eigenfunction in eq.solGreen\n\nwhere  or , and each  can be specified by either  or . By our design, we have  for  and either  and , or .\nNote that in eq.blockResolExp, the  in each  is indeed , which stands for either the left or right end point of the interval containing , and needs not to be uniform for all .\nIf  and , we have\n*\nIf , then , for , which yields the estimate\n*\nIn both cases, we obtain\n\nfor any  and  sufficiently large. The total number of terms in the sum can be bounded by . This together with eq.prodUpB gives\n*\nSince  can be arbitrarily small, the upper bound is therefore obtained.\n\nAbsolutely Continuous Spectrum in the Subcritical Regime\nAccording to, the spectral measure of an extended CMV matrix with quasi-periodic Verblunsky coefficients is purely absolutely continuous continuous in the subcritical region.\nA key ingredient of is the analysis of the Szego cocycle of the extended CMV matrix. Namely, if  one has relatively \"good\" control on the growth of these cocycle, then the spectral measure can likewise be controlled. However, this argument does not apply directly to the mosaic UAMO with coefficients eq:mosaicVerblunskies for two reasons: Firstly, the doubly-infinite matrix corresponding to the mosaic UAMO is not a standard extended CMV matrix, since the 's appearing therein are complex whenever , see eq:mosaicVerblunskies. Secondly, the coefficients in eq:mosaicVerblunskies are not quasi-periodic but merely almost-periodic.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L802-813::c32",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L832-848::c34",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L832-848::c34",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 832,
+    "end_line": 848,
+    "text": "Absolutely Continuous Spectrum in the Subcritical Regime\nAccording to, the spectral measure of an extended CMV matrix with quasi-periodic Verblunsky coefficients is purely absolutely continuous continuous in the subcritical region.\nA key ingredient of is the analysis of the Szego cocycle of the extended CMV matrix. Namely, if  one has relatively \"good\" control on the growth of these cocycle, then the spectral measure can likewise be controlled. However, this argument does not apply directly to the mosaic UAMO with coefficients eq:mosaicVerblunskies for two reasons: Firstly, the doubly-infinite matrix corresponding to the mosaic UAMO is not a standard extended CMV matrix, since the 's appearing therein are complex whenever , see eq:mosaicVerblunskies. Secondly, the coefficients in eq:mosaicVerblunskies are not quasi-periodic but merely almost-periodic.\n\nFortunately, we can do away with the first obstacle by appealing to the gauge transform  in Theorem . The second obstacle can be resolved by considering the four-step combined Szego cocycle , which is quasi-periodic. Theorem  guarantees that  is subcritical for  whenever , and that the behavior of the solution to the eigenvalue equation of the mosaic UAMO is the same as that of the corresponding extended CMV matrix with real 's when the phase  is complexified.\n\nWe need the following global-to-local reduction lemma to turn the subcritical cocycles into perturbations of constant ones.\nLet  be given, and for any function  defined on , let .\nLet , and let  be the set of spectral parameters for which the cocycle  is subcritical. Then there exists  such that for any , and for any , there exist , , ,  such that\n\nwith  for some constant .\n\nThe proof depends on Avila's solution of almost-reducible conjecture, that is, if the cocycle is subcritical then it is almost-reducible.  With the compactness argument from, the key observation here is that one can choose  and  to be independent of ; see also.\n\nCombining this lemma with the main results of, we can conclude that the spectral measure is purely absolutely continuous on , that is for  and  with  as defined in eq:t_0.\nWe give the sketch of proving purely absolutely continuous spectrum for the reader's convenience, and direct the reader to for a more detailed proof.\n\nIn order to facilitate our statement, we need to introduce the prescriptions of notations that will be needed:\nFollowing Lemma , let  be sufficiently small and define the sequences\n*\nas each standard KAM argument does. Let  be the fibered rotation number of the cocycle. Then we have the following result as an application of to the near constant cocycle :",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L815-830::c33",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L851-885::c35",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L851-885::c35",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 851,
+    "end_line": 885,
+    "text": "In order to facilitate our statement, we need to introduce the prescriptions of notations that will be needed:\nFollowing Lemma , let  be sufficiently small and define the sequences\n*\nas each standard KAM argument does. Let  be the fibered rotation number of the cocycle. Then we have the following result as an application of to the near constant cocycle :\n\nAssume that  and . Let ,  with\n*\nwhere  and  is a numerical constant. Then for any , there exists  such that\n*\nwhere  and  satisfies\n\nMore precisely, we have\n\n(a)\nIf   for some  with   , we have the following precise expression:\n*\nwhere , , and , .\n\n(b)  Moreover, there always exist unitary matrices  such that\n\nwhere , with estimates , and\n\nCurious readers may consult for the proof. Note that the cocycle\nrepresents a four-steps combined iteration. A simple observation is that\n*\nLet  be the transfer matrix of the normalized Szego cocycle maps. It follows immediately that there exists a positive constant  such that\n\nThis enables us to translate the estimates for   (and thus   by Lemma ) given by Theorem  to  the corresponding estimates of the transfer matrix of Szego cocycle maps of any length.\n\nFor any  with , define\nand\n\nwith  from e.lambdamjdef.\nLet\n*\nbe the Caratheodory function of a measure , then following the CMV version of the Damanik-Killip-Lenz maximum modulus principle argument of Munger-Ong, gives\n\nfor any  and  small. Together with the Jitomirskaya-Last inequality of the CMV version (see Section 10.8 of), we have",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L832-848::c34",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L889-930::c36",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L889-930::c36",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 889,
+    "end_line": 930,
+    "text": "for any  and  small. Together with the Jitomirskaya-Last inequality of the CMV version (see Section 10.8 of), we have\n\nAs a well known result, let , then  is absolutely continuous. Therefore, absolute continuity of  follows from .\nLet  denote the collection of the spectral parameters for which  is reducible, since  is the set of spectral parameters for which the cocycle is reducible to the parabolic, thus at most countable and supports no point spectrum, . Therefore it suffices to show . To this end, we need the observation that by our construction of  in e.lambdamjdef and e.Kjdef, we have . That is, irreducible spectral parameters of  belong to infinitely many 's. On each , combining estimates of Theorem  and eq.measControl, the following inequality holds\n*\nwhich implies that . By the Borel-Cantelli Lemma, , which finishes the proof.\n\nProof of Lemma\n\nWe first need the following result of:\nLet , , and  be the denominator of continued fraction approximants of .\nLet  be such that\n*\nthen for some absolute constant ,\n\nLet , our goal is to obtain the estimate: *\nfor any .\nDenote\n*\nand\n*\nBy a trigonometric identity,\n*\nNote that the sum in  contains  terms, which we can divide it into  groups, each of which contains  terms and then apply Lemma . We have the following:\n\nSimilarly, we can write\n*\n\nSince , for any , we have\n*\nwhich implies that\nSince  is non-resonant with respect to , we have\n\nand since , we also have\n\nBy eq.dioEq1, every  terms in the sum of  may contain at most one extra small term that is bounded from below by eq.dioEq2 and eq.dioEq3.\n\nTherefore, we have the following estimate for :\n\nCombining eq.estS1 with eq.estS2 gives\n*",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L851-885::c35",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L934-986::c37",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L934-986::c37",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 934,
+    "end_line": 986,
+    "text": "Combining eq.estS1 with eq.estS2 gives\n*\n\nS(uper)GECMV matrices\nTheorem  generalizes to Verblunsky pairs whose vector 2-norm is a phase in the following way: Consider the GECMV matrix  as defined in Section , but with the -matrices specified by Verblunsky pairs  satisfying the relaxed condition\n*\nThen\n\nis isospectral to a standard extended CMV matrix.\n\nThe proof goes along the same lines as that of Theorem :\nFix  and define the entries of  recursively by\n\nwhere .\nWe then define the new Verblunsky coefficients\n\nand denote by  the extended CMV matrix corresponding to  and . To conclude, we will  demonstrate\n\nFrom the recursion relation eq:super_lambdas we get\n*\nWe then calculate that for all integers ,\n*\nThis suffices to prove eq:ERealifiedGEN.\n\nNotice that if the phases  are nontrivial, then eq:newalphasSGECMV1 and eq:newalphasSGECMV2 show that one cannot in general hope to preserve that 's under the gauge transform here; compare Remark .\n\nabbrvArXiv\n\nA. Ahlbrecht, C. Cedzich, R. Matjeschk, V. B. Scholz, A. H. Werner, and R. F.\nWerner.\nAsymptotic behavior of quantum walks with spatio-temporal coin\nfluctuations.\nQuantum Inf. Process., 11(5):1219-1249, 2012.\nhttps://arxiv.org/abs/1201.4839arXiv:1201.4839.\n\nA. Ahlbrecht, V. B. Scholz, and A. H. Werner.\nDisordered quantum walks in one lattice dimension.\nJ. Math. Phys., 52(10):102201, 2011.\nhttps://arxiv.org/abs/1101.2298arXiv:1101.2298.\n\nA. Ahlbrecht, H. Vogts, A. H. Werner, and R. F. Werner.\nAsymptotic evolution of quantum walks with random coin.\nJ. Math. Phys., 52(4):042201, 36, 2011.\nhttps://arxiv.org/abs/1009.2019arXiv:1009.2019.\n\nA. Ambainis.\nQuantum walk algorithm for element distinctness.\nSIAM J. Comput., 37(1):210-239, 2007.\nhttps://arxiv.org/abs/quant-ph/0311001  arXiv:quant-ph/0311001.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L889-930::c36",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L988-1042::c38",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L988-1042::c38",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 988,
+    "end_line": 1042,
+    "text": "A. Ambainis.\nQuantum walk algorithm for element distinctness.\nSIAM J. Comput., 37(1):210-239, 2007.\nhttps://arxiv.org/abs/quant-ph/0311001  arXiv:quant-ph/0311001.\n\nW. O. Amrein and V. Georgescu.\nOn the characterization of bound states and scattering states in\nquantum mechanics.\nHelv. Phys. Acta, 46:635-658, 1973/74.\n\nS. Apers, A. Gilyén, and S. Jeffery.\nA unified framework of quantum walk search.\n38th International Symposium on Theoretical Aspects of Computer\nScience (STACS 2021), 187:6:1-6:13, 2021.\nhttps://arxiv.org/abs/1912.04233  arXiv:1912.04233.\n\nS. Apers, A. Sarlette, and F. Ticozzi.\nSimulation of quantum walks and fast mixing with classical\nprocesses.\nPhys. Rev. A, 98(3):032115, 2018.\nhttps://arxiv.org/abs/1712.01609  arXiv:1712.01609.\n\nJ. K. Asboth and H. Obuse.\nBulk-boundary correspondence for chiral symmetric quantum walks.\nPhys. Rev. B, 88(12):121406, 2013.\nhttps://arxiv.org/abs/1303.1199arXiv:1303.1199.\n\nJ. Asch and A. Joye.\nLower bounds on the localisation length of balanced random\nquantum walks.\nLett. Math. Phys., 109(9):2133-2155, 2019.\nhttps://arxiv.org/abs/1812.05842  arXiv:1812.05842.\n\nA. Avila.\nThe absolutely continuous spectrum of the almost Mathieu operator.\n\nA. Avila.\nLyapunov exponents, KAM and the spectral dichotomy for\none-frequency Schrodinger operators.\nIn prepation.\n\nA. Avila.\nGlobal theory of one-frequency Schrodinger operators.\nActa Math., 215(1):1-54, 2015.\nhttps://arxiv.org/abs/0905.3902arXiv:0905.3902.\n\nA. Avila and S. Jitomirskaya.\nThe ten Martini problem.\nAnn. Math., 170(1):303-342, 2009.\nhttps://arxiv.org/abs/math/0503363  arXiv:math/0503363.\n\nA. Avila and S. Jitomirskaya.\nAlmost localization and almost reducibility.\nJ. Eur. Math. Soc., 12(1):93-131, 2010.\nhttps://arxiv.org/abs/0805.1761arXiv:0805.1761.\n\nA. Avila, S. Jitomirskaya, and Q. Zhou.\nSecond phase transition line.\nMath. Ann., 370(1-2):271-285, 2018.\nhttps://arxiv.org/abs/1608.01799  arXiv:1608.01799.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L934-986::c37",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L1044-1086::c39",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L1044-1086::c39",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 1044,
+    "end_line": 1086,
+    "text": "A. Avila, S. Jitomirskaya, and Q. Zhou.\nSecond phase transition line.\nMath. Ann., 370(1-2):271-285, 2018.\nhttps://arxiv.org/abs/1608.01799  arXiv:1608.01799.\n\nA. Avila, J. You, and Q. Zhou.\nSharp phase transitions for the almost Mathieu operator.\nDuke Math. J., 166(14):2697-2718, 2017.\nhttps://arxiv.org/abs/1512.03124  arXiv:1512.03124.\n\nR. J. Bell and P. Dean.\nAtomic vibrations in vitreous silica.\nDiscuss. Faraday Soc., 50(0):55-61, 1970.\n\nG. Blatter and D. A. Browne.\nZener tunneling and localization in small conducting rings.\nPhys. Rev. B, 37(8):3856-3880, 1988.\n\nJ. Bourgain and M. Goldstein.\nOn nonperturbative localization with quasi-periodic potential.\nAnn. Math., 152(3):835-879, 2000.\nhttps://arxiv.org/abs/math-ph/0011053  arXiv:math-ph/0011053.\n\nJ. Bourgain and S. Jitomirskaya.\nContinuity of the Lyapunov exponent for quasiperiodic operators\nwith analytic potential.\nJ. Statist. Phys, 5:1203-1218, 2002.\nhttps://arxiv.org/abs/math-ph/0110040  arXiv:math-ph/0110040.\n\nO. Bourget, J. S. Howland, and A. Joye.\nSpectral analysis of unitary band matrices.\nCommun. Math. Phys., 234(2):191-227, 2003.\nhttps://arxiv.org/abs/math-ph/0204016  arXiv:math-ph/0204016.\n\nC. Bourne.\nIndex theory of chiral unitaries and split-step quantum walks, 2022.\nhttps://arxiv.org/abs/2211.10601  arXiv:2211.10601.\n\nM. J. Cantero, L. Moral, F. A. Grunbaum, and L. Velazquez.\nMatrix-valued Szego polynomials and quantum random walks.\nCommun. Pure Appl. Math., 63(4):464-507, 2010.\nhttps://arxiv.org/abs/0901.2244arXiv:0901.2244.\n\nM. J. Cantero, L. Moral, and L. Velazquez.\nFive-diagonal matrices and zeros of orthogonal polynomials on the\nunit circle.\nLinear Algebra Appl., 362:29-56, 2003.\nhttps://arxiv.org/abs/math/0204300  arXiv:math/0204300.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L988-1042::c38",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L1088-1135::c40",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L1088-1135::c40",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 1088,
+    "end_line": 1135,
+    "text": "M. J. Cantero, L. Moral, and L. Velazquez.\nFive-diagonal matrices and zeros of orthogonal polynomials on the\nunit circle.\nLinear Algebra Appl., 362:29-56, 2003.\nhttps://arxiv.org/abs/math/0204300  arXiv:math/0204300.\n\nC. Cedzich, , T. Geib, C. Stahl, L. Velazquez, A. H. Werner, and R. F.\nWerner.\nComplete homotopy invariants for translation invariant symmetric\nquantum walks on a chain.\nQuantum, 2:95, 2018.\nhttps://arxiv.org/abs/1804.04520  arXiv:1804.04520.\n\nC. Cedzich, J. Fillman, T. Geib, and A. H. Werner.\nSingular continuous Cantor spectrum for magnetic quantum walks.\nLett. Math. Phys., 110:1141-1158, 2020.\nhttps://arxiv.org/abs/1908.09924  arXiv:1908.09924.\n\nC. Cedzich, J. Fillman, and D. C. Ong.\nAlmost everything about the unitary almost-Mathieu operator.\nCommun. Math. Phys., 2023.\nhttps://arxiv.org/abs/2112.03216  arXiv:2112.03216.\n\nC. Cedzich, T. Geib, F. Grunbaum, L. Velazquez, A. Werner, and R. Werner.\nQuantum walks: Schur functions meet symmetry protected topological\nphases.\nCommun. Math. Phys., 389:31-74, 2022.\nhttps://arxiv.org/abs/1903.07494  arXiv:1903.07494.\n\nC. Cedzich, T. Geib, F. A. Grunbaum, C. Stahl, L. Velazquez, A. H. Werner,\nand R. F. Werner.\nThe topological classification of one-dimensional symmetric quantum\nwalks.\nAnn. Henri Poincaré, 19(2):325-383, 2018.\nhttps://arxiv.org/abs/1611.04439  arXiv:1611.04439.\n\nC. Cedzich, T. Geib, A. H. Werner, and R. F. Werner.\nQuantum walks in external gauge fields.\nJ. Math. Phys., 60(1):012107, 2019.\nhttps://arxiv.org/abs/1808.10850  arXiv:1808.10850.\n\nC. Cedzich, T. Rybar, A. H. Werner, A. Alberti, M. Genske, and R. F. Werner.\nPropagation of quantum walks in electric fields.\nPhys. Rev. Lett., 111:160601, 2013.\nhttps://arxiv.org/abs/1302.2081arXiv:1302.2081.\n\nW. Craig and B. Simon.\nSubharmonicity of the Lyaponov index.\nDuke Math. J., 50(2), 1983.\n\nD. Damanik and J. Fillman.\nOne-Dimensional Ergodic Schrodinger Operators: I. General\nTheory, volume 221.\nAmerican Mathematical Society, 2022.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L1044-1086::c39",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L1137-1181::c41",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L1137-1181::c41",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 1137,
+    "end_line": 1181,
+    "text": "D. Damanik and J. Fillman.\nOne-Dimensional Ergodic Schrodinger Operators: I. General\nTheory, volume 221.\nAmerican Mathematical Society, 2022.\n\nD. Damanik, J. Fillman, and P. Gohlke.\nSpectral characteristics of Schrödinger operators generated by\nproduct systems.\nJ. Spectr. Theory, 2023.\nhttps://arxiv.org/abs/2203.11739  arXiv:2203.11739.\n\nD. Damanik, J. Fillman, M. Lukic, and W. Yessen.\nCharacterizations of uniform hyperbolicity and spectra of CMV\nmatrices.\nDiscrete Contin. Dyn. Syst. Ser. S, 9(4):1009-1023, 2016.\nhttps://arxiv.org/abs/1409.6259arXiv:1409.6259.\n\nD. Damanik, J. Fillman, and D. C. Ong.\nSpreading estimates for quantum walks on the integer lattice via\npower-law bounds on transfer matrices.\nJ. Math. Pures Appl., 105(3):293-341, 2016.\nhttps://arxiv.org/abs/1505.07292  arXiv:1505.07292.\n\nD. Damanik, R. Killip, and D. Lenz.\nUniform spectral properties of one-dimensional quasicrystals. III.\n-continuity.\nCommun. Math. Phys., 212(1):191-204, 2000.\nhttps://arxiv.org/abs/math-ph/9910017  arXiv:math-ph/9910017.\n\nV. Enss.\nAsymptotic completeness for quantum mechanical potential scattering.\nI. Short range potentials.\nCommun. Math. Phys., 61(3):285-291, 1978.\n\nA. Furman.\nOn the multiplicative ergodic theorem for the uniquely ergodic\nsystems.\nAnn. Inst. Henri Poincare, 33(6):797-815, 1997.\n\nJ. Gao, I. M. Khaymovich, X.-W. Wang, Z.-S. Xu, A. Iovan, G. Krishna, A. V.\nBalatsky, V. Zwiller, and A. W. Elshaari.\nExperimental probe of multi-mobility edges in quasiperiodic mosaic\nlattices, 2023.\nhttps://arxiv.org/abs/2306.10829  arXiv:2306.10829.\n\nF. Gesztesy and M. Zinchenko.\nWeyl-Titchmarsh theory for CMV operators associated with\northogonal polynomials on the unit circle.\nJ. Approx. Theory, 139(1-2):172-213, 2006.\nhttps://arxiv.org/abs/math/0501210  arXiv:math/0501210.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L1088-1135::c40",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L1183-1230::c42",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L1183-1230::c42",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 1183,
+    "end_line": 1230,
+    "text": "F. Gesztesy and M. Zinchenko.\nWeyl-Titchmarsh theory for CMV operators associated with\northogonal polynomials on the unit circle.\nJ. Approx. Theory, 139(1-2):172-213, 2006.\nhttps://arxiv.org/abs/math/0501210  arXiv:math/0501210.\n\nG. González, R. Trivedi, and J. I. Cirac.\nQuantum algorithms for powering stable Hermitian matrices.\nPhys. Rev. A, 103(6):062420, 2021.\nhttps://arxiv.org/abs/2103.08329  arXiv:2103.08329.\n\nG. Grimmett, S. Janson, and P. F. Scudo.\nWeak limits for quantum random walks.\nPhys. Rev. E, 69(2):026119, 2004.\nhttps://arxiv.org/abs/quant-ph/0309135  arXiv:quant-ph/0309135.\n\nE. Hamza, A. Joye, and G. Stolz.\nLocalization for Random Unitary Operators.\nLett. Math Phys., 75(3):255-272, 2006.\nhttps://arxiv.org/abs/math-ph/0504075  arXiv:math-ph/0504075.\n\nE. Hamza, A. Joye, and G. Stolz.\nDynamical localization for unitary Anderson models.\nMath. Phys. Anal. Geom., 12(4):381, 2009.\nhttps://arxiv.org/abs/0903.0028arXiv:0903.0028.\n\nA. J. Heeger, S. Kivelson, J. R. Schrieffer, and W. P. Su.\nSolitons in conducting polymers.\nRev. Mod. Phys., 60:781-850, 1988.\n\nS. Jeffery and S. Zur.\nMultidimensional quantum walks, with application to\n-distinctness, 2022.\nhttps://arxiv.org/abs/2208.13492  arXiv:2208.13492.\n\nS. Jitomirskaya.\nMetal-insulator transition for the almost Mathieu operator.\nAnn. Math., 150(3):1159-1175, 1999.\nhttps://arxiv.org/abs/math/9911265  arXiv:math/9911265.\n\nS. Jitomirskaya.\nOn point spectrum of critical almost Mathieu operators.\nAdv. Math., 392:107997, 2021.\n\nS. Jitomirskaya and W. Liu.\nUniversal hierarchical structure of quasiperiodic eigenfunctions.\nAnn. Math., 187(3):721-776, 2018.\nhttps://arxiv.org/abs/1609.08664  arXiv:1609.08664.\n\nS. Jitomirskaya and W. Liu.\nUniversal reflective-hierarchical structure of quasiperiodic\neigenfunctions and sharp spectral transition in phase.\nJ. Eur. Math. Soc., 2023.\nhttps://arxiv.org/abs/1802.00781  arXiv:1802.00781.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L1137-1181::c41",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L1232-1278::c43",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L1232-1278::c43",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 1232,
+    "end_line": 1278,
+    "text": "S. Jitomirskaya and W. Liu.\nUniversal reflective-hierarchical structure of quasiperiodic\neigenfunctions and sharp spectral transition in phase.\nJ. Eur. Math. Soc., 2023.\nhttps://arxiv.org/abs/1802.00781  arXiv:1802.00781.\n\nS. Jitomirskaya and C. A. Marx.\nAnalytic quasi-perodic cocycles with singularities and the Lyapunov\nexponent of extended Harper's model.\nCommun. Math. Phys., 316(1):237-267, 2012.\nhttps://arxiv.org/abs/1010.0751arXiv:1010.0751.\n\nS. Jitomirskaya and C. A. Marx.\nErratum to: Analytic quasi-perodic cocycles with singularities and\nthe Lyapunov exponent of extended Harper's model.\nCommun. Math. Phys., 317(1):269-271, 2013.\n\nS. Jitomirskaya and F. Yang.\nPure point spectrum for the Maryland model: A constructive proof.\nErgod. Theor. Dyn. Syst., 41(1):283-294, 2021.\nhttps://arxiv.org/abs/1909.12336  arXiv:1909.12336.\n\nR. A. Johnson.\nExponential dichotomy, rotation number, and linear differential\noperators with bounded coefficients.\nJ. Differ. Equations, 61(1):54-78, 1986.\n\nA. Joye.\nDensity of States and Thouless Formula for Random Unitary\nBand Matrices.\nAnn. Henri Poincaré, 5(2):347-379, 2004.\nhttps://arxiv.org/abs/math-ph/0303047  arXiv:math-ph/0303047.\n\nA. Joye.\nFractional Moment Estimates for Random Unitary Operators.\nLett. Math. Phys., 72(1):51-64, 2005.\nhttps://arxiv.org/abs/math-ph/0411068  arXiv:math-ph/0411068.\n\nA. Joye and M. Merkli.\nDynamical localization of quantum walks in random environments.\nJ. Stat. Phys., 140(6):1-29, 2010.\nhttps://arxiv.org/abs/1004.4130arXiv:1004.4130.\n\nT. Kitagawa, M. S. Rudner, E. Berg, and E. Demler.\nExploring topological phases with quantum walks.\nPhys. Rev. A, 82(3):033429, 2010.\nhttps://arxiv.org/abs/1003.1729arXiv:1003.1729.\n\nH. Kruger.\nOrthogonal polynomials on the unit circle with Verblunsky\ncoefficients defined by the skew-shift.\nInt. Math. Res. Notices, 2013(18):4135-4169, 2013.\nhttps://arxiv.org/abs/1111.4019arXiv:1111.4019.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L1183-1230::c42",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L1280-1328::c44",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L1280-1328::c44",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 1280,
+    "end_line": 1328,
+    "text": "H. Kruger.\nOrthogonal polynomials on the unit circle with Verblunsky\ncoefficients defined by the skew-shift.\nInt. Math. Res. Notices, 2013(18):4135-4169, 2013.\nhttps://arxiv.org/abs/1111.4019arXiv:1111.4019.\n\nM. Leguil, J. You, Z. Zhao, and Q. Zhou.\nAsymptotics of spectral gaps of quasi-periodic Schrodinger\noperators.\nhttps://arxiv.org/abs/1712.04700  arXiv:1712.04700.\n\nL. Li, D. Damanik, and Q. Zhou.\nAbsolutely continuous spectrum for CMV matrices with small\nquasi-periodic Verblunsky coefficients.\nTrans. Amer. Math. Soc., 375(9):6093-6125, 2022.\nhttps://arxiv.org/abs/2102.00586  arXiv:2102.00586.\n\nN. B. Lovett, S. Cooper, M. Everitt, M. Trevers, and V. Kendon.\nUniversal quantum computation using the discrete-time quantum walk.\nPhys. Rev. A, 81(4):042330, 2010.\nhttps://arxiv.org/abs/0910.1024arXiv:0910.1024.\n\nH. Morioka and E. Segawa.\nDetection of edge defects by embedded eigenvalues of quantum walks.\nQuantum Inf. Process., 18(9):1-18, 2019.\nhttps://arxiv.org/abs/1805.11742  arXiv:1805.11742.\n\nP. E. Munger and D. C. Ong.\nThe Holder continuity of spectral measures of an extended CMV\nmatrix.\nJ. Math. Phys., 55(9):093507, 10, 2014.\nhttps://arxiv.org/abs/1301.0501arXiv:1301.0501.\n\nT. Nitsche, T. Geib, C. Stahl, L. Lorz, C. Cedzich, S. Barkhofen, R. F. Werner,\nand C. Silberhorn.\nEigenvalue measurement of topologically protected edge states in\nsplit-step quantum walks.\nNew J. Phys., 21(4):043031, 2019.\nhttps://arxiv.org/abs/1811.09520  arXiv:1811.09520.\n\nR. Portugal.\nQuantum walks and search algorithms.\nSpringer, 2013.\n\nD. Ruelle.\nA remark on bound states in potential-scattering theory.\nNuovo Cimento A, 61:655-662, 1969.\n\nM. Santha.\nQuantum walk based search algorithms.\nIn Theory and Applications of Models of Computation: 5th\nInternational Conference, TAMC 2008, Xi’an, China, April 25-29, 2008.\nProceedings 5, pages 31-46, Berlin, Heidelberg, 2008. Springer Berlin\nHeidelberg.\nhttps://arxiv.org/abs/0808.0059arXiv:0808.0059.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L1232-1278::c43",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L1330-1384::c45",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L1330-1384::c45",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 1330,
+    "end_line": 1384,
+    "text": "M. Santha.\nQuantum walk based search algorithms.\nIn Theory and Applications of Models of Computation: 5th\nInternational Conference, TAMC 2008, Xi’an, China, April 25-29, 2008.\nProceedings 5, pages 31-46, Berlin, Heidelberg, 2008. Springer Berlin\nHeidelberg.\nhttps://arxiv.org/abs/0808.0059arXiv:0808.0059.\n\nN. Shenvi, J. Kempe, and R. B. Whaley.\nA quantum walk search algorithm.\nPhys. Rev. A, 67, 2003.\nhttps://arxiv.org/abs/quant-ph/0210064  arXiv:quant-ph/0210064.\n\nE. E. Shnol'.\nOn the behavior of the eigenfunctions of Schrödinger's equation.\nMat. Sb., 84(3):273-286, 1957.\n\nB. Simon.\nSchrodinger operators in the twenty-first century.\nIn Mathematical physics 2000, pages 283-288. Imp. Coll. Press,\nLondon, 2000.\n\nB. Simon.\nOrthogonal polynomials on the unit circle. Part 1, volume 54\nof American Mathematical Society Colloquium Publications.\nAmerican Mathematical Society, Providence, RI, 2005.\nClassical theory.\n\nB. Simon.\nOrthogonal polynomials on the unit circle. Part 2, volume 54\nof American Mathematical Society Colloquium Publications.\nAmerican Mathematical Society, Providence, RI, 2005.\nSpectral theory.\n\nB. Simon.\nCMV matrices: Five years after.\nJ. Comput. Appl. Math, 208(1):120-154, 2007.\nhttps://arxiv.org/abs/math/0603093  arXiv:math/0603093.\n\nD. J. Thouless.\nElectrons in disordered systems and the theory of localization.\nPhys. Rep., 13(3):93-142, 1974.\n\nS. E. Venegas-Andraca.\nQuantum walks for computer scientists.\nMorgan  Claypool, 2008.\n\nF. Wang and D. Damanik.\nAnderson localization for quasi-periodic CMV matrices and quantum\nwalks.\nJ. Funct. Anal., 276(6):1978-2006, 2019.\nhttps://arxiv.org/abs/1804.00301  arXiv:1804.00301.\n\nY. Wang, X. Xia, J. You, Z. Zheng, and Q. Zhou.\nExact mobility edges for 1D quasiperiodic models.\nCommun. Math. Phys., 2023.\nhttps://arxiv.org/abs/2110.00962  arXiv:2110.00962.\n\nY. Wang, X. Xia, L. Zhang, H. Yao, S. Chen, J. You, Q. Zhou, and X.-J. Liu.\nOne-Dimensional Quasiperiodic Mosaic Lattice with Exact\nMobility Edges.\nPhys. Rev. Lett., 125(19):196604, 2020.\nhttps://arxiv.org/abs/2004.11155  arXiv:2004.11155.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L1280-1328::c44",
+        "direction": "previous"
+      },
+      {
+        "id": "2307.10909v1::L1386-1404::c46",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2307.10909v1::L1386-1404::c46",
+    "file": "data/data/full_text/2307.10909v1.txt",
+    "section_path": "",
+    "start_line": 1386,
+    "end_line": 1404,
+    "text": "Y. Wang, X. Xia, L. Zhang, H. Yao, S. Chen, J. You, Q. Zhou, and X.-J. Liu.\nOne-Dimensional Quasiperiodic Mosaic Lattice with Exact\nMobility Edges.\nPhys. Rev. Lett., 125(19):196604, 2020.\nhttps://arxiv.org/abs/2004.11155  arXiv:2004.11155.\n\nX. Wen, R. Fan, A. Vishwanath, and Y. Gu.\nPeriodically, quasiperiodically, and randomly driven conformal field\ntheories.\nPhys. Rev. Res., 3:023044, 2021.\nhttps://arxiv.org/abs/2006.10072  arXiv:2006.10072.\n\nF. Yang.\nLocalization for magnetic quantum walks, 2022.\nhttps://arxiv.org/abs/2201.05779  arXiv:2201.05779.\n\nZ. Zhang.\nUniform hyperbolicity and its relation with spectral analysis of 1D\ndiscrete Schrodinger operators.\nJ. Spectr. Theory, 10(4):1471-1517, 2020.\nhttps://arxiv.org/abs/1305.4226arXiv:1305.4226.\n\nX. Zhu.\nLocalization for random CMV matrices.\nhttps://arxiv.org/abs/2110.11386  arXiv:2110.11386.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2307.10909v1::L1330-1384::c45",
+        "direction": "previous"
+      }
+    ]
+  }
+]

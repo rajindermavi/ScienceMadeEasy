@@ -1,0 +1,615 @@
+[
+  {
+    "id": "0306382v3::L2-72::c0",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 2,
+    "end_line": 72,
+    "text": "911\nFebruary 20, 2004\n\nand .\nThe Lyapunov exponent of  is defined as\n\nAlso,   is uniformly hyperbolic if there exists\na continuous splitting , and ,\nsuch that for every  we have\n\nSuch splitting is automatically unique and thus invariant; that is,\nand .\nThe set of uniformly hyperbolic cocycles is open in the -topology\n(one allows perturbations both in  and in ).\n\nUniformly hyperbolic cocycles have a positive Lyapunov exponent.\nIf  has positive Lyapunov exponent but is not uniformly\nhyperbolic then it will be called nonuniformly hyperbolic.\n\nWe say that a -cocycle  is -reducible\nif there exists\nsuch that\n\nAlso,   is -reducible modulo  if one can take .(Obviously, reducibility modulo  is a\nstronger notion than plain reducibility, but in some situations one can show\nthat both definitions are equivalent (see Remark 1.5).\nThe advantage of defining reducibility \"modulo \" is to include some\nspecial situations (notably certain uniformly hyperbolic cocycles).)\n\nNow,  satisfies a Diophantine\ncondition , ,  if\n\nLet .  It is well known that\nhas full Lebesgue measure if .\n\nNow,   satisfies a recurrent\nDiophantine condition  if there are\ninfinitely many  such that , where\nis the fractional part of  and\nis the Gauss map .  We let\n.  Notice that\nhas full Lebesgue measure as long as\nhas positive Lebesgue measure (since the Gauss map is\nergodic with respect to the probability measure ).\nIt is possible to show that  has Hausdorff dimension .\n\nGiven , let us consider the Schrodinger cocycle\n\n( is called the potential and  is called the energy).\n\nThere is  fairly good comprehension of the dynamics of Schrodinger\ncocycles in the case of either small or large potentials:\n\n[Sorets-Spencer] Let  be a nonconstant potential, and let .  There exists  such that if\nthen for every  there is\n.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L75-115::c1",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L75-115::c1",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 75,
+    "end_line": 115,
+    "text": "[Sorets-Spencer] Let  be a nonconstant potential, and let .  There exists  such that if\nthen for every  there is\n.\n\nProposition 1.2 (Eliasson [E1](This result was originally\nstated for the continuous time case, but the proof also works for the\ndiscrete time case.)).\nLet , and let .  There exists\nsuch that if  then for\nalmost every  the cocycle  is\n-reducible.\nRemark 1.1.\nSorets-Spencer's result is nonperturbative: the\n\"largeness\" condition  does not depend on .\nOn the other hand, the proof of Eliasson's result is\nperturbative: the \"smallness\" condition\ndepends in principle on  (in the full measure set ).  We will come back to this issue (cf. Theorem ).\n\nRemark 1.2.\nIn general, one cannot replace \"almost every\" by \"every\"\nin Eliasson's result above.  Indeed, in it is also shown\nthat the set of energies for which\nis not (even )\nreducible is nonempty for a generic (in an appropriate topology)\nchoice of  satisfying .\nThose \"exceptional\" energies do have zero Lyapunov exponent.\n\nRemark 1.3.\nLet  and , .\nIn this case,  is uniformly hyperbolic if and only if it is\n-reducible and has a positive Lyapunov exponent, see.\nThus, there are lots of \"simple cocycles\" for which one has\npositive Lyapunov exponent, resp. reducibility, and indeed both at the same\ntime: this is the case in particular for  large in the Schrodinger\ncase.  Those examples are also stable (here we fix  and\nstability is with respect to perturbations of ).\n\nHowever, cocycles with a positive Lyapunov exponent, resp. reducible,\nbut which are not uniformly hyperbolic do happen for a\npositive measure set of energies\nfor many choices of the potential, and in particular in the situations\ndescribed by the results of Sorets-Spencer (this follows from\n), resp. Eliasson.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L2-72::c0",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L117-147::c2",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L117-147::c2",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 117,
+    "end_line": 147,
+    "text": "However, cocycles with a positive Lyapunov exponent, resp. reducible,\nbut which are not uniformly hyperbolic do happen for a\npositive measure set of energies\nfor many choices of the potential, and in particular in the situations\ndescribed by the results of Sorets-Spencer (this follows from\n), resp. Eliasson.\n\nOur main result for Schrodinger cocycles aims to close the gap and\ndescribe the situation (for almost every energy) without\nlargeness/smallness assumption on the potential:\n\nTheorem A. Let  and let  be a\npotential. Then, for Lebesgue almost every , the cocycle\nis either\nnonuniformly hyperbolic or -reducible.\nFor , let\n\nGiven a -cocycle , we associate a canonical\none-parameter family of -cocycles .\nOur proof of Theorem A goes through for the more general context of\ncocycles homotopic to the identity, with the role of the energy parameter\nreplaced by the  parameter.\n\nTheorem A.\nLet , and let\nbe\nand homotopic to the identity(For the case of cocycles\nnonhomotopic to the identity, see.).\nThen for Lebesgue almost every , the cocycle\nis either nonuniformly hyperbolic or\n-reducible.\n\n6pt Remark 1.4.\nTheorems A and A also hold in the smooth setting.  The only modification in\nthe proof is in the use of a KAM theoretical result of Eliasson\n(see Theorem ), which must be replaced by a smooth\nversion.  They also generalize to the case of continuous time (differential\nequations): in this case the adaptation is straightforward.  Seefor a discussion of those generalizations.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L75-115::c1",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L151-186::c3",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L151-186::c3",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 151,
+    "end_line": 186,
+    "text": "6pt Remark 1.4.\nTheorems A and A also hold in the smooth setting.  The only modification in\nthe proof is in the use of a KAM theoretical result of Eliasson\n(see Theorem ), which must be replaced by a smooth\nversion.  They also generalize to the case of continuous time (differential\nequations): in this case the adaptation is straightforward.  Seefor a discussion of those generalizations.\n\n6pt Remark 1.5.\nOne can distinguish two distinct behaviors among the\nreducible cocycles  given by Theorems A and A.  The first\nis uniformly hyperbolic behavior; see Remark 1.3.\nThe second is totally elliptic behavior, corresponding (projectively)\nto an irrational rotation of .\nMore precisely, we call a cocycle totally elliptic if it is -reducible\nand the constant matrix  in () can be chosen to be a\nrotation , where  are linearly independent\nover .  In this case it is easy to see that\nthe cocycle  is automatically -reducible modulo\n(possibly replacing  by ).  (To see that\nalmost every reducible cocycle is either uniformly hyperbolic or totally\nelliptic, it is enough to use Theorems  and  which\nare due to Johnson-Moser and Deift-Simon.)\n6pt\n\nTheorems A and A give a nice global picture for the theory of\nquasiperiodic cocycles, extending known results for cocycles taking values\non certain compact groups (see for the case of\n).  They fit with the Palis conjecture for\ngeneral dynamical systems, and have a strong analogy with\nthe work of Lyubich in the quadratic family, generalized in\n.\n\nMore importantly, reducible and nonuniformly\nhyperbolic systems can be efficiently described through a wide variety of\nmethods, especially in the analytic case.  With respect to reducible\nsystems, the dynamics of the cocycle itself is of course very simple, and\nthe use of KAM theoretical methods (,) allowed\nalso a good comprehension of their perturbations.  With respect to\nnonuniformly hyperbolic systems, there has\nbeen recently lots of success in the application of\nsubtle properties of subharmonic functions (,,\n) to obtain large deviation estimates with important consequences\n(such as regularity properties of the Lyapunov exponent).",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L117-147::c2",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L188-256::c4",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L188-256::c4",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 188,
+    "end_line": 256,
+    "text": "More importantly, reducible and nonuniformly\nhyperbolic systems can be efficiently described through a wide variety of\nmethods, especially in the analytic case.  With respect to reducible\nsystems, the dynamics of the cocycle itself is of course very simple, and\nthe use of KAM theoretical methods (,) allowed\nalso a good comprehension of their perturbations.  With respect to\nnonuniformly hyperbolic systems, there has\nbeen recently lots of success in the application of\nsubtle properties of subharmonic functions (,,\n) to obtain large deviation estimates with important consequences\n(such as regularity properties of the Lyapunov exponent).\n\nApplication to  operators\nWe now discuss the application of the previous results to\nthe quasiperiodic Schrodinger operator\n\nwhere ,  and\nis .\nThe properties of  are closely\nconnected to the properties of the family of\ncocycles , .  Notice for instance that\nif  is a solution of  then\n\nLet  be the spectrum of .  It is\nwell known (see)\n\nthat\n\nso that  does not depend on .\n\nLet  (respectively, ,\n) be (the support of) the singular continuous\n(respectively, absolutely continuous, pure point) part of the spectrum\nof .\n\nIt has been shown by Last-Simon (, Theorem 1.5) that\ndoes not depend on  for\n(there are no hypotheses on the smoothness of  beyond continuity).\nIt is known that\nand  do depend on  in general.\n\nWe will also introduce some decompositions\nof  that only depend on the cocycle, and hence are independent of .\n\nWe split  in the\nparts corresponding to zero Lyapunov exponent and positive Lyapunov\nexponent for the cocycle .\nBy,  is closed.\n\nLet  be the set of  such that\nis -reducible.\n\nIt is easy to see that .\n\nNotice that by the Ishii-Pastur Theorem (see and),\nwe have .\n\nBy Theorem A,  has zero\nLebesgue measure if  and .\nOne way to interpret  (using the\nIshii-Pastur Theorem) is that generalized\neigenfunctions in the essential support of the absolutely continuous\nspectrum are (very regular) Bloch waves.  This already\ngives (in the particular cases under consideration) strong\nversions of some conjectures in the literature (see for instance the\ndiscussion after Theorem 7.1 in).  (Analogous statements\nhold in the continuous time case.)\n\nAnother immediate application of Theorem A is a nonperturbative version of\nEliasson's result stated in Proposition 1.2.  It is based on the\nfollowing nonperturbative result:",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L151-186::c3",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L258-294::c5",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L258-294::c5",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 258,
+    "end_line": 294,
+    "text": "Another immediate application of Theorem A is a nonperturbative version of\nEliasson's result stated in Proposition 1.2.  It is based on the\nfollowing nonperturbative result:\n\n[Bourgain-Jitomirskaya] Let , .  There exists\n(only depending on the bounds of , but not on\n) such that if , then\nthe spectrum of  is purely absolutely continuous\nfor almost every .\n\nLet , .  There exists\n(which may be taken the same as in the previous\nproposition) such that if , then\nis reducible for almost every .\n\nBy the previous proposition, , so that .\n\nThere are several other interesting results which can be concluded easily\nfrom Theorem A and current results and techniques:\n\n(1)\nZero Lebesgue measure of  for almost every frequency,\n(2) Persistence of absolutely continuous spectrum\nunder perturbations of the potential,\n(3) Continuity of the Lebesgue measure of  under perturbations of\nthe potential.\n\nAlthough the key ideas behind those results are quite\ntransparent (given the appropriate background), a proper\ntreatment would take us too far from the proof of Theorem A, which is the\nmain goal of this paper.  We will thus concentrate on a particular case\nwhich provides one of the most striking applications of Theorem A.  For the\napplications mentioned above (and others), see.\n\nAlmost Mathieu\nCertainly the most studied family of potentials\nin the literature is , .\nIn this case,  is called the Almost Mathieu Operator.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L188-256::c4",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L298-351::c6",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L298-351::c6",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 298,
+    "end_line": 351,
+    "text": "Almost Mathieu\nCertainly the most studied family of potentials\nin the literature is , .\nIn this case,  is called the Almost Mathieu Operator.\n\nThe Aubry-Andre conjecture on the measure of the spectrum of the Almost\nMathieu Operator states that the measure of the spectrum of  is  for every\n,  (see).The \"critical case\"  can be traced even further\nback to Hofstadter.\nThere is a long story of\ndevelopments around this problem, which led to several partial results\n(,,,).\nIn particular, it has already been proved\nfor every  (see), and for every  not of\nconstant typeA number  is said to be of constant type if the coefficients of its continued fraction expansion are\nbounded.  It follows that  is of constant type if and only if\nif and only if ..\nHowever, for , say, the golden mean, and , where one\nshould prove zero Lebesgue measure of the spectrum,\nprevious to this work, it was  still unknown even whether the spectrum has empty interior.\n\nUsing Theorem A, we can deal with the\nlast cases (which are also Problem 5 of).\n\nThe spectrum of  has Lebesgue measure\nfor every .\n\nAs stated above, it is enough to consider  and  of\nconstant type, in particular .\n\nLet  be the spectrum of .\n\nBy Corollary 2 of, .\nBy Theorem A, for\nalmost every ,  is\n-reducible.  Thus, it is enough to show\nthat  is not -reducible for\nevery .\n\nAssume this is not the case, that is,  is\nreducible for some .\nTo reach a contradiction, we will approximate the potential\nby  with\nclose to .\nThen, by Theorem A of, if  is sufficiently\nclose to , either  is\nuniformly hyperbolic or .\nIn particular\n(since the spectrum depends continuously on the potential), there exists  such that .\nBut it is well known, see, that the Lyapunov exponent of\nis bounded from below by  and the result follows.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L258-294::c5",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L365-421::c7",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L365-421::c7",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 365,
+    "end_line": 421,
+    "text": "Assume this is not the case, that is,  is\nreducible for some .\nTo reach a contradiction, we will approximate the potential\nby  with\nclose to .\nThen, by Theorem A of, if  is sufficiently\nclose to , either  is\nuniformly hyperbolic or .\nIn particular\n(since the spectrum depends continuously on the potential), there exists  such that .\nBut it is well known, see, that the Lyapunov exponent of\nis bounded from below by  and the result follows.\n\nBarry Simon has pointed out to us an alternative argument based on duality\nthat shows that if  and if  then the cocycle\nis not -reducible.  Indeed, if\nis -reducible and ,\nthen (by duality) there exists  such that  is an eigenvalue\nfor , and the corresponding eigenvector\ndecays exponentially, hence  which gives a\ncontradiction.  (This argument actually can be used to show that\nis not -reducible.)\n\nBy, we get:\n\nThe spectrum of  is purely\nsingular continuous for every , and for almost\nevery .\n\nTheorem A also gives a fairly precise dynamical picture for\n(completing the spectral picture obtained by Jitomirskaya in):\n\nLet , .  For almost every ,\nis reducible.\n\nBy Corollary 2 of, the Lyapunov exponent is zero on the spectrum.\n\nThe result is now a consequence of Theorem A.\n\nOutline of the proof of Theorem A\nThe proof has some distinct steps, and is based on a renormalization scheme.\nThis point of view, which has already been used  in the study of\nreducibility properties of quasiperiodic cocycles with values in\nand , has proved to be very useful in the nonperturbative case\n(see,).  However, the scheme we present in this paper\nis somehow simpler and fits better (at least in the  case)\nwith the general renormalization philosophy (see  for a very nice\ndescription of this point of view on renormalization):\n\nThe starting point is the theory of Kotani(This step holds in\nmuch greater generality, namely for cocycles over ergodic transformations.).\nFor almost every energy , if the Lyapunov exponent of\nis zero, then the cocycle is -conjugate to a cocycle in\n.  Moreover, the fibered rotation number of the cocycle\n\nis Diophantine with respect to .  (The set  of those\nenergies will be precisely the set of energies for which we will be able to\nconclude reducibility.)",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L298-351::c6",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L423-464::c8",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L423-464::c8",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 423,
+    "end_line": 464,
+    "text": "is Diophantine with respect to .  (The set  of those\nenergies will be precisely the set of energies for which we will be able to\nconclude reducibility.)\n\nWe now consider a smooth\ncocycle  which is -conjugate to rotations.  An\nexplicit estimate allows us to control the derivatives of iterates of the\ncocycle restricted to certain small intervals.\n\nAfter introducing the notion of renormalization of cocycles,\nwe interpret item (2) as \"a priori bounds\" (or precompactness)\nfor a sequence of renormalizations .\n\nThe recurrent Diophantine condition for  allows us\nto take  uniformly\nDiophantine, so that the limits of renormalization are\ncocycles  where  satisfies a\nDiophantine condition.  Those limits are essentially (that is, modulo a\nconstant conjugacy) cocycles in ,\nand are trivial to analyze: they are always reducible.\n\nSince  is reducible, Eliasson's theorem\nallows us to conclude that some renormalization\nmust be reducible, provided the\nfibered rotation number of\nis Diophantine with respect to .\n\nThis last condition is actually equivalent to the fibered rotation\nnumber of  being Diophantine with respect to .\nIt is easy to see that reducibility is invariant under\nrenormalization and  so  is itself reducible.\n\nWe conclude that for almost every  such that\n, the cocycle  is reducible, which\nis equivalent to Theorem A by Remark 1.3.\n\nThe above strategy uses  in order to take\ngood limits of renormalization.  It would be interesting to try to obtain\nresults under the weaker condition  by working directly with\ndeep renormalizations (without considering limits).",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L365-421::c7",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L468-514::c9",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L468-514::c9",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 468,
+    "end_line": 514,
+    "text": "The above strategy uses  in order to take\ngood limits of renormalization.  It would be interesting to try to obtain\nresults under the weaker condition  by working directly with\ndeep renormalizations (without considering limits).\n\nRenormalization methods have been previously applied to the study of\nquasiperiodic Schrodinger operators, see for instance,\nand.  While the\nnotions used by Helffer-Sjostrand are quite different from ours, the\n\"monodromization techniques\" of Buslaev-Fedotov-Klopp\ncorrespond to essentially the\nsame notion of renormalization used here.  An important conceptual\ndifference is in the use of renormalization: we are interested in the\ndynamics of the renormalization operator itself, in a spirit close to\nworks in\none-dimensional dynamics (see for instance,,\n).\n\nParameter exclusion\n-estimates\nWe say that  is -conjugated to a cocycle of rotations\nif there exists a measurable\nsuch that  and\n\nLet  be continuous.\nThen for almost every , either\nor  is -conjugated to a cocycle of rotations.\n\nLooking at the projectivized action of  on the\nupper half-plane , one sees that\nthe existence of an  conjugacy to rotations is equivalent to\nthe existence of a measurable invariant sectionThat is\n.\nsatisfying .  This holds\nfor almost every  such that  by Kotani Theory, as\ndescribed inThis reference was pointed out to us\nby Hakan Eliasson. (the measurable invariant section  we want is given\nby  in the notation of).\n4pt\n\nIt turns out that this result generalizes to the\nsetting of Theorem A:\n\nLet  be continuous.  Then for almost every , either  or\nis -conjugated to a cocycle of rotations.\n\nThe proof of this generalization is essentially the same as in the\nSchrodinger case.  We point the reader to for a discussion of\nthis and further generalizations.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L423-464::c8",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L517-560::c10",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L517-560::c10",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 517,
+    "end_line": 560,
+    "text": "The proof of this generalization is essentially the same as in the\nSchrodinger case.  We point the reader to for a discussion of\nthis and further generalizations.\n\nBoth theorems above are valid in a much more general setting, namely for\ncocycles over transformations preserving a probability measure.  The\nrequirement on the cocycle is the least  to speak of Lyapunov exponents\n(and Oseledets theory), namely integrability of the logarithm of the norm.\n\nFibered rotation number\nBesides the Lyapunov exponent, there is one important invariant\nassociated to continuous cocycles which are\nhomotopic to the identity.  This invariant, called the fibered rotation\nnumber will be denoted by , and\nwas introduced in, (we recall its definition in\nAppendix A).\nThe fibered rotation number is a continuous function of\n, where  varies in the space of continuous cocycles\nwhich are homotopic to the identity.  Another important elementary\nfact is that both  and  have nondecreasing lifts , and in\nparticular, those functions have nonnegative derivatives almost everywhere.\nThe following result was proved in, in the continuous time case,\nand in, in the discrete time case used here\n(and where an optimal estimate is given).\n\nLet .  Then for almost every  such that\n,\n\nThis result (and proof) also generalize to the setting of Theorem A (see\nfor further generalizations):\n\nLet  be continuous and homotopic to the\nidentity.  Then for almost every  such that\n,\n\nIn the Schrodinger case, it is possible to show that the fibered rotation\nnumber is a surjective function (of ) onto .  In it\nis also shown that  can be interpreted as\nthe integrated density of states.\n\nThe arithmetic properties of the fibered rotation number are also important\nfor the analysis of cocycles .\nFix .\nLet us say that  is Diophantine with\nrespect to  if there exists ,  such that",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L468-514::c9",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L562-655::c11",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L562-655::c11",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 562,
+    "end_line": 655,
+    "text": "The arithmetic properties of the fibered rotation number are also important\nfor the analysis of cocycles .\nFix .\nLet us say that  is Diophantine with\nrespect to  if there exists ,  such that\n\nwhere  denotes the distance to the nearest integer.\nIf  then the Lebesgue measure of the set of\nwhich satisfy () is at least .  In particular, Lebesgue almost every  is Diophantine with\nrespect to .  By Theorems 2.3 and 2.4 we conclude:\n\nLet , .  Then for almost every  such that ,\nis\nDiophantine with respect to .\n\nLet , .  Then for almost every\nsuch that ,\nis Diophantine with respect to .\n\nThe fibered rotation number and its arithmetic properties play a role in the\nfollowing result of Eliasson:\n\nLet .  Assume that:\n(1)  for some , ,\n(2)  is Diophantine with respect to ,\n\n(3)  admits a holomorphic extension to some strip ,\n\n(4)  is sufficiently close to a constant :\n\nThen  is reducible.\n\nThis theorem was originally proved in the case of differential equations,\nbut the adaptation to our setting is immediate.  For further\ngeneralizations, see.\n\nEstimates for derivatives\n\nIn this section, we will assume that  is -conjugated\nto a cocycle of rotations.  There exist measurable\nand  such that\n\nwhere we set  (here and in\nwhat follows,  is supplied with the Euclidean norm and the space of\nreal  matrices\nis supplied with the operator norm).\n\nWe introduce the maximal function  of :\n\nSince the dynamics of  is ergodic on\nendowed with Lebesgue measure, the\nMaximal Ergodic Theorem gives us the weak-type inequality\n\nand for a.e  the quantity  is finite.\n\nIf , we let  be the linear operator in\nwhich is given by\n.  Notice that the operator norm\nof  satisfies the bound .\n\nAssume that  is Lipschitz (with constant ).\n\nThen for every  such that ,\n\nand in particular\n\nWe compute :\n\nwhere we have set\n\nso that\n\nThe assumptions we made give\n\nthat is,\n\nThus\n\nHence for every ,\n\nwhich implies\n\n4pt\n\nWe now give estimates for the derivatives.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L517-560::c10",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L658-772::c12",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L658-772::c12",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 658,
+    "end_line": 772,
+    "text": "We now give estimates for the derivatives.\n\nAssume that  is of class  (.  Then for every , and any  such that\n,\n\nwhere  is an absolute constant and\n\nWe compute\n\nwhich by Leibniz formula is a sum of  terms of the form\n\nwhere  runs through\nand where  and\n\nsatisfy  and\n. (Notice that .)\nEach term  can be written\n\nFrom the previous lemma,\n\nwhere\n\nHence we get the following bound\n\nFrom this and the convexity (Hadamard-Kolmogorov) inequalities\nwe deduce (using )\n\nso  that\n\nBut the last sum in this estimate satisfies the inequality\n\n_i^*I(x_0+i_1)(x_0+i_s)\n\n((x_0)++(x_0+(n-1)))^r n^r S(x_0)^r\n(recall that ) which implies the result.\n4pt\n\nWe can now conclude easily:\n\nAssume that  is  ().\nFor almost every , there exists ,\nsuch that for every\n\nand for every , if , then\n\n8pt\n\nLet  be the set of all  such that\n\nwhere the  are measurable continuity points of  and\n.  This means that for every ,  is a density\npoint of\n\nIt is a classical fact that  has full Lebesgue Measure.\n\nFix ,  and .  If  is sufficiently big then\n\nIf , this implies\n\nIn particular, each point  is at distance at most\nfrom  a point  such that  and .  In particular, for\nevery , if  is sufficiently small then\n,  where\nand  are as in the previous lemma.  The previous lemma\nimplies that\n\nIt immediately follows that for every , for every\nsufficiently big such that , we have\n\n12pt\n\nAssume that  is Lipschitz.\nFor almost every , for every , for every ,\nif  and\n, then the\nmatrix  is  close to\nprovided that .\n\nLet  be a measurable continuity point of  and .\nBy the same argument of the previous lemma, for\nbig enough, if , then every  such\nthat  is at distance at most\nfrom some  such that ,\nand .  By\n(), we have\n\nand so it is enough to show that  is close to\n.  But this is clear since  and ,  are close to .\n\nRenormalization\n\nLet .  We will view  as a\nsubgroup of:",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L562-655::c11",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L774-848::c13",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L774-848::c13",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 774,
+    "end_line": 848,
+    "text": "Let .  We will view  as a\nsubgroup of:\n\nA  fibered -action is a homomorphism  (that is,\n).  We let  denote\nthe space of  fibered-actions.  We endow  with the\npointwise topology.  This topology is induced from the embedding\n, .(Here and in what follows, spaces of\nfunctions (such as ) are always\nendowed with the weak topology of uniform -convergence on\ncompacts.  In the  case (which is the most important for us), this\nmeans that a sequence  converges to  if and only if for every\ncompact  there exists a complex neighborhood  such\nthat (the holomorphic extensions of)  (are defined and) converge\nto  uniformly on .  We recall that the weak topology is metrizable for\n, but not even separable for .)\n\nLet\nbe the coordinate\nprojections.  Let also  and\n.\n\nThe action  will be called nondegenerate\nif  is injective.\nLet  be the set of nondegenerate actions.\n\nWe let\nbe the set of  such that\n.\nFor , we let .\nWe let .\n\nSome operations\nLet .\nDefine  by\n\nLet .  Define  by\n\nLet .  Define  by\n\nThe operations , , and  will be called rescaling,\ntranslation, and base change.\n\nNotice that ,\n,\nand  (that is, , , and  are left actions of\n,  and  on ).\nMoreover, base changes commute with translations and rescalings.\n\nNotice that  acts on  by\n\nThis action extends to an action (still denoted )\non .  We will say that  and  are\n-conjugate via .\n\nContinued fraction expansion\nLet  be irrational.  We will discuss some elementary facts and\nfix notation regarding the continued fraction expansion\n\nand we refer the reader to for details.\nDefine  where\nis the Gauss map  ( denotes\nthe fractionary part).  The coefficients  in () are given by\n, where  denotes the integer part.  We also\nset  for convenience.  Then\n\nLet .  Define\n\nthat is,\n\nwhere\n\nThen we have",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L658-772::c12",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L852-918::c14",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L852-918::c14",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 852,
+    "end_line": 918,
+    "text": "Then we have\n\nRenormalization\nWe define the renormalization operator around ,\n, by\nwhere\nand  is given by ().\n\nThe renormalization operator around ,  is defined by .\n\nNotice that if  and  then\nand so\n\nNormalized actions, relation to cocycles\nAn action  will be called normalized if\n.  If  is normalized then\ncan be viewed as a -cocycle, since  is automatically defined modulo\n.Since the commutativity relation\nis equivalent to\n.\nInversely, given a -cocycle , ,\nwe associate a normalized action  by setting\n\nAny  is -conjugate to a normalized action.\nMoreover, if\nconverges to  in\nthen one can choose a sequence of conjugacies\nconverging to  in the  topologyThe reason we refer to\nsequences instead of speaking of closeness is because the\ntopology is not separable..\n\nWe first assume that .  Let .\nLet\nbe such that , , , .\nLet us extend  to  forcing\n( is still smooth after the modification).  If  is  close to\n, we can select  to be  close to\n, and in this case  is also  close to .\n\nLet us now assume that .\nLet us first deal with the case where (the holomorphic extension of)\nis close to the identity in a definite neighborhood of .\nExtend  to a real-symmetric  function  which is  close to the\nidentity and which is holomorphic on a definite\nneighborhood  of .  We will assume that  satisfies (after\nshrinking)\n\nLet  be  close to the identity,\nreal-symmetric, and satisfying\n,\n( is obtained as in the previous case).\nNotice that\n, so for  we have\n.\nMoreover,\n\nfor some small .\n\nGiven , we let  and\nwe obviously have .  We want to choose\nso that\n\nfor this will assure us that",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L774-848::c13",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L920-977::c15",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L920-977::c15",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 920,
+    "end_line": 977,
+    "text": "for this will assure us that\n\nvanishes for  and also in\n(this guarantees that  is\nholomorphic in a definite neighborhood of ),\nand we also want to impose that  (and hence )\nis  close to the identity.\nHere the smoothness requirement on  is for it to be of class ;\nthat is, it should be continuous and have distributional derivatives in\n.\n\nEquation () is equivalent to\n\nTo conclude, we use the following proposition:\n\nThere exists  with the following property.  Let  and assume that\n.  Then there exists  of class\nsuch that  and\nclose to the identity\nfor .  Moreover,  is real-symmetric\nprovided  is real-symmetric.\n\nLet  be the space of continuous\nmaps\nwith integrable distributional derivatives, endowed with the natural norm.\nWe can obtain a bounded linear map\n\nwhich is real-symmetric and solves .  Indeed  can be\ngiven explicitly in terms\nof the Cauchy transform\n\nDefine an analytic map\nby\n.  Then , .\nIt follows that  is a diffeomorphism in a neighborhood of\n, so we may solve  with\nprovided\nis close to .\nIt follows that  satisfies the conclusion of the\nproposition.\n4pt\n\nWe may now obtain  with the required properties\nby taking  in  and  otherwise and applying the previous\nproposition.  This concludes the second part of the lemma in the case\n.\n\nThis argument\nalso works if we only assume that  is close to the identity\nin the  topology (indeed\nthe  topology is enough, as this is all that we need to get\n()), and gives the first part of the lemma also in this case\n(but we obviously do not get that the holomorphic extension of the\nnormalizing matrix is close to the identity).\nIn order to treat the global case, we first consider  with , and then\napproximate  (in the  topology) by\n.  Then\nis  close to the identity and we can apply the previous case.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L852-918::c14",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L979-998::c16",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L979-998::c16",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 979,
+    "end_line": 998,
+    "text": "This argument\nalso works if we only assume that  is close to the identity\nin the  topology (indeed\nthe  topology is enough, as this is all that we need to get\n()), and gives the first part of the lemma also in this case\n(but we obviously do not get that the holomorphic extension of the\nnormalizing matrix is close to the identity).\nIn order to treat the global case, we first consider  with , and then\napproximate  (in the  topology) by\n.  Then\nis  close to the identity and we can apply the previous case.\n\nDegree and fibered rotation number The degree and the fibered rotation number of an action will be considered\nin detail in Appendix A.  Here we present only a summarized\n(and more intuitive) discussion.\n\nThe degree  of a nondegenerate action  can be\ndefined as follows.  The degree of a normalized\naction  is the (topological) degree of the map\nRecall that the fundamental group of\nis generated by , and hence is\ncanonically isomorphic to ..  It is easy to see that the\ndegree of a normalized action is invariant under conjugacies.\nThis allows us to define the degree of a nondegenerate\naction  as the degree of any normalized\naction  obtained from  by rescaling and conjugacy.\nIt is readily seen that the degree is invariant\nunder rescalings, conjugacies, and translations.  In the Appendix A\nwe will\nsee that base changes preserve the degree up to sign:\n.  In particular, the renormalization of an\naction of degree  still has  degree .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L920-977::c15",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L1000-1035::c17",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L1000-1035::c17",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 1000,
+    "end_line": 1035,
+    "text": "The degree  of a nondegenerate action  can be\ndefined as follows.  The degree of a normalized\naction  is the (topological) degree of the map\nRecall that the fundamental group of\nis generated by , and hence is\ncanonically isomorphic to ..  It is easy to see that the\ndegree of a normalized action is invariant under conjugacies.\nThis allows us to define the degree of a nondegenerate\naction  as the degree of any normalized\naction  obtained from  by rescaling and conjugacy.\nIt is readily seen that the degree is invariant\nunder rescalings, conjugacies, and translations.  In the Appendix A\nwe will\nsee that base changes preserve the degree up to sign:\n.  In particular, the renormalization of an\naction of degree  still has  degree .\n\nThe fibered rotation number  of an action\nis only defined in the case .  For a nondegenerate\naction, it can be defined as follows.  If  has degree , and is\nconjugated to a normalized action ,\nthen  is homotopic to the identity, and it is natural to define\nas the fibered rotation number of the cocycle .\nIn general, a\nnondegenerated action  may be rescaled to an action\nwhich is conjugated to a normalized action: we then define\n.\nIt turns out (see Appendix A) that\nis only well defined up to addition of\nan element of the module of frequency of , that is, the\n-module , and so\nshould be regarded as an element of\n.(This is related to the fact that\nthe fibered rotation number is not a conjugacy invariant for cocycles.)\nIt is readily seen that\nis invariant under translations.  We will see in  Appendix\nA\nthat base changes preserve the fibered rotation number up to sign:\n.\n\nWe shall say that an element in  is\nDiophantine if for some representative , some basis\nand some\n, , one has\n\nThis definition is clearly independent of the choice of the representative\nand of the chosen basis ( then has to be changed).\nFinally, we say that the action  is (fiberwise) Diophantine if\nis Diophantine.  This notion is stable\nunder conjugation, translation, rescaling, and base change, so it is also\nstable under renormalization.  This definition is such that\na nondegenerate normalized action  is Diophantine if and\nonly if  is Diophantine with respect to .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L979-998::c16",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L1037-1104::c18",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L1037-1104::c18",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 1037,
+    "end_line": 1104,
+    "text": "This definition is clearly independent of the choice of the representative\nand of the chosen basis ( then has to be changed).\nFinally, we say that the action  is (fiberwise) Diophantine if\nis Diophantine.  This notion is stable\nunder conjugation, translation, rescaling, and base change, so it is also\nstable under renormalization.  This definition is such that\na nondegenerate normalized action  is Diophantine if and\nonly if  is Diophantine with respect to .\n\nReducibility\nAn action  is called constant if for every ,\nis constant.\nWe will say that an action\nis -reducible if it is -conjugate to a constant action.\nIt immediately follows that reducibility is invariant\nunder conjugation, translation, rescaling and base change.  Thus\nreducibility is also invariant under renormalization: an action\nis-reducible\nif and only if its renormalization  is -reducible.\nMoreover, reducibility of a nondegenerate\nnormalized action\ncan be interpreted in familiar terms:\n\nLet .  Then\nis -reducible\nif and only if  is -reducible.\n\nAssume that  is reducible.  Then there exists  such that ,\n, where  commute.  Write\n, where  commutes with , and\n.\nLet .  Then , and so\n.  Moreover,  is\na constant.  Thus  is reducible.\n\nAssume that  is reducible.  Thus there exists  such that  for some .  Let , so that .  Then\n.\n\nAssume that  is not conjugate to a rotation of angle\nfor any .  Write in the Fourier series\n\nThen\n\nIf  for some  then  is an\neigenvalue of .  This implies\nthat  is conjugate to  where ,\ncontradicting our assumption.  Thus  is a constant, and it\nfollows that  is a constant action.\n\nAssume that  is conjugate to a rotation of angle\nfor some : , .  Let .  Then\nand\n\nThus, up to changing  to  we may assume that , and we can\napply the previous case.\n4pt\n\nWe will need the following version of a well-known reducibility result:\n\nLet ,  be -conjugate to an\naction of degree .\nIf  then  is -conjugate to a normalized\nconstant action.  In particular,  is -reducible.\n\nWe may assume that  is normalized, since we can always conjugate\nto  via : this\ncan be done in the same way as in Lemma  (it is indeed\neasier to proceed for the  case).",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L1000-1035::c17",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L1106-1187::c19",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L1106-1187::c19",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 1106,
+    "end_line": 1187,
+    "text": "We may assume that  is normalized, since we can always conjugate\nto  via : this\ncan be done in the same way as in Lemma  (it is indeed\neasier to proceed for the  case).\n\nLet , and let  satisfy\n.\nSince  is normalized,  is defined modulo ,\nand since  is of degree\n, this implies that  is defined modulo  as well.\n\nConsider the Fourier series\n\nand let\n)\nwhere\n\nso that\n\nThe fact that  implies that  for some , .  In particular .\n\nLet .\nThen , and we have ,\n.  This implies that\nis a normalized constant action.\n4pt\n\nThe following is a restatement of Theorem\n\nin the language of actions.\n\nLet  be -conjugate to a normalized\nconstant action, and let\n,  be fixed.  Let\nbe a sequence of Diophantine actions converging to  in\nand satisfying .\nThen  is -reducible for  large enough.\n\nAfter performing a conjugation, we may assume that  and\n\nwhere  is a constant.  By Lemma ,\nthere exists a sequence  converging to\nwhich conjugates  to a normalized cocycle\n.  It follows that\n\nconverges to  in the -topology.\nThus,  Theorem applies and  is -reducible\nfor  large enough.  This implies that  and\nare -reducible as well.\n\nA priori bounds and limits of renormalization\n\nThe language of renormalization allows us to restate Lemma as a precompactness result:\n\n[A priori bounds]\nLet , ,\nbe a normalized action, and assume that\nthe cocycle  is -conjugated to a cocycle\nof rotations.  Then for almost every , there exists  such\nthat for every  and for every ,\n\nIn particular, if  then  is\nprecompact in .\n\nApply Lemma  to both  and to ,\nobtaining a full measure set of \"good points\" .\n\nNotice that\n\nFix  (we may assume ).\nSince , the estimates of\nLemma  imply that for  and for\n,\n\n(notice that ).\nThe precompactness statement is then obvious.\n\n4pt\n\nThis result allows us to consider limits of renormalization.  Those are\neasy to analyze due to the following simple corollary of Lemma :",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L1037-1104::c18",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L1189-1250::c20",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L1189-1250::c20",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 1189,
+    "end_line": 1250,
+    "text": "This result allows us to consider limits of renormalization.  Those are\neasy to analyze due to the following simple corollary of Lemma :\n\n[Limits]\nLet  be a normalized action,\nand assume that the cocycle  is\n-conjugated to a cocycle of rotations.\nThen for almost every , any limit of\nis conjugate to an action of rotations,\nvia a constant .\n\nWe can now prove the following rigidity result.\n\n[Rigidity] Let , and let  be\nand homotopic to the identity.\nIf  is -conjugated to a cocycle of\nrotations, and the fibered rotation number of  is Diophantine\nwith respect to , then  is -reducible.\n\nLet  and\nlet  be such that .\n\nConsider the renormalizations ,\nwhere  is as in Theorems  and .\nNotice that for every ,  and\nis a Diophantine action.\n\nPassing to a subsequence, we may assume that  in the\ntopology.  Since  is compact,\n.\nBy Theorem ,  is -conjugate to an\naction, and so by Lemma ,\nis-conjugate to a normalized constant action.\nThus Lemma  applies\nand we conclude that  is -reducible for  large enough.\nIt follows that  is\nreducible, so that  is reducible as well.\n4pt\n\nProof of Theorems A and A.\nWe can now  prove  Theorem A easily.\nLet ,\n, and let  be the set of  such that\nis -conjugated to a cocycle of\nrotations and the fibered rotation number of  is\nDiophantine with respect to .  By Theorem  and\nCorollary ,  has full Lebesgue measure in ,\n\nand Theorem implies that  is -reducible for all .\nThis shows that  is -reducible for almost every  such that .\nBy Remark 1.3, if  is such that\nthen\nis either nonuniformly hyperbolic or -reducible,\nand the result follows.\n\nThis argument also works for Theorem A, if we use Theorem  and\nCorollary  instead of Theorem  and\nCorollary .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L1106-1187::c19",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L1252-1307::c21",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L1252-1307::c21",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 1252,
+    "end_line": 1307,
+    "text": "This argument also works for Theorem A, if we use Theorem  and\nCorollary  instead of Theorem  and\nCorollary .\n\nAcknowledgements We would like to thank Hakan Eliasson, Svetlana\nJitomirskaya, Barry Simon, and Jean-Christophe Yoccoz for several\ndiscussions and suggestions.  We also thank the referee, whose comments\nwere useful in improving the presentation of this article.\n\n16ptAppendix A. Degree and and fibered rotation number\n12pt\n\nIn this section we will recall the intrinsic definition of degree and\nfibered rotation number for actions given in, and check that they\ncoincide with the definitions given in .\nThe advantage of the\nintrinsic definitions is that they allow us to compute easily the effect of\nbase changes.\n\nFor  and  continuous, we introduce the\nfollowing objects.\nIf  is a point of the  usual euclidean circle\nwe set\n\nand  define, for ,\n\nIf  is the projection  we can\nfind a continuous lift  of\n, that is\n\nObserve that such a lift is not uniquely defined, every other lift being of\nthe form , where  is a\nconstant integer.  Also, for any  we have\n\nand thus  can be defined for any ,\n.\n\nCocycles Let us first consider the case of a cocycle .  Viewing  as defined on , we can define\n(up to an integer), and we get , where  is the\ntopological degree of .  Indeed, up to homotopy, we may\nassume that , and we have .\n\nIf  is homotopic to the identity,  descends\nto a map  and  descends\nto a map .\nThe usual definition (see,\n) of the fibered\nrotation number of  is\n\n(defined modulo an integer)\nwhere  is any probability measure which is invariant under  and which projects to Lebesgue measure\non .  One easily checks that if  and  then\n.  This implies that\n\nfor every , so that  does not depend on .\n\nActions\nLet  be a basis of the -module .\nThen it is easy to see that the quantity",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L1189-1250::c20",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L1309-1364::c22",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L1309-1364::c22",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 1309,
+    "end_line": 1364,
+    "text": "Actions\nLet  be a basis of the -module .\nThen it is easy to see that the quantity\n\nis independent of the choices made for the lifts\nand is a constant integer.  Obviously from (),\n.\nNotice that\n(up to a constant integer), so that\n\nA similar computation gives .\nThese  elementary base change\nrules imply that  for any .\n\nWe define   as\n.  To see that this coincides with the\nprevious definition (given in ),\nit is enough to check it in the case of a\nnormalized action .  Recalling that\nwhere  is the topological degree of , we get from\nand  that\n,\naccording to the previous definition.\n\nAssume now that the action  has degree zero.  Let us denote by\nthe set of measures on  which  project\non the first factor to Lebesgue measure on  and which are invariant\nby  for any\n.  It is not difficult to see that  is nonempty.\nTake as before  to be a basis of\n, and for , define the quantity:\n\nwhere we have defined for any function\nand  the quantity\n\nIf we make other choices for the lifts of , the numbers we obtain\njust differ by the addition of an element of the\nmodule of frequency of .\n\nWe notice that  and\n\nsince\n\nA similar computation gives .\nThose elementary base change rules imply that\nfor any .\n\nGiven  continuous, we notice that , and it follows immediately from the definition that\nThe\ntransformation rule for  can be also readily checked: .\n\nLet us check that  does not depend on\n.  This is obvious if  (in this case\n).  Otherwise, via conjugacies, scalings, and base change, we reduce\nto the case of checking that  does not depend\non  when  is a normalized action .  In this\ncase, measures in  are invariant under , and so\nthey descend to .  Since  is\nhomotopic to the identity, we have , so that   also\ndescends to .  We have",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L1252-1307::c21",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L1366-1431::c23",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L1366-1431::c23",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 1366,
+    "end_line": 1431,
+    "text": "Let us check that  does not depend on\n.  This is obvious if  (in this case\n).  Otherwise, via conjugacies, scalings, and base change, we reduce\nto the case of checking that  does not depend\non  when  is a normalized action .  In this\ncase, measures in  are invariant under , and so\nthey descend to .  Since  is\nhomotopic to the identity, we have , so that   also\ndescends to .  We have\n\nThis is precisely the usual definition of the fibered rotation number\n(see ), which does not depend on\n.  This also shows that setting\none recovers the previous definition (given in )\nof the fibered rotation number of a\nnondegenerate action.\n\nFMPF\n\nS. Aubry and G. Andre,\nAnalyticity breaking and Anderson localization in incommensurate lattices,\nin Group Theoretical Methods in Physics, Proc. Eighth\nInternat. Colloq. (Kiryat Anavim, 1979),\nAnn. Israel Phys. Soc. 3, 133-164,\nHilger, Bristol, 1980.\n\nA. Avila  and R. Krikorian,\nQuasiperiodic  cocycles,  in preparation.\n\n,\nSome remarks on local and semi-local results for Schrodinger cocycles,\nin preparation.\n\nA. Avila, M.  Lyubich,  and W.  de Melo,\nRegular or stochastic dynamics in real analytic families of\nunimodal maps,\nInvent. Math. 154  (2003),  451-550.\n\nJ. Avron, P. H. M.  van Mouche, and B.  Simon,\nOn the measure of the spectrum for the almost Mathieu operator,\nComm. Math. Phys.  132  (1990),   103-118.\n\nJ. Avron and B. Simon,\nAlmost periodic Schrodinger operators. II.\nThe integrated density of states,\nDuke Math. J. 50  (1983),  369-391.\n\nJ. Bourgain,\nGreen's Function Estimates for Lattice Schrodinger Operators and\nApplications,\nAnn. of Math. Studies 158,   Princeton Univ. Press,\nPrinceton, NJ, 2005.\n\nJ. Bourgain and M.  Goldstein,\nOn nonperturbative localization with quasi-periodic potential,\nAnn. of Math.  152 (2000),  835-879.\n\nJ. Bourgain and S. Jitomirskaya,\nContinuity of the Lyapunov exponent for quasiperiodic operators\nwith analytic potential,\nJ. Statist. Phys. 108 (2002), 1203-1218.\n\n,\nAbsolutely continuous spectrum for 1D quasiperiodic operators,\nInvent. Math. 148 (2002),  453-463.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L1309-1364::c22",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L1433-1476::c24",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L1433-1476::c24",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 1433,
+    "end_line": 1476,
+    "text": ",\nAbsolutely continuous spectrum for 1D quasiperiodic operators,\nInvent. Math. 148 (2002),  453-463.\n\nV. Buslaev and A. Fedotov,\nOn the difference equations with periodic\ncoefficients, Adv. Theor. Math. Phys. 5   (2001),   1105-1168.\n\nP. Deift  and B.  Simon,\nAlmost periodic Schrodinger operators. III.\nThe absolutely continuous spectrum in one dimension,\nComm. Math. Phys. 90 (1983),  389-411.\n\nE. I. Dinaburg and Ja. G. Sinai,\nThe one-dimensional Schrodinger equation with quasiperiodic potential,\nFunk. Anal. i Prilozen. 9 (1975),  8-21.\n\nL. H. Eliasson,\nFloquet solutions for the -dimensional quasi-periodic\nSchrodinger equation,\nComm. Math. Phys.  146 (1992),  447-482.\n\n,\nReducibility and point spectrum for linear quasi-periodic skew-products,\nProc. Internat. Congress of Mathematicians, Vol. II\n(Berlin, 1998), Doc. Math.  1998,  Extra Vol. II, 779-787.\n\nA.  Fedotov and F.  Klopp,  Anderson transitions\nfor a family of almost periodic Schrodinger equations in the adiabatic case,\nComm. Math. Phys.  227  (2002),   1-92.\n\nM. Goldstein and W. Schlag,\n\nHolder continuity of the integrated density of states for quasi-periodic\nSchrodinger equations and averages of shifts of subharmonic functions,\nAnn. of Math. 154  (2001),  155-203.\n\nA. Y. Gordon, S. Jitomirskaya, Y.  Last, and B. Simon,\nDuality and singular continuous spectrum in the almost Mathieu equation,\nActa Math. 178 (1997),  169-183.\n\nG. H. Hardy and E. M. Wright, An Introduction to the Theory\nof Numbers,  Fifth edition, The Clarendon Press, Oxford Univ. Press, New\nYork, 1979.\n\nB. Helffer and J.  Sjostrand,\nSemiclassical analysis for Harper's equation. III. Cantor structure of\nthe spectrum, Mem. Soc. Math. France 39  (1989), 1-124.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L1366-1431::c23",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L1478-1539::c25",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L1478-1539::c25",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 1478,
+    "end_line": 1539,
+    "text": "B. Helffer and J.  Sjostrand,\nSemiclassical analysis for Harper's equation. III. Cantor structure of\nthe spectrum, Mem. Soc. Math. France 39  (1989), 1-124.\n\nM. Herman,\nUne methode pour minorer les exposants de Lyapounov et quelques exemples\nmontrant le caractere local d'un theoreme d'Arnold\net de Moser sur le tore de dimension ,\nComment. Math. Helv. 58 (1983), 453-502.\n\nD. R. Hofstadter,\nEnergy levels and wave functions of Bloch electrons in a rational or\nirrational magnetic field, Phys. Rev. B 14  (1976), 2239-2249.\n\nK. Ishii,\nLocalization of eigenstates and transport phenomena in one-dimensional\ndisordered systems,\nSuppl. Prog. Theor. Phy. 53 (1973), 77-138.\n\nS. Jitomirskaya,\nMetal-insulator transition for the almost Mathieu operator,\nAnn. of Math. 150  (1999), 1159-1175.\n\nS. Ya. Jitomirskaya and I. V.  Krasovsky,\nContinuity of the measure of the spectrum for discrete\nquasiperiodic operators,\nMath. Res. Lett.  9  (2002),  413-421.\n\nR. Johnson and J.  Moser,\nThe rotation number for almost periodic potentials,\nComm. Math. Phys. 84 (1982),  403-438.\n\nA. N. Kolmogorov,\nOn inequalities between the upper bounds of the successive derivatives\nof an arbitrary function on an infinite interval,\nAmer. Math. Soc. Transl.  (1949), 19 pp.\n\nR. Krikorian,\nGlobal density of reducible quasi-periodic cocycles on ,\nAnn. of Math. 154  (2001), 269-326.\n\n,\nReducibility, differentiable rigidity and Lyapunov\nexponents for quasi-periodic cocycles on ,\npreprint (www.arXiv.org, math.DS/0402333).\n\nY. Last,\nZero measure spectrum for the almost Mathieu operator,\nComm. Math. Phys. 164  (1994), 421-432.\n\nY. Last and B.  Simon,\nEigenfunctions, transfer matrices, and absolutely continuous spectrum of\none-dimensional Schrodinger operators,\nInvent. Math. 135 (1999), 329-367.\n\nM. Lyubich,\n\nAlmost every real quadratic map is either regular or stochastic,\nAnn. of Math. 156  (2002), 1-78.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L1433-1476::c24",
+        "direction": "previous"
+      },
+      {
+        "id": "0306382v3::L1542-1577::c26",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "0306382v3::L1542-1577::c26",
+    "file": "data/data/full_text/0306382v3.txt",
+    "section_path": "",
+    "start_line": 1542,
+    "end_line": 1577,
+    "text": "Almost every real quadratic map is either regular or stochastic,\nAnn. of Math. 156  (2002), 1-78.\n\nJ. Palis,\nA global view of dynamics and a conjecture on the\ndenseness of finitude of attractors,\nGeometrie Complexe et\nSystemes\nDynamiques (Orsay, 1995), Asterisque 261 (2000),\n335-347.\n\nL. A. Pastur,\nSpectral properties of disordered systems in the one-body approximation,\nComm. Math. Phys.  75   (1980),  179-196.\n\nB. Simon,   Kotani theory for one-dimensional\nstochastic Jacobi matrices,  Comm. Math. Phys.  89  (1983),\n227-234.\n\n,\nSchrodinger operators in the twenty-first century, in\nMathematical Physics 2000, 283-288, Imperial College Press, London, 2000.\n\nE. Sorets and T.  Spencer,\nPositive Lyapunov exponents for Schrodinger operators\nwith quasi-periodic potentials,\nComm. Math. Phys. 142 (1991),  543-566.\n\nD. Sullivan,\nReminiscences of Michel Herman's first great theorem,\nin \"Michael R. Herman\" Gazette des Mathematiciens 88,\n90-93, Soc. Math.  France, Paris, 2001.\n\nJ.-C. Yoccoz,  Theoreme de Siegel, nombres de Bruno et\npolynomes quadratiques, in Petits Diviseurs en Dimension ,\nAsterisque   231, 3-88, Soc. Math. France,\nParis, 1995.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "0306382v3::L1478-1539::c25",
+        "direction": "previous"
+      }
+    ]
+  }
+]

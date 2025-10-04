@@ -1,0 +1,339 @@
+[
+  {
+    "id": "2107.08547v1::L21-251::c0",
+    "file": "data/data/full_text/2107.08547v1.txt",
+    "section_path": "",
+    "start_line": 21,
+    "end_line": 251,
+    "text": "OT2wncyr\n\nA\nB\nC\n\narea\n\nA\nB\nC\n\nd\nj\nn\nr\nl\n\nSL\nPSL\nSO\n\nTheoremTheorem[section]\nLemmaLemma[section]\nPropositionProposition[section]\nCorollaryCorollary[section]\nremark\nRemarkRemark[section]\nExampleExample[section]\nDefinitionDefinition[section]\nClaimClaim\n\nequationsection\n\n.equation\n\ndefinition\ndefnDefinition[section]\ndefinitionDefinition[section]\n\nloc\n\nI\nII\nIII\n\nf\ng\nG\nh\nT\nj\n\n[]Arithmetic version of anderson localization for quasiperiodic Schrodinger operators with even cosine type potentials\n\nLingrui Ge\n\nDepartment of Mathematics, University of California Irvine, CA, 92697-3875, USA\n\nlingruige10@163.com\n\nJiangong You\n\nChern Institute of Mathematics and LPMC, Nankai University, Tianjin 300071, China jyou@nankai.edu.cn\n\nXin Zhao\n\nDepartment of Mathematics, University of California Irvine, CA, 92697-3875, USA\n\nnjuzhaox@126.com\n\nWe propose a new method to prove Anderson localization for quasiperiodic Schrodinger operators and apply it to the quasiperiodic model considered by Sinai and  Frohlich-Spencer-Wittwer. More concretely, we prove Anderson localization for even  cosine type quasiperiodic Schrodinger operators with large coupling constants, Diophantine frequencies and Diophantine phases.\nIntroduction\n\nAnderson localization of particles and waves in disordered media is one of the most intriguing phenomena in solid-state physics found by Anderson. Mathematically, localization  has already been extensively studied for the random  cases.  Anderson localization in quasiperiodic media even has stronger  backgrounds in physics, which is known to have strong connection with integer quantum Hall effect, and also plays an important  role  in the emerging subject of optical crystals.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L254-259::c1",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2107.08547v1::L254-259::c1",
+    "file": "data/data/full_text/2107.08547v1.txt",
+    "section_path": "",
+    "start_line": 254,
+    "end_line": 259,
+    "text": "Anderson localization of particles and waves in disordered media is one of the most intriguing phenomena in solid-state physics found by Anderson. Mathematically, localization  has already been extensively studied for the random  cases.  Anderson localization in quasiperiodic media even has stronger  backgrounds in physics, which is known to have strong connection with integer quantum Hall effect, and also plays an important  role  in the emerging subject of optical crystals.\n\nAlthough been studied for over sixty years, Anderson localization (Pure point spectrum with exponentially decaying eigenfunctions) for quasiperiodic operators has not been completely understood since it depends sensitively on the frequency, the phase and amplitude of oscillation of the potential.\nSo far almost sure Anderson localization (Anderson localization for almost every phase.) for fixed Diophantine frequencies was rigorously proved only for  the following cosine type quasiperiodic Schrodinger operators with large coupling constants by Sinai, Frohlich-Spencer-Wittwer (Frohlich-Spencer-Wittwer requires the potential to be even.) and Forman-Vandenboom\nwith  (the frequency),  (the phase),  (the coupling constant) and  (the potential) satisfying\n\nat exactly two points, one is minimal and the other one is maximal, which are denoted by  and .\nThese two extremals are non-degenerate, that is,  for",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L21-251::c0",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L263-263::c2",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2107.08547v1::L263-263::c2",
+    "file": "data/data/full_text/2107.08547v1.txt",
+    "section_path": "",
+    "start_line": 263,
+    "end_line": 263,
+    "text": "at exactly two points, one is minimal and the other one is maximal, which are denoted by  and .\nThese two extremals are non-degenerate, that is,  for\n\nAnderson localization (AL)  with precise arithmetic descriptions on  both the frequencies and full Lebesgue measure set of the phases, is referred as to  arithmetic version of Anderson localization, which is obviously stronger than almost sure Anderson localization.  The first arithmetic version of Anderson localization was given by Jitomirskaya who proved  that for any fixed Diophantine frequency and any  fixed Diophantine phase, the almost Mathieu operator (Operator 1.1 with .) has AL for .  Such arithmetic description on the frequency and the phase was explored in a sharp way by Jitomirskaya and Liu, namely, for Diophantine phase, there is a sharp spectral transition in frequency, and for Diophantine frequency, there is a sharp spectral transition in phase. Arithmetic Anderson localization for one dimensional long range quasiperiodic operators with cosine potential was proved in . Recently, a new nonperturbative proof of arithmetic theoretic Anderson localization was given in, which applies to higher dimensional long range quasiperiodic operators,  based on nonperturbative reducibility method and duality argument.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L254-259::c1",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L266-287::c3",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2107.08547v1::L266-287::c3",
+    "file": "data/data/full_text/2107.08547v1.txt",
+    "section_path": "",
+    "start_line": 266,
+    "end_line": 287,
+    "text": "Anderson localization (AL)  with precise arithmetic descriptions on  both the frequencies and full Lebesgue measure set of the phases, is referred as to  arithmetic version of Anderson localization, which is obviously stronger than almost sure Anderson localization.  The first arithmetic version of Anderson localization was given by Jitomirskaya who proved  that for any fixed Diophantine frequency and any  fixed Diophantine phase, the almost Mathieu operator (Operator 1.1 with .) has AL for .  Such arithmetic description on the frequency and the phase was explored in a sharp way by Jitomirskaya and Liu, namely, for Diophantine phase, there is a sharp spectral transition in frequency, and for Diophantine frequency, there is a sharp spectral transition in phase. Arithmetic Anderson localization for one dimensional long range quasiperiodic operators with cosine potential was proved in . Recently, a new nonperturbative proof of arithmetic theoretic Anderson localization was given in, which applies to higher dimensional long range quasiperiodic operators,  based on nonperturbative reducibility method and duality argument.\n\nHowever, the proofs of all the above arithmetic Anderson localization results crucially depend on the assumption that the potential is exactly the cosine function. It is not clear if arithmetic Anderson localization could be expected for other potentials.\nThe main purpose of this paper is to present a new method from the point of view of dynamical systems  to prove the arithmetic version of Anderson localization for quasiperiodic Schrodinger operators. Applying our method to even cosine type quasiperiodic Schrodinger operator, we give an improvement of Frohlich-Spencer-Wittwer's result.  Compared to the methods of which are based on certain kind of multiscale analysis, our method is purely dynamical and gives concrete description of the localization phases (In, Anderson localization was proved for almost every phase without an arithmetic description.). We are also able to give almost sharp estimate on the decay rate of the all eigenfunctions.\nStatement of the main results\nBefore formulating our results, we first give precise arithmetic description on  and . A frequency   is called ()-Diophantine   (denoted by  if\n\nWe will use the notation\n\nFor a given irrational number , we say  is ()-Diophantine with respect to   (denoted by ) if\n\nfor any , where  Let\nClearly,  is a set of  full Lebesgue measure for any fixed irrational number .\n\nGiven  and an even  cosine type potential , there exists   such that  has Anderson localization for all  provided that .\n\nTo give a simple arithmetic description of the localization phases (i.e., the Diophantine phases), the eveness condition seems to be necessary.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L263-263::c2",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L289-313::c4",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2107.08547v1::L289-313::c4",
+    "file": "data/data/full_text/2107.08547v1.txt",
+    "section_path": "",
+    "start_line": 289,
+    "end_line": 313,
+    "text": "To give a simple arithmetic description of the localization phases (i.e., the Diophantine phases), the eveness condition seems to be necessary.\n\nIf  is very Liouvillean or  is very -Liouvillean (i.e., for generic  and ),  has purely singular continuous spectrum. Thus to prove localization type results, the arithmetic assumptions on both  and  are necessary.\nWe also have a precise estimate on the decay rate of all eigenfunctions.\n\nGiven ,  and an even  cosine type potential , there exists  such that  all eigenfunctions of the operator   satisfy\n\nprovided that .\n\nFor the almost Mathieu operator (a typical example), Jitomirskaya proved\n\nThus, the decay rate in the above theorem is almost sharp.\nWe point out an interesting phenomenon based on Theorem : The localization phases do not  sensitively depend on the space of even  cosine type . This phenomenon can be viewed as the robustness of localization phases introduced in.\n\nFor fixed ,  is said to have  robust Anderson localization if there is a  neighborhood  of  and a subset , such that\n\nmoreover .\nTheorem  proved that  with even cosine like potential has  robust Anderson localization in the space of even potentials. It seems that  both the symmetry (eveness) and the profile ( cosine type) of the potential play key roles in robust Anderson localization.\n\nWe also mention some important results related to Anderson localization.  Eliasson  proved that if  is a Gevrey function satisfying non-degenerate conditions, for any fixed Diophantine ,  has pure point spectrum for   and large enough  (depending on ).  Bourgain and Goldstein proved that, in the positive Lyapunov exponent regime, for any  fixed ,  has AL for    Diophantine  provided that   is a non-constant real analytic function. See for more results.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L266-287::c3",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L315-315::c5",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2107.08547v1::L315-315::c5",
+    "file": "data/data/full_text/2107.08547v1.txt",
+    "section_path": "",
+    "start_line": 315,
+    "end_line": 315,
+    "text": "We also mention some important results related to Anderson localization.  Eliasson  proved that if  is a Gevrey function satisfying non-degenerate conditions, for any fixed Diophantine ,  has pure point spectrum for   and large enough  (depending on ).  Bourgain and Goldstein proved that, in the positive Lyapunov exponent regime, for any  fixed ,  has AL for    Diophantine  provided that   is a non-constant real analytic function. See for more results.\n\nStrategy of the proof As we mentioned above, our method is motivated by the methods introduced in. In, Avila-You-Zhou and Jitomirskaya-Kachkovskiy gave criteria to prove almost sure Anderson localization for quasiperiodic operators based on nonperturbative reducibility method and duality argument. More precisely, there are two steps. The first step is to construct a family of eigenvalues and eigenfunctions for almost every phase  based on reducibility and duality. The second step is to show the family of eigenfunctions they constructed form a complete basis of . However, the  arithmetic version of  Anderson localization is more difficult to be proved compared with almost sure Anderson localization. In, Ge-You found a strategy to recover the phases lost in using the method in, by introducing an auxiliary measure defined by reducibility, i.e. the -measure. By using quantitative reducibility, they proved stratified continuity of the -measure with respect to the phase on the set of Diophantine phases. Ge-You's method was further developed and simplified by Ge-You-Zhao in to give a new proof of the arithmetic transition conjecture proposed by Jitomirskaya.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L289-313::c4",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L318-318::c6",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2107.08547v1::L318-318::c6",
+    "file": "data/data/full_text/2107.08547v1.txt",
+    "section_path": "",
+    "start_line": 318,
+    "end_line": 318,
+    "text": "Strategy of the proof As we mentioned above, our method is motivated by the methods introduced in. In, Avila-You-Zhou and Jitomirskaya-Kachkovskiy gave criteria to prove almost sure Anderson localization for quasiperiodic operators based on nonperturbative reducibility method and duality argument. More precisely, there are two steps. The first step is to construct a family of eigenvalues and eigenfunctions for almost every phase  based on reducibility and duality. The second step is to show the family of eigenfunctions they constructed form a complete basis of . However, the  arithmetic version of  Anderson localization is more difficult to be proved compared with almost sure Anderson localization. In, Ge-You found a strategy to recover the phases lost in using the method in, by introducing an auxiliary measure defined by reducibility, i.e. the -measure. By using quantitative reducibility, they proved stratified continuity of the -measure with respect to the phase on the set of Diophantine phases. Ge-You's method was further developed and simplified by Ge-You-Zhao in to give a new proof of the arithmetic transition conjecture proposed by Jitomirskaya.\n\nIn the present paper, instead of using reducibility and duality, we give a new way to construct a family of eigenvalues with exponentially localized eigenfunctions for  cosine type quasiperiodic Schrodinger operators by the induction scheme developed in. The intuition is that if the intersection between asymptotic stable and unstable directions of the transfer matrix persist in larger and larger time scale which eventually implies the intersection of stable and unstable directions and  the norm of the transfer matrix grows exponentially, then one can construct an eigenfunction. When a family of eigenvalues with exponentially localized  eigenfunctions are constructed almost surely, almost sure Anderson localization follows directly by the criteria in.  To prove  the arithmetic version of AL, i.e., AL for all ,   one possible way is to prove that   (the pure point piece of the spectral measure) is continuous in . However, this seems to be a difficult task and we don't know how to prove it directly since  sensitively depends on .   Our strategy is to  introduce a new measure  via the localized eigenfunctions we constructed, which is called  -measure, motivated by the -measure defined in. We will prove that   is absolutely continuous with respect to . The advantage of  is its stratified continuity in , more precisely the continuity in , can be proved by  quantitative estimates of the localized eigenfunctions. In this way, we can approximate each lost phase in   by localization phases, and prove   for all phases in .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L315-315::c5",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L320-389::c7",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2107.08547v1::L320-389::c7",
+    "file": "data/data/full_text/2107.08547v1.txt",
+    "section_path": "",
+    "start_line": 320,
+    "end_line": 389,
+    "text": "In the present paper, instead of using reducibility and duality, we give a new way to construct a family of eigenvalues with exponentially localized eigenfunctions for  cosine type quasiperiodic Schrodinger operators by the induction scheme developed in. The intuition is that if the intersection between asymptotic stable and unstable directions of the transfer matrix persist in larger and larger time scale which eventually implies the intersection of stable and unstable directions and  the norm of the transfer matrix grows exponentially, then one can construct an eigenfunction. When a family of eigenvalues with exponentially localized  eigenfunctions are constructed almost surely, almost sure Anderson localization follows directly by the criteria in.  To prove  the arithmetic version of AL, i.e., AL for all ,   one possible way is to prove that   (the pure point piece of the spectral measure) is continuous in . However, this seems to be a difficult task and we don't know how to prove it directly since  sensitively depends on .   Our strategy is to  introduce a new measure  via the localized eigenfunctions we constructed, which is called  -measure, motivated by the -measure defined in. We will prove that   is absolutely continuous with respect to . The advantage of  is its stratified continuity in , more precisely the continuity in , can be proved by  quantitative estimates of the localized eigenfunctions. In this way, we can approximate each lost phase in   by localization phases, and prove   for all phases in .\n\nWang-Zhang's induction theorem\nInspired by, Wang and Zhang in developed an induction scheme to study the positivity and continuity of the Lyapunov exponent and Cantor spectrum of quasiperiodic Schrodinger operators  with    cosine type potentials.   We observe that the induction theorem can also be used to construct eigenfunctions, which is one of the corner stones in our proof of the arithmetic version of Anderson localization. Now we briefly introduce their induction theorem.  The readers are referred to for details.\n\nFor  let\n\nDefine\n\nas  the most contraction direction of  i.e.,   for unit vector  in the direction . Abusing the notation a little, define  and . Then for , it is clear that\n\nwhere  are angles corresponding to the directions\n\nThe main object of the present paper is the following Schrodinger cocycles , where\n\nLet  and . In this case,  there is  such that\n\nwhere\n*\nschcon in fact  gives the polar decomposition of the Schrodinger cocycles.\n\nFrom now on, let  be as above and\n\nAbusing the notation a little bit, for  we define\n\nWe call  (respectively, ) the -step stable (respectively, unstable) direction.\n\nSet  and  for all .  Let  be the continued fraction approximants of  Fix a  large  proved the following conclusion by induction. Assume that for   the following objects are well defined:\n\n-th step\n\nwith  minimizing\n-th step\n\n-th step\n\nare the first return times (back to ) after time  Here  is the forward return time and  is backward. Let  with\n()-th step angle\n\nwhere\n\nThe next theorem, which is from's induction theorem, gives the precise description of the several important quantities mentioned above.\n\n[Theorem 3 of]Given ,  and a  cosine type potential , there exists  such that  the following holds for .\n\nFor each  and  it holds that",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L318-318::c6",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L391-474::c8",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2107.08547v1::L391-474::c8",
+    "file": "data/data/full_text/2107.08547v1.txt",
+    "section_path": "",
+    "start_line": 391,
+    "end_line": 474,
+    "text": "For each  and  it holds that\n\nFor each ,  and  all , it holds that\n\nFor each ,  and  all , it holds that\n\nFor each  and . If  for all , then\n\nTheorem  is a simplified version of Theorem 3 in. See (57)-(59) in Theorem 3 and Lemma 6 of.\n\nConstruction of eigenfunctions\nIn this section, we construct sufficiently many \"good\"  eigenfunctions of  by Theorem . We denote by  the spectral set of  (It does not depend on  since  is irrational).\nThe critical points and growth of the transfer matrix\n\nLet  and  be an even  cosine type potential. For any , there exists  such that if , and , then there exists a strictly increasing continuous surjection\n\nand there exist   if   with\n\nsuch that  where  and  is the unit vector in the direction .\n\nBy cwc in Theorem  (See also Theorem 3 and Theorem 2 in), for any , for all  and , we have\n\nthus there exists  such that\n*\n\nWe first prove , this is because of mzz in Theorem , we have\n\nthis implies\n\nSince  is even, we have\n*)\nthis implies that\n\nsimilarly\n\nuse1 and use2 imply\n\nBy new in Theorem ,\n\nHence\n\nBy C4, we have\n\nWe  simply denote . By the induction theorem (Theorem ) we have\n\nNote that  is continuous on , since  converges uniformly to  on  and  is continuous, combine these together, we get that  is a continuous surjection from  to .\n\nNow we prove  is increasing on , we need the following result: for  with , i.e.,\n\nby C4,  there exists , such that for all\n\nthus by Corollary 3 in,\n\nin a small neighborhood of . In view of use3 and use4, for any sequence  with , we have  for all  sufficiently large.\n\nWe are now ready to prove the monotonicity of . We prove this by contradiction, otherwise, there exists\nsuch that , for , there exists , let  and for , we have\n\nThus there exists sequence  with , such that  for all  sufficiently large which is a contradiction.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L320-389::c7",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L476-542::c9",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2107.08547v1::L476-542::c9",
+    "file": "data/data/full_text/2107.08547v1.txt",
+    "section_path": "",
+    "start_line": 476,
+    "end_line": 542,
+    "text": "Thus there exists sequence  with , such that  for all  sufficiently large which is a contradiction.\n\nWe omit the dependence on  in the following. For any , let  be the return times of  to , by mzz, new in Theorem  and C4, we have\n\nfor some . Thus we have proved C3.  Finally, C1 follows from jiaoducha in Theorem .\n\nConstruction of  good eigenfunctions\nRecall that .\nFor any  and , a normalized eigenfunction (We say  is normalized if .)   is said to be -good, if  for any .\nAssume  and  is an even  cosine type potential, for any , there exists  and  such that if  and , then  has a -good eigenfunction corresponding to eigenvalue .\n\nWe denote by , for , by  schcon, we have\n\n*\nHence\n*\nThis implies that\n*\nWe have\n*\nBy C3, we have\n\nfor some .\n\nSimilarly,\n*\nFor , we denote by\n\nthen for , by C1, we have\n*\nThus  is a -good eigenfunction for .\n\nCompleteness arguments\n-measureIn , the authors introduced -measure to prove the arithmetic version of Anderson localization.  Inspired by the idea, we introduce similarly a measure by Proposition  in stead of reducibility in. The measure, we  call it   -measure, will play an important role in the proof of arithmetic version of Anderson localization. We next define  as the following:\n\nSince  is increasing in the spectrum,  takes one value\n\nFor every  and , we define  . For any , we define a vector-valued function  as the following,\n\nwhere  is the eigenfunction of  constructed in  Proposition .\n\nFor any fixed , we denote by . We can define the following -measure,\n[-measure] is defined as:\n\nfor all  in the Borel -algebra  of , where .\nThe -measure is well defined since the eigenvalues are simple and has the following property.\nFor  ,\nwhere  is the Lebesgue measure.\n\nNote that  is measurable in  and . Thus  for a.e. .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L391-474::c8",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L544-647::c10",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2107.08547v1::L544-647::c10",
+    "file": "data/data/full_text/2107.08547v1.txt",
+    "section_path": "",
+    "start_line": 544,
+    "end_line": 647,
+    "text": "Note that  is measurable in  and . Thus  for a.e. .\n\nFor any , let . For any , if , let . If , let  be the spectral projection of  onto the eigenspace corresponding to . By the definition of ,  is an normalized eigenfunction of  , thus  ( is a translation defined by .) is an normalized eigenfunction of . Now we define a projection operator for any ,\n\nNote that  all these 's in  are different and  all  are mutually orthogonal. It follows that   is a projection. Moreover, we have\n*\nBy Fubini theorem, we have\n*\nSince , we have\n*\nIt follows that  belongs to the range of , and for each , we have\n\nThis implies that\n*\nSince  is a normalized eigenfunction, i.e.,\n\nHence we have\n*\nThus\n\nfor  . This finishes  the proof.\nArithmetic version of Anderson localization\nFor any , there exists  such that for all , we have\n\nNote that for any , by Proposition ,\n\nThus for any , there exists  such that for all ,\n\nWe define . Then\nFor any  and , there exists  such that\n\nfor any  with  where .\n\nFor any fixed  and any , we have\n\nThus  for . By Proposition , we have\n\nBy telescoping and Lemma ,  there exists , such that if , then\n\nredest10 and redest11 imply for any ,\n*\nThus we have\n*\nBy Definition  and def1, one has\n*\nFor any , we have  is - homogenous, i.e.,  for any .\n\nLet , then\n. Thus for any  sufficiently small, we have\n\nNotice that if , then\n\nIt follows that , thus  which implies that\n\nProof of Theorem : For any fixed , by Lemma  and Lemma , for any , there exists a sequence  such that  and\n\nBy Lemma , there exists  such that\n\nBy Lemma ,\n\nThus\n*\nLet , we have\n\nwhere  is the spectral measure of  defined by\n\nand   is pure point piece of . It follows  that  for any . Thus we finish the proof.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L476-542::c9",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L659-674::c11",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2107.08547v1::L659-674::c11",
+    "file": "data/data/full_text/2107.08547v1.txt",
+    "section_path": "",
+    "start_line": 659,
+    "end_line": 674,
+    "text": "and   is pure point piece of . It follows  that  for any . Thus we finish the proof.\n\nAcknowledgement\nJ. You was partially supported by National Key RD Program of China (2020YFA0713300), NNSF of China (11871286). L. Ge and X. Zhao were partially supported by NSF DMS-1901462. L. Ge was partially supported by AMS-Simons Travel Grant 2020-2022.\n99\nM. Aizenman. Localization at weak disorder: some elementary bounds. Rev. Math. Phys. 6 (1994), 1163-1182.\nM. Aizenman and G.M. Graf. Localization bounds for an electron gas. J. Phys. A: Math. Gen. 31 (1998), 6783-6806.\nM. Aizenman and S. Molchanov. Localization at large disorder and at extreme energies : an elementary derivations. Commun. Math. Phys. 157 (1993), 245-278.\nM. Aizenman, J. Schenker, R. Friedrich and D. Hundertmark. Finite-volume fractional-moment criteria for Anderson localization. Commun. Math. Phys. 224 (2001), 219-253.\n\nP. Anderson. Absence of diffusion in certain random lattices. Phys. Rev. 109 (1958), 1492-1505.\n\nA. Avila, D. Damanik and Z. Zhang. Singular density of states measures for subshift and quasi-periodic Schrodinger operators. Commun. Math. Phys. 330 (2014), 469-498.\nA. Avila and S. Jitomirskaya. Almost localization and almost reducibility. J. Eur. Math. Soc 12 (2010), 93-131.\nA. Avila, J. You and Q. Zhou. Sharp phase transitions for the almost Mathieu operator. Duke Math. J. 14 (2017), 2697-2718.\nJ. E. Avron, D. Osadchy and R. Seiler. A topological look at the quantum Hall effect. Physics today. 56 (2003), 38-42.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L544-647::c10",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L684-700::c12",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2107.08547v1::L684-700::c12",
+    "file": "data/data/full_text/2107.08547v1.txt",
+    "section_path": "",
+    "start_line": 684,
+    "end_line": 700,
+    "text": "A. Avila, D. Damanik and Z. Zhang. Singular density of states measures for subshift and quasi-periodic Schrodinger operators. Commun. Math. Phys. 330 (2014), 469-498.\nA. Avila and S. Jitomirskaya. Almost localization and almost reducibility. J. Eur. Math. Soc 12 (2010), 93-131.\nA. Avila, J. You and Q. Zhou. Sharp phase transitions for the almost Mathieu operator. Duke Math. J. 14 (2017), 2697-2718.\nJ. E. Avron, D. Osadchy and R. Seiler. A topological look at the quantum Hall effect. Physics today. 56 (2003), 38-42.\n\nJ. Bourgain and M. Goldstein. On nonperturbative localization with quasi-periodic potential. Ann. of Math. 152 (2000), 835-879.\nJ. Bourgain and S. Jitomirskaya. Anderson localization for the band model. Geometric Aspects of Functional Analysis. Lecture Notes in Math. Springer, Berlin, 1745 (2000), 67-79.\nJ. Bourgain and S. Jitomirskaya. Absolutely continuous spectrum for 1D quasiperiodic operators. Invent. Math. 148 (2002), 453-463.\n\nF. Delyon, H. Kunz and B. Souillard. One-dimensional wave equations in disordered media. J. Phys. A: Math. Gen. 16 (1983), 25-42.\n\nL. H. Eliasson. Discrete one-dimensional quasi-periodic Schrodinger operators with pure point spectrum. Acta Math. 179 (1997), 153-196.\n\nY. Forman and T. Vandenboom.  Localization and Cantor spectrum for  quasi-periodic discrete Schrodinger operators. arXiv:2107.05461v1.\nJ. Frohlich, T. Spencer and P. Wittwer. Localization for a class of one dimensional quasi-periodic Schrodinger operators. Commun. Math. Phys. 132 (1990), 5-25.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L659-674::c11",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L702-716::c13",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2107.08547v1::L702-716::c13",
+    "file": "data/data/full_text/2107.08547v1.txt",
+    "section_path": "",
+    "start_line": 702,
+    "end_line": 716,
+    "text": "Y. Forman and T. Vandenboom.  Localization and Cantor spectrum for  quasi-periodic discrete Schrodinger operators. arXiv:2107.05461v1.\nJ. Frohlich, T. Spencer and P. Wittwer. Localization for a class of one dimensional quasi-periodic Schrodinger operators. Commun. Math. Phys. 132 (1990), 5-25.\n\nL. Ge and I. Kachkovskiy. Ballistic transport for one-dimensional quasiperiodic Schrodinger operators. arXiv:2009.02896. To appear in Comm. Pure Appl. Math.\nL. Ge and J. You. Arithmetic version of Anderson localization via reducibility. Geom. Funct. Anal. 30(5) (2020), 1370-1401.\nL. Ge, J. You and X. Zhao. The arithmetic transition conjecture: new proof and generalization. Preprint.\nL. Ge, J. You and Q. Zhou. Exponential dynamical localization: Criterion and applications. arXiv:1901.04258. To appear in Ann. Sci. Ec. Norm. Super. (4).\nB.I. Halperin. Quantized Hall conductance, current-carrying edge states, and the existence of extended\nstates in a two-dimensional disordered potential.  Phys. Rev. B. 25  (1982), 2185-2190.\nS. Jitomirskaya. Almost everything about the almost Mathieu operator, II in Proc. of XI Int. Congress of Math. Physics. Int. Press, Somerville, Mass. (1995), 373-382.\nS. Jitomirskaya. Metal-Insulator Transition for the almost Mathieu operator. Ann. of Math. 150 (1999), 1159-1175.\nS. Jitomirskaya and I. Kachkovskiy. -reducibility and localization for quasiperiodic operators. Math. Res. Lett. 23 (2016), 431-444.\nS. Jitomirskaya and W. Liu. Universal hierarchical structure of quasi-periodic eigenfuctions. Ann. of Math. 187(3) (2018), 721-776.\nS. Jitomirskaya and W. Liu. Universal reflective-hierarchical structure of quasiperiodic eigenfunctions and sharp spectral transition in phase. arXiv:1802.00781.\nS. Jitormiskya and  B. Simon. Operators with singular continuous spectrum. III. Almost periodic Schrodinger operators. Commun. Math. Phys. 165 (1994), 201-105.\nA. Klein and A. Figotin. Midgap defect modes in dielectric and acoustic media. SIAM. J. Appl. Math.\n58 (1998), 1748-1773.\nS. Klein. Anderson localization for the discrete one-dimensional quasi-periodic Schrodinger operator with potential defined by a Gevrey-class function.  J. Funct. Anal. 218 (2005), 255-292.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L684-700::c12",
+        "direction": "previous"
+      },
+      {
+        "id": "2107.08547v1::L718-749::c14",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2107.08547v1::L718-749::c14",
+    "file": "data/data/full_text/2107.08547v1.txt",
+    "section_path": "",
+    "start_line": 718,
+    "end_line": 749,
+    "text": "L. Ge and I. Kachkovskiy. Ballistic transport for one-dimensional quasiperiodic Schrodinger operators. arXiv:2009.02896. To appear in Comm. Pure Appl. Math.\nL. Ge and J. You. Arithmetic version of Anderson localization via reducibility. Geom. Funct. Anal. 30(5) (2020), 1370-1401.\nL. Ge, J. You and X. Zhao. The arithmetic transition conjecture: new proof and generalization. Preprint.\nL. Ge, J. You and Q. Zhou. Exponential dynamical localization: Criterion and applications. arXiv:1901.04258. To appear in Ann. Sci. Ec. Norm. Super. (4).\nB.I. Halperin. Quantized Hall conductance, current-carrying edge states, and the existence of extended\nstates in a two-dimensional disordered potential.  Phys. Rev. B. 25  (1982), 2185-2190.\nS. Jitomirskaya. Almost everything about the almost Mathieu operator, II in Proc. of XI Int. Congress of Math. Physics. Int. Press, Somerville, Mass. (1995), 373-382.\nS. Jitomirskaya. Metal-Insulator Transition for the almost Mathieu operator. Ann. of Math. 150 (1999), 1159-1175.\nS. Jitomirskaya and I. Kachkovskiy. -reducibility and localization for quasiperiodic operators. Math. Res. Lett. 23 (2016), 431-444.\nS. Jitomirskaya and W. Liu. Universal hierarchical structure of quasi-periodic eigenfuctions. Ann. of Math. 187(3) (2018), 721-776.\nS. Jitomirskaya and W. Liu. Universal reflective-hierarchical structure of quasiperiodic eigenfunctions and sharp spectral transition in phase. arXiv:1802.00781.\nS. Jitormiskya and  B. Simon. Operators with singular continuous spectrum. III. Almost periodic Schrodinger operators. Commun. Math. Phys. 165 (1994), 201-105.\nA. Klein and A. Figotin. Midgap defect modes in dielectric and acoustic media. SIAM. J. Appl. Math.\n58 (1998), 1748-1773.\nS. Klein. Anderson localization for the discrete one-dimensional quasi-periodic Schrodinger operator with potential defined by a Gevrey-class function.  J. Funct. Anal. 218 (2005), 255-292.\n\nH. Kunz and B. Souillard. Sur le spectre des oprateurs aux diffrences finies alatoires. Commun. Math. Phys. 78 (1980/81), 201-246.\n\nQ. Niu, D.J. Thouless and. Y.S. Wu. Quantized  Hall conductance as a topological invariant. Phys.Rev.\nB. 31  (1985), 3372-3377.\n\nD. Osadchy and J.E.  Avron. Hofstadter butterfly as quantum phase\ndiagram. J. Math Phys. 42 (2001), 5665-5671.\n\nYa. G. Sinai. Anderson localization for one-dimensional difference Schrodinger operator with quasi-periodic potential. J. Stat. Phys. 46 (1987), 861-909.\nY. Wang and Z. Zhang. Uniform positivity and continuity of Lyapunov exponents for a class of  quasiperiodic Schrodinger cocycles. J. Funct. Anal. 268 (2015), 2525-2585.\nY. Wang and Z. Zhang. Cantor spectrum for a class of  quasiperiodic Schrodinger operators. Int. Math. Res. Not. 8 (2017), 2300-2336.\nL.-S. Young. Lyapunov exponent fir some quasi-periodic cocycles. Ergodic Theory Dynam. Systems 17 (1997), 483-504.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2107.08547v1::L702-716::c13",
+        "direction": "previous"
+      }
+    ]
+  }
+]

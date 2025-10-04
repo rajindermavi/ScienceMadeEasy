@@ -15,7 +15,17 @@
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1510.07651v2::L19-29::s1",
+        "direction": "next"
+      },
+      {
+        "id": "1510.07651v2::L94-691::s1",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "1510.07651v2::L19-29::s1",
@@ -24,14 +34,42 @@
     "start_line": 19,
     "end_line": 29,
     "text": "In the periodic case the spectrum is the union of $q$ bands (closed intervals), possibly touching at the edges (endpoints). As $\\theta$ varies, these bands move and their length may change, but different bands never overlap other than at endpoints. In fact, it is known that these bands are disjoint except for some special values of $\\theta$ when $q$ is even. In these cases, the two central bands are touching at $0$.\n\nIn the almost periodic case, the spectrum $\\sigma(\\alpha, \\lambda,\n\\theta)$ does not depend on $\\theta$. In this case, for any $\\alpha\\in\\mathbb{R}\\setminus\\mathbb{Q}$ and $\\lambda\\neq 0$, it is a Cantor set (a nowhere dense closed set with no isolated points) and has Lebesgue measure $|4 - 2|\\lambda\\|$. This theorem is the result of work by numerous researchers over several decades (see ). The final step was accomplished in the work of Avila–Jitomirskaya .\n\nFor the case $|\\lambda| = 2$, known as the critical case, and for every irrational $\\alpha$, the spectrum is a Cantor set of zero Lebesgue measure and the question of its fractal dimension naturally arises. Our main result is the following theorem:\n\n<div id=\"mainTheorem\" class=\"theorem\">\n\n**Theorem 1**. *There exists a dense $G_\\delta$ set of $\\alpha$’s, for which $$\\mathrm{dim_H}(\\sigma(\\alpha, 2, \\theta)) = 0 \\quad \\text{for every $\\theta$,}$$ where $\\sigma(\\alpha, 2, \\theta)$ is the spectrum of $H_{\\alpha,2,\\theta}$ and $\\mathrm{dim_H}(\\cdot)$ denotes Hausdorff dimension.*\n\n</div>",
-    "labels": [],
+    "labels": [
+      "mainTheorem"
+    ],
     "refs": [],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1510.07651v2::L1-18::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "1510.07651v2::L30-37::s2",
+        "direction": "next"
+      },
+      {
+        "id": "1510.07651v2::L38-48::s3",
+        "direction": "comment"
+      },
+      {
+        "id": "1510.07651v2::L49-68::s4",
+        "direction": "comment"
+      },
+      {
+        "id": "1510.07651v2::L84-85::s6",
+        "direction": "comment"
+      },
+      {
+        "id": "1510.07651v2::L94-691::s1",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "1510.07651v2::L30-37::s2",
@@ -47,7 +85,17 @@
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1510.07651v2::L19-29::s1",
+        "direction": "previous"
+      },
+      {
+        "id": "1510.07651v2::L38-48::s3",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "1510.07651v2::L38-48::s3",
@@ -57,13 +105,29 @@
     "end_line": 48,
     "text": "As for Hausdorff dimension, J. Bellissard (private communication to the first author, circ. 1995) conjectured that there should exist some $\\beta \\in (0, 1/2]$ such that $\\mathrm{dim_H}(\\sigma(\\alpha, 2, \\theta)) = \\beta$ for almost every $\\alpha$. The only rigorous result on the Hausdorff dimension that we are aware of is in , were it is proved that for a dense $G_\\delta$ set of irrational $\\alpha$’s, the Hausdorff dimension of the spectrum is $\\leq \\frac{1}{2}$. The relevant $\\alpha$’s are characterized by $$\\liminf_{q \\to \\infty} \\inf_p q^4 \\left| \\alpha - \\frac{p}{q} \\right| < \\infty~.$$\n\nWe mention an immediate corollary of Theorem <a href=\"#mainTheorem\" data-reference-type=\"ref\" data-reference=\"mainTheorem\">1</a> pertaining to the integrated density of states. Recall that the integrated density of states $\\mathcal{N}_{\\alpha, \\lambda}(E)$ is a cumulative distribution function of a measure supported on $\\sigma(H_{\\alpha,\\lambda,\\theta})$. For irrational $\\alpha$, it can be defined via its Stieltjes transform by $$\\int f(E) d\\mathcal{N}_{\\alpha, \\lambda}(E) = \\frac{1}{2\\pi} \\int_0^{2\\pi} \n\\langle f(H_{\\alpha,\\lambda,\\theta}) \\delta_0, \\delta_0 \\rangle \\, d\\theta~, \\quad f \\in C(\\mathbb{R})~,$$ where $\\delta_0(n)$ is $1$ if $n=0$ and $0$ otherwise. Recalling Frostman’s lemma (see, e.g., ), we obtain:\n\n<div class=\"cor\">\n\n**Corollary 1**. *There exists a dense $G_\\delta$ set of $\\alpha$’s for which the integrated density of states $\\mathcal{N}_{\\alpha, 2}(E)$ is not Hölder continuous of any order $\\gamma > 0$.*\n\n</div>\n\nWe note that the existence of irrational $\\alpha$’s for which $\\mathcal{N}_{\\alpha,2}$ is not Hölder continuous of any order $\\gamma > 0$ also follows from the work of Helffer–Sjöstrand ; see Bourgain .",
     "labels": [],
-    "refs": [],
+    "refs": [
+      "mainTheorem"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1510.07651v2::L30-37::s2",
+        "direction": "previous"
+      },
+      {
+        "id": "1510.07651v2::L49-68::s4",
+        "direction": "next"
+      },
+      {
+        "id": "1510.07651v2::L19-29::s1",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "1510.07651v2::L49-68::s4",
@@ -73,15 +137,44 @@
     "end_line": 68,
     "text": "We note that the existence of irrational $\\alpha$’s for which $\\mathcal{N}_{\\alpha,2}$ is not Hölder continuous of any order $\\gamma > 0$ also follows from the work of Helffer–Sjöstrand ; see Bourgain .\n\nA key step in the proof of Theorem <a href=\"#mainTheorem\" data-reference-type=\"ref\" data-reference=\"mainTheorem\">1</a> is the following theorem. Fix $q\\in\\mathbb{Z^+}$ and consider the almost Mathieu operator $H_{\\frac{p}{q}, 2, \\theta}$, where $p < q$ are relatively prime. Let $$S_-\\left(\\frac{p}{q},\n2\\right) \\equiv \\bigcap_{\\theta}\\sigma\\left(\\frac{p}{q}, 2, \\theta\\right)~, \\quad S\\left(\\frac{p}{q},\n2\\right) \\equiv \\bigcup_{\\theta}\\sigma\\left(\\frac{p}{q}, 2, \\theta\\right)~.$$ As discussed below, $S_-(p/q, 2)$ consists of $q$ points; let $$\\label{eqdefdist} \\begin{split}\n\\Delta_{\\frac{p}{q}, 2}(E) &\\equiv \\prod_{E' \\in S_-(p/q, 2)} (E - E')~,\\\\\n\\mathrm{dist}\\left(E, S_{-}\\left(\\frac{p}{q},\n2\\right)\\right)&\\equiv{\\inf_{E^\\prime\\in{S_{-}(\\frac{p}{q}, 2)}}|E - E^\\prime|}~.\n\\end{split}$$ Denote $$\\begin{split}\nJ_\\delta^{(1)}&\\equiv \\{E: |\\Delta_{\\frac{p}{q}, 2}(E)| > \\delta > 0\\}~,\\\\\n{J}_\\delta^{(2)}&\\equiv \\left\\{E: \\mathrm{dist}\\left(E, S_{-}\\left(\\frac{p}{q}, 2\\right)\\right) >\n \\delta > 0\\right\\}~.\n \\end{split}$$\n\n<div id=\"lebesgueMeasure\" class=\"theorem\">\n\n**Theorem 2**. *For any $p/q$ and $0 < \\delta$ there exists $\\eta = \\eta(p,q,\\delta)>0$ such that for $|\\frac{\\widetilde{p}}{\\widetilde{q}} -\n\\frac{p}{q}| < \\eta(p,q,\\delta)$ $$\\mathrm{meas}\\left(S\\left(\\frac{\\widetilde{p}}{\\widetilde{q}}, \\,2\\right) \\cap J_\\delta\\right) < \\\n\\frac{C(p,q)}{\\delta} \\exp \\left\\{-\\frac{\\delta\\widetilde{q}}{C(p,q)}\\right\\}~,$$ where $C(p, q)$ depends only on $p$ and $q$, $\\mathrm{meas}(\\cdot)$ denotes the Lebesgue measure, and $J_\\delta$ denotes either $J_\\delta^{(1)}$ or $J_\\delta^{(2)}$. For $J_\\delta^{(1)}$, one may choose $\\eta(p,q,\\delta) = C^{-q} \\delta^2$ and $C(p, q) = Cq$.*\n\n</div>",
     "labels": [
-      "eqdefdist"
+      "eqdefdist",
+      "lebesgueMeasure"
     ],
-    "refs": [],
+    "refs": [
+      "mainTheorem"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1510.07651v2::L38-48::s3",
+        "direction": "previous"
+      },
+      {
+        "id": "1510.07651v2::L69-83::s5",
+        "direction": "next"
+      },
+      {
+        "id": "1510.07651v2::L19-29::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "1510.07651v2::L69-83::s5",
+        "direction": "comment"
+      },
+      {
+        "id": "1510.07651v2::L84-85::s6",
+        "direction": "comment"
+      },
+      {
+        "id": "1510.07651v2::L94-691::s1",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "1510.07651v2::L69-83::s5",
@@ -90,14 +183,40 @@
     "start_line": 69,
     "end_line": 83,
     "text": "</div>\n\nThis theorem formalizes the following observation inspired by the drawing of Hofstadter . Consider some fixed rational $\\frac{p}{q}$, where $p$ and $q$ are relatively prime, and consider a sequence $\\frac{p_n}{q_n}\\to \\frac{p}{q}$. Then the spectrum naturally splits into regions that correspond to the bands of the spectrum for $\\frac{p}{q}$; the bands that correspond to high order rationals become exponentially small away from the center of the corresponding region.\n\nAn important technical step in the proof of Theorem <a href=\"#lebesgueMeasure\" data-reference-type=\"ref\" data-reference=\"lebesgueMeasure\">2</a> is the following result, which allows to study the behavior of solutions in certain intervals of energies and to obtain their exponential growth for energies outside of the spectrum of the operator. We denote by $\\operatorname{Tr} T$ and $\\det T$ the trace and determinant (respectively) of a square matrix $T$.\n\n<div id=\"matrixTheorem\" class=\"theorem\">\n\n**Theorem 3**. *Fix $0 < \\beta < 1$. Suppose that $T_n \\in SL_2(\\mathbb{C})$, $1 \\leq n \\leq N$, are matrices with eigenvalues $e^{\\pm(\\gamma_n+ i \\zeta_n)}$, $\\gamma_n > 0$, and that the corresponding eigenvectors ${\\phi}^{\\pm}_n$ can be chosen so that $\\|{\\phi}^{\\pm}_n\\| = 1$ and $$\\frac{4 \\max(\\|\\phi^{+}_n- \\phi^{+}_{n+1}\\|,\n\\|\\phi^{-}_n -\n\\phi^{-}_{n+1}\\|)}{|\\det (\\phi_{n+1}^+, \\phi_{n+1}^-)|} <\n\\beta\\gamma_n{e^{-\\gamma_n}}~.$$ Then the matrix product $\\Phi_N = T_N\\ldots T_1$ satisfies $$(1 - \\beta)e^{(1 - \\beta){\\sum_{n=1}^N {\\gamma _n}}}\\leq\\|\\Phi_N\n\\phi^{+}_1\\|\\leq (1 + \\beta)e^{(1 + \\beta){\\sum_{n=1}^N {\\gamma\n_n}}}.$$*\n\n</div>",
-    "labels": [],
-    "refs": [],
+    "labels": [
+      "matrixTheorem"
+    ],
+    "refs": [
+      "lebesgueMeasure"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1510.07651v2::L49-68::s4",
+        "direction": "previous"
+      },
+      {
+        "id": "1510.07651v2::L84-85::s6",
+        "direction": "next"
+      },
+      {
+        "id": "1510.07651v2::L49-68::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "1510.07651v2::L84-85::s6",
+        "direction": "comment"
+      },
+      {
+        "id": "1510.07651v2::L94-691::s1",
+        "direction": "comment"
+      }
+    ]
   },
   {
     "id": "1510.07651v2::L84-85::s6",
@@ -107,13 +226,43 @@
     "end_line": 85,
     "text": "</div>\n\nThe rest of the paper is organized as follows. In Section <a href=\"#s:am.prel\" data-reference-type=\"ref\" data-reference=\"s:am.prel\">2</a> we describe some preliminaries and previously obtained results. In Section <a href=\"#sec:matrixTheorem\" data-reference-type=\"ref\" data-reference=\"sec:matrixTheorem\">3</a> we prove Theorem <a href=\"#matrixTheorem\" data-reference-type=\"ref\" data-reference=\"matrixTheorem\">3</a> and in Section <a href=\"#sec:lebesgueMeasure\" data-reference-type=\"ref\" data-reference=\"sec:lebesgueMeasure\">4</a> we prove Theorem <a href=\"#lebesgueMeasure\" data-reference-type=\"ref\" data-reference=\"lebesgueMeasure\">2</a>. Finally, in Section <a href=\"#sec:mainTheorem\" data-reference-type=\"ref\" data-reference=\"sec:mainTheorem\">5</a>, we prove Theorem <a href=\"#mainTheorem\" data-reference-type=\"ref\" data-reference=\"mainTheorem\">1</a>. One of the steps in the proof of Theorem <a href=\"#lebesgueMeasure\" data-reference-type=\"ref\" data-reference=\"lebesgueMeasure\">2</a> is inspired by the work of Surace , whereas the deduction of Theorem <a href=\"#mainTheorem\" data-reference-type=\"ref\" data-reference=\"mainTheorem\">1</a> makes use of several arguments from .",
     "labels": [],
-    "refs": [],
+    "refs": [
+      "lebesgueMeasure",
+      "mainTheorem",
+      "matrixTheorem",
+      "s:am.prel",
+      "sec:lebesgueMeasure",
+      "sec:mainTheorem",
+      "sec:matrixTheorem"
+    ],
     "meta": {
       "heading": {
         "level": 1,
         "title": "Introduction"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1510.07651v2::L69-83::s5",
+        "direction": "previous"
+      },
+      {
+        "id": "1510.07651v2::L86-89::s0",
+        "direction": "next"
+      },
+      {
+        "id": "1510.07651v2::L49-68::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "1510.07651v2::L19-29::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "1510.07651v2::L69-83::s5",
+        "direction": "reference"
+      }
+    ]
   },
   {
     "id": "1510.07651v2::L86-89::s0",
@@ -129,7 +278,17 @@
         "level": 4,
         "title": "**Acknowledgements**"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1510.07651v2::L84-85::s6",
+        "direction": "previous"
+      },
+      {
+        "id": "1510.07651v2::L90-91::s0",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "1510.07651v2::L90-91::s0",
@@ -145,7 +304,17 @@
         "level": 1,
         "title": "Preliminaries"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1510.07651v2::L86-89::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "1510.07651v2::L92-93::s0",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "1510.07651v2::L92-93::s0",
@@ -161,7 +330,17 @@
         "level": 4,
         "title": "**Periodic operators**"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1510.07651v2::L90-91::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "1510.07651v2::L94-691::s1",
+        "direction": "next"
+      }
+    ]
   },
   {
     "id": "1510.07651v2::L94-691::s1",
@@ -173,6 +352,7 @@
     "labels": [
       "alpha",
       "chamber_formula",
+      "continuity_of_spectra",
       "difference_estim",
       "discriminant",
       "eigenvalue_eq",
@@ -205,32 +385,58 @@
       "final_difference_estim",
       "final_estim",
       "grenn_vs_lyapunov",
+      "hausdorff_dim_lemma",
       "hausdorff_dimension",
       "indbis",
       "induction",
+      "last_lemma",
       "last_wilk_estim_for_derivative",
+      "lemma:gdelta",
+      "lemma:suff",
       "limit_estim_for_E-E_nu",
       "matrix_eq_for_tildeG",
       "middleProblem",
       "nextstep",
       "nextstepwithT_i",
       "periodic_approximation",
+      "prop1",
+      "surace_lemma",
       "union_intersection"
     ],
     "refs": [
+      "almostMathieu",
       "chamber_formula",
+      "continuity_of_spectra",
       "eigenvalue_eq",
+      "eq.dot",
       "eq4",
+      "eq:**",
+      "eq:Udet",
+      "eq:cont2",
+      "eq:iii",
+      "eq:jdeltac",
+      "eq:normT",
+      "eq:qz",
       "eqResolventIdentity",
+      "eqboundforgreenfunctiononremainingintervals",
       "eqcomplexsys",
+      "eqdefdist",
       "estim_covers_haus_dim",
       "final_difference_estim",
       "final_estim",
       "grenn_vs_lyapunov",
+      "hausdorff_dim_lemma",
       "induction",
+      "last_lemma",
       "lebesgueMeasure",
+      "lemma:suff",
       "mainTheorem",
       "matrixTheorem",
+      "matrix_eq_for_tildeG",
+      "nextstepwithT_i",
+      "periodic_approximation",
+      "prop1",
+      "s:am.prel",
       "surace_lemma"
     ],
     "meta": {
@@ -238,6 +444,28 @@
         "level": 4,
         "title": "**Periodic operators**"
       }
-    }
+    },
+    "neighbors": [
+      {
+        "id": "1510.07651v2::L92-93::s0",
+        "direction": "previous"
+      },
+      {
+        "id": "1510.07651v2::L1-18::s0",
+        "direction": "reference"
+      },
+      {
+        "id": "1510.07651v2::L49-68::s4",
+        "direction": "reference"
+      },
+      {
+        "id": "1510.07651v2::L19-29::s1",
+        "direction": "reference"
+      },
+      {
+        "id": "1510.07651v2::L69-83::s5",
+        "direction": "reference"
+      }
+    ]
   }
 ]

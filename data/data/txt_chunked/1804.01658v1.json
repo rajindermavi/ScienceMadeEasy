@@ -1,0 +1,293 @@
+[
+  {
+    "id": "1804.01658v1::L22-89::c0",
+    "file": "data/data/full_text/1804.01658v1.txt",
+    "section_path": "",
+    "start_line": 22,
+    "end_line": 89,
+    "text": "thmTheorem[section]\ncor[thm]Corollary\nprop[thm]Proposition\nrem[thm]Remark\nlem[thm]Lemma\ndefi[thm]Definition\n\nexam[thm]Example\n\nPositive Hausdorff dimensional spectrum  for   the critical almost Mathieu operator\n\nBernard Helffer\nLaboratoire\nde Mathematiques Jean Leray, Universite de Nantes and CNRS, 2 rue de la Houssiniere 44322 Nantes Cedex (France) and Laboratoire de Mathematiques d'Orsay, Univ.\nParis-Sud, Universite Paris-Saclay.\nBernard.Helffer@univ-nantes.fr\n\nQinghui LIU\n\nDepartment of Computer Science,\nBeijing Institute of Technology,\nBeijing 100081, PR China.\nqhliu@bit.edu.cn\n\nYanhui QU\nDepartment of Mathematics, Tsinghua University, Beijing 100084, PR China.\nyhqu@tsinghua.edu.cn\n\nQi Zhou\n\nDepartment of Mathematics, Nanjing University, Nanjing 210093, China\nqizhou@nju.edu.cn\n\nWe show that  there exists  a dense set of   frequencies  with positive Hausdorff dimension for which   the Hausdorff dimension of the spectrum  of the critical almost Mathieu operator is positive.\n\nIntroduction\n\nThe context\nIn this paper, we are interested in the Hausdorff dimension of the spectrum of the almost Mathieu operator   in   (denoted from now on   by AMO):\n\nwhere  is  the phase,  is the frequency and\nis  the coupling constant.\nThe AMO was first introduced by Peierls,\nas a model for an electron on a 2D lattice,  submitted to  a homogeneous\nmagnetic field. This model\nhas been extensively studied not only because of  its importance\nin  physics,\nbut also as a fascinating mathematical object.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1804.01658v1::L104-123::c1",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1804.01658v1::L104-123::c1",
+    "file": "data/data/full_text/1804.01658v1.txt",
+    "section_path": "",
+    "start_line": 104,
+    "end_line": 123,
+    "text": "where  is  the phase,  is the frequency and\nis  the coupling constant.\nThe AMO was first introduced by Peierls,\nas a model for an electron on a 2D lattice,  submitted to  a homogeneous\nmagnetic field. This model\nhas been extensively studied not only because of  its importance\nin  physics,\nbut also as a fascinating mathematical object.\n\nThe spectrum of\nis a compact perfect set  in   and, observing that it is independent of  since\nis irrational, we   denote it  by\n. For any , and for any irrational  ,   is a Cantor set. Each finite interval of   is called\nan open gap   and we know from that  if , then for any irrational   , all the spectral gaps are open, as predicted by  the  Gap Labelling Theorem.\n\nHowever, little was known for the structure  of  when .     is called the critical almost Mathieu operator (or Harper's equation in physics);  it has particular importance in physics.\nOne useful way to study  is by periodic approximation,  through finer estimates of , where   is  the  best rational approximation of  Last shows that if  is not of bounded type, then  has  zero Lebesgue measure.  Finally, by the renormalization technique, Avila and Krikorian completed the proof that  has zero measure, and hence a Cantor set, for all irrational . Therefore, it is\nnatural to study the fractal dimensions of .\nIt was believed until the mid 1990's that\nthe box-counting  dimension   equals to  for almost every ; one can consult\nfor numerical and heuristic arguments supporting this conjecture. But  in 1994, Wilkinson-Austinprovided  numerical evidence that  for\nand thus conjectured that  for every irrational . However, Jitomirskaya-Zhang showed that  if , then , which disproved Wilkinson-Austin's conjecture.\nHere, ,  which  measures how Liouvillean ,  is defined as\n\nwhere   is the denominator of  the     -th convergent of\n\nWe recall that the Hausdorff dimension of a set  is defined by",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1804.01658v1::L22-89::c0",
+        "direction": "previous"
+      },
+      {
+        "id": "1804.01658v1::L129-180::c2",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1804.01658v1::L129-180::c2",
+    "file": "data/data/full_text/1804.01658v1.txt",
+    "section_path": "",
+    "start_line": 129,
+    "end_line": 180,
+    "text": "We recall that the Hausdorff dimension of a set  is defined by\n\nwhere a -cover of  is a family   such that  ,  and every  is an interval of length smaller than .\nLast  showed that if   for a subsequence  of , then . We note that the set of such kind of frequencies is a\ndense  set which contains  .   Shamis-Last  showed that there  exists a dense set of  , for which . Recently, Avila-Shamis-Last-Zhou strengthened the result of and showed that for any   in   ,  . As we can see, the  results of are more specific to Liouvillean frequency,  it is interesting to see if we can   say something about the Diophantine frequencies.\n\nMain results\nIn this paper, we will show the following:\n\nThe set of frequencies\n\nis dense in   and has positive Hausdorff dimension.\n\nCombining Theorem  with a result of, one thus know that  is dense in\n\nIndeed,  Bellissard( Private conversation with Y. Last, circ. 1995.) conjectured that there should\nexist some  such that\nfor almost every\n. As far as we know, Theorem  is the first result which shows the existence of positive Hausdorff dimension of the spectrum for the  critical almost Mathieu operator.\n\nIn fact, we can say more about the frequency and the lower bound of the Hausdorff dimension.  Denote the  continued fraction expansion of  as:\n\nand  define\n\nIn 1994, Wilkinson-Austin gave some  numerical and heuristic arguments showing that if  is large enough, then\napproaches , where\n\nMotivated by this paper, we will show the following:\n\nFix  and  s.t. . There exist constants   and\nsuch that for any  with, for some ,\n\nwe have\n\nConsequently, if , then,  for  defined by defalphan,\n\nNow considering Theorem  and the results of, it is reasonable to conjecture that if , then .\n\nThe covering structure of the spectrum: main statement",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1804.01658v1::L104-123::c1",
+        "direction": "previous"
+      },
+      {
+        "id": "1804.01658v1::L182-261::c3",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1804.01658v1::L182-261::c3",
+    "file": "data/data/full_text/1804.01658v1.txt",
+    "section_path": "",
+    "start_line": 182,
+    "end_line": 261,
+    "text": "The covering structure of the spectrum: main statement\n\nAssume\nHelffer and  Sjostrand exhibited a fine covering structure of the spectrum for a special class of frequencies.\nIn the following,  we describe  a reformulation of this statement using the coding language just for the convience of the proof, readers can consult the appendix for its original formulation.\nBefore to explain the general construction we detail the two first steps.\n\nIn the -th step,    there are  disjoint bands. We code them by\n\nThus\n\nis the set of words to code the bands of -generation.\n\nIn the first step, for each band , there are finitely many sub-bands inside it. For the mid-band, we code it by  . Here  means the concatenation of words.   On the left, there are  sub-bands with good estimates on the band-length, which we code by . Similarly, on the right, there are  sub-bands, which we code by . Write\n\n(here  means alphabet), then\nis the set of words to code the subbands inside . Now if we collect the words for all , we obtain\n\nSince for each , there is only one  mid-band  inside ,\n\nis the set of words to code the mid bands of -generation.\n\nWe now define inductively two sequences of words   as follows.\n\nAssume  and  have been defined for some  . For any , fix a  vector   (where )\n\nand write\n\nDefine\n*\n\nWrite  Define\n\nAs continuation of, the following theorem is proved in, the readers can just consult the appendix for its original statement.\n\nFix   and . Then there exist   and, for , some  constants\nsuch that  if  and for some\nthen there exists a  sequence  with\n\nand  a family of bands\n\nsuch that:\n\n[(i)]\nFor each ,  is a covering of  :\n\n[(ii)]   For each  and ,\n\nFor each\n\nis on the right of . Moreover,\n\n(iii) For each  and ,",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1804.01658v1::L129-180::c2",
+        "direction": "previous"
+      },
+      {
+        "id": "1804.01658v1::L279-314::c4",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1804.01658v1::L279-314::c4",
+    "file": "data/data/full_text/1804.01658v1.txt",
+    "section_path": "",
+    "start_line": 279,
+    "end_line": 314,
+    "text": "(iii) For each  and ,\n\nHarper's model and semi-classical analysis\nHarper's model  in the rational case\nWe refer also to the survey of J. Bellissard for a state of the art in 1991. When  is irrational, an equivalent way (observing that in this case\n)  for the analysis of the spectrum in the case of a square lattice is  to consider  the so-called Harper model, which this time is defined on  by\n\nwhere  denotes the flux of the constant magnetic field through the fundamental cell of the lattice.\n\nWhen  is a rational,   Floquet theory permits to show that the spectrum is the union   of the spectra of a family of   matrices  depending\non the quasi-momenta . In this way, we get that the spectrum is the union of  bands\nwith , with strict inequality, except when  is even for .   More precisely, when\n,  where  and  are relatively prime,\nthe two following matrices in  play an important role:\n*\nand\n*\nIn the case of Harper, the family of matrices is\n\nThe Chambers formula gives a very elegant formula for this determinant:\n\nwhere  is a polynomial of degree .\nEach band   is described by a solution  of the Chambers equation which can be expressed in the form\n\nSemi-classical analysisIt can be shown that the spectrum  is the same as the spectrum of the  operator   acting on  defined by\n\nwhere  is defined by .\n\nIn other words,  is the  Weyl's -quantization of the symbol .\nLet us recall what is meant by this.  The   symbols are  functions of  which are   bounded  (in our case they are in addition -periodic in each variable)  depending on a semi-classical\nparameter ,  (view as \"little\") and satisfying\n\nThe  Weyl quantization of the symbol  (for , ) is the pseudodifferential operator acting on  by",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1804.01658v1::L182-261::c3",
+        "direction": "previous"
+      },
+      {
+        "id": "1804.01658v1::L316-326::c5",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1804.01658v1::L316-326::c5",
+    "file": "data/data/full_text/1804.01658v1.txt",
+    "section_path": "",
+    "start_line": 316,
+    "end_line": 326,
+    "text": "The  Weyl quantization of the symbol  (for , ) is the pseudodifferential operator acting on  by\n\nAn important fact is that when  is real valued the associate operator is self-adjoint. This approach is only powerful when  is small. This is what is call semi-classical analysis. Hence, this leads as to analyze the spectrum near .\nSemi-classical analysis near  when .\nHere we have to analyze the spectrum of the -pseudodifferential operator of symbol , i.e.\n. For , semi-classical analysis says that one has first\nto look at the energy level  . Here we see that the energy level is the union of curves which can be indexed by . Modulo , the spectrum is obtained by looking at a Hamiltonian has a symbol  such that  and\n. For this operator the spectrum is discrete and is given near  by the Bohr-Sommerfeld quantization which determines a sequence of eigenvalues  in , whose asymptotic is known modulo . Coming back to the initial problem, the analysis of the tunneling between the different wells leads to a localization of the\nspectrum in a family of intervals whose center is  close to the sequence  and whose size is exponentially small and can be measured precisely.\n\nThe next step is that in each of these intervals the spectral analysis of the  restriction of our initial operator appears to be the -quantization\nof an operator whose symbol is close (after renormalization) to  and where  (modulo ).\nThis relation gives a strong link between the corresponding continued fraction expansions of  and  since",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1804.01658v1::L279-314::c4",
+        "direction": "previous"
+      },
+      {
+        "id": "1804.01658v1::L328-360::c6",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1804.01658v1::L328-360::c6",
+    "file": "data/data/full_text/1804.01658v1.txt",
+    "section_path": "",
+    "start_line": 328,
+    "end_line": 360,
+    "text": "The next step is that in each of these intervals the spectral analysis of the  restriction of our initial operator appears to be the -quantization\nof an operator whose symbol is close (after renormalization) to  and where  (modulo ).\nThis relation gives a strong link between the corresponding continued fraction expansions of  and  since\n\nUnder our assumption  is small (because   is assumed to be large) and we can redo the same analysis leading again to a new familly of intervals. Of course, this is quite technical to control the uniformity of the constants appearing in the renormalization procedure.\nIn the first step  corresponds to  critical values of   with a saddle point. The analysis near this point is much more involved and the introduction of this  permits to avoid this analysis  in our paper like in.\n\nSemi-classical analysis near a rational\nWhen , one can show that  is the spectrum of the Weyl -quantization of\n(with ). Hence we have again to perform a semi-classical analysis but this time for a system of -pseudodifferential operator.\nAs shown by Chamber's formula chambers, the semi-classical analysis for  small is strongly related with the semi-classical analysis of a function of   (see chambers2). Hence, near each of the  bands, we have to perform a spectral analysis which is close to the analysis of the previous subsection. When  is even, there is a need\nfor a special analysis for the two central touching bands (see Appendix).\n\nThe lower bound of the Hausdorff dimension of the spectrum\n\nIn this section, we prove Theorem  and Theorem .  At first we construct a Cantor subset of the spectrum based on Theorem . Then we estimate the lower bound of the Hausdroff dimension of this Cantor set. Finally, we prove the main theorems.\n\nA subset of the spectrum\n\nFix a frequency  satisfying the condition in Theorem .\nFor each , we introduce\n\nwhere    denotes  the integer part of the number ,   is defined in Theorem .\n\nIn the following, we will construct a Cantor subset of , where  the most left interval of 0-generation.\nFor all , define\n\nBy m-n-theta, we have . Define the set of  codings as",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1804.01658v1::L316-326::c5",
+        "direction": "previous"
+      },
+      {
+        "id": "1804.01658v1::L364-455::c7",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1804.01658v1::L364-455::c7",
+    "file": "data/data/full_text/1804.01658v1.txt",
+    "section_path": "",
+    "start_line": 364,
+    "end_line": 455,
+    "text": "By m-n-theta, we have . Define the set of  codings as\n\nFor any , we denote the prefix of length  of  by\n\nBy  Theorem ,  is a decreasing sequence of compact sets. Define\n\nBy Theorem  (iii) and introm, for any , we have\n\nThus,    tends to  when the length of the word  tends to infinity. So,   is a Cantor set. Indeed, the definition of  make sure that the chosen band always avoid the excluded intervals of size  at each step.\n\nBy Theorem  (ii), for each  we have . By the construction of  and Theorem , for any , there exists a unique coding sequence  such that\n\nLet  be the left endpoint of , then  and\nSince  is compact, we conclude that\n\nThe lower bound of\n\nWe need to use a basic fact from fractal geometry which we recall now.\nAssume   is a Borel set. Let  be a probability measure supported on . For any , the  lower local dimension of  at  is defined by\n\n[Prop. 10.1 of]\nIf  for -a.e. , then\n\nFor given  and , we introduce   such that\n\nLet  , ,    , ,  be the constants given as in Theorem .  Fix  with  Assume that   satisfies    for  and   for . Then\n\nFor any , if we write\n\nthen  is a finite -algebra on . We define a measure  on  as\n\nBy  Caratheodory extension theorem (see for example), there exists a unique probability measure  on  such that\n\nNow we fix  , and will estimate . Let   be the coding of , that is,\n\nTake . There exists a unique  such that\n\nThis implies that\n\nClaim:  can only intersect one band of -generation, which is .\n\nIf , then the claim holds trivially. In the following, we assume .\nTo prove the claim, we only need to show that  the lengths of the gaps in the left and right of  are all bigger than .\n\nWe  call any component of\na gap of , where  is the convex hull of . A gap  is called of order , if  is a subset of some  band of -generation but is not a subset of any  band of -generation.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1804.01658v1::L328-360::c6",
+        "direction": "previous"
+      },
+      {
+        "id": "1804.01658v1::L462-545::c8",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1804.01658v1::L462-545::c8",
+    "file": "data/data/full_text/1804.01658v1.txt",
+    "section_path": "",
+    "start_line": 462,
+    "end_line": 545,
+    "text": "We  call any component of\na gap of , where  is the convex hull of . A gap  is called of order , if  is a subset of some  band of -generation but is not a subset of any  band of -generation.\n\nDenote the  gap in the left of   by . By our construction of ,  G is a gap of order  for some  (see Figure  and Figure ). That is,  for some ,  but  is not a subset of any band of  -generation.\n\nWe claim that . If otherwise, there exists some  such that   but  Then  and  are two different descendants of same generation of , hence disjoint. In particular, , since , where  is the closure of   On the other hand, the right endpoint of  is the left endpoint of , thus . Notice that,  since . So, , which is a contradiction.\n\nThus  is a gap of order .\nNotice that,  since . Also, since , by Theorem  (ii), (iii),  tilde-C and r-esti, we have\n\nBy the same argument, we can show that the gap in the right of  also has length bigger than . Then the claim follows.\n\nBy the claim,  we have\n\nBy Theorem  (iii) and the assumption, we have\n\nConsequently,\n*\nBy r-esti, we get\n\nRecall  that  and by the assumption, . So we have\nCombining mu-B and log-r, we get\n*\nBy taking the lower limit, we get\n\nthen by  Proposition , we conclude that\n\nThis achieves the proof of Proposition .\n\nProof of Theorem\nDefine\n\nIf , then by Proposition  and ,\n\nIf , then we have  and consequently\n\nThen by Proposition  and , we have\n\nThus Sigma-alpha follows, and  Sigma-alpha-n is a direct consequence of Sigma-alpha.\n\nProof of Theorem\n\nAt first, we show that  is dense in . Let  Let  be the constant in Theorem . Define\n\nThen by Theorem ,\n\nOn the other hand,  for any , let   be  the\nfirst index for which the continued fraction expansions of\nand  differ and define the distance of  and  as\n\nEndow   with this topology, then it is easy to see\nthat this topology coincide with the usual topology induced from  and   is dense in . Hence,  is also dense in .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1804.01658v1::L364-455::c7",
+        "direction": "previous"
+      },
+      {
+        "id": "1804.01658v1::L547-606::c9",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1804.01658v1::L547-606::c9",
+    "file": "data/data/full_text/1804.01658v1.txt",
+    "section_path": "",
+    "start_line": 547,
+    "end_line": 606,
+    "text": "Endow   with this topology, then it is easy to see\nthat this topology coincide with the usual topology induced from  and   is dense in . Hence,  is also dense in .\n\nNow we show that  has positive Hausdorff dimension. Indeed, by Theorem , we know that\n\nBy Theorem 11 of,  has positive Hausdorff dimension.\n\nThe statement of Theorem 0.1 in\nWe give a translation from the french, correcting also a few typos and adding a few explanatory remarks.\n\nLet   () and . There exists  and, for ,  a constant  such that if\nis irrational and satisfies  for some\n\nthen  is contained in the union of  intervals  ( in the form\nwith\n\nwhere\n\nFor each interval ,  can be described as living in a union of  closed intervals  (indexed by ) of length  with\n,  on the right of  and\n\nThe other bands have size\n\nFor , if  is the affine function sending  in , then\n\nwhere the  have analogous properties to the  with  replaced by  and 0.13 can be improved in the form\n\nOne can then iterate indefinitely.\n\nHere in the statements  means that  where  depends only on  and . The same is true when we use the notation   or  .\n\ncorresponds  with the exclusion in each interval and at each step of the renormalization of a small interval of size\nfor which another analysis has to be done and which was the object of (see also). This corresponds  to the energy  for the map ). This refined analysis is not needed here.\n\nThe possibility of having  is due to the occurence of touching bands. Van Mouche  has proven that it occurs only\nwhen  is even and  for .\nThese two touching bands lead to the lower bound 0.12 and  the weaker estimate in 0.13.\n\nAcknowledgements\nQ.-H. Liu was supported by NSFC grant (11571030).\nY.-H. Qu was supported by NSFC grant (11431007 and 11790273).\nQ. Zhou was partially supported by NSFC grant (11671192), Deng Feng Scholar Program Bof Nanjing University,  Specially-appointed professor programme of Jiangsu province.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1804.01658v1::L462-545::c8",
+        "direction": "previous"
+      },
+      {
+        "id": "1804.01658v1::L628-681::c10",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1804.01658v1::L628-681::c10",
+    "file": "data/data/full_text/1804.01658v1.txt",
+    "section_path": "",
+    "start_line": 628,
+    "end_line": 681,
+    "text": "Acknowledgements\nQ.-H. Liu was supported by NSFC grant (11571030).\nY.-H. Qu was supported by NSFC grant (11431007 and 11790273).\nQ. Zhou was partially supported by NSFC grant (11671192), Deng Feng Scholar Program Bof Nanjing University,  Specially-appointed professor programme of Jiangsu province.\n\nA. Avila and R. Krikorian,\nReducibility or non-uniform hyperbolicity for quasi-periodic\nSchrodinger cocycles. Ann. Math. 164, 911-940  (2006).\n\nA. Avila  and  S. Jitomirskaya,\nThe Ten Martini Problem,\nAnn. Math. 170,  303-342  (2009).\n\nA. Avila  and  S. Jitomirskaya,\nAlmost localization and almost reducibility,\nJ. Eur. Math. Soc, 12, 93-131 (2010).\n\nA. Avila, Y. Last, M. Shamis, and Q. Zhou,\nOn the abominable properties of the Almost Mathieu operator with well approximated frequencies,\nin preparation.\n\nA. Avila, J. You and Z. Zhou, The Dry Ten Martini Problem in the non-critical case, preprint.\n\nJ.Avron, P. van Mouche, B. Simon, On the measure of the spectrum for the almost Mathieu operator. Commun. Math. Phys. 132, 103-118 (1990)\n\nJ. E. Avron, D. Osadchy and  R. Seiler,   A topological look at the quantum Hall effect. Physics today.  38-42. (2003).\nJ. Bellissard,\nLe papillon de Hofstadter.\nAsterisque 206 (1992) 7-39.\n\nJ. Bell and R. B. Stinchcombe, Hierarchical band clustering and\nfractal spectra in incommensurate systems. J. Phys. A\n, L739-L744 (1987).\n\nK. Falconer,\nTechniques in fractal geometry.\nJohn Wiley  Sons, Ltd., Chichester, 1997.\n\nT. Geisel, R. Ketzmerick and G.Petshel, New class of\nlevel statistics in quantum systems with unbounded diffusion.\nPhys. Rev. Lett. , 1651-1654 (1991).\n\nI.J. Good,\nThe fractional dimensional theory of continued fractions.\nProc. Cambridge Philos. Soc. 37, (1941). 199-228.\n\nP.G. Harper,  Single band motion of conduction electrons in a uniform magnetic\nfield, Proc. Phys. Soc. London A. 68, 874-892 (1955).\n\nB. Helffer and P. Kerdelhue.\nOn the Total Bandwidth for the Rational Harper's Equation.\nCommun. Math. Phys. 173, 335-356 (1995).",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1804.01658v1::L547-606::c9",
+        "direction": "previous"
+      },
+      {
+        "id": "1804.01658v1::L684-743::c11",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1804.01658v1::L684-743::c11",
+    "file": "data/data/full_text/1804.01658v1.txt",
+    "section_path": "",
+    "start_line": 684,
+    "end_line": 743,
+    "text": "B. Helffer and P. Kerdelhue.\nOn the Total Bandwidth for the Rational Harper's Equation.\nCommun. Math. Phys. 173, 335-356 (1995).\n\nB. Helffer and J. Sjostrand, Analyse semi-classique pour l'equation de Harper (avec application  a   l'equation de Schrodinger avec champ magnetique).\nMem. Soc. Math. France,  No. 34,  1-113  (1988).\n\nB. Helffer and J. Sjostrand, Analyse semi-classique pour l'equation de Harper II: Comportement semi-classique  pres  d'un rationnel. Mem. Soc. Math. France, No. 40, 1-139. (1990).\n\nB. Helffer and J. Sjostrand, Semi-classical analysis for the Harper's equation III: Cantor structure of the spectrum.\nMem. Soc. Math. France, No. 39. 1-124 (1989).\n\nS. Jitomirskaya and S. Zhang, Quantitative continuity of singular continuous spectral measures and arithmetic criteria for quasiperiodic Schr odinger operators. ArXiv preprint in arXiv:1510.07086 (2015).\n\nR. Johnson and J. Moser,\nThe rotation number for almost periodic potentials. Comm. Math.\nPhys, 84, 403-438 (1982).\n\nI. Krasovsky. Central spectral gaps of the Almost Mathieu Operator.  Commun. Math. Phys. 351, 419-439 (2017).\n\nY. Last,  Zero measure spectrum for the almost\nMathieu Operator. Commun. Math. Phys. , 421-432\n(1994).\n\nY. Last and M. Shamis, Zero Hausdorff Dimension Spectrum for the Almost Mathieu Operator. Commun. Math. Phys. 348,  729-750 (2016).\n\nD. Osadchy and J. E. Avron,  Hofstadter butterfly as quantum phase\ndiagram.  J. Math Phys. 42, 5665-5671 (2001).\n\nR. Peierls, Zur Theorie des Diamagnetismus von Leitungselektronen.  Z. Phys. 80, 763-791 (1933).\n\nA. Rauh,  Degeneracy of Landau levels in crystals, Phys. Status Solidi B 65, 131-135 (1974).\n\nH. L. Royden,  Real analysis. Third edition. Macmillan Publishing Company, New York, 1988.\n\nC. Tang and M. Kohmoto, Global scaling properties of the\nspectrum for a quasiperiodic Schrodinger equation. Phys. Rev.\nB , 2041-2044 (1986).",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1804.01658v1::L628-681::c10",
+        "direction": "previous"
+      },
+      {
+        "id": "1804.01658v1::L745-755::c12",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "1804.01658v1::L745-755::c12",
+    "file": "data/data/full_text/1804.01658v1.txt",
+    "section_path": "",
+    "start_line": 745,
+    "end_line": 755,
+    "text": "C. Tang and M. Kohmoto, Global scaling properties of the\nspectrum for a quasiperiodic Schrodinger equation. Phys. Rev.\nB , 2041-2044 (1986).\n\nD.J. Thouless,  M. Kohmoto,   M.P.  Nightingale, and   M. Den Nijs,  Quantized Hall conductance in a two dimensional periodic potential. Phys. Rev. Lett. 49, 405-408 (1982).\n\nP. Van Mouche.\nThe coexistence problem for the discrete Mathieu operator.\nComm. Math. Phys. 122 (1989), no. 1, 23-33.\n\nM. Wilkinson and E.J. Austin, Spectral\ndimension and dynamics for Harper's equation. Phys. Rev.\nB , 1420-1430 (1994).",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "1804.01658v1::L684-743::c11",
+        "direction": "previous"
+      }
+    ]
+  }
+]

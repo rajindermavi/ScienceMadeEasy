@@ -1,0 +1,937 @@
+[
+  {
+    "id": "2309.03423v1::L30-114::c0",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 30,
+    "end_line": 114,
+    "text": "showonlyrefs,showmanualtags\n\ntheoremTheorem[section]\nannouncementAnnouncement[section]\n*thmTheorem\nassumption[theorem]Assumption\nlemma[theorem]Lemma\nproposition[theorem]Proposition\nremark[theorem]Remark\nexample[theorem]Example\nexercise[theorem]Exercise\ndefinitionDefinition[section]\ncorollary[theorem]Corollary\nnotation[theorem]Notation\nclaim[theorem]Claim\nfact[theorem]Fact\nopen[theorem]Open Problem\nconjecture[theorem]Conjecture\n*acknowledgementAcknowledgment\n\nmes\n\nB\nC\nH\nT\nMat\ndiag\ndist\n\nS\nD\nE\n\n[Localization for quasi-periodic block matrices]Non-perturbative localization for quasi-periodic Jacobi block matrices\n\n[R. Han]Rui Han\nDepartment of Mathematics\nLouisiana State University\nBaton Rouge, LA 70803, USA\nrhan@lsu.edu\n\n[W. Schlag]Wilhelm Schlag\nDepartment of Mathematics\nYale University\nNew Haven, CT 06511, USA\nwilhelm.schlag@yale.edu\n\nR. Han is partially supported by NSF DMS-2143369.\nW. Schlag is partially supported by NSF grant DMS-2054841.\n\nWe prove non-perturbative Anderson localization for quasi-periodic Jacobi block matrix operators assuming non-vanishing of all Lyapunov exponents. The base dynamics on tori  is assumed to be a Diophantine rotation. Results on arithmetic localization are obtained for , and applications to the skew shift, stacked graphene, XY spin chains, and coupled Harper models are discussed.\n\nIntroduction\n\nLet\n\nwhere  for any -matrix valued function. We set  for , and require it to be the analytic extension of  off of the real torus. Here  and we assume that  is Diophantine, i.e.,\n\nWe further assume that  are analytic, where with some positive .\nWe assume throughout the paper that  is Hermitian, and that  is invertible ( for any ).\nThe difference equation  is equivalent to the cocycle",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L116-131::c1",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L116-131::c1",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 116,
+    "end_line": 131,
+    "text": "We further assume that  are analytic, where with some positive .\nWe assume throughout the paper that  is Hermitian, and that  is invertible ( for any ).\nThe difference equation  is equivalent to the cocycle\n\nin the sense that for ,\nsatisfies .  Since  is (complex) symplectic, see def:symp, for , the Lyapunov exponents , see definition in def:LE, satisfy  for .\nIn analogy with we establish localization for  under a nonvanishing condition on the Lyapunov exponents.\n\nAssume that  for all . Then  exhibits Anderson localization for almost every .\n\nFor a perturbative version of this result see Bourgain-Jitomirskaya  and Klein .\nTheorem  has wide applications since operators in quantum mechanics often appear in block form, in particular when dealing with stacked materials or when not restricted to nearest neighbor hopping.\nSection  includes some examples on stacked and twisted bilayer graphene models.\n\nOur next theorem,  which can be seen as a generalization of*Theorem 1.6, concerns arithmetic Anderson localization for long-range scalar-valued Jacobi matrices with potential defined on the one-dimensional torus .\nFor the one-dimensional torus, there is another quantity, Avila's quantized acceleration of the cocycle, which we denote by , that plays a crucial role in determining the spectral behavior of the corresponding operator.\nThe acceleration was first introduced by Avila in his global theory paper for  cocycles, and extended to higher dimensional cocycles in.\nA characterization of the acceleration, for scalar valued Schrodinger operator  and for Diophantine , through the zeros of Dirichlet determinants was proved in .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L30-114::c0",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L133-165::c2",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L133-165::c2",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 133,
+    "end_line": 165,
+    "text": "Our next theorem,  which can be seen as a generalization of*Theorem 1.6, concerns arithmetic Anderson localization for long-range scalar-valued Jacobi matrices with potential defined on the one-dimensional torus .\nFor the one-dimensional torus, there is another quantity, Avila's quantized acceleration of the cocycle, which we denote by , that plays a crucial role in determining the spectral behavior of the corresponding operator.\nThe acceleration was first introduced by Avila in his global theory paper for  cocycles, and extended to higher dimensional cocycles in.\nA characterization of the acceleration, for scalar valued Schrodinger operator  and for Diophantine , through the zeros of Dirichlet determinants was proved in .\n\nIn this paper, we give a characterization of the acceleration  associated to Jacobi block matrices with  in terms of the zero count of the finite volume determinants with periodic boundary condition. See Theorem .\nWe also give applications of such characterization in arithmetic Anderson localization for various models.\nAll of our arithmetic Anderson localization results concern the one-dimensional torus .\nFor , let\n\nwhere throughout the paper we assume that  is real-valued and non-constant and\n\nNote that we use  as the frequency in  to better fit into the framework of eq:BVsys.\nLet  be the corresponding -step transfer matrix (see def:A_E) and  be its acceleration, which is an integer as long as  (see*Lemma 6.4).\n\nFix any .\nSuppose .\nThen for any\n\nis Anderson localized on .\n\nAs a direct corollary, we obtain the following result that strengthens*Theorem 1.7 for .\nIn fact, let\n\nbe a perturbation of the following operator considered in:\n\nFix . Suppose  is a closed interval such that  where  is the one-step transfer matrix corresponding to the unperturbed operator in eq:operator_HS3.\nThen there exists  such that for any ,  is Anderson localized in  for any .\nThe proof combines the techniques developed in.\nThe special non-perturbed case  already leads to a proof of a quantitative version of Avila's almost reducible conjecture for Schrodinger cocycles with trignometric potentials. See also Avila's proof for the general analytic case.\n\nThe next theorem also concerns arithmetic Anderson localization, for operators in eq:BVsys satisfying certain symmetries.\nLet  be as in eq:BVsys on the -d torus , and with  being constant.\nSuppose there exists an orthonormal matrix , such that",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L116-131::c1",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L167-192::c3",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L167-192::c3",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 167,
+    "end_line": 192,
+    "text": "The next theorem also concerns arithmetic Anderson localization, for operators in eq:BVsys satisfying certain symmetries.\nLet  be as in eq:BVsys on the -d torus , and with  being constant.\nSuppose there exists an orthonormal matrix , such that\n\nLet  be the finite volume Dirichlet determinant with periodic boundary conditions, see def:fn.\nAssume further that  is -periodic, namely,\n\nThen for  and\n\nis Anderson localized on .\n\nWithout the assumption assume:t2_2, one can show that  is Anderson localized on .\nNote for , by*Lemma 6.4, . By the quantization and upper-semicontinuity of , and the arguments in *p. 80-83, the theorem applies to a set of positive measure of energies or to no energy at all.\n\nThe first application of Theorem  concerns a model arising from the study of the anisotropic XY spin chain. We refer the reader to  Sec.  for the connection between the following model and spin chains, and the previous results.\nLet\n\nwhere ,  and\n\nHere  is an even analytic function satisfying .\nThen for any  and  as in def:theta,  is Anderson localized in .\nIn particular, with ,  is Anderson localized in .\n\nThe next application of Theorem  concerns the skew-shift model with rational frequencies.\n\nFor any reduced rational ,  (If , the operator reduces to the almost Mathieu operator.), there exists  such that the skew-shift operator\n\nhas zero Lyapunov exponent for every , see def:LE_sk_y, on the spectrum for . The Lyapunov exponent here is averaged in .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L133-165::c2",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L194-204::c4",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L194-204::c4",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 194,
+    "end_line": 204,
+    "text": "has zero Lyapunov exponent for every , see def:LE_sk_y, on the spectrum for . The Lyapunov exponent here is averaged in .\n\nIn*p. 66, Bourgain suggested that one might be able to combine the large deviation estimates with numerical computations to establish positive Lyapunov exponent for the operator in def:H_sk for small  for the Lyapunov exponent averaged in both .\nThat may be true due to the fact that  depends sensitively on , and hence any fixed  is not in the spectrum of  for some .\nThe proof of Theorem  is built on establishing Anderson localization for the dual model, obtained as a corollary of Theorem . We actually prove a stronger almost localization result, see Theorem . Combining almost localization with the quantitative duality techniques from, one should be able to prove quantitative almost reducibility of  and conclude purely absolutely continuous spectrum for this operator through the perturbative theory of Eliasson. We leave this and other applications of quantitative almost reducibility of this operator for future work.\n\nIn Section , we establish some properties of the coupled Harper operators ( Diophantine)\n\nwhere  is small,  and . This falls under the scope of eq:BVsys. Amongst other results, we show that for  and ,  both Anderson localization and a.c. states occur on sets of positive measure of energies  in the spectrum of this system.  Moreover, it follows from the two-sided Oseledets theorem, see *Theorem 4.2, that the states associated with the a.c. spectrum are not of hybrid type. I.e., they are truly extended states and cannot exhibit exponential decay to one side.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L167-192::c3",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L207-253::c5",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L207-253::c5",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 207,
+    "end_line": 253,
+    "text": "where  is small,  and . This falls under the scope of eq:BVsys. Amongst other results, we show that for  and ,  both Anderson localization and a.c. states occur on sets of positive measure of energies  in the spectrum of this system.  Moreover, it follows from the two-sided Oseledets theorem, see *Theorem 4.2, that the states associated with the a.c. spectrum are not of hybrid type. I.e., they are truly extended states and cannot exhibit exponential decay to one side.\n\nThe rest of the paper is organized as follows: some preliminaries are presented in Section , and some technical lemmas are in Section . The proofs of these lemmas are in Section  for the numerator of the Green's function, and Section  for the lower bound of the denominator, respectively.\nThe main theorems are proved in Sections  (Theorem ) and Section  (Theorems , ).\nThe applications are discussed in Section  (XY-spin chain and skew-shift), Section  (stacked graphene models), and Section  (coupled Harper's model).\n\nLyapunov exponents, large deviations, and the Green's function\nThroughout, we adhere to the following notations.\nFor a function  on , we denote its  norm by , and we write  for averages.\nFor , let  be the distance to the nearest integer vector.\nLet  be the unit circle, and .\nFor a set , let  be its Lebesgue measure.\nFor  and , let  be such that .\nThroughout the paper, we restrict to energy .\n\nTransfer matrices\nAs we mentioned in the introduction,  as in def:M_E is the transfer matrix associated to the block-valued operator  in eq:BVsys.\nThe long-range scalar-valued operator  as in def:tH can, on the one hand, be viewed as a  block-valued operator, where the corresponding blocks are\n\nOn the other hand, as a scalar-valued operator, the eigenvalue equation  can also be rewritten as:\n\nwhere\n\nIt is easy to verify that for any ,\n\nA complex matrix  is symplectic if\n\nwhere\n\nOne can easily verify that for  as in def:M_E, and , ,\n\nHowever for ,  is in general not symplectic.\n\nLyapunov exponents\nLet .\nLet\n\nLet the finite-scale and infinite-scale Lyapunov exponents be defined as\n\nwhere  is the -th singular value of , and the -th Lyapunov exponent\n\nIt is easy to see that for ,\n\nwhere  is the -th exterior power of . Similarly .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L194-204::c4",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L255-310::c6",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L255-310::c6",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 255,
+    "end_line": 310,
+    "text": "where  is the -th exterior power of . Similarly .\n\nWe also denote the phase complexified Lyapunov exponents , , , and , respectively. Here .\nSince  is symplectic for ,   for each\n\nHowever the above is in general not true if .\n\nAvila's acceleration\nWithin this subsection, we restrict to the 1-d torus .\nLet .\nThe (top) Lyapunov exponent  is a convex and even function in .\nAvila defined the acceleration to be the right-derivative as follows:\n\nAs a cornerstone of his global theory, he showed that for  and irrational ,  is always quantized.\n\nThe concept of acceleration was further extended to   in, where for ,\n\nBy eq:matrix_M=A, for  and each ,\n\nand\n\nRecall that  are analytic functions on  for some .  We may shrink  when necessary such that\n\nholds for any .\nFor the rest of the paper, when , we shall omit  from various notations of Lyapunov exponents and accelerations.\nOn some occasions, we shall also omit  and  in ,  and .\n\nLarge deviation estimates and the Avalanche Principle\n\nWe will require the following standard tools.\nNow  again.\nNote that we do not distinguish the various 's in the following Lemmas  ,  and .\nFor ,\nthere exists  so that for each  and all large , one has\n\nuniformly in  and , .\n\nThe following large deviation estimates play a crucial role in our argument.\nThese results were first established in Lemma 1.1 of  by Bourgain and Goldstein, and further developed  by Goldstein and Schlag in GS1,GS2.\n\nFor , there exists  such that for any  and  large enough, the following large deviation set\n\nsatisfies .\n\nWe will also use the Lipschitz continuity of  with respect\nto .\n*Corollary 2.12\nThere exists , such that for each ,\n\nfor all sufficiently small , and\nuniformly in . In particular,  the same bound hold with  instead of .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L207-253::c5",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L312-377::c7",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L312-377::c7",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 312,
+    "end_line": 377,
+    "text": "for all sufficiently small , and\nuniformly in . In particular,  the same bound hold with  instead of .\n\nBy Lemma , the Lyapunov exponents are Lipshitz continuous in . Since throughout the paper, we work under the condition that , we may shrink  (depending on ) to guarantee\n\nThe Avalanche Principle was first introduced for  cocycles by Goldstein and Schlag, see .\nIt was extended to larger matrices in.\n\n*Proposition 2.42\nLet  be fixed.\nThere exist  such that for any ,  and  satisfying\n\none has\n\nThe following rate of convergence of  to  holds, see *Lemma 10.1.\n\nLet .\nSuppose , then there exists  such that for any  and , we have\n\nThe proof uses the Avalanche principle, which requires the positivity of , provided by eq:L_d>0_varepsilon.\n\nGreen's function and Poisson formula\nAs in we work with finite volume Hamiltonians under periodic boundary conditions.\nThus, we define the  matrices\n\nLet\n\nand\n\nbe the finite volume Green's function with the periodic boundary conditions.\nBy Cramer's rule\n\nwhere  is the determinant of the submatrix of  defined by deleting the -th row and -th column.\nLet  be a solution to the eigenvalue equation .\nFor any\nthe following Poisson formula holds for all  :\n\nin which  refers to the element of vector  in row .\nThis implies\n\nNumerator and denominator of the Green's function Lemma  bounds the numerator of the Green's function, and Lemma  the denominator.\n\nLet .\nLet  and  or . Set . Then\nfor any , and uniformly in ,\n\nwhere , provided  is large enough.\nHere  is a constant depending only on  and .\n\nThe proof proceeds as in , see Section . The upper bound with  suffices to obtain exponential decay of the Green's function.\n\nRegarding the denominator, we first have the following connection between  and the transfer matrix .\nOne has pointwise in  that\n\nLet , and  be as in Lemma .\nAssume .\nThere exist ,  large and  so that the -admissible sequence",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L255-310::c6",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L379-430::c8",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L379-430::c8",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 379,
+    "end_line": 430,
+    "text": "Let , and  be as in Lemma .\nAssume .\nThere exist ,  large and  so that the -admissible sequence\n\nhas the following property:\nfor any , and all large -admissible , the following large deviation set\n\nsatisfies .\nFor every large integer  there exists an admissible  with  for some constant .\n\nThe proof is analogous to the denominator bound in, using the original strategy of Proposition 3.3 in .\nWe postpone the proofs of Lemmas  and the following corollary to Sec. .\nUnder the same conditions as Lemma .\nThere exists  such that for any  and large -admissible ,\n\nThis lemma (with ) will only be used in the proof of arithmetic Anderson localization in Sec..\nIn view of Lemmas  and , we will further shrink  to  such that those estimates hold for .\n\nThe following pointwise upper bound of , which does not require admissible , complements the preceding lower bound.\nLet , and  be as in Lemma . For  large enough, we have uniformly in  and  that\n\nBounding the numerator: Lemma\nWe write the monodromy matrices in block form\n\nwhere each  is a  block, .\nWe will make use of the following recursive relations: for ,\n\nand for each , one has\n\nWe now turn to the proof of Lemma , which is a straightforward adaption of Section 4 of .\nWe restrict ourselves to the case  and . For , one proceeds analogously, see .\nWith  ,  and , we let\n\nwhere .\nBy definition,\n\nand, with ,  and ,\n\nPerforming the identical row operations as in  we obtain that  where\n\nwhere   . By inspection, rows , , , , and  are\n\nin which only columns , , , ,  are non-vanishing.\nDefine\n\nas a  submatrix of rows , , ,  and . It is unique with the property that any other   submatrix of these rows has vanishing determinant.\nLet\n\nwhich is the submatrix of  obtained by deleting rows , , , ,  and columns , , , , .\nHence\n\nWe simplify\n\nPulling out the matrices in the first column, we may further simplify this in the form",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L312-377::c7",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L432-486::c9",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L432-486::c9",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 432,
+    "end_line": 486,
+    "text": "Pulling out the matrices in the first column, we may further simplify this in the form\n\nAs in, this can now be rewritten in the form\n\nAt this point we proceed as for the upper bound on  in Section 4 of .\nThis leads to the following, note  for :\n\nCombining this with Lemma  proves the claimed result.\n\nBounding the denominator: Lemmas  , ,  and\n\n[Proof of Lemma ]\nThis is implicit in the calculations of the previous section, cf. the upper left-hand corner of the block matrix of eq:detS1B. For more details, see *Lemma 5.1.\n\n)[Proof of Lemma ]\nLet  be the set of normalized singular vectors of  such that\n\nThen\n\nwhere  and  are the matrices with columns  and  respectively.\nBy Hadamard's inequality,\n\nwhere  is the -th column of .\nClearly\n\nwhich implies\n\nLet . Then for  large enough, and uniformly in  and  one has\n\nCombining Lemma  with eq:Lkn-Ln_eps1,\nwe have for  large enough, for any , , uniformly in  that\n\nFor , and , one has (see) that\n\nIn fact if , then\n\nwhere we applied eq:prod_sigma_1 in the last inequality.\nIf , then\n\nwhere we applied eq:prod_sigma_1 and noted that .\nCombining eq:prod_sigma_21 with eq:prod_sigma_22 yields eq:prod_sigma_2.\n\nNote for , by the choice of  and eq:L_d>0_varepsilon, we have\n\nTherefore, combining eq:prod_sigma_1 and eq:prod_sigma_2 with eq:detM-I_upper, yields\n\nin which we applied Lemma  to bound .\nThe claimed result follows from combining the above with\n\nfor some  by the Diophantine property .\n\nAs a preparation for the proof of Lemma , we first prove the following.\nRecall that  is -admissible if .\n\nAssume .\nThere exists  and  so that for any  and -admissible sufficiently large ,  we have",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L379-430::c8",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L489-518::c10",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L489-518::c10",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 489,
+    "end_line": 518,
+    "text": "Assume .\nThere exists  and  so that for any  and -admissible sufficiently large ,  we have\n\nThis is essentially*Lemma 3.2, with minor modifications for higher dimensional monodromy matrices (see the more recent*Lemma 5.3 for details).\nThe proof follows by induction from the large deviation estimates in Lemmas ,  and the Avalanche principle of Theorem , together with Cartan-type bounds in higher dimensions.\nWe briefly sketch the induction below.\nLet  be large enough so that the uniform upper bound (Lemma ) and large deviation estimate (Lemma ) hold for any  and . Then there exists (see e.g.)  such that for any , , and any  such that\n\nwe have\n\nThis, together with the large deviation Lemma  with , implies the following\nFor , one has\n\nNext, consider any  such that .\nFor any such , we decompose , ,\n\nBy Lemma  applied to the product of the middle two matrices, and Lemma  and Theorem , one has\n\nfor  where . Clearly, eq:MN1=MN0 implies that for ,\n\nWe recall the following Cartan estimate for several variables:\n*Lemma 2.15\nLet  be an analytic function defined on a polydisck , . Let , , . Given  there exists a set , , such that\n\nfor any .\n\nIn the lemma above, we omitted the definition of Cartan sets, and instead only state the measure estimate.\nNote that eq:LDT_MN1_before provides us with a lower bound for , up to a set of measure , needed in the Cartan estimate. We still need an uniform upper bound in a neighborhood of .\nApplying Lemmas  and  to the cocycle , implies uniformly in  that\n\nwhere we used by Lemma  that for ,\n\nClearly, eq:MM_upper1 implies",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L432-486::c9",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L520-572::c11",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L520-572::c11",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 520,
+    "end_line": 572,
+    "text": "Clearly, eq:MM_upper1 implies\n\nWe then have an upper bound of size  for  needed for the Cartan estimate.\nApplying Lemma  with ,  and  (we actually cover  by polydisks with radius , and apply Cartan to each of the polydisk. Note that  hence within each such polydisk there is a lower bound ), we have the following.\nFor any  and any  such that , the following holds\n\nfor some constant  depending on  only.\nNext, we perform the induction scheme.\nFor , we fix an  such that , and consider an arbitrary .\nBy decomposing monodromy matrices of size  into blocks of sizes , and arguing as above, we have a lower bound of size  for\n\nup to a set of measure .\nWe also have the upper bound\n\nCartan's estimate (Lemma ) with , therefore implies\n\nFor any  and any  such that , the following holds\n\nfor some constant  depending on  only.\nFinally, taking  to be sufficiently large and -admissible and  yields the claimed result for\n.\n\nNext, we prove Lemma [Proof of Lemma ]\nThe proof is the essentially same as that of. We briefly sketch it below.\nLet\n\nbe the singular value decomposition of  as in eq:Mn_singular_decom.\nLet .\nWe first show\nLet  be as in Lemma . For  large enough, one has for  that\n\nTowards a contradiction, suppose that for some  one has\n\nFor any , we expand\n\nin which\n\nFor arbitrary  and , there is the trivial bound\n\nBy assumption eq:assume_a1-d_small, one has\n\nBy Lemmas , , and estimates eq:prod_sigma_1, eq:prod_sigma_2, eq:prod_sigma_3, eq:aj1-jd_trivial, eq:a1-d, one has  for  large enough,\n\nFor any , we have similarly,\n\nCombining\neq:M2_v1-d with eq:M2_vm1-md, we arrive at a contradiction with .\nLemma  implies\nLet  be as in Lemma . For  large enough, we have for  that\n\nSince the proof is exactly the same as that of, we shall not repeat it here.\n\nNow we are in position to complete the proof of Lemma .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L489-518::c10",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L574-634::c12",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L574-634::c12",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 574,
+    "end_line": 634,
+    "text": "Now we are in position to complete the proof of Lemma .\n\nThe singular value decomposition of  yields\n\nNote that\n\nHence,\n\nin which, for a matrix ,  refers to the submatrix with row numbers in the set  and column numbers taken from the set .\nBy Hadamard's inequality,\n\nand\n\nwhere  refers to the -th column of . Moreover,   we used the following bound\n\nCorollary  implies that\n\nCombining the estimates eq:detQ_0, eq:detQ_1, eq:detQ_2, eq:D-UU with eq:prod_sigma_1, eq:prod_sigma_2 and eq:prod_sigma_3, we infer that  for\n\nThe claimed result follows from combining the above with the following large deviation estimate\n\nwhich holds for some  due to .\nThus we have completed the proof of Lemma .\n\nBelow we present an alternate, simpler proof of eq:detM-I.\n\nLet .\nWe estimate  as in eq:M=DWV using Schur's lemma.\nLet  be as in eq:M=WDV and  be as in eq:WV=Q, and write (omitting  below for simplicity)\n\nwhere each block is of size .\nBy Schur's lemma,\n\nSince ,\n\nBy Lemma  and that  for arbitrary small  and  large,\n\nCombining eq:Schur_1 with eq:Schur_2, we conclude that\n\nSimilarly, by Lemma  applied to ,\n\nwhich implies, analogously to eq:Schur_22, that\n\nRecall that by eq:L_d>0_varepsilon,\n\nCombining the above with eq:Schur_1, eq:Schur_22 and   (see eq:Q<1), yields\n\nRecall that by Corollary , , and hence . Since by eq:Schur_23 that , we have\n\nCombining eq:Schur_3, eq:Schur_4 with  , we infer by eq:Schur_0,\n\nas claimed.\n\nNext, we show Lemma  as a corollary of\nLemmas ,  combined with the Cartan estimate.\n[Proof of Lemma ]\nBy Lemma ,\n\nand similarly\n\nCombining the above with Lemma , one has\n\nCovering the torus  by polydisks of radii , and apply Cartan's estimate (Lemma ) to each  polydisk with upper bound , lower bound  (note the lower bound is provided by Lemma ), and  with , yields",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L520-572::c11",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L636-662::c13",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L636-662::c13",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 636,
+    "end_line": 662,
+    "text": "Covering the torus  by polydisks of radii , and apply Cartan's estimate (Lemma ) to each  polydisk with upper bound , lower bound  (note the lower bound is provided by Lemma ), and  with , yields\n\nfor any positive integer .\nThis clearly implies the claimed result by summing in  and with a slightly smaller .\n\nLocalization\n\nProof of Theorem : nonarithmetic localization\nThe following result does not require  to be  -admissible.\n\nLet  and assume . For ,\nthere exists a set  with the property that  with  and\n\nfor all   and all .\n\nFirst consider the case   or , and  is -admissible.\nThen the claim follows from Lemmas  and , together with the elementary fact\n\nwhich can be proved via Fourier series. To remove the restriction that  is located near the edges of , as well as the admissibility condition, we pave  with intervals of sizes about , say, which are -admissible. Iterating the resolvent identity with these smaller intervals as in *Lemma 2.2 then yields the desired statement, with possibly smaller .\n\nThe localization theorem can now be proved via the well-known Bourgain, Goldstein strategy  and *Chapter 10. The main steps are as follows:\n\n[(a)] Eliminate the energy. This involves a quantitative Seidenberg-Tarski theorem in the theory of semi-algebraic sets.\n[(b)] Eliminate  that may lead to double resonances, uniformly in the energy.\n[(c)]  Starting from Shnol's theorem, and using absence of double resonances, show exponential localization.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L574-634::c12",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L664-673::c14",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L664-673::c14",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 664,
+    "end_line": 673,
+    "text": "[(a)] Eliminate the energy. This involves a quantitative Seidenberg-Tarski theorem in the theory of semi-algebraic sets.\n[(b)] Eliminate  that may lead to double resonances, uniformly in the energy.\n[(c)]  Starting from Shnol's theorem, and using absence of double resonances, show exponential localization.\n\nThe key step (b) is based on the idea that  (the \"slow variable\") and  (the \"fast variable\") resemble independent random variables in , but only when measured on sets consisting of  intervals. The latter condition is the  reason that semi-algebraic sets enter into the analysis in a crucial and quantitative fashion.\nWe will rely on *Chapter 9 for the technical statements about semi-algebraic theory, in particular on Corollary 9.7 and Lemma 9.9 in loc. cit. However, we would like to point out that the  Yomdin parametrization of Theorem 9.4 with quantitative polynomial bounds, which is needed in these results, was erroneously attributed to Gromov's work during the mid 1980s. In fact, these essential polynomial bounds were finally established by Binyamini and Novikov , thus closing a gap in  that had remained open for almost 15 years.\n\nTo begin the localization proof, we start from a solution  with  and  for all . The latter is the folklore Shnol's theorem, see e.g. *Theorem 2.1 for a self-contained derivation.   Arguing as in *(10.7), (10.8) we see that we may cover the set  by a semi-algebraic set  of polynomial degree  in all the variables , and  of similar measure. In this step, one uses that the Diophantine condition  is only needed in the range  for Lemma  to hold (see *page 859).\nWe denote this finite volume Diophantine condition by .\n\nIt follows from *Corollary 9.7, (10.12), (10.13) that for any large  there exists  so that with\n\nwhere  and  is some large constant depending on  through the Diophantine parameter . Condition eq:spec stab is what we mean by a simple resonance at energy .  Step (a) above begins by defining",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L636-662::c13",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L677-694::c15",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L677-694::c15",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 677,
+    "end_line": 694,
+    "text": "where  and  is some large constant depending on  through the Diophantine parameter . Condition eq:spec stab is what we mean by a simple resonance at energy .  Step (a) above begins by defining\n\nAccordingly, we set , which is semi-algebraic of some degree  over all variables, and  the measure of any fixed  slice as a set of  alone is at most  for some . Next, one introduces\n\nIt is a deep fact that  is again semi-algebraic of polynomial degree in . Indeed, this requires the quantitative Seidenberg-Tarski theorem ,*Proposition 9.2 and concludes Step (a) above.\n\nTo carry out Steps (b) and (c) means excluding those  which have the property that  for some  where . This is the method of \"steep lines\" (or rather in this setting, steep planes) from . Finally, one takes a limsup of sets as  to arrive at a null set of bad . For good , Step (c), and therefore Anderson localization of  at energy , are established by paving of the set  with good -intervals and iterating the resolvent identity (one needs to use the resonant condition eq:spec stab here). This is standard.\n\nIn contrast,  the steep planes argument is not and by the preceding relies  on the polynomial complexity bounds of  via *Theorem 9.4, Lemma 9.9.  We refer the reader to pages 59, 60 of Bourgain's book for the details, which apply here verbatim.\n\nArithmetic Anderson localization\nThis section restricts to the case of a one-dimensional torus  and constant .\nWe follow the strategy of to show the large deviation set  as in def:B_fEn can be covered by roughly  many intervals of small length, and then use a Pigeon-hole principle argument to eliminate double resonances.\nThe number  arises from the number of zeros of , with the identification , in a thin annulus containing .\n\nThe zeros of  off the unit circle form pairs, as can be seen from the following fact.\n\nFor any  and , .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L664-673::c14",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L697-754::c16",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L697-754::c16",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 697,
+    "end_line": 754,
+    "text": "For any  and , .\n\nwhere we used .\nLemma  implies the two holomorphic function  and  coincide on the unit circle .\nHence  on .\nThis implies\nIf  is a zero of , then  is also a zero.\n\nNext, we recall the Green's function on an annulus, which is standard.\nThe Green's function on the annulus  satisfies\n\nThe Green's function is symmetric and invariant under rotations:  and , for any .\nWe also recall the integral of the Green's function along a circle.\nFor  and , we have\n\nWe now turn to the basic Riesz representation of subharmonic functions.\nLet  be a subharmonic function in a neighborhood of , and assume  is a continuous function.\nLet  be the Green's function for , as  in def:Green_annulus.\nThere exists a positive finite measure  on , and a harmonic function  on , such that\n*\nwhere\n\nwhere  is the harmonic measure of  with pole at .\nIn particular,\n\nBy the maximum principle,\n\nRecall that  is a holomorphic function in .\nFor , let\nWe have the following analogue of.\nRecall that for , we shrank  such that eq:L_linear holds and Lemmas  and  hold for . We may further shrink  such that  is zero-free on .\nLet  be such that .\nLet  and  be the zeros of  in\nand  define\n*\nwhere  is the Green's function in def:Green_annulus. Then\n\nwhere the harmonic part satisfies  on .\nFurthermore, let  be as in Lemma . Then\n\nfor  large enough, for any , , that\n\nfor  large enough,\n\nIn particular, for any , for  large enough,\n\nIn the proof we shall omit the dependence of various parameters on  for simplicity. We shall also write .\nFirst, we estimate the harmonic part.\nNote that the harmonic part satisfies  on .\nBy Lemma , one has that for  or  and  large, uniformly in ,\n*\nHence by the maximum principle eq:max_h,\n\nWe also have by Lemma  that for  large enough,\n\nLet",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L677-694::c15",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L756-823::c17",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L756-823::c17",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 756,
+    "end_line": 823,
+    "text": "Let\n\nwhere we invoked eq:upper_h.\nIn view of eq:int_h_lower and Lemma ,  for  large,\n\nBy eq:Poisson and eq:int_th_lower, and the well-known estimate on the harmonic measure\n\nwith arclength measure ,\none has that for , with ,\n*\nThis combined with eq:upper_h yields eq:h_constant_un.\n\nNext, we evaluate the integrals of  along circles.\nFor , let\n*\nwhere  is defined as in eq:int_Green.\nBy,\n\nIntegrating eq:f=G+h along , , and combining with eq:int_final, one obtains\n*\nTaking the difference of the equations above between  and , we arrive at\n\nBy Lemma , we have for  large,\n\nwhile it follows from  Lemma  that\n\nBy eq:h_constant_un, one has for  large,\n\nHence plugging the estimates  eq:N_1' and eq:N_2', eq:N_2\" into eq:N_0', one concludes that  for  large,\n\nand\n\nTaking  and  in eq:N_3' yields\n\nSetting  and  in eq:N_4' yields\n\nCombining eq:N_5', eq:N_6' with eq:L_linear, we infer that for  large enough,\n\nThis proves the claimed result.\n\nProof of Theorem\nIt suffices to show that each generalized eigenfunction , satisfying\n\ndecays exponentially.\nNote that under the assumption that ,   by eq:M=A  we conclude that .\nHence by Theorem , .\nWe first show in this setting, there is an additional symmetry that reduce the number of zeros of  from at most  to no more than  pairs. The following lemma is essential.\n\nFor the operator  as in Theorem , we have\n\nWe first establish the following property of the matrix potential  and coefficient matrix  from def:tH_BV.\n\nFor matrix  as in def:J below, one has  and\n.\n\nIn the following, we write  for simplicity.\nRecall that  are as in def:tH_BV.\nLet\n\nWe have\n\nTo pass to eq:JVJ=V we used that  is even.\nIt is also easy to check that\n\nHence we have proved the claimed identities.\n\nIn the following we write  (suppressing  in the notation for simplicity).\nOne has",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L697-754::c16",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L825-882::c18",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L825-882::c18",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 825,
+    "end_line": 882,
+    "text": "In the following we write  (suppressing  in the notation for simplicity).\nOne has\n\nReordering the variables one sees that the previous line equals\n\nas claimed.\nLemma  implies that\n\nSince both sides of the above are holomorphic functions in , they must be identical to each other.\n\nIf  is a zero of , then  is also a zero.\n\nFollowing the same arguments as in the proof of , we obtain a complexity bound on the large deviation set of the determinant using the upper bound  on the zero count  as in Theorem , together with Lemma .\n\nFor any , and any large -admissible  (see def:admissible in Lemma ), there exists an integer  and a collection of intervals  such that\nthe following large deviation set satisfies\n\nin which each .\n\nNote the  differs from  in Lemma  by a factor  in . This is due to the application of the Cartan estimate in the proof, see.\n\nThe rest of the proof follows the same strategy as in with some minor modifications. We sketch the argument below.\n\nLet  for some  and .\nFor any large -admissible , and any  such that(The proof for negative  is analogous by symmetry.) ,\nlet\n\nwhere  stands for the integer part of .\nThere exists  such that\n*\n\nFirst note that if , then for any\n\nSuppose otherwise, we have for some  that\n\nfor some , which implies  contradicting  .\n\nNext, note that the cardinality\n\nfor  large enough.\nIt then suffices to prove that each pair  consists of at most one point in  .\nArguing by contradiction, suppose there exist  such that\n*\nThen by eq:domega_Dio and that ,\n*\ncontradicting Lemma .\nThe case when\n*\nis similar.\nIn fact, suppose there exist  such that\n*\nSince , there exists  and  such that for  large enough, one has\n*\nUsing that , we infer that\n*\nThis contradicts with Lemma  again.\nThus the claimed results hold.\n\nNext, we show the following.\nUnder the same conditions as Lemma .\nFor any , one has .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L756-823::c17",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L884-947::c19",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L884-947::c19",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 884,
+    "end_line": 947,
+    "text": "Next, we show the following.\nUnder the same conditions as Lemma .\nFor any , one has .\n\nArgue by contradiction.\nSuppose there exists  such that\n\nBy Lemma , it is necessary that , which implies\n\nLet .\nBy Lemma , for any , we see that for  large enough,\n\nThis implies by eq:mufn that for any ,\n\nCombining the above with eq:Poisson_exp and eq:Schnol, we have\n\ninvoking .\nSimilarly, one shows that .\nHence we arrive at a contradiction with the assumption that .\n\nCombining Lemmas  with  yields\nUnder the same conditions as Lemma .\nThere exists  such that .\nThe proof of Anderson localization then follows from a similar argument as in the proof of Lemma .\nIndeed, similarly to eq:phi0, one has\n\nThis proves the claimed result.\n\nProof of Theorem\nRecall that we assumed that there exists an orthonormal matrix , such that\n\nFirst, we prove a lemma which is analogous to Lemma .\nWe have\n\nWe calculate (recall that )\n\nThis can further be simplified in the form\n\nin which we used .\nIn analogy with Lemma , Lemma  implies the following.\nIf  is a zero of , then  is also a zero.\n\nTaking into account the additional assumption assume:t2_2 that , we have\nIf  is a zero of , then  is also a zero.\nNote that by Theorem , for any small , for  large, .\nIn analogy  to Lemma , Lemmas  and  imply the following.\nFor any small , and any large -admissible .\nThere exists  and a collection of intervals  such that\nthe large deviation set satisfies\n\nFurthermore each  satisfies .\nsimilarly to Lemma , we have\nLet  for some  and . For any large -admissible , and for any  such that , let\n\nThere exists  such that\n\nThis implies, analogously to Lemma , the following.\nUnder the same conditions as Lemma .\nFor any , one has .\n\nSuppose otherwise. Then there exists  such that , implying .\nHence\n\nTaking Lemma  into account, we have similarly to eq:Green_I1 that for any  and  large enough, for any :",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L825-882::c18",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L949-977::c20",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L949-977::c20",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 949,
+    "end_line": 977,
+    "text": "Taking Lemma  into account, we have similarly to eq:Green_I1 that for any  and  large enough, for any :\n\nImplying, in analogy with eq:phi0 that\n\nThus a contradiction.\nTaking Lemmas  and  into account, we arrive at\n\nUnder the same conditions as Lemma .\nFor some , one has .\nThis implies\n\nwhich is the claimed result.\n\nApplications to spin chains and the skew shift\nAnisotropic XY spin chain model in quasi-periodic magnetic fieldsThe XY-chain model is an exactly solvable model, first understood in by Lieb-Schultz-Mattis, due to the fact that the Jordan-Wigner transformation maps the XY-chain Hamiltonian to a Hamiltonian of free Fermions.\nSince then the XY-chain has become a prototypical model in understanding phenomena in many-body quantum\ntheory.\n\nIn this paper, we study the anisotropic XY-spin chain in magnetic fields defined as follows.\nLet  represent the strength of the anisotropy.\nFor , we denote the finite volume, anisotropic XY Hamiltonian with free boundary conditions by\n*\nwhere  is the frequency,  is the phase and the potential  is assumed to be a non-constant analytic function on . The underlying Hilbert space is .\nThe matrices  are the Pauli matrices given by\n*\nand  etc. means that the Pauli matrix acts on the  component of the tensorial state.\nIt is well-known that the XY-chain models can be reduced to the following Hamiltonian  of the free Fermions via the Jordan-Wigner transformation (see e.g.):\n\nwhere\n\nNote that in the isotropic case (), the resulting Hamiltonian of the free Fermions is scalar valued, thus is much better understood than the anisotropic case.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L884-947::c19",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L979-1003::c21",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L979-1003::c21",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 979,
+    "end_line": 1003,
+    "text": "Note that in the isotropic case (), the resulting Hamiltonian of the free Fermions is scalar valued, thus is much better understood than the anisotropic case.\n\nIt was shown by Hamza-Sims-Stolz that dynamical localization of the anisotropic XY-chain, characterized by the zero-velocity Lieb-Robinson bound, is equivalent to the exponential dynamical localization of , viz.\n*\nfor all  and . Later it was proved in by Chapman-Stolz that dynamical localization holds for the anisotropic XY-chain with random magnetic fields at arbitrarily small disorder.\nSpin chains with deterministic magnetic fields are much less understood.\nFor isotropic XY-chains with quasi-periodic magnetic fields, an interesting anomalous Lieb-Robinson bound was proved by Damanik-Lemm-Lukic-Yessen. Positive lower bounds of the Lieb-Robinson velocity were obtained by in the periodic setting. Moreover, they covered  quasi-periodic models under a reducibility assumption, as well as the limit-periodic case.\nAs far as the anisotropic case is concerned, the only results so far are by Damanik-Lukic-Yessen for periodic magnetic fields.\n\nIn this paper, we study the infinite volume version of the anisotropic  in the positve Lyapunov exponent regime, which complements the earlier studies. Thus, we define\n\nwhere\n\nClearly this is a  block-valued Jacobi matrix. As an immediate corollary of Theorem , one has:\nis Anderson localized in the positive Lyapunov exponent regime for a.e. .\n\nWe now restrict to the case of one-dimensional torus to address arithmetic Anderson localization.\nProof of Theorem\nWe obtain Theorem  as a corollary of Theorem .\nIt suffices to check the conditions assume:t2_1 and assume:t2_2.\nLet  be the following orthonormal matrix:\n\nClearly , where we used  is even, and , which verifies assume:t2_1 of Theorem .\nNext, let us verify  for even .\nIt is easy to see that for\n\nwe have",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L949-977::c20",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L1005-1044::c22",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L1005-1044::c22",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 1005,
+    "end_line": 1044,
+    "text": "we have\n\nwhere we used the assumption that . It is also straightforward to check .\nHence, with , one has\n\nFinally we remove the minus signs in front of  and  via conjugating the matrix by (only possible for even )\n\nHence\n\nThis verifies the assumption assume:t2_2 of Theorem  (for even  only; hence one needs to further restrict the admissible sequence to even numbers. However, this is still a sequence of positive density, thus does not affect the proof of localization).\nHence Theorem  implies Theorem  as a corollary.\nSkew-shift with rational frequencies\nLet .\nLet us consider the following operator on :\n\nwhere\n\nand  be an arbitrary diagonal matrix. A particular choice of  that is of interest to us is the following:\n\nwith  being a reduced rational with .\nThe specific choice of  arises from taking the dual model of the following Schrodinger operator  on  with skew-shift dynamics with frequency , see def:skew_shift:\n\nFor any irrational , the spectrum  is constant in , and  is constant in .\nIn the rest of this section, we will fix a .\n\nThe first goal of this section is to prove the almost localization of .\n[Resonances of ]\nLet  and . We say  is an -resonance of  if  and .\nIn the rest of the section, we fix some  such that , where  is as in Lemma .\n\nLet  be the -resonances of . If this sequence is infinite, we\nsay  is -resonant, otherwise we say it is -non-resonant. Furthermore, if  is -non-resonant with a finite sequence of resonances , we let .\n\nIf  for some  and , then for  large enough, one has\n\nIndeed by triangle inequality, we have\n\nimplying the claimed inequality.\n\n[Almost localization]We say the family  is -almost localized for some constant  if for every solution  of  for some energy , satisfying  and , and for every , the bound  holds, where the 's are the -resonances of .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L979-1003::c21",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L1047-1099::c23",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L1047-1099::c23",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 1047,
+    "end_line": 1099,
+    "text": "[Almost localization]We say the family  is -almost localized for some constant  if for every solution  of  for some energy , satisfying  and , and for every , the bound  holds, where the 's are the -resonances of .\n\nThere exists a constant  such that for any ,\nis -almost localized in .\n\nWe first check the conditions assume:t2_1 and assume:t2_2 of Theorem  are satisfied and that for ,\n\nNote this provides a tighter upper bound than the required  as in Theorem .\nIt is easy to compute that as , , hence  for  large enough.\nConvexity of  in  implies ,\nwhich verifies eq:kappa_q=q.\n\nNext, we turn to assume:t2_1, which follow directly from  and .\n\nTo verify assume:t2_2, we let\n\nWe have\n\nand clearly since  is diagonal, .\nThus, with ,\n\nThus  assumption assume:t2_2 of Theorem  holds with .\nThe proof of almost localization proceeds as that of the localization as in Theorem , except that Lemma  holds only for non-resonant 's (instead of arbitrary large ) and the definitions of  intervals require minor modifications.\nIndeed, we have\nLet  for some  and .\nLet  be as in Lemma , and  be the constant as in Remark .\nLet  be as in def:BfEn^(2).\nFor  large enough, and for  such that  (The case of negative  can be handled similarly.). Let  be -admissible such that , let\n\nThere exists  such that\n\nThe principle for choosing  is to guarantee eq:I_1+I_2_neq_nj holds.\n\nWe will prove this lemma in details. The rest of the proof of almost localization is the same as that of Theorem .\n\nTowards a contradiction, suppose  for any .\n\nClearly , for some absolute constant .\nAlso since   (see eq:kappa_q=q), which is a tighter upper bound than , Lemma  implies  for .\nSince , by the Pigeon hole principle, there exists  and  such that\n\nIt is clear that  and the measure estimate of  in Lemma  excludes the possibility of\n\nIt remains to consider the case when\n\nThere exist  such that\n\nTaking the difference, we obtain\n\nThe key to estimate the term on the right-hand side of the equation above is to show:",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L1005-1044::c22",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L1101-1170::c24",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L1101-1170::c24",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 1101,
+    "end_line": 1170,
+    "text": "The key to estimate the term on the right-hand side of the equation above is to show:\n\nWe divide into two different cases, depending on if .\n\nCase 1. If . Due to the choices of  and , one has\n\nCase 2.1. If  and , then\n\nCase 2.2. If  and , we have\n\nThus   eq:I_1+I_2_neq_nj holds.\n\nNext, we show that\n\nCase 1. If , we have by eq:l1+l2_1 that\n\nCase 2. If , then\n\nHence we have verified eq:l1+l2_neq_nj+1.\n\nFinally, suppose    for some . We again divide into two cases depending on the size of .\n\nCase 1.\n.\nIn this case we estimate eq:Uj_contra_1 via the following:\n\nfor  large enough, due to .\nThis clearly contradicts with the measure estimate of  from Lemma .\n\nCase 2.\n. We are going to show this leads to a contradiction with the definition of .\nIndeed, by ,\n\nthis contradicts with .\nThe rest of the proof of almost localization follows the same steps as that of Theorem .\n\nProof of Theorem\nThe  transfer matrix associated to  along the skew-shift dynamics\nis\n\nOur goal is to show that if  is small enough, then for every , and every ,\n\nTo this end, we first show  for every eigenvalue of  with  as in def:Bsk.\n\nFix  (one can also fix any non-resonant ). Clearly, for ,  is -non-resonant for any . Hence  for some . Theorem  implies  has pure point spectrum with exponentially decaying eigenfunctions if  is small enough. Indeed the potential matrix  as in eq:V_sk does not have constant eigenvalue, hence by,  has  positive Lyapunov exponents, each of the order .\nFixing an arbitrary eigenvalue  of , and let  be the corresponding normalized eigenfunction.\nLet , where for each ,\n\nFor each  and each , let\n.\nWe have for each ,\n\nThis implies for any  and  that\n\nThe above implies\n\nin which for ,\n\neq:Mb=b implies for any  and  that\n\nWe decompose\n\nwhere\n\nHence eq:Mb=b implies for every ,\n\nThis implies via the Oseledets theorem, see *Theorem 4.2, that",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L1047-1099::c23",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L1172-1220::c25",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L1172-1220::c25",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 1172,
+    "end_line": 1220,
+    "text": "This implies via the Oseledets theorem, see *Theorem 4.2, that\n\nwhich, due to eq:M_lq=tM_l, implies for every ,\n\nThis implies  on , since eigenvalues of  form a dense set in , and  is a sub-harmonic function, hence upper semi-continuous in .\nFinally it suffices to show\n\nfor any irrational  and any .\n\nLet  consisting of functions  such that\n\nand  consisting of functions  such that\n\nDefine  on  as follows,\n\nand  on  as:\n\nFollowing Chulaevsky-Delyon, we define an unitary operator  as:\n\nA straight-forward computation shows\n\nIn fact,\n\nHence , which implies eq:claimed_dual, since for irrational , and arbitrary ,\n\nApplications of the non-arithmetic localization to graphene modelsNumerous models in condensed matter physics arise in block-valued form, rather than as scalar-valued operators.\nWe will now analyse some examples.\n\nDirac-Harper model for Moire superlattice\nThe following Dirac-Harper model for moire bilayer superlattices was proposed in:\n\nwhere , , and\n\nand\n\nIn the large coupling regime, one can apply the results of to this model and conclude uniformly positive Lyapunov exponents and Anderson localization. In fact, for  large enough, one has uniformly positive  of order  on  by.\nS. Klein's result applied to the operator above for  large coupling  implies Anderson localization of  for a.e. . To apply , one needs to check the potential matrix  has no constant eigenvalue. Denoting the right-hand upper -block of  by , this reduces to verifying that  has no constant eigenvalues, which is indeed the case by an explicit computation.\nAs an application of Theorem , we conclude that\nFor a.e. ,  is Anderson localized in .\nThe same result holds for  below.\nA modification of this model was introduced in, where\n\nwhere  and\n\nand",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L1101-1170::c24",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L1222-1254::c26",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L1222-1254::c26",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 1222,
+    "end_line": 1254,
+    "text": "and\n\nBecker-Ge-Wittsten proved in that for  large enough, for either the chiral coupling  or the anti-chiral coupling ,  has Anderson localization.\nThe proof of this theorem as stated in their paper is unfortunately wrong. The authors claimed falsely a lower bound of the denominator of the Green's function (associated to Dirichlet boundary condition) directly from the Thouless formula.\nThis mistake was discussed in details in.\n\nAlthough the proof of is wrong, the theorem as stated is correct. Indeed, one can simply obtain it as a special case of, the same way as for  as discussed above.\nAs application of our Theorem , a stronger non-perturbative localization result can be obtained, see Remark .\n\nNext, we discuss another mistake in regarding arithmetic Anderson localization. This mistake appears difficult to rectify.\nIn, the authors claimed Anderson localization for the anti-chiral model  (note  and ).\nUnfortunately the proof of this result is also wrong.\nThe wrong proof is based on a chain of three critical mistakes, see eq:wrong_1, eq:wrong_2, eq:wrong_3.\nLet us explain the mistakes briefly below.\nTake , similarly to  in def:fn, to be the determinant with Dirichlet boundary condition (which is  in)):\n\nNote each block is of size , and  differ from  by a conjugation.\nIn fact\n\nand\n\nAnother  (which is  in) was introduced in, where  is the determinant of the shifted (by  units) matrix:\n\nwhere  is the projection onto the first two coordinates and  is the projection onto the last two coordinates.\n\nIt was first falsely claimed on top of Page 20 of that (note their  is our )\n\nTo see this is wrong, without loss of generality, we let .\nLet\n\nThen, for example when , with  the  identity matrix,\n\nand\n\nThe two determinants are not equal to each other. In fact, for   one computes that",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L1172-1220::c25",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L1258-1309::c27",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L1258-1309::c27",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 1258,
+    "end_line": 1309,
+    "text": "The two determinants are not equal to each other. In fact, for   one computes that\n\nwhile\n\nThis is the first critical mistake that invalidates their entire proof.\n\nEven under the false eq:wrong_1, the authors in made another false claim that\n\nIndeed, one has\n\nbut instead of the falsely claimed\n\nin their paper, one in fact has\n\nThis is their second critical mistake.\n\nEven under the false eq:wrong_1, eq:wrong_2, the authors made yet another false claim that\n\nHowever, even under the incorrect equality eq:wrong_1 and eq:wrong_2, one should obtain  instead of eq:wrong_3.\nThis is their third critical mistake.\n\nThe proof of, relying crucially on a chain of erroneous equations eq:wrong_1,eq:wrong_2,eq:wrong_3, is therefore completely false.\n\nAA-stacked graphene in magnetic fields AA-stacked graphene model in magnetic fields has attracted a lot attention in the physics literature, see e.g. and the references therein.\nThe Hamiltonian is the following:\n*\nwhere  are the intra-layer coupling constants within the first layer, and  are the intra-layer coupling constants within the second layer, and  is the inter-layer coupling.\nIn the AA-stacked setting, the two layers are identical to each other, we will also assume .\n\nReducing to a one-dimensional operator, via taking a Fourier transform in the variable , we have\n\nIt is known that .\nRewriting  in terms of block Jacobi matrix, one has\n\nand\n\nin which  and .\nClearly  holds iff . Later we will complexify  to estimate the Lyapunov exponent.\n\nIf we define  acting on  as\n\nThen from the calculations above, due to the bipartite nature of the AA-stacked graphene lattice, it is clear that  can be written in the following form:\n\nwhere  and .\nHence\n\nClearly\n\nin which for a set , .\nSince  and  are unitarily equivalent, we conclude from\neq:sig_HAA_1 that",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L1222-1254::c26",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L1311-1357::c28",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L1311-1357::c28",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 1311,
+    "end_line": 1357,
+    "text": "in which for a set , .\nSince  and  are unitarily equivalent, we conclude from\neq:sig_HAA_1 that\n\nFor the AA-stacked graphene, in general it is hard to tell if the zero energy is in the spectrum . In fact, we have the following criterion, in terms of the single layer Hamiltonian:\nLet  be the single-layer Hamiltonian:\n\nThen\n\nIn fact,  can be expressed in terms of  as follows:\n\nwhere  and  are the wave functions on the first/second layer respectively.\nIt is easy to see that claimed result follows from eq:HAA=Hg.\n\nBy Lemma ,  iff . In general, one would conjecture that  is a Cantor set, which has been proved in for the isotropic case . Hence it is in general a hard problem to tell if a particular energy (aside from , which is always in  for irrational ) falls in .\n\nAside from the zero energy, by eq:sig_AA_2, we are reduced to study the following operator:\n\nwhere\n\nand\n\nLet  be the transfer matrix corresponding to .\nAs a corollary of Theorem , one has the following fact, regarding the operator .\nLet  be such that  on , for  as in def:B_AA.\nFor a.e. ,  is Anderson localized in .\nAs a corollary, we have the following result about .\nLet  be such that  on , for  as in def:B_AA.\nFor a.e. ,  is Anderson localized in .\n\nLet  and  be a (non-trivial) generalized eigenfunction solving . Our goal is to show that it decays exponentially. Let . By eq:HAA=HH and eq:HAA^2=HH,  is a generalized solution to\nSince we assume , by Theorem ,  decays exponentially.\nBy eq:HAA=HH, , hence  decays exponentially as well.\n\nNext, we exhibit regions of parameters for which the conditions of Theorems  and  are satisfied.\nLet  be fixed. Let  and . Then for , we have for  as in def:B_AA,\n\nand\n\nLet  be such that .\nNote that for ,  for any . Hence in particular\n\nNext, we verify eq:L_2>0_AA.\nIt is easy to verify asymptotically in  that\n\nand\n\nHence",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L1258-1309::c27",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L1359-1431::c29",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L1359-1431::c29",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 1359,
+    "end_line": 1431,
+    "text": "Hence\n\nBy the continuity of Lyapunov exponents in the cocycles, we have\n\nIt suffices to compute\n\nCombining eq:lb_L^2_AA with eq:L2Q_AA yields\n\nBy the convexity of  in , we have,\n\nSimple estimates on the sup norm of  show\n\nuniformly in .\nCombining eq:lb_L^2_AA_3 with eq:ub_L^1_AA, we conclude that for  large enough\n\nuniformly in  in the interval specified above.\n\nAB-stacked graphene in magnetic fields\nThe AB-stacked graphene model has received a lot of attention in the physics literature as well, see e.g..\nThe Hamiltonian for the AB-stacked graphene model in magnetic fields is:\n\nNote in this model, we only introduce inter-layer hopping when a vertex is exactly on top of another in the other layer.\nWe assume the two single layers are identical, hence .\n\nThe operator  can be reduced to a one-dimensional operator as\n\nThe spectrum is preserved in the sense that .\n\nIn terms of block-valued operator,  reads as\n\nand\n\nin which  and .\nLet  on  be as follows:\n\nthen similarly to eq:HAA=HH,\n\nwhere  and .\nThis leads to\n\nTherefore, in analogy with eq:sig_AA_2,\n\nThe operator  takes the following form:\n\nwhere\n\nand\n\nLet  be the cocycle associated to .\nThen similarly to Theorems  and ,  we obtain\nLet  be such that  on , for  as in def:B_AB.\nFor a.e. ,  is Anderson localized in .\nLet  be such that  on , for  as in def:B_AB.\nFor a.e. ,  is Anderson localized in .\nSince the proofs are analogous to those of Theorems  and , we don't repeat them here.\n\nIn view of Lemma , the purpose of the following lemma is to show that for some regions of the parameters the conditions of Theorems  and  are satisfied.\nLet  be fixed. Let  and . Then for , we have for  as in def:B_AB,\n\nand\n\nLet  be such that . Clearly for any ,  for any .\nHence  for any  and .\nOne computes asymptotically in  that\n\nand\n\nHence",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L1311-1357::c28",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L1433-1468::c30",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L1433-1468::c30",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 1433,
+    "end_line": 1468,
+    "text": "Hence\n\nThis implies, by the continuity of Lyapunov exponents in the cocycles, similarly to eq:lb_L^2_AA_2 that\n\nBy the convexity of  in  in the interval , we have\n\nIn analogy witheq:ub_L^1_AA, we now conclude\n\nuniformly in .\nCombining eq:lb_L^2_AB with eq:ub_L^1_AB yields the claimed result.\n\nCoupled Harper operators\nThe model and generalities\nConsider the eigenvalue problem, with Diophantine ,\n\nwhere  and . One can couple more scalar quasi-periodic operators in this fashion and also allow for more general potentials. For simplicity we restrict ourselves to the system eq:coupledHarper since it already poses sufficiently many challenges. Setting , we can rewrite eq:coupledHarper in the form\n\nwhich is a special case of eq:BVsys. We order the Lyapunov exponents as above, i.e.,  . By Herman's method, .\n\nFor  small the following hold:\n\nif , then eq:coupledHarper exhibits Anderson localization for a.e. .\nif , then  on  and spectrum  equals the essential support of the absolutely continuous spectrum.\n\nBy continuity of  in the cocycle *Theorem 1.5, we conclude that  for all  provided  and  is sufficiently small. Hence, Theorem  guarantees  the first property.\n\nFor the second property, denote the accelerations of  by . Then  and  are upper semi-continuous in the cocycle. They both vanish for all energies if . Since they are moreover quantized, see *Theorem 1.4, it follows that they still vanish for small . If  , from*Theorem 1.2 it would follow that the cocycle is -dominated which means that is uniformly hyperbolic. By*Theorem 2.1 this is impossible if . The a.c. statement follows from  via *Theorem 7.2.\n\nFor the a.c. statement we would like to know that . This is indeed the case if , see the proof of Proposition  below which uses the Cantor structure of the Harper spectrum .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L1359-1431::c29",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L1471-1508::c31",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L1471-1508::c31",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 1471,
+    "end_line": 1508,
+    "text": "For the a.c. statement we would like to know that . This is indeed the case if , see the proof of Proposition  below which uses the Cantor structure of the Harper spectrum .\n\nCoexistence of pure point and absolutely continuous spectra\nWe now exhibit co-existence of pure point and a.c. spectrum provided\n. Throughout, the frequency  is assumed to be Diophantine and we will make  as small as needed for various arguments to go through.\n\nLet  be the bounded self-adjoint operator on  defined by the left-hand side of eq:coupledHarper.   The spectrum  does not depend on  and satisfies\n\nwhere  is the Harper operator. Moreover, . In fact, this part of the spectrum (the \"edges\") have positive measure, as does the \"interior\"  .\n\nThe system eq:coupledHarper consists of  and , each is a Harper's model (but with different coupling), coupled by , where  is the hopping operator .\nBy standard perturbation theory of bounded self-adjoint operators , the operator  defined by the left-hand side of eq:coupledHarper satisfies\n\nas claimed.\nBy unique ergodicity of irrational rotations on ,  none of these spectra depend on  (and so we can drop  from the notation of spectra). Moreover, it is well-known  that  for any irrational .\nHence for ,\n\nThis implies .\nThe positive measure claims rely on Green's function estimates and will be proved later in Proposition . To deal with the interior part of  we will use duality, see Corollary .\n\nNext, we address the Anderson localization of  on a positive measure set located at the edge of the spectrum.\nTo do this, we introduce the following notion of regular Green's function.\n\nWe say that  is regular, if for some  and\n\n,\n, for all  where\n\nLet .  Then  for all sufficiently small , there exist  and   such that\n\nfor all  large. Moreover, the set on the left-hand side is contained in  at most  intervals each of length at most . The constants here depend only on , and .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L1433-1468::c30",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L1510-1548::c32",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L1510-1548::c32",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 1510,
+    "end_line": 1548,
+    "text": "for all  large. Moreover, the set on the left-hand side is contained in  at most  intervals each of length at most . The constants here depend only on , and .\n\nBy induction in . To deal with the initial scale, we write the   operator  defined by eq:coupledHarper with Dirichlet boundary conditions on   in block  form\n\nwhere  are the Harper operators with Dirichlet boundary conditions. By choice of , the Green's function  will be bounded and exponentially decaying for all  and  large enough.\nUsing the Feshbach formula, see Lemma 4.8 in , one\nreduces the full Green's function  to the Schur complement\n\nAt an initial scale , we control  perturbatively by taking  small and  outside a small bad set governed by the LDT for :\n\nwhere  and  large.\nThis proves the lemma for  where  is large and some constant . At these initial scales, the complexity bound of  follows from the fact that the connected components of the bad set  contain the zeros of .\n\nFor larger scales, we run a multi-scale argument via the resolvent identity and Cartan in the spirit of .\nLet  where  is a large constant that will be determined later. For any  we call   good if the Green's function of  restricted to  is regular. The number of bad  does not exceed  by the Diophantine condition and the inductive assumption. We write  where\n\nDenote by  the Green's function of  restricted to  with Dirichlet boundary conditions. By iterating the resolvent identity we conclude that\n\nsee *Lemma 2.2. By a standard perturbative Neumann series argument, we further conclude that this bound is locally stable, i.e.,\n\nLocally on  we write\n\nwhere the operators on the diagonal are the restrictions to the respective sets  with Dirichlet conditions, while  are the hopping terms. We reduce the Green's function of the full operator to the Schur complement of this block matrix, viz.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L1471-1508::c31",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L1552-1575::c33",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L1552-1575::c33",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 1552,
+    "end_line": 1575,
+    "text": "where the operators on the diagonal are the restrictions to the respective sets  with Dirichlet conditions, while  are the hopping terms. We reduce the Green's function of the full operator to the Schur complement of this block matrix, viz.\n\nNext, we cover  by intervals  of size  to conclude that  all  are regular provided , where  .\nBy *Lemma 2.2, Lemma 4.8 we deduce that  for those  as well as by self-adjointness of ,\n\nFinally,  on the complex disk , we have\n\nTaking  large enough, the Riesz mass of the sub-harmonic function\n\non  is at most . By Cartan's theorem,  off a set of measure at most  in . Finally, we rescale and sum over the -localization which costs a factor of . By Cramer's rule, and*Lemma 4.8, we obtain the first condition of regularity. For the exponential off-diagonal decay, we iterate the resolvent expansion using Green's functions of the smaller  scale, allowing for  many resonant intervals of that scale within . See *Lemma 2.4 for such a procedure in the much more complicated two-dimensional setting. The statement about  connected components follows from the fact that each such component must contain a zero of .\n\nThe first result we prove about eq:coupledHarper is Anderson localization for energies outside of .\n\nFor a.e. , the operator  exhibits Anderson localization on   .\nMoreover, the Lyapunov exponents do not vanish on that part of the spectrum.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L1510-1548::c32",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L1577-1583::c34",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L1577-1583::c34",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 1577,
+    "end_line": 1583,
+    "text": "For a.e. , the operator  exhibits Anderson localization on   .\nMoreover, the Lyapunov exponents do not vanish on that part of the spectrum.\n\nThis follows from the  double-resonance exclusion argument in  via Lemma , and the usual semi-algebraic techniques. For the Lyapunov exponents, we do not go through localization but rather invoke the continuity of the Lyapunov exponents in the cocycle, see . In fact, for  this is clearly correct, due to the properties of the Harper operator. Since we can rewrite eq:coupledHarper as a cocycle over an irrational base, we can invoke the continuity results of  to conclude nonvanishing of the Lyapunov exponents for small . Clearly, the non-vanishing of the Lyapunov exponents leads to another proof of localization, via Theorem . However, the technique from  which we have followed above is independent of Theorem  and more robust. In fact, it also applies to coupled PDEs.\n\nThe energies exhibiting localization in Theorem  form a set of positive measure.\n\nFor all Diophantine  one has  .\n\nThe proof in*p. 88-83, see also , applies directly. Indeed, by the remark on p. 81 of , Bourgain's key Lemma 12.15 does not require positive Lyapunov exponents, but rather a large deviation estimate for Green's functions. This is given by Lemma  above. The remainder of the proof of the positive measure statement, viz. *Proposition 12.14, does not rely on the scalar nature of the Schrodinger operator but rather its self-adjointness and elementary semi-algebaic set considerations, cf. *eq. (12.28). In our case, these remain valid due to the fact that the underlying potenial is a trigonometric polynomial (in fact, a cosine). Hence, Bourgain's Proposition 12.14 remains valid for the system eq:coupledHarper provided we are at the edges of the spectrum where Lemma  applies.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L1552-1575::c33",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L1585-1617::c35",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L1585-1617::c35",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 1585,
+    "end_line": 1617,
+    "text": "The proof in*p. 88-83, see also , applies directly. Indeed, by the remark on p. 81 of , Bourgain's key Lemma 12.15 does not require positive Lyapunov exponents, but rather a large deviation estimate for Green's functions. This is given by Lemma  above. The remainder of the proof of the positive measure statement, viz. *Proposition 12.14, does not rely on the scalar nature of the Schrodinger operator but rather its self-adjointness and elementary semi-algebaic set considerations, cf. *eq. (12.28). In our case, these remain valid due to the fact that the underlying potenial is a trigonometric polynomial (in fact, a cosine). Hence, Bourgain's Proposition 12.14 remains valid for the system eq:coupledHarper provided we are at the edges of the spectrum where Lemma  applies.\n\nNext, we show the existence of absolutely continuous spectrum.\nWe achieve this via proving the existence of a positive measure set of energies in  for which at least one of the Lyapunov exponents is zero.\n\nThere exists a positive measure set of energies in the spectrum of  defined by eq:coupledHarper with exactly one vanishing Lyapunov exponent. Thus, eq:coupledHarper exhibits some a.c. spectrum of multiplicity . Moreover, for a.e.  the following holds: for a.e.  in the a.c. spectrum of  the generalized eigenfunctions in the a.c. spectral subspace of  are truly extended, i.e., they cannot decay exponentially at either end.\n\nNote the a.c. claim then follows from this by which is valid from strip models.\nWe start with the following.\nThere exists  such that  and  for .\n\nWe begin by showing there exists some energy .\nFor , this is an immediate consequence of the Cantor property of the spectrum of Harper Pu, AJ and that . In fact,  has dense gaps in , we pick one such gap . Then for  small enough,\n\nThis implies the existence of .\nHence for any , we can obtain perturbatively the existence of some .\n\nLet .\nNext we show for  small enough, for any , we have .\nThis proof is similar to that of the second part of Theorem .\nIn fact, denoting the accelerations of  by . For  and , one has . Hence  and  for small  on .\n\nIt remains to prove .\nTo do this, we pass to the dual system of eq:coupledHarper.  Thus, let  and similarly for . If  solve eq:coupledHarper, then\n\nsolve\n\nDenote the operator defined by the left-hand side of eq:coupledHarper* by . It is unitarily equivalent to , if both are viewed as bounded self-adjoint operators on . These operators have spectra equal to , which are constant in .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L1577-1583::c34",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L1619-1649::c36",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L1619-1649::c36",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 1619,
+    "end_line": 1649,
+    "text": "Denote the operator defined by the left-hand side of eq:coupledHarper* by . It is unitarily equivalent to , if both are viewed as bounded self-adjoint operators on . These operators have spectra equal to , which are constant in .\n\nThis is Aubry duality, see for example *Section 1.5.1.\nRecall that the Aubry duality for the Harper's model implies . Hence combined with Lemma , we have\n\nFurthermore, for  small, the Lyapunov exponents  on  for the dual operator  (true for  and stay positive by continuity in ).\nOne can then conclude\n\nby following the same arguments as in  Proposition .\nOne also has the analogue of Theorem  as follows.\n\nFor a.e. , the operator  exhibits Anderson localization on .\n\nFor the a.c. spectrum, we will not go through the localization established in the previous corollary, since it is not immediately clear how to proceed. Rather we derive it directly from combining Lemma , eq:mes_U>0 with the Kotani-Simon theory for the strip model.\n\nThe final claim about the absence of \"hybrid\" states, i.e., the possibilty of exhibiting exponential decay as either  or , follows from Fubini and the two-sided version of Oseledets' theorem, see *Theorem 4.2.\n\nAvila, A., 2015. Global theory of one-frequency Schrodinger operators. Acta Math., 215 (1), pp. 1-54.\n\nAvila, A., 2023. KAM, Lyapunov exponents, and the Spectral Dichotomy for typical one-frequency Schrodinger operators. arXiv preprint arXiv:2307.11071.\n\nAvila, A. and Jitomirskaya, S., 2009. Almost localization and almost reducibility. J. Eur. Math. Soc., 12(1), pp. 93-131.\n\nAvila, A., Jitomirskaya, S. and Sadel, C., 2014. Complex one-frequency cocycles. J. Eur. Math. Soc., 16(9), pp. 1915-1935.\n\nAvila, A. and Krikorian, R., 2006. Reducibility or nonuniform hyperbolicity for quasiperiodic Schrödinger cocycles. Annals of Mathematics, pp.911-940.\n\nAvron, J., van Mouche, P. H. M.,  Simon, B. On the measure of the spectrum for the almost Mathieu operator. Comm. Math. Phys. 132 (1990), no 1, 103-118.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L1585-1617::c35",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L1652-1683::c37",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L1652-1683::c37",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 1652,
+    "end_line": 1683,
+    "text": "Avron, J., van Mouche, P. H. M.,  Simon, B. On the measure of the spectrum for the almost Mathieu operator. Comm. Math. Phys. 132 (1990), no 1, 103-118.\n\nBasu, S.,  Pollack, R.,  Roy, M.-F. Algorithms in real algebraic geometry.\nAlgorithms Comput. Math., 10\nSpringer-Verlag, Berlin, 2006\n\nBecker, S., Ge, L. and Wittsten, J., 2022. Hofstadter butterflies and metal/insulator transitions for moire heterostructures. arXiv preprint arXiv:2206.11891.\n\nBecker, S., Han, R. and Jitomirskaya, S., 2019. Cantor spectrum of graphene in magnetic fields. Inventiones mathematicae, 218, pp.979-1041.\n\nBinyamini, G.,  Novikov, D.\nComplex cellular structures.\nAnn. of Math. (2)190(2019), no. 1, 145-248.\n\nBourgain, J.  On the spectrum of lattice Schrodinger operators with deterministic potential.\nJ. Anal. Math. 87 (2002), 37-75.\n\nBourgain, J., 2007, Positive Lyapounov exponents for most energies. In Geometric Aspects of Functional Analysis: Israel Seminar 1996–2000 (pp. 37-66). Berlin, Heidelberg: Springer Berlin Heidelberg.\n\nBourgain, J.  Green's function estimates for lattice Schrodinger operators and applications,\nAnn. of Math. Stud., 158\nPrinceton University Press, Princeton, NJ, 2005.\n\nBourgain, J. and Goldstein, M., 2000. On nonperturbative localization with quasi-periodic potential. Ann. of Math., 152 (3),\npp. 835-879.\n\nBourgain, J.,  Goldstein, M.,  Schlag, W.\nAnderson localization for Schrodinger operators on  with quasi-periodic potential.\nActa Math. 188 (2002), no. 1, 41-86.\n\nBourgain, J. and Jitomirskaya, S., 2000. Anderson localization for the band model. Geometric aspects of functional analysis, 1745, pp. 67-79.\n\nChapman, J. and Stolz, G., 2015, February. Localization for random block operators related to the XY spin chain. In Annales Henri Poincaré (Vol. 16, No. 2, pp. 405-435).",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L1619-1649::c36",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L1685-1705::c38",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L1685-1705::c38",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 1685,
+    "end_line": 1705,
+    "text": "Chapman, J. and Stolz, G., 2015, February. Localization for random block operators related to the XY spin chain. In Annales Henri Poincaré (Vol. 16, No. 2, pp. 405-435).\n\nChulaevsky, V. and Delyon, F., 1989. Purely absolutely continuous spectrum for almost Mathieu operators. Journal of statistical physics, 55, pp.1279-1284.\n\nDamanik, D.,  Goldstein, M.,  Schlag, W.,  Voda, M.\nHomogeneity of the spectrum for quasi-periodic Schrodinger operators. J. Eur. Math. Soc. (JEMS) 20 (2018), no. 12, 3073-3111.\n\nDamanik, D., Lemm, M., Lukic, M. and Yessen, W., 2014. New Anomalous Lieb-Robinson Bounds in Quasiperiodic XY Chains. Physical review letters, 113(12), p.127202.\n\nDamanik, D., Lukic, M. and Yessen, W., 2015. Quantum dynamics of periodic and limit-periodic Jacobi and block Jacobi matrices with applications to some quantum many body problems. Communications in Mathematical Physics, 337(3), pp.1535-1561.\n\nDuarte, P. and Klein, S., 2014. Positive Lyapunov exponents for higher dimensional quasiperiodic cocycles. Communications in Mathematical Physics, 332, pp.189-219.\n\nDuarte, P. and Klein, S., 2016. Lyapunov exponents of linear cocycles. Atlantis Studies in Dyn. Systems, 3.\n\nEliasson, L.H., 1992. Floquet solutions for the 1-dimensional quasi-periodic Schrodinger equation. Communications in mathematical physics, 146, pp.447-482.\n\nFillman, J., 2017. Ballistic transport for limit-periodic Jacobi matrices with applications to quantum many-body problems. Communications in Mathematical Physics, 350, pp.1275-1297.\n\nGoldstein, M. and Schlag, W., 2001. Holder continuity of the integrated density of states for quasi-periodic Schrodinger equations and averages of shifts of subharmonic functions. Ann. of Math., pp. 155-203.\n\nGoldstein, M. and Schlag, W., 2008. Fine properties of the integrated density of states and a quantitative separation property of the Dirichlet eigenvalues. Geom. Funct. Anal., 18 (3), pp. 755-869.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L1652-1683::c37",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L1707-1731::c39",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L1707-1731::c39",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 1707,
+    "end_line": 1731,
+    "text": "Goldstein, M. and Schlag, W., 2008. Fine properties of the integrated density of states and a quantitative separation property of the Dirichlet eigenvalues. Geom. Funct. Anal., 18 (3), pp. 755-869.\n\nGoldstein, M. and Schlag, W., 2011. On resonances and the formation of gaps in the spectrum of quasi-periodic Schrodinger equations. Ann. of Math., pp. 337-475.\n\nGoldstein, M., Schlag, W. and Voda, M., 2016. On localization and the spectrum of multi-frequency quasi-periodic operators. arXiv preprint arXiv:1610.00380.\n\nHamza, E., Sims, R. and Stolz, G., 2012. Dynamical localization in disordered quantum spin systems. Communications in Mathematical Physics, 315(1), pp.215-239.\n\nHan, R. and Schlag, W., 2022. Avila's acceleration via zeros of determinants, and applications to Schr odinger cocycles. arXiv preprint arXiv:2212.05988.\n\nHan, R. and Schlag, W., 2023. Non-perturbative localization on the strip and Avila's almost reducibility conjecture. arXiv preprint arXiv:2306.15122.\n\nHaro, A. and Puig, J., 2013. A Thouless formula and Aubry duality for long-range Schrodinger skew-products. Nonlinearity, 26(5), p. 1163.\n\nJitomirskaya, S.Y. and Krasovsky, I.V., 2002. Continuity of the measure of the spectrum for discrete quasiperiodic operators. Mathematical Research Letters. Jul;9(4):413-21.\n\nKachkovskiy, I., 2016. On transport properties of isotropic quasiperiodic XY spin chains. Communications in Mathematical Physics, 345, pp.659-673.\n\nKato, T. Perturbation Theory for Linear Operators, Springer–Verlag, Berlin, 1966.\n\nKlein, S.\nAnderson localization for one-frequency quasi-periodic block Jacobi operators.  J. Funct. Anal. 273 (2017), no 3, 1140-1164.\n\nKotani, S., Simon, B.\nStochastic Schrodinger operators and Jacobi matrices on the strip. Comm. Math. Phys. 119 (1988), no. 3, 403-429.\n\nLai, Y.H., Ho, J.H., Chang, C.P. and Lin, M.F., 2008. Magnetoelectronic properties of bilayer Bernal graphene. Physical Review B, 77(8), p.085426.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L1685-1705::c38",
+        "direction": "previous"
+      },
+      {
+        "id": "2309.03423v1::L1733-1748::c40",
+        "direction": "next"
+      }
+    ]
+  },
+  {
+    "id": "2309.03423v1::L1733-1748::c40",
+    "file": "data/data/full_text/2309.03423v1.txt",
+    "section_path": "",
+    "start_line": 1733,
+    "end_line": 1748,
+    "text": "Lai, Y.H., Ho, J.H., Chang, C.P. and Lin, M.F., 2008. Magnetoelectronic properties of bilayer Bernal graphene. Physical Review B, 77(8), p.085426.\n\nLieb, E., Schultz, T. and Mattis, D., 1961. Two soluble models of an antiferromagnetic chain. Annals of Physics, 16(3), pp.407-466.\n\nPuig, J. Cantor Spectrum for the Almost Mathieu Operator, Commun. Math. Phys. 244, 297-309 (2004).\n\nRozhkov, A.V., Sboychakov, A.O., Rakhmanov, A.L. and Nori, F., 2016. Electronic properties of graphene-based bilayer systems. Physics Reports, 648, pp.1-104.\n\nSchlag, W., 2013. Regularity and convergence rates for the Lyapunov exponents of linear cocycles. Journal of Modern Dynamics,  7(4): 619-637.\n\nSchlag, W.\nAn introduction to multiscale techniques in the theory of Anderson localization, Part I.\nNonlinear Anal. 220(2022), Paper No. 112869, 55 pp.\n\nTimmel, A. and Mele, E.J., 2020. Dirac-Harper theory for one-dimensional moiré superlattices. Physical Review Letters, 125(16), p.166803.\n\nViana, M. Lectures on Lyapunov exponents. Cambridge studies in advanced mathematics 145, 2014.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "source": "plain_text"
+    },
+    "neighbors": [
+      {
+        "id": "2309.03423v1::L1707-1731::c39",
+        "direction": "previous"
+      }
+    ]
+  }
+]
