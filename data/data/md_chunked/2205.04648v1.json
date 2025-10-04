@@ -1,0 +1,961 @@
+[
+  {
+    "id": "2205.04648v1::L1-13::s0",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Introduction",
+    "start_line": 1,
+    "end_line": 13,
+    "text": "# Introduction\n\nIn this paper, we study one-dimensional quasiperiodic Schrödinger operators $H = H_{\\lambda v,\\alpha,\\theta}$ defined on $\\ell^2(\\mathbb{Z})$: $$\\label{op}\n        (H_{\\lambda v,\\alpha,\\theta}u)(n)=u({n+1})+u({n-1})+ \\lambda  v(\\theta+n\\alpha)u(n),  %$$ where $v : \\mathbb{R}/\\mathbb{Z}\\to \\mathbb{R}$ is the potential, $\\lambda$ is the coupling constant, $\\alpha \\in \\mathbb{R}\\backslash \\mathbb{Q}$ is the frequency, and $\\theta \\in \\mathbb{R}$ is the phase. One of the most studied examples in both mathematics and physics is the almost Mathieu operator (denoted by $H_{\\lambda,\\alpha,\\theta}$), where $v(\\theta) = 2 \\cos(2 \\pi \\theta).$\n\nThere are two small denominator problems arising from quasi-periodic Schrödinger operators. In the regime of small coupling constants, the operator is close to the free discrete Schrödinger operator and thus, it is natural to establish the reducibility to a constant cocycle by writing down the eigen-equation $Hu=Eu$ as a dynamical system on $(\\mathbb{R}/\\mathbb{Z},\\mathbb{R}^2)$: $$\\label{g122}\n        (\\theta,w) \\to (\\theta+\\alpha, A(\\theta) w ),$$ where $A(\\theta)=\\left(\n    \\begin{array}{cc}\n        E-\\lambda v (\\theta )& -1 \\\\\n        1& 0\\\\\n    \\end{array}\n    \\right)$ is referred to as Schrödinger cocycle of  <a href=\"#op\" data-reference-type=\"eqref\" data-reference=\"op\">[op]</a>. In the regime of large coupling constants, the operator can be viewed as a perturbation of a purely diagonal matrix with dense eigenvalues. In both regimes, spectral theory of quasi-periodic operators has seen significant progress through earlier perturbative methods  , and then non-perturbative methods  . We refer readers to   and references therein for more details.",
+    "labels": [
+      "g122",
+      "op"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Introduction"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L14-17::s1",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Introduction",
+    "start_line": 14,
+    "end_line": 17,
+    "text": "There are two small denominator problems arising from quasi-periodic Schrödinger operators. In the regime of small coupling constants, the operator is close to the free discrete Schrödinger operator and thus, it is natural to establish the reducibility to a constant cocycle by writing down the eigen-equation $Hu=Eu$ as a dynamical system on $(\\mathbb{R}/\\mathbb{Z},\\mathbb{R}^2)$: $$\\label{g122}\n        (\\theta,w) \\to (\\theta+\\alpha, A(\\theta) w ),$$ where $A(\\theta)=\\left(\n    \\begin{array}{cc}\n        E-\\lambda v (\\theta )& -1 \\\\\n        1& 0\\\\\n    \\end{array}\n    \\right)$ is referred to as Schrödinger cocycle of  <a href=\"#op\" data-reference-type=\"eqref\" data-reference=\"op\">[op]</a>. In the regime of large coupling constants, the operator can be viewed as a perturbation of a purely diagonal matrix with dense eigenvalues. In both regimes, spectral theory of quasi-periodic operators has seen significant progress through earlier perturbative methods  , and then non-perturbative methods  . We refer readers to   and references therein for more details.\n\nIn this paper, we are interested in the regime of large coupling constants. In this regime, small denominator problems essentially become problems of dealing with resonances coming from phases and frequencies  . By avoiding the resonance (treating the small denominator) that usually is achieved by imposing arithmetic conditions on phases and frequencies, it is expected that the operator exhibits Anderson localization (pure point spectrum with exponentially decaying eigenfunctions). Recently, several remarkable sharp arithmetic transitions between singular continuous spectrum and pure point spectrum were obtained  . However, all localization proofs   simply bound the numerators of Green’s functions of the quasiperiodic Schrödinger operators above by the Lyapunov exponent of the corresponding dynamical system <a href=\"#g122\" data-reference-type=\"eqref\" data-reference=\"g122\">[g122]</a>.\n\nThe main goal of this paper is to initiate an approach to simultaneously treat numerators and denominators in the study of resonances arising from analytic quasi-periodic Schrödinger operators. As a starting point, we focus on a particular case, namely, completely resonant phases for the almost Mathieu operator, in which phase resonances and frequency resonances overlap. As we were finalizing this paper we learned of a preprint where the study of the numerators also plays an important role, but in a completely different setting of unbounded potentials and the so-called anti-resonances.",
+    "labels": [
+      "g122"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Introduction"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L18-31::s2",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Introduction",
+    "start_line": 18,
+    "end_line": 31,
+    "text": "The main goal of this paper is to initiate an approach to simultaneously treat numerators and denominators in the study of resonances arising from analytic quasi-periodic Schrödinger operators. As a starting point, we focus on a particular case, namely, completely resonant phases for the almost Mathieu operator, in which phase resonances and frequency resonances overlap. As we were finalizing this paper we learned of a preprint where the study of the numerators also plays an important role, but in a completely different setting of unbounded potentials and the so-called anti-resonances.\n\nWe say a phase $\\theta\\in \\mathbb{R}$ is completely resonant with respect to a frequency $\\alpha$ if $2\\theta\\in \\alpha \\mathbb{Z}+\\mathbb{Z}$. One of the motivations to study completely resonant phases is their critical roles in the spectral theory of quasiperiodic Schrödinger operators, for instance, spectral gap edges  . Another motivation comes from a conjecture of Avila and Jitomirskaya in   and Jitomirskaya  .\n\n**Conjecture 1:** Avila and Jitomirskaya   conjectured that the almost Mathieu operator $H_{\\lambda,\\alpha,\\theta}$ satisfies Anderson localization if $\\ln |\\lambda| >  2 \\beta(\\alpha)$ and $2\\theta\\in \\alpha \\mathbb{Z}+\\mathbb{Z}$, where $$\\label{gresf}\n        \\beta(\\alpha)=\\limsup_{k\\rightarrow \\infty}-\\frac{\\ln ||k\\alpha||_{\\mathbb{R}/\\mathbb{Z}}}{|k|},$$ and $||x||_{\\mathbb{R}/\\mathbb{Z}}={\\rm dist} (x,\\mathbb{Z})$.\n\nConjecture 1 is also a particular case of a conjecture of Jitomirskaya  . In this paper, we prove Conjecture 1 as it is.\n\n<div id=\"mainthm\" class=\"theorem\">\n\n**Theorem 1**. *Assume that $\\alpha$ satisfies $\\beta (\\alpha)<\\infty$. Then the almost Mathieu operator $H_{\\lambda,\\alpha,\\theta}$ satisfies Anderson localization if $2\\theta\\in \\alpha \\mathbb{Z}+\\mathbb{Z}$ and $\\ln |\\lambda| > 2\\beta(\\alpha)$. Moreover, if $\\phi$ is an eigenfunction, that is $H_{\\lambda,\\alpha,\n            \\theta}\\phi=E\\phi$ with $\\phi\\in\\ell^2(\\mathbb{Z})$, we have $$\\limsup_{k\\to \\infty} \\frac{\\ln (\\phi^2(k)+\\phi^2(k-1))}{2|k|} \\leq -(\\ln |\\lambda|-2\\beta(\\alpha)).$$*\n\n</div>",
+    "labels": [
+      "gresf"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Introduction"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L32-40::s3",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Introduction",
+    "start_line": 32,
+    "end_line": 40,
+    "text": "</div>\n\nBefore going into the historical results attempting to solve Conjecture 1, we introduce the phase and frequency resonances in the supercritical regime (this is also called the positive Lyapunov exponent regime). Define $$\\label{gres}\n        \\delta(\\alpha,\\theta)=\\limsup_{k\\to \\infty}-\\frac{\\ln ||2\\theta+k\\alpha||_{\\mathbb{R}/\\mathbb{Z}}}{|k|}.$$\n\nWhen $\\lambda \\to \\infty$, after a rescaling, $H_{\\lambda,\\alpha,\\theta}$ is a perturbation of a diagonal matrix that has well localized eigenfunctions. The diagonal entries (also eigenvalues) $\\{2\\lambda\\cos(2\\pi (\\theta+k\\alpha))\\}_{k\\in\\mathbb{Z}}$ are dense and the distance between any two entries $2\\lambda\\cos(2\\pi (\\theta+k_1\\alpha))$ and $2\\lambda\\cos(2\\pi (\\theta+k_2\\alpha))$ is $$|   2\\lambda\\cos(2\\pi (\\theta+k_1\\alpha)) -2\\lambda\\cos(2\\pi (\\theta+k_2\\alpha))| \\;\\;\\;\\;\\;\\;\\; \\;\\;\\;\\;\\;\\;\\; \\;\\;\\;\\;\\;\\;\\; \\;\\;\\;\\;\\;\\;\\; \\;\\;\\;\\;\\;\\;\\;$$ $$\\begin{aligned}\n\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;&=4|\\lambda\\sin (\\pi (2\\theta+ (k_1+k_2) \\alpha))\\sin(\\pi(k_1-k_2)\\alpha)|\\\\\n    &\\simeq |\\lambda|\\;\\; || 2\\theta+ (k_1+k_2) \\alpha||_{\\mathbb{R}/\\mathbb{Z}} || (k_1-k_2)\\alpha||_{\\mathbb{R}/\\mathbb{Z}}.\n\n\\end{aligned}$$ By approximating to the infinite dimensional matrix $H_{\\lambda,\\alpha,\\theta}$ from its finite dimensional cut off, the resonances $||2\\theta+k\\alpha||_{\\mathbb{R}/\\mathbb{Z}}$ (referred to as phase resonances) and $||k\\alpha||_{\\mathbb{R}/\\mathbb{Z}}$ (referred to as frequency resonances) appear. The strength of frequency and phase resonances are essentially quantified by <a href=\"#gresf\" data-reference-type=\"eqref\" data-reference=\"gresf\">[gresf]</a> and <a href=\"#gres\" data-reference-type=\"eqref\" data-reference=\"gres\">[gres]</a>.",
+    "labels": [
+      "gres"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Introduction"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L41-56::s4",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Introduction",
+    "start_line": 41,
+    "end_line": 56,
+    "text": "\\end{aligned}$$ By approximating to the infinite dimensional matrix $H_{\\lambda,\\alpha,\\theta}$ from its finite dimensional cut off, the resonances $||2\\theta+k\\alpha||_{\\mathbb{R}/\\mathbb{Z}}$ (referred to as phase resonances) and $||k\\alpha||_{\\mathbb{R}/\\mathbb{Z}}$ (referred to as frequency resonances) appear. The strength of frequency and phase resonances are essentially quantified by <a href=\"#gresf\" data-reference-type=\"eqref\" data-reference=\"gresf\">[gresf]</a> and <a href=\"#gres\" data-reference-type=\"eqref\" data-reference=\"gres\">[gres]</a>.\n\nWith recent developments, the almost Mathieu operator undergoes a clear spectral transition (called metal-insulator transition or first transition line) when $|\\lambda|$ changes from small to large.\n\n**First transition line:**\n\n- if $|\\lambda|<1$, $H_{\\lambda,\\alpha,\\theta}$ has purely absolutely continuous spectrum for every $\\alpha$ and $\\theta$  .\n\n- if $|\\lambda|=1$, $H_{\\lambda,\\alpha,\\theta}$ has purely singular continuous spectrum for any irrational $\\alpha$ and $\\theta$  .\n\n- if $|\\lambda|>1$, $H_{\\lambda,\\alpha,\\theta}$ has Anderson localization for $\\beta(\\alpha)=\\delta(\\alpha,\\theta)=0$  .\n\nUnderstanding the first transition line $|\\lambda|=1$ is now clear by Avila’s global theory  . When $|\\lambda|<1$ (subcritical regime) the Lyapunov exponent on the spectrum is $0$ even after the complexification of the phase. When $|\\lambda|= 1$ (critical regime), the Lyapunov exponent on the spectrum is $0$ and it changes to positive after the complexification. When $|\\lambda|>1$ (supercritical regime), the Lyapunov exponent is positive and equals $\\ln|\\lambda|$ on the spectrum.\n\nThe spectral theory in the supercritical regime is more delicate. By Kotani theory, $H$ does not have any absolutely continuous spectrum in the supercritical regime  . It is believed that the spectral type of $H$ (singular continuous spectrum or pure point spectrum/localization) depends on the competition between the Lyapunov exponent and resonances associated with <a href=\"#gresf\" data-reference-type=\"eqref\" data-reference=\"gresf\">[gresf]</a> and <a href=\"#gres\" data-reference-type=\"eqref\" data-reference=\"gres\">[gres]</a>. Such observations go back to  .\n\n**Second transition line in the frequency:**",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Introduction"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L57-68::s5",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Introduction",
+    "start_line": 57,
+    "end_line": 68,
+    "text": "**Second transition line in the frequency:**\n\n- if $\\ln |\\lambda|>\\beta(\\alpha)$, $H_{\\lambda,\\alpha,\\theta}$ has Anderson localization for $\\delta(\\alpha,\\theta)=0$  .\n\n- if $0<\\ln |\\lambda|<\\beta(\\alpha)$, $H_{\\lambda,\\alpha,\\theta}$ has purely singular continuous spectrum  .\n\n**Second transition line in the phase:**\n\n- if $\\ln |\\lambda|>\\delta(\\alpha,\\theta)$, $H_{\\lambda,\\alpha,\\theta}$ has Anderson localization for $\\beta(\\alpha)=0$  .\n\n- if $\\ln |\\lambda|<\\delta(\\alpha,\\theta)$, $H_{\\lambda,\\alpha,\\theta}$ has purely singular continuous spectrum  .\n\nThe second transition line states that when the Lyapunov exponent beats frequency/phase resonances, the operator exhibits localization. In the regime of localization, Jitomirskaya and the author also determined exact exponential asymptotics of eigenfunctions and corresponding transfer matrices. Moreover, the (reflective) hierarchical structure of eigenfunctions was discovered in  .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Introduction"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L69-70::s6",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Introduction",
+    "start_line": 69,
+    "end_line": 70,
+    "text": "The second transition line states that when the Lyapunov exponent beats frequency/phase resonances, the operator exhibits localization. In the regime of localization, Jitomirskaya and the author also determined exact exponential asymptotics of eigenfunctions and corresponding transfer matrices. Moreover, the (reflective) hierarchical structure of eigenfunctions was discovered in  .\n\nLet us turn back to completely resonant phases. For completely resonant phases, $\\delta(\\alpha,\\theta)=\\beta(\\alpha)$. Thus both phase resonances and frequency resonances appear and have the same strength. Conjecture 1 states that when the Lyapunov exponent beats phase and frequency resonances, the operator has Anderson localization. It is natural to think that the proof of Conjecture 1 could follow from a combination of the second transition line in the phase and the frequency. However, the completely resonant phase brings many new challenges, in particular the completely resonant phenomenon. The original arguments of Jitomirskaya   do not work for completely resonant phases directly. In  , Jitomirskaya-Koslover-Schulteis found a trick to fix the gap by shrinking the size of intervals around 0 (referred to as the “shrinking scale” technique). This allows them to prove Conjecture 1 when $\\beta(\\alpha)=0$. The proof in   implies that $H_{\\lambda,\\alpha,\\theta}$ has Anderson localization if $\\ln |\\lambda|>C\\beta(\\alpha)$, where $C$ is an absolute constant. In  , Avila and Jitomirskaya proved that when $\\delta(\\alpha,\\theta)=0$ and $\\ln |\\lambda|>\\frac{16}{9}\\beta(\\alpha)$, $H_{\\lambda,\\alpha,\\theta}$ has Anderson localization, which is a key step to solve the ten Martini problem. This approach has been pushed to the limit $\\ln |\\lambda|>\\frac{3}{2}\\beta(\\alpha)$ by the author and Yuan  . By a combination of arguments in Jitomirskaya-Koslover-Schulteis  , Avila-Jitomirskaya   and Liu-Yuan  , the author and Yuan established the Anderson localization for completely resonant phases when $\\ln |\\lambda|>7\\beta(\\alpha)$  .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Introduction"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L71-74::s7",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Introduction",
+    "start_line": 71,
+    "end_line": 74,
+    "text": "Let us turn back to completely resonant phases. For completely resonant phases, $\\delta(\\alpha,\\theta)=\\beta(\\alpha)$. Thus both phase resonances and frequency resonances appear and have the same strength. Conjecture 1 states that when the Lyapunov exponent beats phase and frequency resonances, the operator has Anderson localization. It is natural to think that the proof of Conjecture 1 could follow from a combination of the second transition line in the phase and the frequency. However, the completely resonant phase brings many new challenges, in particular the completely resonant phenomenon. The original arguments of Jitomirskaya   do not work for completely resonant phases directly. In  , Jitomirskaya-Koslover-Schulteis found a trick to fix the gap by shrinking the size of intervals around 0 (referred to as the “shrinking scale” technique). This allows them to prove Conjecture 1 when $\\beta(\\alpha)=0$. The proof in   implies that $H_{\\lambda,\\alpha,\\theta}$ has Anderson localization if $\\ln |\\lambda|>C\\beta(\\alpha)$, where $C$ is an absolute constant. In  , Avila and Jitomirskaya proved that when $\\delta(\\alpha,\\theta)=0$ and $\\ln |\\lambda|>\\frac{16}{9}\\beta(\\alpha)$, $H_{\\lambda,\\alpha,\\theta}$ has Anderson localization, which is a key step to solve the ten Martini problem. This approach has been pushed to the limit $\\ln |\\lambda|>\\frac{3}{2}\\beta(\\alpha)$ by the author and Yuan  . By a combination of arguments in Jitomirskaya-Koslover-Schulteis  , Avila-Jitomirskaya   and Liu-Yuan  , the author and Yuan established the Anderson localization for completely resonant phases when $\\ln |\\lambda|>7\\beta(\\alpha)$  .\n\nWith localization proofs in   and methods in  , we could obtain the Anderson localization for $\\ln |\\lambda|>4\\beta(\\alpha)$ in Conjecture 1, where $4$ is the non-trivial technical limit in such an approach since we have to shrink the scale to avoid the complete resonance, doubling the numerical number. In  , the author noticed that for completely resonant phases, the phase resonance and frequency resonance are not symmetric, namely, the frequency resonance only happens at sites $k=jq_n$, $j\\in\\mathbb{Z}\\backslash\\{0\\}$ and the phase resonance happens at both $k=jq_n+\\frac{1}{2}q_n$ and $k=jq_n$, $j\\in\\mathbb{Z}$ ( $\\frac{p_n}{q_n}$ is the continued fraction approximations to $\\alpha$). See Sections <a href=\"#S4\" data-reference-type=\"ref\" data-reference=\"S4\">4</a> and <a href=\"#S5\" data-reference-type=\"ref\" data-reference=\"S5\">5</a> for more details. So, instead of using the Lagrange interpolation uniformly, the author treated the Lagrange interpolation individually during the process of finding Green’s functions without “small denominators”, which allows him to push the numerical number $4$ to $3$  .\n\nAs we mentioned earlier, all localization proofs in previous literature   are devoted to treating small denominators (establishing the lower bound of the denominators of Green’s functions) and simply bound numerators by the rate of the Lyapunov exponent. To the best of our knowledge, this paper is the first time to analyze numerators of Green’s functions arising from quasi-periodic operators. Moreover, we expand approaches in   to deal with denominators in many directions and add several significant ingredients to treat the numerators and denominators simultaneously.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Introduction"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L75-78::s8",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Introduction",
+    "start_line": 75,
+    "end_line": 78,
+    "text": "As we mentioned earlier, all localization proofs in previous literature   are devoted to treating small denominators (establishing the lower bound of the denominators of Green’s functions) and simply bound numerators by the rate of the Lyapunov exponent. To the best of our knowledge, this paper is the first time to analyze numerators of Green’s functions arising from quasi-periodic operators. Moreover, we expand approaches in   to deal with denominators in many directions and add several significant ingredients to treat the numerators and denominators simultaneously.\n\nFor completely resonant phases, the most challenging case comes from resonant sites $k=jq_n$, $j\\in\\mathbb{Z}\\backslash\\{0\\}$ and $k=jq_n+\\frac{1}{2}q_n$, $j\\in\\mathbb{Z}$. The Gordon type argument is an approach to show the absence of eigenvalues based on repetitions of potentials governed by frequency resonances  . We develop the Gordon type argument to establish sharp bounds of the numerators of Green’s functions around resonant sites $jq_n$. However, such an argument does not work for resonant sites $jq_n+\\frac{1}{2} q_n$ (only coming from phase resonances) since the repetition of potentials only appears at sites $jq_n$ by the continued fraction expansion approximation. We regard norms of generalized eigenfunctions at resonant sites $k=jq_n, q_n+\\frac{1}{2}q_n$ and numerators of Green’s functions around resonant sites $jq_n+\\frac{1}{2}q_n$ as variables. Our first step is to establish inequalities among those variables. By solving those inequalities, we obtain the relations among resonant sites. Then the exponential decay at the resonant sites follows from standard iterations.\n\nFinally, we want to highlight another technical novelty in our proof. The Gordon type argument works along with the transfer matrices, which slightly differs from the denominators and numerators of Green’s functions. We introduce the notation $P_{[x_1,x_2]}$ to represent the denominator of the Green’s function restricting to the interval $[x_1,x_2]$. The advantage of the notation $P_{[x_1,x_2]}$ is that it inherits information from the transfer matrix from sites $x_1$ to $x_2$. This could simplify the localization proof in .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Introduction"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L79-80::s9",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Introduction",
+    "start_line": 79,
+    "end_line": 80,
+    "text": "Finally, we want to highlight another technical novelty in our proof. The Gordon type argument works along with the transfer matrices, which slightly differs from the denominators and numerators of Green’s functions. We introduce the notation $P_{[x_1,x_2]}$ to represent the denominator of the Green’s function restricting to the interval $[x_1,x_2]$. The advantage of the notation $P_{[x_1,x_2]}$ is that it inherits information from the transfer matrix from sites $x_1$ to $x_2$. This could simplify the localization proof in .\n\nThe rest of this paper is organized as follows. We list the definitions and standard facts in Section <a href=\"#S2\" data-reference-type=\"ref\" data-reference=\"S2\">2</a>. In Section <a href=\"#S3\" data-reference-type=\"ref\" data-reference=\"S3\">3</a>, we provide several technical lemmas. Sections <a href=\"#S4\" data-reference-type=\"ref\" data-reference=\"S4\">4</a> and <a href=\"#S5\" data-reference-type=\"ref\" data-reference=\"S5\">5</a> are devoted to treating resonances. In Section <a href=\"#S6\" data-reference-type=\"ref\" data-reference=\"S6\">6</a>, we complete the proof.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Introduction"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L81-89::s0",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Some notations and known facts",
+    "start_line": 81,
+    "end_line": 89,
+    "text": "#  Some notations and known facts\n\nLet $H$ be an operator on $\\ell^2(\\mathbb{Z})$. We say $\\phi$ is a generalized eigenfunction corresponding to the generalized eigenvalue $E$ if $$\\label{g68}\n        H\\phi=E\\phi  ,\\text{ and }  |\\phi(k)|\\leq \\hat{C}( 1+|k|).$$ By Shnol’s theorem  , in order to prove Anderson localization of $H$, we only need to show that every generalized eigenfunction is in fact an exponentially decaying eigenfunction. To be more precise, there exists some constant $c>0$ such that $$%\n        | \\phi(k)|\\leq  e^{-c|k|} \\text{ for large } k.$$ For simplicity, we assume $\\hat{C}=1$ in <a href=\"#g68\" data-reference-type=\"eqref\" data-reference=\"g68\">[g68]</a>.\n\nFrom now on, we always assume $\\phi$ is a generalized eigenfunction of $H_{\\lambda,\\alpha,\\theta}$ and $E$ is the corresponding generalized eigenvalue. Without loss of generality assume $\\phi(0)=1$. It is well known that every generalized eigenvalue must be in the spectrum, namely $E\\in \\Sigma_{\\lambda,\\alpha}$, where $\\Sigma_{\\lambda,\\alpha}$ is the spectrum of $H_{\\lambda,\\alpha,\\theta}$ (the spectrum does not depend on $\\theta$). Our goal is to show that there exists some constant $c>0$ such that for large $k$, $$| \\phi(k)|\\leq  e^{-c|k|} .$$ For any $x_1,x_2\\in\\mathbb{Z}$ with $x_1<x_2$, denote by $$P_{[x_1,x_2]}(\\lambda,\\alpha,\\theta,E)  =\\det(R_{[x_1,x_2]}(H_{\\lambda,\\alpha,\\theta}-E) R_{[x_1,x_2]}),$$ where $R_{[x_1,x_2]}$ is the restriction on $[x_1,x_2]$. Let us denote $$P_k(\\lambda,\\alpha,\\theta,E)=\\det(R_{[0,k-1]}(H_{\\lambda,\\alpha,\\theta}-E) R_{[0,k-1]}).$$ When there is no ambiguity, we drop the dependence of parameters $E,\\lambda,\\alpha$ or $\\theta$. Clearly, $$\\label{g108}\n        P_{[x_1,x_2]}(\\theta)   =P_{k} (\\theta+x_1\\alpha),$$ where $k=x_2-x_1+1$.",
+    "labels": [
+      "g108",
+      "g68"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Some notations and known facts "
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L90-125::s1",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Some notations and known facts",
+    "start_line": 90,
+    "end_line": 125,
+    "text": "From now on, we always assume $\\phi$ is a generalized eigenfunction of $H_{\\lambda,\\alpha,\\theta}$ and $E$ is the corresponding generalized eigenvalue. Without loss of generality assume $\\phi(0)=1$. It is well known that every generalized eigenvalue must be in the spectrum, namely $E\\in \\Sigma_{\\lambda,\\alpha}$, where $\\Sigma_{\\lambda,\\alpha}$ is the spectrum of $H_{\\lambda,\\alpha,\\theta}$ (the spectrum does not depend on $\\theta$). Our goal is to show that there exists some constant $c>0$ such that for large $k$, $$| \\phi(k)|\\leq  e^{-c|k|} .$$ For any $x_1,x_2\\in\\mathbb{Z}$ with $x_1<x_2$, denote by $$P_{[x_1,x_2]}(\\lambda,\\alpha,\\theta,E)  =\\det(R_{[x_1,x_2]}(H_{\\lambda,\\alpha,\\theta}-E) R_{[x_1,x_2]}),$$ where $R_{[x_1,x_2]}$ is the restriction on $[x_1,x_2]$. Let us denote $$P_k(\\lambda,\\alpha,\\theta,E)=\\det(R_{[0,k-1]}(H_{\\lambda,\\alpha,\\theta}-E) R_{[0,k-1]}).$$ When there is no ambiguity, we drop the dependence of parameters $E,\\lambda,\\alpha$ or $\\theta$. Clearly, $$\\label{g108}\n        P_{[x_1,x_2]}(\\theta)   =P_{k} (\\theta+x_1\\alpha),$$ where $k=x_2-x_1+1$.\n\nLet $$\\label{G.transfer}\n        A_{k}(\\theta)=\\prod_{j=k-1}^{0 }A(\\theta+j\\alpha)=A(\\theta+(k-1)\\alpha)A(\\theta+(k-2)\\alpha)\\cdots A(\\theta)$$ and $$\\label{G.transfer1}\n        A_{-k}(\\theta)=A_{k}^{-1}(\\theta-k\\alpha)$$ for $k\\geq 1$, where $A(\\theta)=\\left(\n    \\begin{array}{cc}\n        E-2\\lambda\\cos2\\pi\\theta & -1 \\\\\n        1& 0\\\\\n    \\end{array}\n    \\right)$. $A_{k}$ is called the (k-step) transfer matrix.\n\nBy the definition, for any $k\\in\\mathbb{Z}_+, m\\in\\mathbb{Z}$, one has $$\\label{G.new17}\n        \\left(\\begin{array}{c}\n            \\phi(k+m) \\\\\n            \\phi(k+m-1)                                                                                        \\end{array}\\right)\n        =A_{k}(\\theta+m\\alpha)\n        \\left(\\begin{array}{c}\n            \\phi(m) \\\\\n            \\phi(m-1)                                                                                        \\end{array}\\right).$$\n\nIt is easy to check that for $k\\in\\mathbb{Z}_+$, $$\\label{G34}\n        A_{k}(\\theta)=\n        \\left(\n        \\begin{array}{cc}\n            P_k(\\theta) &- P_{k-1}(\\theta+\\alpha)\\\\\n            P_{k-1}(\\theta) & - P_{k-2}(\\theta+\\alpha) \\\\\n        \\end{array}\n        \\right).$$ The Lyapunov exponent is given by $$\\label{G21}\n        L(E)=\\lim_{k\\rightarrow\\infty} \\frac{1}{k}\\int_{\\mathbb{R}/\\mathbb{Z}} \\ln \\| A_k(\\theta)\\|d\\theta.$$ The Lyapunov exponent can be computed precisely for $E$ in the spectrum of $H_{\\lambda,\\alpha,\\theta}$.\n\n<div id=\"lya\" class=\"lemma\">\n\n**Lemma 2**. * For $E\\in \\Sigma_{\\lambda,\\alpha}$ and $|\\lambda|>1$, we have $L(E)=\\ln|\\lambda|$.*\n\n</div>\n\nIn the following, denote by $L := \\ln|\\lambda|$.",
+    "labels": [
+      "G.new17",
+      "G.transfer",
+      "G.transfer1",
+      "G21",
+      "G34",
+      "g108"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Some notations and known facts "
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L126-129::s2",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Some notations and known facts",
+    "start_line": 126,
+    "end_line": 129,
+    "text": "In the following, denote by $L := \\ln|\\lambda|$.\n\nBy upper semicontinuity and unique ergodicity, one has $$\\label{G23}\n        L=\\lim_{k\\rightarrow\\infty} \\sup_{\\theta\\in\\mathbb{R}/ \\mathbb{Z}}\\frac{1}{k} \\ln \\| A_k(\\theta)\\|.$$ Therefore, for any $\\varepsilon >0$, $$\\label{G24}\n        \\| A_k(\\theta)\\|\\leq  e^{(L+\\varepsilon)k},$$ when $k$ is large enough (independent of $\\theta$).",
+    "labels": [
+      "G23",
+      "G24"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Some notations and known facts "
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L130-148::s3",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Some notations and known facts",
+    "start_line": 130,
+    "end_line": 148,
+    "text": "By upper semicontinuity and unique ergodicity, one has $$\\label{G23}\n        L=\\lim_{k\\rightarrow\\infty} \\sup_{\\theta\\in\\mathbb{R}/ \\mathbb{Z}}\\frac{1}{k} \\ln \\| A_k(\\theta)\\|.$$ Therefore, for any $\\varepsilon >0$, $$\\label{G24}\n        \\| A_k(\\theta)\\|\\leq  e^{(L+\\varepsilon)k},$$ when $k$ is large enough (independent of $\\theta$).\n\nBy <a href=\"#G34\" data-reference-type=\"eqref\" data-reference=\"G34\">[G34]</a> and <a href=\"#G24\" data-reference-type=\"eqref\" data-reference=\"G24\">[G24]</a>, one has for large $k$, $$\\label{Numerator}\n        | P_k(\\theta)|\\leq  e^{(L+\\varepsilon)k},$$ and hence $$\\label{Numerator1}\n        | P_{[x_1,x_2]}(\\theta)|\\leq  e^{(L+\\varepsilon)|x_2-x_1|}.$$ By <a href=\"#G.new17\" data-reference-type=\"eqref\" data-reference=\"G.new17\">[G.new17]</a> and <a href=\"#G24\" data-reference-type=\"eqref\" data-reference=\"G24\">[G24]</a>, one has that for large $|k_1-k_2|$, $$\\label{g500}\n        \\left \\|    \\left(\\begin{array}{c}\n            \\phi(k_1+1) \\\\\n            \\phi(k_1)                                                                                        \\end{array}\\right)\\right\\|\n        \\leq  e^{(L+\\varepsilon) |k_1-k_2|}\\left\\|\n        \\left(\\begin{array}{c}\n            \\phi(k_2+1) \\\\\n            \\phi(k_2)                                                                                        \\end{array}\\right)\\right\\|.$$ For any $x_1,x_2\\in\\mathbb{Z}$ with $x_1<x_2$, let $G_{[x_1,x_2]}$ be the Green’s function: $$G_{[x_1,x_2]}=(R_{[x_1,x_2]} (H_{\\lambda,\\alpha,\\theta}-E) R_{[x_1,x_2]})^{-1}.$$ By Cramer’s rule (see p.15,   for example) for any $y\\in [x_1,x_2]$, one has $$\\begin{aligned}\n        %\n        |G_{[x_1,x_2]}(x_1,y)| &=&  \\left| \\frac{P_{[y+1,x_2]}}{P_{[x_1,x_2]}}\\right|,\\label{Cramer1}\\\\\n        |G_{[x_1,x_2]}(y,x_2)| &=&\\left|\\frac{P_{[x_1,y-1]}}{P_{[x_1,x_2]}} \\right|.\\label{Cramer2}\n\n\\end{aligned}$$ It is easy to check that (p. 61,  ) for any $y\\in [x_1,x_2]$, $$\\label{Block}\n        \\phi(y)= -G_{[x_1,x_2]}(x_1,y ) \\phi(x_1-1)-G_{[x_1,x_2]}(y,x_2) \\phi(x_2+1).$$\n\nDenote by $x_1^\\prime=x_1-1$ and $x_2^\\prime=x_2+1$.",
+    "labels": [
+      "Block",
+      "Cramer1",
+      "Cramer2",
+      "G23",
+      "G24",
+      "Numerator",
+      "Numerator1",
+      "g500"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Some notations and known facts "
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L149-175::s4",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Some notations and known facts",
+    "start_line": 149,
+    "end_line": 175,
+    "text": "Denote by $x_1^\\prime=x_1-1$ and $x_2^\\prime=x_2+1$.\n\nBy <a href=\"#Cramer1\" data-reference-type=\"eqref\" data-reference=\"Cramer1\">[Cramer1]</a>, <a href=\"#Cramer2\" data-reference-type=\"eqref\" data-reference=\"Cramer2\">[Cramer2]</a> and <a href=\"#Block\" data-reference-type=\"eqref\" data-reference=\"Block\">[Block]</a>, one has that for any $y\\in [x_1,x_2]$, $$\\label{g100}\n        |\\phi(y)|\\leq |P_{[x_1,x_2]}|^{-1} |P_{[y+1,x_2]}|  |\\phi(x_1^{\\prime})| + |P_{[x_1,x_2]}|^{-1}  |P_{[x_1,y-1]}| |\\phi(x_2^{\\prime})|.$$\n\nGiven a set $\\{\\theta_1, \\cdots ,\\theta_{k+1}\\}$, the lagrange Interpolation terms $\\text{Lag}_m$, $m=1,2,\\cdots,k+1$, are defined by $$\\label{Def.Uniform}\n        \\text{Lag}_m= \\ln \\max_{ x\\in[-1,1]} \\prod_{ j=1 , j\\neq m }^{k+1}\\frac{|x-\\cos2\\pi\\theta_j|}\n        {|\\cos2\\pi\\theta_m-\\cos2\\pi\\theta_j|}.$$\n\nThe following lemma is another form of Lemma 9.3 in  , which has been reformulated in  .\n\n<div id=\"Le.Uniform\" class=\"lemma\">\n\n**Lemma 3**. * Given a set $\\{\\theta_1, \\cdots ,\\theta_{k+1}\\}$, there exists some $\\theta_m$ in $\\{\\theta_1, \\cdots ,\\theta_{k+1}\\}$ such that*\n\n*$$|   P_{k}(\\theta_m -\\frac{k-1}{2}\\alpha)|\\geq \\frac{e^{k L-\\rm{Lag}_m}}{k+1}.$$*\n\n</div>\n\nIn the following, we always assume\n\n- $\\varepsilon>0$ is an arbitrarily small constant and it may change even in the same equation.\n\n- $C$ is a large constant (depends on $\\lambda$ and $\\alpha$) and it may change even in the same equation.\n\n- $n$ is large enough which depends on all parameters and constants.\n\nRecall that $\\frac{p_n}{q_n}$ is the continued fraction approximations to $\\alpha$. By the definition of $\\beta(\\alpha)$, one has that $$\\beta=  \\beta(\\alpha)=\\limsup_{n\\rightarrow\\infty}\\frac{\\ln q_{n+1}}{q_n}.$$",
+    "labels": [
+      "Def.Uniform",
+      "g100"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Some notations and known facts "
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L176-191::s5",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Some notations and known facts",
+    "start_line": 176,
+    "end_line": 191,
+    "text": "Recall that $\\frac{p_n}{q_n}$ is the continued fraction approximations to $\\alpha$. By the definition of $\\beta(\\alpha)$, one has that $$\\beta=  \\beta(\\alpha)=\\limsup_{n\\rightarrow\\infty}\\frac{\\ln q_{n+1}}{q_n}.$$\n\nLet $b_n=   10^{-5}q_{n}$. For any $\\ell \\in\\mathbb{Z}$, let $$r_{\\ell}^{\\varepsilon,n}= \\sup_{|r|\\leq 10\\varepsilon}|\\phi(\\ell q_n+rq_n)|,$$ and $$r_{\\ell+\\frac{1}{2}}^{\\varepsilon,n}= \\sup_{|r|\\leq 10\\varepsilon}|\\phi(\\ell q_n+\\lfloor\\frac{q_n}{2}\\rfloor+rq_n)|,$$ where $\\lfloor x \\rfloor$ is the largest integer that is less than or equal to $x$.\n\n<div id=\"Le.resonant\" class=\"lemma\">\n\n**Lemma 4**. *  Assume that $|\\lambda|>1$ and $2\\theta\\in\\alpha\\mathbb{Z}+\\mathbb{Z}$. Suppose $k\\in [\\ell q_n,(\\ell+\\frac{1}{2})q_n]$ or $k\\in [(\\ell+\\frac{1}{2})q_n,(\\ell+1)q_n]$ with $0\\leq |\\ell| \\leq  100\\frac{b_{n+1}}{q_n}+100$, and ${\\rm dist}(k, q_n\\mathbb{Z}+\\frac{q_n}{2}\\mathbb{Z} )\\geq     10 \\varepsilon q_n$. Let $d_t=|k-tq_n|$ for $t\\in\\{\\ell,\\ell+\\frac{1}{2},\\ell+1\\}$. Then for sufficiently large $n$, we have that*\n\n- *when $k\\in [\\ell q_n,(\\ell+\\frac{1}{2})q_n]$, $$\\label{Intervalk}\n                  |\\phi(k)|\\leq r_{\\ell}^{\\varepsilon,n}\\exp\\{-(L- \\varepsilon)(d_{\\ell}-3\\varepsilon q_n)\\} + r_{\\ell+\\frac{1}{2}}^{\\varepsilon,n}\\exp\\{-(L- \\varepsilon)(d_{\\ell+\\frac{1}{2}}-3\\varepsilon q_n)\\};$$*\n\n- *when $k\\in [(\\ell+\\frac{1}{2})q_n,(\\ell+1)q_n]$, $$\\label{Intervalk1}\n                  |\\phi(k)|\\leq r_{\\ell+\\frac{1}{2} }^{\\varepsilon,n}\\exp\\{-(L- \\varepsilon)(d_{\\ell+\\frac{1}{2}}-3\\varepsilon q_n)\\}+r_{\\ell+1}^{\\varepsilon,n}\\exp\\{-(L- \\varepsilon)(d_{\\ell+1}-3\\varepsilon q_n)\\}.$$*\n\n</div>\n\nA similar version of Lemma <a href=\"#Le.resonant\" data-reference-type=\"ref\" data-reference=\"Le.resonant\">4</a> firstly appears in  .",
+    "labels": [
+      "Intervalk",
+      "Intervalk1"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Some notations and known facts "
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L192-210::s0",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Technical preparations",
+    "start_line": 192,
+    "end_line": 210,
+    "text": "# Technical preparations\n\nWithout loss of generality, we assume $\\alpha\\in(0,1)$ and $\\lambda>e^{2\\beta(\\alpha)}$. Since $2\\theta\\in\\alpha \\mathbb{Z}+\\mathbb{Z}$, essentially we only need to study $\\theta\\in\\{ -\\frac{\\alpha}{2},-\\frac{\\alpha}{2}-\\frac{1}{2},0, -\\frac{1}{2}\\}$ by shifting the operator from $H_{\\lambda,\\alpha,\\theta}$ to $H_{\\lambda,  \\alpha,\\theta\\pm\\alpha}$. For this reason, we always assume $\\theta\\in\\{ -\\frac{\\alpha}{2},-\\frac{\\alpha}{2}-\\frac{1}{2},0, -\\frac{1}{2}\\}$ in the following arguments.\n\nFor simplicity, we drop superscripts $n$ and $\\varepsilon$ from $r_j^{\\varepsilon,n}$ and $r_{j+\\frac{1}{2}}^{\\varepsilon,n}$, since $n$ and $\\varepsilon$ will be fixed.\n\n<div id=\"klem2\" class=\"lemma\">\n\n**Lemma 5**. *Let $0\\leq x\\leq \\frac{q_n}{4}$. Assume that $p_1$ satisfies $|p_1-\\frac{1}{2} q_n|\\leq 20 \\varepsilon q_n$ and $p_2$ satisfies $|p_2- q_n|\\leq 20 \\varepsilon q_n$. Then we have $$\\label{g10}\n            |   P_{ [-x,p_1]}  |\\leq e^{L(\\frac{1}{2}q_n-x)+C\\varepsilon q_n},$$ $$\\label{g101}\n            |   P_{ [-p_1,x]}  |\\leq e^{L(\\frac{1}{2}q_n-x)+C\\varepsilon q_n},$$ and $$\\label{g102}\n            |   P_{ [-x,p_2]} |\\leq e^{L( q_n-x)+C\\varepsilon q_n}.$$*\n\n</div>\n\n<div class=\"proof\">\n\n*Proof.* We are going to prove <a href=\"#g10\" data-reference-type=\"eqref\" data-reference=\"g10\">[g10]</a> first. Let $I=[x_1,x_2]$, where $x_1=-x$ and $x_2=p_1$.",
+    "labels": [
+      "g10",
+      "g101",
+      "g102"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Technical preparations"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L211-224::s1",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Technical preparations",
+    "start_line": 211,
+    "end_line": 224,
+    "text": "*Proof.* We are going to prove <a href=\"#g10\" data-reference-type=\"eqref\" data-reference=\"g10\">[g10]</a> first. Let $I=[x_1,x_2]$, where $x_1=-x$ and $x_2=p_1$.\n\nBy Lemma <a href=\"#Le.resonant\" data-reference-type=\"ref\" data-reference=\"Le.resonant\">4</a>, one has $$\\label{g11}\n            |\\phi(x_1^\\prime)\\leq r_{0} e^{-L  x+C\\varepsilon q_n} +r_{-\\frac{1}{2}} e^{-L ( \\frac{q_n}{2} -x)+C\\varepsilon q_n}$$ By <a href=\"#g100\" data-reference-type=\"eqref\" data-reference=\"g100\">[g100]</a>, one has $$\\label{g13}\n            |\\phi(0)| \\leq  |   P_{ [-x,p_1]} |^{-1}  (|P_{[-x,-1]}| |\\phi (x_2^\\prime)|+\n            |P_{[1,p_1]} | |\\phi (x_1^\\prime)|).$$\n\nBy <a href=\"#Numerator1\" data-reference-type=\"eqref\" data-reference=\"Numerator1\">[Numerator1]</a>, <a href=\"#g11\" data-reference-type=\"eqref\" data-reference=\"g11\">[g11]</a> and <a href=\"#g13\" data-reference-type=\"eqref\" data-reference=\"g13\">[g13]</a>, one has $$\\label{g14}\n            |\\phi(0)| \\leq  |   P_{ [-x,p_1]} |^{-1}  e^{C\\varepsilon q_n}(e^{L(\\frac{q_n}{2}-x)}r_0+e^{L x} r_{-\\frac{1}{2}}+e^{L x} r_{\\frac{1}{2}}).$$ Since $\\phi(0)=1$ and $|\\phi(k)|\\leq 1+|k|$, by <a href=\"#g14\" data-reference-type=\"eqref\" data-reference=\"g14\">[g14]</a>, we have that $$|   P_{ [-x,p_1]} |\\leq e^{L(\\frac{1}{2}q_n-x)+C\\varepsilon q_n}.$$\n\nWe are going to prove <a href=\"#g101\" data-reference-type=\"eqref\" data-reference=\"g101\">[g101]</a> (<a href=\"#g102\" data-reference-type=\"eqref\" data-reference=\"g102\">[g102]</a>). In this case, we only need to set $I=[x_1,x_2]$, where $x_1=-p_1$ and $x_2=x$ ($x_1=-x$ and $x_2=p_2$), and repeat the proof of <a href=\"#g10\" data-reference-type=\"eqref\" data-reference=\"g10\">[g10]</a>. ◻\n\n</div>\n\n<div id=\"Lemgordonidea2\" class=\"lemma\">",
+    "labels": [
+      "g11",
+      "g13",
+      "g14"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Technical preparations"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L225-246::s2",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Technical preparations",
+    "start_line": 225,
+    "end_line": 246,
+    "text": "<div id=\"Lemgordonidea2\" class=\"lemma\">\n\n**Lemma 6**. * Let $A^1,A^2,\\cdots,A^n$ and $B^1,B^2,\\cdots,B^n$ be $2\\times2$ matrices with $||\\prod_{m=0}^{j-1}A^{k+m}||\\leq D e^{dj}$ for some constant $D$ and $d$. Then $$||(A^n+B^n)\\cdots(A^1+B^1)-A^n\\cdots A^1||\\leq De^{dn} (\\prod_{j=1}^n(1+De^{-d}||B^j||)-1).$$*\n\n</div>\n\n<div id=\"klem1\" class=\"lemma\">\n\n**Lemma 7**. *Assume that $0<k\\leq 10 q_n$ and $0<j\\leq C\\frac{q_{n+1}}{q_n}+C$. Then for large enough $k$, we have $$||A_k(\\theta)-A_k(\\theta +jq_n\\alpha)|| \\leq e^{(L+\\varepsilon)k }\\frac{j}{q_{n+1}}.$$ In particular, $$|P_k(\\theta)-P_k(\\theta +jq_n\\alpha)| \\leq e^{(L+\\varepsilon) k} \\frac{j}{q_{n+1}}.$$*\n\n</div>\n\n<div class=\"proof\">\n\n*Proof.* By the Diophantine approximation (see <a href=\"#GDC2\" data-reference-type=\"eqref\" data-reference=\"GDC2\">[GDC2]</a> in the Appendix), we have $$||{q}_n\\alpha||_{\\mathbb{R}/\\mathbb{Z}}\\leq \\frac{1}{q_{n+1}} ,$$ and hence $$||j{q}_n\\alpha||_{\\mathbb{R}/\\mathbb{Z}}\\leq \\frac{j}{q_{n+1}} .$$ This implies $$||A(\\theta+jq_n\\alpha)-A(\\theta)||\\leq \\frac{Cj}{q_{n+1}}.$$ Applying <a href=\"#G24\" data-reference-type=\"eqref\" data-reference=\"G24\">[G24]</a> and Lemma <a href=\"#Lemgordonidea2\" data-reference-type=\"ref\" data-reference=\"Lemgordonidea2\">6</a>, one has $$\\label{G.new21}\n            ||A_{k}(\\theta+ j{q}_n\\alpha)-A_{ k}(\\theta)||\\leq  e^{(L+\\varepsilon)k}((1+\\frac{Cj}{q_{n+1}})^{k}-1).$$ Using the fact $|e^y-1|\\leq ye^y$ for $y>0$, we obtain $$\\begin{aligned}\n            %\n            (1+\\frac{Cj}{q_{n+1}})^{k}-1  &\\leq& k(1+\\frac{jC}{q_{n+1}})^{k}\\ln(1+\\frac{Cj}{q_{n+1}})\\\\\n            &\\leq&  C\\frac{kj}{q_{n+1}}.\n\n\\end{aligned}$$ Combining this with (<a href=\"#G.new21\" data-reference-type=\"ref\" data-reference=\"G.new21\">[G.new21]</a>) completes the proof. ◻\n\n</div>",
+    "labels": [
+      "G.new21"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Technical preparations"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L247-272::s0",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$",
+    "start_line": 247,
+    "end_line": 272,
+    "text": "#  Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$\n\nIn this section, we deal with resonances arising from sites $jq_n+\\frac{q_n}{2}$, $j\\in\\mathbb{Z}$.\n\nDenote by $$\\beta_j=\\frac{\\ln q_{n+1} -\\ln (|j|+1)}{q_n} .$$\n\nWe are going to prove\n\n<div id=\"thm1\" class=\"theorem\">\n\n**Theorem 8**. *Let $|j |\\leq 2\\frac{b_{n+1}}{q_n}+10$. Then we have $$r_{j+\\frac{1}{2}}  \\leq   \\exp\\{- \\frac{1}{2}(L-2\\beta_{j} -C\\varepsilon)q_n\\}(r_{j}+r_{j+1}).$$*\n\n</div>\n\n<div class=\"proof\">\n\n*Proof.* Take $\\phi(j q_n+\\lfloor\\frac{q_n}{2}\\rfloor+rq_n)$ with $|r|\\leq 10\\varepsilon$ into consideration. Denote by $p=j q_n+\\lfloor\\frac{q_n}{2}\\rfloor+rq_n$. Without loss of generality assume $j\\geq0$. Let $n_0$ be the least positive integer such that $$q_{n-n_0}\\leq  \\frac{ \\varepsilon}{2}  (\\frac{1}{8}-2\\varepsilon) q_n.$$ Let $s$ be the largest positive integer such that $sq_{n-n_0}\\leq (\\frac{1}{8}-2\\varepsilon) q_n$. By the fact $(s+1)q_{n-n_0}\\geq (\\frac{1}{8}-2\\varepsilon)q_n$, one has $$s\\geq \\frac{1}{\\varepsilon}$$ and $$\\label{sq}\n            (\\frac{1}{8}-3\\varepsilon)q_n \\leq sq_{n-n_0}\\leq (\\frac{1}{8}-2\\varepsilon)q_n.$$\n\nSet $I_1, I_2\\subset \\mathbb{Z}$ as follows $$\\begin{aligned}\n            %\n            I_1 &=& [-2s q_{n-n_0},-1 ], \\\\\n            I_2 &=& [ j q_n+\\lfloor\\frac{q_n}{2}\\rfloor -2sq_{n-n_0},j q_n+\\lfloor\\frac{q_n}{2}\\rfloor+2sq_{n-n_0}-1 ],\n\n\\end{aligned}$$ and let $\\theta_m=\\theta+m\\alpha$ for $m\\in I_1\\cup I_2$. The set $\\{\\theta_m\\}_{m\\in I_1\\cup I_2}$ consists of $6sq_{n-n_0}$ elements. Let $k=6s q_{n-n_0}-1$.",
+    "labels": [
+      "sq"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L273-283::s1",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$",
+    "start_line": 273,
+    "end_line": 283,
+    "text": "\\end{aligned}$$ and let $\\theta_m=\\theta+m\\alpha$ for $m\\in I_1\\cup I_2$. The set $\\{\\theta_m\\}_{m\\in I_1\\cup I_2}$ consists of $6sq_{n-n_0}$ elements. Let $k=6s q_{n-n_0}-1$.\n\nBy modifying the proof of   and   (or Appendices in   and  ), we can prove the claim (Claim 1): for any $m\\in  I_2$, $$\\label{g66}\n            \\rm{Lag}_m\\leq  q_n (\\beta_{j}+ \\varepsilon) ,$$ and for any $m\\in  I_1$, $$\\label{g661}\n            \\rm{Lag}_m\\leq  q_n \\varepsilon .$$ For convenience, we include the proof in the Appendix.\n\nBy Lemma <a href=\"#Le.Uniform\" data-reference-type=\"ref\" data-reference=\"Le.Uniform\">3</a>, there exists some $j_0\\in  I_2$ such that $$\\label{g109}\n            |P_k(\\theta_{j_0}-\\frac{k-1}{2}\\alpha) |\\geq e^{kL-(\\beta_{j} +\\varepsilon)q_n}.$$ or there exists some $j_0\\in  I_1$ such that $$\\label{g1091}\n            |P_k(\\theta_{j_0}-\\frac{k-1}{2}\\alpha) |\\geq e^{kL-\\varepsilon q_n}.$$\n\nLet $$\\label{g4}\n            I=[j_0-3sq_{n-n_0} +1,j_0+3sq_{n-n_0}-1]=[x_1,x_2].$$",
+    "labels": [
+      "g109",
+      "g1091",
+      "g4",
+      "g66",
+      "g661"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L284-296::s2",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$",
+    "start_line": 284,
+    "end_line": 296,
+    "text": "Let $$\\label{g4}\n            I=[j_0-3sq_{n-n_0} +1,j_0+3sq_{n-n_0}-1]=[x_1,x_2].$$\n\nBy <a href=\"#g108\" data-reference-type=\"eqref\" data-reference=\"g108\">[g108]</a> and <a href=\"#g109\" data-reference-type=\"eqref\" data-reference=\"g109\">[g109]</a>, one has that when $j_0\\in I_2$, $$\\label{g110}\n            |   P_{[x_1,x_2]}(\\theta)|  =   |P_k(\\theta_{j_0}-\\frac{k-1}{2}\\alpha)| \\geq e^{kL-(\\beta_{j} +\\varepsilon)q_n}.$$ Recall that $x_1^\\prime=x_1-1$ and $x_2^\\prime=x_2+1$. By <a href=\"#g100\" data-reference-type=\"eqref\" data-reference=\"g100\">[g100]</a>, <a href=\"#g110\" data-reference-type=\"eqref\" data-reference=\"g110\">[g110]</a> and <a href=\"#sq\" data-reference-type=\"eqref\" data-reference=\"sq\">[sq]</a>, one has that when $j_0\\in I_2$, $$\\begin{aligned}\n            |\\phi(p)| \\leq& e^{-kL+\\beta_{j} q_n+\\varepsilon q_n } (|P_{[x_1,p-1]}| |\\phi (x_2^\\prime)|+\n            |P_{[p+1,x_2]} | |\\phi (x_1^\\prime)|)\\nonumber\\\\\n            \\leq &e^{-\\frac{3}{4}Lq_n+\\beta_{j} q_n+C\\varepsilon  q_n } (|P_{[x_1,p-1]}| |\\phi (x_2^\\prime)|+\n            |P_{[p+1,x_2]} | |\\phi (x_1^\\prime)|).\\label{g2}\n\n\\end{aligned}$$\n\nClearly, $$I_1\\subset [-\\frac{q_n}{4},0]$$ and $$I_2\\subset [jq_n+\\frac{q_n}{4} ,jq_n+\\frac{3}{4} q_n].$$\n\n**Case 1:** $j_0\\in [jq_n+\\frac{3}{8} q_n, jq_n+\\frac{5}{8}q_n]\\cap I_2$",
+    "labels": [
+      "g110",
+      "g2",
+      "g4"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L297-305::s3",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$",
+    "start_line": 297,
+    "end_line": 305,
+    "text": "**Case 1:** $j_0\\in [jq_n+\\frac{3}{8} q_n, jq_n+\\frac{5}{8}q_n]\\cap I_2$\n\nIn this case, by <a href=\"#sq\" data-reference-type=\"eqref\" data-reference=\"sq\">[sq]</a> and <a href=\"#g4\" data-reference-type=\"eqref\" data-reference=\"g4\">[g4]</a>, one has that $$\\label{g250}\n            x_1\\in [jq_n+6\\varepsilon q_n,jq_n+\\frac{1}{4}q_n+9\\varepsilon q_n+1],  x_2\\in [jq_n+\\frac{3}{4}q_n-9\\varepsilon q_n-1,jq_n+q_n-6\\varepsilon q_n].$$ In order to make the following arguments neat, we are not going to make the difference between $a\\in\\mathbb{Z}$ and $a^\\prime\\in\\mathbb{Z}$ if $|a-a^\\prime|\\leq 50\\varepsilon q_n$. For example, instead of using <a href=\"#g250\" data-reference-type=\"eqref\" data-reference=\"g250\">[g250]</a>, we simply write $$x_1\\in [jq_n,jq_n+\\frac{1}{4}q_n],  x_2\\in [jq_n+\\frac{3}{4}q_n,jq_n+q_n].$$\n\n<div class=\"center\">\n\n</div>\n\nIn Fig.1, $x_1$ and $x_2$ locate at the red part. $j_0$ locates at the blue part. The numbers above are the sites after deducting $jq_n$.",
+    "labels": [
+      "g250"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L306-315::s4",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$",
+    "start_line": 306,
+    "end_line": 315,
+    "text": "In Fig.1, $x_1$ and $x_2$ locate at the red part. $j_0$ locates at the blue part. The numbers above are the sites after deducting $jq_n$.\n\nBy <a href=\"#Numerator1\" data-reference-type=\"eqref\" data-reference=\"Numerator1\">[Numerator1]</a>, one has $$\\label{g1}\n            |P_{[x_1,p-1]}|\\leq e^{( L+\\varepsilon)|p-x_1|},$$ and $$\\label{g0}\n            |P_{[p+1,x_2]}|\\leq e^{( L+\\varepsilon)|x_2-p|}.$$ By <a href=\"#g2\" data-reference-type=\"eqref\" data-reference=\"g2\">[g2]</a>, <a href=\"#g1\" data-reference-type=\"eqref\" data-reference=\"g1\">[g1]</a> and <a href=\"#g0\" data-reference-type=\"eqref\" data-reference=\"g0\">[g0]</a>, one has that $$\\label{Iterationr_j}\n            |\\phi(p)|  \\leq \\sum_{i=1,2} e^{( \\beta_{j} +C\\varepsilon)q_{n}}|\\phi(x_i^\\prime)|e^{-|p-x_i|L }.$$ By Lemma <a href=\"#Le.resonant\" data-reference-type=\"ref\" data-reference=\"Le.resonant\">4</a>, one has $$\\label{g6}\n            |\\phi(x_1^\\prime)\\leq r_{j} e^{-L (x_1-jq_n)+C\\varepsilon q_n} +r_{j+\\frac{1}{2}} e^{-L (jq_n+\\frac{q_n}{2} -x_1)+C\\varepsilon q_n}$$ and $$\\label{g5}\n            |\\phi(x_2^\\prime)\\leq r_{j+\\frac{1}{2}} e^{-L (x_2-jq_n-\\frac{q_n}{2})+C\\varepsilon q_n} +r_{j+1}e^{-L (jq_n+q_n-x_2)+C\\varepsilon q_n} .$$ By <a href=\"#Iterationr_j\" data-reference-type=\"eqref\" data-reference=\"Iterationr_j\">[Iterationr_j]</a>, <a href=\"#g6\" data-reference-type=\"eqref\" data-reference=\"g6\">[g6]</a>, <a href=\"#g5\" data-reference-type=\"eqref\" data-reference=\"g5\">[g5]</a> and the fact that $|x_i-p|\\geq \\frac{q_n}{4}-C\\varepsilon q_n$, $i=1,2$, we have $$\\begin{aligned}\n            %\n            r_{j+\\frac{1}{2}} &\\leq&  e^{-\\frac{1}{2}(L-2\\beta_{j}- C\\varepsilon)q_n} r_{j}+e^{-\\frac{1}{2}(L-2\\beta_{j}- C\\varepsilon)q_n}r_{j+1} \\nonumber\\\\\n            & & + e^{-\\frac{1}{2}(L-2\\beta_{j}- C\\varepsilon)q_n} r_{j+\\frac{1}{2}}. \\label{g22}",
+    "labels": [
+      "Iterationr_j",
+      "g0",
+      "g1",
+      "g22",
+      "g5",
+      "g6"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L316-332::s5",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$",
+    "start_line": 316,
+    "end_line": 332,
+    "text": "By <a href=\"#Numerator1\" data-reference-type=\"eqref\" data-reference=\"Numerator1\">[Numerator1]</a>, one has $$\\label{g1}\n            |P_{[x_1,p-1]}|\\leq e^{( L+\\varepsilon)|p-x_1|},$$ and $$\\label{g0}\n            |P_{[p+1,x_2]}|\\leq e^{( L+\\varepsilon)|x_2-p|}.$$ By <a href=\"#g2\" data-reference-type=\"eqref\" data-reference=\"g2\">[g2]</a>, <a href=\"#g1\" data-reference-type=\"eqref\" data-reference=\"g1\">[g1]</a> and <a href=\"#g0\" data-reference-type=\"eqref\" data-reference=\"g0\">[g0]</a>, one has that $$\\label{Iterationr_j}\n            |\\phi(p)|  \\leq \\sum_{i=1,2} e^{( \\beta_{j} +C\\varepsilon)q_{n}}|\\phi(x_i^\\prime)|e^{-|p-x_i|L }.$$ By Lemma <a href=\"#Le.resonant\" data-reference-type=\"ref\" data-reference=\"Le.resonant\">4</a>, one has $$\\label{g6}\n            |\\phi(x_1^\\prime)\\leq r_{j} e^{-L (x_1-jq_n)+C\\varepsilon q_n} +r_{j+\\frac{1}{2}} e^{-L (jq_n+\\frac{q_n}{2} -x_1)+C\\varepsilon q_n}$$ and $$\\label{g5}\n            |\\phi(x_2^\\prime)\\leq r_{j+\\frac{1}{2}} e^{-L (x_2-jq_n-\\frac{q_n}{2})+C\\varepsilon q_n} +r_{j+1}e^{-L (jq_n+q_n-x_2)+C\\varepsilon q_n} .$$ By <a href=\"#Iterationr_j\" data-reference-type=\"eqref\" data-reference=\"Iterationr_j\">[Iterationr_j]</a>, <a href=\"#g6\" data-reference-type=\"eqref\" data-reference=\"g6\">[g6]</a>, <a href=\"#g5\" data-reference-type=\"eqref\" data-reference=\"g5\">[g5]</a> and the fact that $|x_i-p|\\geq \\frac{q_n}{4}-C\\varepsilon q_n$, $i=1,2$, we have $$\\begin{aligned}\n            %\n            r_{j+\\frac{1}{2}} &\\leq&  e^{-\\frac{1}{2}(L-2\\beta_{j}- C\\varepsilon)q_n} r_{j}+e^{-\\frac{1}{2}(L-2\\beta_{j}- C\\varepsilon)q_n}r_{j+1} \\nonumber\\\\\n            & & + e^{-\\frac{1}{2}(L-2\\beta_{j}- C\\varepsilon)q_n} r_{j+\\frac{1}{2}}. \\label{g22}\n\n\\end{aligned}$$ Since $\\varepsilon$ is small and $L>2\\beta \\geq 2\\beta_{j}-\\varepsilon$, one has that $$e^{-\\frac{1}{2}(L-2\\beta_{j}- C\\varepsilon)q_n} r_{j+\\frac{1}{2}}\\leq \\frac{1}{2}r_{j+\\frac{1}{2}}.$$ Therefore (<a href=\"#g22\" data-reference-type=\"ref\" data-reference=\"g22\">[g22]</a>) becomes $$\\label{g23}\n            r_{j+\\frac{1}{2}}\\leq  \\exp\\{-\\frac{1}{2}(L-2\\beta_{j}- C\\varepsilon)q_n\\} (r_{j}+r_{j+1}).$$\n\n**Case 2:** $j_0\\in [jq_n+\\frac{1}{4}q_n,jq_n+\\frac{3}{8}q_n]\\cap I_2$\n\nLet $x=jq_n+\\frac{3}{8}q_n-j_0$. Therefore, $0\\leq x\\leq \\frac{1}{8}q_n$, $$x_1=jq_n-x\\in[jq_n-\\frac{1}{8}q_n, jq_n]$$ and $$x_2=jq_n+\\frac{3}{4} q_n-x\\in [jq_n+\\frac{5}{8}q_n, jq_n+\\frac{3}{4}q_n] .$$\n\n<div class=\"center\">\n\n</div>\n\nIn Fig.2, $x_1$ and $x_2$ locate at the red part. $j_0$ locates at the blue part. The numbers above are the sites after deducting $jq_n$.\n\nBy Lemma <a href=\"#Le.resonant\" data-reference-type=\"ref\" data-reference=\"Le.resonant\">4</a>, one has that $$\\label{g7}\n            |\\phi(x_1^\\prime)\\leq r_{j} e^{-L  x+C\\varepsilon q_n} +r_{j-\\frac{1}{2}} e^{-L (\\frac{q_n}{2} -x)+C\\varepsilon q_n}$$ and $$\\label{g8}\n            |\\phi(x_2^\\prime)\\leq r_{j+\\frac{1}{2}} e^{-L (\\frac{q_n}{4}-x) +C\\varepsilon q_n} +r_{j+1}e^{-L (\\frac{q_n}{4}+x) +C\\varepsilon q_n} .$$",
+    "labels": [
+      "Iterationr_j",
+      "g0",
+      "g1",
+      "g22",
+      "g23",
+      "g5",
+      "g6",
+      "g7",
+      "g8"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L333-340::s6",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$",
+    "start_line": 333,
+    "end_line": 340,
+    "text": "By Lemma <a href=\"#Le.resonant\" data-reference-type=\"ref\" data-reference=\"Le.resonant\">4</a>, one has that $$\\label{g7}\n            |\\phi(x_1^\\prime)\\leq r_{j} e^{-L  x+C\\varepsilon q_n} +r_{j-\\frac{1}{2}} e^{-L (\\frac{q_n}{2} -x)+C\\varepsilon q_n}$$ and $$\\label{g8}\n            |\\phi(x_2^\\prime)\\leq r_{j+\\frac{1}{2}} e^{-L (\\frac{q_n}{4}-x) +C\\varepsilon q_n} +r_{j+1}e^{-L (\\frac{q_n}{4}+x) +C\\varepsilon q_n} .$$\n\nBy <a href=\"#g0\" data-reference-type=\"eqref\" data-reference=\"g0\">[g0]</a> and <a href=\"#g7\" data-reference-type=\"eqref\" data-reference=\"g7\">[g7]</a>, one has $$\\begin{aligned}\n            e^{-\\frac{3}{4}Lq_n+\\beta_{j} q_n+C\\varepsilon q_n }  &\n            |P_{[p+1,x_2]} | |\\phi (x_1^\\prime)|    \\nonumber   \\\\\n            \\leq   &    e^{-\\frac{3}{4}Lq_n+\\beta_{j} q_n +C\\varepsilon q_n}  e^{ L(\\frac{q_n}{4}-x)}   ( r_{j} e^{-L  x} +r_{j-\\frac{1}{2}} e^{-L (\\frac{q_n}{2} -x)} )    \\nonumber   \\\\\n            \\leq &  e^{-\\frac{1}{2}Lq_n-2Lx+\\beta_{j} q_n+ C\\varepsilon q_n }\n            r_{j}+ e^{- L q_n+\\beta_{j} q_n+  C\\varepsilon q_n}  r_{j-\\frac{1}{2}} \\nonumber\\\\\n            \\leq &    e^{-\\frac{1}{2}(L-2\\beta_{j}- C\\varepsilon)q_n}r_{j} + e^{- L q_n+\\beta_{j} q_n+  C\\varepsilon q_n}  r_{j-\\frac{1}{2}}.\\label{g9}",
+    "labels": [
+      "g7",
+      "g8",
+      "g9"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L341-350::s7",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$",
+    "start_line": 341,
+    "end_line": 350,
+    "text": "By <a href=\"#g0\" data-reference-type=\"eqref\" data-reference=\"g0\">[g0]</a> and <a href=\"#g7\" data-reference-type=\"eqref\" data-reference=\"g7\">[g7]</a>, one has $$\\begin{aligned}\n            e^{-\\frac{3}{4}Lq_n+\\beta_{j} q_n+C\\varepsilon q_n }  &\n            |P_{[p+1,x_2]} | |\\phi (x_1^\\prime)|    \\nonumber   \\\\\n            \\leq   &    e^{-\\frac{3}{4}Lq_n+\\beta_{j} q_n +C\\varepsilon q_n}  e^{ L(\\frac{q_n}{4}-x)}   ( r_{j} e^{-L  x} +r_{j-\\frac{1}{2}} e^{-L (\\frac{q_n}{2} -x)} )    \\nonumber   \\\\\n            \\leq &  e^{-\\frac{1}{2}Lq_n-2Lx+\\beta_{j} q_n+ C\\varepsilon q_n }\n            r_{j}+ e^{- L q_n+\\beta_{j} q_n+  C\\varepsilon q_n}  r_{j-\\frac{1}{2}} \\nonumber\\\\\n            \\leq &    e^{-\\frac{1}{2}(L-2\\beta_{j}- C\\varepsilon)q_n}r_{j} + e^{- L q_n+\\beta_{j} q_n+  C\\varepsilon q_n}  r_{j-\\frac{1}{2}}.\\label{g9}\n\n\\end{aligned}$$ By <a href=\"#g500\" data-reference-type=\"eqref\" data-reference=\"g500\">[g500]</a>, one has $$\\label{g19}\n            r_{j-\\frac{1}{2}}\\leq e^{C\\varepsilon q_n+\\frac{q_n}{2} L} r_j.$$ By <a href=\"#g9\" data-reference-type=\"eqref\" data-reference=\"g9\">[g9]</a> and <a href=\"#g19\" data-reference-type=\"eqref\" data-reference=\"g19\">[g19]</a>, one has $$\\label{g21}\n            e^{-\\frac{3}{4}Lq_n+\\beta_{j} q_n+C\\varepsilon  q_n }  \n            |P_{[p+1,x_2]}| |\\phi (x_1^\\prime)|\\leq   e^{-\\frac{1}{2}(L-2\\beta_{j}- C\\varepsilon)q_n} r_{j} .$$ By Lemma <a href=\"#klem2\" data-reference-type=\"ref\" data-reference=\"klem2\">5</a> $$\\label{g16}\n            |P_{[x_1-jq_n,p-1-jq_n]}| \\leq e^{C\\varepsilon q_n} e^{L(\\frac{1}{2}q_n-x)}.$$ By Lemma <a href=\"#klem1\" data-reference-type=\"ref\" data-reference=\"klem1\">7</a> and <a href=\"#g16\" data-reference-type=\"eqref\" data-reference=\"g16\">[g16]</a>, one has $$\\begin{aligned}\n            |P_{[x_1,p-1]}| &\\leq   |P_{[x_1,p-1]}-P_{[x_1-jq_n,p-1-jq_n]}|+|P_{[x_1-jq_n,p-1-jq_n]}|\\nonumber\\\\\n            &\\leq e^{C\\varepsilon q_n} e^{L(\\frac{1}{2}q_n-x)}+e^{C\\varepsilon q_n} e^{L |p-x_1|} e^{-\\beta_{j} q_n}\\nonumber\\\\\n            &\\leq   e^{C\\varepsilon q_n} e^{L(\\frac{1}{2}q_n-x)}+e^{C\\varepsilon q_n} e^{L(\\frac{1}{2}q_n+x)  -\\beta_{j} q_n}.\n            \\label{g17}",
+    "labels": [
+      "g16",
+      "g17",
+      "g19",
+      "g21",
+      "g9"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L351-362::s8",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$",
+    "start_line": 351,
+    "end_line": 362,
+    "text": "\\end{aligned}$$ By <a href=\"#g500\" data-reference-type=\"eqref\" data-reference=\"g500\">[g500]</a>, one has $$\\label{g19}\n            r_{j-\\frac{1}{2}}\\leq e^{C\\varepsilon q_n+\\frac{q_n}{2} L} r_j.$$ By <a href=\"#g9\" data-reference-type=\"eqref\" data-reference=\"g9\">[g9]</a> and <a href=\"#g19\" data-reference-type=\"eqref\" data-reference=\"g19\">[g19]</a>, one has $$\\label{g21}\n            e^{-\\frac{3}{4}Lq_n+\\beta_{j} q_n+C\\varepsilon  q_n }  \n            |P_{[p+1,x_2]}| |\\phi (x_1^\\prime)|\\leq   e^{-\\frac{1}{2}(L-2\\beta_{j}- C\\varepsilon)q_n} r_{j} .$$ By Lemma <a href=\"#klem2\" data-reference-type=\"ref\" data-reference=\"klem2\">5</a> $$\\label{g16}\n            |P_{[x_1-jq_n,p-1-jq_n]}| \\leq e^{C\\varepsilon q_n} e^{L(\\frac{1}{2}q_n-x)}.$$ By Lemma <a href=\"#klem1\" data-reference-type=\"ref\" data-reference=\"klem1\">7</a> and <a href=\"#g16\" data-reference-type=\"eqref\" data-reference=\"g16\">[g16]</a>, one has $$\\begin{aligned}\n            |P_{[x_1,p-1]}| &\\leq   |P_{[x_1,p-1]}-P_{[x_1-jq_n,p-1-jq_n]}|+|P_{[x_1-jq_n,p-1-jq_n]}|\\nonumber\\\\\n            &\\leq e^{C\\varepsilon q_n} e^{L(\\frac{1}{2}q_n-x)}+e^{C\\varepsilon q_n} e^{L |p-x_1|} e^{-\\beta_{j} q_n}\\nonumber\\\\\n            &\\leq   e^{C\\varepsilon q_n} e^{L(\\frac{1}{2}q_n-x)}+e^{C\\varepsilon q_n} e^{L(\\frac{1}{2}q_n+x)  -\\beta_{j} q_n}.\n            \\label{g17}\n\n\\end{aligned}$$ By <a href=\"#g8\" data-reference-type=\"eqref\" data-reference=\"g8\">[g8]</a> and <a href=\"#g17\" data-reference-type=\"eqref\" data-reference=\"g17\">[g17]</a>, one has $$\\begin{aligned}\n            e^{-\\frac{3}{4}Lq_n+\\beta_{j} q_n+C\\varepsilon q_n } &|P_{[x_1,p-1]}| |\\phi (x_2^\\prime)| \\nonumber\\\\\n            \\leq& e^{-\\frac{3}{4}Lq_n+\\beta_{j} q_n+C\\varepsilon q_n }(   r_{j+\\frac{1}{2}} e^{-L (\\frac{q_n}{4}-x) } +r_{j+1}e^{-L (\\frac{q_n}{4}+x)} )  \\nonumber \\\\\n            & \\times (e^{L(\\frac{1}{2}q_n-x)}+ e^{L(\\frac{1}{2}q_n+x)  -\\beta_{j} q_n}) \\nonumber\\\\\n            \\leq&  e^{C\\varepsilon q_n}(e^{-(L-2\\beta_{j})\\frac{q_n}{2}  }+e^{  -L(\\frac{q_n}{2}-2x)}) r_{j+\\frac{1}{2}}\\nonumber \\\\\n            &+ e^{C\\varepsilon q_n}(e^{-(L-2\\beta_{j})\\frac{q_n}{2}  -2L x}+e^{  -L\\frac{q_n}{2}}) r_{j+1}\\nonumber\\\\\n            \\leq & e^{C\\varepsilon q_n}(e^{-(L-2\\beta_{j})\\frac{q_n}{2}  }+e^{  -L\\frac{q_n}{4}}) r_{j+\\frac{1}{2}}+  e^{-(L-2\\beta_{j}-C\\varepsilon)\\frac{q_n}{2}  }  r_{j+1}\\label{g18},\n\n\\end{aligned}$$ where the last inequality holds by the fact that $0\\leq x\\leq \\frac{q_n}{8}$.\n\nBy <a href=\"#g2\" data-reference-type=\"eqref\" data-reference=\"g2\">[g2]</a>, <a href=\"#g21\" data-reference-type=\"eqref\" data-reference=\"g21\">[g21]</a> and <a href=\"#g18\" data-reference-type=\"eqref\" data-reference=\"g18\">[g18]</a>, one has",
+    "labels": [
+      "g16",
+      "g17",
+      "g18",
+      "g19",
+      "g21"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L363-516::s9",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$",
+    "start_line": 363,
+    "end_line": 516,
+    "text": "By <a href=\"#g2\" data-reference-type=\"eqref\" data-reference=\"g2\">[g2]</a>, <a href=\"#g21\" data-reference-type=\"eqref\" data-reference=\"g21\">[g21]</a> and <a href=\"#g18\" data-reference-type=\"eqref\" data-reference=\"g18\">[g18]</a>, one has\n\n$$\\begin{aligned}\n            %\n            r_{j+\\frac{1}{2}} &\\leq&  e^{-\\frac{1}{2}(L-2\\beta_{j}- C\\varepsilon)q_n} r_{j}+e^{-\\frac{1}{2}(L-2\\beta_{j}- C\\varepsilon)q_n}r_{j+1} \\nonumber\\\\\n            & &+ e^{C\\varepsilon q_n}(e^{-(L-2\\beta_{j})\\frac{q_n}{2}  }+e^{  -L\\frac{q_n}{4}}) r_{j+\\frac{1}{2}}. \\label{g24}\n        \n\\end{aligned}$$\n\nSince $\\varepsilon$ is small and $L>2\\beta \\geq 2\\beta_{j}-\\varepsilon$, one has that $$e^{C\\varepsilon q_n}(e^{-(L-2\\beta_{j})\\frac{q_n}{2}  }+e^{  -L\\frac{q_n}{4}})  r_{j+\\frac{1}{2}}\\leq \\frac{1}{2}   r_{j+\\frac{1}{2}}.$$\n\nTherefore, (<a href=\"#g24\" data-reference-type=\"ref\" data-reference=\"g24\">[g24]</a>) becomes $$\\label{g25}\n            r_{j+\\frac{1}{2}}\\leq  \\exp\\{-\\frac{1}{2}(L-2\\beta_{j}- C\\varepsilon)q_n\\}(r_j+r_{j+1}).$$\n\n**Case 3:** $j_0\\in [jq_n + \\frac{5}{8}q_n,jq_n+\\frac{3}{4}q_n]\\cap I_2$\n\nLet $x=j_0-jq_n -\\frac{5}{8}q_n$. Therefore, $0\\leq x\\leq \\frac{1}{8}q_n$, $x_1=jq_n +\\frac{q_n}{4}+x$ and $x_2=jq_n+ q_n+x$.\n\nBy Lemmas <a href=\"#klem2\" data-reference-type=\"ref\" data-reference=\"klem2\">5</a> and <a href=\"#klem1\" data-reference-type=\"ref\" data-reference=\"klem1\">7</a>, one has $$\\begin{aligned}\n            |   P_{[p+1,x_2]} | \n            &\\leq   |   P_{{[p+1-jq_n-q_n,x_2-jq_n-q_n]}} | +e^{C\\varepsilon q_n} e^{L(\\frac{1}{2}q_n+x)  -\\beta_{j} q_n} \\nonumber\\\\\n            &\\leq e^{C\\varepsilon q_n} e^{L(\\frac{1}{2}q_n-x)}+e^{C\\varepsilon q_n} e^{L(\\frac{1}{2}q_n+x)  -\\beta_{j} q_n} \\label{g171}\n        \n\\end{aligned}$$ Replacing <a href=\"#g17\" data-reference-type=\"eqref\" data-reference=\"g17\">[g17]</a> with <a href=\"#g171\" data-reference-type=\"eqref\" data-reference=\"g171\">[g171]</a> and following the proof of Case 2, we also have that $$\\label{g26}\n            r_{j+\\frac{1}{2}}\\leq  \\exp\\{-\\frac{1}{2}(L-2\\beta_{j}- C\\varepsilon)q_n\\}(r_j+r_{j+1}).$$\n\nIf $j_0\\in I_1$, one has that $$x_1\\in[-\\frac{5}{8}q_n,-\\frac{3}{8}q_n],x_2\\in [\\frac{1}{8}q_n, \\frac{3}{8}q_n].$$ By <a href=\"#Numerator1\" data-reference-type=\"eqref\" data-reference=\"Numerator1\">[Numerator1]</a>, one has $$\\label{gg100}\n            |P_{[x_1,-1]}| \\leq e^{ L|x_1|+C\\varepsilon q_n},   |P_{[1,x_2]} | \\leq e^{ L|x_2|+C\\varepsilon q_n}.$$ By <a href=\"#g100\" data-reference-type=\"eqref\" data-reference=\"g100\">[g100]</a>, <a href=\"#g1091\" data-reference-type=\"eqref\" data-reference=\"g1091\">[g1091]</a>, <a href=\"#sq\" data-reference-type=\"eqref\" data-reference=\"sq\">[sq]</a>, <a href=\"#g68\" data-reference-type=\"eqref\" data-reference=\"g68\">[g68]</a> and <a href=\"#gg100\" data-reference-type=\"eqref\" data-reference=\"gg100\">[gg100]</a>, one has $$\\begin{aligned}\n            |\\phi(0)| \\leq& e^{-kL +\\varepsilon q_n } (|P_{[x_1,-1]}| |\\phi (x_2^\\prime)|+\n            |P_{[1,x_2]} | |\\phi (x_1^\\prime)|)\\nonumber\\\\\n            \\leq &e^{-\\frac{3}{4}Lq_n+C\\varepsilon  q_n } (e^{L|x_1|} +e^{L|x_2|})\\nonumber\\\\\n            \\leq &\\frac{1}{2} \\nonumber.\n        \n\\end{aligned}$$ This is impossible since $\\phi(0)=1$. Therefore, we must have $j_0\\in I_2$ and Theorem <a href=\"#thm1\" data-reference-type=\"ref\" data-reference=\"thm1\">8</a> follows from <a href=\"#g23\" data-reference-type=\"eqref\" data-reference=\"g23\">[g23]</a>, <a href=\"#g25\" data-reference-type=\"eqref\" data-reference=\"g25\">[g25]</a> and <a href=\"#g26\" data-reference-type=\"eqref\" data-reference=\"g26\">[g26]</a>. ◻\n\n</div>\n\n# Resonance II: sites $jq_n$, $j\\in\\mathbb{Z}\\backslash \\{0\\}$\n\nIn this section, we deal with resonances arising from sites $jq_n$, $j\\in\\mathbb{Z}\\backslash\\{0\\}$.\n\n<div id=\"thm2\" class=\"theorem\">\n\n**Theorem 9**. *Assume $j\\in\\mathbb{Z}$ satisfies $0<  |j |\\leq 2\\frac{b_{n+1}}{q_n}+10$. Then we have $$\\label{g1000}\n            r_{j}  \\leq   \\exp\\{- \\frac{1}{2}(L-2\\beta_{j} -C\\varepsilon)q_n\\}(r_{j+\\frac{1}{2}}+r_{j-\\frac{1}{2}})+ \\exp\\{- (L-2\\beta_{j} -C\\varepsilon)q_n\\}(r_{j+1}+r_{j-1}).$$*\n\n</div>\n\n<div class=\"proof\">\n\n*Proof.* Take $\\phi(j q_n+rq_n)$ with $|r|\\leq 10\\varepsilon$ into consideration. Denote by $p=jq_n+rq_n$. Without loss of generality assume $j>0$. Let $n_0$ be the least positive integer such that $$q_{n-n_0}\\leq  \\frac{ \\varepsilon}{2}  (\\frac{1}{4}-2\\varepsilon) q_n.$$ Let $s$ be the largest positive integer such that $sq_{n-n_0}\\leq (\\frac{1}{4}-2\\varepsilon) q_n$. By the fact that $(s+1)q_{n-n_0}\\geq (\\frac{1}{4}-2\\varepsilon)q_n$, one has $$s\\geq \\frac{1}{\\varepsilon}$$ and $$\\label{2sq}\n            (\\frac{1}{4}-3\\varepsilon)q_n \\leq sq_{n-n_0}\\leq (\\frac{1}{4}-2\\varepsilon)q_n.$$\n\nSet $I_1, I_2\\subset \\mathbb{Z}$ as follows $$\\begin{aligned}\n            %\n            I_1 &=& [- 2s q_{n-n_0},-1], \\\\\n            I_2 &=& [ j q_n  -2sq_{n-n_0},j q_n+ 2sq_{n-n_0}-1 ],\n        \n\\end{aligned}$$ and let $\\theta_m=\\theta+m\\alpha$ for $m\\in I_1\\cup I_2$. The set $\\{\\theta_m\\}_{m\\in I_1\\cup I_2}$ consists of $6sq_{n-n_0}$ elements. Let $k=6s q_{n-n_0}-1$.\n\nBy modifying the proof of   and   (or Appendices in   and  ), we can prove the claim (Claim 2): for any $m\\in I_1\\cup I_2$, one has ${\\rm Lag}a_m\\leq  2q_n (\\beta_{j}+ \\varepsilon)$. We also give the proof in the Appendix.\n\nApplying Lemma <a href=\"#Le.Uniform\" data-reference-type=\"ref\" data-reference=\"Le.Uniform\">3</a>, there exists some $j_0$ with $j_0\\in I_1\\cup I_2$ such that $$\\label{g121}\n            |P_k(\\theta_{j_0}-\\frac{k-1}{2}\\alpha)| \\geq e^{kL-2(\\beta_{j} +\\varepsilon)q_n}.$$\n\nLet $$\\label{2g4}\n            I=[j_0-3sq_{n-n_0} +1,j_0+3sq_{n-n_0}-1]=[x_1,x_2].$$\n\nBy <a href=\"#g100\" data-reference-type=\"eqref\" data-reference=\"g100\">[g100]</a>, <a href=\"#g121\" data-reference-type=\"eqref\" data-reference=\"g121\">[g121]</a> and <a href=\"#2sq\" data-reference-type=\"eqref\" data-reference=\"2sq\">[2sq]</a>, one has\n\n- I: $j_0\\in I_1$. Then for any $y_1$ with $|y_1|\\leq 10 \\varepsilon q_n$, $$\\begin{aligned}\n                  |\\phi(y_1)| \\leq &e^{-kL+2\\beta_{j} q_n+\\varepsilon q_n } (|P_{[x_1,y_1-1]}| |\\phi (x_2^\\prime)|+\n                  |P_{[y_1+1,x_2]} | |\\phi (x_1^\\prime)|)\\nonumber\\\\\n                  \\leq &e^{-\\frac{3}{2}Lq_n+2\\beta_{j} q_n+ C\\varepsilon q_n } (|P_{[x_1,y_1-1]}| |\\phi (x_2^\\prime)|+\n                  |P_{[y_1+1,x_2]} | |\\phi (x_1^\\prime)|).\\label{12g2}\n              \n  \\end{aligned}$$\n\n- II: $j_0\\in I_2$. Then for any $y_2$ with $|y_2-jq_n|\\leq 10 \\varepsilon q_n$, $$\\label{2g2}\n                  |\\phi(y_2)| \\leq e^{-\\frac{3}{2}Lq_n+2\\beta_{j} q_n+C\\varepsilon q_n } (|P_{[x_1,y_2-1]}| |\\phi (x_2^\\prime)|+\n                  |P_{[y_2+1,x_2]} | |\\phi (x_1^\\prime)|).$$\n\nClearly, $$I_1\\subset [-\\frac{q_n}{2},0]$$ and $$I_2\\subset [jq_n-\\frac{q_n}{2} ,jq_n+\\frac{q_n}{2}].$$ **Case 1:** $j_0\\in [jq_n-\\frac{1}{4} q_n, jq_n]\\cap I_2$\n\nLet $x=j_0-(jq_n-\\frac{1}{4}q_n)$. Therefore, $0\\leq x\\leq \\frac{1}{4}q_n$ and $$x_1=jq_n-q_n+x \\in[jq_n-q_n,jq_n-\\frac{3}{4}q_n]$$ and $$x_2=jq_n+\\frac{1}{2}q_n+x \\in [jq_n+\\frac{1}{2}q_n,jq_n+\\frac{3}{4}q_n].$$\n\n<div class=\"center\">\n\n</div>\n\nIn Fig.3, $x_1$ and $x_2$ locate at the red part. $j_0$ locates at the blue part. The numbers above are the sites after deducting $jq_n$.\n\nBy Lemma <a href=\"#Le.resonant\" data-reference-type=\"ref\" data-reference=\"Le.resonant\">4</a>, one has that $$\\label{2g7}\n            |\\phi(x_1^\\prime)\\leq r_{j-1} e^{-L  x+C\\varepsilon q_n} +r_{j-\\frac{1}{2}} e^{-L (\\frac{q_n}{2} -x)+C\\varepsilon q_n}$$ and $$\\label{2g8}\n            |\\phi(x_2^\\prime)\\leq r_{j+\\frac{1}{2}} e^{-L x +C\\varepsilon q_n} +r_{j+1}e^{-L (\\frac{q_n}{2}-x) +C\\varepsilon q_n} .$$ By <a href=\"#Numerator1\" data-reference-type=\"eqref\" data-reference=\"Numerator1\">[Numerator1]</a>, one has $$\\label{2g1}\n            |P_{[x_1,p-1]}|\\leq e^{ L(q_n-x)+C\\varepsilon q_n},$$ and $$\\label{2g0}\n            |P_{[p+1,x_2]}|\\leq e^{ L(\\frac{q_n}{2}+x)+C\\varepsilon q_n}.$$\n\nBy <a href=\"#2g2\" data-reference-type=\"eqref\" data-reference=\"2g2\">[2g2]</a>-<a href=\"#2g0\" data-reference-type=\"eqref\" data-reference=\"2g0\">[2g0]</a>, one has that $$\\begin{aligned}\n            |\\phi(p)|\\leq& e^{-\\frac{3}{2}Lq_n+2\\beta_{j} q_n+C\\varepsilon q_n }    |P_{[x_1,p-1]}|(r_{j+\\frac{1}{2}} e^{-L x } +r_{j+1}e^{-L (\\frac{q_n}{2}-x)} )\\nonumber\\\\\n            &+e^{-\\frac{3}{2}Lq_n+2\\beta_{j} q_n+C\\varepsilon q_n } |P_{[p+1,x_2]}|(r_{j-1} e^{-L  x} +r_{j-\\frac{1}{2}} e^{-L (\\frac{q_n}{2} -x)}  ) \\nonumber\\\\\n            \\leq& e^{-\\frac{3}{2}Lq_n+2\\beta_{j} q_n+C\\varepsilon q_n }(    |P_{[x_1,p-1]}|r_{j+\\frac{1}{2}} e^{-L x } + e^{L(q_n-x)}r_{j+1}e^{-L (\\frac{q_n}{2}-x)} )\\nonumber\\\\\n            &+e^{-\\frac{3}{2}Lq_n+2\\beta_{j} q_n+C\\varepsilon q_n }e^{ L(\\frac{q_n}{2}+x)}(r_{j-1} e^{-L  x} +r_{j-\\frac{1}{2}} e^{-L (\\frac{q_n}{2} -x)}  ) \\nonumber\\\\\n            \\leq &e^{-L q_n+2\\beta_{j} q_n+C\\varepsilon q_n} (r_{j+1}+r_{j-1})+e^{-\\frac{3}{2}L q_n+2\\beta_{j} q_n +2L x+C\\varepsilon q_n} r_{j-\\frac{1}{2}}\\nonumber\\\\\n            &+e^{-\\frac{3}{2}L q_n-L x+2\\beta_{j} q_n+C\\varepsilon q_n}|P_{[x_1,p-1]}|r_{j+\\frac{1}{2}}\\nonumber\\\\\n            \\leq& e^{-L q_n+2\\beta_{j} q_n+C\\varepsilon q_n} (r_{j+1}+r_{j-1}+r_{j-\\frac{1}{2}})\\label{g501}\\\\\n            &+e^{-\\frac{3}{2}L q_n-L x+2\\beta_{j} q_n+C\\varepsilon q_n}|P_{[x_1,p-1]}|r_{j+\\frac{1}{2}},\\label{g41}\n        \n\\end{aligned}$$ where the last inequality holds by the fact that $0\\leq x\\leq \\frac{1}{4}q_n$.\n\nThe term in <a href=\"#g501\" data-reference-type=\"eqref\" data-reference=\"g501\">[g501]</a> decays, so we are going to bound <a href=\"#g41\" data-reference-type=\"eqref\" data-reference=\"g41\">[g41]</a>.\n\n<div class=\"center\">\n\n</div>\n\nClearly, $x_1+q_n\\in[jq_n, jq_n+\\frac{1}{4}q_n]$. By Lemma <a href=\"#Le.resonant\" data-reference-type=\"ref\" data-reference=\"Le.resonant\">4</a>, one has that $$\\label{2g30}\n            |\\phi(x_1'+q_n)\\leq r_{j} e^{-L  x+C\\varepsilon q_n} +r_{j+\\frac{1}{2}} e^{-L (\\frac{q_n}{2} -x)+C\\varepsilon q_n} .$$ By <a href=\"#g100\" data-reference-type=\"eqref\" data-reference=\"g100\">[g100]</a>, <a href=\"#Numerator1\" data-reference-type=\"eqref\" data-reference=\"Numerator1\">[Numerator1]</a> and <a href=\"#2g30\" data-reference-type=\"eqref\" data-reference=\"2g30\">[2g30]</a>, one has for any $y$ with $|y-jq_n-\\frac{1}{2} q_n|\\leq 10 \\varepsilon q_n$, $$\\begin{aligned}\n            |\\phi(y)|\\leq&  |P_{[x_1+q_n,p-1+q_n]}|^{-1}  e^{L \\frac{q_n}{2}+C\\varepsilon q_n} (r_{j} e^{-L  x} +r_{j+\\frac{1}{2}} e^{-L (\\frac{q_n}{2} -x)})\\\\\n            &+|P_{[x_1+q_n,p-1+q_n]}|^{-1} e^{L(\\frac{q_n}{2}-x+C\\varepsilon q_n)} r_{j+1}.\n        \n\\end{aligned}$$ This implies $$\\begin{aligned}\n            r_{j+\\frac{1}{2}}\\leq&  |P_{[x_1+q_n,p-1+q_n]}|^{-1}  e^{L \\frac{q_n}{2}+C\\varepsilon q_n} (r_{j} e^{-L  x} +r_{j+\\frac{1}{2}} e^{-L (\\frac{q_n}{2} -x)})\\\\\n            &+|P_{[x_1+q_n,p-1+q_n]}|^{-1} e^{L(\\frac{q_n}{2}-x+C\\varepsilon q_n)} r_{j+1}.\n        \n\\end{aligned}$$ Therefore, we have $$\\begin{aligned}\n            r_{j+\\frac{1}{2}}&  |P_{[x_1+q_n,p-1+q_n]}|\\nonumber\\\\\n            \\leq &e^{ C\\varepsilon q_n} (r_{j} e^{L(\\frac{q_n}{2}- x)} +r_{j+\\frac{1}{2}} e^{Lx}+  e^{L(\\frac{q_n}{2}-x)} r_{j+1}). \\label{g37}\n        \n\\end{aligned}$$\n\nBy Lemma <a href=\"#klem1\" data-reference-type=\"ref\" data-reference=\"klem1\">7</a>, one has $$\\label{g38}\n            | P_{[x_1+q_n,p-1+q_n]}- P_{[{x}_1,p-1]}|\\leq e^{(L+C\\varepsilon) q_n-Lx-\\beta q_n}.$$ By <a href=\"#g37\" data-reference-type=\"eqref\" data-reference=\"g37\">[g37]</a> and <a href=\"#g38\" data-reference-type=\"eqref\" data-reference=\"g38\">[g38]</a>, one has $$\\begin{aligned}\n            |P_{[{x}_1,p-1]}|   &r_{j+\\frac{1}{2}} \\nonumber\\\\\n            \\leq & e^{ L(\\frac{q_n}{2}-x)+ C\\varepsilon q_n} (r_{j}  +   r_{j+1})  + e^{C\\varepsilon q_n}( e^{Lx}+e^{(L-\\beta) q_n-Lx} )r_{j+\\frac{1}{2}}\\label{g39}\n        \n\\end{aligned}$$ Therefore, $$\\begin{aligned}\n            |P_{[x_1,p-1]}|r_{j+\\frac{1}{2}}  & e^{-\\frac{3}{2}L q_n-L x+2\\beta_{j} q_n+C\\varepsilon q_n}\\nonumber\\\\\n            \\leq & e^{C\\varepsilon q_n}(e^{- (L-2\\beta_{j}  ) \\frac{1}{2}q_n-2L x} +e^{-\\frac{3}{2}L q_n+2\\beta_{j} q_n+C\\varepsilon q_n}) r_{j+\\frac{1}{2}} \\nonumber\\\\\n            &+e^{-L q_n+2\\beta_{j} q_n-2L x+C\\varepsilon q_n}(r_j+r_{j+1})\\nonumber\\\\\n            \\leq &e^{C\\varepsilon q_n} (r_j e^{-(L-2\\beta _{j} ) q_n}+r_{j+\\frac{1}{2}} e^{-(L-2\\beta _{j} ) \\frac{q_n}{2}}+ r_{j+1} e^{-(L-2\\beta _{j} ) q_n})\\label{g40}\n        \n\\end{aligned}$$\n\nBy <a href=\"#g40\" data-reference-type=\"eqref\" data-reference=\"g40\">[g40]</a>, <a href=\"#g501\" data-reference-type=\"eqref\" data-reference=\"g501\">[g501]</a> and <a href=\"#g41\" data-reference-type=\"eqref\" data-reference=\"g41\">[g41]</a>, one has $$\\label{g42}\n            |\\phi(p)| \\leq  e^{-(L-2\\beta _{j} ) q_n+C\\varepsilon q_n} (r_{j-1}+r_{j-\\frac{1}{2}}+r_j+r_{j+1})+r_{j+\\frac{1}{2}} e^{-(L-2\\beta _{j} -C\\varepsilon) \\frac{q_n}{2}}.$$ Therefore, $$\\label{g43}\n            r_{j}\\leq  e^{-(L-2\\beta _{j} ) q_n+C\\varepsilon q_n} (r_{j-1}+r_{j-\\frac{1}{2}}+r_j+r_{j+1})+r_{j+\\frac{1}{2}} e^{-(L-2\\beta _{j} -C\\varepsilon) \\frac{q_n}{2}}.$$ By the fact that $L >2\\beta \\geq 2\\beta_{j}-\\varepsilon$, we have $$e^{-(L-2\\beta _{j} ) q_n+C\\varepsilon q_n} r_j\\leq\\frac{1}{2}r_j$$ and hence $$\\label{g44}\n            r_{j}\\leq  e^{-(L-2\\beta _{j} -C\\varepsilon) q_n} (r_{j-1}+r_{j-\\frac{1}{2}}+r_{j+1})+r_{j+\\frac{1}{2}} e^{-(L-2\\beta _{j} -C\\varepsilon) \\frac{q_n}{2}}.$$\n\n**Case 2**: $j_0\\in [jq_n, jq_n+\\frac{1}{4} q_n]\\cap I_2$\n\nIn this case, by the similar proof of <a href=\"#g44\" data-reference-type=\"eqref\" data-reference=\"g44\">[g44]</a>, we have\n\n$$\\label{g45}\n            r_{j}\\leq  e^{-(L-2\\beta _{j} -C\\varepsilon) q_n} (r_{j+1}+r_{j+\\frac{1}{2}}+r_{j-1})+r_{j-\\frac{1}{2}} e^{-(L-2\\beta _{j} -C\\varepsilon) \\frac{q_n}{2}}.$$",
+    "labels": [
+      "12g2",
+      "2g0",
+      "2g1",
+      "2g2",
+      "2g30",
+      "2g4",
+      "2g7",
+      "2g8",
+      "2sq",
+      "g1000",
+      "g121",
+      "g171",
+      "g24",
+      "g25",
+      "g26",
+      "g37",
+      "g38",
+      "g39",
+      "g40",
+      "g41",
+      "g42",
+      "g43",
+      "g44",
+      "g45",
+      "g501",
+      "gg100"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L517-534::s10",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$",
+    "start_line": 517,
+    "end_line": 534,
+    "text": "$$\\begin{aligned}\n            %\n            r_{j+\\frac{1}{2}} &\\leq&  e^{-\\frac{1}{2}(L-2\\beta_{j}- C\\varepsilon)q_n} r_{j}+e^{-\\frac{1}{2}(L-2\\beta_{j}- C\\varepsilon)q_n}r_{j+1} \\nonumber\\\\\n            & &+ e^{C\\varepsilon q_n}(e^{-(L-2\\beta_{j})\\frac{q_n}{2}  }+e^{  -L\\frac{q_n}{4}}) r_{j+\\frac{1}{2}}. \\label{g24}\n        \n\\end{aligned}$$\n\nSince $\\varepsilon$ is small and $L>2\\beta \\geq 2\\beta_{j}-\\varepsilon$, one has that $$e^{C\\varepsilon q_n}(e^{-(L-2\\beta_{j})\\frac{q_n}{2}  }+e^{  -L\\frac{q_n}{4}})  r_{j+\\frac{1}{2}}\\leq \\frac{1}{2}   r_{j+\\frac{1}{2}}.$$\n\nTherefore, (<a href=\"#g24\" data-reference-type=\"ref\" data-reference=\"g24\">[g24]</a>) becomes $$\\label{g25}\n            r_{j+\\frac{1}{2}}\\leq  \\exp\\{-\\frac{1}{2}(L-2\\beta_{j}- C\\varepsilon)q_n\\}(r_j+r_{j+1}).$$\n\n**Case 3:** $j_0\\in [jq_n + \\frac{5}{8}q_n,jq_n+\\frac{3}{4}q_n]\\cap I_2$\n\nLet $x=j_0-jq_n -\\frac{5}{8}q_n$. Therefore, $0\\leq x\\leq \\frac{1}{8}q_n$, $x_1=jq_n +\\frac{q_n}{4}+x$ and $x_2=jq_n+ q_n+x$.\n\nBy Lemmas <a href=\"#klem2\" data-reference-type=\"ref\" data-reference=\"klem2\">5</a> and <a href=\"#klem1\" data-reference-type=\"ref\" data-reference=\"klem1\">7</a>, one has $$\\begin{aligned}\n            |   P_{[p+1,x_2]} | \n            &\\leq   |   P_{{[p+1-jq_n-q_n,x_2-jq_n-q_n]}} | +e^{C\\varepsilon q_n} e^{L(\\frac{1}{2}q_n+x)  -\\beta_{j} q_n} \\nonumber\\\\\n            &\\leq e^{C\\varepsilon q_n} e^{L(\\frac{1}{2}q_n-x)}+e^{C\\varepsilon q_n} e^{L(\\frac{1}{2}q_n+x)  -\\beta_{j} q_n} \\label{g171}\n        \n\\end{aligned}$$ Replacing <a href=\"#g17\" data-reference-type=\"eqref\" data-reference=\"g17\">[g17]</a> with <a href=\"#g171\" data-reference-type=\"eqref\" data-reference=\"g171\">[g171]</a> and following the proof of Case 2, we also have that $$\\label{g26}\n            r_{j+\\frac{1}{2}}\\leq  \\exp\\{-\\frac{1}{2}(L-2\\beta_{j}- C\\varepsilon)q_n\\}(r_j+r_{j+1}).$$\n\nIf $j_0\\in I_1$, one has that $$x_1\\in[-\\frac{5}{8}q_n,-\\frac{3}{8}q_n],x_2\\in [\\frac{1}{8}q_n, \\frac{3}{8}q_n].$$ By <a href=\"#Numerator1\" data-reference-type=\"eqref\" data-reference=\"Numerator1\">[Numerator1]</a>, one has $$\\label{gg100}\n            |P_{[x_1,-1]}| \\leq e^{ L|x_1|+C\\varepsilon q_n},   |P_{[1,x_2]} | \\leq e^{ L|x_2|+C\\varepsilon q_n}.$$ By <a href=\"#g100\" data-reference-type=\"eqref\" data-reference=\"g100\">[g100]</a>, <a href=\"#g1091\" data-reference-type=\"eqref\" data-reference=\"g1091\">[g1091]</a>, <a href=\"#sq\" data-reference-type=\"eqref\" data-reference=\"sq\">[sq]</a>, <a href=\"#g68\" data-reference-type=\"eqref\" data-reference=\"g68\">[g68]</a> and <a href=\"#gg100\" data-reference-type=\"eqref\" data-reference=\"gg100\">[gg100]</a>, one has $$\\begin{aligned}\n            |\\phi(0)| \\leq& e^{-kL +\\varepsilon q_n } (|P_{[x_1,-1]}| |\\phi (x_2^\\prime)|+\n            |P_{[1,x_2]} | |\\phi (x_1^\\prime)|)\\nonumber\\\\\n            \\leq &e^{-\\frac{3}{4}Lq_n+C\\varepsilon  q_n } (e^{L|x_1|} +e^{L|x_2|})\\nonumber\\\\\n            \\leq &\\frac{1}{2} \\nonumber.\n        \n\\end{aligned}$$ This is impossible since $\\phi(0)=1$. Therefore, we must have $j_0\\in I_2$ and Theorem <a href=\"#thm1\" data-reference-type=\"ref\" data-reference=\"thm1\">8</a> follows from <a href=\"#g23\" data-reference-type=\"eqref\" data-reference=\"g23\">[g23]</a>, <a href=\"#g25\" data-reference-type=\"eqref\" data-reference=\"g25\">[g25]</a> and <a href=\"#g26\" data-reference-type=\"eqref\" data-reference=\"g26\">[g26]</a>. ◻\n\n</div>\n\n# Resonance II: sites $jq_n$, $j\\in\\mathbb{Z}\\backslash \\{0\\}$\n\nIn this section, we deal with resonances arising from sites $jq_n$, $j\\in\\mathbb{Z}\\backslash\\{0\\}$.\n\n<div id=\"thm2\" class=\"theorem\">\n\n**Theorem 9**. *Assume $j\\in\\mathbb{Z}$ satisfies $0<  |j |\\leq 2\\frac{b_{n+1}}{q_n}+10$. Then we have $$\\label{g1000}\n            r_{j}  \\leq   \\exp\\{- \\frac{1}{2}(L-2\\beta_{j} -C\\varepsilon)q_n\\}(r_{j+\\frac{1}{2}}+r_{j-\\frac{1}{2}})+ \\exp\\{- (L-2\\beta_{j} -C\\varepsilon)q_n\\}(r_{j+1}+r_{j-1}).$$*\n\n</div>\n\n<div class=\"proof\">\n\n*Proof.* Take $\\phi(j q_n+rq_n)$ with $|r|\\leq 10\\varepsilon$ into consideration. Denote by $p=jq_n+rq_n$. Without loss of generality assume $j>0$. Let $n_0$ be the least positive integer such that $$q_{n-n_0}\\leq  \\frac{ \\varepsilon}{2}  (\\frac{1}{4}-2\\varepsilon) q_n.$$ Let $s$ be the largest positive integer such that $sq_{n-n_0}\\leq (\\frac{1}{4}-2\\varepsilon) q_n$. By the fact that $(s+1)q_{n-n_0}\\geq (\\frac{1}{4}-2\\varepsilon)q_n$, one has $$s\\geq \\frac{1}{\\varepsilon}$$ and $$\\label{2sq}\n            (\\frac{1}{4}-3\\varepsilon)q_n \\leq sq_{n-n_0}\\leq (\\frac{1}{4}-2\\varepsilon)q_n.$$\n\nSet $I_1, I_2\\subset \\mathbb{Z}$ as follows $$\\begin{aligned}\n            %\n            I_1 &=& [- 2s q_{n-n_0},-1], \\\\\n            I_2 &=& [ j q_n  -2sq_{n-n_0},j q_n+ 2sq_{n-n_0}-1 ],\n        \n\\end{aligned}$$ and let $\\theta_m=\\theta+m\\alpha$ for $m\\in I_1\\cup I_2$. The set $\\{\\theta_m\\}_{m\\in I_1\\cup I_2}$ consists of $6sq_{n-n_0}$ elements. Let $k=6s q_{n-n_0}-1$.\n\nBy modifying the proof of   and   (or Appendices in   and  ), we can prove the claim (Claim 2): for any $m\\in I_1\\cup I_2$, one has ${\\rm Lag}a_m\\leq  2q_n (\\beta_{j}+ \\varepsilon)$. We also give the proof in the Appendix.\n\nApplying Lemma <a href=\"#Le.Uniform\" data-reference-type=\"ref\" data-reference=\"Le.Uniform\">3</a>, there exists some $j_0$ with $j_0\\in I_1\\cup I_2$ such that $$\\label{g121}\n            |P_k(\\theta_{j_0}-\\frac{k-1}{2}\\alpha)| \\geq e^{kL-2(\\beta_{j} +\\varepsilon)q_n}.$$\n\nLet $$\\label{2g4}\n            I=[j_0-3sq_{n-n_0} +1,j_0+3sq_{n-n_0}-1]=[x_1,x_2].$$\n\nBy <a href=\"#g100\" data-reference-type=\"eqref\" data-reference=\"g100\">[g100]</a>, <a href=\"#g121\" data-reference-type=\"eqref\" data-reference=\"g121\">[g121]</a> and <a href=\"#2sq\" data-reference-type=\"eqref\" data-reference=\"2sq\">[2sq]</a>, one has\n\n- I: $j_0\\in I_1$. Then for any $y_1$ with $|y_1|\\leq 10 \\varepsilon q_n$, $$\\begin{aligned}\n                  |\\phi(y_1)| \\leq &e^{-kL+2\\beta_{j} q_n+\\varepsilon q_n } (|P_{[x_1,y_1-1]}| |\\phi (x_2^\\prime)|+\n                  |P_{[y_1+1,x_2]} | |\\phi (x_1^\\prime)|)\\nonumber\\\\\n                  \\leq &e^{-\\frac{3}{2}Lq_n+2\\beta_{j} q_n+ C\\varepsilon q_n } (|P_{[x_1,y_1-1]}| |\\phi (x_2^\\prime)|+\n                  |P_{[y_1+1,x_2]} | |\\phi (x_1^\\prime)|).\\label{12g2}\n              \n  \\end{aligned}$$\n\n- II: $j_0\\in I_2$. Then for any $y_2$ with $|y_2-jq_n|\\leq 10 \\varepsilon q_n$, $$\\label{2g2}\n                  |\\phi(y_2)| \\leq e^{-\\frac{3}{2}Lq_n+2\\beta_{j} q_n+C\\varepsilon q_n } (|P_{[x_1,y_2-1]}| |\\phi (x_2^\\prime)|+\n                  |P_{[y_2+1,x_2]} | |\\phi (x_1^\\prime)|).$$\n\nClearly, $$I_1\\subset [-\\frac{q_n}{2},0]$$ and $$I_2\\subset [jq_n-\\frac{q_n}{2} ,jq_n+\\frac{q_n}{2}].$$ **Case 1:** $j_0\\in [jq_n-\\frac{1}{4} q_n, jq_n]\\cap I_2$\n\nLet $x=j_0-(jq_n-\\frac{1}{4}q_n)$. Therefore, $0\\leq x\\leq \\frac{1}{4}q_n$ and $$x_1=jq_n-q_n+x \\in[jq_n-q_n,jq_n-\\frac{3}{4}q_n]$$ and $$x_2=jq_n+\\frac{1}{2}q_n+x \\in [jq_n+\\frac{1}{2}q_n,jq_n+\\frac{3}{4}q_n].$$\n\n<div class=\"center\">\n\n</div>\n\nIn Fig.3, $x_1$ and $x_2$ locate at the red part. $j_0$ locates at the blue part. The numbers above are the sites after deducting $jq_n$.\n\nBy Lemma <a href=\"#Le.resonant\" data-reference-type=\"ref\" data-reference=\"Le.resonant\">4</a>, one has that $$\\label{2g7}\n            |\\phi(x_1^\\prime)\\leq r_{j-1} e^{-L  x+C\\varepsilon q_n} +r_{j-\\frac{1}{2}} e^{-L (\\frac{q_n}{2} -x)+C\\varepsilon q_n}$$ and $$\\label{2g8}\n            |\\phi(x_2^\\prime)\\leq r_{j+\\frac{1}{2}} e^{-L x +C\\varepsilon q_n} +r_{j+1}e^{-L (\\frac{q_n}{2}-x) +C\\varepsilon q_n} .$$ By <a href=\"#Numerator1\" data-reference-type=\"eqref\" data-reference=\"Numerator1\">[Numerator1]</a>, one has $$\\label{2g1}\n            |P_{[x_1,p-1]}|\\leq e^{ L(q_n-x)+C\\varepsilon q_n},$$ and $$\\label{2g0}\n            |P_{[p+1,x_2]}|\\leq e^{ L(\\frac{q_n}{2}+x)+C\\varepsilon q_n}.$$\n\nBy <a href=\"#2g2\" data-reference-type=\"eqref\" data-reference=\"2g2\">[2g2]</a>-<a href=\"#2g0\" data-reference-type=\"eqref\" data-reference=\"2g0\">[2g0]</a>, one has that $$\\begin{aligned}\n            |\\phi(p)|\\leq& e^{-\\frac{3}{2}Lq_n+2\\beta_{j} q_n+C\\varepsilon q_n }    |P_{[x_1,p-1]}|(r_{j+\\frac{1}{2}} e^{-L x } +r_{j+1}e^{-L (\\frac{q_n}{2}-x)} )\\nonumber\\\\\n            &+e^{-\\frac{3}{2}Lq_n+2\\beta_{j} q_n+C\\varepsilon q_n } |P_{[p+1,x_2]}|(r_{j-1} e^{-L  x} +r_{j-\\frac{1}{2}} e^{-L (\\frac{q_n}{2} -x)}  ) \\nonumber\\\\\n            \\leq& e^{-\\frac{3}{2}Lq_n+2\\beta_{j} q_n+C\\varepsilon q_n }(    |P_{[x_1,p-1]}|r_{j+\\frac{1}{2}} e^{-L x } + e^{L(q_n-x)}r_{j+1}e^{-L (\\frac{q_n}{2}-x)} )\\nonumber\\\\\n            &+e^{-\\frac{3}{2}Lq_n+2\\beta_{j} q_n+C\\varepsilon q_n }e^{ L(\\frac{q_n}{2}+x)}(r_{j-1} e^{-L  x} +r_{j-\\frac{1}{2}} e^{-L (\\frac{q_n}{2} -x)}  ) \\nonumber\\\\\n            \\leq &e^{-L q_n+2\\beta_{j} q_n+C\\varepsilon q_n} (r_{j+1}+r_{j-1})+e^{-\\frac{3}{2}L q_n+2\\beta_{j} q_n +2L x+C\\varepsilon q_n} r_{j-\\frac{1}{2}}\\nonumber\\\\\n            &+e^{-\\frac{3}{2}L q_n-L x+2\\beta_{j} q_n+C\\varepsilon q_n}|P_{[x_1,p-1]}|r_{j+\\frac{1}{2}}\\nonumber\\\\\n            \\leq& e^{-L q_n+2\\beta_{j} q_n+C\\varepsilon q_n} (r_{j+1}+r_{j-1}+r_{j-\\frac{1}{2}})\\label{g501}\\\\\n            &+e^{-\\frac{3}{2}L q_n-L x+2\\beta_{j} q_n+C\\varepsilon q_n}|P_{[x_1,p-1]}|r_{j+\\frac{1}{2}},\\label{g41}\n        \n\\end{aligned}$$ where the last inequality holds by the fact that $0\\leq x\\leq \\frac{1}{4}q_n$.\n\nThe term in <a href=\"#g501\" data-reference-type=\"eqref\" data-reference=\"g501\">[g501]</a> decays, so we are going to bound <a href=\"#g41\" data-reference-type=\"eqref\" data-reference=\"g41\">[g41]</a>.\n\n<div class=\"center\">\n\n</div>\n\nClearly, $x_1+q_n\\in[jq_n, jq_n+\\frac{1}{4}q_n]$. By Lemma <a href=\"#Le.resonant\" data-reference-type=\"ref\" data-reference=\"Le.resonant\">4</a>, one has that $$\\label{2g30}\n            |\\phi(x_1'+q_n)\\leq r_{j} e^{-L  x+C\\varepsilon q_n} +r_{j+\\frac{1}{2}} e^{-L (\\frac{q_n}{2} -x)+C\\varepsilon q_n} .$$ By <a href=\"#g100\" data-reference-type=\"eqref\" data-reference=\"g100\">[g100]</a>, <a href=\"#Numerator1\" data-reference-type=\"eqref\" data-reference=\"Numerator1\">[Numerator1]</a> and <a href=\"#2g30\" data-reference-type=\"eqref\" data-reference=\"2g30\">[2g30]</a>, one has for any $y$ with $|y-jq_n-\\frac{1}{2} q_n|\\leq 10 \\varepsilon q_n$, $$\\begin{aligned}\n            |\\phi(y)|\\leq&  |P_{[x_1+q_n,p-1+q_n]}|^{-1}  e^{L \\frac{q_n}{2}+C\\varepsilon q_n} (r_{j} e^{-L  x} +r_{j+\\frac{1}{2}} e^{-L (\\frac{q_n}{2} -x)})\\\\\n            &+|P_{[x_1+q_n,p-1+q_n]}|^{-1} e^{L(\\frac{q_n}{2}-x+C\\varepsilon q_n)} r_{j+1}.\n        \n\\end{aligned}$$ This implies $$\\begin{aligned}\n            r_{j+\\frac{1}{2}}\\leq&  |P_{[x_1+q_n,p-1+q_n]}|^{-1}  e^{L \\frac{q_n}{2}+C\\varepsilon q_n} (r_{j} e^{-L  x} +r_{j+\\frac{1}{2}} e^{-L (\\frac{q_n}{2} -x)})\\\\\n            &+|P_{[x_1+q_n,p-1+q_n]}|^{-1} e^{L(\\frac{q_n}{2}-x+C\\varepsilon q_n)} r_{j+1}.\n        \n\\end{aligned}$$ Therefore, we have $$\\begin{aligned}\n            r_{j+\\frac{1}{2}}&  |P_{[x_1+q_n,p-1+q_n]}|\\nonumber\\\\\n            \\leq &e^{ C\\varepsilon q_n} (r_{j} e^{L(\\frac{q_n}{2}- x)} +r_{j+\\frac{1}{2}} e^{Lx}+  e^{L(\\frac{q_n}{2}-x)} r_{j+1}). \\label{g37}\n        \n\\end{aligned}$$\n\nBy Lemma <a href=\"#klem1\" data-reference-type=\"ref\" data-reference=\"klem1\">7</a>, one has $$\\label{g38}\n            | P_{[x_1+q_n,p-1+q_n]}- P_{[{x}_1,p-1]}|\\leq e^{(L+C\\varepsilon) q_n-Lx-\\beta q_n}.$$ By <a href=\"#g37\" data-reference-type=\"eqref\" data-reference=\"g37\">[g37]</a> and <a href=\"#g38\" data-reference-type=\"eqref\" data-reference=\"g38\">[g38]</a>, one has $$\\begin{aligned}\n            |P_{[{x}_1,p-1]}|   &r_{j+\\frac{1}{2}} \\nonumber\\\\\n            \\leq & e^{ L(\\frac{q_n}{2}-x)+ C\\varepsilon q_n} (r_{j}  +   r_{j+1})  + e^{C\\varepsilon q_n}( e^{Lx}+e^{(L-\\beta) q_n-Lx} )r_{j+\\frac{1}{2}}\\label{g39}\n        \n\\end{aligned}$$ Therefore, $$\\begin{aligned}\n            |P_{[x_1,p-1]}|r_{j+\\frac{1}{2}}  & e^{-\\frac{3}{2}L q_n-L x+2\\beta_{j} q_n+C\\varepsilon q_n}\\nonumber\\\\\n            \\leq & e^{C\\varepsilon q_n}(e^{- (L-2\\beta_{j}  ) \\frac{1}{2}q_n-2L x} +e^{-\\frac{3}{2}L q_n+2\\beta_{j} q_n+C\\varepsilon q_n}) r_{j+\\frac{1}{2}} \\nonumber\\\\\n            &+e^{-L q_n+2\\beta_{j} q_n-2L x+C\\varepsilon q_n}(r_j+r_{j+1})\\nonumber\\\\\n            \\leq &e^{C\\varepsilon q_n} (r_j e^{-(L-2\\beta _{j} ) q_n}+r_{j+\\frac{1}{2}} e^{-(L-2\\beta _{j} ) \\frac{q_n}{2}}+ r_{j+1} e^{-(L-2\\beta _{j} ) q_n})\\label{g40}\n        \n\\end{aligned}$$\n\nBy <a href=\"#g40\" data-reference-type=\"eqref\" data-reference=\"g40\">[g40]</a>, <a href=\"#g501\" data-reference-type=\"eqref\" data-reference=\"g501\">[g501]</a> and <a href=\"#g41\" data-reference-type=\"eqref\" data-reference=\"g41\">[g41]</a>, one has $$\\label{g42}\n            |\\phi(p)| \\leq  e^{-(L-2\\beta _{j} ) q_n+C\\varepsilon q_n} (r_{j-1}+r_{j-\\frac{1}{2}}+r_j+r_{j+1})+r_{j+\\frac{1}{2}} e^{-(L-2\\beta _{j} -C\\varepsilon) \\frac{q_n}{2}}.$$ Therefore, $$\\label{g43}\n            r_{j}\\leq  e^{-(L-2\\beta _{j} ) q_n+C\\varepsilon q_n} (r_{j-1}+r_{j-\\frac{1}{2}}+r_j+r_{j+1})+r_{j+\\frac{1}{2}} e^{-(L-2\\beta _{j} -C\\varepsilon) \\frac{q_n}{2}}.$$ By the fact that $L >2\\beta \\geq 2\\beta_{j}-\\varepsilon$, we have $$e^{-(L-2\\beta _{j} ) q_n+C\\varepsilon q_n} r_j\\leq\\frac{1}{2}r_j$$ and hence $$\\label{g44}\n            r_{j}\\leq  e^{-(L-2\\beta _{j} -C\\varepsilon) q_n} (r_{j-1}+r_{j-\\frac{1}{2}}+r_{j+1})+r_{j+\\frac{1}{2}} e^{-(L-2\\beta _{j} -C\\varepsilon) \\frac{q_n}{2}}.$$\n\n**Case 2**: $j_0\\in [jq_n, jq_n+\\frac{1}{4} q_n]\\cap I_2$\n\nIn this case, by the similar proof of <a href=\"#g44\" data-reference-type=\"eqref\" data-reference=\"g44\">[g44]</a>, we have\n\n$$\\label{g45}\n            r_{j}\\leq  e^{-(L-2\\beta _{j} -C\\varepsilon) q_n} (r_{j+1}+r_{j+\\frac{1}{2}}+r_{j-1})+r_{j-\\frac{1}{2}} e^{-(L-2\\beta _{j} -C\\varepsilon) \\frac{q_n}{2}}.$$\n\n**Case 3**: $j_0\\in[jq_n-\\frac{1}{2}q_n, jq_n-\\frac{1}{4}q_n]\\cap I_2$\n\nIn this case, let $x=j_0-(jq_n-\\frac{1}{2}q_n)$. It is easy to see that $0\\leq x\\leq \\frac{q_n}{4}$, $$x_1=jq_n-\\frac{5q_n}{4}+x \\in[jq_n-\\frac{5}{4}q_n, jq_n-q_n]$$ and $$x_2=jq_n+\\frac{1}{4}q_n+x\\in [jq_n+\\frac{q_n}{4}, jq_n+\\frac{q_n}{2}].$$\n\n<div class=\"center\">\n\n</div>\n\nBy Lemma <a href=\"#Le.resonant\" data-reference-type=\"ref\" data-reference=\"Le.resonant\">4</a>, one has that $$\\label{2g44}\n            |\\phi(x_1^\\prime)\\leq r_{j-1} e^{-L  (\\frac{q_n}{4}-x)+C\\varepsilon q_n} +r_{j-\\frac{3}{2}} e^{-L (\\frac{q_n}{4} +x)+C\\varepsilon q_n}$$ and $$\\label{2g45}\n            |\\phi(x_2^\\prime)\\leq r_{j} e^{-L (\\frac{q_n}{4} +x) +C\\varepsilon q_n} +r_{j+\\frac{1}{2}}e^{-L (\\frac{q_n}{4}-x) +C\\varepsilon q_n} .$$\n\nBy <a href=\"#2g2\" data-reference-type=\"eqref\" data-reference=\"2g2\">[2g2]</a>, <a href=\"#2g44\" data-reference-type=\"eqref\" data-reference=\"2g44\">[2g44]</a> and <a href=\"#2g45\" data-reference-type=\"eqref\" data-reference=\"2g45\">[2g45]</a>, one has $$\\begin{aligned}\n            r_j&\\leq e^{-\\frac{3}{2} L q_n+2\\beta_{j} q_n+C\\varepsilon q_n}|P_{[p+1,x_2]}| (e^{-L (\\frac{q_n}{4}-x) } r_{j-1}+ e^{-L (\\frac{q_n}{4}+x) } r_{j-\\frac{3}{2}})\\nonumber\\\\\n            &+e^{-\\frac{3}{2} L q_n+2\\beta_{j} q_n+C\\varepsilon q_n}|P_{[x_1,p-1]}|  (e^{-L (\\frac{q_n}{4}+x) } r_{j}+ e^{-L (\\frac{q_n}{4}-x) } r_{j+\\frac{1}{2}}).\\label{g63}\n\n\\end{aligned}$$",
+    "labels": [
+      "12g2",
+      "2g0",
+      "2g1",
+      "2g2",
+      "2g30",
+      "2g4",
+      "2g44",
+      "2g45",
+      "2g7",
+      "2g8",
+      "2sq",
+      "g1000",
+      "g121",
+      "g171",
+      "g24",
+      "g25",
+      "g26",
+      "g37",
+      "g38",
+      "g39",
+      "g40",
+      "g41",
+      "g42",
+      "g43",
+      "g44",
+      "g45",
+      "g501",
+      "g63",
+      "gg100"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L535-545::s11",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$",
+    "start_line": 535,
+    "end_line": 545,
+    "text": "\\end{aligned}$$\n\nWe are going to bound $$\\label{gg102}\n            e^{-\\frac{3}{2} L q_n+2\\beta_{j} q_n+C\\varepsilon q_n}|P_{[p+1,x_2]}| (e^{-L (\\frac{q_n}{4}-x) } r_{j-1}+ e^{-L (\\frac{q_n}{4}+x) } r_{j-\\frac{3}{2}})$$ and $$\\label{gg101}\n            e^{-\\frac{3}{2} L q_n+2\\beta_{j} q_n+C\\varepsilon q_n}|P_{[x_1,p-1]}|  (e^{-L (\\frac{q_n}{4}+x) } r_{j}+ e^{-L (\\frac{q_n}{4}-x) } r_{j+\\frac{1}{2}})$$ separately.\n\nBy <a href=\"#Numerator1\" data-reference-type=\"eqref\" data-reference=\"Numerator1\">[Numerator1]</a>, one has $$\\label{g47}\n            |P_{[p+1,x_2]}|\\leq e^{L(\\frac{1}{4}q_n+x) +C\\varepsilon q_n}.$$ By <a href=\"#g47\" data-reference-type=\"eqref\" data-reference=\"g47\">[g47]</a>, one has $$\\begin{aligned}\n            e^{-\\frac{3}{2} L q_n+2\\beta_{j} q_n} &|P_{[p+1,x_2]}|  (e^{-L (\\frac{q_n}{4}-x) } r_{j-1}+ e^{-L (\\frac{q_n}{4}+x) } r_{j-\\frac{3}{2}})\\nonumber\\\\\n            %\n            %\n            \\leq    &  e^{-\\frac{3}{2} L q_n+2\\beta_{j} q_n+2Lx+C\\varepsilon q_n}   r_{j-1}+ e^{-\\frac{3}{2} L q_n+2\\beta_{j} q_n+C\\varepsilon q_n}  r_{j-\\frac{3}{2}}.\\label{g49}",
+    "labels": [
+      "g47",
+      "g49",
+      "gg101",
+      "gg102"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L546-549::s12",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$",
+    "start_line": 546,
+    "end_line": 549,
+    "text": "By <a href=\"#Numerator1\" data-reference-type=\"eqref\" data-reference=\"Numerator1\">[Numerator1]</a>, one has $$\\label{g47}\n            |P_{[p+1,x_2]}|\\leq e^{L(\\frac{1}{4}q_n+x) +C\\varepsilon q_n}.$$ By <a href=\"#g47\" data-reference-type=\"eqref\" data-reference=\"g47\">[g47]</a>, one has $$\\begin{aligned}\n            e^{-\\frac{3}{2} L q_n+2\\beta_{j} q_n} &|P_{[p+1,x_2]}|  (e^{-L (\\frac{q_n}{4}-x) } r_{j-1}+ e^{-L (\\frac{q_n}{4}+x) } r_{j-\\frac{3}{2}})\\nonumber\\\\\n            %\n            %\n            \\leq    &  e^{-\\frac{3}{2} L q_n+2\\beta_{j} q_n+2Lx+C\\varepsilon q_n}   r_{j-1}+ e^{-\\frac{3}{2} L q_n+2\\beta_{j} q_n+C\\varepsilon q_n}  r_{j-\\frac{3}{2}}.\\label{g49}\n\n\\end{aligned}$$ By <a href=\"#g500\" data-reference-type=\"eqref\" data-reference=\"g500\">[g500]</a>, one has $$\\label{g50}\n            r_{j-\\frac{3}{2}}\\leq e^{C\\varepsilon q_n+\\frac{q_n}{2} L} r_{j-1}.$$ By <a href=\"#g49\" data-reference-type=\"eqref\" data-reference=\"g49\">[g49]</a>, <a href=\"#g50\" data-reference-type=\"eqref\" data-reference=\"g50\">[g50]</a> and the fact that $0\\leq x\\leq \\frac{1}{4}q_n$, one has $$\\label{g51}\n            e^{-\\frac{3}{2} L q_n+2\\beta_{j} q_n}|P_{[p+1,x_2]}|  (e^{-L (\\frac{q_n}{4}-x) } r_{j-1}+ e^{-L (\\frac{q_n}{4}+x) } r_{j-\\frac{3}{2}})\\leq e^{-(L-2\\beta_{j} ) q_n+C\\varepsilon q_n} r_{j-1}.$$ We finish the estimate of <a href=\"#gg102\" data-reference-type=\"eqref\" data-reference=\"gg102\">[gg102]</a>. Now we are in the position to bound <a href=\"#gg101\" data-reference-type=\"eqref\" data-reference=\"gg101\">[gg101]</a>.",
+    "labels": [
+      "g47",
+      "g49",
+      "g50",
+      "g51"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L550-561::s13",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$",
+    "start_line": 550,
+    "end_line": 561,
+    "text": "\\end{aligned}$$ By <a href=\"#g500\" data-reference-type=\"eqref\" data-reference=\"g500\">[g500]</a>, one has $$\\label{g50}\n            r_{j-\\frac{3}{2}}\\leq e^{C\\varepsilon q_n+\\frac{q_n}{2} L} r_{j-1}.$$ By <a href=\"#g49\" data-reference-type=\"eqref\" data-reference=\"g49\">[g49]</a>, <a href=\"#g50\" data-reference-type=\"eqref\" data-reference=\"g50\">[g50]</a> and the fact that $0\\leq x\\leq \\frac{1}{4}q_n$, one has $$\\label{g51}\n            e^{-\\frac{3}{2} L q_n+2\\beta_{j} q_n}|P_{[p+1,x_2]}|  (e^{-L (\\frac{q_n}{4}-x) } r_{j-1}+ e^{-L (\\frac{q_n}{4}+x) } r_{j-\\frac{3}{2}})\\leq e^{-(L-2\\beta_{j} ) q_n+C\\varepsilon q_n} r_{j-1}.$$ We finish the estimate of <a href=\"#gg102\" data-reference-type=\"eqref\" data-reference=\"gg102\">[gg102]</a>. Now we are in the position to bound <a href=\"#gg101\" data-reference-type=\"eqref\" data-reference=\"gg101\">[gg101]</a>.\n\nBy <a href=\"#g102\" data-reference-type=\"eqref\" data-reference=\"g102\">[g102]</a>, one has $$\\label{g52}\n            |P_{[x_1-(j-1)q_n,p-1-(j-1)q_n]}|\\leq e^{L (\\frac{3q_n}{4}+x)+C\\varepsilon q_n}.$$ By Lemma <a href=\"#klem1\" data-reference-type=\"ref\" data-reference=\"klem1\">7</a> and <a href=\"#g52\" data-reference-type=\"eqref\" data-reference=\"g52\">[g52]</a>, we have $$\\label{g53}\n            |P_{[x_1,p-1]}|\\leq e^{L (\\frac{3q_n}{4}+x)+C\\varepsilon q_n}+e^{L(\\frac{5q_n}{4}-x)-\\beta_{j}q_n+C\\varepsilon q_n}.$$ By <a href=\"#g53\" data-reference-type=\"eqref\" data-reference=\"g53\">[g53]</a>, one has $$\\begin{aligned}\n            e^{-\\frac{3}{2} L q_n+2\\beta_{j} q_n} &e^{-L ( \\frac{q_n}{4}+x) }|P_{[x_1,p-1]}|  r_{j}\\nonumber\\\\\n            \\leq &  e^{-\\frac{3}{2} L q_n+2\\beta_{j} q_n+C\\varepsilon q_n}(e^{L (\\frac{3q_n}{4}+x)}+e^{L(\\frac{5q_n}{4}-x)-\\beta_{j}q_n }) e^{-L (\\frac{q_n}{4}+x) } r_{j}\\nonumber\\\\\n            \\leq &e^{-(L-2\\beta_{j})q_n+C\\varepsilon q_n} r_j+e^{-(L-2\\beta_{j})\\frac{q_n}{2}-2L x+C\\varepsilon q_n} r_j\\nonumber\\\\\n            \\leq &  e^{-(L-2\\beta_{j})\\frac{q_n}{2}+C\\varepsilon q_n} r_j.\\label{g55}\n\n\\end{aligned}$$\n\nThis implies that the first term in <a href=\"#gg101\" data-reference-type=\"eqref\" data-reference=\"gg101\">[gg101]</a> decays. We are going to bound the remaining term in <a href=\"#gg101\" data-reference-type=\"eqref\" data-reference=\"gg101\">[gg101]</a>: $$e^{-\\frac{3}{2} L q_n+2\\beta_{j} q_n}   e^{-L (\\frac{q_n}{4}-x) }|P_{[x_1,p-1]}|   r_{j+\\frac{1}{2}}.$$",
+    "labels": [
+      "g50",
+      "g51",
+      "g52",
+      "g53",
+      "g55"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L562-577::s14",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$",
+    "start_line": 562,
+    "end_line": 577,
+    "text": "This implies that the first term in <a href=\"#gg101\" data-reference-type=\"eqref\" data-reference=\"gg101\">[gg101]</a> decays. We are going to bound the remaining term in <a href=\"#gg101\" data-reference-type=\"eqref\" data-reference=\"gg101\">[gg101]</a>: $$e^{-\\frac{3}{2} L q_n+2\\beta_{j} q_n}   e^{-L (\\frac{q_n}{4}-x) }|P_{[x_1,p-1]}|   r_{j+\\frac{1}{2}}.$$\n\nBy Lemma <a href=\"#klem1\" data-reference-type=\"ref\" data-reference=\"klem1\">7</a>, one has $$\\label{2g38}\n             |P_{[x_1+q_n,p-1+q_n]}- P_{[{x}_1,p-1]}| \\leq e^{L (\\frac{5}{4}q_n-x)-\\beta q_n+C\\varepsilon q_n}.$$ By <a href=\"#2g38\" data-reference-type=\"eqref\" data-reference=\"2g38\">[2g38]</a>, we have $$\\begin{aligned}\n            e^{-\\frac{3}{2} L q_n+2\\beta_{j} q_n}   &e^{-L (\\frac{q_n}{4}-x) }|P_{[x_1,p-1]}|   r_{j+\\frac{1}{2}}\\nonumber\\\\\n            \\leq& e^{-\\frac{3}{2} L q_n+2\\beta_{j} q_n}|P_{[x_1+q_n,p-1+q_n]}|    e^{-L (\\frac{q_n}{4}-x) } r_{j+\\frac{1}{2}}\\nonumber \\\\\n            &+ e^{L (\\frac{5}{4}q_n-x)-\\beta q_n+C\\varepsilon q_n}e^{-\\frac{3}{2} L q_n+2\\beta_{j} q_n}    e^{-L (\\frac{q_n}{4}-x) } r_{j+\\frac{1}{2}} \\nonumber\\\\\n            \\leq & e^{-\\frac{3}{2} L q_n+2\\beta_{j} q_n}  e^{-L (\\frac{q_n}{4}-x) } |P_{[x_1+q_n,p-1+q_n]}|    r_{j+\\frac{1}{2}}  +e^{- (L-2\\beta_{j}-C\\varepsilon)\\frac{q_n}{2}}r_{j+\\frac{1}{2}}.\\label{g61}\n\n\\end{aligned}$$ The second term in <a href=\"#g61\" data-reference-type=\"eqref\" data-reference=\"g61\">[g61]</a> decays, so we are going to bound the first term in <a href=\"#g61\" data-reference-type=\"eqref\" data-reference=\"g61\">[g61]</a>: $e^{-\\frac{3}{2} L q_n+2\\beta_{j} q_n}  e^{-L (\\frac{q_n}{4}-x) } |P_{[x_1+q_n,p-1+q_n]}|    r_{j+\\frac{1}{2}}$.\n\nClearly, $x_1+q_n\\in[jq_n-\\frac{1}{4}q_n, jq_n]$. By Lemma <a href=\"#Le.resonant\" data-reference-type=\"ref\" data-reference=\"Le.resonant\">4</a>, one has that $$\\label{22g30}\n            |\\phi(x_1^\\prime+q_n)|\\leq r_{j} e^{-L  (\\frac{q_n}{4}-x)+C\\varepsilon q_n} +r_{j-\\frac{1}{2}} e^{-L (\\frac{q_n}{4} +x)+C\\varepsilon q_n} .$$\n\n<div class=\"center\">\n\n</div>",
+    "labels": [
+      "22g30",
+      "2g38",
+      "g61"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L578-596::s15",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$",
+    "start_line": 578,
+    "end_line": 596,
+    "text": "</div>\n\nBy <a href=\"#g100\" data-reference-type=\"eqref\" data-reference=\"g100\">[g100]</a>, <a href=\"#Numerator1\" data-reference-type=\"eqref\" data-reference=\"Numerator1\">[Numerator1]</a> and <a href=\"#22g30\" data-reference-type=\"eqref\" data-reference=\"22g30\">[22g30]</a>, one has for any $y$ with $|y-jq_n-\\frac{1}{2} q_n|\\leq 10 \\varepsilon q_n$, $$\\begin{aligned}\n            |\\phi(y)|\\leq & |P_{[x_1+q_n,p-1+q_n]}|^{-1} |P_{[y+1,p+q_n]}| (r_{j} e^{-L  (\\frac{q_n}{4}-x) +C\\varepsilon q_n } +r_{j-\\frac{1}{2}} e^{-L (\\frac{q_n}{4} +x)+C\\varepsilon q_n} )\\nonumber\\\\\n            &+|P_{[x_1+q_n,p+q_n]}|^{-1}|P_{[x_1+q_n,y-1]}|   r_{j+1}\\nonumber\\\\\n            \\leq &  |P_{[x_1+q_n,p-1+q_n]}|^{-1}  e^{L \\frac{q_n}{2}+C\\varepsilon q_n} (r_{j} e^{-L  (\\frac{q_n}{4}-x)  } +r_{j-\\frac{1}{2}} e^{-L (\\frac{q_n}{4} +x)} )\\nonumber\\\\\n            &+|P_{[x_1+q_n,p-1+q_n]}|^{-1}e^{\\frac{3}{4}Lq_n-Lx +C\\varepsilon q_n}  r_{j+1}.\\label{g56}\n\n\\end{aligned}$$\n\nThis implies $$\\label{g58}\n        r_{j+\\frac{1}{2}}   |P_{[x_1+q_n,p-1+q_n]}| \n            \\leq    e^{L \\frac{q_n}{4}+C\\varepsilon q_n} (r_{j} e^{Lx } +r_{j-\\frac{1}{2}} e^{-Lx} )+  e^{\\frac{3}{4} Lq_n-Lx+C\\varepsilon q_n} r_{j+1}.$$\n\nBy <a href=\"#g58\" data-reference-type=\"eqref\" data-reference=\"g58\">[g58]</a>, one has $$\\begin{aligned}\n            e^{-\\frac{3}{2}L q_n +2\\beta_{j} q_n}e^{-L(\\frac{q_n}{4}-x)}&   |P_{[x_1+q_n,p-1+q_n]}  |r_{j+\\frac{1}{2}}\\nonumber\\\\\n            \\leq&e^{- \\frac{3}{2} L q_n+2\\beta_{j}q_n+2L x+C\\varepsilon q_n} r_j \n            +e^{-\\frac{3}{2}L q_n+2\\beta_{j} q_n+C\\varepsilon q_n}r_{j-\\frac{1}{2}}\\nonumber\\\\\n            &+e^{-  L q_n+2\\beta_{j}q_n +C\\varepsilon q_n}r_{j+1}\\nonumber\\\\\n            \\leq & e^{-L q_n+2\\beta_{j}q_n+C\\varepsilon q_n}r_{j+1}+e^{- L q_n+2\\beta_{j} q_n+C\\varepsilon q_n}r_{j},\\label{g60}",
+    "labels": [
+      "g56",
+      "g58",
+      "g60"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L597-614::s16",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$",
+    "start_line": 597,
+    "end_line": 614,
+    "text": "By <a href=\"#g58\" data-reference-type=\"eqref\" data-reference=\"g58\">[g58]</a>, one has $$\\begin{aligned}\n            e^{-\\frac{3}{2}L q_n +2\\beta_{j} q_n}e^{-L(\\frac{q_n}{4}-x)}&   |P_{[x_1+q_n,p-1+q_n]}  |r_{j+\\frac{1}{2}}\\nonumber\\\\\n            \\leq&e^{- \\frac{3}{2} L q_n+2\\beta_{j}q_n+2L x+C\\varepsilon q_n} r_j \n            +e^{-\\frac{3}{2}L q_n+2\\beta_{j} q_n+C\\varepsilon q_n}r_{j-\\frac{1}{2}}\\nonumber\\\\\n            &+e^{-  L q_n+2\\beta_{j}q_n +C\\varepsilon q_n}r_{j+1}\\nonumber\\\\\n            \\leq & e^{-L q_n+2\\beta_{j}q_n+C\\varepsilon q_n}r_{j+1}+e^{- L q_n+2\\beta_{j} q_n+C\\varepsilon q_n}r_{j},\\label{g60}\n\n\\end{aligned}$$ where the last inequality holds by the fact that $r_{j-\\frac{1}{2}}\\leq e^{\\frac{q_n}{2}L+C\\varepsilon q_n} r_j$ and $0\\leq x\\leq \\frac{q_n}{4}$.\n\nBy <a href=\"#g61\" data-reference-type=\"eqref\" data-reference=\"g61\">[g61]</a> and <a href=\"#g60\" data-reference-type=\"eqref\" data-reference=\"g60\">[g60]</a>, one has $$\\begin{aligned}\n            e^{-\\frac{3}{2} L q_n+2\\beta_{j} q_n}&|P_{[x_1,p-1]}|   e^{-L (\\frac{q_n}{4}-x) } r_{j+\\frac{1}{2}}\\nonumber\\\\\n            \\leq &e^{-L q_n+2\\beta_{j}q_n+C\\varepsilon q_n}(r_{j+1}+r_j)+e^{- (L-2\\beta_{j}-C\\varepsilon)\\frac{q_n}{2}}r_{j+\\frac{1}{2}}. \\label{g62}\n\n\\end{aligned}$$\n\nBy <a href=\"#g63\" data-reference-type=\"eqref\" data-reference=\"g63\">[g63]</a>, <a href=\"#g51\" data-reference-type=\"eqref\" data-reference=\"g51\">[g51]</a>, <a href=\"#g55\" data-reference-type=\"eqref\" data-reference=\"g55\">[g55]</a> and <a href=\"#g62\" data-reference-type=\"eqref\" data-reference=\"g62\">[g62]</a> $$\\begin{aligned}\n            r_j \\leq &e^{-(L  -2\\beta_{j}-C\\varepsilon)q_n}   (r_{j-1}+r_{j+1}) +  e^{-(L-2\\beta_{j})\\frac{q_n}{2}+C\\varepsilon q_n} r_{j+\\frac{1}{2}}\\nonumber\\\\\n            &+(e^{-L q_n+2\\beta_{j}q_n+C\\varepsilon q_n}+e^{- \\frac{1}{2}L q_n+\\beta_{j} q_n+C\\varepsilon q_n}) r_{j}.\\label{g128}\n\n\\end{aligned}$$ Since $$(e^{-L q_n+2\\beta_{j}q_n+C\\varepsilon q_n}+e^{- \\frac{1}{2}L q_n+\\beta_{j} q_n+C\\varepsilon q_n}) r_{j}\\leq \\frac{1}{2}r_j,$$ by <a href=\"#g128\" data-reference-type=\"eqref\" data-reference=\"g128\">[g128]</a>, one has $$\\label{g70}\n            r_j\\leq \n            e^{-(L  -2\\beta_{j}-C\\varepsilon)q_n}   (r_{j-1}+r_{j+1}) +  e^{-(L-2\\beta_{j}-C\\varepsilon)\\frac{q_n}{2}} r_{j+\\frac{1}{2}}.$$\n\n**Case 4**: $j_0\\in[jq_n+\\frac{1}{4}q_n, jq_n+\\frac{1}{2}q_n]\\cap I_2$",
+    "labels": [
+      "g128",
+      "g60",
+      "g62",
+      "g70"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L615-621::s17",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$",
+    "start_line": 615,
+    "end_line": 621,
+    "text": "**Case 4**: $j_0\\in[jq_n+\\frac{1}{4}q_n, jq_n+\\frac{1}{2}q_n]\\cap I_2$\n\nIn this case, following the proof of Case 3, we have $$\\label{g71}\n            r_j\\leq e^{-(L  -2\\beta_{j}-C\\varepsilon)q_n}   (r_{j-1}+r_{j+1}) +  e^{-(L-2\\beta_{j}-C\\varepsilon)\\frac{q_n}{2}} r_{j-\\frac{1}{2}}.$$\n\nIf $j_0\\in I_1$, then <a href=\"#g44\" data-reference-type=\"eqref\" data-reference=\"g44\">[g44]</a>, <a href=\"#g45\" data-reference-type=\"eqref\" data-reference=\"g45\">[g45]</a>, (<a href=\"#g70\" data-reference-type=\"ref\" data-reference=\"g70\">[g70]</a>) and <a href=\"#g71\" data-reference-type=\"eqref\" data-reference=\"g71\">[g71]</a> hold for $j=0$. Therefore, we have $$|\\phi(0)|\\leq \\frac{1}{2}.$$ This is in contradiction with $\\phi(0)=1$. Therefore we must have $j_0\\in I_2$ and <a href=\"#g1000\" data-reference-type=\"eqref\" data-reference=\"g1000\">[g1000]</a> follows from <a href=\"#g44\" data-reference-type=\"eqref\" data-reference=\"g44\">[g44]</a>, <a href=\"#g45\" data-reference-type=\"eqref\" data-reference=\"g45\">[g45]</a>, (<a href=\"#g70\" data-reference-type=\"ref\" data-reference=\"g70\">[g70]</a>) and <a href=\"#g71\" data-reference-type=\"eqref\" data-reference=\"g71\">[g71]</a>. ◻\n\n</div>",
+    "labels": [
+      "g71"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": " Resonance I: sites $jq_n+\\frac{q_n}{2},j\\in\\mathbb{Z}$"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L622-631::s0",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Proof of Theorem <a href=\"#mainthm\" data-reference-type=\"ref\" data-reference=\"mainthm\">1</a>",
+    "start_line": 622,
+    "end_line": 631,
+    "text": "# Proof of Theorem <a href=\"#mainthm\" data-reference-type=\"ref\" data-reference=\"mainthm\">1</a>\n\nOnce we have Theorems <a href=\"#thm1\" data-reference-type=\"ref\" data-reference=\"thm1\">8</a> and <a href=\"#thm2\" data-reference-type=\"ref\" data-reference=\"thm2\">9</a> at hand, Theorem <a href=\"#mainthm\" data-reference-type=\"ref\" data-reference=\"mainthm\">1</a> follows from standard iterations. See   for example. For the convenience, we include a proof here.\n\n<div class=\"proof\">\n\n***Proof of Theorem <a href=\"#mainthm\" data-reference-type=\"ref\" data-reference=\"mainthm\">1</a>**.* Without loss of generality, we only bound $\\phi(k)$ with $k>0$. Let $n$ be such that $b_n\\leq k<b_{n+1}$. Clearly, $\\beta_j\\leq \\beta+\\varepsilon$. By Theorems <a href=\"#thm1\" data-reference-type=\"ref\" data-reference=\"thm1\">8</a> and <a href=\"#thm2\" data-reference-type=\"ref\" data-reference=\"thm2\">9</a>, we have for any $j$ with $1\\leq   j  \\leq 2\\frac{b_{n+1}}{q_n}+10$, $$\\label{G.r_j2}\n            r_{j-\\frac{1}{2} }\\leq  \\exp\\{ - \\frac{1}{2}(L-2\\beta-C\\varepsilon) q_n \\} \\max\\{r_{j-1},r_{j}\\} ,$$ and $$\\label{G.r_j1}\n            r_{j }\\leq  \\max_{t\\in O}\\{\\exp\\{ -|t|(L-2\\beta-C\\varepsilon) q_n \\} r_{j+t}\\} ,$$ where $O=\\{ \\pm1,\\pm\\frac{1}{2}$}.",
+    "labels": [
+      "G.r_j1",
+      "G.r_j2"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Proof of Theorem <a href=\"#mainthm\" data-reference-type=\"ref\" data-reference=\"mainthm\">1</a>"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L632-647::s1",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Proof of Theorem <a href=\"#mainthm\" data-reference-type=\"ref\" data-reference=\"mainthm\">1</a>",
+    "start_line": 632,
+    "end_line": 647,
+    "text": "***Proof of Theorem <a href=\"#mainthm\" data-reference-type=\"ref\" data-reference=\"mainthm\">1</a>**.* Without loss of generality, we only bound $\\phi(k)$ with $k>0$. Let $n$ be such that $b_n\\leq k<b_{n+1}$. Clearly, $\\beta_j\\leq \\beta+\\varepsilon$. By Theorems <a href=\"#thm1\" data-reference-type=\"ref\" data-reference=\"thm1\">8</a> and <a href=\"#thm2\" data-reference-type=\"ref\" data-reference=\"thm2\">9</a>, we have for any $j$ with $1\\leq   j  \\leq 2\\frac{b_{n+1}}{q_n}+10$, $$\\label{G.r_j2}\n            r_{j-\\frac{1}{2} }\\leq  \\exp\\{ - \\frac{1}{2}(L-2\\beta-C\\varepsilon) q_n \\} \\max\\{r_{j-1},r_{j}\\} ,$$ and $$\\label{G.r_j1}\n            r_{j }\\leq  \\max_{t\\in O}\\{\\exp\\{ -|t|(L-2\\beta-C\\varepsilon) q_n \\} r_{j+t}\\} ,$$ where $O=\\{ \\pm1,\\pm\\frac{1}{2}$}.\n\nSuppose $1 \\leq \\ell \\leq \\frac{b_{n+1}}{q_n}+4$. Let $j=\\ell$ in (<a href=\"#G.r_j1\" data-reference-type=\"ref\" data-reference=\"G.r_j1\">[G.r_j1]</a>) and (<a href=\"#G.r_j2\" data-reference-type=\"ref\" data-reference=\"G.r_j2\">[G.r_j2]</a>), and iterate $2\\ell$ times or until $j\\leq 1$, we obtain $$\\label{radd1}\n            r_{\\ell} \\leq  (2\\ell+2)q_n\\exp\\{- (L-2\\beta -C\\varepsilon) \\ell q_n\\},$$ and $$\\label{radd2}\n            r_{\\ell-\\frac{1}{2}}\\leq  (2\\ell+2)q_n\\exp\\{- (L-2\\beta -C\\varepsilon) (\\ell -\\frac{1}{2})q_n\\}.$$ Notice that we have used the fact that $|r_{j}|\\leq (j+1)q_n$ and $|r_{j-\\frac{1}{2}}|\\leq (j+1)q_n$.\n\n**Case 1:** $k\\geq \\frac{q_n}{4}$ and ${\\rm dist}(k, q_n\\mathbb{Z}+\\frac{q_n}{2}\\mathbb{Z} )\\leq     10\\varepsilon q_n$.\n\nIn this case, applying <a href=\"#radd1\" data-reference-type=\"eqref\" data-reference=\"radd1\">[radd1]</a> and <a href=\"#radd2\" data-reference-type=\"eqref\" data-reference=\"radd2\">[radd2]</a>, one has $$\\label{Decayoct1}\n            | \\phi(k)| ,  | \\phi(k-1)|\\leq   \\exp\\{- (L-2\\beta -C\\varepsilon)k\\}.$$\n\n**Case 2**: others\n\nApplying Lemma <a href=\"#Le.resonant\" data-reference-type=\"ref\" data-reference=\"Le.resonant\">4</a> with sufficiently small $\\varepsilon$, and by <a href=\"#radd1\" data-reference-type=\"eqref\" data-reference=\"radd1\">[radd1]</a> and <a href=\"#radd2\" data-reference-type=\"eqref\" data-reference=\"radd2\">[radd2]</a>, one also has $$\\label{Decayoct2}\n            | \\phi(k)|, | \\phi(k-1)|\\leq   \\exp\\{- (L-2\\beta -C\\varepsilon )k\\}.$$ We finish the proof. ◻\n\n</div>",
+    "labels": [
+      "Decayoct1",
+      "Decayoct2",
+      "G.r_j1",
+      "G.r_j2",
+      "radd1",
+      "radd2"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Proof of Theorem <a href=\"#mainthm\" data-reference-type=\"ref\" data-reference=\"mainthm\">1</a>"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L648-669::s0",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Proof of Claims 1 and 2",
+    "start_line": 648,
+    "end_line": 669,
+    "text": "# Proof of Claims 1 and 2\n\nLet $\\frac{p_n}{q_n}$ be the continued fraction approximations to $\\alpha$, then $$\\label{GDC1}\n        \\forall 1\\leq k <q_{n+1},  \\text{dist}( k\\alpha,\\mathbb{Z})\\geq  |q_n\\alpha -p_n|,$$ and $$\\label{GDC2}\n        \\frac{1}{2q_{n+1}}\\leq|q_n\\alpha-p_n| \\leq\\frac{1}{q_{n+1}}.$$\n\n<div class=\"proof\">\n\n***Proof of Claim 1**.* By the construction of $I_1$ and $I_2$ in Claim 1, <a href=\"#GDC1\" data-reference-type=\"eqref\" data-reference=\"GDC1\">[GDC1]</a> and <a href=\"#GDC2\" data-reference-type=\"eqref\" data-reference=\"GDC2\">[GDC2]</a>, we have that\n\n- for any $m \\in I_1$, $$\\label{Appenoct1}\n                  \\min_{\\ell \\in I_1\\cup I_2}\\ln |\\sin \\pi(2\\theta +(\\ell +  m)\\alpha)|\\geq -C\\ln q_n,$$ and $$\\label{Appenoct2}\n                  \\min_{\\ell \\neq m\\atop \\ell \\in I_1\\cup I_2} \\ln |\\sin\n                  \\pi (\\ell-m)\\alpha) | \\geq -C\\ln q_n;$$\n\n- for any $m\\in I_2$, $$\\label{Appenoct3}\n                  \\min_{\\ell \\in I_1\\cup I_2}\\ln |\\sin \\pi(2\\theta +(\\ell +  m)\\alpha)|_{\\mathbb{R}/\\mathbb{Z}}\\geq  -\\beta_{j} q_n-C\\ln q_n,$$ and $$\\label{Appenoct4}\n                  \\min_{\\ell \\neq m\\atop \\ell \\in I_1\\cup I_2} \\ln |\\sin\n                  \\pi (\\ell-m )\\alpha) | \\geq -C\\ln q_n.$$\n\nWe should mention that, for each $m\\in I_2$, there is at most one $\\ell\\in I_1\\cup I_2$ such that the lower bound of <a href=\"#Appenoct3\" data-reference-type=\"eqref\" data-reference=\"Appenoct3\">[Appenoct3]</a> can be achieved.",
+    "labels": [
+      "Appenoct1",
+      "Appenoct2",
+      "Appenoct3",
+      "Appenoct4",
+      "GDC1",
+      "GDC2"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Proof of Claims 1 and 2"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L670-680::s1",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Proof of Claims 1 and 2",
+    "start_line": 670,
+    "end_line": 680,
+    "text": "We should mention that, for each $m\\in I_2$, there is at most one $\\ell\\in I_1\\cup I_2$ such that the lower bound of <a href=\"#Appenoct3\" data-reference-type=\"eqref\" data-reference=\"Appenoct3\">[Appenoct3]</a> can be achieved.\n\nOnce we have <a href=\"#Appenoct1\" data-reference-type=\"eqref\" data-reference=\"Appenoct1\">[Appenoct1]</a>-<a href=\"#Appenoct4\" data-reference-type=\"eqref\" data-reference=\"Appenoct4\">[Appenoct4]</a> at hand, by the standard arguments (e.g. Appendices in  ), we have that for any $m\\in I_1$, $${\\rm Lag}_m\\leq \\varepsilon q_n$$ and for any $m\\in I_2$, $${\\rm Lag}_m\\leq \\beta_j q_n+ \\varepsilon q_n.$$ ◻\n\n</div>\n\n<div class=\"proof\">\n\n***Proof of Claim 2**.* By the construction of $I_1$ and $I_2$ in Claim 2, <a href=\"#GDC1\" data-reference-type=\"eqref\" data-reference=\"GDC1\">[GDC1]</a> and <a href=\"#GDC2\" data-reference-type=\"eqref\" data-reference=\"GDC2\">[GDC2]</a>, we have that for $m \\in I_1 \\cup [jq_n-2s q_{n-n_0},jq_n-1]$, $$\\label{Appenoct11}\n            \\min_{\\ell \\in I_1\\cup I_2 }\\ln |\\sin \\pi(2\\theta +(\\ell +  m)\\alpha)|\\geq \\beta_{j} q_n-C\\ln q_n,$$ and $$\\label{Appenoct21}\n            \\min_{\\ell \\neq m\\atop \\ell \\in I_1\\cup I_2} \\ln |\\sin\n            \\pi (\\ell-m)\\alpha) | \\geq  \\beta_{j} q_n-C\\ln q_n.$$ We should mention that, for each $m \\in I_1 \\cup [jq_n-2s q_{n-n_0},jq_n-1]$, there is at most one $\\ell \\in I_1\\cup I_2$ such that the lower bound of <a href=\"#Appenoct11\" data-reference-type=\"eqref\" data-reference=\"Appenoct11\">[Appenoct11]</a> or <a href=\"#Appenoct21\" data-reference-type=\"eqref\" data-reference=\"Appenoct21\">[Appenoct21]</a> can be achieved.",
+    "labels": [
+      "Appenoct11",
+      "Appenoct21"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Proof of Claims 1 and 2"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L681-687::s2",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Proof of Claims 1 and 2",
+    "start_line": 681,
+    "end_line": 687,
+    "text": "***Proof of Claim 2**.* By the construction of $I_1$ and $I_2$ in Claim 2, <a href=\"#GDC1\" data-reference-type=\"eqref\" data-reference=\"GDC1\">[GDC1]</a> and <a href=\"#GDC2\" data-reference-type=\"eqref\" data-reference=\"GDC2\">[GDC2]</a>, we have that for $m \\in I_1 \\cup [jq_n-2s q_{n-n_0},jq_n-1]$, $$\\label{Appenoct11}\n            \\min_{\\ell \\in I_1\\cup I_2 }\\ln |\\sin \\pi(2\\theta +(\\ell +  m)\\alpha)|\\geq \\beta_{j} q_n-C\\ln q_n,$$ and $$\\label{Appenoct21}\n            \\min_{\\ell \\neq m\\atop \\ell \\in I_1\\cup I_2} \\ln |\\sin\n            \\pi (\\ell-m)\\alpha) | \\geq  \\beta_{j} q_n-C\\ln q_n.$$ We should mention that, for each $m \\in I_1 \\cup [jq_n-2s q_{n-n_0},jq_n-1]$, there is at most one $\\ell \\in I_1\\cup I_2$ such that the lower bound of <a href=\"#Appenoct11\" data-reference-type=\"eqref\" data-reference=\"Appenoct11\">[Appenoct11]</a> or <a href=\"#Appenoct21\" data-reference-type=\"eqref\" data-reference=\"Appenoct21\">[Appenoct21]</a> can be achieved.\n\nWe also have that for $m \\in[jq_n, jq_n+2 sq_{n-n_0}-1]$, $$\\label{Appenoct111}\n        \\min_{\\ell \\in I_1\\cup I_2 }\\ln |\\sin \\pi(2\\theta +(\\ell +  m)\\alpha)|\\geq \\beta_{j} q_n-C\\ln q_n,$$ and $$\\label{Appenoct211}\n        \\min_{\\ell \\neq m\\atop \\ell \\in I_1\\cup I_2} \\ln |\\sin\n        \\pi (\\ell-m)\\alpha) | \\geq   -C\\ln q_n.$$ Moreover, for each $m \\in[jq_n, jq_n+2 sq_{n-n_0}-1]$, there is at most two $\\ell \\in I_1\\cup I_2$ such that the lower bound of <a href=\"#Appenoct111\" data-reference-type=\"eqref\" data-reference=\"Appenoct111\">[Appenoct111]</a>. Once we have <a href=\"#Appenoct11\" data-reference-type=\"eqref\" data-reference=\"Appenoct11\">[Appenoct11]</a>-<a href=\"#Appenoct211\" data-reference-type=\"eqref\" data-reference=\"Appenoct211\">[Appenoct211]</a> at hand, by the standard arguments (e.g. Appendices in  ), we have that for any $m\\in I_1\\cup I_2$, $${\\rm Lag}_m\\leq 2\\beta_{j}q_n+ \\varepsilon q_n.$$ ◻\n\n</div>",
+    "labels": [
+      "Appenoct11",
+      "Appenoct111",
+      "Appenoct21",
+      "Appenoct211"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Proof of Claims 1 and 2"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L688-724::s0",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Acknowledgments",
+    "start_line": 688,
+    "end_line": 724,
+    "text": "# Acknowledgments\n\nThe author was supported by NSF DMS-2000345 and DMS-2052572.\n\n<div class=\"thebibliography\">\n\n10\n\nA. Avila. The absolutely continuous spectrum of the almost Mathieu operator. , 2008.\n\nA. Avila. Global theory of one-frequency Schrödinger operators. , 215(1):1–54, 2015.\n\nA. Avila and D. Damanik. Absolute continuity of the integrated density of states for the almost Mathieu operator with non-critical coupling. , 172(2):439–453, 2008.\n\nA. Avila, B. Fayad, and R. Krikorian. A KAM scheme for ${\\rm SL}(2,\\Bbb R)$ cocycles with Liouvillean frequencies. , 21(5):1001–1019, 2011.\n\nA. Avila and S. Jitomirskaya. The Ten Martini Problem. , 170(1):303–342, 2009.\n\nA. Avila and S. Jitomirskaya. Almost localization and almost reducibility. , 12(1):93–131, 2010.\n\nA. Avila, S. Jitomirskaya, and C. A. Marx. Spectral theory of extended Harper’s model and a question by Erdős and Szekeres. , 210(1):283–339, 2017.\n\nA. Avila, J. You, and Q. Zhou. Sharp phase transitions for the almost Mathieu operator. , 166(14):2697–2718, 2017.\n\nJ. Avron and B. Simon. Singular continuous spectrum for a class of almost periodic Jacobi matrices. , 6(1):81–85, 1982.\n\nJ. M. Berezanskii. Expansions in eigenfunctions of self-adjoint operators. translations of mathematical monographs, vol. 17. , 1968.\n\nJ. Bourgain. , volume 158 of *Annals of Mathematics Studies*. Princeton University Press, Princeton, NJ, 2005.\n\nJ. Bourgain and M. Goldstein. On nonperturbative localization with quasi-periodic potential. , 152(3):835–879, 2000.\n\nJ. Bourgain, M. Goldstein, and W. Schlag. Anderson localization for Schrödinger operators on $\\bold\n        Z^2$ with quasi-periodic potential. , 188(1):41–86, 2002.\n\nJ. Bourgain and S. Jitomirskaya. Absolutely continuous spectrum for 1D quasiperiodic operators. , 148(3):453–463, 2002.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Acknowledgments"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L725-748::s1",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Acknowledgments",
+    "start_line": 725,
+    "end_line": 748,
+    "text": "J. Bourgain and S. Jitomirskaya. Absolutely continuous spectrum for 1D quasiperiodic operators. , 148(3):453–463, 2002.\n\nJ. Bourgain and S. Jitomirskaya. Continuity of the Lyapunov exponent for quasiperiodic operators with analytic potential. volume 108, pages 1203–1218. 2002. Dedicated to David Ruelle and Yasha Sinai on the occasion of their 65th birthdays.\n\nV. A. Chulaevsky and Y. G. Sinaı̆. Anderson localization for the $1$-D discrete Schrödinger operator with two-frequency potential. , 125(1):91–112, 1989.\n\nE. I. Dinaburg and J. G. Sinaı̆. The one-dimensional Schrödinger equation with quasiperiodic potential. , 9(4):8–21, 1975.\n\nL. H. Eliasson. Floquet solutions for the $1$-dimensional quasi-periodic Schrödinger equation. , 146(3):447–482, 1992.\n\nL. H. Eliasson. Discrete one-dimensional quasi-periodic Schrödinger operators with pure point spectrum. , 179(2):153–196, 1997.\n\nJ. Fröhlich and T. Spencer. Absence of diffusion in the Anderson tight binding model for large disorder or low energy. , 88(2):151–184, 1983.\n\nJ. Fröhlich, T. Spencer, and P. Wittwer. Localization for a class of one-dimensional quasi-periodic Schrödinger operators. , 132(1):5–25, 1990.\n\nL. Ge and J. You. Arithmetic version of Anderson localization via reducibility. , 30(5):1370–1401, 2020.\n\nM. Goldstein and W. Schlag. Fine properties of the integrated density of states and a quantitative separation property of the Dirichlet eigenvalues. , 18(3):755–869, 2008.\n\nA. Y. Gordon. The point spectrum of the one-dimensional Schrödinger operator. , 31(4):257–258, 1976.\n\nA. Y. Gordon, S. Jitomirskaya, Y. Last, and B. Simon. Duality and singular continuous spectrum in the almost Mathieu equation. , 178(2):169–183, 1997.\n\nR. Han, S. Jitomirskaya, and F. Yang. Anti-resonances and sharp analysis of maryland localization for all parameters. , 2022.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Acknowledgments"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L749-772::s2",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Acknowledgments",
+    "start_line": 749,
+    "end_line": 772,
+    "text": "R. Han, S. Jitomirskaya, and F. Yang. Anti-resonances and sharp analysis of maryland localization for all parameters. , 2022.\n\nX. Hou and J. You. Almost reducibility and non-perturbative reducibility of quasi-periodic linear systems. , 190(1):209–260, 2012.\n\nS. Jitomirskaya. Critical phenomena, arithmetic phase transitions, and universality: some recent results on the almost Mathieu operator.\n\nS. Jitomirskaya. Almost everything about the almost Mathieu operator. II. In *XIth International Congress of Mathematical Physics (Paris, 1994)*, pages 373–382, 1994.\n\nS. Jitomirskaya. Ergodic Schrödinger operators (on one foot). In *Spectral theory and mathematical physics: a Festschrift in honor of Barry Simon’s 60th birthday*, volume 76 of *Proc. Sympos. Pure Math.*, pages 613–647. Amer. Math. Soc., Providence, RI, 2007.\n\nS. Jitomirskaya. On point spectrum of critical almost Mathieu operators. , 392:Paper No. 107997, 6, 2021.\n\nS. Jitomirskaya, D. A. Koslover, and M. S. Schulteis. Localization for a family of one-dimensional quasiperiodic operators of magnetic origin. , 6(1):103–124, 2005.\n\nS. Jitomirskaya and W. Liu. Arithmetic spectral transitions for the Maryland model. , 70(6):1025–1051, 2017.\n\nS. Jitomirskaya and W. Liu. Universal hierarchical structure of quasiperiodic eigenfunctions. , 187(3):721–776, 2018.\n\nS. Jitomirskaya and W. Liu. Universal reflective-hierarchical structure of quasiperiodic eigenfunctions and sharp spectral transition in phase. , 2018.\n\nS. Jitomirskaya, W. Liu, and S. Zhang. Arithmetic spectral transitions: a competition between hyperbolicity and the arithmetics of small denominators. , 27:35, 2020.\n\nS. Jitomirskaya and B. Simon. Operators with singular continuous spectrum. III. Almost periodic Schrödinger operators. , 165(1):201–205, 1994.\n\nS. Jitomirskaya and F. Yang. Pure point spectrum for the Maryland model: a constructive proof. , 41(1):283–294, 2021.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Acknowledgments"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L773-798::s3",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Acknowledgments",
+    "start_line": 773,
+    "end_line": 798,
+    "text": "S. Jitomirskaya and F. Yang. Pure point spectrum for the Maryland model: a constructive proof. , 41(1):283–294, 2021.\n\nS. Y. Jitomirskaya. Anderson localization for the almost Mathieu equation: a nonperturbative proof. , 165(1):49–57, 1994.\n\nS. Y. Jitomirskaya. Metal-insulator transition for the almost Mathieu operator. , 150(3):1159–1175, 1999.\n\nS. Kotani. Ljapunov indices determine absolutely continuous spectra of stationary random one-dimensional Schrödinger operators. In *Stochastic analysis (Katata/Kyoto, 1982)*, volume 32 of *North-Holland Math. Library*, pages 225–247. North-Holland, Amsterdam, 1984.\n\nY. Last and B. Simon. Eigenfunctions, transfer matrices, and absolutely continuous spectrum of one-dimensional Schrödinger operators. , 135(2):329–367, 1999.\n\nW. Liu. Almost Mathieu operators with completely resonant phases. , 40(7):1875–1893, 2020.\n\nW. Liu and X. Yuan. Anderson localization for the almost Mathieu operator in the exponential regime. , 5(1):89–112, 2015.\n\nW. Liu and X. Yuan. Anderson localization for the completely resonant phases. , 268(3):732–747, 2015.\n\nW. Liu and X. Yuan. Spectral gaps of almost Mathieu operators in the exponential regime. , 2(1):1–51, 2015.\n\nC. A. Marx and S. Jitomirskaya. Dynamics and spectral theory of quasi-periodic Schrödinger-type operators. , 37(8):2353–2393, 2017.\n\nJ. Puig. Cantor spectrum for the almost Mathieu operator. , 244(2):297–309, 2004.\n\nW. Schlag. An introduction to multiscale techniques in the theory of Anderson localization, Part I. , 220:Paper No. 112869, 55, 2022.\n\nB. Simon. Almost periodic Schrödinger operators. IV. The Maryland model. , 159(1):157–183, 1985.\n\nY. G. Sinaı̆. Anderson localization for one-dimensional difference Schrödinger operator with quasiperiodic potential. , 46(5-6):861–909, 1987.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Acknowledgments"
+      }
+    }
+  },
+  {
+    "id": "2205.04648v1::L799-801::s4",
+    "file": "data/data/full_markdown/2205.04648v1.md",
+    "section_path": "Acknowledgments",
+    "start_line": 799,
+    "end_line": 801,
+    "text": "Y. G. Sinaı̆. Anderson localization for one-dimensional difference Schrödinger operator with quasiperiodic potential. , 46(5-6):861–909, 1987.\n\nJ. You. Quantitative almost reducibility and its applications. In *Proceedings of the International Congress of Mathematicians—Rio de Janeiro 2018. Vol. III. Invited lectures*, pages 2113–2135. World Sci. Publ., Hackensack, NJ, 2018.\n\n</div>",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Acknowledgments"
+      }
+    }
+  }
+]

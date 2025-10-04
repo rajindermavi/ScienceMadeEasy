@@ -1,0 +1,15 @@
+ipykernel
+
+pydantic
+python-dotenv
+requests
+
+tqdm
+
+lxml
+
+arxiv
+
+sympy
+
+latexcodec

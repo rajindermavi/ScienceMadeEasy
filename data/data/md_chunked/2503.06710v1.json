@@ -1,0 +1,703 @@
+[
+  {
+    "id": "2503.06710v1::L1-7::s0",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Introduction",
+    "start_line": 1,
+    "end_line": 7,
+    "text": "# Introduction\n\nThe famous “Ten Martini Problem” was initially posed by Kac who promised ten Martinis for the solution of the following problem : Consider the almost Mathieu operator (AMO) $$\\label{eq:AMO}\n    (H_{\\lambda,\\Phi,\\theta} \\psi)(n)=\\psi(n+1)+\\psi(n-1)+2\\lambda \\cos2\\pi(\\theta+n\\Phi)\\psi(n),%$$ with coupling constant $\\lambda>0$, frequency $\\Phi\\in{\\mathbb{R}}\\setminus{\\mathbb{Q}}$ and phase $\\theta\\in{\\mathbb{T}}$. Kac asked “are all the gaps \\[in the spectrum of the AMO\\] there?” or, in other words, “is the spectrum of the AMO a Cantor set?”. This problem was made public by Simon . It was completely solved by Avila-Jitomirskaya only decades later , building on considerable effort with partial progress along the way, compare . For an in-depth overview over the development we refer the reader to the surveys .\n\nThe “Dry Ten Martini Problem\" originally asks the natural follow up question : *are all gaps in the spectrum of the AMO open?* Over the years, substantial partial progress for various subsets of parameters was made by Choi-Elliott-Yui , Puig , Avila-Jitomirskaya and Avila-You-Zhou , yet, the critical case $\\lambda=1$ with $\\Phi$ a Diophantine number is still open. Of course, one can ask the (Dry) Ten Martini Problem for any model of interest. Recent progress has been made for the extended Harper’s model , Sturmian Hamiltonians and $C^2$- and $\\cos$-type sampling functions . Research along this line turns out to be very fruitful, for example, the discovery of a robust property or the construction of explicit examples .",
+    "labels": [
+      "eq:AMO"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Introduction"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L8-11::s1",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Introduction",
+    "start_line": 8,
+    "end_line": 11,
+    "text": "The “Dry Ten Martini Problem\" originally asks the natural follow up question : *are all gaps in the spectrum of the AMO open?* Over the years, substantial partial progress for various subsets of parameters was made by Choi-Elliott-Yui , Puig , Avila-Jitomirskaya and Avila-You-Zhou , yet, the critical case $\\lambda=1$ with $\\Phi$ a Diophantine number is still open. Of course, one can ask the (Dry) Ten Martini Problem for any model of interest. Recent progress has been made for the extended Harper’s model , Sturmian Hamiltonians and $C^2$- and $\\cos$-type sampling functions . Research along this line turns out to be very fruitful, for example, the discovery of a robust property or the construction of explicit examples .\n\nWe mention in passing that one might take another step in the direction of abstraction and ask the question, how, for a family of random operators defined over an ergodic dynamical system, the base dynamics determines the topological structure of the almost sure spectrum. Clearly, the Dry Ten Martini Problem is a special case of this “all gaps open” problem. As for operators with quasiperiodic base dynamics such as the AMO, the set of possible gap labels is determined by the so-called Gap Labeling Theorem . The converse of this is the question whether a label predicted by the Gap Labeling Theorem labels an actual gap, i.e., a gap that is not collapsed or degenerate. This converse problem is in general very difficult since both the base dynamics and the sampling functions can affect the topological structure of the spectrum, compare .\n\nA crucial ingredient in the classical proof of the Dry Ten Martini Problem for the AMO is the *Aubry-André* duality , that is, a duality between different elements of the family $\\{H_\\lambda\\}$ with respect to a twisted Fourier transform. In the general case, i.e., without appealing to this duality, the property that “all gaps are open” is expected to hold only in generic sense . On the other hand, whenever one has this duality available for a concrete operator, one can expect the Dry Ten Martini problem to hold.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Introduction"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L12-13::s2",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Introduction",
+    "start_line": 12,
+    "end_line": 13,
+    "text": "A crucial ingredient in the classical proof of the Dry Ten Martini Problem for the AMO is the *Aubry-André* duality , that is, a duality between different elements of the family $\\{H_\\lambda\\}$ with respect to a twisted Fourier transform. In the general case, i.e., without appealing to this duality, the property that “all gaps are open” is expected to hold only in generic sense . On the other hand, whenever one has this duality available for a concrete operator, one can expect the Dry Ten Martini problem to hold.\n\nWe here solve the Dry Ten Martini Problem for a model that goes beyond the class of quasiperiodic Schrödinger operators but for which one nevertheless can prove an André-Aubry duality: the so-called *unitary almost Mathieu operator* (UAMO) is a quantum walk that describes the motion of a single particle with two-dimensional internal degree of freedom on the integers in discrete time steps. The dynamics is described by the alternation of two types of operators: a parametrized shift and a “coin” operator that locally acts via a matrix-valued quasi-periodic function. This model was introduced and studied in , see also . There, among other results concerning the spectral types in various parameter regimes, the Ten Martini Problem was solved in the critical setting for all irrational frequencies. We here advance this result in two important directions: on the one hand, we “dry” it, and on the other, we extend it to the non-critical setting.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Introduction"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L14-32::s0",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "The model and results",
+    "start_line": 14,
+    "end_line": 32,
+    "text": "# The model and results\n\nIn this work, we establish the Dry Ten Martini property for a family of quasi-periodic operators that was introduced in and dubbed *unitary almost-Mathieu operator* (UAMO) due to its striking similarities with the almost-Mathieu operator $H_{\\lambda,\\Phi,\\theta}$ defined in <a href=\"#eq:AMO\" data-reference-type=\"eqref\" data-reference=\"eq:AMO\">[eq:AMO]</a>. The UAMO is a split-step quantum walk $W_{\\lambda}=S_\\lambda Q$ on ${\\mathcal{H}}=\\ell^2({\\mathbb{Z}})\\otimes{\\mathbb{C}}^2$ that is defined in terms of two operators: $S_\\lambda$ is the conditional shift operator $$S_\\lambda:\\delta^\\pm_{n}\\mapsto\\lambda\\delta^\\pm_{n\\pm1}\\pm\\lambda'\\delta^\\mp_n,\\qquad\\lambda\\in[0,1],\\:\\lambda'=\\sqrt{1-\\lambda^2},$$ and $Q$ is a “coin” operator that acts coordinate-wise via a $2\\times2$ unitary $Q_n$. For the UAMO, these local coins are quasi-periodically distributed according to the rule $$\\label{eq:coindef}\nQ_{\\lambda,n}\n=\nQ_{\\lambda,n,\\Phi,\\theta}\n=\nQ_{\\lambda,2\\pi(n\\Phi + \\theta)},\n\\quad\nn \\in {\\mathbb{Z}},$$ where $Q_{\\lambda,\\theta}$ denotes a modified counterclockwise rotation through the angle $\\theta$, i.e., $$\\label{eq:rotation_coin}\nQ_{\\lambda,\\theta}\n=\n\\begin{bmatrix}\n\\lambda\\cos(\\theta)+i\\lambda' & -\\lambda\\sin(\\theta) \\\\\n\\lambda\\sin(\\theta) &  \\lambda\\cos(\\theta)-i\\lambda'\n\\end{bmatrix},\n\\qquad\n\\theta \\in {\\mathbb{T}}:={\\mathbb{R}}/{\\mathbb{Z}},\\:\\lambda\\in[0,1],$$ and we abbreviated $\\lambda'=\\sqrt{1-\\lambda^2}$.",
+    "labels": [
+      "eq:coindef",
+      "eq:rotation_coin"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "The model and results"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L33-50::s1",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "The model and results",
+    "start_line": 33,
+    "end_line": 50,
+    "text": "In this work, we establish the Dry Ten Martini property for a family of quasi-periodic operators that was introduced in and dubbed *unitary almost-Mathieu operator* (UAMO) due to its striking similarities with the almost-Mathieu operator $H_{\\lambda,\\Phi,\\theta}$ defined in <a href=\"#eq:AMO\" data-reference-type=\"eqref\" data-reference=\"eq:AMO\">[eq:AMO]</a>. The UAMO is a split-step quantum walk $W_{\\lambda}=S_\\lambda Q$ on ${\\mathcal{H}}=\\ell^2({\\mathbb{Z}})\\otimes{\\mathbb{C}}^2$ that is defined in terms of two operators: $S_\\lambda$ is the conditional shift operator $$S_\\lambda:\\delta^\\pm_{n}\\mapsto\\lambda\\delta^\\pm_{n\\pm1}\\pm\\lambda'\\delta^\\mp_n,\\qquad\\lambda\\in[0,1],\\:\\lambda'=\\sqrt{1-\\lambda^2},$$ and $Q$ is a “coin” operator that acts coordinate-wise via a $2\\times2$ unitary $Q_n$. For the UAMO, these local coins are quasi-periodically distributed according to the rule $$\\label{eq:coindef}\nQ_{\\lambda,n}\n=\nQ_{\\lambda,n,\\Phi,\\theta}\n=\nQ_{\\lambda,2\\pi(n\\Phi + \\theta)},\n\\quad\nn \\in {\\mathbb{Z}},$$ where $Q_{\\lambda,\\theta}$ denotes a modified counterclockwise rotation through the angle $\\theta$, i.e., $$\\label{eq:rotation_coin}\nQ_{\\lambda,\\theta}\n=\n\\begin{bmatrix}\n\\lambda\\cos(\\theta)+i\\lambda' & -\\lambda\\sin(\\theta) \\\\\n\\lambda\\sin(\\theta) &  \\lambda\\cos(\\theta)-i\\lambda'\n\\end{bmatrix},\n\\qquad\n\\theta \\in {\\mathbb{T}}:={\\mathbb{R}}/{\\mathbb{Z}},\\:\\lambda\\in[0,1],$$ and we abbreviated $\\lambda'=\\sqrt{1-\\lambda^2}$.\n\nWith these two building blocks, the UAMO is defined as $$\\label{eq:UAMO_def}\n    W_{\\lambda_1,\\lambda_2,\\Phi,\\theta}:=S_{\\lambda_1}Q_{\\lambda_2,\\Phi,\\theta},$$ and we shall abbreviate as $W_{\\lambda_1,\\lambda_2}$ for fixed $\\Phi$ and $\\theta$. As discussed in detail in , $\\Phi$ plays the role of a magnetic field in an associated two-dimensional model, and $\\theta$ plays the role of a Fourier parameter of the second lattice dimension. We shall nevertheless stick with the standard nomenclature in dynamical systems and call $\\Phi$ the *frequency* and $\\theta$ the *phase* and refer to $\\lambda_1$ and $\\lambda_2$ as *coupling constants*, as they determine the “strength” of the shift and the coin, respectively.\n\nThe UAMO displays a metal-insulator phase transition with respect to the coupling constants for almost all $\\Phi$ and $\\theta$: for $\\lambda_1>\\lambda_2$ the spectrum of $W_{\\lambda_1,\\lambda_2}$ is purely absolutely continuous, for $0<\\lambda_1=\\lambda_2\\leq1$ it is purely singular continuous while for $\\lambda_1<\\lambda_2$ it is pure point with exponentially decaying eigenfunctions[^1]. This follows from a characterization of the associated eigenfunction cocycle which in the nomenclature of Avila’s global theory results in the following spectral phase diagram :\n\n<div class=\"center\">\n\n\\[baseline=-.7ex  \n(0,0) +(-.8ex,-.8ex) rectangle +(.8ex,.8ex);  Subcritical\\] $\\lambda_1>\\lambda_2$\n\n\\[baseline=-.7ex  \n(0,0) +(-.8ex,-.8ex) rectangle +(.8ex,.8ex);  Critical\\] $\\lambda_1=\\lambda_2$\n\n\\[baseline=-.7ex  \n(0,0) +(-.8ex,-.8ex) rectangle +(.8ex,.8ex);  Supercritical\\] $\\lambda_1 < \\lambda_2$\n\n</div>",
+    "labels": [
+      "eq:UAMO_def",
+      "eq:coindef",
+      "eq:rotation_coin"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "The model and results"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L51-60::s2",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "The model and results",
+    "start_line": 51,
+    "end_line": 60,
+    "text": "</div>\n\nAnother important ingredient in these proofs is a unitary version of André-Aubry duality, which relates $W_{\\lambda_1,\\lambda_2}$ to its “dual” $$W_{\\lambda_1,\\lambda_2}^{\\sharp}:=W_{\\lambda_2,\\lambda_1}^\\top,$$ and which immediately implies that the spectra of $W_{\\lambda_1,\\lambda_2}$ and $W_{\\lambda_2,\\lambda_1}$ are the same.\n\nThe arithmetic properties of $\\Phi$ play a crucial role in determining spectral properties of the underlying operator. We call $\\Phi$ *Diophantine* if there exist $\\kappa>0,\\tau>1$ such that $$\\label{eq.dioCond}\n    \\|n \\Phi\\|_{{\\mathbb{T}}}:= \\inf_{p\\in{\\mathbb{Z}}} |n \\Phi-p|  \\geq\\frac\\kappa{|n|^{\\tau+2}}\\quad\\forall n\\neq0.$$ In this case, we write $\\Phi\\in {\\mathrm{DC}}(\\kappa,\\tau)$. Moreover, we shall denote the set of all Diophantine frequencies by $$\\label{eq:dioph}\n    {\\mathrm{DC}}=\\bigcup_{\\kappa>0,\\tau>1}{\\mathrm{DC}}(\\kappa,\\tau),$$ which is known to have full Lebesgue measure as a subset of ${\\mathbb{T}}$. More generally, we say $\\rho$ is *Diophantine with respect to $\\Phi$* if there exists some positive constants $\\kappa',\\tau'$ such that $$\\|\\rho - n\\Phi\\|_{{\\mathbb{T}}} \\geq \\frac{\\kappa'}{|n|^{\\tau'}}, \\qquad \\forall \\;  0 \\neq n \\in \\mathbb{Z},$$ and $\\rho$ is *rational with respect to $\\Phi$* if $\\rho - n\\Phi\\in\\mathbb{Q}$ for some $n \\in \\mathbb{Z}$ rational.\n\nIt turns out that the spectrum of $W_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ is independent of $\\theta$ by the minimality of the rigid translation $\\theta\\to \\theta+\\Phi, \\Phi\\in {\\mathbb{R}}\\setminus{\\mathbb{Q}}.$ We denote this common spectrum by $\\Sigma_{\\lambda_1,\\lambda_2,\\Phi}$. Our main result is the following:\n\n<div id=\"thm.Main1\" class=\"theorem\">",
+    "labels": [
+      "eq.dioCond",
+      "eq:dioph"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "The model and results"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L61-76::s3",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "The model and results",
+    "start_line": 61,
+    "end_line": 76,
+    "text": "<div id=\"thm.Main1\" class=\"theorem\">\n\n**Theorem 1**. *For $\\Phi\\in {\\mathrm{DC}}$ and $\\lambda_1\\neq\\lambda_2$, all gaps in the spectrum of the unitary almost Mathieu operator $W_{\\lambda_1,\\lambda_2,\\Phi}$ allowed by the Gap Labeling Theorem are open.*\n\n</div>\n\n<div id=\"rem:twenty\" class=\"remark\">\n\n**Remark 2**. *The reason for the “twenty” instead of the usual “ten” in the title of the paper comes from the observation that we have “twice as many” gaps as for the AMO: phenomenologically, this can be seen in Figure <a href=\"#fig:Buttervogel\" data-reference-type=\"ref\" data-reference=\"fig:Buttervogel\">[fig:Buttervogel]</a> where we see that the spectrum of the UAMO consists of two copies of the butterfly. The reason for this is the prevalence of more symmetries: the spectrum of the AMO is real and symmetric about $0$ due to the involutive symmetry that multiplies locally by $(-1)^n$ and shifts $\\theta\\mapsto \\theta+1/2$. The UAMO has spectrum on the unit circle. It has the same symmetry as the AMO, which amounts to a reflection about the origin. In addition, the spectrum possesses an axial symmetry about the real axis due to complex conjugation .*\n\n</div>\n\n<div class=\"remark\">\n\n**Remark 3**. *Let us make some comments about Theorem <a href=\"#thm.Main1\" data-reference-type=\"ref\" data-reference=\"thm.Main1\">1</a>:*\n\n1.  *By the Ten Martini property holds in the critical case for all irrational frequencies, that is, for $0<\\lambda_1=\\lambda_2\\leq1$ the spectrum of $W_{\\lambda_1,\\lambda_2,\\Phi}$ is a Cantor set of zero Lebesgue measure for every irrational $\\Phi$. The dry version of the problem remains open.*",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "The model and results"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L77-88::s4",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "The model and results",
+    "start_line": 77,
+    "end_line": 88,
+    "text": "1.  *By the Ten Martini property holds in the critical case for all irrational frequencies, that is, for $0<\\lambda_1=\\lambda_2\\leq1$ the spectrum of $W_{\\lambda_1,\\lambda_2,\\Phi}$ is a Cantor set of zero Lebesgue measure for every irrational $\\Phi$. The dry version of the problem remains open.*\n\n2.  *In the non-critical setting, the Dry Ten Martini problem for non-Diophantine $\\Phi$ is notoriously hard. For the critical AMO with Liouville frequencies, this was proved in by employing the particular structure and symmetries of the operator. The more involved structure of the UAMO seems to render impossible an adaption of the argument in . We nevertheless expect the DTMP to hold for all frequencies, see for a possible attack strategy.*\n\n3.  *We combine Avila’s almost reducible theorem with Eliasson’s reducibility for Diophantine frequencies to obtain the global reducibility except for the critical case. Therefore, this treatment does not cover the Liouville frequencies.*\n\n4.  *This is the first time a DTMP is showed for (GE)CMV matrices. Some results in Baire category for certain classes of almost periodic extended CMV matrices were previously obtained by . It is an open question whether it holds for other CMV matrices with, for example, subshift or Sturmian Verblunsky coefficients.*\n\n</div>\n\nWe base our proof on the recent understanding of Anderson localization for Diophantine frequencies obtained in and techniques developed therein: the Anderson localization for the UAMO in the supercritical setting $\\lambda_1<\\lambda_2$ proved in is a full measure result. In , an arithmetic version of Anderson localization is proved, albeit for a mosaic model where every other local coin in <a href=\"#eq:coindef\" data-reference-type=\"eqref\" data-reference=\"eq:coindef\">[eq:coindef]</a> is trivial. However, the proof of works in a straightforward way for UAMO as well, compare also .\n\n<div id=\"thm:AndersonLocal\" class=\"theorem\">",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "The model and results"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L89-109::s5",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "The model and results",
+    "start_line": 89,
+    "end_line": 109,
+    "text": "<div id=\"thm:AndersonLocal\" class=\"theorem\">\n\n**Theorem 4**. *Let $\\Phi\\in {\\mathrm{DC}}(\\kappa,\\tau)$ and $\\lambda_1<\\lambda_2$. Then for each “ $\\Phi$-nonresonant” $\\theta$, i.e., each $\\theta$ such that $$|\\sin2\\pi(\\theta+n\\Phi)|<\\exp(-|n|^{\\frac{1}{2\\tau}})$$ does not hold for infinitely many $n$, $W_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ admits Anderson localization.*\n\n</div>\n\n<div class=\"proof\">\n\n*Proof.* In the case $\\Phi\\in{\\mathbb{R}}\\setminus{\\mathbb{Q}}$ and $\\lambda_1<\\lambda_2$, according to , the Lyapunov exponent characterizing the (typical) decay of generalized eigenfunctions is positive: $$\\label{eq:positiveLyapunov}\nL_{\\lambda_1,\\lambda_2,\\Phi}(z)\\geq \\log\\left[\\frac{\\lambda_2(1+\\lambda_1')}{\\lambda_1(1+\\lambda_2')}\\right]>0,$$ with equality if and only if $z\\in\\Sigma_{\\lambda_1,\\lambda_2,\\Phi}.$ The rest of the proof follows the same outline as the proof of . ◻\n\n</div>\n\n<div class=\"remark\">\n\n**Remark 5**. *This result is a full measure result in $\\theta$. It is sharp in the sense that it cannot be strengthened to all $\\theta$ .*\n\n</div>\n\nWe shall also need the following dynamical duality formulation of Autry-André duality for the UAMO, which can be seen as the reverse statement to . As such, we expect it to be of interest beyond this paper.\n\n<div id=\"thm.reverDual\" class=\"theorem\">",
+    "labels": [
+      "eq:positiveLyapunov"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "The model and results"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L110-114::s6",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "The model and results",
+    "start_line": 110,
+    "end_line": 114,
+    "text": "<div id=\"thm.reverDual\" class=\"theorem\">\n\n**Theorem 6** (Aubry-André Duality). *Let $\\varphi=\\varphi^\\xi=\\left[\\varphi^{\\xi,+},\\varphi^{\\xi,-}\\right]^\\top$, $\\xi\\in\\mathbb{T}$ be a solution to the generalized eigenvalue equation $W^{{\\sharp}}_{\\lambda_{1},\\lambda_{2},\\xi,\\Phi}\\varphi=z\\varphi$ which has the following form $$\\begin{bmatrix}\\varphi^{\\xi,+}_{n}\\\\\\varphi^{\\xi,-}_{n}\\end{bmatrix}=e^{2\\pi in\\theta}\\begin{bmatrix}\\check{\\phi}^{+}(\\xi+n\\Phi)\\\\\\check{\\phi}^{-}(\\xi+n\\Phi)\\end{bmatrix}=\\frac1{\\sqrt2}e^{2\\pi in\\theta}\\begin{bmatrix}\\check\\psi^+(\\xi+n\\Phi)+i\\check\\psi^-(\\xi+n\\Phi)\\\\i\\check\\psi^+(\\xi+n\\Phi)+\\check\\psi^-(\\xi+n\\Phi)\\end{bmatrix}.$$ Let $$\\label{eq:psi_aubr}\n    \\begin{bmatrix}\\check{\\psi}^{+}\\\\\\check{\\psi}^{-}\\end{bmatrix}=\\frac1{\\sqrt2}\\begin{bmatrix}1&-i\\\\-i&1\\end{bmatrix}\\begin{bmatrix}\\check{\\phi}^{+}\\\\\\check{\\phi}^{-}\\end{bmatrix}$$ with $n$-th Fourier coefficients $\\psi^{+}_{n}$ and $\\psi^{-}_{n}$, respectively. Then $\\psi=\\left[\\psi^{+},\\psi^{-}\\right]^\\top$ solves the eigenvalue equation $W_{\\lambda_{1},\\lambda_{2},\\Phi,\\theta}\\psi=z\\psi$.*\n\n</div>",
+    "labels": [
+      "eq:psi_aubr"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "The model and results"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L115-122::s0",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Preliminaries",
+    "start_line": 115,
+    "end_line": 122,
+    "text": "# Preliminaries\n\nOur proof of Theorem <a href=\"#thm.Main1\" data-reference-type=\"ref\" data-reference=\"thm.Main1\">1</a> utilizes techniques from the theory of one-frequency cocycles of CMV matrices, which we hence review in this section to keep the present treatise as self-contained as possible. We first review the construction of so-called Cantero-Moral-Velázquez matrices (CMV matrices), whose intimate connection with quantum walks on the line was first discussed in and further generalized in . We then discuss the dynamics of the transfer matrix cocycle of the UAMO through that of the associated Szegő cocycle. This cocycle is the natural one from a point of view of orthogonal polynomials on the unit circle and has the advantage that, without further ado, it lies in ${\\mathbb{SU}}(1,1)$.\n\n<span class=\"smallcaps\"></span>The UAMO as a generalized extended CMV matrix Consider the Hilbert space $\\ell^2({\\mathbb{Z}})$ with the standard basis $\\{\\delta_n : n \\in \\mathbb{Z}\\}$. On $\\ell^2({\\mathbb{Z}})$, we define *generalized extended CMV* (GECMV) matrices $\\mathcal{E} = \\mathcal{E}(\\alpha,\\rho)$ by $\\mathcal{E}=\\mathcal{L}\\mathcal{M}$, where $\\mathcal{L}=\\bigoplus_{n\\in\\mathbb{Z}}\\Theta(\\alpha_{2n},\\rho_{2n})$ and $\\mathcal{M}=\\bigoplus_{n\\in\\mathbb{Z}}\\Theta(\\alpha_{2n+1},\\rho_{2n+1})$ are specified by $$\\label{eq:theta_mat}\n    \\Theta(\\alpha,\\rho)=\\begin{bmatrix}\\overline{\\alpha}&\\rho\\\\\\overline{\\rho}&-\\alpha\\end{bmatrix}$$ with Verblunsky pairs $$\\label{eq:verblunsky_pair}\n    (\\alpha,\\rho)\\in\\mathbb{S}^3=\\{(z_1,z_2)\\in\\overline{\\mathbb{D}}^2:|z_1|^2+|z_2|^2=1\\}.$$",
+    "labels": [
+      "eq:theta_mat",
+      "eq:verblunsky_pair"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Preliminaries"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L123-133::s1",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Preliminaries",
+    "start_line": 123,
+    "end_line": 133,
+    "text": "<span class=\"smallcaps\"></span>The UAMO as a generalized extended CMV matrix Consider the Hilbert space $\\ell^2({\\mathbb{Z}})$ with the standard basis $\\{\\delta_n : n \\in \\mathbb{Z}\\}$. On $\\ell^2({\\mathbb{Z}})$, we define *generalized extended CMV* (GECMV) matrices $\\mathcal{E} = \\mathcal{E}(\\alpha,\\rho)$ by $\\mathcal{E}=\\mathcal{L}\\mathcal{M}$, where $\\mathcal{L}=\\bigoplus_{n\\in\\mathbb{Z}}\\Theta(\\alpha_{2n},\\rho_{2n})$ and $\\mathcal{M}=\\bigoplus_{n\\in\\mathbb{Z}}\\Theta(\\alpha_{2n+1},\\rho_{2n+1})$ are specified by $$\\label{eq:theta_mat}\n    \\Theta(\\alpha,\\rho)=\\begin{bmatrix}\\overline{\\alpha}&\\rho\\\\\\overline{\\rho}&-\\alpha\\end{bmatrix}$$ with Verblunsky pairs $$\\label{eq:verblunsky_pair}\n    (\\alpha,\\rho)\\in\\mathbb{S}^3=\\{(z_1,z_2)\\in\\overline{\\mathbb{D}}^2:|z_1|^2+|z_2|^2=1\\}.$$\n\nEach $\\Theta(\\alpha_j,\\rho_j)$ acts unitarily on the subspace $\\ell^2(\\{j,j+1\\})$, hence the blocks of $\\mathcal{L}$ and $\\mathcal{M}$ are shifted by one basis element with respect to each other. Hence, $\\mathcal E$ has the matrix representation $$\\label{eq:gecmv}\n    \\mathcal E  = \n        \\begin{bmatrix}\n        \\ddots & \\ddots & \\ddots & \\ddots &&&&  \\\\\n        & \\overline{\\alpha_0\\rho_{-1}} & \\boxed{-\\overline{\\alpha_0}\\alpha_{-1}} & \\overline{\\alpha_1}\\rho_0 & \\rho_1\\rho_0 &&&  \\\\\n        & \\overline{\\rho_0\\rho_{-1}} & -\\overline{\\rho_0}\\alpha_{-1} & {-\\overline{\\alpha_1}\\alpha_0} & -\\rho_1 \\alpha_0 &&&  \\\\\n        &&  & \\overline{\\alpha_2\\rho_1} & -\\overline{\\alpha_2}\\alpha_1 & \\overline{\\alpha_3} \\rho_2 & \\rho_3\\rho_2 & \\\\\n        && & \\overline{\\rho_2\\rho_1} & -\\overline{\\rho_2}\\alpha_1 & -\\overline{\\alpha_3}\\alpha_2 & -\\rho_3\\alpha_2 &    \\\\\n        && && \\ddots & \\ddots & \\ddots & \\ddots &\n    \\end{bmatrix},$$ where all unspecified matrix elements are zero and we boxed the $\\langle\\delta_0,\\mathcal E\\delta_0\\rangle$ matrix element.",
+    "labels": [
+      "eq:gecmv",
+      "eq:theta_mat",
+      "eq:verblunsky_pair"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Preliminaries"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L134-135::s2",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Preliminaries",
+    "start_line": 134,
+    "end_line": 135,
+    "text": "Each $\\Theta(\\alpha_j,\\rho_j)$ acts unitarily on the subspace $\\ell^2(\\{j,j+1\\})$, hence the blocks of $\\mathcal{L}$ and $\\mathcal{M}$ are shifted by one basis element with respect to each other. Hence, $\\mathcal E$ has the matrix representation $$\\label{eq:gecmv}\n    \\mathcal E  = \n        \\begin{bmatrix}\n        \\ddots & \\ddots & \\ddots & \\ddots &&&&  \\\\\n        & \\overline{\\alpha_0\\rho_{-1}} & \\boxed{-\\overline{\\alpha_0}\\alpha_{-1}} & \\overline{\\alpha_1}\\rho_0 & \\rho_1\\rho_0 &&&  \\\\\n        & \\overline{\\rho_0\\rho_{-1}} & -\\overline{\\rho_0}\\alpha_{-1} & {-\\overline{\\alpha_1}\\alpha_0} & -\\rho_1 \\alpha_0 &&&  \\\\\n        &&  & \\overline{\\alpha_2\\rho_1} & -\\overline{\\alpha_2}\\alpha_1 & \\overline{\\alpha_3} \\rho_2 & \\rho_3\\rho_2 & \\\\\n        && & \\overline{\\rho_2\\rho_1} & -\\overline{\\rho_2}\\alpha_1 & -\\overline{\\alpha_3}\\alpha_2 & -\\rho_3\\alpha_2 &    \\\\\n        && && \\ddots & \\ddots & \\ddots & \\ddots &\n    \\end{bmatrix},$$ where all unspecified matrix elements are zero and we boxed the $\\langle\\delta_0,\\mathcal E\\delta_0\\rangle$ matrix element.\n\n“Generalized” means that compared to the definition of extended CMV matrices given in we admit the $\\rho$’s to be complex. By , resp. , one has the freedom of changing the phase of the $\\rho$’s through a gauge transformation, that is, by conjugating with a diagonal unitary. This freedom has been fruitfully exploited already in several contexts to uncover hidden symmetries of the model . In particular, every GECMV matrix is gauge-equivalent to a “standard” extended CMV matrix with $\\rho_n\\in[0,1]$ for all $n\\in{\\mathbb{Z}}$. We shall assume that this gauge transformation has been carried out, i.e., the $\\rho$’s are real, and denote the resulting standard extended CMV matrix also by $\\mathcal{E}$. This is important, since we want the Szegő transfer matrices $S_{n,z}$ defined below in <a href=\"#eq:szego_normalized\" data-reference-type=\"eqref\" data-reference=\"eq:szego_normalized\">[eq:szego_normalized]</a> to be in $\\mathrm{SU}(1,1)$ and the $\\Theta$ in <a href=\"#eq:theta_mat\" data-reference-type=\"eqref\" data-reference=\"eq:theta_mat\">[eq:theta_mat]</a> to be symmetric.",
+    "labels": [
+      "eq:gecmv"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Preliminaries"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L136-145::s3",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Preliminaries",
+    "start_line": 136,
+    "end_line": 145,
+    "text": "“Generalized” means that compared to the definition of extended CMV matrices given in we admit the $\\rho$’s to be complex. By , resp. , one has the freedom of changing the phase of the $\\rho$’s through a gauge transformation, that is, by conjugating with a diagonal unitary. This freedom has been fruitfully exploited already in several contexts to uncover hidden symmetries of the model . In particular, every GECMV matrix is gauge-equivalent to a “standard” extended CMV matrix with $\\rho_n\\in[0,1]$ for all $n\\in{\\mathbb{Z}}$. We shall assume that this gauge transformation has been carried out, i.e., the $\\rho$’s are real, and denote the resulting standard extended CMV matrix also by $\\mathcal{E}$. This is important, since we want the Szegő transfer matrices $S_{n,z}$ defined below in <a href=\"#eq:szego_normalized\" data-reference-type=\"eqref\" data-reference=\"eq:szego_normalized\">[eq:szego_normalized]</a> to be in $\\mathrm{SU}(1,1)$ and the $\\Theta$ in <a href=\"#eq:theta_mat\" data-reference-type=\"eqref\" data-reference=\"eq:theta_mat\">[eq:theta_mat]</a> to be symmetric.\n\nTo study the spectral properties of $\\mathcal{E}$, one naturally considers the generalized eigenvalue equation $$\\mathcal{E}u=zu, \\qquad z\\in{\\mathbb{C}}.$$ Solutions to this equation satisfy the following recurrence: $$\\label{eq.solIter1}\n    \\begin{bmatrix}u_{2n+1}\\\\u_{2n}\\end{bmatrix}=A_{n,z}\\begin{bmatrix}u_{2n-1}\\\\u_{2n-2}\\end{bmatrix}, \\quad n \\in {\\mathbb{Z}},$$ where the *eigenfunction transfer matrices* $A_{n,z}$ are given by $$\\label{eq:GECMV_transmat}\n    A_{n,z}=\\frac{1}{\\rho_{2n}\\rho_{2n-1}}\\begin{bmatrix}\n        z^{-1}+\\alpha_{2n}\\overline{\\alpha}_{2n-1}+\\alpha_{2n-1}\\overline{\\alpha_{2n-2}}+\\alpha_{2n}\\overline{\\alpha_{2n-2}}z& -\\overline{\\rho_{2n-2}}\\alpha_{2n-1}-\\overline{\\rho_{2n-2}}\\alpha_{2n}z\\\\\n        -\\rho_{2n}\\overline{\\alpha_{2n-1}}-\\rho_{2n}\\overline{\\alpha_{2n-2}}z&\\rho_{2n}\\overline{\\rho_{2n-2}}z\n    \\end{bmatrix},$$ for $n \\in {\\mathbb{Z}}$ and $z \\in {\\mathbb{C}}\\setminus \\{0\\}$. Since after gauge transforming the $\\rho_n$’s in <a href=\"#eq:GECMV_transmat\" data-reference-type=\"eqref\" data-reference=\"eq:GECMV_transmat\">[eq:GECMV_transmat]</a> are real, by , we have the following: $$\\label{eq.ConjugatedTransferMatrix}\n    A_{n,z}=R_{2n}^{-1}JS^{+}_{n,z}JR_{2n-2},$$ where $S^{+}_{n,z}=S_{2n,z}S_{2n-1,z}$ is determined by the *normalized Szegő transfer matrices* $$\\label{eq:szego_normalized}\n    S_{n,z}=\\frac{z^{-\\frac{1}{2}}}{\\rho_{n}}\\begin{bmatrix}z&-\\overline{\\alpha_{n}}\\\\-\\alpha_{n}z&1\\end{bmatrix} \\in {\\mathbb{SU}}(1,1),$$ and $$\\label{eq.Rn}\n    R_{n}=\\begin{bmatrix}1&0\\\\-\\overline{\\alpha_{n}}& \\rho_{n} \\end{bmatrix},\\qquad J=\\begin{bmatrix}0&1\\\\1&0\\end{bmatrix}.$$",
+    "labels": [
+      "eq.ConjugatedTransferMatrix",
+      "eq.Rn",
+      "eq.solIter1",
+      "eq:GECMV_transmat",
+      "eq:szego_normalized"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Preliminaries"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L146-151::s4",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Preliminaries",
+    "start_line": 146,
+    "end_line": 151,
+    "text": "To study the spectral properties of $\\mathcal{E}$, one naturally considers the generalized eigenvalue equation $$\\mathcal{E}u=zu, \\qquad z\\in{\\mathbb{C}}.$$ Solutions to this equation satisfy the following recurrence: $$\\label{eq.solIter1}\n    \\begin{bmatrix}u_{2n+1}\\\\u_{2n}\\end{bmatrix}=A_{n,z}\\begin{bmatrix}u_{2n-1}\\\\u_{2n-2}\\end{bmatrix}, \\quad n \\in {\\mathbb{Z}},$$ where the *eigenfunction transfer matrices* $A_{n,z}$ are given by $$\\label{eq:GECMV_transmat}\n    A_{n,z}=\\frac{1}{\\rho_{2n}\\rho_{2n-1}}\\begin{bmatrix}\n        z^{-1}+\\alpha_{2n}\\overline{\\alpha}_{2n-1}+\\alpha_{2n-1}\\overline{\\alpha_{2n-2}}+\\alpha_{2n}\\overline{\\alpha_{2n-2}}z& -\\overline{\\rho_{2n-2}}\\alpha_{2n-1}-\\overline{\\rho_{2n-2}}\\alpha_{2n}z\\\\\n        -\\rho_{2n}\\overline{\\alpha_{2n-1}}-\\rho_{2n}\\overline{\\alpha_{2n-2}}z&\\rho_{2n}\\overline{\\rho_{2n-2}}z\n    \\end{bmatrix},$$ for $n \\in {\\mathbb{Z}}$ and $z \\in {\\mathbb{C}}\\setminus \\{0\\}$. Since after gauge transforming the $\\rho_n$’s in <a href=\"#eq:GECMV_transmat\" data-reference-type=\"eqref\" data-reference=\"eq:GECMV_transmat\">[eq:GECMV_transmat]</a> are real, by , we have the following: $$\\label{eq.ConjugatedTransferMatrix}\n    A_{n,z}=R_{2n}^{-1}JS^{+}_{n,z}JR_{2n-2},$$ where $S^{+}_{n,z}=S_{2n,z}S_{2n-1,z}$ is determined by the *normalized Szegő transfer matrices* $$\\label{eq:szego_normalized}\n    S_{n,z}=\\frac{z^{-\\frac{1}{2}}}{\\rho_{n}}\\begin{bmatrix}z&-\\overline{\\alpha_{n}}\\\\-\\alpha_{n}z&1\\end{bmatrix} \\in {\\mathbb{SU}}(1,1),$$ and $$\\label{eq.Rn}\n    R_{n}=\\begin{bmatrix}1&0\\\\-\\overline{\\alpha_{n}}& \\rho_{n} \\end{bmatrix},\\qquad J=\\begin{bmatrix}0&1\\\\1&0\\end{bmatrix}.$$\n\nConsider the generalized eigenvalue equation of the transposed extended CMV matrix: $$\\label{eq.dualEigen}\n\\mathcal{E}^\\top v=zv.$$ Since $\\mathcal{L}$ and $\\mathcal{M}$ are symmetric when $\\rho\\in {\\mathbb{R}}$, one has that $\\mathcal{E}^\\top =\\mathcal{M}\\mathcal{L}$, and <a href=\"#eq.dualEigen\" data-reference-type=\"eqref\" data-reference=\"eq.dualEigen\">[eq.dualEigen]</a> becomes $\\mathcal{M}\\mathcal{L}v=zv$. Applying $\\mathcal L$ to both sides, we find that for any generalized eigenfunction $v$ of $\\mathcal E^\\top$, $u=\\mathcal L v$ is a generalized eigenfunction for $\\mathcal E$. By definition of $\\mathcal L$ we have that $$\\begin{bmatrix}u_{2n+1}\\\\u_{2n}\\end{bmatrix}=J\\Theta_{2n}J\\begin{bmatrix}v_{2n+1}\\\\v_{2n}\\end{bmatrix}=\\begin{bmatrix}-\\alpha_{2n}&\\rho_{2n}\\\\\\rho_{2n}&\\overline{\\alpha_{2n}}\\end{bmatrix}\\begin{bmatrix}v_{2n+1}\\\\v_{2n}\\end{bmatrix}.$$ It thus follows from <a href=\"#eq.solIter1\" data-reference-type=\"eqref\" data-reference=\"eq.solIter1\">[eq.solIter1]</a> that solutions $v\\in\\ell^\\infty({\\mathbb{Z}})$ to <a href=\"#eq.dualEigen\" data-reference-type=\"eqref\" data-reference=\"eq.dualEigen\">[eq.dualEigen]</a> satisfy the following recurrence relation: $$\\label{eq.transposeIter}\n\\begin{bmatrix}\nv_{2n+1}\\\\v_{2n}\n\\end{bmatrix}=P_{2n}^{-1}A_{n,z}P_{2n-2}\\begin{bmatrix}v_{2n-1}\\\\v_{2n-2}\\end{bmatrix},$$ where $P_{n}=J\\Theta(\\alpha_n,\\rho_n)J$ with $J$ as in <a href=\"#eq.Rn\" data-reference-type=\"eqref\" data-reference=\"eq.Rn\">[eq.Rn]</a>. This again allows us to easily deduce the Szegő transfer matrices for $\\mathcal E^\\top$ via <a href=\"#eq.ConjugatedTransferMatrix\" data-reference-type=\"eqref\" data-reference=\"eq.ConjugatedTransferMatrix\">[eq.ConjugatedTransferMatrix]</a>.",
+    "labels": [
+      "eq.ConjugatedTransferMatrix",
+      "eq.Rn",
+      "eq.dualEigen",
+      "eq.solIter1",
+      "eq.transposeIter",
+      "eq:GECMV_transmat",
+      "eq:szego_normalized"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Preliminaries"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L152-158::s5",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Preliminaries",
+    "start_line": 152,
+    "end_line": 158,
+    "text": "Consider the generalized eigenvalue equation of the transposed extended CMV matrix: $$\\label{eq.dualEigen}\n\\mathcal{E}^\\top v=zv.$$ Since $\\mathcal{L}$ and $\\mathcal{M}$ are symmetric when $\\rho\\in {\\mathbb{R}}$, one has that $\\mathcal{E}^\\top =\\mathcal{M}\\mathcal{L}$, and <a href=\"#eq.dualEigen\" data-reference-type=\"eqref\" data-reference=\"eq.dualEigen\">[eq.dualEigen]</a> becomes $\\mathcal{M}\\mathcal{L}v=zv$. Applying $\\mathcal L$ to both sides, we find that for any generalized eigenfunction $v$ of $\\mathcal E^\\top$, $u=\\mathcal L v$ is a generalized eigenfunction for $\\mathcal E$. By definition of $\\mathcal L$ we have that $$\\begin{bmatrix}u_{2n+1}\\\\u_{2n}\\end{bmatrix}=J\\Theta_{2n}J\\begin{bmatrix}v_{2n+1}\\\\v_{2n}\\end{bmatrix}=\\begin{bmatrix}-\\alpha_{2n}&\\rho_{2n}\\\\\\rho_{2n}&\\overline{\\alpha_{2n}}\\end{bmatrix}\\begin{bmatrix}v_{2n+1}\\\\v_{2n}\\end{bmatrix}.$$ It thus follows from <a href=\"#eq.solIter1\" data-reference-type=\"eqref\" data-reference=\"eq.solIter1\">[eq.solIter1]</a> that solutions $v\\in\\ell^\\infty({\\mathbb{Z}})$ to <a href=\"#eq.dualEigen\" data-reference-type=\"eqref\" data-reference=\"eq.dualEigen\">[eq.dualEigen]</a> satisfy the following recurrence relation: $$\\label{eq.transposeIter}\n\\begin{bmatrix}\nv_{2n+1}\\\\v_{2n}\n\\end{bmatrix}=P_{2n}^{-1}A_{n,z}P_{2n-2}\\begin{bmatrix}v_{2n-1}\\\\v_{2n-2}\\end{bmatrix},$$ where $P_{n}=J\\Theta(\\alpha_n,\\rho_n)J$ with $J$ as in <a href=\"#eq.Rn\" data-reference-type=\"eqref\" data-reference=\"eq.Rn\">[eq.Rn]</a>. This again allows us to easily deduce the Szegő transfer matrices for $\\mathcal E^\\top$ via <a href=\"#eq.ConjugatedTransferMatrix\" data-reference-type=\"eqref\" data-reference=\"eq.ConjugatedTransferMatrix\">[eq.ConjugatedTransferMatrix]</a>.\n\nAs detailed in , the UAMO defined in <a href=\"#eq:UAMO_def\" data-reference-type=\"eqref\" data-reference=\"eq:UAMO_def\">[eq:UAMO_def]</a> is a GECMV with dynamically defined Verblunksy coefficients $$\\label{eq.uamo}\n\\begin{aligned}\n    \\alpha_{2n-1} &= \\lambda_2 \\sin(2\\pi(\\theta+n\\Phi)),  \\qquad\\qquad& \\alpha_{2n} &= \\lambda_1',\\\\  \n    \\rho_{2n-1} &=  \\lambda_2 \\cos(2\\pi(\\theta+n\\Phi)) - i \\lambda_2',   & \\rho_{2n} &= \\lambda_1,\n    \\end{aligned}$$ where, as above, $\\lambda_i\\in[0,1]$ and $\\lambda_i'=\\sqrt{1-\\lambda_i^2}$ for $i=1,2$. Applying the gauge transformation from yields an extended CMV matrix with Verblunsky coefficients as above except $$\\label{eq.uamo_rho_gauged}\n    \\rho_{2n-1} =  \\left(1-\\lambda_2^2 \\sin^2(2\\pi(\\theta+n\\Phi))\\right)^{1/2}.$$",
+    "labels": [
+      "eq.dualEigen",
+      "eq.transposeIter",
+      "eq.uamo",
+      "eq.uamo_rho_gauged"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Preliminaries"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L159-162::s6",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Preliminaries",
+    "start_line": 159,
+    "end_line": 162,
+    "text": "As detailed in , the UAMO defined in <a href=\"#eq:UAMO_def\" data-reference-type=\"eqref\" data-reference=\"eq:UAMO_def\">[eq:UAMO_def]</a> is a GECMV with dynamically defined Verblunksy coefficients $$\\label{eq.uamo}\n\\begin{aligned}\n    \\alpha_{2n-1} &= \\lambda_2 \\sin(2\\pi(\\theta+n\\Phi)),  \\qquad\\qquad& \\alpha_{2n} &= \\lambda_1',\\\\  \n    \\rho_{2n-1} &=  \\lambda_2 \\cos(2\\pi(\\theta+n\\Phi)) - i \\lambda_2',   & \\rho_{2n} &= \\lambda_1,\n    \\end{aligned}$$ where, as above, $\\lambda_i\\in[0,1]$ and $\\lambda_i'=\\sqrt{1-\\lambda_i^2}$ for $i=1,2$. Applying the gauge transformation from yields an extended CMV matrix with Verblunsky coefficients as above except $$\\label{eq.uamo_rho_gauged}\n    \\rho_{2n-1} =  \\left(1-\\lambda_2^2 \\sin^2(2\\pi(\\theta+n\\Phi))\\right)^{1/2}.$$\n\nPlugging in these Verblunsky coefficients, $R_{2n}$ defined in <a href=\"#eq.Rn\" data-reference-type=\"eqref\" data-reference=\"eq.Rn\">[eq.Rn]</a> is constant. Moreover, $A_{n,z}$ in <a href=\"#eq:GECMV_transmat\" data-reference-type=\"eqref\" data-reference=\"eq:GECMV_transmat\">[eq:GECMV_transmat]</a> defines a quasiperiodic cocycle $(\\Phi,A_z(\\cdot))$ which is is $JR$-conjugate to the quasiperiodic two-step combined Szegő-cocycle $(\\Phi,S_z^{+}(\\cdot))$, with $J$ and $R$ given in <a href=\"#eq.Rn\" data-reference-type=\"eqref\" data-reference=\"eq.Rn\">[eq.Rn]</a> and $$\\label{eq.Sz}\nS_z^{+}(\\theta)=\\frac{1}{\\lambda_1\\sqrt{1-\\lambda_2^2 \\sin^2(2\\pi \\theta)}}\\begin{bmatrix}z+\\lambda_1'\\lambda_2\\sin(2\\pi \\theta)&-\\lambda_1'z^{-1}-\\lambda_2\\sin(2\\pi \\theta)\\\\-\\lambda_1'z-\\lambda_2\\sin(2\\pi \\theta)&z^{-1}+\\lambda_1'\\lambda_2\\sin(2\\pi \\theta)\\end{bmatrix}\\in{\\mathbb{SU}}(1,1).$$ Similarly, we get the reduced Szegő cocycle for the Aubry-dual operator $W^{{\\sharp}}_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ from <a href=\"#eq.transposeIter\" data-reference-type=\"eqref\" data-reference=\"eq.transposeIter\">[eq.transposeIter]</a> and <a href=\"#eq.ConjugatedTransferMatrix\" data-reference-type=\"eqref\" data-reference=\"eq.ConjugatedTransferMatrix\">[eq.ConjugatedTransferMatrix]</a> as $$\\label{eq.reverCocy}\nS^{{\\sharp}}_{z}(\\theta)=\\frac{1}{\\lambda_2\\sqrt{1-\\lambda_1^2\\sin^2(2\\pi \\theta)}}\\begin{bmatrix}z+\\lambda_1\\lambda_2'\\sin(2\\pi\\theta)&-\\lambda_1\\sin(2\\pi \\theta)-\\lambda_2'z^{-1}\\\\-\\lambda_1\\sin(2\\pi \\theta)-\\lambda_2'z&z^{-1}+\\lambda_1\\lambda_2'\\sin(2\\pi \\theta)\\end{bmatrix}.$$ Note that this is just <a href=\"#eq.Sz\" data-reference-type=\"eqref\" data-reference=\"eq.Sz\">[eq.Sz]</a> with $\\lambda_1$ and $\\lambda_2$ exchanged. In the rest of the paper, we will use simply $(\\Phi,A_z)$, $(\\Phi,S^+_z)$ and $(\\Phi,S^{\\sharp}_z)$ to denote these cocycles when they do not cause confusion.",
+    "labels": [
+      "eq.Sz",
+      "eq.reverCocy",
+      "eq.uamo",
+      "eq.uamo_rho_gauged"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Preliminaries"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L163-174::s7",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Preliminaries",
+    "start_line": 163,
+    "end_line": 174,
+    "text": "Plugging in these Verblunsky coefficients, $R_{2n}$ defined in <a href=\"#eq.Rn\" data-reference-type=\"eqref\" data-reference=\"eq.Rn\">[eq.Rn]</a> is constant. Moreover, $A_{n,z}$ in <a href=\"#eq:GECMV_transmat\" data-reference-type=\"eqref\" data-reference=\"eq:GECMV_transmat\">[eq:GECMV_transmat]</a> defines a quasiperiodic cocycle $(\\Phi,A_z(\\cdot))$ which is is $JR$-conjugate to the quasiperiodic two-step combined Szegő-cocycle $(\\Phi,S_z^{+}(\\cdot))$, with $J$ and $R$ given in <a href=\"#eq.Rn\" data-reference-type=\"eqref\" data-reference=\"eq.Rn\">[eq.Rn]</a> and $$\\label{eq.Sz}\nS_z^{+}(\\theta)=\\frac{1}{\\lambda_1\\sqrt{1-\\lambda_2^2 \\sin^2(2\\pi \\theta)}}\\begin{bmatrix}z+\\lambda_1'\\lambda_2\\sin(2\\pi \\theta)&-\\lambda_1'z^{-1}-\\lambda_2\\sin(2\\pi \\theta)\\\\-\\lambda_1'z-\\lambda_2\\sin(2\\pi \\theta)&z^{-1}+\\lambda_1'\\lambda_2\\sin(2\\pi \\theta)\\end{bmatrix}\\in{\\mathbb{SU}}(1,1).$$ Similarly, we get the reduced Szegő cocycle for the Aubry-dual operator $W^{{\\sharp}}_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ from <a href=\"#eq.transposeIter\" data-reference-type=\"eqref\" data-reference=\"eq.transposeIter\">[eq.transposeIter]</a> and <a href=\"#eq.ConjugatedTransferMatrix\" data-reference-type=\"eqref\" data-reference=\"eq.ConjugatedTransferMatrix\">[eq.ConjugatedTransferMatrix]</a> as $$\\label{eq.reverCocy}\nS^{{\\sharp}}_{z}(\\theta)=\\frac{1}{\\lambda_2\\sqrt{1-\\lambda_1^2\\sin^2(2\\pi \\theta)}}\\begin{bmatrix}z+\\lambda_1\\lambda_2'\\sin(2\\pi\\theta)&-\\lambda_1\\sin(2\\pi \\theta)-\\lambda_2'z^{-1}\\\\-\\lambda_1\\sin(2\\pi \\theta)-\\lambda_2'z&z^{-1}+\\lambda_1\\lambda_2'\\sin(2\\pi \\theta)\\end{bmatrix}.$$ Note that this is just <a href=\"#eq.Sz\" data-reference-type=\"eqref\" data-reference=\"eq.Sz\">[eq.Sz]</a> with $\\lambda_1$ and $\\lambda_2$ exchanged. In the rest of the paper, we will use simply $(\\Phi,A_z)$, $(\\Phi,S^+_z)$ and $(\\Phi,S^{\\sharp}_z)$ to denote these cocycles when they do not cause confusion.\n\n<span class=\"smallcaps\"></span>Cocycle Dynamics<span id=\"sec:cocycle_dynamics\" label=\"sec:cocycle_dynamics\"></span>\n\nA crucial ingredient to our proof is the behaviour of the quasi-periodic cocycles associated with the UAMO. Let $\\Phi\\in{\\mathbb{R}}\\setminus{\\mathbb{Q}}$ and $A\\in C({\\mathbb{T}},{\\mathbb{SU}}(1,1))$. This pair $(\\Phi,A)$ defines a linear skew-product $(\\theta,v)\\mapsto(\\theta+\\Phi,A(\\theta)v)$ and is called a ${\\mathbb{SU}}(1,1)$-valued *cocycle*. Its iterates are defined as $(n\\Phi,A^n)$ where $$A^n(\\theta)=\\begin{cases}\nA((n-1)\\Phi+\\theta)\\cdot A((n-2)\\Phi+\\theta)\\cdots A(\\theta), & n> 0,\\\\\nA^{-1}(n\\Phi+\\theta)\\cdot A^{-1}((n-1)\\Phi+\\theta)\\cdots A^{-1}(\\Phi+\\theta), & n<0.\n\\end{cases}$$ We denote $A^0=\\mathbbm 1$, the identity matrix by usual convention. The motivation for considering ${\\mathbb{SU}}(1,1)$-cocycles comes from the fact that we are interested in cocycles induced by the Szegő transfer matrices from <a href=\"#eq:szego_normalized\" data-reference-type=\"eqref\" data-reference=\"eq:szego_normalized\">[eq:szego_normalized]</a>. We note that concepts from the theory of ${\\mathbb{SL}}(2,{\\mathbb{R}})$-cocycles carry over directly due to the isomorphism $$\\label{eq:M}\n    M^{-1}{\\mathbb{SU}}(1,1)M={\\mathbb{SL}}(2,{\\mathbb{R}}),$$ where $M$ is the constant unitary matrix $$M=\\frac{1}{1+i}\\begin{bmatrix}1&-i\\\\1&i\\end{bmatrix}.$$\n\nWe adopt the following notions of Avila : we say that $(\\Phi,A)$ is *uniformly hyperbolic* if there are $c,C>0$ such that $\\|A^n(\\theta)\\|\\geq Ce^{c|n|}$ for all $n\\in{\\mathbb{Z}}$. Moreover, if $A:X\\to \\mathrm{SU}(1,1)$ is analytic with an analytic extension to a strip $\\{\\theta+i\\epsilon:|\\epsilon|<\\delta\\}$,\n\n<div id=\"def.global\" class=\"definition\">",
+    "labels": [
+      "eq.Sz",
+      "eq.reverCocy",
+      "eq:M"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Preliminaries"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L175-198::s8",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Preliminaries",
+    "start_line": 175,
+    "end_line": 198,
+    "text": "<div id=\"def.global\" class=\"definition\">\n\n**Definition 7**. *If $(\\Phi,A)$ is not uniformly hyperbolic, it is said to be*\n\n1.  **Supercritical*, if $\\sup_{\\theta\\in{\\mathbb{T}}}\\Vert A^n(\\theta)\\Vert$ grows exponentially.*\n\n2.  **Subcritical*, if there exists a uniform sub-exponential upper bound on the growth of $\\Vert A^n(\\xi)\\Vert$ through some band $|\\operatorname{Im}\\xi|<\\tilde\\epsilon$.*\n\n3.  **Critical* otherwise.*\n\n</div>\n\nThis cocycle characterization can be employed to localize the spectrum of quasiperiodic CMV matrices :\n\n<div class=\"theorem\">\n\n**Theorem 8**. *Let $\\mathcal E_\\theta$, $\\theta\\in{\\mathbb{T}}$, be a quasiperiodic CMV matrix. Then, $z\\in{\\mathbb{C}}$ is in the spectrum of $\\mathcal{E}_\\theta$ if and only if the associated Szegő cocycle $(\\Phi,S_z)$ is not uniformly hyperbolic.*\n\n</div>\n\nIn fact, this result holds in a more general setting where instead of circle shifts one merely has a dynamical system $(X,T)$ that is minimal. It can be shown in this case that there exists a common set $\\Sigma$ as the spectrum of $\\mathcal{E}_\\theta$ for every $\\theta\\in{\\mathbb{T}}.$\n\nWe call two cocycles $(\\Phi,A)$ and $(\\Phi,B)$ *analytically conjugated* if there is an analytic mapping $Z:{\\mathbb{T}}\\to\\mathrm{PSU}(1,1)$ such that $$^{-1}A(\\theta)Z(\\theta)=B(\\theta).$$ We say that $(\\Phi,A)$ is *(analytically) reducible* if it is analytically conjugated to a cocycle $(\\Phi,B)$ with $B$ constant.\n\n<div class=\"definition\">",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Preliminaries"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L199-214::s9",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Preliminaries",
+    "start_line": 199,
+    "end_line": 214,
+    "text": "<div class=\"definition\">\n\n**Definition 9**. *We call $(\\Phi,A)$ *almost reducible* if the closure of its analytic conjugacy class contains a constant, that is, if there exists $\\epsilon>0$ and analytic $Z_n:{\\mathbb{T}}\\to\\mathrm{PSU}(1,1)$ with holomorphic extensions to $\\{\\theta+iy:|y|<\\epsilon\\}$ such that $$\\lim_{n\\to\\infty}\\|Z_n(\\cdot+\\Phi)A(\\cdot)Z_n(\\cdot)^{-1}-B\\|_\\epsilon=0,$$ where $B\\in\\mathrm{SU}(1,1)$ is constant and $\\|A\\|_\\epsilon=\\sup_{|\\operatorname{Im}(z)|<\\epsilon}\\|A(z)\\|$.*\n\n</div>\n\nThe following result of Avila is crucial for our proof:\n\n<div id=\"thm:ARC\" class=\"theorem\">\n\n**Theorem 10** (Avila ). *Let $\\Phi\\in {\\mathbb{R}}\\setminus{\\mathbb{Q}}$. If $(\\Phi,A)$ is subcritical, then it is almost reducible.*\n\n</div>\n\nLet $(\\Phi,A)$ be an ${\\mathbb{SU}}(1,1)$-valued quasiperiodic cocycle that is homotopic to a constant, and identify ${\\mathbb{S}}^1\\subset{\\mathbb{R}}^2\\equiv{\\mathbb{C}}$ in the usual way. The cocycle $(\\Phi,A)$ induces a homeomorphism $F_A:{\\mathbb{T}}\\times {\\mathbb{S}}^1\\to {\\mathbb{T}}\\times {\\mathbb{S}}^1$ by $F_A(\\theta,v)=(\\Phi+\\theta,f_A(\\theta,v))$ where $$f_A(\\theta,v):=\\frac{A(\\theta)v}{\\|A(\\theta)v\\|}.$$ This map admits a continuous lift $\\widetilde F_A:{\\mathbb{T}}\\times {\\mathbb{R}}\\to {\\mathbb{T}}\\times {\\mathbb{R}}$, $(\\theta,t)\\mapsto(\\Phi+\\theta,\\widetilde f_A(\\theta,t))$, where $\\widetilde f_A:{\\mathbb{T}}\\times{\\mathbb{R}}\\to{\\mathbb{R}}$ is a lift of $\\widetilde f_A$ satisfying $\\widetilde f_A(\\theta,t+1)=f(\\theta,t)+1$ and, if $\\pi_2:{\\mathbb{T}}\\times{\\mathbb{R}}\\to{\\mathbb{T}}\\times{\\mathbb{S}}^1$ denotes the projection $(\\theta,\\phi)\\mapsto(\\theta,e^{2\\pi i\\phi})$, $\\pi_2\\circ\\widetilde F_A=F_A\\circ\\pi_2$.\n\n<div class=\"definition\">",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Preliminaries"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L215-230::s10",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Preliminaries",
+    "start_line": 215,
+    "end_line": 230,
+    "text": "<div class=\"definition\">\n\n**Definition 11** (Rotation number ). *Let $(\\Phi,A)$ be a ${\\mathbb{SU}}(1,1)$-valued cocycle that is homotopic to a constant. Then, the limit $$\\mathop{\\mathrm{rot}}(\\Phi,A)=\\lim_{n\\to\\infty}\\frac{\\widetilde f_A^n(\\theta,t)-t}{n}$$ exists uniformly and is independent of $(\\theta,t)$. It is called the *fibered rotation number* of the cocycle $(\\Phi,A)$.*\n\n</div>\n\nThe regularity of rotation numbers in great generality without referring to spectral theory can be found in .\n\nWe also need the following discrete one-dimensional analog of a result by Eliasson from , compare also Hadj-Amor resp. :\n\n<div id=\"Eli92\" class=\"theorem\">\n\n**Theorem 12**. *Let $\\delta > 0$, $\\Phi \\in {\\mathrm{DC}}(\\kappa,\\tau)$, and $A_{*}\\in \\mathrm{SU}(1,1)$. Then there is a constant $\\epsilon = \\epsilon(\\gamma,\\tau,\\delta,\\| A_{0}\\|)$ such that if $A \\in C^{\\omega}_{\\delta}({\\mathbb{T}},\\mathrm{SU}(1,1))$ is analytic with $\\| A - A_{*} \\|_{\\delta} \\leq \\epsilon$ and the rotation number $\\mathop{\\mathrm{rot}}(\\Phi, A)$ is either Diophantine or rational with respect to $\\Phi/2$, then $(\\Phi,A)$ is reducible.*\n\n</div>\n\nThe cocycle corresponding to the generalized eigenvalue equation <a href=\"#eq.dualEigen\" data-reference-type=\"eqref\" data-reference=\"eq.dualEigen\">[eq.dualEigen]</a> depends on the spectral parameter $z\\in{\\mathbb{C}}$, compare <a href=\"#eq:GECMV_transmat\" data-reference-type=\"eqref\" data-reference=\"eq:GECMV_transmat\">[eq:GECMV_transmat]</a>, therefore we write $\\mathop{\\mathrm{rot}}\\equiv\\mathop{\\mathrm{rot}}(z)$ to make this dependence explicit. Indeed, and , or more recently , give a detailed characterization of the location of the spectral parameter based on the knowledge of reducibility for Schrödinger cocycles.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Preliminaries"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L231-240::s11",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Preliminaries",
+    "start_line": 231,
+    "end_line": 240,
+    "text": "The cocycle corresponding to the generalized eigenvalue equation <a href=\"#eq.dualEigen\" data-reference-type=\"eqref\" data-reference=\"eq.dualEigen\">[eq.dualEigen]</a> depends on the spectral parameter $z\\in{\\mathbb{C}}$, compare <a href=\"#eq:GECMV_transmat\" data-reference-type=\"eqref\" data-reference=\"eq:GECMV_transmat\">[eq:GECMV_transmat]</a>, therefore we write $\\mathop{\\mathrm{rot}}\\equiv\\mathop{\\mathrm{rot}}(z)$ to make this dependence explicit. Indeed, and , or more recently , give a detailed characterization of the location of the spectral parameter based on the knowledge of reducibility for Schrödinger cocycles.\n\nThe following result is the form we need; we shall provide a proof along the lines of for completeness.\n\n<div id=\"thm:gapEdgeRd\" class=\"theorem\">\n\n**Theorem 13**. *Let $\\delta>0$, $\\Phi\\in {\\mathrm{DC}}(\\kappa,\\tau)$, $z\\in{\\mathbb{C}}$, and let $A_z\\in \\mathrm{SU}(1,1)$ be a constant matrix and let $A_z(\\theta)$ be given by <a href=\"#eq:GECMV_transmat\" data-reference-type=\"eqref\" data-reference=\"eq:GECMV_transmat\">[eq:GECMV_transmat]</a> and <a href=\"#eq.uamo\" data-reference-type=\"eqref\" data-reference=\"eq.uamo\">[eq.uamo]</a>. There exists a constant $\\epsilon=\\epsilon (\\kappa,\\tau,\\delta,\\Vert A_z\\Vert)$ such that if $A_z(\\theta)\\in C^\\omega_\\delta({\\mathbb{T}},\\mathrm{SU}(1,1))$ with $\\| A_z(\\theta)-A_z\\|_\\delta<\\epsilon$, and $z\\in{\\mathbb{C}}$ locates at an edge of a spectral gap, then there exists $Z\\in C^\\omega_\\delta({\\mathbb{T}},\\mathrm{PSU}(1,1))$ such that $$M^{-1}Z(\\theta+\\Phi)^{-1}A_z(\\theta)Z(\\theta)M=\\begin{bmatrix}1&c\\\\0&1\\end{bmatrix},$$ where $M$ is the matrix in <a href=\"#eq:M\" data-reference-type=\"eqref\" data-reference=\"eq:M\">[eq:M]</a> that induces the isomorphism between $\\mathrm{SU}(1,1)$ and $\\mathrm{SL}(2,{\\mathbb{R}})$. In particular, if $\\{z\\}=\\mathop{\\mathrm{rot}}^{-1}(k\\Phi/2)$ for some $k\\in{\\mathbb{Z}}$, then $c=0.$*\n\n</div>\n\n<div class=\"proof\">",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Preliminaries"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L241-249::s12",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Preliminaries",
+    "start_line": 241,
+    "end_line": 249,
+    "text": "<div class=\"proof\">\n\n*Proof.* It suffices to consider the Szegő cocycles due to <a href=\"#eq.ConjugatedTransferMatrix\" data-reference-type=\"eqref\" data-reference=\"eq.ConjugatedTransferMatrix\">[eq.ConjugatedTransferMatrix]</a>. For the case $c\\neq0$ we shall assume that $c>0$, the case $c<0$ is similar. One may refer to for the case $c=0$. Suppose that $\\{z\\}\\in\\mathop{\\mathrm{rot}}^{-1}(k\\Phi/2)$. Then by Theorem <a href=\"#thm:ARC\" data-reference-type=\"ref\" data-reference=\"thm:ARC\">10</a> and Theorem <a href=\"#Eli92\" data-reference-type=\"ref\" data-reference=\"Eli92\">12</a>, since we are not in the uniformly hyperbolic case, there exists $Z\\in C^\\omega_\\delta({\\mathbb{T}},\\mathrm{PSU}(1,1))$ such that $$\\label{eq:conjEq1}\n    M^{-1}Z(\\theta+\\Phi)^{-1}\\frac{1}{\\rho}\\begin{bmatrix}z^{\\frac{1}{2}}&-\\overline{\\alpha}z^{-\\frac{1}{2}}\\\\-\\alpha z^{\\frac{1}{2}}&z^{-\\frac{1}{2}}\\end{bmatrix}Z(\\theta)M=\\begin{bmatrix}1&c\\\\0&1\\end{bmatrix}.$$ Consider the variation of the spectral parameter $z\\mapsto z\\,e^{2i\\zeta}$ where we put a factor $2$ for convenience. Then, computing the right side of <a href=\"#eq:conjEq1\" data-reference-type=\"eqref\" data-reference=\"eq:conjEq1\">[eq:conjEq1]</a> yields $$\\label{eq:conjEqNew}\n\\begin{bmatrix}\n    1&c\\\\0&1\n\\end{bmatrix}+\\zeta\\begin{bmatrix}\n    1&c\\\\0&1\n\\end{bmatrix}\\begin{bmatrix}-\\operatorname{Im}\\left((\\overline{z_1}-\\overline{z_2})(z_1+z_2)\\right)&|z_1-z_2|^2\\\\|z_1+z_2|^2&\\operatorname{Im}\\left((\\overline{z_1}-\\overline{z_2})(z_1+z_2)\\right)\\end{bmatrix}+O(\\zeta^2),$$ where $Z=\\begin{bmatrix}z_1&z_2\\\\\\overline{z_2}&\\overline{z_1}\\end{bmatrix}$ with $|z_1|^2-|z_2|^2=1.$ Taking the trace and averaging yield to first order $$\\label{eq:trace}\n2+c\\zeta\\left[|z_1+z_2|^2\\right]$$ where $[\\cdot]$ means averaging with respect to the Lebesgue measure on ${\\mathbb{T}}.$ It follows that if $c\\neq 0$, we can pick $\\zeta$ sufficiently small such that $c\\zeta>0$ and $\\eqref{eq:trace}>2$.",
+    "labels": [
+      "eq:conjEq1",
+      "eq:conjEqNew",
+      "eq:trace"
+    ],
+    "refs": [
+      "eq:trace"
+    ],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Preliminaries"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L250-255::s13",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Preliminaries",
+    "start_line": 250,
+    "end_line": 255,
+    "text": "*Proof.* It suffices to consider the Szegő cocycles due to <a href=\"#eq.ConjugatedTransferMatrix\" data-reference-type=\"eqref\" data-reference=\"eq.ConjugatedTransferMatrix\">[eq.ConjugatedTransferMatrix]</a>. For the case $c\\neq0$ we shall assume that $c>0$, the case $c<0$ is similar. One may refer to for the case $c=0$. Suppose that $\\{z\\}\\in\\mathop{\\mathrm{rot}}^{-1}(k\\Phi/2)$. Then by Theorem <a href=\"#thm:ARC\" data-reference-type=\"ref\" data-reference=\"thm:ARC\">10</a> and Theorem <a href=\"#Eli92\" data-reference-type=\"ref\" data-reference=\"Eli92\">12</a>, since we are not in the uniformly hyperbolic case, there exists $Z\\in C^\\omega_\\delta({\\mathbb{T}},\\mathrm{PSU}(1,1))$ such that $$\\label{eq:conjEq1}\n    M^{-1}Z(\\theta+\\Phi)^{-1}\\frac{1}{\\rho}\\begin{bmatrix}z^{\\frac{1}{2}}&-\\overline{\\alpha}z^{-\\frac{1}{2}}\\\\-\\alpha z^{\\frac{1}{2}}&z^{-\\frac{1}{2}}\\end{bmatrix}Z(\\theta)M=\\begin{bmatrix}1&c\\\\0&1\\end{bmatrix}.$$ Consider the variation of the spectral parameter $z\\mapsto z\\,e^{2i\\zeta}$ where we put a factor $2$ for convenience. Then, computing the right side of <a href=\"#eq:conjEq1\" data-reference-type=\"eqref\" data-reference=\"eq:conjEq1\">[eq:conjEq1]</a> yields $$\\label{eq:conjEqNew}\n\\begin{bmatrix}\n    1&c\\\\0&1\n\\end{bmatrix}+\\zeta\\begin{bmatrix}\n    1&c\\\\0&1\n\\end{bmatrix}\\begin{bmatrix}-\\operatorname{Im}\\left((\\overline{z_1}-\\overline{z_2})(z_1+z_2)\\right)&|z_1-z_2|^2\\\\|z_1+z_2|^2&\\operatorname{Im}\\left((\\overline{z_1}-\\overline{z_2})(z_1+z_2)\\right)\\end{bmatrix}+O(\\zeta^2),$$ where $Z=\\begin{bmatrix}z_1&z_2\\\\\\overline{z_2}&\\overline{z_1}\\end{bmatrix}$ with $|z_1|^2-|z_2|^2=1.$ Taking the trace and averaging yield to first order $$\\label{eq:trace}\n2+c\\zeta\\left[|z_1+z_2|^2\\right]$$ where $[\\cdot]$ means averaging with respect to the Lebesgue measure on ${\\mathbb{T}}.$ It follows that if $c\\neq 0$, we can pick $\\zeta$ sufficiently small such that $c\\zeta>0$ and $\\eqref{eq:trace}>2$.\n\nLet us show that the system represented by <a href=\"#eq:conjEqNew\" data-reference-type=\"eqref\" data-reference=\"eq:conjEqNew\">[eq:conjEqNew]</a> is uniformly hyperbolic for $c\\neq 0$ and $c\\zeta>0$ with $\\zeta$ sufficiently small. Let $$B_0=\\begin{bmatrix}0&c\\\\0&0\\end{bmatrix}, B_1=\\begin{bmatrix}-\\operatorname{Im}\\overline{(z_1-z_2)}(z_1+z_2)+\\frac{c}{2}|z_1+z_2|^2&|z_1-z_2|^2+c \\operatorname{Im}\\overline{(z_1-z_2)}(z_1+z_2)\\\\|z_1+z_2|^2& \\operatorname{Im}\\overline{(z_1-z_2)}(z_1+z_2)- \\frac{c}{2}|z_1+z_2|^2\\end{bmatrix}.$$ One can verify that $$\\eqref{eq:conjEqNew}=\\exp(B_0+\\zeta B_1+O(\\zeta^2)).$$ Denote $$D(\\zeta)=[B_0]+\\delta [B_1]=\\begin{bmatrix}d_1&d_2\\\\d_3&-d_1\\end{bmatrix}$$ and let $$d(\\zeta)=\\det(D(\\zeta))=-c\\zeta\\left[|z_1+z_2|^2\\right]+O(\\zeta^2).$$ Then for $\\zeta$ sufficiently small satisfying $c\\zeta>0$, we have $d(\\zeta)<0$. There exists $Q\\in \\mathrm{SU}(1,1)$ with $\\Vert Q\\Vert^2=O(\\Vert D\\Vert/\\sqrt{|\\zeta|})$ (compare, e.g., ) such that $$Q^{-1}D(\\zeta)Q=\\begin{bmatrix}\n    \\sqrt{-d}&0\\\\0&-\\sqrt{-d}\n\\end{bmatrix}.$$ Moreover, $$Q^{-1}\\exp(B_0+\\zeta B_1+O(\\zeta^2))Q=\\exp(\\Delta+O(|\\zeta|^{3/2})),$$ which is uniformly hyperbolic for $\\zeta$ sufficiently small. This shows that when $c\\neq0$, $z$ is an edge of an open gap, which contradicts the assumption $\\{z\\}=\\mathop{\\mathrm{rot}}^{-1}(k\\Phi/2)$. ◻\n\n</div>",
+    "labels": [
+      "eq:conjEq1",
+      "eq:conjEqNew",
+      "eq:trace"
+    ],
+    "refs": [
+      "eq:conjEqNew",
+      "eq:trace"
+    ],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Preliminaries"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L256-259::s0",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Proofs",
+    "start_line": 256,
+    "end_line": 259,
+    "text": "# Proofs\n\n<span class=\"smallcaps\"></span>Proof of Theorem <a href=\"#thm.Main1\" data-reference-type=\"ref\" data-reference=\"thm.Main1\">1</a> In this section, we give a short proof of Theorem <a href=\"#thm.Main1\" data-reference-type=\"ref\" data-reference=\"thm.Main1\">1</a>. In the non-critical case $\\lambda_1\\neq \\lambda_2$, either $S^+_{z}$ or $S^{{\\sharp}}_{z}$ is subcritical. Since the corresponding operators $W_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ and $W^{{\\sharp}}_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ are isospectral by Aubry-André duality, we can start from either side. Since $\\Phi\\in {\\mathrm{DC}}$ in Theorem <a href=\"#thm.Main1\" data-reference-type=\"ref\" data-reference=\"thm.Main1\">1</a>, subcriticality essentially implies reducibility , and we can adopt Puig’s argument . The conservation of the Wronskian for the second order difference operator indicated by the transfer matrices rules out double point spectrum, i.e., point spectrum with geometric multiplicity two. To be more specific, if $W^{{\\sharp}}_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ is localized, then its eigenvectors decay to zero, leading to vanishing Wronskians, which means it cannot have two linearly independent eigenvectors corresponding to a single eigenvalue. The idea of the proof in the following context is that the transfer matrix of $W_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ being reducible to the identity violates the simplicity of the point spectrum of the corresponding Aubry-dual operator, which leads to a contradiction.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Proofs"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L260-285::s1",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Proofs",
+    "start_line": 260,
+    "end_line": 285,
+    "text": "<span class=\"smallcaps\"></span>Proof of Theorem <a href=\"#thm.Main1\" data-reference-type=\"ref\" data-reference=\"thm.Main1\">1</a> In this section, we give a short proof of Theorem <a href=\"#thm.Main1\" data-reference-type=\"ref\" data-reference=\"thm.Main1\">1</a>. In the non-critical case $\\lambda_1\\neq \\lambda_2$, either $S^+_{z}$ or $S^{{\\sharp}}_{z}$ is subcritical. Since the corresponding operators $W_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ and $W^{{\\sharp}}_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ are isospectral by Aubry-André duality, we can start from either side. Since $\\Phi\\in {\\mathrm{DC}}$ in Theorem <a href=\"#thm.Main1\" data-reference-type=\"ref\" data-reference=\"thm.Main1\">1</a>, subcriticality essentially implies reducibility , and we can adopt Puig’s argument . The conservation of the Wronskian for the second order difference operator indicated by the transfer matrices rules out double point spectrum, i.e., point spectrum with geometric multiplicity two. To be more specific, if $W^{{\\sharp}}_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ is localized, then its eigenvectors decay to zero, leading to vanishing Wronskians, which means it cannot have two linearly independent eigenvectors corresponding to a single eigenvalue. The idea of the proof in the following context is that the transfer matrix of $W_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ being reducible to the identity violates the simplicity of the point spectrum of the corresponding Aubry-dual operator, which leads to a contradiction.\n\nWe begin by characterizing the two-step Szegő-cocycle $(\\Phi,S^+_z)$ according to the nomenclature of Definition <a href=\"#def.global\" data-reference-type=\"ref\" data-reference=\"def.global\">7</a>. By and <a href=\"#eq.ConjugatedTransferMatrix\" data-reference-type=\"eqref\" data-reference=\"eq.ConjugatedTransferMatrix\">[eq.ConjugatedTransferMatrix]</a>, we have the following:\n\n<div id=\"thm.subcritical\" class=\"theorem\">\n\n**Theorem 14**. *Let $\\Phi\\in {\\mathbb{R}}\\setminus{\\mathbb{Q}}$ and $\\lambda_1>\\lambda_2$. Then $(\\Phi,S^+_{z})$ is subcritical for every $z\\in\\Sigma_{\\lambda_1,\\lambda_2,\\Phi}$.*\n\n</div>\n\nAs a direct corollary, we have that\n\n<div id=\"cor.subcritical\" class=\"coro\">\n\n**Corollary 15**. *Let $\\Phi\\in {\\mathbb{R}}\\setminus{\\mathbb{Q}}$ and $\\lambda_1<\\lambda_2$. Then $(\\Phi,S^{{\\sharp}}_z)$ is subcritical for every $z\\in \\Sigma_{\\lambda_1,\\lambda_2,\\Phi}$.*\n\n</div>\n\nThe following result is an analogue of Avron-Simon :\n\n<div class=\"theorem\">\n\n**Theorem 16**. *For any $|z|=1$, denote by $\\mathop{\\mathrm{rot}}_{\\lambda_1,\\lambda_2}(z)$ and $\\mathop{\\mathrm{rot}}^{\\sharp}_{\\lambda_1,\\lambda_2}(z)$ the rotation numbers of $(\\Phi,S^+_z)$ and $(\\Phi,S^{\\sharp}_z)$ respectively. Then $$\\mathop{\\mathrm{rot}}_{\\lambda_1,\\lambda_2}(z)=\\mathop{\\mathrm{rot}}^{\\sharp}_{\\lambda_1,\\lambda_2}(z).$$*\n\n</div>\n\n<div class=\"proof\">",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Proofs"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L286-293::s2",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Proofs",
+    "start_line": 286,
+    "end_line": 293,
+    "text": "<div class=\"proof\">\n\n*Proof.* According to Theorem 5.1 of , there exists a unitary transformation $U$ such that $$U^*W_{\\lambda_1,\\lambda_2,\\Phi}U=W^\\top_{\\lambda_2,\\lambda_1,\\Phi},$$ where $W_{\\lambda_1,\\lambda_2,\\Phi}, W^\\top_{\\lambda_2,\\lambda_1,\\Phi}$ are the direct integrals of $W_{\\lambda_1,\\lambda_2,\\Phi,\\theta}, W^\\top_{\\lambda_2,\\lambda_1,\\Phi,\\theta}$ respectively. Since the base dynamics $\\theta\\to\\theta+\\Phi$ is minimal and uniquely ergodic, the density of states measures of $W_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ and $W^\\top_{\\lambda_2,\\lambda_1,\\Phi,\\theta}$ exist and are denoted by $k(\\cdot)$ and $k^{\\sharp}(\\cdot)$ respectively, compare . Moreover, they are independent of the specific choice of $\\theta$. It follows that $$k(\\cdot)=k^{\\sharp}(\\cdot).$$ By the relation of rotation numbers of Szegő cocycles and the density of states measures of its associated CMV matrices, compare , since our cocycle map is obtained by combining two steps, $$\\mathop{\\mathrm{rot}}_{\\lambda_1,\\lambda_2}(e^{i\\zeta})=k(\\zeta)=k^{\\sharp}(\\zeta)=\\mathop{\\mathrm{rot}}^{\\sharp}_{\\lambda_1,\\lambda_2}(e^{i\\zeta}),\\quad \\zeta\\in [0,2\\pi).$$ ◻\n\n</div>\n\nIt is well known that the spectrum equals the subset of $\\partial {\\mathbb{D}}$ where the rotation number is not locally constant, compare . Therefore, $W_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ and $W^{\\sharp}_{\\lambda_1,\\lambda_2,\\Phi,\\theta}$ are isospectral. Moreover, $J\\subset\\partial {\\mathbb{D}}$ is a spectral gap of the spectrum of one of them if and only if it is a spectral gap of the other, and the labels agree.\n\n<div class=\"proof\">",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Proofs"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L294-296::s3",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Proofs",
+    "start_line": 294,
+    "end_line": 296,
+    "text": "<div class=\"proof\">\n\n*Proof of Theorem <a href=\"#thm.Main1\" data-reference-type=\"ref\" data-reference=\"thm.Main1\">1</a>.* By the discussion above, it is sufficient to consider the case $\\lambda_1<\\lambda_2$. Assume that $z$ is a gap boundary, that is, $2\\mathop{\\mathrm{rot}}(\\Phi,S^{{\\sharp}}_z)=k\\Phi$ for some $k\\in \\mathbb{Z}$. Then, by Theorem <a href=\"#thm:ARC\" data-reference-type=\"ref\" data-reference=\"thm:ARC\">10</a> and Corollary <a href=\"#cor.subcritical\" data-reference-type=\"ref\" data-reference=\"cor.subcritical\">15</a>, $S^{\\sharp}_z$ is almost reducible. Since $\\Phi$ is Diophantine, by Theorem <a href=\"#Eli92\" data-reference-type=\"ref\" data-reference=\"Eli92\">12</a>, there exists $B\\in C^{\\omega}({\\mathbb{T}},\\mathrm{PSU}(1,1))$ such that $$\\label{eq.conjugte1}\n[B(\\theta+\\Phi)]^{-1}S^{{\\sharp}}_{z}(\\theta)B(\\theta)=A,$$ where $A\\in{\\mathbb{SU}}(1,1)$ is constant. By Theorem <a href=\"#thm:gapEdgeRd\" data-reference-type=\"ref\" data-reference=\"thm:gapEdgeRd\">13</a>, $z\\in\\mathop{\\mathrm{rot}}^{-1}(k\\Phi/2)$ is unique if and only if $A=\\mathbbm 1$.",
+    "labels": [
+      "eq.conjugte1"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Proofs"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L297-300::s4",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Proofs",
+    "start_line": 297,
+    "end_line": 300,
+    "text": "*Proof of Theorem <a href=\"#thm.Main1\" data-reference-type=\"ref\" data-reference=\"thm.Main1\">1</a>.* By the discussion above, it is sufficient to consider the case $\\lambda_1<\\lambda_2$. Assume that $z$ is a gap boundary, that is, $2\\mathop{\\mathrm{rot}}(\\Phi,S^{{\\sharp}}_z)=k\\Phi$ for some $k\\in \\mathbb{Z}$. Then, by Theorem <a href=\"#thm:ARC\" data-reference-type=\"ref\" data-reference=\"thm:ARC\">10</a> and Corollary <a href=\"#cor.subcritical\" data-reference-type=\"ref\" data-reference=\"cor.subcritical\">15</a>, $S^{\\sharp}_z$ is almost reducible. Since $\\Phi$ is Diophantine, by Theorem <a href=\"#Eli92\" data-reference-type=\"ref\" data-reference=\"Eli92\">12</a>, there exists $B\\in C^{\\omega}({\\mathbb{T}},\\mathrm{PSU}(1,1))$ such that $$\\label{eq.conjugte1}\n[B(\\theta+\\Phi)]^{-1}S^{{\\sharp}}_{z}(\\theta)B(\\theta)=A,$$ where $A\\in{\\mathbb{SU}}(1,1)$ is constant. By Theorem <a href=\"#thm:gapEdgeRd\" data-reference-type=\"ref\" data-reference=\"thm:gapEdgeRd\">13</a>, $z\\in\\mathop{\\mathrm{rot}}^{-1}(k\\Phi/2)$ is unique if and only if $A=\\mathbbm 1$.\n\nFix $\\theta\\in{\\mathbb{T}}$ and assume that $z$ is a collapsed gap of the spectrum of $W^\\top_{\\lambda_2,\\lambda_1,\\Phi,\\theta}$ with $\\lambda_1<\\lambda_2.$ Since the cocycle $(\\Phi,S^{{\\sharp}}_{z})$ is subcritical by Corollary <a href=\"#cor.subcritical\" data-reference-type=\"ref\" data-reference=\"cor.subcritical\">15</a>, <a href=\"#eq.conjugte1\" data-reference-type=\"eqref\" data-reference=\"eq.conjugte1\">[eq.conjugte1]</a> boils down to $$^{-1}S^{{\\sharp}}_{z}(\\theta)B(\\theta)=\\mathbbm 1$$ and therefore, by <a href=\"#eq.ConjugatedTransferMatrix\" data-reference-type=\"eqref\" data-reference=\"eq.ConjugatedTransferMatrix\">[eq.ConjugatedTransferMatrix]</a> and <a href=\"#eq.transposeIter\" data-reference-type=\"eqref\" data-reference=\"eq.transposeIter\">[eq.transposeIter]</a>, $$^{-1}(JRP)^{-1}A_{z}(JRP)B(\\theta)=\\mathbbm 1.$$ Let $Z(\\theta)=JRPB(\\theta)$, then $$\\label{eq.blochW}\n[Z(\\theta+\\Phi)]^{-1}A_{z}(\\theta)Z(\\theta)=\\mathbbm 1.$$ Let $Z(\\theta)=\\left[U(\\theta),V(\\theta)\\right]$, where $U,V\\in C^{\\omega}({\\mathbb{T}},{\\mathbb{C}}^2)$ are the columns of $Z(\\theta)$. It follows from <a href=\"#eq.blochW\" data-reference-type=\"eqref\" data-reference=\"eq.blochW\">[eq.blochW]</a> that $$\\label{eq:UVA}\n    \\left[U(\\theta+\\Phi),V(\\theta+\\Phi)\\right]=e^{i0}A_z(\\theta)\\left[U(\\theta),V(\\theta)\\right],$$ and thus $\\{U(\\theta+n\\Phi)\\}_{n\\in\\mathbb{{\\mathbb{Z}}}}$ and $\\{V(\\theta+n\\Phi)\\}_{n\\in{\\mathbb{Z}}}$ are independent Bloch waves of the generalized eigenvalue equation $W^\\top_{\\lambda_2,\\lambda_1,\\Phi,\\theta}\\psi=z\\psi$. By Theorem <a href=\"#thm.reverDual\" data-reference-type=\"ref\" data-reference=\"thm.reverDual\">6</a>, these are independent solutions to $W_{\\lambda_1,\\lambda_2,\\Phi,0}u=zu$.",
+    "labels": [
+      "eq.blochW",
+      "eq.conjugte1",
+      "eq:UVA"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Proofs"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L301-304::s5",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Proofs",
+    "start_line": 301,
+    "end_line": 304,
+    "text": "Fix $\\theta\\in{\\mathbb{T}}$ and assume that $z$ is a collapsed gap of the spectrum of $W^\\top_{\\lambda_2,\\lambda_1,\\Phi,\\theta}$ with $\\lambda_1<\\lambda_2.$ Since the cocycle $(\\Phi,S^{{\\sharp}}_{z})$ is subcritical by Corollary <a href=\"#cor.subcritical\" data-reference-type=\"ref\" data-reference=\"cor.subcritical\">15</a>, <a href=\"#eq.conjugte1\" data-reference-type=\"eqref\" data-reference=\"eq.conjugte1\">[eq.conjugte1]</a> boils down to $$^{-1}S^{{\\sharp}}_{z}(\\theta)B(\\theta)=\\mathbbm 1$$ and therefore, by <a href=\"#eq.ConjugatedTransferMatrix\" data-reference-type=\"eqref\" data-reference=\"eq.ConjugatedTransferMatrix\">[eq.ConjugatedTransferMatrix]</a> and <a href=\"#eq.transposeIter\" data-reference-type=\"eqref\" data-reference=\"eq.transposeIter\">[eq.transposeIter]</a>, $$^{-1}(JRP)^{-1}A_{z}(JRP)B(\\theta)=\\mathbbm 1.$$ Let $Z(\\theta)=JRPB(\\theta)$, then $$\\label{eq.blochW}\n[Z(\\theta+\\Phi)]^{-1}A_{z}(\\theta)Z(\\theta)=\\mathbbm 1.$$ Let $Z(\\theta)=\\left[U(\\theta),V(\\theta)\\right]$, where $U,V\\in C^{\\omega}({\\mathbb{T}},{\\mathbb{C}}^2)$ are the columns of $Z(\\theta)$. It follows from <a href=\"#eq.blochW\" data-reference-type=\"eqref\" data-reference=\"eq.blochW\">[eq.blochW]</a> that $$\\label{eq:UVA}\n    \\left[U(\\theta+\\Phi),V(\\theta+\\Phi)\\right]=e^{i0}A_z(\\theta)\\left[U(\\theta),V(\\theta)\\right],$$ and thus $\\{U(\\theta+n\\Phi)\\}_{n\\in\\mathbb{{\\mathbb{Z}}}}$ and $\\{V(\\theta+n\\Phi)\\}_{n\\in{\\mathbb{Z}}}$ are independent Bloch waves of the generalized eigenvalue equation $W^\\top_{\\lambda_2,\\lambda_1,\\Phi,\\theta}\\psi=z\\psi$. By Theorem <a href=\"#thm.reverDual\" data-reference-type=\"ref\" data-reference=\"thm.reverDual\">6</a>, these are independent solutions to $W_{\\lambda_1,\\lambda_2,\\Phi,0}u=zu$.\n\nMoreover, by <a href=\"#eq.solIter1\" data-reference-type=\"eqref\" data-reference=\"eq.solIter1\">[eq.solIter1]</a>, <a href=\"#eq.ConjugatedTransferMatrix\" data-reference-type=\"eqref\" data-reference=\"eq.ConjugatedTransferMatrix\">[eq.ConjugatedTransferMatrix]</a> and since $P_{2n}$ and $R_{2n}$ are constant for the Verblunsky coefficients of the UAMO specified in <a href=\"#eq.uamo\" data-reference-type=\"eqref\" data-reference=\"eq.uamo\">[eq.uamo]</a> and <a href=\"#eq.uamo_rho_gauged\" data-reference-type=\"eqref\" data-reference=\"eq.uamo_rho_gauged\">[eq.uamo_rho_gauged]</a> after gauge transforming, we have $\\det A_{n,z}=1$, which implies the constancy of Wronskian. Note that we smuggled a factor $e^{i0}$ into <a href=\"#eq:UVA\" data-reference-type=\"eqref\" data-reference=\"eq:UVA\">[eq:UVA]</a>: since $0$ is $\\Phi$-nonresonant, by Theorem <a href=\"#thm:AndersonLocal\" data-reference-type=\"ref\" data-reference=\"thm:AndersonLocal\">4</a> the spectrum of $W_{\\lambda_1,\\lambda_2,\\Phi,0}$ for $\\lambda_1<\\lambda_2$ and $\\Phi\\in {\\mathrm{DC}}$ is pure point and simple (by constancy of the Wronksian). This contradicts the assumption that $z$ is unique, hence the gap cannot be collapsed. ◻\n\n</div>",
+    "labels": [
+      "eq.blochW",
+      "eq:UVA"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Proofs"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L305-313::s6",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Proofs",
+    "start_line": 305,
+    "end_line": 313,
+    "text": "</div>\n\n<span class=\"smallcaps\"></span>Proof of Theorem <a href=\"#thm.reverDual\" data-reference-type=\"ref\" data-reference=\"thm.reverDual\">6</a> In the AMO setting the analogous result holds by simply Fourier transforming the assumed eigenvalue equation, so let us try the same strategy here. Writing $$\\label{eq:ft}\n        \\psi_n=\\int_{\\mathbb T}\\frac{dx}{2\\pi}e^{-2\\pi i nx}\\check\\psi(x)$$ we obtain from $W^{{\\sharp}}_{\\lambda_{1},\\lambda_{2},\\xi,\\Phi}\\varphi=W^{\\top}_{\\lambda_{2},\\lambda_{1},\\xi,\\Phi}\\varphi=z\\varphi$ and that $$\\begin{aligned}\n        z\\varphi_n^+ & = (\\lambda_1\\cos(2\\pi(n\\Phi+\\xi))+i\\lambda_1')(\\lambda_2\\varphi_{n+1}^+ +\\lambda_2'\\varphi_n^-)+\\lambda_1\\sin(2\\pi(n\\Phi+\\xi))(-\\lambda_2'\\varphi_n^++\\lambda_2\\varphi_{n-1}^-)\\\\\n        z\\varphi_n^- & = -\\lambda_1\\sin(2\\pi(n\\Phi+\\xi))(\\lambda_2\\varphi_{n+1}^++\\lambda_2'\\varphi_n^-)+(\\lambda_1\\cos(2\\pi(n\\Phi+\\xi))-i\\lambda_1')(-\\lambda_2'\\varphi_n^++\\lambda_2\\varphi_{n-1}^-).\n\n\\end{aligned}$$ Plugging in the concrete form of $\\varphi$ from Theorem <a href=\"#thm.reverDual\" data-reference-type=\"ref\" data-reference=\"thm.reverDual\">6</a>, Fourier transforming with respect to $x=\\xi+n\\Phi$ and multiplying by $\\exp[-2\\pi in\\theta]$, the first equation gives $$\\begin{aligned}\n        \\int_{\\mathbb T}\\frac{dx}{2\\pi}e^{-2\\pi i mx}z\\phi^+(x) &= \\int_{\\mathbb T}\\frac{dx}{2\\pi}e^{-2\\pi i mx}\\Big[(\\lambda_1\\cos(2\\pi x)+i\\lambda_1')(\\lambda_2e^{2\\pi i\\theta}\\phi^+(x+\\Phi) +\\lambda_2'\\phi^-(x))\\\\\n        &\\qquad+\\lambda_1\\sin(2\\pi x)(-\\lambda_2'\\phi^+(x)+\\lambda_2e^{-2\\pi i\\theta}\\phi^-(x-\\Phi))\\Big].",
+    "labels": [
+      "eq:ft"
+    ],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Proofs"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L314-325::s7",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Proofs",
+    "start_line": 314,
+    "end_line": 325,
+    "text": "\\end{aligned}$$ Plugging in the concrete form of $\\varphi$ from Theorem <a href=\"#thm.reverDual\" data-reference-type=\"ref\" data-reference=\"thm.reverDual\">6</a>, Fourier transforming with respect to $x=\\xi+n\\Phi$ and multiplying by $\\exp[-2\\pi in\\theta]$, the first equation gives $$\\begin{aligned}\n        \\int_{\\mathbb T}\\frac{dx}{2\\pi}e^{-2\\pi i mx}z\\phi^+(x) &= \\int_{\\mathbb T}\\frac{dx}{2\\pi}e^{-2\\pi i mx}\\Big[(\\lambda_1\\cos(2\\pi x)+i\\lambda_1')(\\lambda_2e^{2\\pi i\\theta}\\phi^+(x+\\Phi) +\\lambda_2'\\phi^-(x))\\\\\n        &\\qquad+\\lambda_1\\sin(2\\pi x)(-\\lambda_2'\\phi^+(x)+\\lambda_2e^{-2\\pi i\\theta}\\phi^-(x-\\Phi))\\Big].\n\n\\end{aligned}$$ Expanding the trigonometric functions, reorganizing the terms and utilizing <a href=\"#eq:ft\" data-reference-type=\"eqref\" data-reference=\"eq:ft\">[eq:ft]</a> gives $$\\begin{aligned}\n        z\\phi_m^+ &= \\frac12\\lambda_2\\lambda_1\\left[e^{2\\pi i((m-1)\\Phi+\\theta)}\\phi_{m-1}^+-ie^{-2\\pi i((m-1)\\Phi+\\theta)}\\phi_{m-1}^-\\right]\\\\\n        &\\qquad+\\frac12\\lambda_2\\lambda_1\\left[e^{2\\pi i((m+1)\\Phi+\\theta)}\\phi_{m+1}^++ie^{-2\\pi i((m+1)\\Phi+\\theta)}\\phi_{m+1}^-\\right]\\\\\n        &\\qquad+\\lambda_2\\lambda_1'ie^{2\\pi i(m\\Phi+\\theta)}\\phi_m^++i\\lambda_2'\\lambda_1'\\phi_m^-\\\\\n        &\\qquad+\\frac12\\lambda_2'\\lambda_1\\left[\\phi_{m-1}^-+i\\phi_{m-1}^++\\phi_{m+1}^--i\\phi_{m+1}^+\\right].\n\n\\end{aligned}$$ Similarly, from Fourier transforming and expanding the trigonometric functions we obtain from the second equation $$\\begin{aligned}\n        z\\phi_m^- & = \\frac12\\lambda_2\\lambda_1(-ie^{2\\pi i ((m+1)\\Phi+\\theta)}\\phi_{m+1}^++e^{-2\\pi i ((m+1)\\Phi+\\theta)}\\phi_{m+1}^-(x))\\\\\n        &\\qquad+ \\frac12\\lambda_2\\lambda_1(ie^{2\\pi i ((m-1)\\Phi+\\theta)}\\phi_{m-1}^++e^{-2\\pi i ((m-1)\\Phi+\\theta)}\\phi_{m-1}^-(x))\\\\\n        &\\qquad+\\lambda_2\\lambda_1'(-ie^{-2\\pi i(m\\Phi+\\theta)}\\phi_m^-)+i\\lambda_2'\\lambda_1'\\phi_m^+\\\\\n        &\\qquad+\\frac12\\lambda_2'\\lambda_1\\left[i\\phi_{m-1}^--i\\phi_{m+1}^--\\phi_{m-1}^+-\\phi_{m+1}^+\\right]",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Proofs"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L326-333::s8",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Proofs",
+    "start_line": 326,
+    "end_line": 333,
+    "text": "\\end{aligned}$$ Similarly, from Fourier transforming and expanding the trigonometric functions we obtain from the second equation $$\\begin{aligned}\n        z\\phi_m^- & = \\frac12\\lambda_2\\lambda_1(-ie^{2\\pi i ((m+1)\\Phi+\\theta)}\\phi_{m+1}^++e^{-2\\pi i ((m+1)\\Phi+\\theta)}\\phi_{m+1}^-(x))\\\\\n        &\\qquad+ \\frac12\\lambda_2\\lambda_1(ie^{2\\pi i ((m-1)\\Phi+\\theta)}\\phi_{m-1}^++e^{-2\\pi i ((m-1)\\Phi+\\theta)}\\phi_{m-1}^-(x))\\\\\n        &\\qquad+\\lambda_2\\lambda_1'(-ie^{-2\\pi i(m\\Phi+\\theta)}\\phi_m^-)+i\\lambda_2'\\lambda_1'\\phi_m^+\\\\\n        &\\qquad+\\frac12\\lambda_2'\\lambda_1\\left[i\\phi_{m-1}^--i\\phi_{m+1}^--\\phi_{m-1}^+-\\phi_{m+1}^+\\right]\n\n\\end{aligned}$$ Linearly combining these expressions as $a\\phi^++b\\phi^-$ for $(a,b)=(1,-i)$ and $(a,b)=(-i,1)$ we find $$\\begin{aligned}\n        z\\psi_m^+&=\\lambda_1(\\lambda_2\\cos(2\\pi((m-1)\\Phi+\\theta))+i\\lambda_2')\\psi_{m-1}^+-\\lambda_2\\lambda_1\\sin(2\\pi((m-1)\\Phi+\\theta))\\psi_{m-1}^-\\\\\n        &\\qquad-\\lambda_1'(\\lambda_2\\cos(2\\pi(m\\Phi+\\theta))-i\\lambda_2')\\psi_m^--\\lambda_2\\lambda_1'\\sin(2\\pi(m\\Phi+\\theta))\\psi_m^+\\\\\n        z\\psi_m^-&=\\lambda_1(\\lambda_2\\cos(2\\pi((m+1)\\Phi+\\theta))-i\\lambda_2')\\psi_{m+1}^-+\\lambda_2\\lambda_1\\sin(2\\pi((m+1)\\Phi+\\theta))\\psi_{m+1}^+\\\\\n        &\\qquad+\\lambda_1'(\\lambda_2\\cos(2\\pi(m\\Phi+\\theta))+i\\lambda_2')\\psi_m^+-\\lambda_2\\lambda_1'\\sin(2\\pi(m\\Phi+\\theta))\\psi_m^-\n\n\\end{aligned}$$ where we used the definition of $\\psi$ in <a href=\"#eq:psi_aubr\" data-reference-type=\"eqref\" data-reference=\"eq:psi_aubr\">[eq:psi_aubr]</a>. Comparing with we see that indeed $W_{\\lambda_1,\\lambda_2,\\Phi,\\theta}\\psi=z\\psi$.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Proofs"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L334-361::s0",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Acknowledgements",
+    "start_line": 334,
+    "end_line": 361,
+    "text": "# Acknowledgements\n\nThe authors thank David Damanik and Jake Fillman for inspiring discussions. L. Li is supported by AMS-Simons Travel Grant 2024-2026.\n\n<div class=\"thebibliography\">\n\n10\n\nS. H. Amor. Hölder continuity of the rotation number for quasi-periodic co-cycles in $\\mathrm{SL}(2,{\\mathbb{R}})$. , 287:565–588, 2009.\n\nA. Avila. Global theory of one-frequency Schrödinger operators. , 215:1–54, 2015.\n\nA. Avila. , Lyapunov exponents, and the spectral dichotomy for typical one-frequency Schrödinger operators. . [ arXiv:2307.11071](https://arxiv.org/abs/2307.11071).\n\nA. Avila, J. Bochi, and D. Damanik. Cantor spectrum for Schrödinger operators with potentials arising from generalized skew-shifts. , 146(2):253–280, 2009.\n\nA. Avila, J. Bochi, and D. Damanik. Opening gaps in the spectrum of strictly ergodic Schrödinger operators. , 14(1):61–106, 2012. [arXiv:0903.2281](https://arxiv.org/abs/0903.2281).\n\nA. Avila and S. Jitomirskaya. The ten Martini problem. , 170(1):303–342, 2009. [ arXiv:math/0503363](https://arxiv.org/abs/math/0503363).\n\nA. Avila and S. Jitomirskaya. Almost localization and almost reducibility. , 12(1):93–131, 2010. [arXiv:0805.1761](https://arxiv.org/abs/0805.1761).\n\nA. Avila, J. You, and Q. Zhou. Dry ten Martini problem in the non-critical case. . [ arXiv:2306.16254](https://arxiv.org/abs/2306.16254).\n\nJ. Avron and B. Simon. Almost periodic Schrödinger operators. II. The integrated density of states. , 50(1):369–391, 1983.\n\nR. Band, S. Beckus, B. Biber, L. Raymond, and Y. Thomas. A review of a work by Raymond: Sturmian Hamiltonians with a large coupling constant – periodic approximations and gap labels. . [ arXiv:2409.10920](https://arxiv.org/abs/2409.10920).",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Acknowledgements"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L362-379::s1",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Acknowledgements",
+    "start_line": 362,
+    "end_line": 379,
+    "text": "R. Band, S. Beckus, B. Biber, L. Raymond, and Y. Thomas. A review of a work by Raymond: Sturmian Hamiltonians with a large coupling constant – periodic approximations and gap labels. . [ arXiv:2409.10920](https://arxiv.org/abs/2409.10920).\n\nR. Band, S. Beckus, and R. Loewy. The dry ten Martini problem for Sturmian Hamiltonians. . [ arXiv:2402.16703](https://arxiv.org/abs/2402.16703).\n\nJ. Bellissard. K-theory of C\\*-Algebras in solid state physics. In T. C. Dorlas, N. M. Hugenholtz, and M. Winnink, editors, *Statistical Mechanics and Field Theory: Mathematical Aspects*, pages 99–156, Berlin, Heidelberg, 1986. Springer.\n\nJ. Bellissard. Gap Labelling Theorems for Schrödinger Operators. In M. Waldschmidt, P. Moussa, J.-M. Luck, and C. Itzykson, editors, *From Number Theory to Physics*, pages 538–630. Springer, Berlin, Heidelberg, 1992.\n\nJ. Bellissard and B. Simon. Cantor spectrum for the almost Mathieu equation. , 48(3):408–419, 1982.\n\nH. Broer, J. Puig, and C. Simó. Resonance tongues and instability pockets in the quasi-periodic Hill-Schrödinger equation. , 241(2-3):467–503, 2003.\n\nM. J. Cantero, L. Moral, F. A. Grünbaum, and L. Velázquez. Matrix-valued Szegő polynomials and quantum random walks. , 63(4):464–507, 2010. [arXiv:0901.2244](https://arxiv.org/abs/0901.2244).\n\nM. J. Cantero, L. Moral, and L. Velázquez. Five-diagonal matrices and zeros of orthogonal polynomials on the unit circle. , 362:29–56, 2003. [ arXiv:math/0204300](https://arxiv.org/abs/math/0204300).\n\nC. Cedzich and J. Fillman. Absence of bound states for quantum walks and CMV matrices via reflections. , 14(4):1513–1536, 2024. [ arXiv:2402.11024](https://arxiv.org/abs/2402.11024).\n\nC. Cedzich, J. Fillman, T. Geib, and A. H. Werner. Singular continuous Cantor spectrum for magnetic quantum walks. , 110:1141–1158, 2020. [ arXiv:1908.09924](https://arxiv.org/abs/1908.09924).",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Acknowledgements"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L380-399::s2",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Acknowledgements",
+    "start_line": 380,
+    "end_line": 399,
+    "text": "C. Cedzich, J. Fillman, T. Geib, and A. H. Werner. Singular continuous Cantor spectrum for magnetic quantum walks. , 110:1141–1158, 2020. [ arXiv:1908.09924](https://arxiv.org/abs/1908.09924).\n\nC. Cedzich, J. Fillman, L. Li, D. Ong, and Q. Zhou. Exact mobility edges for almost-periodic CMV matrices via gauge symmetries. , 2023. [ arXiv:2307.10909](https://arxiv.org/abs/2307.10909).\n\nC. Cedzich, J. Fillman, and D. C. Ong. Almost everything about the unitary almost-Mathieu operator. , 403:745–794, 2023. [ arXiv:2112.03216](https://arxiv.org/abs/2112.03216).\n\nM.-D. Choi, G. A. Elliott, and N. Yui. Gauss polynomials and the rotation algebra. , 99(1):225–246, 1990.\n\nD. Damanik, I. Emilsdóttir, and J. Fillman. Gap labels and asymptotic gap opening for full shifts. . [ arXiv:2412.13391](https://arxiv.org/abs/2412.13391).\n\nD. Damanik and J. Fillman. Gap Labelling for Discrete One-Dimensional Ergodic Schrödinger Operators. In M. Brown, F. Gesztesy, P. Kurasov, A. Laptev, B. Simon, G. Stolz, and I. Wood, editors, *From Complex Analysis to Operator Theory: A Panorama: In Memory of Sergey Naboko*, pages 341–404. Springer International Publishing, Cham, 2023. [ arXiv:2203.03696](https://arxiv.org/abs/2203.03696).\n\nD. Damanik and J. Fillman. , volume 249. American Mathematical Society, 2024.\n\nD. Damanik, J. Fillman, M. Lukic, and W. Yessen. Characterizations of uniform hyperbolicity and spectra of CMV matrices. , 9(4):1009–1023, 2016. [arXiv:1409.6259](https://arxiv.org/abs/1409.6259).\n\nD. Damanik and L. Li. Opening gaps in the spectrum of strictly ergodic Jacobi and CMV matrices. . [ arXiv:2404.03864](https://arxiv.org/abs/2404.03864).\n\nL. H. Eliasson. Floquet solutions for the 1-dimensional quasi-periodic Schrödinger equation. , 146(3):447–482, 1992.\n\nJ. Fillman, D. C. Ong, and Z. Zhang. Spectral Characteristics of the Unitary Critical Almost-Mathieu Operator. , 351(2):525–561, 2017. [ arXiv:1512.07641](https://arxiv.org/abs/1512.07641).",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Acknowledgements"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L400-421::s3",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Acknowledgements",
+    "start_line": 400,
+    "end_line": 421,
+    "text": "J. Fillman, D. C. Ong, and Z. Zhang. Spectral Characteristics of the Unitary Critical Almost-Mathieu Operator. , 351(2):525–561, 2017. [ arXiv:1512.07641](https://arxiv.org/abs/1512.07641).\n\nY. Forman and T. VandenBoom. Localization and Cantor spectrum for quasiperiodic discrete Schrödinger operators with asymmetric, smooth, cosine-like sampling functions. . [ arXiv:2107.05461](https://arxiv.org/abs/2107.05461).\n\nL. Ge, S. Jitomirskaya, and J. You. otani theory, Puig’s argument, and stability of the ten Martini problem. . [ arXiv:2308.09321](https://arxiv.org/abs/2308.09321).\n\nJ. S. Geronimo and R. A. Johnson. Rotation number associated with difference equations satisfied by polynomials orthogonal on the unit circle. , 132(1):140–178, 1996.\n\nA. Gorodetski and V. Kleptsyn. Log hölder continuity of the rotation number, 2024. [ arXiv:2410.15462](https://arxiv.org/abs/2410.15462).\n\nR. Han. Dry Ten Martini problem for the non-self-dual extended Harper’s model. , 370(1):197–217, 2017. [ arXiv:1607.08571](https://arxiv.org/abs/1607.08571).\n\nJ. He, X. Hou, Y. Shan, and J. You. Explicit construction of quasi-periodic analytic Schrödinger operators with cantor spectrum. , 391(1):179–225, 2025. [ arXiv:2312.16434](https://arxiv.org/abs/2312.16434).\n\nM. Herman. Une méthode pour minorer les exposants de Lyapounov et quelques exemples montrant le caractère local d’un théorème d’ Arnold et de Moser sur le tore de dimension 2. , 58:453–502, 1983.\n\nD. R. Hofstadter. Energy levels and wave functions of Bloch electrons in rational and irrational magnetic fields. , 14:2239–2249, 1976.\n\nX. Hou, Y. Shan, and J. You. Construction of quasiperiodic Schrödinger operators with Cantor spectrum. , 20(11):3563–3601, 2019.\n\nR. Johnson and J. Moser. The rotation number for almost periodic potentials. , 84(3):403–438, 1982.\n\nM. Kac. public commun. at the 1981 AMS Annual Meeting.",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Acknowledgements"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L422-447::s4",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Acknowledgements",
+    "start_line": 422,
+    "end_line": 447,
+    "text": "M. Kac. public commun. at the 1981 AMS Annual Meeting.\n\nL. Li, D. Damanik, and Q. Zhou. Cantor spectrum for CMV matrices with almost periodic Verblunsky coefficients. , 283(12):109709, 2022. [ arXiv:2112.14376](https://arxiv.org/abs/2112.14376).\n\nC. A. Marx and S. Jitomirskaya. Dynamics and spectral theory of quasi-periodic Schrödinger-type operators. , 37(8):2353–2393, 2017. [ arXiv:1503.05740](https://arxiv.org/abs/1503.05740).\n\nJ. Moser and J. Pöschel. An extension of a result by Dinaburg and Sinai on quasi-periodic potentials. , 59(1):39–85, 1984.\n\nJ. Puig. Cantor spectrum for the almost Mathieu operator. , 244(2):297–309, 2004. [ math-ph/0309004](https://arxiv.org/abs/math-ph/0309004).\n\nJ. Puig. A nonperturbative Eliasson’s reducibility theorem. , 19(2):355–376, 2005. [ arXiv:math/0503356](https://arxiv.org/abs/math/0503356).\n\nJ. Puig and C. Simó. Analytic families of reducible linear quasi-periodic differential equations. , 26(2):481–524, 2006.\n\nL. Raymond. A constructive gap labelling for the discrete schrödinger operator on a quasiperiodic chain. , 1995.\n\nB. Simon. Almost periodic Schrödinger operators: A Review. , 3(4):463–490, 1982.\n\nB. Simon. , volume 54 of *American Mathematical Society Colloquium Publications*. American Mathematical Society, Providence, RI, 2005. Classical theory.\n\nB. Simon. , volume 54 of *American Mathematical Society Colloquium Publications*. American Mathematical Society, Providence, RI, 2005. Spectral theory.\n\nY. Wang and Z. Zhang. Cantor spectrum for a class of $C^2$ quasiperiodic Schrödinger operators. , (8):2300–2336, 2017. [arXiv:1410.0101](https://arxiv.org/abs/1410.0101).\n\nF. Yang. Anderson localization for the unitary almost Mathieu operator. , 37(8):Paper No. 085010, 23, 2024. [ arXiv:2201.05779](https://arxiv.org/abs/2201.05779).\n\n</div>",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Acknowledgements"
+      }
+    }
+  },
+  {
+    "id": "2503.06710v1::L448-448::s5",
+    "file": "data/data/full_markdown/2503.06710v1.md",
+    "section_path": "Acknowledgements",
+    "start_line": 448,
+    "end_line": 448,
+    "text": "</div>\n\n[^1]: Note that in certain regimes, the “almost all” can be lifted to “all”, for details see .",
+    "labels": [],
+    "refs": [],
+    "meta": {
+      "heading": {
+        "level": 1,
+        "title": "Acknowledgements"
+      }
+    }
+  }
+]
