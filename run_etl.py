@@ -3,7 +3,7 @@ from tqdm import tqdm
 
 from data.etl.etl_stage_a import build_arxiv_query, arxiv_extract
 from data.etl.etl_stage_b import prepare_latex_corpus, latex_conversion
-from data.etl.etl_stage_c import md_collection_chunking
+from data.etl.etl_stage_c_md import md_collection_chunking
 
 def run_arxiv_extract(phrases, categories, max_results):
 
