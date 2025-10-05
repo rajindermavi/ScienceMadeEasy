@@ -19,8 +19,9 @@ ARXIV_URL_RE = re.compile(r"https?://arxiv\.org/abs/([^\s]+)", re.I)
 EMAIL_RE = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}")
 URL_RE = re.compile(r"https?://\S+")
 SECTION_CAND_RE = re.compile(
-    r"^(abstract|introduction|preliminaries|related work|results|proofs?|"
-    r"conclusion|acknowledg(e)?ments?|references?)\s*$", re.I
+    r"^\s*(?:\d+(?:\.\d+)*)?\s*(abstract|introduction|preliminaries|related work|results|"
+    r"proofs?|conclusion|acknowledg(?:e)?ments?|references?)\s*:??\s*$",
+    re.I,
 )
 
 # Heuristic indicators of math stripped by detex
@@ -127,6 +128,7 @@ def txt_file_chunking(input_txt_filepath, output_json_filepath):
                                 "start": start_line,
                                 "end": buffer[-1][0],
                                 "text": para_text,
+                                "section_hint": _extract_section_hint(para_text),
                             }
                         )
                 buffer = []
@@ -141,6 +143,7 @@ def txt_file_chunking(input_txt_filepath, output_json_filepath):
                         "start": start_line,
                         "end": buffer[-1][0],
                         "text": para_text,
+                        "section_hint": _extract_section_hint(para_text),
                     }
                 )
 
@@ -169,10 +172,12 @@ def txt_file_chunking(input_txt_filepath, output_json_filepath):
                     "start": para["start"],
                     "end": para["end"],
                     "text": segment,
+                    "section_hint": para.get("section_hint"),
                 }
             )
 
     chunks: List[Dict[str, Any]] = []
+    current_section = ""
     i = 0
     chunk_idx = 0
     total = len(expanded)
@@ -207,12 +212,19 @@ def txt_file_chunking(input_txt_filepath, output_json_filepath):
             i = j
             continue
 
+        section_candidate = current_section
+        for k in range(i, j):
+            hint = expanded[k].get("section_hint")
+            if hint:
+                section_candidate = hint
+        current_section = section_candidate
+
         chunk_id = f"{in_path.stem}::L{start}-{end}::c{chunk_idx}"
         chunks.append(
             {
                 "id": chunk_id,
                 "file": str(in_path),
-                "section_path": "",
+                "section_path": section_candidate,
                 "start_line": start,
                 "end_line": end,
                 "text": chunk_text,
@@ -235,8 +247,12 @@ def txt_file_chunking(input_txt_filepath, output_json_filepath):
         chunk["neighbors"] = neighbors
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
+    normalized_chunks = [
+        _normalize_txt_record(chunk, fallback_index=idx)
+        for idx, chunk in enumerate(chunks)
+    ]
     with out_path.open("w", encoding="utf-8") as fh:
-        json.dump(chunks, fh, ensure_ascii=False, indent=2)
+        json.dump(normalized_chunks, fh, ensure_ascii=False, indent=2)
 
     return str(out_path)
 
@@ -265,8 +281,9 @@ def _guess_chunk_type(text: str, section_path: str) -> str:
     if not t:
         return "empty"
     first = t.splitlines()[0].strip()
-    if SECTION_CAND_RE.match(first):
-        name = SECTION_CAND_RE.match(first).group(1).lower()
+    match = SECTION_CAND_RE.match(first)
+    if match:
+        name = match.group(1).lower()
         if name.startswith("reference"):
             return "references_header"
         return f"section_header:{name}"
@@ -279,6 +296,18 @@ def _guess_chunk_type(text: str, section_path: str) -> str:
     if re.search(r"\bfigure\b|\btable\b", t, re.I) or re.search(r"^\s*-?\d+(\.\d+)?\s*$", t, re.M):
         return "figure_or_numeric"
     return "body"
+
+
+def _extract_section_hint(text: str) -> str:
+    """Return a normalized section name when a paragraph looks like a heading."""
+    first_line = (text or "").splitlines()[0].strip()
+    if not first_line:
+        return ""
+    match = SECTION_CAND_RE.match(first_line)
+    if match:
+        normalized = match.group(1).strip()
+        return normalized.title()
+    return ""
 
 def _detect_math_loss(text: str) -> bool:
     """Flag whether the text likely lost equations during detex."""
@@ -309,11 +338,14 @@ def _normalize_txt_record(rec: Dict[str, Any], fallback_index: int) -> Dict[str,
     chunk_id = rec.get("id") or f"{pid}::chunk{fallback_index}"
     chunk_type = _guess_chunk_type(text, rec.get("section_path", ""))
     harvested = _harvest_refs(text)
+    section_path = rec.get("section_path") or _extract_section_hint(text)
+    if not section_path and text:
+        section_path = text.splitlines()[0].strip()[:120]
     return {
         "chunk_id": chunk_id,
         "paper_id": pid,
         "source_file": rec.get("file") or "",
-        "section_path": rec.get("section_path", ""),
+        "section_path": section_path,
         "start_line": rec.get("start_line"),
         "end_line": rec.get("end_line"),
         "chunk_type": chunk_type,
@@ -328,6 +360,53 @@ def _normalize_txt_record(rec: Dict[str, Any], fallback_index: int) -> Dict[str,
         "added_at": int(time.time()),
         "version": "pptxt-0.1",
     }
+
+
+def _collect_txt_payloads(paths: List[Path]) -> List[Dict[str, Any]]:
+    """Load and flatten JSON payloads coming from TXT chunk files."""
+    records: List[Dict[str, Any]] = []
+    for path in paths:
+        if not path.exists():
+            continue
+        with path.open("r", encoding="utf-8") as f:
+            payload = json.load(f)
+        if isinstance(payload, list):
+            records.extend(payload)
+        elif isinstance(payload, dict):
+            records.append(payload)
+    return records
+
+
+def _normalize_txt_records(records: List[Dict[str, Any]], drop_empty: bool) -> List[Dict[str, Any]]:
+    """Normalize raw TXT chunk dicts and optionally drop empty text entries."""
+    normalized: List[Dict[str, Any]] = []
+    for idx, rec in enumerate(records):
+        if rec.get("chunk_id") and rec.get("source_file"):
+            norm = dict(rec)
+            if not norm.get("section_path"):
+                text_val = norm.get("text")
+                hint = _extract_section_hint(text_val)
+                if hint:
+                    norm["section_path"] = hint
+                elif text_val:
+                    norm["section_path"] = text_val.splitlines()[0].strip()[:120]
+            if not norm.get("chunk_type"):
+                norm["chunk_type"] = _guess_chunk_type(norm.get("text"), norm.get("section_path", ""))
+        else:
+            norm = _normalize_txt_record(rec, fallback_index=idx)
+        text = (norm.get("text") or "").strip()
+        if drop_empty and not text:
+            continue
+        normalized.append(norm)
+    return normalized
+
+
+def _write_txt_jsonl(records: List[Dict[str, Any]], out_path: Path) -> None:
+    """Write normalized TXT records into JSONL format."""
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with out_path.open("w", encoding="utf-8") as w:
+        for rec in records:
+            w.write(json.dumps(rec, ensure_ascii=False) + "\n")
 
 # --- Main function ------------------------------------------------------------
 
@@ -346,34 +425,21 @@ def post_process_txt_chunking(list_of_json_paths: List[str],
         dict summary with counts and paper IDs.
     """
     out_path = Path(combined_output_jsonl)
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    total_in = 0
-    total_out = 0
-    paper_ids = set()
+    input_paths = [Path(p) for p in list_of_json_paths]
+    raw_records = _collect_txt_payloads(input_paths)
+    normalized_records = _normalize_txt_records(raw_records, drop_empty=drop_empty)
 
-    with out_path.open("w", encoding="utf-8") as w:
-        for path in list_of_json_paths:
-            p = Path(path)
-            if not p.exists():
-                continue
-            with p.open("r", encoding="utf-8") as f:
-                payload = json.load(f)
-            records = payload if isinstance(payload, list) else [payload]
-            for i, rec in enumerate(records):
-                total_in += 1
-                norm = _normalize_txt_record(rec, i)
-                if drop_empty and not norm["text"]:
-                    continue
-                paper_ids.add(norm["paper_id"] or "")
-                w.write(json.dumps(norm, ensure_ascii=False) + "\n")
-                total_out += 1
+    _write_txt_jsonl(normalized_records, out_path)
+
+    paper_ids = {rec["paper_id"] for rec in normalized_records if rec.get("paper_id")}
 
     return {
         "input_files": len(list_of_json_paths),
-        "records_seen": total_in,
-        "records_written": total_out,
-        "unique_paper_ids": sorted(pid for pid in paper_ids if pid),
+        "records_seen": len(raw_records),
+        "records_written": len(normalized_records),
+        "unique_paper_ids": sorted(paper_ids),
         "output_jsonl": str(out_path),
+        "normalized_records": normalized_records,
     }
 
 
@@ -381,6 +447,7 @@ def post_process_txt_chunking(list_of_json_paths: List[str],
 def txt_collection_chunking(txt_files):
 
     txt_chunked_dir = config.TXT_CHUNKED_DIR
+    txt_chunked_dir.mkdir(parents=True, exist_ok=True)
     chunked_files = []
 
     txt_jsonl = config.TXT_JSONL
@@ -395,6 +462,8 @@ def txt_collection_chunking(txt_files):
         except Exception as e:
             print(f'Excption {e} for file {txt_infile}.')
     
-    txt_details = post_process_txt_chunking(chunked_files,txt_jsonl)
+    aggregated_chunk_files = sorted(txt_chunked_dir.glob("*.json"))
+    txt_details = post_process_txt_chunking([str(p) for p in aggregated_chunk_files],txt_jsonl)
+    txt_details["chunk_files_written"] = chunked_files
 
     return txt_details

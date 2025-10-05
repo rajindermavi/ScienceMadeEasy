@@ -169,6 +169,7 @@ def md_file_chunking(input_md_filepath, output_json_filepath):
 
             text = "\n\n".join(tp for tp in text_parts if tp is not None).strip()
             labels, refs = _extract_labels_refs(text)
+            equations = _extract_equations(text)
             section_path = _normalize_section_path(headings_stack)
             chunk_id = f"{in_path.stem}::L{start}-{end}::s{chunk_idx_within_section}"
 
@@ -181,6 +182,8 @@ def md_file_chunking(input_md_filepath, output_json_filepath):
                 "text": text,
                 "labels": labels,
                 "refs": refs,
+                "equations_raw": equations,
+                "equation_count": len(equations),
                 "meta": {
                     "heading": {"level": section_heading_level, "title": section_heading_title}
                 }
@@ -328,12 +331,13 @@ def _choose_section(rec: Dict[str, Any]) -> str:
     return str(sec).strip()
 
 def _extract_equations(text: str):
-    """Return all LaTeX math snippets in text."""
+    """Return labeled LaTeX math snippets in text."""
     eqs = []
     eqs += [m.group(1).strip() for m in MATH_DISPLAY_RE.finditer(text or "")]
     eqs += [m.group(1).strip() for m in MATH_BRACKET_RE.finditer(text or "")]
     eqs += [m.group(2).strip() for m in MATH_ENV_RE.finditer(text or "")]
     eqs += [m.group(1).strip() for m in MATH_INLINE_RE.finditer(text or "")]
+    eqs = [e for e in eqs if LABEL_RE.search(e)]
     # Deduplicate while preserving order
     seen, uniq = set(), []
     for e in eqs:
@@ -384,6 +388,40 @@ def _normalize_record(rec: Dict[str, Any], fallback_index: int) -> Dict[str, Any
         "version": "ppmdc-0.1",
     }
 
+
+def _collect_json_payloads(paths: List[Path]) -> List[Dict[str, Any]]:
+    """Load and flatten JSON payloads coming from chunk files."""
+    records: List[Dict[str, Any]] = []
+    for path in paths:
+        if not path.exists():
+            continue
+        with path.open("r", encoding="utf-8") as f:
+            payload = json.load(f)
+        if isinstance(payload, list):
+            records.extend(payload)
+        elif isinstance(payload, dict):
+            records.append(payload)
+    return records
+
+
+def _normalize_records(records: List[Dict[str, Any]], drop_empty: bool) -> List[Dict[str, Any]]:
+    """Normalize raw chunk dicts and optionally drop empty text entries."""
+    normalized: List[Dict[str, Any]] = []
+    for idx, rec in enumerate(records):
+        norm = _normalize_record(rec, fallback_index=idx)
+        if drop_empty and not norm["text"]:
+            continue
+        normalized.append(norm)
+    return normalized
+
+
+def _write_jsonl(records: List[Dict[str, Any]], out_path: Path) -> None:
+    """Write normalized records into JSONL format."""
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with out_path.open("w", encoding="utf-8") as w:
+        for rec in records:
+            w.write(json.dumps(rec, ensure_ascii=False) + "\n")
+
 # --- Main entry point ---------------------------------------------------------
 
 def post_process_md_chunking(list_of_json_paths: List[str],
@@ -398,37 +436,24 @@ def post_process_md_chunking(list_of_json_paths: List[str],
         drop_empty: if True, skip chunks with empty text.
 
     Returns:
-        dict summary with counts and paper IDs.
+        dict summary with counts, paper IDs, and normalized records.
     """
     out_path = Path(combined_output_jsonl)
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    total_in = 0
-    total_out = 0
-    paper_ids = set()
+    input_paths = [Path(p) for p in list_of_json_paths]
+    raw_records = _collect_json_payloads(input_paths)
+    normalized_records = _normalize_records(raw_records, drop_empty=drop_empty)
 
-    with out_path.open("w", encoding="utf-8") as w:
-        for path in list_of_json_paths:
-            p = Path(path)
-            if not p.exists():
-                continue
-            with p.open("r", encoding="utf-8") as f:
-                payload = json.load(f)
-            records = payload if isinstance(payload, list) else [payload]
-            for i, rec in enumerate(records):
-                total_in += 1
-                norm = _normalize_record(rec, fallback_index=i)
-                if drop_empty and (not norm["text"]):
-                    continue
-                paper_ids.add(norm["paper_id"] or "")
-                w.write(json.dumps(norm, ensure_ascii=False) + "\n")
-                total_out += 1
+    _write_jsonl(normalized_records, out_path)
+
+    paper_ids = {rec["paper_id"] for rec in normalized_records if rec.get("paper_id")}
 
     return {
         "md_json_files": len(list_of_json_paths),
-        "records_seen": total_in,
-        "records_written": total_out,
-        "unique_paper_ids": sorted(pid for pid in paper_ids if pid),
+        "records_seen": len(raw_records),
+        "records_written": len(normalized_records),
+        "unique_paper_ids": sorted(paper_ids),
         "output_jsonl": str(out_path),
+        "normalized_records": normalized_records,
     }
 
 
@@ -436,6 +461,7 @@ def post_process_md_chunking(list_of_json_paths: List[str],
 def md_collection_chunking(md_files):
 
     md_chunked_dir = config.MD_CHUNKED_DIR
+    md_chunked_dir.mkdir(parents=True, exist_ok=True)
     chunked_files = []
 
     md_jsonl = config.MD_JSONL
@@ -450,6 +476,8 @@ def md_collection_chunking(md_files):
         except Exception as e:
             print(f'Excption {e} for file {md_infile}.')
     
-    md_details = post_process_md_chunking(chunked_files,md_jsonl)
+    aggregated_chunk_files = sorted(md_chunked_dir.glob("*.json"))
+    md_details = post_process_md_chunking([str(p) for p in aggregated_chunk_files], md_jsonl)
+    md_details["chunk_files_written"] = chunked_files
 
     return md_details
