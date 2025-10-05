@@ -43,20 +43,21 @@ def run_indexing():
     out['md_bm25'] = index_md_bm25(md_jsonl,md_bm25_index_dir)
     out['md_qdrant'] = index_md_qdrant(md_jsonl,md_qdrant_index_dir)
 
-
+    return out
 
 if __name__ == "__main__":
     phrases = [
         "almost Mathieu operator",
-        "Aubry-André",           # hyphen form
-        "Aubry André",           # space form (some metadata lacks the hyphen)
-        "Harper model",           # common synonym
+        "Aubry-André",           
+        "Aubry André",           
+        "Harper model",          
         "quasiperiodic Schrodinger operators",
         "ergodic Schrodinger operators"
     ]
 
     categories = ["math-ph", "math.SP", "quant-ph"] 
 
-    out = run_arxiv_extract(phrases,categories,25)
+    out_etl = run_arxiv_extract(phrases,categories,25)
+    out_indexing = run_indexing()
 
-    run_indexing()
+    report = {**out_etl,**out_indexing}
