@@ -13,3 +13,9 @@ arxiv
 sympy
 
 latexcodec
+
+whoosh
+
+qdrant-client 
+
+sentence-transformers
