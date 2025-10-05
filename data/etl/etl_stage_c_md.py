@@ -1,5 +1,6 @@
 import json
 import re
+import time
 from pathlib import Path
 from typing import List, Dict, Any
 import config
@@ -8,6 +9,14 @@ LABEL_RE = re.compile(r'\\label\{([^}]+)\}')
 REF_RE   = re.compile(r'\\(?:eqref|ref)\{([^}]+)\}')
 HTML_REF_RE = re.compile(r"data-reference\s*=\s*[\"']([^\"'\s]+)[\"']", re.IGNORECASE)
 HTML_ID_RE = re.compile(r"<(?:div|span|section|h[1-6]|p|table|figure|figcaption)[^>]*\bid\s*=\s*[\"']([^\"']+)[\"']", re.IGNORECASE)
+
+MATH_INLINE_RE = re.compile(r"\$(?!\s)(.+?)(?<!\s)\$", re.DOTALL)  # $...$
+MATH_DISPLAY_RE = re.compile(r"\$\$(.+?)\$\$", re.DOTALL)          # $$...$$
+MATH_BRACKET_RE = re.compile(r"\\\[(.+?)\\\]", re.DOTALL)          # \[...\]
+MATH_ENV_RE = re.compile(
+    r"\\begin\{(equation\*?|align\*?|gather\*?|multline\*?)\}(.+?)\\end\{\1\}",
+    re.DOTALL
+)
 
 def _extract_labels_refs(text: str):
     labels = set(LABEL_RE.findall(text))
@@ -295,10 +304,141 @@ def md_file_chunking(input_md_filepath, output_json_filepath):
 
     return str(out_path)
 
+
+# --- Field helpers ------------------------------------------------------------
+
+
+def _derive_paper_id(rec: Dict[str, Any]) -> str:
+    """Extract paper_id from id or file name."""
+    rid = rec.get("id") or ""
+    if "::" in rid:
+        return rid.split("::", 1)[0]
+    fpath = rec.get("file") or ""
+    if fpath:
+        return Path(fpath).stem
+    return ""
+
+def _choose_section(rec: Dict[str, Any]) -> str:
+    """Pick section name from heading or section_path."""
+    meta = rec.get("meta") or {}
+    heading = (meta.get("heading") or {}).get("title")
+    if heading and isinstance(heading, str) and heading.strip():
+        return heading.strip()
+    sec = rec.get("section_path") or ""
+    return str(sec).strip()
+
+def _extract_equations(text: str):
+    """Return all LaTeX math snippets in text."""
+    eqs = []
+    eqs += [m.group(1).strip() for m in MATH_DISPLAY_RE.finditer(text or "")]
+    eqs += [m.group(1).strip() for m in MATH_BRACKET_RE.finditer(text or "")]
+    eqs += [m.group(2).strip() for m in MATH_ENV_RE.finditer(text or "")]
+    eqs += [m.group(1).strip() for m in MATH_INLINE_RE.finditer(text or "")]
+    # Deduplicate while preserving order
+    seen, uniq = set(), []
+    for e in eqs:
+        k = re.sub(r"\s+", " ", e)
+        if k not in seen:
+            seen.add(k)
+            uniq.append(e)
+    return uniq
+
+def _stable_chunk_id(rec: Dict[str, Any], fallback_index: int) -> str:
+    """Return a stable chunk ID."""
+    if rec.get("id"):
+        return str(rec["id"])
+    pid = _derive_paper_id(rec) or "paper"
+    return f"{pid}::chunk{fallback_index}"
+
+def _estimate_tokens(text: str) -> int:
+    """Crude token estimate for chunk size QA."""
+    chars = len(text)
+    words = max(1, len(text.split()))
+    est = max(1, min(words * 2, chars // 4))
+    return est
+
+def _normalize_record(rec: Dict[str, Any], fallback_index: int) -> Dict[str, Any]:
+    """Normalize one chunk dict."""
+    text = (rec.get("text") or "").strip()
+    section = _choose_section(rec)
+    pid = _derive_paper_id(rec)
+    chunk_id = _stable_chunk_id(rec, fallback_index)
+    equations = _extract_equations(text)
+
+    return {
+        "chunk_id": chunk_id,
+        "paper_id": pid,
+        "source_file": rec.get("file") or "",
+        "section": section,
+        "labels": rec.get("labels") or [],
+        "refs": rec.get("refs") or [],
+        "neighbors": rec.get("neighbors") or [],
+        "start_line": rec.get("start_line"),
+        "end_line": rec.get("end_line"),
+        "text": text,
+        "text_len": len(text),
+        "token_estimate": _estimate_tokens(text),
+        "equations_raw": equations,
+        "equation_count": len(equations),
+        "added_at": int(time.time()),
+        "version": "ppmdc-0.1",
+    }
+
+# --- Main entry point ---------------------------------------------------------
+
+def post_process_md_chunking(list_of_json_paths: List[str],
+                             combined_output_jsonl: str,
+                             drop_empty: bool = True) -> Dict[str, Any]:
+    """
+    Merge and normalize chunk JSON files into one JSONL.
+
+    Args:
+        list_of_json_paths: list of paths to input JSON files.
+        combined_output_jsonl: output JSONL path.
+        drop_empty: if True, skip chunks with empty text.
+
+    Returns:
+        dict summary with counts and paper IDs.
+    """
+    out_path = Path(combined_output_jsonl)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    total_in = 0
+    total_out = 0
+    paper_ids = set()
+
+    with out_path.open("w", encoding="utf-8") as w:
+        for path in list_of_json_paths:
+            p = Path(path)
+            if not p.exists():
+                continue
+            with p.open("r", encoding="utf-8") as f:
+                payload = json.load(f)
+            records = payload if isinstance(payload, list) else [payload]
+            for i, rec in enumerate(records):
+                total_in += 1
+                norm = _normalize_record(rec, fallback_index=i)
+                if drop_empty and (not norm["text"]):
+                    continue
+                paper_ids.add(norm["paper_id"] or "")
+                w.write(json.dumps(norm, ensure_ascii=False) + "\n")
+                total_out += 1
+
+    return {
+        "md_json_files": len(list_of_json_paths),
+        "records_seen": total_in,
+        "records_written": total_out,
+        "unique_paper_ids": sorted(pid for pid in paper_ids if pid),
+        "output_jsonl": str(out_path),
+    }
+
+
+
 def md_collection_chunking(md_files):
 
     md_chunked_dir = config.MD_CHUNKED_DIR
     chunked_files = []
+
+    md_jsonl = config.MD_JSONL
 
     for md_infile in md_files:
         md_infile = Path(md_infile)
@@ -310,4 +450,6 @@ def md_collection_chunking(md_files):
         except Exception as e:
             print(f'Excption {e} for file {md_infile}.')
     
-    return chunked_files
+    md_details = post_process_md_chunking(chunked_files,md_jsonl)
+
+    return md_details

@@ -191,8 +191,6 @@ def _convert_to_md(latex_file: Path):
 
 def _convert_to_txt(latex_file: Path):
 
-    print('convert to txt', latex_file)
-
     txt_ok = False 
     outfile = (config.TEXT_VERSION_DIR / latex_file.name).with_suffix('.txt')
     outfile.parent.mkdir(parents=True, exist_ok=True)
@@ -204,7 +202,6 @@ def _convert_to_txt(latex_file: Path):
             res = subprocess.run(cmd, check=True, capture_output=True)
             outfile.write_bytes(res.stdout)
             txt_ok = True
-            print('txt detex',outfile)
         except subprocess.CalledProcessError as e:
             warnings.append(f"detex failed ({e.returncode}); trying pandoc -t plain.")
     if not txt_ok and HAVE_PANDOC:
@@ -213,7 +210,6 @@ def _convert_to_txt(latex_file: Path):
                                  check=True, capture_output=True)
             outfile.write_bytes(res.stdout)
             txt_ok = True
-            print('txt pandoc',outfile)
         except subprocess.CalledProcessError as e:
             warnings.append(f"pandoc→plain failed ({e.returncode}); using naive stripper.")
     if not txt_ok:
@@ -229,7 +225,6 @@ def _convert_to_txt(latex_file: Path):
         outfile.write_text(raw)
         warnings.append("Used naive text stripper (install detex and/or pandoc for better output).")
         txt_ok = True
-        print('txt naive',outfile)
 
     return txt_ok, outfile, warnings
     

@@ -21,6 +21,9 @@ TEXT_VERSION_DIR.mkdir(parents=True,exist_ok=True)
 TXT_CHUNKED_DIR = DATA_DIR / "txt_chunked"
 TXT_CHUNKED_DIR.mkdir(parents=True,exist_ok=True)
 
+MD_JSONL = DATA_DIR / "md_data.jsonl"
+TXT_JSONL = DATA_DIR / "txt_data.jsonl"
+
 ARXIV_PDF = "https://arxiv.org/pdf/{id}.pdf"          # accepts old and new IDs; version optional
 ARXIV_EPRINT = "https://arxiv.org/e-print/{id}"       # source tarball fallback (last resort)
 ARXIV_ID_RE = re.compile(r"arxiv\.org\/abs\/([0-9]+\.[0-9]+|[a-z\-]+\/[0-9]+)v?(\d+)?")
