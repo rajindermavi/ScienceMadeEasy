@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+import time
 from pathlib import Path
 from typing import Any, Dict, List
 
@@ -12,6 +13,28 @@ import config
 
 # Prefer sentence-aware splits when we have to subdivide large paragraphs.
 _SENTENCE_BOUNDARY_RE = re.compile(r"(?<=[.!?])\s+(?=[A-Z0-9])")
+
+ARXIV_ID_RE = re.compile(r"\barXiv:(\d{4}\.\d{4,5}|[a-z\-]+/\d{7})\b", re.I)
+ARXIV_URL_RE = re.compile(r"https?://arxiv\.org/abs/([^\s]+)", re.I)
+EMAIL_RE = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}")
+URL_RE = re.compile(r"https?://\S+")
+SECTION_CAND_RE = re.compile(
+    r"^(abstract|introduction|preliminaries|related work|results|proofs?|"
+    r"conclusion|acknowledg(e)?ments?|references?)\s*$", re.I
+)
+
+# Heuristic indicators of math stripped by detex
+MATH_LOSS_PATTERNS = [
+    r"\(\s*\)", r"\[\s*\]", r"\{\s*\}",
+    r"^\*{1,3}\s*$",
+    r"^eq(\.|:)", r"eq:\w+",
+    r"\\(alpha|beta|gamma|lambda|Delta|nabla)\b",
+    r"\b[A-Z]\w*\s*=\s*$",
+]
+MATH_LOSS_RE = re.compile("|".join(MATH_LOSS_PATTERNS), re.I | re.M)
+
+
+
 
 
 def _split_long_paragraph(text: str, max_chars: int) -> List[str]:
@@ -217,10 +240,150 @@ def txt_file_chunking(input_txt_filepath, output_json_filepath):
 
     return str(out_path)
 
+
+# --- Helpers ------------------------------------------------------------------
+
+def _derive_paper_id(rec: Dict[str, Any]) -> str:
+    """Extract paper_id from record id or filename."""
+    rid = rec.get("id") or ""
+    if "::" in rid:
+        return rid.split("::", 1)[0]
+    fpath = rec.get("file") or ""
+    if fpath:
+        return Path(fpath).stem
+    return ""
+
+def _estimate_tokens(text: str) -> int:
+    """Crude token estimate for QA."""
+    chars = len(text)
+    words = max(1, len(text.split()))
+    return max(1, min(words * 2, chars // 4))
+
+def _guess_chunk_type(text: str, section_path: str) -> str:
+    """Roughly classify chunk content."""
+    t = (text or "").strip()
+    if not t:
+        return "empty"
+    first = t.splitlines()[0].strip()
+    if SECTION_CAND_RE.match(first):
+        name = SECTION_CAND_RE.match(first).group(1).lower()
+        if name.startswith("reference"):
+            return "references_header"
+        return f"section_header:{name}"
+    if "abbrv" in t.lower() or "bibliography" in t.lower() or re.search(r"^\s*\[\s*\d+\s*\]", t, re.M):
+        return "references_block"
+    if EMAIL_RE.search(t) or "university" in t.lower() or "department" in t.lower():
+        return "front_matter"
+    if re.search(r"\b(theorem|lemma|proposition|corollary|definition)\b", t, re.I):
+        return "math_body"
+    if re.search(r"\bfigure\b|\btable\b", t, re.I) or re.search(r"^\s*-?\d+(\.\d+)?\s*$", t, re.M):
+        return "figure_or_numeric"
+    return "body"
+
+def _detect_math_loss(text: str) -> bool:
+    """Flag whether the text likely lost equations during detex."""
+    if not text or not text.strip():
+        return False
+    if MATH_LOSS_RE.search(text):
+        return True
+    if re.search(r"[=+\-*/]\s*$", text, re.M):
+        return True
+    return False
+
+def _harvest_refs(text: str) -> Dict[str, Any]:
+    """Collect arXiv IDs, emails, and URLs."""
+    arxiv_ids = set(m.group(1) for m in ARXIV_ID_RE.finditer(text or ""))
+    arxiv_ids |= set(m.group(1) for m in ARXIV_URL_RE.finditer(text or ""))
+    emails = set(m.group(0) for m in EMAIL_RE.finditer(text or ""))
+    urls = set(m.group(0) for m in URL_RE.finditer(text or ""))
+    return {
+        "arxiv_ids": sorted(arxiv_ids),
+        "emails": sorted(emails),
+        "urls": sorted(urls),
+    }
+
+def _normalize_txt_record(rec: Dict[str, Any], fallback_index: int) -> Dict[str, Any]:
+    """Normalize one TXT chunk record."""
+    text = (rec.get("text") or "").strip()
+    pid = _derive_paper_id(rec)
+    chunk_id = rec.get("id") or f"{pid}::chunk{fallback_index}"
+    chunk_type = _guess_chunk_type(text, rec.get("section_path", ""))
+    harvested = _harvest_refs(text)
+    return {
+        "chunk_id": chunk_id,
+        "paper_id": pid,
+        "source_file": rec.get("file") or "",
+        "section_path": rec.get("section_path", ""),
+        "start_line": rec.get("start_line"),
+        "end_line": rec.get("end_line"),
+        "chunk_type": chunk_type,
+        "text": text,
+        "text_len": len(text),
+        "token_estimate": _estimate_tokens(text),
+        "has_math_loss": _detect_math_loss(text),
+        "labels": rec.get("labels") or [],
+        "neighbors": rec.get("neighbors") or [],
+        "meta": (rec.get("meta") or {}) | {"source_kind": "plain_text"},
+        "harvest": harvested,
+        "added_at": int(time.time()),
+        "version": "pptxt-0.1",
+    }
+
+# --- Main function ------------------------------------------------------------
+
+def post_process_txt_chunking(list_of_json_paths: List[str],
+                              combined_output_jsonl: str,
+                              drop_empty: bool = True) -> Dict[str, Any]:
+    """
+    Merge and normalize TXT (detex) chunk JSONs into one JSONL.
+
+    Args:
+        list_of_json_paths: list of input JSON files.
+        combined_output_jsonl: output JSONL path.
+        drop_empty: skip empty text chunks if True.
+
+    Returns:
+        dict summary with counts and paper IDs.
+    """
+    out_path = Path(combined_output_jsonl)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    total_in = 0
+    total_out = 0
+    paper_ids = set()
+
+    with out_path.open("w", encoding="utf-8") as w:
+        for path in list_of_json_paths:
+            p = Path(path)
+            if not p.exists():
+                continue
+            with p.open("r", encoding="utf-8") as f:
+                payload = json.load(f)
+            records = payload if isinstance(payload, list) else [payload]
+            for i, rec in enumerate(records):
+                total_in += 1
+                norm = _normalize_txt_record(rec, i)
+                if drop_empty and not norm["text"]:
+                    continue
+                paper_ids.add(norm["paper_id"] or "")
+                w.write(json.dumps(norm, ensure_ascii=False) + "\n")
+                total_out += 1
+
+    return {
+        "input_files": len(list_of_json_paths),
+        "records_seen": total_in,
+        "records_written": total_out,
+        "unique_paper_ids": sorted(pid for pid in paper_ids if pid),
+        "output_jsonl": str(out_path),
+    }
+
+
+
 def txt_collection_chunking(txt_files):
 
     txt_chunked_dir = config.TXT_CHUNKED_DIR
     chunked_files = []
+
+    txt_jsonl = config.TXT_JSONL
 
     for txt_infile in txt_files:
         txt_infile = Path(txt_infile)
@@ -232,4 +395,6 @@ def txt_collection_chunking(txt_files):
         except Exception as e:
             print(f'Excption {e} for file {txt_infile}.')
     
-    return chunked_files
+    txt_details = post_process_txt_chunking(chunked_files,txt_jsonl)
+
+    return txt_details

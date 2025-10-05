@@ -32,5 +32,7 @@ full_markdown/
 full_text/
 latex_final/
 latex_raw/
+md_chunked/
 pdf_raw/
 tar/
+txt_chunked/
