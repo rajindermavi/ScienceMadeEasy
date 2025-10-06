@@ -5,8 +5,8 @@ from data.etl.etl_stage_a import build_arxiv_query, arxiv_extract
 from data.etl.etl_stage_b import prepare_latex_corpus, latex_conversion
 from data.etl.etl_stage_c_md import md_collection_chunking
 from data.etl.etl_stage_c_txt import txt_collection_chunking
-from data.indexing.index_md import index_md_bm25, index_md_qdrant
-from data.indexing.index_txt import index_txt_bm25, index_txt_qdrant
+from data.etl.etl_stage_d_md import index_md_bm25, index_md_qdrant
+from data.etl.etl_stage_d_txt import index_txt_bm25, index_txt_qdrant
 import config
 
 
