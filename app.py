@@ -1,4 +1,17 @@
+# app.py — Minimal RAG Frontend (Streamlit)
+# ---------------------------------------------------------------
+# Features:
+# - Text box for query
+# - Uses your stored BM25 (Whoosh) + Qdrant (embedded/server) indexes
+# - Calls your existing `hybrid_search_from_disk` function
+# - Shows fused results with full text and metadata
+# - Builds a RAG prompt you can copy/paste into your LLM client
+# - Optional live LLM call if OPENAI_API_KEY is set (commented template)
+# ---------------------------------------------------------------
+
 import os
+import textwrap
+import streamlit as st
 from dotenv import load_dotenv
 
 from openai import OpenAI
@@ -13,6 +26,9 @@ OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 client = OpenAI()
 
+# ---------------------------
+# Helpers
+# ---------------------------
 def query_context(query,token_budget = 1800):
 # Embedded Qdrant (folder-based)
     resp_md = hybrid_search_from_disk(
@@ -46,7 +62,7 @@ def query_context(query,token_budget = 1800):
 
 def llm(query,context_str):
 
-    query = query or 'Explain spectral statistics for Liouville frequencies'
+    query = query or 'Explain spectral statistics for quasiperiodic schrodinger operators with diophantine frequencies in the critical regime'
     math_mode = is_mathy(query)
 
     prompt = build_prompt(query, context_str, math_mode)
@@ -61,11 +77,25 @@ def llm(query,context_str):
 
     return response.output_text
 
-if __name__ == "__main__":
 
-    query = 'Explain spectral statistics for Liouville frequencies'
+# ---------------------------
+# UI
+# ---------------------------
+st.set_page_config(page_title="SME RAG", layout="wide")
+st.title("Science Made Easy")
+
+# Query box
+query = st.text_area("Enter your question/query", height=120, placeholder="e.g., Explain spectral statistics for quasiperiodic schrodinger operators with diophantine frequencies in the critical regime")
+
+# Search button
+do_search = st.button("Submit Query", use_container_width=True)
+
+if do_search:
+
     context_str = query_context(query)
 
     response = llm(query,context_str)
 
-    print(response)
+    st.subheader("Results")
+
+    st.write(response)

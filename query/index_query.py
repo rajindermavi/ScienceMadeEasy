@@ -8,6 +8,7 @@ from whoosh import index as bm25_index
 from whoosh.qparser import MultifieldParser
 
 from sentence_transformers import SentenceTransformer
+from sentence_transformers import CrossEncoder
 
 import config
 from qdrant_client import QdrantClient
@@ -119,7 +120,7 @@ def hybrid_search_from_disk(
     topk: Optional[int] = None,
     expected_embedding_dim: Optional[int] = None,
     source: str = "md",
-    return_payloads: bool = True,
+    return_payloads: bool = True
 ) -> Dict:
     """
     Reopen stored BM25 + Qdrant indexes, run hybrid (BM25 + dense) with RRF fusion,
@@ -182,7 +183,8 @@ def hybrid_search_from_disk(
                 "end_line": p.get("end_line"),
                 "labels": p.get("labels"),
                 "equations_raw": p.get("equations_raw"),
-                "text_preview": text[:220] + ("…" if len(text) > 220 else ""),
+                #"text_preview": text[:220] + ("…" if len(text) > 220 else ""),
+                "text":text
             })
         results.append(item)
 
@@ -275,8 +277,23 @@ def _get_source_defaults(source: str) -> Dict[str, Optional[int]]:
         }
     raise ValueError("Unsupported source '%s'. Expected 'md' or 'txt'." % source)
 
-
 def hybrid_md_search_from_disk(*args, **kwargs):
     """Backward compatible alias for callers expecting the MD-specific function name."""
     kwargs.setdefault("source", "md")
     return hybrid_search_from_disk(*args, **kwargs)
+
+def hybrid_txt_search_from_disk(*args, **kwargs):
+    """Backward compatible alias for callers expecting the MD-specific function name."""
+    kwargs.setdefault("source", "txt")
+    return hybrid_search_from_disk(*args, **kwargs)
+
+# ---------- Final Rerank ----------
+
+
+def rerank(query, items, text_key="text", topk=10):
+    """items = [{'chunk_id':..., 'text':..., ...}, ...]"""
+    ce = CrossEncoder("BAAI/bge-reranker-large")
+    pairs = [(query, it.get(text_key,"")) for it in items]
+    scores = ce.predict(pairs)  # higher is better
+    ranked = sorted(zip(items, scores), key=lambda x: x[1], reverse=True)
+    return [it for it,_ in ranked[:topk]]

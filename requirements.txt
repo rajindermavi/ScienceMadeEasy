@@ -4,6 +4,8 @@ pydantic
 python-dotenv
 requests
 
+dotenv
+
 tqdm
 
 lxml
@@ -19,3 +21,7 @@ whoosh
 qdrant-client 
 
 sentence-transformers
+
+openai
+
+streamlit
