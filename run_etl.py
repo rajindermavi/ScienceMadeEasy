@@ -69,13 +69,15 @@ def run_arxiv_extract(phrases, categories, max_results):
     )
 
     logger.info("Calling md_collection_chunking")
-    md_chunked_files = md_collection_chunking(md_paths)
-    out["md_chunked_files"] = md_chunked_files
-    logger.info("md_collection_chunking created %s files", len(md_chunked_files))
+    md_details= md_collection_chunking(md_paths)
+    out["md_details"] = md_details
+    md_chunked_files = md_details['chunk_files_written']
+    logger.info("md_collection_chunking created %s files", md_chunked_files)
 
     logger.info("Calling txt_collection_chunking")
-    txt_chunked_files = txt_collection_chunking(txt_paths)
-    out["txt_chunked_files"] = txt_chunked_files
+    txt_details = txt_collection_chunking(txt_paths)
+    out["txt_details"] = txt_details
+    txt_chunked_files = txt_details['chunk_files_written']
     logger.info("txt_collection_chunking created %s files", len(txt_chunked_files))
 
     logger.info("run_arxiv_extract complete")

@@ -2,8 +2,9 @@ import json
 import logging
 from pathlib import Path
 
+import config
 from qdrant_client import QdrantClient
-from qdrant_client.http.models import Distance, VectorParams, PointStruct
+from qdrant_client.http.models import Distance, PointStruct, VectorParams
 from sentence_transformers import SentenceTransformer
 from whoosh import index
 from whoosh.fields import ID, KEYWORD, NUMERIC, TEXT, Schema
@@ -103,9 +104,9 @@ def index_md_bm25(jsonl_path: str, bm_index_path: str):
 def index_md_qdrant(
     jsonl_path: str,
     qdrant_index_path: str,
-    collection_name: str = "md_chunks",
-    embedding_model: str = "BAAI/bge-small-en",
-    batch_size: int = 64,
+    collection_name: str = config.MD_QDRANT_COLLECTION,
+    embedding_model: str = config.MD_EMBEDDING_MODEL,
+    batch_size: int = config.MD_QDRANT_BATCH_SIZE,
 ):
     """
     Build and store a dense Qdrant vector index from a markdown JSONL file.
@@ -113,9 +114,9 @@ def index_md_qdrant(
     Args:
         jsonl_path: path to JSONL file (each line = one chunk dict)
         qdrant_index_path: directory for Qdrant local storage (e.g. "qdrant_storage/")
-        collection_name: Qdrant collection name (default: "md_chunks")
-        embedding_model: embedding model name (default: bge-base-en-v1.5)
-        batch_size: number of chunks to upsert per batch
+        collection_name: Qdrant collection name (default: config.MD_QDRANT_COLLECTION)
+        embedding_model: embedding model name (default: config.MD_EMBEDDING_MODEL)
+        batch_size: number of chunks to upsert per batch (default: config.MD_QDRANT_BATCH_SIZE)
 
     Returns:
         dict summary with counts and storage path
@@ -140,6 +141,13 @@ def index_md_qdrant(
     dim = model.get_sentence_embedding_dimension()
     logger.info("Embedding dimension resolved to %s", dim)
 
+    expected_dim = config.MD_EMBEDDING_DIM
+    if expected_dim is not None and dim != expected_dim:
+        raise ValueError(
+            "Embedding dimension mismatch: model '%s' outputs %s dims but config expects %s"
+            % (embedding_model, dim, expected_dim)
+        )
+
     # --- Connect to embedded Qdrant (no external server required)
     qdrant = QdrantClient(path=str(qdrant_index_path))
 
@@ -161,6 +169,8 @@ def index_md_qdrant(
     skipped_blank = 0
     skipped_decode = 0
     skipped_empty_text = 0
+
+    progress_interval = max(1, config.MD_QDRANT_PROGRESS_INTERVAL)
 
     # --- Ingest and embed in batches
     with open(jsonl_path, "r", encoding="utf-8") as f:
@@ -201,7 +211,7 @@ def index_md_qdrant(
                 qdrant.upsert(collection_name=collection_name, points=points)
                 points = []
                 batch_counter += 1
-                if batch_counter % 64 == 0:
+                if batch_counter % progress_interval == 0:
                     logger.info(
                         "index_md_qdrant progress | batches=%s | total_points=%s",
                         batch_counter,
@@ -217,7 +227,7 @@ def index_md_qdrant(
         qdrant.upsert(collection_name=collection_name, points=points)
         batch_counter += 1
 
-    if batch_counter and batch_counter % 64 != 0:
+    if batch_counter and batch_counter % progress_interval != 0:
         logger.info(
             "index_md_qdrant progress | batches=%s | total_points=%s",
             batch_counter,
