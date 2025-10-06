@@ -138,7 +138,7 @@ if __name__ == "__main__":
 
     categories = ["math-ph", "math.SP", "quant-ph"]
 
-    out_etl = run_arxiv_extract(phrases, categories, 10)
+    out_etl = run_arxiv_extract(phrases, categories, 500)
     out_indexing = run_indexing()
 
     report = {**out_etl, **out_indexing}

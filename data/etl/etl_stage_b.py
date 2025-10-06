@@ -160,6 +160,8 @@ def _run_latexpand(main_tex: Path, root: Path) -> str | None:
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
+            encoding="utf-8",
+            errors="replace",
         )
     except OSError:
         return None
