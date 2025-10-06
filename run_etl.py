@@ -6,6 +6,7 @@ from data.etl.etl_stage_b import prepare_latex_corpus, latex_conversion
 from data.etl.etl_stage_c_md import md_collection_chunking
 from data.etl.etl_stage_c_txt import txt_collection_chunking
 from data.indexing.index_md import index_md_bm25, index_md_qdrant
+from data.indexing.index_txt import index_txt_bm25, index_txt_qdrant
 import config
 
 
@@ -94,12 +95,22 @@ def run_indexing():
     md_jsonl = config.MD_JSONL
     md_bm25_index_dir = config.MD_BM25_INDEX_DIR
     md_qdrant_index_dir = config.MD_QDRANT_INDEX_DIR
+    txt_jsonl = config.TXT_JSONL
+    txt_bm25_index_dir = config.TXT_BM25_INDEX_DIR
+    txt_qdrant_index_dir = config.TXT_QDRANT_INDEX_DIR
+    
 
     logger.info("Calling index_md_bm25")
     out["md_bm25"] = index_md_bm25(md_jsonl, md_bm25_index_dir)
 
     logger.info("Calling index_md_qdrant")
     out["md_qdrant"] = index_md_qdrant(md_jsonl, md_qdrant_index_dir)
+
+    logger.info("Calling index_txt_bm25")
+    out["txt_bm25"] = index_txt_bm25(txt_jsonl, txt_bm25_index_dir)
+
+    logger.info("Calling index_txt_qdrant")
+    out["txt_bm25"] = index_txt_qdrant(txt_jsonl, txt_qdrant_index_dir)
 
     logger.info(
         "Indexing complete | bm25=%s | qdrant=%s",
@@ -127,9 +138,11 @@ if __name__ == "__main__":
 
     categories = ["math-ph", "math.SP", "quant-ph"]
 
-    out_etl = run_arxiv_extract(phrases, categories, 25)
+    out_etl = run_arxiv_extract(phrases, categories, 10)
     out_indexing = run_indexing()
 
     report = {**out_etl, **out_indexing}
+
+    logger.info(report)
 
     logger.info("ETL process completed")

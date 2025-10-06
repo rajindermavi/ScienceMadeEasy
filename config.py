@@ -30,6 +30,12 @@ MD_BM25_INDEX_DIR = DATA_INDEX_DIR / 'md_bm25_storage'
 MD_BM25_INDEX_DIR.mkdir(parents=True,exist_ok=True)
 MD_QDRANT_INDEX_DIR = DATA_INDEX_DIR / 'md_qrant_storage'
 MD_QDRANT_INDEX_DIR.mkdir(parents=True,exist_ok=True)
+TXT_BM25_INDEX_DIR = DATA_INDEX_DIR / 'txt_bm25_storage'
+TXT_BM25_INDEX_DIR.mkdir(parents=True,exist_ok=True)
+TXT_QDRANT_INDEX_DIR = DATA_INDEX_DIR / 'txt_qrant_storage'
+TXT_QDRANT_INDEX_DIR.mkdir(parents=True,exist_ok=True)
+
+# MD Indexing
 MD_QDRANT_COLLECTION = os.getenv("MD_QDRANT_COLLECTION","md_chunks")
 MD_EMBEDDING_MODEL = os.getenv("MD_EMBEDDING_MODEL","BAAI/bge-small-en")
 MD_EMBEDDING_DIM = int(os.getenv("MD_EMBEDDING_DIM","384"))
@@ -38,6 +44,16 @@ MD_QDRANT_PROGRESS_INTERVAL = int(os.getenv("MD_QDRANT_PROGRESS_INTERVAL","64"))
 MD_BM25_CANDIDATES = int(os.getenv("MD_BM25_CANDIDATES","200"))
 MD_DENSE_CANDIDATES = int(os.getenv("MD_DENSE_CANDIDATES","200"))
 MD_TOPK = int(os.getenv("MD_TOPK","20"))
+
+# TXT Indexing
+TXT_QDRANT_COLLECTION = os.getenv("TXT_QDRANT_COLLECTION","txt_chunks")
+TXT_EMBEDDING_MODEL = os.getenv("TXT_EMBEDDING_MODEL","BAAI/bge-base-en-v1.5")
+TXT_EMBEDDING_DIM = int(os.getenv("TXT_EMBEDDING_DIM","768"))
+TXT_QDRANT_BATCH_SIZE = int(os.getenv("TXT_QDRANT_BATCH_SIZE","64"))
+TXT_QDRANT_PROGRESS_INTERVAL = int(os.getenv("TXT_QDRANT_PROGRESS_INTERVAL","64"))
+TXT_BM25_CANDIDATES = int(os.getenv("TXT_BM25_CANDIDATES","200"))
+TXT_DENSE_CANDIDATES = int(os.getenv("TXT_DENSE_CANDIDATES","200"))
+TXT_TOPK = int(os.getenv("TXT_TOPK","20"))
 
 ARXIV_PDF = "https://arxiv.org/pdf/{id}.pdf"          # accepts old and new IDs; version optional
 ARXIV_EPRINT = "https://arxiv.org/e-print/{id}"       # source tarball fallback (last resort)

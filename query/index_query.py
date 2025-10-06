@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from typing import List, Dict, Tuple, Optional
 
-from whoosh import index
+from whoosh import index as bm25_index
 from whoosh.qparser import MultifieldParser
 
 from sentence_transformers import SentenceTransformer
@@ -24,7 +24,7 @@ from qdrant_client.http.models import (
 
 def open_bm25_index(bm_index_path: str):
     """Reopen a persisted Whoosh index directory."""
-    return index.open_dir(bm_index_path)
+    return bm25_index.open_dir(bm_index_path)
 
 def connect_qdrant(
     qdrant_index_path: Optional[str] = None,
@@ -42,9 +42,9 @@ def connect_qdrant(
         return QdrantClient(host=host, port=port or 6333, api_key=api_key)
     raise ValueError("Provide qdrant_index_path for embedded OR host[/port] for server mode.")
 
-def load_embed_model(name: Optional[str] = None) -> SentenceTransformer:
+def load_embed_model(name: str) -> SentenceTransformer:
     """Load the sentence-transformers embedding model."""
-    return SentenceTransformer(name or config.MD_EMBEDDING_MODEL)
+    return SentenceTransformer(name)
 
 
 # ---------- SEARCHERS ----------
@@ -61,7 +61,7 @@ def dense_search(
     qdrant: QdrantClient,
     model: SentenceTransformer,
     query: str,
-    collection_name: str = config.MD_QDRANT_COLLECTION,
+    collection_name: str,
     topk: int = 100
 ) -> List[Tuple[str, float]]:
     """Return [(chunk_id, score)] from Qdrant vector search (uses payload['chunk_id'])."""
@@ -105,7 +105,7 @@ def fetch_payloads_for_ids(
 
 # ---------- TOP-LEVEL HYBRID SEARCH ----------
 
-def hybrid_md_search_from_disk(
+def hybrid_search_from_disk(
     query: str,
     bm_index_path: str,
     qdrant_index_path: Optional[str] = None,   # embedded
@@ -117,20 +117,31 @@ def hybrid_md_search_from_disk(
     bm25_candidates: Optional[int] = None,
     dense_candidates: Optional[int] = None,
     topk: Optional[int] = None,
+    expected_embedding_dim: Optional[int] = None,
+    source: str = "md",
     return_payloads: bool = True,
 ) -> Dict:
     """
     Reopen stored BM25 + Qdrant indexes, run hybrid (BM25 + dense) with RRF fusion,
     and optionally return full payloads (text, section, metadata).
+
+    The `source` argument toggles between default MD and TXT indexing settings.
     """
-    # Open resources
+    settings = _get_source_defaults(source)
+
     ix = open_bm25_index(bm_index_path)
     qdrant = connect_qdrant(qdrant_index_path, qdrant_host, qdrant_port, qdrant_api_key)
-    collection_name = collection_name or config.MD_QDRANT_COLLECTION
-    embedding_model = embedding_model or config.MD_EMBEDDING_MODEL
-    bm25_candidates = bm25_candidates or config.MD_BM25_CANDIDATES
-    dense_candidates = dense_candidates or config.MD_DENSE_CANDIDATES
-    topk = topk or config.MD_TOPK
+
+    collection_name = collection_name or settings["collection"]
+    embedding_model = embedding_model or settings["embedding_model"]
+    bm25_candidates = bm25_candidates or settings["bm25_candidates"]
+    dense_candidates = dense_candidates or settings["dense_candidates"]
+    topk = topk or settings["topk"]
+    expected_embedding_dim = (
+        expected_embedding_dim
+        if expected_embedding_dim is not None
+        else settings["embedding_dim"]
+    )
 
     model = load_embed_model(embedding_model)
     _ensure_embedding_dim_matches(
@@ -138,21 +149,18 @@ def hybrid_md_search_from_disk(
         collection_name,
         embedding_model,
         model.get_sentence_embedding_dimension(),
+        expected_embedding_dim,
     )
 
-    # Run both searches
-    bm_hits = bm25_search(ix, query, topk=bm25_candidates)      # [(id, score)]
+    bm_hits = bm25_search(ix, query, topk=bm25_candidates)
     de_hits = dense_search(qdrant, model, query, collection_name, topk=dense_candidates)
 
-    # Build quick score maps for diagnostics
     bm_map = {cid: s for cid, s in bm_hits}
     de_map = {cid: s for cid, s in de_hits}
 
-    # Fuse
-    fused = rrf_fuse(bm_hits, de_hits, k=60)  # [(id, fused_score)]
+    fused = rrf_fuse(bm_hits, de_hits, k=60)
     top_ids = [cid for cid, _ in fused[:topk]]
 
-    # Optionally attach payloads (via Qdrant) and per-modality scores
     results = []
     payloads = fetch_payloads_for_ids(qdrant, collection_name, top_ids) if return_payloads else {}
 
@@ -165,7 +173,6 @@ def hybrid_md_search_from_disk(
         }
         if return_payloads and cid in payloads:
             p = payloads[cid]
-            # Add a short preview to help UIs
             text = (p.get("text") or "").replace("\n", " ")
             item.update({
                 "paper_id": p.get("paper_id"),
@@ -188,9 +195,10 @@ def hybrid_md_search_from_disk(
             "bm_index_path": str(Path(bm_index_path).resolve()),
             "qdrant_mode": "embedded" if qdrant_index_path else f"server:{qdrant_host}:{qdrant_port or 6333}",
             "collection_name": collection_name,
-        "embedding_model": embedding_model,
+            "embedding_model": embedding_model,
+            "source": source,
+        }
     }
-}
 
 
 def _extract_collection_vector_size(qdrant: QdrantClient, collection_name: str) -> int:
@@ -220,21 +228,21 @@ def _ensure_embedding_dim_matches(
     collection_name: str,
     embedding_model: str,
     model_dim: int,
+    expected_dim: Optional[int],
 ):
     collection_dim = _extract_collection_vector_size(qdrant, collection_name)
-    config_dim = config.MD_EMBEDDING_DIM
 
-    if config_dim is not None and collection_dim != config_dim:
+    if expected_dim is not None and collection_dim != expected_dim:
         raise ValueError(
             "Embedding dimension mismatch: collection '%s' stores vectors of size %s "
-            "but config.MD_EMBEDDING_DIM is %s"
-            % (collection_name, collection_dim, config_dim)
+            "but configured expectation is %s"
+            % (collection_name, collection_dim, expected_dim)
         )
 
-    if config_dim is not None and model_dim != config_dim:
+    if expected_dim is not None and model_dim != expected_dim:
         raise ValueError(
             "Embedding dimension mismatch: model '%s' outputs %s dims but config expects %s"
-            % (embedding_model, model_dim, config_dim)
+            % (embedding_model, model_dim, expected_dim)
         )
 
     if model_dim != collection_dim:
@@ -243,3 +251,32 @@ def _ensure_embedding_dim_matches(
             "but model '%s' produces dimension %s."
             % (collection_name, collection_dim, embedding_model, model_dim)
         )
+
+
+def _get_source_defaults(source: str) -> Dict[str, Optional[int]]:
+    source_key = source.lower()
+    if source_key == "md":
+        return {
+            "collection": config.MD_QDRANT_COLLECTION,
+            "embedding_model": config.MD_EMBEDDING_MODEL,
+            "embedding_dim": config.MD_EMBEDDING_DIM,
+            "bm25_candidates": config.MD_BM25_CANDIDATES,
+            "dense_candidates": config.MD_DENSE_CANDIDATES,
+            "topk": config.MD_TOPK,
+        }
+    if source_key == "txt":
+        return {
+            "collection": config.TXT_QDRANT_COLLECTION,
+            "embedding_model": config.TXT_EMBEDDING_MODEL,
+            "embedding_dim": config.TXT_EMBEDDING_DIM,
+            "bm25_candidates": config.TXT_BM25_CANDIDATES,
+            "dense_candidates": config.TXT_DENSE_CANDIDATES,
+            "topk": config.TXT_TOPK,
+        }
+    raise ValueError("Unsupported source '%s'. Expected 'md' or 'txt'." % source)
+
+
+def hybrid_md_search_from_disk(*args, **kwargs):
+    """Backward compatible alias for callers expecting the MD-specific function name."""
+    kwargs.setdefault("source", "md")
+    return hybrid_search_from_disk(*args, **kwargs)
