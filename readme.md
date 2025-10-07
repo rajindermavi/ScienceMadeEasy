@@ -25,6 +25,7 @@ streamlit run app.py
 
 ## Overview
 
+```
 SME/
 ├── data/                     
 │   ├── data_etl/               # Raw data, chunk JSON, JSONL storage
@@ -49,6 +50,7 @@ SME/
 ├── run_etl.py                  # Rerun to retrieve a new corpus
 ├── run_query.py                # Run query outside runtime frontend
 └── README.md
+```
 
 The ```config.py``` file contains settings for the indexing steps - embedding dimensions, models etc.
 
