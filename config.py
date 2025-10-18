@@ -59,3 +59,8 @@ ARXIV_PDF = "https://arxiv.org/pdf/{id}.pdf"          # accepts old and new IDs;
 ARXIV_EPRINT = "https://arxiv.org/e-print/{id}"       # source tarball fallback (last resort)
 ARXIV_ID_RE = re.compile(r"arxiv\.org\/abs\/([0-9]+\.[0-9]+|[a-z\-]+\/[0-9]+)v?(\d+)?")
 GZIP_MAGIC = b"\x1f\x8b"
+
+# URL
+URL_SEMANTIC_SCHOLAR_REF = "https://api.semanticscholar.org/graph/v1/paper/arXiv:{arxiv_id}/references"
+URL_SEMANTIC_SCHOLAR_CIT = "https://api.semanticscholar.org/graph/v1/paper/arXiv:{arxiv_id}/citations"
+

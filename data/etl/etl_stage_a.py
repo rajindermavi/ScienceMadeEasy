@@ -14,16 +14,9 @@ import config
 from config import ARXIV_EPRINT, ARXIV_ID_RE, ARXIV_PDF, GZIP_MAGIC, RAW_DIR
 from data.etl.models import PaperMeta
 
-
-
-
-def is_gzip_file(path: Path) -> bool:
-    try:
-        with open(path, "rb") as fh:
-            return fh.read(len(GZIP_MAGIC)) == GZIP_MAGIC
-    except OSError:
-        return False
-
+## ####################
+## Prepare Arxiv Search
+## ####################
 
 def build_arxiv_query(phrases: Iterable[str], categories: Iterable[str]) -> str:
     """
@@ -35,6 +28,9 @@ def build_arxiv_query(phrases: Iterable[str], categories: Iterable[str]) -> str:
     cat_part = " OR ".join(f"cat:{c}" for c in categories)
     return f"({phrase_part}) AND ({cat_part})"
 
+## ###########################
+## Search Papers and Meta Data
+## ###########################
 
 def arxiv_client_search(page_size, delay_seconds, query, max_results, sort_by, sort_order):
     client = arxiv.Client(
@@ -71,6 +67,89 @@ def parse_arxiv_ids(entry_id: str) -> tuple[str, str, str]:
     sanitized = f"{numeric_part}{version}"
     return base_id, version, sanitized
 
+def get_semantic_scholar_data(arxiv_id: str) -> int:
+
+    url_cite = config.URL_SEMANTIC_SCHOLAR_CIT.format(arxiv_id=arxiv_id)
+    url_ref = config.URL_SEMANTIC_SCHOLAR_REF.format(arxiv_id=arxiv_id)
+
+    params = {"fields": "title,year,venue,externalIds,authors,url"}
+    headers = {"User-Agent": "refs-fetch/1.0"}
+
+    resp_cite = requests.get(url_cite, params=params, headers=headers, timeout=20)
+    resp_ref = requests.get(url_ref, params=params, headers=headers, timeout=20)
+
+    if resp_cite.ok:
+        cite = resp_cite.json().get('data',[])
+    else:
+        cite = []
+
+    if resp_ref.ok:
+        ref = resp_ref.json().get('data',[])
+    else:
+        ref = []
+
+    return cite, ref
+
+def semantic_scholar_arxiv_ids(semantic_scholar_collection):
+
+    arxiv_ids = []
+    for paper in semantic_scholar_collection:
+        arxiv_ids.append(paper.get('externalIds',{}).get('ArXiv'))
+    
+    return arxiv_ids
+
+## ###########
+## COORDINATOR
+## ###########
+
+def arxiv_metas(
+    arxiv_query: str,
+    max_results: int = 200,
+    sort_by: arxiv.SortCriterion = arxiv.SortCriterion.Relevance,
+    sort_order: arxiv.SortOrder = arxiv.SortOrder.Descending,
+    page_size: int = 100,
+    delay_seconds: float = 0.5,
+) -> List[PaperMeta]:
+    arxiv_search_results = arxiv_client_search(page_size, delay_seconds, arxiv_query, max_results, sort_by, sort_order)
+
+    seen: Set[str] = set()
+    metas: List[PaperMeta] = []
+    
+    for arxiv_search_result in arxiv_search_results:
+        base_id, version, sanitized_id = parse_arxiv_ids(arxiv_search_result.entry_id)
+        arxiv_id = arxiv_search_result.get_short_id()
+        if arxiv_id in seen:
+            continue
+        seen.add(arxiv_id)
+
+        citation_list, reference_list = get_semantic_scholar_data(base_id) 
+
+        updated_date = arxiv_search_result.updated.isoformat() if arxiv_search_result.updated else arxiv_search_result.published.isoformat()
+        metas.append(
+            PaperMeta(
+                arxiv_id=arxiv_id,
+                base_id=base_id,
+                sanitized_id=sanitized_id,
+                version=version,
+                title=arxiv_search_result.title.strip(),
+                primary_category=arxiv_search_result.primary_category,
+                categories=list(arxiv_search_result.categories),
+                authors=[a.name for a in arxiv_search_result.authors],
+                published_date=arxiv_search_result.published.isoformat(),
+                updated_date=updated_date,
+                url=arxiv_search_result.entry_id,
+                summary=arxiv_search_result.summary,
+                comment=arxiv_search_result.comment,
+                citation_list=semantic_scholar_arxiv_ids(citation_list),
+                reference_list=semantic_scholar_arxiv_ids(reference_list)
+            )
+        )
+        time.sleep(0.5)
+    return metas
+
+## ###############
+## DOWNLOAD PAPERS
+## ###############
 
 def save_stream(resp: requests.Response, out_path: Path):
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -79,38 +158,12 @@ def save_stream(resp: requests.Response, out_path: Path):
             if chunk:
                 fh.write(chunk)
 
-
-def download_pdf(result, out_path: Path, sleep: float = 0.2) -> Path | None:
-    """
-    Try arxiv.Result.download_pdf first; on HTTP 404 fall back to unversioned URL
-    and finally to e-print (source). Returns path or None.
-    """
-    out_path = Path(out_path)
-    if out_path.exists():
-        return out_path
-
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    base_id, version, _ = parse_arxiv_ids(result.entry_id)
-
-    # 1) Try the library helper (uses versioned pdf_url).
+def is_gzip_file(path: Path) -> bool:
     try:
-        result.download_pdf(filename=str(out_path))
-        time.sleep(sleep)
-        if out_path.exists() and out_path.stat().st_size > 0:
-            return out_path
-    except HTTPError as exc:
-        if getattr(exc, "code", None) != 404:
-            raise
-
-    # 2) Fallback: unversioned PDF URL (serves latest version)
-    unversioned = ARXIV_PDF.format(id=base_id)
-    resp = requests.get(unversioned, stream=True, allow_redirects=True, timeout=30)
-    if resp.status_code == 200 and resp.headers.get("content-type", "").startswith("application/pdf"):
-        save_stream(resp, out_path)
-        return out_path
-
-    return None
-
+        with open(path, "rb") as fh:
+            return fh.read(len(GZIP_MAGIC)) == GZIP_MAGIC
+    except OSError:
+        return False
 
 def download_latex(base_id: str, sanitized_id: str, version: str) -> Path | None:
     """Fetch the LaTeX source archive for an arXiv paper and unpack it."""
@@ -134,7 +187,6 @@ def download_latex(base_id: str, sanitized_id: str, version: str) -> Path | None
         _write_plain_tex(tar_path, archive_root, header_name, sanitized_id)
 
     return extract_dir
-
 
 def _ensure_source_archive(base_id: str, version: str, tar_path: Path) -> str | None:
     """Download the source archive if needed, returning the response header."""
@@ -219,67 +271,24 @@ def _write_plain_tex(tar_path: Path, extract_root: Path, header_name: str, sanit
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(raw_text, encoding="utf-8")
 
+## ################
+## COMPLETE EXTRACT
+## ################
 
-def get_citations(arxiv_id: str) -> int:
-    url = f"https://api.semanticscholar.org/graph/v1/paper/arXiv:{arxiv_id}?fields=citationCount"
-    resp = requests.get(url)
-    if resp.ok:
-        return resp.json().get("citationCount", 0)
-    return 0
+def arxiv_extract(arxiv_query, max_results):
+    
+    paper_metas=arxiv_metas(arxiv_query, max_results)
+    papers = {}
 
+    for meta in paper_metas:
 
-def arxiv_extract(
-    arxiv_query: str,
-    max_results: int = 200,
-    sort_by: arxiv.SortCriterion = arxiv.SortCriterion.Relevance,
-    sort_order: arxiv.SortOrder = arxiv.SortOrder.Descending,
-    page_size: int = 100,
-    delay_seconds: float = 0.5,
-) -> List[PaperMeta]:
-    arxiv_search_results = arxiv_client_search(page_size, delay_seconds, arxiv_query, max_results, sort_by, sort_order)
-
-    seen: Set[str] = set()
-    out: List[PaperMeta] = []
-
-    for arxiv_search_result in arxiv_search_results:
-        base_id, version, sanitized_id = parse_arxiv_ids(arxiv_search_result.entry_id)
-        arxiv_id = arxiv_search_result.get_short_id()
-        if arxiv_id in seen:
-            continue
-        seen.add(arxiv_id)
-
-        latex_dir = download_latex(base_id, sanitized_id, version)
+        latex_dir = download_latex(meta.base_id,meta.sanitized_id,meta.version)
         if latex_dir is None:
-            print(f"[warn] unable to fetch source for {arxiv_search_result.entry_id}")
+            print(f"[warn] unable to fetch source for {meta.base_id}")
             continue
-
-        pdf_path = Path(config.RAW_DIR) / f"{sanitized_id}.pdf"
-        pdf_path.mkdir(parents=True,exist_ok=True)
-        pdf_file = download_pdf(arxiv_search_result, pdf_path)
-        if pdf_file is None:
-            print(f"[warn] unable to fetch PDF for {arxiv_search_result.entry_id}")
-            continue
-
-        citations = get_citations(base_id)
-        out.append(
-            PaperMeta(
-                arxiv_id=arxiv_id,
-                base_id=base_id,
-                version=version,
-                title=arxiv_search_result.title.strip(),
-                primary_category=arxiv_search_result.primary_category,
-                categories=list(arxiv_search_result.categories),
-                authors=[a.name for a in arxiv_search_result.authors],
-                published_date=arxiv_search_result.published.isoformat(),
-                updated_date=arxiv_search_result.updated.isoformat() if arxiv_search_result.updated else arxiv_search_result.published.isoformat(),
-                url=arxiv_search_result.entry_id,
-                summary=arxiv_search_result.summary,
-                comment=arxiv_search_result.comment,
-                citations=citations,
-                pdf_path=str(pdf_file),
-                latex_dir=str(latex_dir),
-            )
-        )
-        time.sleep(0.5)
-
-    return out
+        papers[meta.arxiv_id] = {
+            'meta':meta,
+            'latex_dir':latex_dir 
+        }
+    
+    return papers

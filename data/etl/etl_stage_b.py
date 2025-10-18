@@ -277,13 +277,12 @@ def _clean_text(text: str) -> str:
     return without_figures
 
 
-def prepare_latex_corpus(source_root: Path | None = None, output_root: Path | None = None) -> list[Path]:
-    source_root = source_root or config.TAR_EXTRACT_DIR
+def prepare_latex_corpus(latex_extract_paths) -> list[Path]:
     output_root = output_root or config.LATEX_FILTER_DIR
     output_root.mkdir(parents=True, exist_ok=True)
 
-    written: list[Path] = []
-    for paper_dir in sorted(source_root.iterdir()):
+    combined_latex_paths = {}
+    for arxiv_id, paper_dir in latex_extract_paths.items():
         if not paper_dir.is_dir():
             continue
         main_tex = _find_main_tex(paper_dir)
@@ -308,31 +307,27 @@ def prepare_latex_corpus(source_root: Path | None = None, output_root: Path | No
         cleaned = cleaned.strip()
         output_path = output_root / f"{paper_dir.name}.tex"
         output_path.write_text(cleaned + "\n", encoding="utf-8")
-        written.append(output_path)
-    return written
+        combined_latex_paths[arxiv_id] = output_path
+    return combined_latex_paths
 
-def latex_conversion(files):
+def latex_conversion(combined_latex_paths):
     
-    md_conversions = []
-    txt_convsersions = []
+    conversions = {}
 
-    for file in files:
-
-        md_ok, md_file, md_warning = _convert_to_md(file)
+    for arxiv_id, latex_path in combined_latex_paths.items():
+        conversion = {}
+        
+        md_ok, md_file, md_warning = _convert_to_md(latex_path)
         if md_ok:
-            md_conversions.append(md_file)
+            conversion['md'] = md_file
         else:
             print(md_warning)
-        txt_ok, txt_file, txt_warnings = _convert_to_txt(file)
+        txt_ok, txt_file, txt_warnings = _convert_to_txt(latex_path)
         if txt_ok:
-            txt_convsersions.append(txt_file)
+            conversion['txt'] = txt_file
         else:
             print(txt_warnings)
+        
+        conversions[arxiv_id] = conversion
 
-    return md_conversions, txt_convsersions
-
-if __name__ == "__main__":
-    written_paths = prepare_latex_corpus()
-    md_paths, txt_paths = latex_conversion(written_paths)
-    for path in written_paths:
-        print(f"Wrote {path}")
+    return conversions
