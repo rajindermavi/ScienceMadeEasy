@@ -2,7 +2,7 @@
 
 ## Summary
 A math aware Retrieval-Augmented Generation protoype for mathematical research papers. 
-The prototype is shipped with an indexed set of papers focused generally on Quasiperiod Schrodinger Operators and the Almost Matheiu Operator in particular.
+The prototype is shipped with an indexed set of papers focused generally on Quasiperiodic Schrodinger Operators and the Almost Mathieu Operator in particular.
 
 The papers are sourced from Arxiv.org. Most all mathematical papers are posted with LaTex source, so that source is used as our text corpus.
 Latex is transformed into md and stripped txt format and subsequently chunked for later retrieval.

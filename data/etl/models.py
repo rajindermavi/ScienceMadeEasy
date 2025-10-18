@@ -10,6 +10,7 @@ class PaperMeta(BaseModel):
 
     arxiv_id: str
     base_id: str
+    sanitized_id: str
     version: str
     title: str
     primary_category: str
@@ -20,12 +21,8 @@ class PaperMeta(BaseModel):
     url: str
     summary: Optional[str] = None
     comment: Optional[str] = None
-    citations: int = 0
-    pdf_path: Optional[str] = None
-    latex_dir: Optional[str] = None
-    tei_path: Optional[str] = None
-    normalization_scale: Optional[float] = None
-
+    citation_list: Optional[List] = None
+    reference_list: Optional[List] = None  
 
 class Chunk(BaseModel):
     """Smaller text unit carved out of the TEI body for downstream indexing."""

@@ -2,24 +2,18 @@ ipykernel
 
 pydantic
 python-dotenv
-requests
-
 dotenv
-
+requests
 tqdm
-
-lxml
 
 arxiv
 
+lxml
 sympy
-
 latexcodec
 
 whoosh
-
 qdrant-client 
-
 sentence-transformers
 
 openai
