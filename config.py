@@ -4,6 +4,7 @@ from pathlib import Path
 
 DATA_ETL_DIR = Path(os.getenv("DATA_ETL_DIR","data/data_etl"))
 DATA_ETL_DIR.mkdir(parents=True,exist_ok=True)
+EXTRACT_DETAILS = DATA_ETL_DIR / 'extract_details.json'
 DATA_INDEX_DIR = Path(os.getenv("DATA_INDEX_DIR","data/data_index"))
 DATA_INDEX_DIR.mkdir(parents=True,exist_ok=True)
 RAW_DIR = DATA_ETL_DIR / "pdf_raw"

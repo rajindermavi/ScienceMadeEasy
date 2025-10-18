@@ -467,9 +467,9 @@ def md_collection_chunking(md_files):
     md_jsonl = config.MD_JSONL
 
     for arxiv_id, md_infile in md_files.items():
-        md_infile = Path(md_infile)
-        md_json_outfile = md_chunked_dir / (md_infile.with_suffix('.json')).name
         try:
+            md_infile = Path(md_infile)
+            md_json_outfile = md_chunked_dir / (md_infile.with_suffix('.json')).name
             out_path = md_file_chunking(md_infile,md_json_outfile)
             chunked_files[arxiv_id] = out_path
 

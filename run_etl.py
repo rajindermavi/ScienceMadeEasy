@@ -1,6 +1,8 @@
 import logging
 import os
 import json
+from pydantic import BaseModel
+from pathlib import Path
 
 from data.etl.etl_stage_a import build_arxiv_query, arxiv_extract
 from data.etl.etl_stage_b import prepare_latex_corpus, latex_conversion
@@ -32,6 +34,13 @@ def get_etl_logger():
 
     return logger
 
+def json_default(o):
+    if isinstance(o, BaseModel):
+        return o.model_dump()
+    if isinstance(o, Path):
+        return str(o)
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+
 def run_arxiv_to_latex_extract(phrases, categories, max_results):
     logger = get_etl_logger()
     logger.info(
@@ -51,7 +60,7 @@ def run_arxiv_to_latex_extract(phrases, categories, max_results):
     logger.info("Calling arxiv_extract")
     papers = arxiv_extract(arxiv_query, max_results=max_results)
     # out["papers"] = papers
-    logger.info("arxiv_extract returned %s results", len(papers.get('meta',[])))
+    logger.info("arxiv_extract conpleted")
 
     logger.info("Calling prepare_latex_corpus")
     combined_latex_paths = prepare_latex_corpus({arxiv_id: paper.get('latex_dir') for arxiv_id, paper in papers.items()})
@@ -147,15 +156,28 @@ if __name__ == "__main__":
 
     categories = ["math-ph", "math.SP", "quant-ph"]
 
-    arxiv_extract_details = run_arxiv_to_latex_extract(phrases, categories, 500)
+    arxiv_extract_details = run_arxiv_to_latex_extract(phrases, categories, 200)
     papers = arxiv_extract_details.get('papers')
+    
     chunking_details = run_chunking(papers)
     arxiv_extract_details.update(chunking_details)
 
     indexing_details = run_indexing()
 
     arxiv_extract_details.update(indexing_details)
-    report_string = json.dumps(arxiv_extract_details, indent=4)
+    report_string = json.dumps(
+        arxiv_extract_details, 
+        indent=4,
+        default=json_default
+    )
+
+    with open(config.EXTRACT_DETAILS,"w") as f:
+        json.dump(
+            arxiv_extract_details,
+            f,
+            indent = 4,
+            default=json_default
+        )
 
     logger.info(report_string)
 

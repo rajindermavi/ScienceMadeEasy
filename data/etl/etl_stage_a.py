@@ -33,21 +33,44 @@ def build_arxiv_query(phrases: Iterable[str], categories: Iterable[str]) -> str:
 ## ###########################
 
 def arxiv_client_search(page_size, delay_seconds, query, max_results, sort_by, sort_order):
+    # force max page_size
+    page_size = min(10,page_size)
     client = arxiv.Client(
         page_size=page_size,
         delay_seconds=delay_seconds,
         num_retries=3,
     )
 
-    search = arxiv.Search(
-        query=query,
-        max_results=max_results,
-        sort_by=sort_by,
-        sort_order=sort_order,
-    )
+    collected = []
+    total_collected = 0
 
-    return list(client.results(search))
-
+    while total_collected < max_results:
+        remaining = max_results - total_collected
+        batch_size = min(page_size,remaining)
+        search = arxiv.Search(
+            query=query,
+            max_results=total_collected + batch_size,
+            sort_by=sort_by,
+            sort_order=sort_order,
+        )
+        results = client.results(search, offset=total_collected)
+        try:
+            page_records = list(results)
+        except arxiv.UnexpectedEmptyPageError:
+            print('empty pagination')
+            if batch_size == 1:
+                break
+            page_size = max(1,batch_size//2)
+            continue
+        if not page_records:
+            print('empty page_records')
+            break
+        collected.extend(page_records)
+        total_collected += len(page_records)
+        print(f'records collected: {total_collected}')
+    print(f'total records collected: {total_collected}')
+    print(f'max_results: {max_results}')
+    return collected
 
 def parse_arxiv_ids(entry_id: str) -> tuple[str, str, str]:
     """Extract base identifier, version, and a filesystem-safe filename stem."""
@@ -93,8 +116,19 @@ def get_semantic_scholar_data(arxiv_id: str) -> int:
 def semantic_scholar_arxiv_ids(semantic_scholar_collection):
 
     arxiv_ids = []
-    for paper in semantic_scholar_collection:
-        arxiv_ids.append(paper.get('externalIds',{}).get('ArXiv'))
+    for paper in semantic_scholar_collection or []:
+        id = None
+        if 'citingPaper' in paper:
+            paper_ngbr = paper.get('citingPaper',{}).get('externalIds',{})
+        if 'citedPaper' in paper:
+            paper_ngbr = paper.get('citedPaper',{}).get('externalIds',{})
+        if paper_ngbr:
+            try:
+                id = paper_ngbr.get('ArXiv')
+            except Exception as e:
+                print(paper_ngbr)
+                raise Exception(e)
+        arxiv_ids.append(id)
     
     return arxiv_ids
 
@@ -116,6 +150,7 @@ def arxiv_metas(
     metas: List[PaperMeta] = []
     
     for arxiv_search_result in arxiv_search_results:
+        
         base_id, version, sanitized_id = parse_arxiv_ids(arxiv_search_result.entry_id)
         arxiv_id = arxiv_search_result.get_short_id()
         if arxiv_id in seen:
@@ -286,7 +321,7 @@ def arxiv_extract(arxiv_query, max_results):
         if latex_dir is None:
             print(f"[warn] unable to fetch source for {meta.base_id}")
             continue
-        papers[meta.arxiv_id] = {
+        papers[meta.base_id] = {
             'meta':meta,
             'latex_dir':latex_dir 
         }

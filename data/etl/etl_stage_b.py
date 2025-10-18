@@ -278,7 +278,7 @@ def _clean_text(text: str) -> str:
 
 
 def prepare_latex_corpus(latex_extract_paths) -> list[Path]:
-    output_root = output_root or config.LATEX_FILTER_DIR
+    output_root = config.LATEX_FILTER_DIR
     output_root.mkdir(parents=True, exist_ok=True)
 
     combined_latex_paths = {}
