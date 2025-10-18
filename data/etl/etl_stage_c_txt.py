@@ -225,6 +225,7 @@ def txt_file_chunking(input_txt_filepath, output_json_filepath):
                 "id": chunk_id,
                 "file": str(in_path),
                 "section_path": section_candidate,
+                "section": section_candidate,
                 "start_line": start,
                 "end_line": end,
                 "text": chunk_text,
@@ -341,11 +342,13 @@ def _normalize_txt_record(rec: Dict[str, Any], fallback_index: int) -> Dict[str,
     section_path = rec.get("section_path") or _extract_section_hint(text)
     if not section_path and text:
         section_path = text.splitlines()[0].strip()[:120]
+    section = rec.get("section") or section_path
     return {
         "chunk_id": chunk_id,
         "paper_id": pid,
         "source_file": rec.get("file") or "",
         "section_path": section_path,
+        "section": section,
         "start_line": rec.get("start_line"),
         "end_line": rec.get("end_line"),
         "chunk_type": chunk_type,
@@ -390,10 +393,14 @@ def _normalize_txt_records(records: List[Dict[str, Any]], drop_empty: bool) -> L
                     norm["section_path"] = hint
                 elif text_val:
                     norm["section_path"] = text_val.splitlines()[0].strip()[:120]
+            if not norm.get("section"):
+                norm["section"] = norm.get("section_path", "")
             if not norm.get("chunk_type"):
                 norm["chunk_type"] = _guess_chunk_type(norm.get("text"), norm.get("section_path", ""))
         else:
             norm = _normalize_txt_record(rec, fallback_index=idx)
+        if not norm.get("section"):
+            norm["section"] = norm.get("section_path", "")
         text = (norm.get("text") or "").strip()
         if drop_empty and not text:
             continue
@@ -448,22 +455,23 @@ def txt_collection_chunking(txt_files):
 
     txt_chunked_dir = config.TXT_CHUNKED_DIR
     txt_chunked_dir.mkdir(parents=True, exist_ok=True)
-    chunked_files = []
+    chunked_files = {}
 
     txt_jsonl = config.TXT_JSONL
 
-    for txt_infile in txt_files:
+    for arxiv_id, txt_infile in txt_files.items():
         txt_infile = Path(txt_infile)
         txt_json_outfile = txt_chunked_dir / (txt_infile.with_suffix('.json')).name
         try:
             out_path = txt_file_chunking(txt_infile,txt_json_outfile)
-            chunked_files.append(out_path)
+            chunked_files[arxiv_id] = out_path
 
         except Exception as e:
             print(f'Excption {e} for file {txt_infile}.')
     
     aggregated_chunk_files = sorted(txt_chunked_dir.glob("*.json"))
-    txt_details = post_process_txt_chunking([str(p) for p in aggregated_chunk_files],txt_jsonl)
-    txt_details["chunk_files_written"] = chunked_files
+    out = {}
+    out['txt_details'] = post_process_txt_chunking([str(p) for p in aggregated_chunk_files],txt_jsonl)
+    out["txt_chunk_files"] = chunked_files
 
-    return txt_details
+    return out

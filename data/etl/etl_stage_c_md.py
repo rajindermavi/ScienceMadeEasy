@@ -462,22 +462,23 @@ def md_collection_chunking(md_files):
 
     md_chunked_dir = config.MD_CHUNKED_DIR
     md_chunked_dir.mkdir(parents=True, exist_ok=True)
-    chunked_files = []
+    chunked_files = {}
 
     md_jsonl = config.MD_JSONL
 
-    for md_infile in md_files:
+    for arxiv_id, md_infile in md_files.items():
         md_infile = Path(md_infile)
         md_json_outfile = md_chunked_dir / (md_infile.with_suffix('.json')).name
         try:
             out_path = md_file_chunking(md_infile,md_json_outfile)
-            chunked_files.append(out_path)
+            chunked_files[arxiv_id] = out_path
 
         except Exception as e:
             print(f'Excption {e} for file {md_infile}.')
     
     aggregated_chunk_files = sorted(md_chunked_dir.glob("*.json"))
-    md_details = post_process_md_chunking([str(p) for p in aggregated_chunk_files], md_jsonl)
-    md_details["chunk_files_written"] = chunked_files
+    out = {}
+    out['md_details'] = post_process_md_chunking([str(p) for p in aggregated_chunk_files], md_jsonl)
+    out["md_chunk_files"] = chunked_files
 
-    return md_details
+    return out

@@ -62,34 +62,33 @@ def run_arxiv_to_latex_extract(phrases, categories, max_results):
     logger.info("Calling latex_conversion")
     conversions = latex_conversion(combined_latex_paths)
     for arxiv_id, paper in papers.items():
-        paper['md_conversion_path'] = conversions[arxiv_id]['md']
-        paper['txt_conversion_path'] = conversions[arxiv_id]['txt']
+        paper['md_full_path'] = conversions.get(arxiv_id,{}).get('md')
+        paper['txt_full_path'] = conversions.get(arxiv_id,{}).get('txt')
 
     out['papers'] = papers
 
     return out
 
-def run_chunking(md_filepaths,txt_filepaths):
+def run_chunking(papers):
     logger = get_etl_logger()
-    logger.info(
-        "Starting run_chunking | total md files to chunk=%s | total txt files to chunk=%s",
-        len(md_filepaths),
-        len(txt_filepaths)
-    )
+    logger.info("Starting run_chunking")
 
     out = {}
-
+    md_filepaths = {arxiv_id:paper.get('md_full_path') for arxiv_id, paper in papers.items()}
     logger.info("Calling md_collection_chunking")
-    md_details= md_collection_chunking(md_filepaths)
-    out["md_details"] = md_details
-    md_chunked_files = md_details['chunk_files_written']
-    logger.info("md_collection_chunking created %s files", md_chunked_files)
+    md_chunking=md_collection_chunking(md_filepaths) # fix to dict
+    out["md_details"] = md_chunking['md_details']
+    logger.info("md_collection_chunking complete")
 
+    txt_filepaths = {arxiv_id:paper.get('txt_full_path') for arxiv_id, paper in papers.items()}
     logger.info("Calling txt_collection_chunking")
-    txt_details = txt_collection_chunking(txt_filepaths)
-    out["txt_details"] = txt_details
-    txt_chunked_files = txt_details['chunk_files_written']
-    logger.info("txt_collection_chunking created %s files", len(txt_chunked_files))
+    txt_chunking = txt_collection_chunking(txt_filepaths) # fix to dict
+    out["txt_details"] = txt_chunking['txt_details']
+    logger.info("txt_collection_chunking complete")
+
+    for arxiv_id, paper in papers.items():
+        paper['md_chunk_files'] = md_chunking.get('md_chunk_files',{}).get(arxiv_id)
+        paper['txt_chunk_files'] = txt_chunking.get('txt_chunk_files',{}).get(arxiv_id)
 
     logger.info("run_arxiv_extract complete")
 
@@ -148,15 +147,16 @@ if __name__ == "__main__":
 
     categories = ["math-ph", "math.SP", "quant-ph"]
 
-    out_arxiv_extract = run_arxiv_to_latex_extract(phrases, categories, 500)
-    md_filepaths, txt_filepaths = out_arxiv_extract['md_filepaths'],out_arxiv_extract['txt_filepaths']
-    out_chunking = run_chunking(md_filepaths,txt_filepaths)
+    arxiv_extract_details = run_arxiv_to_latex_extract(phrases, categories, 500)
+    papers = arxiv_extract_details.get('papers')
+    chunking_details = run_chunking(papers)
+    arxiv_extract_details.update(chunking_details)
 
-    out_indexing = run_indexing()
+    indexing_details = run_indexing()
 
-    report = {**out_arxiv_extract, **out_indexing}
-    report_string = json.dumps(report, indent=4)
+    arxiv_extract_details.update(indexing_details)
+    report_string = json.dumps(arxiv_extract_details, indent=4)
 
-    logger.info(report)
+    logger.info(report_string)
 
     logger.info("ETL process completed")
