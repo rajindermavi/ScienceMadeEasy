@@ -12,27 +12,7 @@ from data.etl.etl_stage_d_md import index_md_bm25, index_md_qdrant
 from data.etl.etl_stage_d_txt import index_txt_bm25, index_txt_qdrant
 import config
 
-def get_etl_logger():
-    """Configure and return the ETL logger."""
-    logger = logging.getLogger("etl")
-    if logger.handlers:
-        return logger
-
-    logger.setLevel(logging.INFO)
-    log_dir = os.path.join(os.path.dirname(__file__), "logging")
-    os.makedirs(log_dir, exist_ok=True)
-    log_path = os.path.join(log_dir, "etl.log")
-
-    formatter = logging.Formatter(
-        "%(asctime)s | %(levelname)s | %(name)s | %(message)s",
-        datefmt="%Y-%m-%d %H:%M:%S",
-    )
-
-    file_handler = logging.FileHandler(log_path, mode="w")
-    file_handler.setFormatter(formatter)
-    logger.addHandler(file_handler)
-
-    return logger
+from logs.log import get_logger
 
 def json_default(o):
     if isinstance(o, BaseModel):
@@ -42,7 +22,7 @@ def json_default(o):
     raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
 
 def run_arxiv_to_latex_extract(phrases, categories, max_results):
-    logger = get_etl_logger()
+    logger = get_logger(log_name='run_etl',log_path=config.DEFAULT_LOG_DIR/'log.log')
     logger.info(
         "Starting run_arxiv_extract | phrases=%s | categories=%s | max_results=%s",
         phrases,
@@ -79,7 +59,7 @@ def run_arxiv_to_latex_extract(phrases, categories, max_results):
     return out
 
 def run_chunking(papers):
-    logger = get_etl_logger()
+    logger = get_logger(log_name='run_etl',log_path=config.DEFAULT_LOG_DIR/'log.log')
     logger.info("Starting run_chunking")
 
     out = {}
@@ -105,7 +85,7 @@ def run_chunking(papers):
 
 
 def run_indexing():
-    logger = get_etl_logger()
+    logger = get_logger(log_name='run_etl',log_path=config.DEFAULT_LOG_DIR/'log.log')
     logger.info("Starting run_indexing")
 
     out = {}
@@ -142,7 +122,7 @@ def run_indexing():
 
 
 if __name__ == "__main__":
-    logger = get_etl_logger()
+    logger = get_logger(log_name='run_etl',log_path=config.DEFAULT_LOG_DIR/'log.log')
     logger.info("ETL process started")
 
     phrases = [

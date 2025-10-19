@@ -2,6 +2,9 @@ import os
 import re
 from pathlib import Path
 
+DEFAULT_LOG_DIR = Path(os.getenv("DEFAULT_LOG_DIR","logs"))
+DEFAULT_LOG_DIR.mkdir(parents=True,exist_ok=True)
+
 DATA_ETL_DIR = Path(os.getenv("DATA_ETL_DIR","data/data_etl"))
 DATA_ETL_DIR.mkdir(parents=True,exist_ok=True)
 EXTRACT_DETAILS = DATA_ETL_DIR / 'extract_details.json'
