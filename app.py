@@ -10,6 +10,7 @@
 # ---------------------------------------------------------------
 
 import os
+import re
 import textwrap
 import streamlit as st
 from dotenv import load_dotenv
@@ -78,6 +79,22 @@ def llm(query,context_str):
     return response.output_text
 
 
+def render_response(raw_text: str) -> None:
+    """Render plain Markdown with LaTeX segments handled via st.latex."""
+    normalized = raw_text.replace("\\\\", "\\")
+    normalized = normalized.replace(r"\(", "$").replace(r"\)", "$")
+    tokens = re.split(r"(\\\[.*?\\\]|\\\(.*?\\\))", normalized, flags=re.DOTALL)
+    for token in tokens:
+        if not token:
+            continue
+        if token.startswith("\\[") and token.endswith("\\]"):
+            st.latex(token[2:-2].strip())
+        elif token.startswith("\\(") and token.endswith("\\)"):
+            st.latex(token[2:-1].strip())
+        else:
+            st.markdown(token)
+
+
 # ---------------------------
 # UI
 # ---------------------------
@@ -95,7 +112,5 @@ if do_search:
     context_str = query_context(query)
 
     response = llm(query,context_str)
-
     st.subheader("Results")
-
-    st.write(response)
+    render_response(response)
