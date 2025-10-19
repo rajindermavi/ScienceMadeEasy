@@ -2,42 +2,56 @@ import os
 import re
 from pathlib import Path
 
-DEFAULT_LOG_DIR = Path(os.getenv("DEFAULT_LOG_DIR","logs"))
-DEFAULT_LOG_DIR.mkdir(parents=True,exist_ok=True)
 
-DATA_ETL_DIR = Path(os.getenv("DATA_ETL_DIR","data/data_etl"))
-DATA_ETL_DIR.mkdir(parents=True,exist_ok=True)
+PROJECT_ROOT = Path(__file__).resolve().parent
+
+
+#def _resolve_path(env_var: str, default_relative: str) -> Path:
+#    """Resolve a path to an absolute location under the project root."""
+#    raw_value = os.getenv(env_var, default_relative)
+#    path = Path(raw_value).expanduser()
+#    if not path.is_absolute():
+#        path = PROJECT_ROOT / path
+#    return path.resolve()
+
+
+DEFAULT_LOG_DIR = PROJECT_ROOT / "logs"  #_resolve_path("DEFAULT_LOG_DIR", "logs")
+DEFAULT_LOG_DIR.mkdir(parents=True, exist_ok=True)
+
+
+DATA_ETL_DIR = PROJECT_ROOT / 'data/data_etl' # _resolve_path("DATA_ETL_DIR", "data/data_etl")
+DATA_ETL_DIR.mkdir(parents=True, exist_ok=True)
 EXTRACT_DETAILS = DATA_ETL_DIR / 'extract_details.json'
-DATA_INDEX_DIR = Path(os.getenv("DATA_INDEX_DIR","data/data_index"))
-DATA_INDEX_DIR.mkdir(parents=True,exist_ok=True)
+DATA_INDEX_DIR = PROJECT_ROOT / "data/data_index" # _resolve_path("DATA_INDEX_DIR", "data/data_index")
+DATA_INDEX_DIR.mkdir(parents=True, exist_ok=True)
 RAW_DIR = DATA_ETL_DIR / "pdf_raw"
-RAW_DIR.mkdir(parents=True,exist_ok=True)
+RAW_DIR.mkdir(parents=True, exist_ok=True)
 TAR_DIR = DATA_ETL_DIR / "tar"
-TAR_DIR.mkdir(parents=True,exist_ok=True)
+TAR_DIR.mkdir(parents=True, exist_ok=True)
 TAR_EXTRACT_DIR = DATA_ETL_DIR / "latex_raw"
-TAR_EXTRACT_DIR.mkdir(parents=True,exist_ok=True)
+TAR_EXTRACT_DIR.mkdir(parents=True, exist_ok=True)
 LATEX_FILTER_DIR = DATA_ETL_DIR / "latex_final"
-LATEX_FILTER_DIR.mkdir(parents=True,exist_ok=True)
+LATEX_FILTER_DIR.mkdir(parents=True, exist_ok=True)
 MD_VERSION_DIR = DATA_ETL_DIR / "full_markdown"
-MD_VERSION_DIR.mkdir(parents=True,exist_ok=True)
+MD_VERSION_DIR.mkdir(parents=True, exist_ok=True)
 MD_CHUNKED_DIR = DATA_ETL_DIR / "md_chunked"
-MD_CHUNKED_DIR.mkdir(parents=True,exist_ok=True)
+MD_CHUNKED_DIR.mkdir(parents=True, exist_ok=True)
 TEXT_VERSION_DIR = DATA_ETL_DIR / "full_text"
-TEXT_VERSION_DIR.mkdir(parents=True,exist_ok=True)
+TEXT_VERSION_DIR.mkdir(parents=True, exist_ok=True)
 TXT_CHUNKED_DIR = DATA_ETL_DIR / "txt_chunked"
-TXT_CHUNKED_DIR.mkdir(parents=True,exist_ok=True)
+TXT_CHUNKED_DIR.mkdir(parents=True, exist_ok=True)
 
 MD_JSONL = DATA_ETL_DIR / "md_data.jsonl"
 TXT_JSONL = DATA_ETL_DIR / "txt_data.jsonl"
 
 MD_BM25_INDEX_DIR = DATA_INDEX_DIR / 'md_bm25_storage'
-MD_BM25_INDEX_DIR.mkdir(parents=True,exist_ok=True)
+MD_BM25_INDEX_DIR.mkdir(parents=True, exist_ok=True)
 MD_QDRANT_INDEX_DIR = DATA_INDEX_DIR / 'md_qrant_storage'
-MD_QDRANT_INDEX_DIR.mkdir(parents=True,exist_ok=True)
+MD_QDRANT_INDEX_DIR.mkdir(parents=True, exist_ok=True)
 TXT_BM25_INDEX_DIR = DATA_INDEX_DIR / 'txt_bm25_storage'
-TXT_BM25_INDEX_DIR.mkdir(parents=True,exist_ok=True)
+TXT_BM25_INDEX_DIR.mkdir(parents=True, exist_ok=True)
 TXT_QDRANT_INDEX_DIR = DATA_INDEX_DIR / 'txt_qrant_storage'
-TXT_QDRANT_INDEX_DIR.mkdir(parents=True,exist_ok=True)
+TXT_QDRANT_INDEX_DIR.mkdir(parents=True, exist_ok=True)
 
 # MD Indexing
 MD_QDRANT_COLLECTION = os.getenv("MD_QDRANT_COLLECTION","md_chunks")
@@ -67,4 +81,3 @@ GZIP_MAGIC = b"\x1f\x8b"
 # URL
 URL_SEMANTIC_SCHOLAR_REF = "https://api.semanticscholar.org/graph/v1/paper/arXiv:{arxiv_id}/references"
 URL_SEMANTIC_SCHOLAR_CIT = "https://api.semanticscholar.org/graph/v1/paper/arXiv:{arxiv_id}/citations"
-
