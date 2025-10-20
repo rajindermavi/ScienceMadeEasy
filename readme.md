@@ -82,7 +82,7 @@ The LLM performs a structured evaluation based on several factors:
 Using these subjective parameters the LLM provides an impartial grading. 
 The overall score is a weighted average of these metrics.
 
-![Structured LLM Score breakdown](path/to/your/image.png "Evaluation Averages")
+![Structured LLM Score breakdown](analysis/EvaluationAvgs.png "Evaluation Averages")
 
 We can see the RAG does best on correctness, and performs lowest on coverage. 
 The lower coverage is likely because some questions allow for a variety of focus in response. 
