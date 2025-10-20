@@ -19,3 +19,6 @@ sentence-transformers
 openai
 
 streamlit
+
+pandas 
+matplotlib

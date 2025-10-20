@@ -46,7 +46,7 @@ def query_context(query,token_budget = 1800):
 
 def llm(query,context_str):
 
-    query = query or 'Explain spectral statistics for Liouville frequencies'
+    query = query or 'Explain spectral statistics of the almost Mathiu operator for Liouville frequencies'
     math_mode = is_mathy(query)
 
     prompt = build_prompt(query, context_str, math_mode)
@@ -61,11 +61,12 @@ def llm(query,context_str):
 
     return response.output_text
 
-if __name__ == "__main__":
-
-    query = 'Explain spectral statistics for Liouville frequencies'
+def rag(query):
     context_str = query_context(query)
-
     response = llm(query,context_str)
+    return response
 
+if __name__ == "__main__":
+    query = 'Explain spectral statistics for Liouville frequencies'
+    response = rag(query)
     print(response)

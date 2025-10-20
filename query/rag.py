@@ -1,6 +1,5 @@
 # rag_runtime.py
 from typing import List, Dict
-import textwrap
 
 def is_mathy(query: str) -> bool:
     q = query.lower()
@@ -45,7 +44,7 @@ def build_prompt(question: str, context_str: str, math_mode: bool) -> Dict[str, 
     )
     if math_mode:
         system += " Preserve LaTeX exactly; do not alter math notation."
-    user = textwrap.dedent(f"""
+    user = f"""
     QUESTION:
     {question}
 
@@ -57,6 +56,6 @@ def build_prompt(question: str, context_str: str, math_mode: bool) -> Dict[str, 
     - Include inline citations to the most relevant chunk_ids like [paper123_s3_p2_c5].
     - If multiple steps or lemmas are used, cite each where used.
     - If the answer is uncertain with given CONTEXT, state what is missing.
-    """).strip()
+    """.strip()
     return {"system": system, "user": user}
 
