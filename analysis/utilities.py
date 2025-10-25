@@ -84,7 +84,7 @@ def text_to_query_prompt_builder(text):
     }}
     """.strip()
 
-    user = """
+    user = f"""
     <CHUNK>
     {text}
     </CHUNK>

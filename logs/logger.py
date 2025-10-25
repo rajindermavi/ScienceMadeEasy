@@ -1,9 +1,10 @@
 import logging
 import config
 
-def get_logger(log_name='log',log_path=config.DEFAULT_LOG_DIR/'log.log'):
+def get_logger(log_name='log',log_path='log.log', mode = 'w'):
     """Configure and return the ETL logger."""
     logger = logging.getLogger(log_name)
+    log_path = config.DEFAULT_LOG_DIR / log_path
     if logger.handlers:
         return logger
 
@@ -17,7 +18,7 @@ def get_logger(log_name='log',log_path=config.DEFAULT_LOG_DIR/'log.log'):
         datefmt="%Y-%m-%d %H:%M:%S",
     )
 
-    file_handler = logging.FileHandler(log_path, mode="w")
+    file_handler = logging.FileHandler(log_path, mode=mode)
     file_handler.setFormatter(formatter)
     logger.addHandler(file_handler)
 
