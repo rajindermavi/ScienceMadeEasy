@@ -61,7 +61,7 @@ MD_QDRANT_BATCH_SIZE = int(os.getenv("MD_QDRANT_BATCH_SIZE","64"))
 MD_QDRANT_PROGRESS_INTERVAL = int(os.getenv("MD_QDRANT_PROGRESS_INTERVAL","64"))
 MD_BM25_CANDIDATES = int(os.getenv("MD_BM25_CANDIDATES","200"))
 MD_DENSE_CANDIDATES = int(os.getenv("MD_DENSE_CANDIDATES","200"))
-MD_TOPK = int(os.getenv("MD_TOPK","20"))
+MD_TOPK = int(os.getenv("MD_TOPK","10"))
 
 # TXT Indexing
 TXT_QDRANT_COLLECTION = os.getenv("TXT_QDRANT_COLLECTION","txt_chunks")
@@ -71,7 +71,7 @@ TXT_QDRANT_BATCH_SIZE = int(os.getenv("TXT_QDRANT_BATCH_SIZE","64"))
 TXT_QDRANT_PROGRESS_INTERVAL = int(os.getenv("TXT_QDRANT_PROGRESS_INTERVAL","64"))
 TXT_BM25_CANDIDATES = int(os.getenv("TXT_BM25_CANDIDATES","200"))
 TXT_DENSE_CANDIDATES = int(os.getenv("TXT_DENSE_CANDIDATES","200"))
-TXT_TOPK = int(os.getenv("TXT_TOPK","20"))
+TXT_TOPK = int(os.getenv("TXT_TOPK","10"))
 
 ARXIV_PDF = "https://arxiv.org/pdf/{id}.pdf"          # accepts old and new IDs; version optional
 ARXIV_EPRINT = "https://arxiv.org/e-print/{id}"       # source tarball fallback (last resort)

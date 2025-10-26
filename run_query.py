@@ -13,8 +13,7 @@ OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 client = OpenAI()
 
-def query_context(query,token_budget = 1800):
-# Embedded Qdrant (folder-based)
+def query_retrieval(query):
     resp_md = hybrid_search_from_disk(
         query=query,
         bm_index_path=config.MD_BM25_INDEX_DIR,
@@ -39,9 +38,15 @@ def query_context(query,token_budget = 1800):
     results = [*resp_md['results'],*resp_txt['results']]
 
     rerank_results = rerank(query,results)
+
+    return rerank_results
+
+
+def query_context(query,token_budget = 1800):
+    # Embedded Qdrant (folder-based)
+    rerank_results = query_retrieval(query)
     blocks = build_context_blocks(rerank_results, max_tokens=token_budget)
     context_str = format_context_md(blocks)
-
     return context_str
 
 def llm(query,context_str):
