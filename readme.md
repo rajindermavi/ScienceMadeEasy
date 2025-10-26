@@ -65,7 +65,18 @@ On retrieval, the user query is used to generate a collection of references usin
 References on each branch are combined and ranked using RRF and the top k are selected. 
 Finally both math aware and plain text references are combined and reranked using sentence_transformers.CrossEncoder and the top ranked are returned for responce generation. 
 
-The source data is unstructured, therefore we do not have gold standard examples to evaluate SME. 
+### Evaluation
+
+The source data is unstructured, real-world text. 
+Thus we do not naturally have question-and-answer-pairs or other text associated with the data.
+Without gold standard questions to evaluate the retrieval and answer generation, we use an llm to generate queries from the chunked text,
+see the notebook: [generate_queries](analysis/generate_queries.ipynb).
+
+**Retrieval Evaluation** is demonstrated in notebook [evaluate_retrieval](analysis/evaluate_retrieval.ipynb).
+- Hit Rate: 0.8065
+- Mean Reciprocal Rank: 0.5173
+
+**RAG Evaluation**
 In order to evaluate, we use an ad-hoc LLM-as-judge method. 
 First, text chunks are randomly selected from markdown and text sources respectively. 
 Text chunks which are not suitable as sources for questions are discarded.
