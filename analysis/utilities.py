@@ -92,6 +92,8 @@ def text_to_query_prompt_builder(text):
     """.strip()
     return {"system": system, "user": user}
 
+################################################################################
+
 def text_to_query_prompt(path,keywords,sample_size):
     evaluations = []
     matches = load_matches(path,keywords)
@@ -144,7 +146,7 @@ CONTRADICTION HANDLING:
 - If RAG asserts novel claims, require them to be coherent with Original; otherwise treat as partial conflict.
 
 OVERALL SCORE (0–100):
-score = round( 100 * (0.30*C + 0.25*V + 0.25*E + 0.10*S + 0.10*R) )
+overall_score = round( (0.30*C + 0.25*V + 0.25*E + 0.10*S + 0.10*R) )
 
 GRADE BANDS:
 - 90–100: Much better than Original (adds strong, correct insight; complete and precise).
@@ -155,12 +157,12 @@ GRADE BANDS:
 
 OUTPUT FORMAT (JSON ONLY):
 {
-  "score": 0-100,
-  "correctness":0-1, 
-  "coverage":0-1, 
-  "enrichment":0-1, 
-  "specificity":0-1, 
-  "relevance":0-1,
+  "overall_score": 0-100,
+  "correctness":0-100, 
+  "coverage":0-100, 
+  "enrichment":0-100, 
+  "specificity":0-100, 
+  "relevance":0-100,
   "band": "excellent|good|fair|poor|very_poor", 
   "original_key_points": ["...","..."],
   "improvements_added_by_rag": ["..."],
