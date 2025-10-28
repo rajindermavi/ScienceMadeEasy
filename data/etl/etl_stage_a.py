@@ -14,6 +14,9 @@ import config
 from config import ARXIV_EPRINT, ARXIV_ID_RE, ARXIV_PDF, GZIP_MAGIC, RAW_DIR
 from data.etl.models import PaperMeta
 
+from logs.logger import get_logger
+logger = get_logger(log_name='run_etl',log_path=config.DEFAULT_LOG_DIR/'etl.log')
+
 ## ####################
 ## Prepare Arxiv Search
 ## ####################
@@ -32,44 +35,47 @@ def build_arxiv_query(phrases: Iterable[str], categories: Iterable[str]) -> str:
 ## Search Papers and Meta Data
 ## ###########################
 
-def arxiv_client_search(page_size, delay_seconds, query, max_results, sort_by, sort_order):
-    # force max page_size
-    page_size = min(10,page_size)
+def arxiv_client_search(query, max_results):
+
+    page_size = 10
+    delay_seconds = 0.5
+    batch_size = 50
+    total_collected = 0
+    collected = []
+    max_iterations = max_results//batch_size + 1
+
+    def _iterate_results(results):
+        collected = []
+         
+        while True:  
+            try:
+                r = next(results)
+                collected.append(r)
+            except Exception as e:
+                #logger.info(f'End of batch. Exception {e}. Collected: {len(collected)}.')
+                break  
+        return collected
+
     client = arxiv.Client(
         page_size=page_size,
         delay_seconds=delay_seconds,
         num_retries=3,
     )
 
-    collected = []
-    total_collected = 0
-
-    while total_collected < max_results:
-        remaining = max_results - total_collected
-        batch_size = min(page_size,remaining)
+    for _ in range(max_iterations):
         search = arxiv.Search(
-            query=query,
-            max_results=total_collected + batch_size,
-            sort_by=sort_by,
-            sort_order=sort_order,
+                query=query,
+                max_results=batch_size+total_collected,
+                sort_by=arxiv.SortCriterion.Relevance,
+                sort_order=arxiv.SortOrder.Descending,
         )
-        results = client.results(search, offset=total_collected)
-        try:
-            page_records = list(results)
-        except arxiv.UnexpectedEmptyPageError:
-            print('empty pagination')
-            if batch_size == 1:
-                break
-            page_size = max(1,batch_size//2)
-            continue
-        if not page_records:
-            print('empty page_records')
+        results = client.results(search,offset=total_collected)
+        batch = _iterate_results(results)
+        if len(batch) == 0:
             break
-        collected.extend(page_records)
-        total_collected += len(page_records)
-        print(f'records collected: {total_collected}')
-    print(f'total records collected: {total_collected}')
-    print(f'max_results: {max_results}')
+        total_collected += len(batch)
+        collected.extend(batch)
+    
     return collected
 
 def parse_arxiv_ids(entry_id: str) -> tuple[str, str, str]:
@@ -114,7 +120,9 @@ def get_semantic_scholar_data(arxiv_id: str) -> int:
     return cite, ref
 
 def semantic_scholar_arxiv_ids(semantic_scholar_collection):
-
+    """
+        Get references and citations from Semantic Scholar collection
+    """
     arxiv_ids = []
     for paper in semantic_scholar_collection or []:
         id = None
@@ -123,11 +131,7 @@ def semantic_scholar_arxiv_ids(semantic_scholar_collection):
         if 'citedPaper' in paper:
             paper_ngbr = paper.get('citedPaper',{}).get('externalIds',{})
         if paper_ngbr:
-            try:
-                id = paper_ngbr.get('ArXiv')
-            except Exception as e:
-                print(paper_ngbr)
-                raise Exception(e)
+            id = paper_ngbr.get('ArXiv')
         arxiv_ids.append(id)
     
     return arxiv_ids
@@ -138,13 +142,9 @@ def semantic_scholar_arxiv_ids(semantic_scholar_collection):
 
 def arxiv_metas(
     arxiv_query: str,
-    max_results: int = 200,
-    sort_by: arxiv.SortCriterion = arxiv.SortCriterion.Relevance,
-    sort_order: arxiv.SortOrder = arxiv.SortOrder.Descending,
-    page_size: int = 100,
-    delay_seconds: float = 0.5,
+    max_results: int = 300
 ) -> List[PaperMeta]:
-    arxiv_search_results = arxiv_client_search(page_size, delay_seconds, arxiv_query, max_results, sort_by, sort_order)
+    arxiv_search_results = arxiv_client_search(arxiv_query, max_results)
 
     seen: Set[str] = set()
     metas: List[PaperMeta] = []
@@ -244,7 +244,7 @@ def _ensure_source_archive(base_id: str, version: str, tar_path: Path) -> str | 
             save_stream(response, tar_path)
             return header or ""
 
-    print(f"error on {base_id}{version}")
+    logger.info(f"error on {base_id}{version}")
     return None
 
 
@@ -289,7 +289,7 @@ def _extract_single_gzip(tar_path: Path, extract_root: Path, header_name: str, s
 def _write_plain_tex(tar_path: Path, extract_root: Path, header_name: str, sanitized_id: str) -> None:
     raw_bytes = tar_path.read_bytes()
     if b"\x00" in raw_bytes:
-        print(f"[warn] {tar_path} is neither a tar archive nor plain text")
+        logger.info(f"[warn] {tar_path} is neither a tar archive nor plain text")
         return
 
     try:
@@ -300,7 +300,7 @@ def _write_plain_tex(tar_path: Path, extract_root: Path, header_name: str, sanit
     target_name = _infer_inner_name(header_name, sanitized_id)
     target = _safe_resolved_path(extract_root, target_name)
     if target is None:
-        print(f"[warn] refusing to write outside extract dir for {tar_path}")
+        logger.info(f"[warn] refusing to write outside extract dir for {tar_path}")
         return
 
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -319,7 +319,7 @@ def arxiv_extract(arxiv_query, max_results):
 
         latex_dir = download_latex(meta.base_id,meta.sanitized_id,meta.version)
         if latex_dir is None:
-            print(f"[warn] unable to fetch source for {meta.base_id}")
+            logger.info(f"[warn] unable to fetch source for {meta.base_id}")
             continue
         papers[meta.base_id] = {
             'meta':meta,

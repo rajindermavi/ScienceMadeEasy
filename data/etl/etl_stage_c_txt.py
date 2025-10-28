@@ -10,6 +10,8 @@ from typing import Any, Dict, List
 
 import config
 
+from logs.logger import get_logger
+logger = get_logger(log_name='run_etl',log_path=config.DEFAULT_LOG_DIR/'etl.log')
 
 # Prefer sentence-aware splits when we have to subdivide large paragraphs.
 _SENTENCE_BOUNDARY_RE = re.compile(r"(?<=[.!?])\s+(?=[A-Z0-9])")
@@ -467,7 +469,7 @@ def txt_collection_chunking(txt_files):
             chunked_files[arxiv_id] = out_path
 
         except Exception as e:
-            print(f'Excption {e} for file {txt_infile}.')
+            logger.info(f'Excption {e} for file {txt_infile}.')
     
     aggregated_chunk_files = sorted(txt_chunked_dir.glob("*.json"))
     out = {}

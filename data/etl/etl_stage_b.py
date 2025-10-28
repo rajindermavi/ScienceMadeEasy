@@ -20,6 +20,9 @@ HAVE_PANDOC = PANDOC_BIN is not None
 DETEX_BIN = shutil.which("detex")
 HAVE_DETEX = DETEX_BIN is not None
 
+from logs.logger import get_logger
+logger = get_logger(log_name='run_etl',log_path=config.DEFAULT_LOG_DIR/'etl.log')
+
 # Commands that include other TeX sources we want to inline.
 _INCLUDE_CMD_RE = re.compile(r"\\(input|include|subfile)\s*\{([^}]+)\}")
 # Remove includegraphics blocks (single command possibly with options).
@@ -321,12 +324,12 @@ def latex_conversion(combined_latex_paths):
         if md_ok:
             conversion['md'] = md_file
         else:
-            print(md_warning)
+            logger.info(md_warning)
         txt_ok, txt_file, txt_warnings = _convert_to_txt(latex_path)
         if txt_ok:
             conversion['txt'] = txt_file
         else:
-            print(txt_warnings)
+            logger.info(txt_warnings)
         
         conversions[arxiv_id] = conversion
 

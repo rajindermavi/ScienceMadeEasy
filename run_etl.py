@@ -12,7 +12,8 @@ from data.etl.etl_stage_d_md import index_md_bm25, index_md_qdrant
 from data.etl.etl_stage_d_txt import index_txt_bm25, index_txt_qdrant
 import config
 
-from logs.log import get_logger
+from logs.logger import get_logger
+logger = get_logger(log_name='run_etl',log_path=config.DEFAULT_LOG_DIR/'etl.log')
 
 def json_default(o):
     if isinstance(o, BaseModel):
@@ -22,7 +23,6 @@ def json_default(o):
     raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
 
 def run_arxiv_to_latex_extract(phrases, categories, max_results):
-    logger = get_logger(log_name='run_etl',log_path=config.DEFAULT_LOG_DIR/'log.log')
     logger.info(
         "Starting run_arxiv_extract | phrases=%s | categories=%s | max_results=%s",
         phrases,
@@ -59,7 +59,6 @@ def run_arxiv_to_latex_extract(phrases, categories, max_results):
     return out
 
 def run_chunking(papers):
-    logger = get_logger(log_name='run_etl',log_path=config.DEFAULT_LOG_DIR/'log.log')
     logger.info("Starting run_chunking")
 
     out = {}
@@ -85,7 +84,6 @@ def run_chunking(papers):
 
 
 def run_indexing():
-    logger = get_logger(log_name='run_etl',log_path=config.DEFAULT_LOG_DIR/'log.log')
     logger.info("Starting run_indexing")
 
     out = {}
@@ -122,7 +120,6 @@ def run_indexing():
 
 
 if __name__ == "__main__":
-    logger = get_logger(log_name='run_etl',log_path=config.DEFAULT_LOG_DIR/'log.log')
     logger.info("ETL process started")
 
     phrases = [
@@ -158,7 +155,7 @@ if __name__ == "__main__":
             indent = 4,
             default=json_default
         )
-
-    logger.info(report_string)
+    report_heading = '\n'*5 + 'EXTRACT REPORT' + '\n'*5
+    logger.info(f'{report_heading} {report_string}')
 
     logger.info("ETL process completed")

@@ -5,6 +5,9 @@ from pathlib import Path
 from typing import List, Dict, Any
 import config
 
+from logs.logger import get_logger
+logger = get_logger(log_name='run_etl',log_path=config.DEFAULT_LOG_DIR/'etl.log')
+
 LABEL_RE = re.compile(r'\\label\{([^}]+)\}')
 REF_RE   = re.compile(r'\\(?:eqref|ref)\{([^}]+)\}')
 HTML_REF_RE = re.compile(r"data-reference\s*=\s*[\"']([^\"'\s]+)[\"']", re.IGNORECASE)
@@ -474,7 +477,7 @@ def md_collection_chunking(md_files):
             chunked_files[arxiv_id] = out_path
 
         except Exception as e:
-            print(f'Excption {e} for file {md_infile}.')
+            logger.info(f'Excption {e} for file {md_infile}.')
     
     aggregated_chunk_files = sorted(md_chunked_dir.glob("*.json"))
     out = {}
