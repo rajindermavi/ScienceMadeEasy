@@ -20,6 +20,7 @@ HAVE_PANDOC = PANDOC_BIN is not None
 DETEX_BIN = shutil.which("detex")
 HAVE_DETEX = DETEX_BIN is not None
 
+
 from logs.logger import get_logger
 logger = get_logger(log_name='run_etl',log_path=config.DEFAULT_LOG_DIR/'etl.log')
 
@@ -281,13 +282,19 @@ def _clean_text(text: str) -> str:
 
 
 def prepare_latex_corpus(latex_extract_paths) -> list[Path]:
+    logger.info(f'Run {sys._getframe().f_code.co_name}.')
     output_root = config.LATEX_FILTER_DIR
     output_root.mkdir(parents=True, exist_ok=True)
 
     combined_latex_paths = {}
     for arxiv_id, paper_dir in latex_extract_paths.items():
+        if paper_dir is None:
+            continue
+        if not isinstance(paper_dir, Path):
+            continue
         if not paper_dir.is_dir():
             continue
+        logger.info(f'\tprocess: arxiv {arxiv_id}, paper_dir: {paper_dir}')
         main_tex = _find_main_tex(paper_dir)
         if main_tex is None:
             # Fallback: concatenate all .tex files in alpha order.

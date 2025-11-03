@@ -462,14 +462,15 @@ def txt_collection_chunking(txt_files):
     txt_jsonl = config.TXT_JSONL
 
     for arxiv_id, txt_infile in txt_files.items():
-        txt_infile = Path(txt_infile)
-        txt_json_outfile = txt_chunked_dir / (txt_infile.with_suffix('.json')).name
         try:
+            logger.info(f'\ttxt chunking. arxiv_id: {arxiv_id}. infile: {txt_infile}.')
+            txt_infile = Path(txt_infile)
+            txt_json_outfile = txt_chunked_dir / (txt_infile.with_suffix('.json')).name
             out_path = txt_file_chunking(txt_infile,txt_json_outfile)
             chunked_files[arxiv_id] = out_path
 
         except Exception as e:
-            logger.info(f'Excption {e} for file {txt_infile}.')
+            logger.info(f'\tExcption {e} for file {txt_infile}.')
     
     aggregated_chunk_files = sorted(txt_chunked_dir.glob("*.json"))
     out = {}

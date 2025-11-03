@@ -471,13 +471,14 @@ def md_collection_chunking(md_files):
 
     for arxiv_id, md_infile in md_files.items():
         try:
+            logger.info(f'\tmd chunking arxiv_id: {arxiv_id}. infile: {md_infile}.')
             md_infile = Path(md_infile)
             md_json_outfile = md_chunked_dir / (md_infile.with_suffix('.json')).name
             out_path = md_file_chunking(md_infile,md_json_outfile)
             chunked_files[arxiv_id] = out_path
 
         except Exception as e:
-            logger.info(f'Excption {e} for file {md_infile}.')
+            logger.info(f'\tExcption {e} for file {md_infile}.')
     
     aggregated_chunk_files = sorted(md_chunked_dir.glob("*.json"))
     out = {}
