@@ -1,6 +1,7 @@
 import logging
 import os
 import json
+import sys
 from pydantic import BaseModel
 from pathlib import Path
 
@@ -39,27 +40,26 @@ def run_arxiv_to_latex_extract(phrases, categories, max_results):
 
     logger.info("Calling arxiv_extract")
     papers = arxiv_extract(arxiv_query, max_results=max_results)
-    # out["papers"] = papers
     logger.info("arxiv_extract conpleted")
+    total_papers = len(papers)
+    logger.info(f'Collected {total_papers} papers.')
 
     logger.info("Calling prepare_latex_corpus")
     combined_latex_paths = prepare_latex_corpus({arxiv_id: paper.get('latex_dir') for arxiv_id, paper in papers.items()})
-    for arxiv_id, paper in papers.items():
-        paper['combined_latex_path'] = combined_latex_paths[arxiv_id]
-    logger.info("prepare_latex_corpus produced")
-
     logger.info("Calling latex_conversion")
     conversions = latex_conversion(combined_latex_paths)
     for arxiv_id, paper in papers.items():
-        paper['md_full_path'] = conversions.get(arxiv_id,{}).get('md')
-        paper['txt_full_path'] = conversions.get(arxiv_id,{}).get('txt')
+        if arxiv_id in combined_latex_paths:
+            paper['combined_latex_path'] = combined_latex_paths[arxiv_id]
+            paper['md_full_path'] = conversions.get(arxiv_id,{}).get('md')
+            paper['txt_full_path'] = conversions.get(arxiv_id,{}).get('txt')
 
     out['papers'] = papers
 
     return out
 
 def run_chunking(papers):
-    logger.info("Starting run_chunking")
+    logger.info(f'Run {sys._getframe().f_code.co_name}.')
 
     out = {}
     md_filepaths = {arxiv_id:paper.get('md_full_path') for arxiv_id, paper in papers.items()}
@@ -84,7 +84,7 @@ def run_chunking(papers):
 
 
 def run_indexing():
-    logger.info("Starting run_indexing")
+    logger.info(f'Run {sys._getframe().f_code.co_name}.')
 
     out = {}
 
@@ -133,7 +133,7 @@ if __name__ == "__main__":
 
     categories = ["math-ph", "math.SP", "quant-ph"]
 
-    arxiv_extract_details = run_arxiv_to_latex_extract(phrases, categories, 200)
+    arxiv_extract_details = run_arxiv_to_latex_extract(phrases, categories, 300)
     papers = arxiv_extract_details.get('papers')
     
     chunking_details = run_chunking(papers)
