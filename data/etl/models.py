@@ -19,8 +19,10 @@ class PaperMeta(BaseModel):
     published_date: str
     updated_date: str
     url: str
+    gzip: Optional[str] = None
     summary: Optional[str] = None
     comment: Optional[str] = None
+    extract: Optional[bool] = None
     citation_list: Optional[List] = None
     reference_list: Optional[List] = None  
 
