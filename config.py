@@ -18,11 +18,12 @@ PROJECT_ROOT = Path(__file__).resolve().parent
 DEFAULT_LOG_DIR = PROJECT_ROOT / "logs"  #_resolve_path("DEFAULT_LOG_DIR", "logs")
 DEFAULT_LOG_DIR.mkdir(parents=True, exist_ok=True)
 
-
-DATA_ETL_DIR = PROJECT_ROOT / 'data/data_etl' # _resolve_path("DATA_ETL_DIR", "data/data_etl")
+DATA_DIR = PROJECT_ROOT / 'data'
+DATA_DIR.mkdir(parents=True, exist_ok=True)
+DATA_ETL_DIR = DATA_DIR / 'data_etl' 
 DATA_ETL_DIR.mkdir(parents=True, exist_ok=True)
 EXTRACT_DETAILS = DATA_ETL_DIR / 'extract_details.json'
-DATA_INDEX_DIR = PROJECT_ROOT / "data/data_index" # _resolve_path("DATA_INDEX_DIR", "data/data_index")
+DATA_INDEX_DIR = DATA_DIR / "data_index" 
 DATA_INDEX_DIR.mkdir(parents=True, exist_ok=True)
 RAW_DIR = DATA_ETL_DIR / "pdf_raw"
 RAW_DIR.mkdir(parents=True, exist_ok=True)
