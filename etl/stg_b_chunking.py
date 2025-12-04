@@ -11,7 +11,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.append(str(REPO_ROOT))
 
-import config
+import etl.config as config
 
 LATEXPAND_BIN = shutil.which("latexpand")
 HAVE_LATEXPAND = LATEXPAND_BIN is not None
@@ -19,9 +19,7 @@ PANDOC_BIN = shutil.which("pandoc")
 HAVE_PANDOC = PANDOC_BIN is not None
 DETEX_BIN = shutil.which("detex")
 HAVE_DETEX = DETEX_BIN is not None
-
-
-from logs.logger import get_logger
+from log.logger import get_logger
 logger = get_logger(log_name='run_etl',log_path=config.DEFAULT_LOG_DIR/'etl.log')
 
 # Commands that include other TeX sources we want to inline.
@@ -288,11 +286,15 @@ def prepare_latex_corpus(latex_extract_paths) -> list[Path]:
 
     combined_latex_paths = {}
     for arxiv_id, paper_dir in latex_extract_paths.items():
+        missing = ''
         if paper_dir is None:
-            continue
-        if not isinstance(paper_dir, Path):
-            continue
-        if not paper_dir.is_dir():
+            missing = 'record has no directory'
+        elif not isinstance(paper_dir, Path):
+            missing = 'record directory is not a Path'
+        elif not paper_dir.is_dir():
+            missing = 'record directory missing'
+        if len(missing) > 0:
+            logger.info(f'\t missing: arxiv {arxiv_id}. issue: {missing}')
             continue
         logger.info(f'\tprocess: arxiv {arxiv_id}, paper_dir: {paper_dir}')
         main_tex = _find_main_tex(paper_dir)
