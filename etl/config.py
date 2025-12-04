@@ -3,7 +3,7 @@ import re
 from pathlib import Path
 
 
-PROJECT_ROOT = Path(__file__).resolve().parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 
 #def _resolve_path(env_var: str, default_relative: str) -> Path:
@@ -15,16 +15,15 @@ PROJECT_ROOT = Path(__file__).resolve().parent
 #    return path.resolve()
 
 
-DEFAULT_LOG_DIR = PROJECT_ROOT / "logs"  #_resolve_path("DEFAULT_LOG_DIR", "logs")
+DEFAULT_LOG_DIR = PROJECT_ROOT / "log" / "logs"  #_resolve_path("DEFAULT_LOG_DIR", "logs")
 DEFAULT_LOG_DIR.mkdir(parents=True, exist_ok=True)
 
 DATA_DIR = PROJECT_ROOT / 'data'
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 DATA_ETL_DIR = DATA_DIR / 'data_etl' 
 DATA_ETL_DIR.mkdir(parents=True, exist_ok=True)
-EXTRACT_DETAILS = DATA_ETL_DIR / 'extract_details.json'
-DATA_INDEX_DIR = DATA_DIR / "data_index" 
-DATA_INDEX_DIR.mkdir(parents=True, exist_ok=True)
+STAGES_DIR = DATA_ETL_DIR / "stages"
+STAGES_DIR.mkdir(parents=True, exist_ok=True)
 RAW_DIR = DATA_ETL_DIR / "pdf_raw"
 RAW_DIR.mkdir(parents=True, exist_ok=True)
 TAR_DIR = DATA_ETL_DIR / "tar"
@@ -42,6 +41,14 @@ TEXT_VERSION_DIR.mkdir(parents=True, exist_ok=True)
 TXT_CHUNKED_DIR = DATA_ETL_DIR / "txt_chunked"
 TXT_CHUNKED_DIR.mkdir(parents=True, exist_ok=True)
 
+DATA_INDEX_DIR = DATA_DIR / "data_index" 
+DATA_INDEX_DIR.mkdir(parents=True, exist_ok=True)
+
+STAGE_A = STAGES_DIR / 'stage_a.json'
+STAGE_B = STAGES_DIR / 'stage_b.json'
+STAGE_C = STAGES_DIR / 'stage_c.json'
+# STAGE_D = STAGES_DIR / 'stage_d.json'
+EXTRACT_DETAILS = DATA_ETL_DIR / 'extract_details.json'
 MD_JSONL = DATA_ETL_DIR / "md_data.jsonl"
 TXT_JSONL = DATA_ETL_DIR / "txt_data.jsonl"
 

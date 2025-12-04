@@ -2,20 +2,26 @@ import gzip
 import shutil
 import tarfile
 import time
-import re
 import sys
-from pathlib import Path
 from typing import Iterable, List, Set
-from urllib.error import HTTPError
 
 import requests
 import arxiv
 
-import config
-from data.etl.models import PaperMeta
+import etl.config as config
+from etl.config import (
+    ARXIV_ID_RE,
+    URL_SEMANTIC_SCHOLAR_CIT,
+    URL_SEMANTIC_SCHOLAR_REF,
+    TAR_DIR,
+    TAR_EXTRACT_DIR,
+    GZIP_MAGIC,
+)
+from etl.models import PaperMeta
 
-from logs.logger import get_logger
-logger = get_logger(log_name='run_etl',log_path=config.DEFAULT_LOG_DIR/'etl.log')
+from pathlib import Path
+from log.logger import get_logger
+logger = get_logger(log_path=Path(__file__).stem, level='INFO')
 
 ## ####################
 ## Prepare Arxiv Search
@@ -52,10 +58,13 @@ def arxiv_client_search(query, max_results):
             try:
                 r = next(results)
                 collected.append(r)
+            except StopIteration:
+                logger.info(f'End of batch. Collected: {len(collected)}. StopIteration.')
+                break
             except Exception as e:
                 logger.info(f'End of batch. Collected: {len(collected)}.')
-                if e:
-                    logger.info(f'Exception: {e}.')
+                
+                logger.info(f'\t\tException: {e}.')
                 #print(f'End of batch. Exception {e}. Collected: {len(collected)}.')
                 break  
         return collected
@@ -81,13 +90,13 @@ def arxiv_client_search(query, max_results):
         total_collected += len(batch)
         collected.extend(batch)
         time.sleep(3)
-    
+    logger.info(f'Completed {sys._getframe().f_code.co_name}.')
     return collected
 
 def parse_arxiv_ids(entry_id: str) -> tuple[str, str, str]:
     logger.debug(f'Run {sys._getframe().f_code.co_name}. input {entry_id}')
     """Extract base identifier, version, and a filesystem-safe filename stem."""
-    m = config.ARXIV_ID_RE.search(entry_id)
+    m = ARXIV_ID_RE.search(entry_id)
     if m:
         base_id = m.group(1)
         version = f"v{m.group(2)}" if m.group(2) else "v1"
@@ -105,8 +114,8 @@ def parse_arxiv_ids(entry_id: str) -> tuple[str, str, str]:
 
 def get_semantic_scholar_data(arxiv_id: str) -> int:
     logger.debug(f'Run {sys._getframe().f_code.co_name}. input {arxiv_id}')
-    url_cite = config.URL_SEMANTIC_SCHOLAR_CIT.format(arxiv_id=arxiv_id)
-    url_ref = config.URL_SEMANTIC_SCHOLAR_REF.format(arxiv_id=arxiv_id)
+    url_cite = URL_SEMANTIC_SCHOLAR_CIT.format(arxiv_id=arxiv_id)
+    url_ref = URL_SEMANTIC_SCHOLAR_REF.format(arxiv_id=arxiv_id)
 
     params = {"fields": "title,year,venue,externalIds,authors,url"}
     headers = {"User-Agent": "refs-fetch/1.0"}
@@ -157,7 +166,9 @@ def arxiv_metas(
 
     seen: Set[str] = set()
     metas: List[PaperMeta] = []
-    
+    logger.info(f'In {sys._getframe().f_code.co_name}. Download Sources')
+    idx = 0 
+    dl_idx = 0
     for arxiv_search_result in arxiv_search_results:
         
         base_id, version, sanitized_id = parse_arxiv_ids(arxiv_search_result.entry_id)
@@ -166,14 +177,17 @@ def arxiv_metas(
             continue
         seen.add(arxiv_id)
         try:
+            gzip_filename = f"{arxiv_id}.tar.gz"
             arxiv_search_result.download_source(
-                dirpath=str(config.TAR_DIR), 
+                dirpath=str(TAR_DIR), 
                 filename=gzip_filename
             )
-            gzip_filename = f"{arxiv_id}.tar.gz"
+            # logger.info(f'Download success: arxiv {arxiv_id}.')
             extract_success = True
+            dl_idx += 1
         except:
             gzip_filename = ''
+            logger.info(f'Download failed: arxiv {arxiv_id}.')
             extract_success = False
             pass
 
@@ -202,6 +216,11 @@ def arxiv_metas(
             )
         )
         time.sleep(0.5)
+        idx += 1
+        if idx % 25 == 0:
+            logger.info(f'Download progress. Attempted download of {idx} records. Downloaded {dl_idx} successfully.')
+    logger.info(f'Download End. Attempted download of {idx} records. Downloaded {dl_idx} successfully.')
+    logger.info(f'Complete {sys._getframe().f_code.co_name}.')
     return metas
 
 ## ###############
@@ -211,27 +230,59 @@ def arxiv_metas(
 def is_gzip_file(path: Path) -> bool:
     try:
         with open(path, "rb") as fh:
-            return fh.read(len(config.GZIP_MAGIC)) == config.GZIP_MAGIC
+            return fh.read(len(GZIP_MAGIC)) == config.GZIP_MAGIC
     except OSError:
         return False
 
 
-def extract_tarfile(filename):
-    file_path = config.TAR_DIR / filename
+def extract_tarfile(filename,paper_id):
+    file_path = TAR_DIR / filename
     if not file_path.exists():
+        logger.info(f'** Download missing. File {filename}.')
         return None    
-    extract_root = config.TAR_EXTRACT_DIR / filename
+    extract_root = TAR_EXTRACT_DIR / paper_id
+    extract_root.mkdir(parents=True, exist_ok=True)
+    target_root = extract_root.resolve()
+
+    def _is_within_root(path: Path) -> bool:
+        try:
+            path.relative_to(target_root)
+            return True
+        except ValueError:
+            return False
+
     if tarfile.is_tarfile(file_path):
         try:
             with tarfile.open(file_path, mode="r:*") as tf:
                 for member in tf.getmembers():
-                    tf.extract(member, path=extract_root)
+                    member_path = (extract_root / member.name).resolve()
+                    if not _is_within_root(member_path):
+                        logger.info(f'** Extract tarfile skipped. File {filename}. Member {member.name} outside target root.')
+                        continue
+                    if member.isdir():
+                        member_path.mkdir(parents=True, exist_ok=True)
+                        continue
+                    if member.issym() or member.islnk():
+                        logger.info(f'** Extract tarfile skipped link. File {filename}. Member {member.name}.')
+                        continue
+                    member_path.parent.mkdir(parents=True, exist_ok=True)
+                    extracted = tf.extractfile(member)
+                    if extracted is None:
+                        continue
+                    try:
+                        with open(member_path, "wb") as out_fh:
+                            shutil.copyfileobj(extracted, out_fh)
+                    finally:
+                        extracted.close()
+            
         except Exception as e:
             logger.info(f'** Extract tarfile. File {filename}. Exception {e}.')
             extract_root = None
     elif is_gzip_file(file_path):
         try:
-            with gzip.open(file_path, "rb") as gz, open(extract_root, "wb") as out:
+            extract_tex = extract_root / f'{paper_id}.tex'
+            
+            with gzip.open(file_path, "rb") as gz, open(extract_tex, "wb") as out:
                 shutil.copyfileobj(gz, out)
         except Exception as e:
             logger.info(f'** Extract gzip. File {filename}. Exception {e}.')
@@ -371,12 +422,14 @@ def arxiv_extract(arxiv_query, max_results):
     for meta in paper_metas:
 
         if meta.extract:
-            latex_dir = extract_tarfile(meta.gzip)
+            latex_dir = extract_tarfile(meta.gzip,meta.arxiv_id)
+            papers[meta.arxiv_id] = {
+                 'meta':meta,
+                 'latex_dir':latex_dir 
+            }
+            logger.info(f'Extract Success. arxiv {meta.arxiv_id}. latex_dir {latex_dir}.')
         else:
             latex_dir = None
-        papers[meta.arxiv_id] = {
-             'meta':meta,
-             'latex_dir':latex_dir 
-        }
+            logger.info(f'Extract Failed. arxiv {meta.arxiv_id}.')
 
     return papers
