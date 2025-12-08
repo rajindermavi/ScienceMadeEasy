@@ -5,7 +5,7 @@ from openai import OpenAI
 
 from query.index_query import hybrid_search_from_disk, rerank
 from query.rag import is_mathy, build_context_blocks, format_context_md, build_prompt
-import config
+import etl.config as config
 
 load_dotenv()
 
@@ -72,6 +72,6 @@ def rag(query):
     return response
 
 if __name__ == "__main__":
-    query = 'Explain spectral statistics for Liouville frequencies'
+    query = 'Explain spectral statistics of the almost Mathiu operator for Liouville frequencies'
     response = rag(query)
     print(response)

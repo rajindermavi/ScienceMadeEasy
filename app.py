@@ -19,7 +19,19 @@ from openai import OpenAI
 
 from query.index_query import hybrid_search_from_disk, rerank
 from query.rag import is_mathy, build_context_blocks, format_context_md, build_prompt
-import config
+
+from etl.config import (
+    MD_TOPK, 
+    TXT_TOPK, 
+    MD_BM25_INDEX_DIR,
+    MD_QDRANT_INDEX_DIR,
+    MD_QDRANT_COLLECTION,
+    MD_EMBEDDING_MODEL,
+    TXT_BM25_INDEX_DIR,
+    TXT_QDRANT_INDEX_DIR,
+    TXT_QDRANT_COLLECTION,
+    TXT_EMBEDDING_MODEL
+)
 
 load_dotenv()
 
@@ -34,21 +46,21 @@ def query_context(query,token_budget = 1800):
 # Embedded Qdrant (folder-based)
     resp_md = hybrid_search_from_disk(
         query=query,
-        bm_index_path=config.MD_BM25_INDEX_DIR,
-        qdrant_index_path=config.MD_QDRANT_INDEX_DIR,
-        collection_name=config.MD_QDRANT_COLLECTION,
-        embedding_model=config.MD_EMBEDDING_MODEL,
-        topk=config.MD_TOPK,
+        bm_index_path=MD_BM25_INDEX_DIR,
+        qdrant_index_path=MD_QDRANT_INDEX_DIR,
+        collection_name=MD_QDRANT_COLLECTION,
+        embedding_model=MD_EMBEDDING_MODEL,
+        topk=MD_TOPK,
         source="md",
         return_payloads=True
     )
     resp_txt = hybrid_search_from_disk(
         query=query,
-        bm_index_path=config.TXT_BM25_INDEX_DIR,
-        qdrant_index_path=config.TXT_QDRANT_INDEX_DIR,
-        collection_name=config.TXT_QDRANT_COLLECTION,
-        embedding_model=config.TXT_EMBEDDING_MODEL,
-        topk=config.TXT_TOPK,
+        bm_index_path=TXT_BM25_INDEX_DIR,
+        qdrant_index_path=TXT_QDRANT_INDEX_DIR,
+        collection_name=TXT_QDRANT_COLLECTION,
+        embedding_model=TXT_EMBEDDING_MODEL,
+        topk=TXT_TOPK,
         source="txt",
         return_payloads=True
     )

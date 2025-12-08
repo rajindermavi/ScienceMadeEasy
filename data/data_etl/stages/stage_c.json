@@ -106610,39 +106610,5 @@
                 "version": "pptxt-0.1"
             }
         ]
-    },
-    "md_bm25": {
-        "records_indexed": 1371,
-        "skipped_blank": 0,
-        "skipped_decode": 0,
-        "skipped_filtered": 0,
-        "index_path": "/home/rajinder-mavi/code/SME/data/data_index/md_bm25_storage",
-        "description": "markdown chunks"
-    },
-    "md_qdrant": {
-        "records_indexed": 1371,
-        "skipped_blank": 0,
-        "skipped_decode": 0,
-        "skipped_empty_text": 0,
-        "collection_name": "md_chunks",
-        "embedding_model": "BAAI/bge-small-en",
-        "index_path": "/home/rajinder-mavi/code/SME/data/data_index/md_qrant_storage"
-    },
-    "txt_bm25": {
-        "records_indexed": 1254,
-        "skipped_blank": 0,
-        "skipped_decode": 0,
-        "skipped_filtered": 0,
-        "index_path": "/home/rajinder-mavi/code/SME/data/data_index/txt_bm25_storage",
-        "description": "plain-text chunks"
-    },
-    "txt_qdrant": {
-        "records_indexed": 1254,
-        "skipped_blank": 0,
-        "skipped_decode": 0,
-        "skipped_empty_text": 0,
-        "collection_name": "txt_chunks",
-        "embedding_model": "BAAI/bge-base-en-v1.5",
-        "index_path": "/home/rajinder-mavi/code/SME/data/data_index/txt_qrant_storage"
     }
 }

@@ -4,7 +4,18 @@ from pydantic import BaseModel
 from pathlib import Path
 
 from log.logger import  get_logger
-logger = get_logger(log_path='ipynb.log', level='INFO')
+logger = get_logger(log_path=f'{Path(__file__).stem}.log', level='INFO')
+
+DEFAULT_PHRASES = [
+    "almost Mathieu operator",
+    "Aubry-André",
+    "Aubry André",
+    "Harper model",
+    "quasiperiodic Schrodinger operators",
+    "ergodic Schrodinger operators",
+]
+DEFAULT_CATEGORIES = ["math-ph", "math.SP", "quant-ph"]
+DEFAULT_MAX_PAPERS = 5
 
 def json_default(o):
     if isinstance(o, BaseModel):
@@ -43,7 +54,7 @@ def run_arxiv_extract(phrases, categories, max_results):
 
 def run_transform_latex(papers):
     logger.info(f'Run {sys._getframe().f_code.co_name}.')
-    from etl.etl_stage_b import prepare_latex_corpus, latex_conversion
+    from etl.stg_b_conversion import prepare_latex_corpus, latex_conversion
 
     out = {}
 
@@ -51,11 +62,11 @@ def run_transform_latex(papers):
     combined_latex_paths = prepare_latex_corpus({arxiv_id: paper.get('latex_dir') for arxiv_id, paper in papers.items()})
     logger.info("Calling latex_conversion")
     conversions = latex_conversion(combined_latex_paths)
+
     for arxiv_id, paper in papers.items():
-        if arxiv_id in combined_latex_paths:
-            paper['combined_latex_path'] = combined_latex_paths[arxiv_id]
-            paper['md_full_path'] = conversions.get(arxiv_id,{}).get('md')
-            paper['txt_full_path'] = conversions.get(arxiv_id,{}).get('txt')
+        paper['combined_latex_path'] = combined_latex_paths.get(arxiv_id)
+        paper['md_full_path'] = conversions.get(arxiv_id,{}).get('md_file')
+        paper['txt_full_path'] = conversions.get(arxiv_id,{}).get('txt_file')    
 
     out['papers'] = papers
 
@@ -65,8 +76,8 @@ def run_transform_latex(papers):
 
 def run_chunking(papers):
     logger.info(f'Run {sys._getframe().f_code.co_name}.')
-    from etl.etl_stage_c_md import md_collection_chunking
-    from etl.etl_stage_c_txt import txt_collection_chunking
+    from etl.stg_c_md_chunking import md_collection_chunking
+    from etl.stg_c_txt_chunking import txt_collection_chunking
 
     out = {}
     md_filepaths = {arxiv_id:paper.get('md_full_path') for arxiv_id, paper in papers.items()}
@@ -92,8 +103,8 @@ def run_chunking(papers):
 
 def run_indexing():
     logger.info(f'Run {sys._getframe().f_code.co_name}.')
-    from etl.etl_stage_d_md import index_md_bm25, index_md_qdrant
-    from etl.etl_stage_d_txt import index_txt_bm25, index_txt_qdrant
+    from etl.stg_d_md_indexing import index_md_bm25, index_md_qdrant
+    from etl.stg_d_txt_indexing import index_txt_bm25, index_txt_qdrant
 
     out = {}
     from etl.config import (
@@ -122,7 +133,7 @@ def run_indexing():
     out["txt_bm25"] = index_txt_bm25(txt_jsonl, txt_bm25_index_dir)
 
     logger.info("Calling index_txt_qdrant")
-    out["txt_bm25"] = index_txt_qdrant(txt_jsonl, txt_qdrant_index_dir)
+    out["txt_qdrant"] = index_txt_qdrant(txt_jsonl, txt_qdrant_index_dir)
 
     logger.info(
         "Indexing complete | bm25=%s | qdrant=%s",
@@ -134,21 +145,12 @@ def run_indexing():
 
     return out
 
-def run_etl(stages):
+def run_etl(stages='abcd'):
     logger.info("ETL process started")
 
     if 'a' in stages:
         logger.info("Stage A: Arxiv Extraction")
-        phrases = [
-            "almost Mathieu operator",
-            "Aubry-André",
-            "Aubry André",
-            "Harper model",
-            "quasiperiodic Schrodinger operators",
-            "ergodic Schrodinger operators",
-        ]
-        categories = ["math-ph", "math.SP", "quant-ph"]
-        max_papers = 50
+        phrases,categories,max_papers = DEFAULT_PHRASES,DEFAULT_CATEGORIES,DEFAULT_MAX_PAPERS
 
         arxiv_extract_details = run_arxiv_extract(phrases, categories, max_papers)
         papers = arxiv_extract_details.get('papers')  
@@ -235,6 +237,4 @@ def run_etl(stages):
 
 
 if __name__ == "__main__":
-    #stages = ['ab','c','d']
-    stages = ['a']
-    run_etl(stages)
+    run_etl()

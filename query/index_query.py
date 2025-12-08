@@ -9,7 +9,7 @@ from sentence_transformers import CrossEncoder, SentenceTransformer
 from whoosh import index as bm25_index
 from whoosh.qparser import MultifieldParser
 
-import config
+import etl.config as config
 from qdrant_client import QdrantClient
 from qdrant_client.http.models import FieldCondition, Filter, MatchValue, VectorParams
 

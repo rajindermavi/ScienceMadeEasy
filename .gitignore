@@ -36,3 +36,7 @@ md_chunked/
 pdf_raw/
 tar/
 txt_chunked/
+
+# sandbox notebooks
+
+*sandbox*.ipynb

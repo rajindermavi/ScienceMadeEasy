@@ -2,12 +2,12 @@ import pytest
 
 import arxiv
 
-import config
+import etl.config as config
 import inspect
-from logs.logger import get_logger
+from log.logger import get_logger
 logger = get_logger(log_name='run_etl',log_path=config.DEFAULT_LOG_DIR/'test.log')
 
-from data.etl.etl_stage_a import (
+from etl.stg_a_extract import (
     build_arxiv_query,
     arxiv_extract,
     get_semantic_scholar_data,
