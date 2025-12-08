@@ -3,10 +3,10 @@ import re
 import time
 from pathlib import Path
 from typing import List, Dict, Any
-import config
+from etl.config import MD_CHUNKED_DIR, DEFAULT_LOG_DIR, MD_JSONL
 
-from logs.logger import get_logger
-logger = get_logger(log_name='run_etl',log_path=config.DEFAULT_LOG_DIR/'etl.log')
+from log.logger import get_logger
+logger = get_logger(log_name='run_etl',log_path=DEFAULT_LOG_DIR/'etl.log')
 
 LABEL_RE = re.compile(r'\\label\{([^}]+)\}')
 REF_RE   = re.compile(r'\\(?:eqref|ref)\{([^}]+)\}')
@@ -47,17 +47,23 @@ def md_file_chunking(input_md_filepath, output_json_filepath):
       - Split by headings, but within a section we create sub-chunks of ~max_chars,
         preferring to break on blank lines (paragraph boundaries).
       - Do not split inside fenced code blocks (``` ... ```) or display-math blocks ($$ ... $$).
-      - Record LaTeX labels/refs found in each chunk for graph building later.
+      - Record LaTeX labels/refs and labeled equations for graph building later,
+        and append neighbor links after all chunks are assembled.
     Output JSON schema (array of objects):
       {
         "id": str,
-        "file": str,
-        "section_path": str,  # e.g., "1 Introduction / 1.1 Background"
-        "start_line": int,    # 1-based
-        "end_line": int,      # inclusive
+        "file": str,            # input_md_filepath
+        "section_path": str,    # e.g., "1 Introduction / 1.1 Background"
+        "start_line": int,      # 1-based
+        "end_line": int,        # inclusive
         "text": str,
         "labels": [str],
         "refs": [str],
+        "equations_raw": [str],   # only equations containing \\label{...}
+        "equation_count": int,
+        "neighbors": [            # populated later with adjacency/cross-ref links
+          {"id": str, "direction": "previous"|"next"|"reference"|"comment"}
+        ],
         "meta": {"heading": {"level": int, "title": str}}
       }
     """
@@ -463,22 +469,25 @@ def post_process_md_chunking(list_of_json_paths: List[str],
 
 def md_collection_chunking(md_files):
 
-    md_chunked_dir = config.MD_CHUNKED_DIR
+    md_chunked_dir = MD_CHUNKED_DIR
     md_chunked_dir.mkdir(parents=True, exist_ok=True)
     chunked_files = {}
 
-    md_jsonl = config.MD_JSONL
+    md_jsonl = MD_JSONL
 
     for arxiv_id, md_infile in md_files.items():
+        out_path = None
         try:
             logger.info(f'\tmd chunking arxiv_id: {arxiv_id}. infile: {md_infile}.')
             md_infile = Path(md_infile)
             md_json_outfile = md_chunked_dir / (md_infile.with_suffix('.json')).name
             out_path = md_file_chunking(md_infile,md_json_outfile)
-            chunked_files[arxiv_id] = out_path
 
         except Exception as e:
             logger.info(f'\tExcption {e} for file {md_infile}.')
+
+        finally:
+            chunked_files[arxiv_id] = out_path
     
     aggregated_chunk_files = sorted(md_chunked_dir.glob("*.json"))
     out = {}
