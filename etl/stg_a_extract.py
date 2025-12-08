@@ -425,11 +425,16 @@ def arxiv_extract(arxiv_query, max_results):
             latex_dir = extract_tarfile(meta.gzip,meta.arxiv_id)
             papers[meta.arxiv_id] = {
                  'meta':meta,
+                 'extract':True,
                  'latex_dir':latex_dir 
             }
             logger.info(f'Extract Success. arxiv {meta.arxiv_id}. latex_dir {latex_dir}.')
         else:
-            latex_dir = None
+            papers[meta.arxiv_id] = {
+                 'meta':meta,
+                 'extract':False,
+                 'latex_dir':None
+            }
             logger.info(f'Extract Failed. arxiv {meta.arxiv_id}.')
 
     return papers

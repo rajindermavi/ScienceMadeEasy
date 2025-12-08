@@ -11,7 +11,11 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.append(str(REPO_ROOT))
 
-import etl.config as config
+from etl.config import (
+    LATEX_FILTER_DIR,
+    MD_VERSION_DIR,
+    TEXT_VERSION_DIR,
+)
 
 LATEXPAND_BIN = shutil.which("latexpand")
 HAVE_LATEXPAND = LATEXPAND_BIN is not None
@@ -19,8 +23,9 @@ PANDOC_BIN = shutil.which("pandoc")
 HAVE_PANDOC = PANDOC_BIN is not None
 DETEX_BIN = shutil.which("detex")
 HAVE_DETEX = DETEX_BIN is not None
-from log.logger import get_logger
-logger = get_logger(log_name='run_etl',log_path=config.DEFAULT_LOG_DIR/'etl.log')
+
+from log.logger import  get_logger
+logger = get_logger(log_path=f'{Path(__file__).stem}.log', level='INFO')
 
 # Commands that include other TeX sources we want to inline.
 _INCLUDE_CMD_RE = re.compile(r"\\(input|include|subfile)\s*\{([^}]+)\}")
@@ -175,7 +180,7 @@ def _convert_to_md(latex_file: Path):
 
     md_ok = False
     warning = ""
-    outfile = (config.MD_VERSION_DIR / latex_file.name).with_suffix('.md')
+    outfile = (MD_VERSION_DIR / latex_file.name).with_suffix('.md')
 
     if not HAVE_PANDOC:
         return md_ok, outfile, 'Pandoc missing. Skipping Markdown'
@@ -196,7 +201,7 @@ def _convert_to_md(latex_file: Path):
 def _convert_to_txt(latex_file: Path):
 
     txt_ok = False 
-    outfile = (config.TEXT_VERSION_DIR / latex_file.name).with_suffix('.txt')
+    outfile = (TEXT_VERSION_DIR / latex_file.name).with_suffix('.txt')
     outfile.parent.mkdir(parents=True, exist_ok=True)
     warnings: list[str] = []
 
@@ -281,11 +286,12 @@ def _clean_text(text: str) -> str:
 
 def prepare_latex_corpus(latex_extract_paths) -> list[Path]:
     logger.info(f'Run {sys._getframe().f_code.co_name}.')
-    output_root = config.LATEX_FILTER_DIR
+    output_root = LATEX_FILTER_DIR
     output_root.mkdir(parents=True, exist_ok=True)
 
     combined_latex_paths = {}
     for arxiv_id, paper_dir in latex_extract_paths.items():
+        paper_dir = Path(paper_dir) if paper_dir else None
         missing = ''
         if paper_dir is None:
             missing = 'record has no directory'
@@ -330,15 +336,18 @@ def latex_conversion(combined_latex_paths):
         conversion = {}
         
         md_ok, md_file, md_warning = _convert_to_md(latex_path)
-        if md_ok:
-            conversion['md'] = md_file
-        else:
-            logger.info(md_warning)
         txt_ok, txt_file, txt_warnings = _convert_to_txt(latex_path)
-        if txt_ok:
-            conversion['txt'] = txt_file
+
+        if md_ok:
+            conversion['md_file'] = md_file
+            logger.info(f'arxiv {arxiv_id}: Markdown conversion successful: {md_file}')
         else:
-            logger.info(txt_warnings)
+            logger.info(f'arxiv {arxiv_id}: Markdown conversion failed: {md_warning}')
+        if txt_ok:
+            conversion['txt_file'] = txt_file
+            logger.info(f'arxiv {arxiv_id}: Text conversion successful: {txt_file}')
+        else:
+            logger.info(f'arxiv {arxiv_id}: Text conversion warnings: {"; ".join(txt_warnings)}')
         
         conversions[arxiv_id] = conversion
 
