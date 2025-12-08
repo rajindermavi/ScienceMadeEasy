@@ -1,11 +1,11 @@
 import logging
 from pathlib import Path
 
-import config
+from etl.config import TXT_QDRANT_COLLECTION, TXT_EMBEDDING_MODEL, TXT_EMBEDDING_DIM, TXT_QDRANT_BATCH_SIZE
 from qdrant_client.http.models import Distance
 from whoosh.fields import BOOLEAN, ID, KEYWORD, TEXT, Schema
 
-from data.etl.indexing_utils import (
+from etl.indexing_utils import (
     QdrantIndexSpec,
     WhooshIndexSpec,
     build_qdrant_index,
@@ -75,9 +75,9 @@ def index_txt_bm25(jsonl_path: str, bm_index_path: str):
 def index_txt_qdrant(
     jsonl_path: str,
     qdrant_index_path: str,
-    collection_name: str = config.TXT_QDRANT_COLLECTION,
-    embedding_model: str = config.TXT_EMBEDDING_MODEL,
-    batch_size: int = config.TXT_QDRANT_BATCH_SIZE,
+    collection_name: str = TXT_QDRANT_COLLECTION,
+    embedding_model: str = TXT_EMBEDDING_MODEL,
+    batch_size: int = TXT_QDRANT_BATCH_SIZE,
 ):
     """
     Build a Qdrant dense index for TXT chunks. Stores full payloads for later retrieval.
@@ -92,7 +92,7 @@ def index_txt_qdrant(
         batch_size,
     )
 
-    expected_dim = config.TXT_EMBEDDING_DIM
+    expected_dim = TXT_EMBEDDING_DIM
 
     spec = QdrantIndexSpec(
         collection_name=collection_name,

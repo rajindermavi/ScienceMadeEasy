@@ -1,11 +1,11 @@
 import logging
 from pathlib import Path
 
-import config
+from etl.config import MD_QDRANT_COLLECTION, MD_EMBEDDING_MODEL, MD_QDRANT_BATCH_SIZE, MD_EMBEDDING_DIM
 from qdrant_client.http.models import Distance
 from whoosh.fields import ID, KEYWORD, NUMERIC, TEXT, Schema
 
-from data.etl.indexing_utils import (
+from etl.indexing_utils import (
     QdrantIndexSpec,
     WhooshIndexSpec,
     build_qdrant_index,
@@ -13,27 +13,27 @@ from data.etl.indexing_utils import (
 )
 
 
-def index_md_bm25(jsonl_path: str, bm_index_path: str):
+def index_md_bm25(jsonl_path: str, bm_index_dir: str):
     """
     Build and store a BM25 (Whoosh) index from a markdown JSONL file.
 
     Args:
         jsonl_path: path to JSONL file (each line = one chunk dict)
-        bm_index_path: directory where the Whoosh index will be saved
+        bm_index_dir: directory where the Whoosh index will be saved
 
     Returns:
         dict summary with counts and output path
     """
     logger = logging.getLogger("etl")
     logger.info(
-        "Starting index_md_bm25 | jsonl_path=%s | bm_index_path=%s",
+        "Starting index_md_bm25 | jsonl_path=%s | bm_index_dir=%s",
         jsonl_path,
-        bm_index_path,
+        bm_index_dir,
     )
 
     jsonl_path = Path(jsonl_path)
-    bm_index_path = Path(bm_index_path)
-    bm_index_path.mkdir(parents=True, exist_ok=True)
+    bm_index_dir = Path(bm_index_dir)
+    bm_index_dir.mkdir(parents=True, exist_ok=True)
 
     schema = Schema(
         chunk_id=ID(stored=True, unique=True),
@@ -65,7 +65,7 @@ def index_md_bm25(jsonl_path: str, bm_index_path: str):
 
     return build_whoosh_index(
         Path(jsonl_path),
-        Path(bm_index_path),
+        Path(bm_index_dir),
         spec=spec,
         logger=logger,
     )
@@ -73,9 +73,9 @@ def index_md_bm25(jsonl_path: str, bm_index_path: str):
 def index_md_qdrant(
     jsonl_path: str,
     qdrant_index_path: str,
-    collection_name: str = config.MD_QDRANT_COLLECTION,
-    embedding_model: str = config.MD_EMBEDDING_MODEL,
-    batch_size: int = config.MD_QDRANT_BATCH_SIZE,
+    collection_name: str = MD_QDRANT_COLLECTION,
+    embedding_model: str = MD_EMBEDDING_MODEL,
+    batch_size: int = MD_QDRANT_BATCH_SIZE,
 ):
     """
     Build and store a dense Qdrant vector index from a markdown JSONL file.
@@ -100,7 +100,7 @@ def index_md_qdrant(
         batch_size,
     )
 
-    expected_dim = config.MD_EMBEDDING_DIM
+    expected_dim = MD_EMBEDDING_DIM
 
     spec = QdrantIndexSpec(
         collection_name=collection_name,
