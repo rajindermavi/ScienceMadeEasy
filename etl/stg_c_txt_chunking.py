@@ -8,10 +8,10 @@ import time
 from pathlib import Path
 from typing import Any, Dict, List
 
-import config
+from etl.config import DEFAULT_LOG_DIR, TXT_CHUNKED_DIR, TXT_JSONL
 
-from logs.logger import get_logger
-logger = get_logger(log_name='run_etl',log_path=config.DEFAULT_LOG_DIR/'etl.log')
+from log.logger import get_logger
+logger = get_logger(log_name='run_etl',log_path=DEFAULT_LOG_DIR/'etl.log')
 
 # Prefer sentence-aware splits when we have to subdivide large paragraphs.
 _SENTENCE_BOUNDARY_RE = re.compile(r"(?<=[.!?])\s+(?=[A-Z0-9])")
@@ -99,7 +99,34 @@ def _split_long_paragraph(text: str, max_chars: int) -> List[str]:
 
 
 def txt_file_chunking(input_txt_filepath, output_json_filepath):
-    """Chunk a plain-text file into JSON-formatted sections for downstream LLMs."""
+    """
+    Chunk a plain-text file into JSON-formatted sections for downstream LLMs.
+
+    Strategy:
+      - Parse the TXT into paragraphs, drop ultra-short noise, and split long
+        paragraphs using sentence boundaries, respecting size budgets similar to
+        the Markdown chunker (~1800 target, 2400 hard max, 200 min).
+      - Keep 1 paragraph of overlap between chunks for context; infer simple
+        section names from heading-like lines when present.
+      - Sequentially link chunks with `previous`/`next` neighbor metadata.
+
+    Output:
+      - Writes an array of chunk dicts to `output_json_filepath` (one JSON file
+        per TXT input). Each entry includes:
+          {
+            "id": str,
+            "file": str,
+            "section_path": str,
+            "section": str,
+            "start_line": int,
+            "end_line": int,
+            "text": str,
+            "labels": [],
+            "refs": [],
+            "neighbors": [{"id": str, "direction": "previous"|"next"}],
+            "meta": {"source": "plain_text"},
+          }
+    """
 
     in_path = Path(input_txt_filepath)
     out_path = Path(output_json_filepath)
@@ -455,22 +482,24 @@ def post_process_txt_chunking(list_of_json_paths: List[str],
 
 def txt_collection_chunking(txt_files):
 
-    txt_chunked_dir = config.TXT_CHUNKED_DIR
+    txt_chunked_dir = TXT_CHUNKED_DIR
     txt_chunked_dir.mkdir(parents=True, exist_ok=True)
     chunked_files = {}
 
-    txt_jsonl = config.TXT_JSONL
+    txt_jsonl = TXT_JSONL
 
     for arxiv_id, txt_infile in txt_files.items():
+        out_path = None
         try:
             logger.info(f'\ttxt chunking. arxiv_id: {arxiv_id}. infile: {txt_infile}.')
             txt_infile = Path(txt_infile)
             txt_json_outfile = txt_chunked_dir / (txt_infile.with_suffix('.json')).name
             out_path = txt_file_chunking(txt_infile,txt_json_outfile)
-            chunked_files[arxiv_id] = out_path
-
+            
         except Exception as e:
             logger.info(f'\tExcption {e} for file {txt_infile}.')
+        finally:
+            chunked_files[arxiv_id] = out_path
     
     aggregated_chunk_files = sorted(txt_chunked_dir.glob("*.json"))
     out = {}
