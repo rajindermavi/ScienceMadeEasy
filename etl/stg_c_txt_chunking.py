@@ -412,6 +412,7 @@ def _collect_txt_payloads(paths: List[Path]) -> List[Dict[str, Any]]:
 def _normalize_txt_records(records: List[Dict[str, Any]], drop_empty: bool) -> List[Dict[str, Any]]:
     """Normalize raw TXT chunk dicts and optionally drop empty text entries."""
     normalized: List[Dict[str, Any]] = []
+    hierarchical_recs = {}
     for idx, rec in enumerate(records):
         if rec.get("chunk_id") and rec.get("source_file"):
             norm = dict(rec)
@@ -434,7 +435,12 @@ def _normalize_txt_records(records: List[Dict[str, Any]], drop_empty: bool) -> L
         if drop_empty and not text:
             continue
         normalized.append(norm)
-    return normalized
+        paper_id = norm.get('paper_id')
+        chunk_id = norm.get("chunk_id")
+        if paper_id not in hierarchical_recs:
+            hierarchical_recs[paper_id] = {}
+        hierarchical_recs[paper_id][chunk_id] = norm
+    return normalized, hierarchical_recs
 
 
 def _write_txt_jsonl(records: List[Dict[str, Any]], out_path: Path) -> None:
@@ -463,7 +469,7 @@ def post_process_txt_chunking(list_of_json_paths: List[str],
     out_path = Path(combined_output_jsonl)
     input_paths = [Path(p) for p in list_of_json_paths]
     raw_records = _collect_txt_payloads(input_paths)
-    normalized_records = _normalize_txt_records(raw_records, drop_empty=drop_empty)
+    normalized_records, hierarchical_recs = _normalize_txt_records(raw_records, drop_empty=drop_empty)
 
     _write_txt_jsonl(normalized_records, out_path)
 
@@ -475,7 +481,7 @@ def post_process_txt_chunking(list_of_json_paths: List[str],
         "records_written": len(normalized_records),
         "unique_paper_ids": sorted(paper_ids),
         "output_jsonl": str(out_path),
-        "normalized_records": normalized_records,
+        "normed_records": hierarchical_recs,
     }
 
 
@@ -503,7 +509,4 @@ def txt_collection_chunking(txt_files):
     
     aggregated_chunk_files = sorted(txt_chunked_dir.glob("*.json"))
     out = {}
-    out['txt_details'] = post_process_txt_chunking([str(p) for p in aggregated_chunk_files],txt_jsonl)
-    out["txt_chunk_files"] = chunked_files
-
-    return out
+    return post_process_txt_chunking([str(p) for p in aggregated_chunk_files],txt_jsonl)

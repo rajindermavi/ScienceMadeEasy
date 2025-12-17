@@ -48,7 +48,7 @@ STAGE_A = STAGES_DIR / 'stage_a.json'
 STAGE_B = STAGES_DIR / 'stage_b.json'
 STAGE_C = STAGES_DIR / 'stage_c.json'
 # STAGE_D = STAGES_DIR / 'stage_d.json'
-EXTRACT_DETAILS = DATA_ETL_DIR / 'extract_details.json'
+EXTRACT_DETAILS = DATA_DIR / 'extract_details.json'
 MD_JSONL = DATA_ETL_DIR / "md_data.jsonl"
 TXT_JSONL = DATA_ETL_DIR / "txt_data.jsonl"
 

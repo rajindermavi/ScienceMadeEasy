@@ -416,12 +416,19 @@ def _collect_json_payloads(paths: List[Path]) -> List[Dict[str, Any]]:
 def _normalize_records(records: List[Dict[str, Any]], drop_empty: bool) -> List[Dict[str, Any]]:
     """Normalize raw chunk dicts and optionally drop empty text entries."""
     normalized: List[Dict[str, Any]] = []
+    hierarchical_recs = {}
     for idx, rec in enumerate(records):
         norm = _normalize_record(rec, fallback_index=idx)
         if drop_empty and not norm["text"]:
             continue
+        paper_id = norm.get('paper_id')
+        chunk_id = norm.get('chunk_id')
+        if paper_id not in hierarchical_recs:
+            hierarchical_recs[paper_id] = {}
+        hierarchical_recs[paper_id][chunk_id] = norm
+
         normalized.append(norm)
-    return normalized
+    return normalized, hierarchical_recs
 
 
 def _write_jsonl(records: List[Dict[str, Any]], out_path: Path) -> None:
@@ -450,7 +457,7 @@ def post_process_md_chunking(list_of_json_paths: List[str],
     out_path = Path(combined_output_jsonl)
     input_paths = [Path(p) for p in list_of_json_paths]
     raw_records = _collect_json_payloads(input_paths)
-    normalized_records = _normalize_records(raw_records, drop_empty=drop_empty)
+    normalized_records,hierarchical_recs = _normalize_records(raw_records, drop_empty=drop_empty)
 
     _write_jsonl(normalized_records, out_path)
 
@@ -462,7 +469,7 @@ def post_process_md_chunking(list_of_json_paths: List[str],
         "records_written": len(normalized_records),
         "unique_paper_ids": sorted(paper_ids),
         "output_jsonl": str(out_path),
-        "normalized_records": normalized_records,
+        "normed_records": hierarchical_recs,
     }
 
 
@@ -490,8 +497,6 @@ def md_collection_chunking(md_files):
             chunked_files[arxiv_id] = out_path
     
     aggregated_chunk_files = sorted(md_chunked_dir.glob("*.json"))
-    out = {}
-    out['md_details'] = post_process_md_chunking([str(p) for p in aggregated_chunk_files], md_jsonl)
-    out["md_chunk_files"] = chunked_files
 
-    return out
+    return post_process_md_chunking([str(p) for p in aggregated_chunk_files], md_jsonl)
+

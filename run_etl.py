@@ -79,26 +79,22 @@ def run_chunking(papers):
     from etl.stg_c_md_chunking import md_collection_chunking
     from etl.stg_c_txt_chunking import txt_collection_chunking
 
-    out = {}
     md_filepaths = {arxiv_id:paper.get('md_full_path') for arxiv_id, paper in papers.items()}
     logger.info("Calling md_collection_chunking")
     md_chunking=md_collection_chunking(md_filepaths) # fix to dict
-    out["md_details"] = md_chunking['md_details']
     logger.info("md_collection_chunking complete")
 
     txt_filepaths = {arxiv_id:paper.get('txt_full_path') for arxiv_id, paper in papers.items()}
     logger.info("Calling txt_collection_chunking")
     txt_chunking = txt_collection_chunking(txt_filepaths) # fix to dict
-    out["txt_details"] = txt_chunking['txt_details']
     logger.info("txt_collection_chunking complete")
 
     for arxiv_id, paper in papers.items():
-        paper['md_chunk_files'] = md_chunking.get('md_chunk_files',{}).get(arxiv_id)
-        paper['txt_chunk_files'] = txt_chunking.get('txt_chunk_files',{}).get(arxiv_id)
+        paper['md_recs'] = md_chunking.get('normed_records',{}).get(arxiv_id)
+        paper['txt_recs'] = txt_chunking.get('normed_records',{}).get(arxiv_id)
 
     logger.info("run_arxiv_extract complete")
 
-    return out
 
 
 def run_indexing():
@@ -135,11 +131,10 @@ def run_indexing():
     logger.info("Calling index_txt_qdrant")
     out["txt_qdrant"] = index_txt_qdrant(txt_jsonl, txt_qdrant_index_dir)
 
-    logger.info(
-        "Indexing complete | bm25=%s | qdrant=%s",
-        out["md_bm25"],
-        out["md_qdrant"],
-    )
+    logger.info('\tmd_bm25: %s',out["md_bm25"])
+    logger.info('\tmd_qdrant: %s',out["md_bm25"])
+    logger.info('\ttxt_bm25: %s',out["txt_bm25"])
+    logger.info('\ttxt_qdrant: %s',out["txt_bm25"])
 
     logger.info("run_indexing complete")
 
@@ -154,7 +149,7 @@ def run_etl(stages='abcd'):
 
         arxiv_extract_details = run_arxiv_extract(phrases, categories, max_papers)
         papers = arxiv_extract_details.get('papers')  
-        arxiv_extract_details['paper_index'] = list(papers.keys())
+        #arxiv_extract_details['paper_index'] = list(papers.keys())
         from etl.config import STAGE_A
         with open( STAGE_A,"w") as f:
             json.dump(
@@ -187,9 +182,8 @@ def run_etl(stages='abcd'):
 
         papers = arxiv_extract_details.get('papers')
 
-        chunking_details = run_chunking(papers)
+        run_chunking(papers)
 
-        arxiv_extract_details.update(chunking_details)
         with open( STAGE_C,"w") as f:
             json.dump(
                 arxiv_extract_details,
