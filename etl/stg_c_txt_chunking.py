@@ -8,7 +8,7 @@ import time
 from pathlib import Path
 from typing import Any, Dict, List
 
-from etl.config import DEFAULT_LOG_DIR, TXT_CHUNKED_DIR, TXT_JSONL
+from etl.config import DEFAULT_LOG_DIR, TXT_CHUNKED_DIR, TXT_JSON
 
 from log.logger import get_logger
 logger = get_logger(log_name='run_etl',log_path=DEFAULT_LOG_DIR/'etl.log')
@@ -443,35 +443,37 @@ def _normalize_txt_records(records: List[Dict[str, Any]], drop_empty: bool) -> L
     return normalized, hierarchical_recs
 
 
-def _write_txt_jsonl(records: List[Dict[str, Any]], out_path: Path) -> None:
-    """Write normalized TXT records into JSONL format."""
+def _write_txt_json(records_by_chunk_id: Dict[str, Dict[str, Any]], out_path: Path) -> None:
+    """Write normalized TXT records into a JSON dict keyed by chunk_id."""
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with out_path.open("w", encoding="utf-8") as w:
-        for rec in records:
-            w.write(json.dumps(rec, ensure_ascii=False) + "\n")
+        json.dump(records_by_chunk_id, w, ensure_ascii=False, indent=2)
 
 # --- Main function ------------------------------------------------------------
 
 def post_process_txt_chunking(list_of_json_paths: List[str],
-                              combined_output_jsonl: str,
+                              combined_output_json: str,
                               drop_empty: bool = True) -> Dict[str, Any]:
     """
-    Merge and normalize TXT (detex) chunk JSONs into one JSONL.
+    Merge and normalize TXT (detex) chunk JSONs into one JSON dict.
 
     Args:
         list_of_json_paths: list of input JSON files.
-        combined_output_jsonl: output JSONL path.
+        combined_output_json: output JSON path.
         drop_empty: skip empty text chunks if True.
 
     Returns:
         dict summary with counts and paper IDs.
     """
-    out_path = Path(combined_output_jsonl)
+    out_path = Path(combined_output_json)
     input_paths = [Path(p) for p in list_of_json_paths]
     raw_records = _collect_txt_payloads(input_paths)
     normalized_records, hierarchical_recs = _normalize_txt_records(raw_records, drop_empty=drop_empty)
 
-    _write_txt_jsonl(normalized_records, out_path)
+    records_by_chunk_id = {
+        str(rec.get("chunk_id")): rec for rec in normalized_records if rec.get("chunk_id") is not None
+    }
+    _write_txt_json(records_by_chunk_id, out_path)
 
     paper_ids = {rec["paper_id"] for rec in normalized_records if rec.get("paper_id")}
 
@@ -480,7 +482,7 @@ def post_process_txt_chunking(list_of_json_paths: List[str],
         "records_seen": len(raw_records),
         "records_written": len(normalized_records),
         "unique_paper_ids": sorted(paper_ids),
-        "output_jsonl": str(out_path),
+        "output_json": str(out_path),
         "normed_records": hierarchical_recs,
     }
 
@@ -492,7 +494,7 @@ def txt_collection_chunking(txt_files):
     txt_chunked_dir.mkdir(parents=True, exist_ok=True)
     chunked_files = {}
 
-    txt_jsonl = TXT_JSONL
+    txt_json = TXT_JSON
 
     for arxiv_id, txt_infile in txt_files.items():
         out_path = None
@@ -509,4 +511,4 @@ def txt_collection_chunking(txt_files):
     
     aggregated_chunk_files = sorted(txt_chunked_dir.glob("*.json"))
     out = {}
-    return post_process_txt_chunking([str(p) for p in aggregated_chunk_files],txt_jsonl)
+    return post_process_txt_chunking([str(p) for p in aggregated_chunk_files],txt_json)

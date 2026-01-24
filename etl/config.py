@@ -49,8 +49,8 @@ STAGE_B = STAGES_DIR / 'stage_b.json'
 STAGE_C = STAGES_DIR / 'stage_c.json'
 # STAGE_D = STAGES_DIR / 'stage_d.json'
 EXTRACT_DETAILS = DATA_DIR / 'extract_details.json'
-MD_JSONL = DATA_ETL_DIR / "md_data.jsonl"
-TXT_JSONL = DATA_ETL_DIR / "txt_data.jsonl"
+MD_JSON = DATA_ETL_DIR / "md_data.json"
+TXT_JSON = DATA_ETL_DIR / "txt_data.json"
 
 MD_BM25_INDEX_DIR = DATA_INDEX_DIR / 'md_bm25_storage'
 MD_BM25_INDEX_DIR.mkdir(parents=True, exist_ok=True)

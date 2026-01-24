@@ -3,7 +3,7 @@ import re
 import time
 from pathlib import Path
 from typing import List, Dict, Any
-from etl.config import MD_CHUNKED_DIR, DEFAULT_LOG_DIR, MD_JSONL
+from etl.config import MD_CHUNKED_DIR, DEFAULT_LOG_DIR, MD_JSON
 
 from log.logger import get_logger
 logger = get_logger(log_name='run_etl',log_path=DEFAULT_LOG_DIR/'etl.log')
@@ -431,35 +431,37 @@ def _normalize_records(records: List[Dict[str, Any]], drop_empty: bool) -> List[
     return normalized, hierarchical_recs
 
 
-def _write_jsonl(records: List[Dict[str, Any]], out_path: Path) -> None:
-    """Write normalized records into JSONL format."""
+def _write_json(records_by_chunk_id: Dict[str, Dict[str, Any]], out_path: Path) -> None:
+    """Write normalized records into a JSON dict keyed by chunk_id."""
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with out_path.open("w", encoding="utf-8") as w:
-        for rec in records:
-            w.write(json.dumps(rec, ensure_ascii=False) + "\n")
+        json.dump(records_by_chunk_id, w, ensure_ascii=False, indent=2)
 
 # --- Main entry point ---------------------------------------------------------
 
 def post_process_md_chunking(list_of_json_paths: List[str],
-                             combined_output_jsonl: str,
+                             combined_output_json: str,
                              drop_empty: bool = True) -> Dict[str, Any]:
     """
-    Merge and normalize chunk JSON files into one JSONL.
+    Merge and normalize chunk JSON files into one JSON dict.
 
     Args:
         list_of_json_paths: list of paths to input JSON files.
-        combined_output_jsonl: output JSONL path.
+        combined_output_json: output JSON path.
         drop_empty: if True, skip chunks with empty text.
 
     Returns:
         dict summary with counts, paper IDs, and normalized records.
     """
-    out_path = Path(combined_output_jsonl)
+    out_path = Path(combined_output_json)
     input_paths = [Path(p) for p in list_of_json_paths]
     raw_records = _collect_json_payloads(input_paths)
     normalized_records,hierarchical_recs = _normalize_records(raw_records, drop_empty=drop_empty)
 
-    _write_jsonl(normalized_records, out_path)
+    records_by_chunk_id = {
+        str(rec.get("chunk_id")): rec for rec in normalized_records if rec.get("chunk_id") is not None
+    }
+    _write_json(records_by_chunk_id, out_path)
 
     paper_ids = {rec["paper_id"] for rec in normalized_records if rec.get("paper_id")}
 
@@ -468,7 +470,7 @@ def post_process_md_chunking(list_of_json_paths: List[str],
         "records_seen": len(raw_records),
         "records_written": len(normalized_records),
         "unique_paper_ids": sorted(paper_ids),
-        "output_jsonl": str(out_path),
+        "output_json": str(out_path),
         "normed_records": hierarchical_recs,
     }
 
@@ -480,7 +482,7 @@ def md_collection_chunking(md_files):
     md_chunked_dir.mkdir(parents=True, exist_ok=True)
     chunked_files = {}
 
-    md_jsonl = MD_JSONL
+    md_json = MD_JSON
 
     for arxiv_id, md_infile in md_files.items():
         out_path = None
@@ -498,5 +500,4 @@ def md_collection_chunking(md_files):
     
     aggregated_chunk_files = sorted(md_chunked_dir.glob("*.json"))
 
-    return post_process_md_chunking([str(p) for p in aggregated_chunk_files], md_jsonl)
-
+    return post_process_md_chunking([str(p) for p in aggregated_chunk_files], md_json)

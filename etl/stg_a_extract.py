@@ -149,7 +149,8 @@ def semantic_scholar_arxiv_ids(semantic_scholar_collection):
             paper_ngbr = paper.get('citedPaper',{}).get('externalIds',{})
         if paper_ngbr:
             id = paper_ngbr.get('ArXiv')
-        arxiv_ids.append(id)
+        if not id == None and not id in arxiv_ids: 
+            arxiv_ids.append(id)
     
     return arxiv_ids
 

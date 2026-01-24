@@ -71,8 +71,36 @@ def dense_search(
 ) -> List[Tuple[str, float]]:
     """Return [(chunk_id, score)] from Qdrant vector search (uses payload['chunk_id'])."""
     qv = model.encode(query, normalize_embeddings=True).tolist()
-    hits = qdrant.search(collection_name=collection_name, query_vector=qv, limit=topk)
+    hits = _qdrant_search(qdrant, collection_name, qv, topk)
     return [(h.payload.get("chunk_id", str(h.id)), float(h.score)) for h in hits]
+
+
+def _qdrant_search(
+    qdrant: QdrantClient,
+    collection_name: str,
+    query_vector: List[float],
+    limit: int,
+):  
+    if hasattr(qdrant, "search"):
+        return qdrant.search(collection_name=collection_name, query_vector=query_vector, limit=limit)
+    
+    if hasattr(qdrant, "query_points"):
+        try:
+            result = qdrant.query_points(
+                collection_name=collection_name, query=query_vector, limit=limit
+            )
+        except TypeError:
+            result = qdrant.query_points(collection_name=collection_name, query=query_vector, limit=limit)
+        return getattr(result, "points", result)
+    if hasattr(qdrant, "search_points"):
+        try:
+            result = qdrant.search_points(
+                collection_name=collection_name, query_vector=query_vector, limit=limit
+            )
+        except TypeError:
+            result = qdrant.search_points(collection_name=collection_name, vector=query_vector, limit=limit)
+        return getattr(result, "points", result)
+    raise AttributeError("QdrantClient does not support search/query_points/search_points.")
 
 
 def rrf_fuse(*ranked_lists: List[Tuple[str, float]], k: int = 60) -> List[Tuple[str, float]]:

@@ -15,17 +15,26 @@ from whoosh.fields import Schema
 JsonDict = Dict[str, Any]
 
 
-def _load_jsonl(path: Path) -> Iterator[JsonDict]:
+def _load_json_records(path: Path) -> Iterator[JsonDict]:
     with path.open("r", encoding="utf-8") as fh:
-        for line_no, raw in enumerate(fh, start=1):
-            stripped = raw.strip()
-            if not stripped:
-                yield {"__skip__": "blank", "__line__": line_no}
+        try:
+            payload = json.load(fh)
+        except json.JSONDecodeError as exc:
+            yield {"__skip__": "decode_error", "__error__": exc}
+            return
+    if isinstance(payload, dict):
+        for rec in payload.values():
+            if rec is None:
                 continue
-            try:
-                yield json.loads(stripped)
-            except json.JSONDecodeError as exc:
-                yield {"__skip__": "decode_error", "__line__": line_no, "__error__": exc}
+            yield rec
+        return
+    if isinstance(payload, list):
+        for rec in payload:
+            if rec is None:
+                continue
+            yield rec
+        return
+    yield {"__skip__": "invalid_root", "__type__": type(payload).__name__}
 
 
 @dataclass
@@ -39,7 +48,7 @@ class WhooshIndexSpec:
 
 
 def build_whoosh_index(
-    jsonl_path: Path,
+    json_path: Path,
     index_dir: Path,
     spec: WhooshIndexSpec,
     logger: Optional[logging.Logger] = None,
@@ -61,7 +70,7 @@ def build_whoosh_index(
 
     totals = {"indexed": 0, "skipped_blank": 0, "skipped_decode": 0, "skipped_filter": 0}
 
-    for payload in _load_jsonl(jsonl_path):
+    for payload in _load_json_records(json_path):
         skip_code = payload.get("__skip__")
         if skip_code == "blank":
             totals["skipped_blank"] += 1
@@ -116,13 +125,13 @@ class QdrantIndexSpec:
 
 
 def build_qdrant_index(
-    jsonl_path: Path,
+    json_path: Path,
     storage_dir: Path,
     spec: QdrantIndexSpec,
     logger: Optional[logging.Logger] = None,
 ) -> Dict[str, Any]:
     """
-    Build (or rebuild) a Qdrant local collection from JSONL payloads.
+    Build (or rebuild) a Qdrant local collection from JSON payloads.
     """
     logger = logger or logging.getLogger("etl")
     storage_dir.mkdir(parents=True, exist_ok=True)
@@ -153,7 +162,7 @@ def build_qdrant_index(
     batch: list[PointStruct] = []
     batch_idx = 0
 
-    for payload in _load_jsonl(jsonl_path):
+    for payload in _load_json_records(json_path):
         skip_code = payload.get("__skip__")
         if skip_code == "blank":
             totals["skipped_blank"] += 1
@@ -216,4 +225,3 @@ def _upsert_batch(client: QdrantClient, collection: str, points: Iterable[PointS
         return
     logger.info("Upserting batch of %s points into Qdrant collection %s", len(points), collection)
     client.upsert(collection_name=collection, points=points)
-

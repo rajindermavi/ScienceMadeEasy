@@ -12,15 +12,15 @@ from etl.indexing_utils import (
     build_whoosh_index,
 )
 
-def index_txt_bm25(jsonl_path: str, bm_index_path: str):
+def index_txt_bm25(json_path: str, bm_index_path: str):
     """
     Build a Whoosh (BM25) index for TXT chunks (detex output).
     Expects fields like: chunk_id, text, paper_id, section_path, chunk_type, has_math_loss, harvest.
     """
     logger = logging.getLogger("etl")
     logger.info(
-        "Starting index_txt_bm25 | jsonl_path=%s | bm_index_path=%s",
-        jsonl_path,
+        "Starting index_txt_bm25 | json_path=%s | bm_index_path=%s",
+        json_path,
         bm_index_path,
     )
 
@@ -65,7 +65,7 @@ def index_txt_bm25(jsonl_path: str, bm_index_path: str):
     )
 
     return build_whoosh_index(
-        Path(jsonl_path),
+        Path(json_path),
         bm_index_path,
         spec=spec,
         logger=logger,
@@ -73,7 +73,7 @@ def index_txt_bm25(jsonl_path: str, bm_index_path: str):
 
 
 def index_txt_qdrant(
-    jsonl_path: str,
+    json_path: str,
     qdrant_index_path: str,
     collection_name: str = TXT_QDRANT_COLLECTION,
     embedding_model: str = TXT_EMBEDDING_MODEL,
@@ -84,8 +84,8 @@ def index_txt_qdrant(
     """
     logger = logging.getLogger("etl")
     logger.info(
-        "Starting index_txt_qdrant | jsonl_path=%s | qdrant_index_path=%s | collection=%s | model=%s | batch_size=%s",
-        jsonl_path,
+        "Starting index_txt_qdrant | json_path=%s | qdrant_index_path=%s | collection=%s | model=%s | batch_size=%s",
+        json_path,
         qdrant_index_path,
         collection_name,
         embedding_model,
@@ -105,7 +105,7 @@ def index_txt_qdrant(
     )
 
     return build_qdrant_index(
-        Path(jsonl_path),
+        Path(json_path),
         Path(qdrant_index_path),
         spec=spec,
         logger=logger,
