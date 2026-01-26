@@ -7,8 +7,7 @@ from etl.config import MD_JSON, TXT_JSON,EXTRACT_DETAILS
 
 class IndexRetrieval:
     def __init__(self):
-        self.md_data = None
-        self.txt_data = None
+        self.chunks = None
         self.papers = None
         self.load_metadata()
 
@@ -17,8 +16,11 @@ class IndexRetrieval:
             return json.load(handle)
 
     def load_metadata(self):
-        self.md_data = self._load_metadata(str(MD_JSON))
-        self.txt_data = self._load_metadata(str(TXT_JSON))
+        md_data = self._load_metadata(str(MD_JSON))
+        md_data = {k: v for k, v in md_data.items()}
+        txt_data = self._load_metadata(str(TXT_JSON))
+        txt_data = {k: v for k, v in txt_data.items()}
+        self.chunks = {**txt_data,**md_data}
         extract_details = self._load_metadata(str(EXTRACT_DETAILS))
         self.papers = extract_details.get('papers')
 

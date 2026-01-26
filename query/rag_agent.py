@@ -121,9 +121,25 @@ def decide_next_step(state: AgentState) -> AgentState:
 
 def synthesize_answer(state: AgentState):
 
+    meta = {}
+
+    for chunk_id in state.retrieved_chunks:
+        chunk_data = {}
+        chunk = retriever.chunks.get(chunk_id)
+        paper_id = chunk.get('paper_id')
+        chunk_data['chunk_id'] = chunk_id        
+        chunk_data['paper_id'] = paper_id 
+        chunk_data['text'] = chunk.get('text')
+        chunk_data['eqns'] = chunk.get('equations_raw',None)
+        paper = retriever.papers.get(paper_id)
+        paper_meta = paper.get('meta')
+        chunk_data['title'] = paper_meta.get('title')
+        chunk_data['url'] = paper_meta.get('url')
+        meta[chunk_id] = chunk_data
+
     answer = llm_answer(
-        query=state.query,
-        chunk_ids=state.retrieved_chunks
+        state.query,
+        chunk_data
     )
 
     return {

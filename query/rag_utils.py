@@ -1,5 +1,6 @@
 # rag_runtime.py
 from typing import List, Dict
+import json
 
 def is_mathy(query: str) -> bool:
     q = query.lower()
@@ -59,9 +60,10 @@ def build_prompt(question: str, context_str: str, math_mode: bool) -> Dict[str, 
     """.strip()
     return {"system": system, "user": user}
 
-def llm_answer(query,chunk_ids):
-    prompt = f'prompt for {query, chunk_ids}'
-    return llm_response(prompt)
-
 def llm_response(prompt):
     return f'response for {prompt}'
+
+def llm_answer(query,chunk_data):
+    prompt = f'prompt for \n{query}\n'
+    prompt += json.dumps(chunk_data, indent=4, sort_keys=True)
+    return llm_response(prompt)
