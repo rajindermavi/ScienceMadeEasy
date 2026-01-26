@@ -59,3 +59,9 @@ def build_prompt(question: str, context_str: str, math_mode: bool) -> Dict[str, 
     """.strip()
     return {"system": system, "user": user}
 
+def llm_answer(query,chunk_ids):
+    prompt = f'prompt for {query, chunk_ids}'
+    return llm_response(prompt)
+
+def llm_response(prompt):
+    return f'response for {prompt}'

@@ -1,11 +1,37 @@
 import os
+import json
+from functools import lru_cache
 from dotenv import load_dotenv
 
 from openai import OpenAI
 
 from query.index_query import hybrid_search_from_disk, rerank
-from query.rag import is_mathy, build_context_blocks, format_context_md, build_prompt
+from query.rag_utils import is_mathy, build_context_blocks, format_context_md, build_prompt
 import etl.config as config
+from etl.config import MD_JSON, TXT_JSON
+
+
+@lru_cache(maxsize=2)
+def _load_metadata(path):
+    with open(path, "r", encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def metadata_retrieval(results):
+    md_data = _load_metadata(str(MD_JSON))
+    txt_data = _load_metadata(str(TXT_JSON))
+    metadata = {}
+    for result in results:
+        if not isinstance(result, dict):
+            continue
+        chunk_id = result.get("chunk_id")
+        if not chunk_id:
+            continue
+        if chunk_id in md_data:
+            metadata[chunk_id] = md_data[chunk_id]
+        elif chunk_id in txt_data:
+            metadata[chunk_id] = txt_data[chunk_id]
+    return metadata
 
 def query_retrieval(query):
     resp_md = hybrid_search_from_disk(
@@ -36,10 +62,12 @@ def query_retrieval(query):
     return rerank_results
 
 
+
 def query_context(query,token_budget = 1800):
     # Embedded Qdrant (folder-based)
-    rerank_results = query_retrieval(query)
-    blocks = build_context_blocks(rerank_results, max_tokens=token_budget)
+    query_results = query_retrieval(query)
+    metadata_results = metadata_retrieval(query_results)
+    blocks = build_context_blocks(query_results, max_tokens=token_budget)
     context_str = format_context_md(blocks)
     return context_str
 

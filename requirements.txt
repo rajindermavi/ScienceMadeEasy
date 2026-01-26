@@ -22,3 +22,5 @@ streamlit
 
 pandas 
 matplotlib
+
+langgraph
