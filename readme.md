@@ -28,6 +28,7 @@ Upon download, SME contains a document database focused on the much studied fiel
 git clone <repo-url>
 cd project
 pip install -r requirements.txt
+python -m spacy download en_core_web_sm
 ```
 
 Rename example.env to .env and update OPENAI_API_KEY
@@ -41,7 +42,7 @@ streamlit run app.py
 In order to rerun the ETL you will have to install Latexpand, Pandoc, and Detex.
 Latexpand and Detex are included in texlive-extra-utils.
 
-In run_etl.py update ```phrases`` and ```categories``` to target the domain of research desired.
+In run_etl.py update ```phrases``` and ```categories``` to target the domain of research desired.
 
 ```
 sudo apt update
