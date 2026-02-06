@@ -2,10 +2,7 @@
 from typing import List, Dict
 import json
 
-def is_mathy(query: str) -> bool:
-    q = query.lower()
-    latex_tokens = ["\\lambda", "\\sum", "\\nabla", "\\alpha", "\\beta", "$", "eigenvalue", "spectral", "laplacian"]
-    return any(tok in q for tok in latex_tokens)
+
 
 def build_context_blocks(results: List[Dict], max_tokens: int = 1800) -> List[Dict]:
     """
