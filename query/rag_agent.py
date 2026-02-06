@@ -7,6 +7,9 @@ from langgraph.graph import StateGraph, END
 from query.retrieval import IndexRetrieval
 from query.rag_utils import llm_answer
 from query.nlp import get_top_scoring_segments_as_string
+from query.prompt import llm_judge_sufficiency_prompt, llm_judge_sufficiency_response_schema
+from query.llm import LLM 
+
 # SESSION MANAGEMENT
 
 class QARecord(BaseModel):
@@ -101,9 +104,11 @@ def llm_judge(query: str, chunk_ids: List[str]) -> SufficiencyVerdict:
         text = chunk.get('text', '') if chunk else ''
         top_segments = get_top_scoring_segments_as_string(text)
         representative_texts.append(top_segments)
+    prompt = llm_judge_sufficiency_prompt(query, representative_texts)
 
+    response = LLM.generate_json(prompt, llm_judge_sufficiency_response_schema)
 
-    verdict = SufficiencyVerdict(sufficient=True, reason="hard coded")
+    verdict = SufficiencyVerdict(**response)
     return verdict
 
 def judge_sufficiency(state: AgentState) -> AgentState:
