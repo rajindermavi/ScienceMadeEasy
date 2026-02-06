@@ -7,7 +7,14 @@ from langgraph.graph import StateGraph, END
 from query.retrieval import IndexRetrieval
 from query.rag_utils import llm_answer
 from query.nlp import get_top_scoring_segments_as_string
-from query.prompt import llm_judge_sufficiency_prompt, llm_judge_sufficiency_response_schema
+from query.prompt import (
+    llm_judge_sufficiency_system_prompt,
+    llm_judge_sufficiency_prompt, 
+    llm_judge_sufficiency_response_schema,
+    final_answer_system_prompt,
+    final_answer_user_prompt,
+    final_answer_response_schema
+)
 from query.llm import LLM 
 
 # SESSION MANAGEMENT
@@ -106,7 +113,11 @@ def llm_judge(query: str, chunk_ids: List[str]) -> SufficiencyVerdict:
         representative_texts.append(top_segments)
     prompt = llm_judge_sufficiency_prompt(query, representative_texts)
 
-    response = LLM.generate_json(prompt, llm_judge_sufficiency_response_schema)
+    response = LLM.generate_json(
+        llm_judge_sufficiency_system_prompt, 
+        prompt, 
+        llm_judge_sufficiency_response_schema
+    )
 
     verdict = SufficiencyVerdict(**response)
     return verdict
