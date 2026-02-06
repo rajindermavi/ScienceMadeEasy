@@ -6,6 +6,7 @@ from langgraph.graph import StateGraph, END
 
 from query.retrieval import IndexRetrieval
 from query.rag_utils import llm_answer
+from query.nlp import get_top_scoring_segments_as_string
 # SESSION MANAGEMENT
 
 class QARecord(BaseModel):
@@ -43,6 +44,7 @@ def apply_feedback(record: QARecord, session: SessionMemory):
 
 retriever = IndexRetrieval()
 
+## ------------------ RETRIEVAL ------------------ ##
 class AgentState(BaseModel):
     # user intent
     query: str
@@ -86,11 +88,21 @@ def search_index(state: AgentState) -> AgentState:
         "visited_chunks": state.visited_chunks | set(new_ids)
     }
 
+## ------------------ LLM JUDGMENT ------------------ ##
+
 class SufficiencyVerdict(BaseModel):
     sufficient: bool
     reason: str
 
 def llm_judge(query: str, chunk_ids: List[str]) -> SufficiencyVerdict:
+    representative_texts = []
+    for chunk_id in chunk_ids:
+        chunk = retriever.chunks.get(chunk_id)
+        text = chunk.get('text', '') if chunk else ''
+        top_segments = get_top_scoring_segments_as_string(text)
+        representative_texts.append(top_segments)
+
+
     verdict = SufficiencyVerdict(sufficient=True, reason="hard coded")
     return verdict
 
@@ -103,6 +115,8 @@ def judge_sufficiency(state: AgentState) -> AgentState:
         "sufficient": verdict.sufficient,
         "sufficiency_reason": verdict.reason
     }
+
+## ------------------ CONTROL LOGIC ------------------ #
 
 def decide_next_step(state: AgentState) -> AgentState:
     if state.sufficient:
@@ -118,6 +132,8 @@ def decide_next_step(state: AgentState) -> AgentState:
         }
 
     return {"stop": True}
+
+## ------------------ ANSWER SYNTHESIS ------------------ #
 
 def synthesize_answer(state: AgentState):
 
@@ -146,7 +162,7 @@ def synthesize_answer(state: AgentState):
         "answer": answer
     }
 
-
+## ------------------ AGENT CONSTRUCTION ------------------ ##
 
 agent_builder = StateGraph(AgentState)
 

@@ -1,6 +1,6 @@
 import pytest
 
-from query.rag_utils import is_mathy
+from query.nlp import is_mathy
 
 @pytest.mark.parametrize(
     ("query", "expected"),

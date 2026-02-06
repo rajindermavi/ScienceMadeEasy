@@ -2,6 +2,15 @@ import spacy
 
 nlp = spacy.load("en_core_web_sm")
 
+## ------------------ MATHY QUERY DETECTION ------------------ ##
+
+def is_mathy(query: str) -> bool:
+    q = query.lower()
+    latex_tokens = ["\\lambda", "\\sum", "\\nabla", "\\alpha", "\\beta", "$", "eigenvalue", "spectral", "laplacian"]
+    return any(tok in q for tok in latex_tokens)
+
+## ------------------ TEXT SCORING ------------------ ##
+
 boilerplate_verbs_score = -1.0
 BOILERPLATE_VERBS = {
     "consider",

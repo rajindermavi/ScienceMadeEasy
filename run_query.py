@@ -5,8 +5,9 @@ from dotenv import load_dotenv
 
 from openai import OpenAI
 
+from query.nlp import is_mathy
 from query.index_query import hybrid_search_from_disk, rerank
-from query.rag_utils import is_mathy, build_context_blocks, format_context_md, build_prompt
+from query.rag_utils import build_context_blocks, format_context_md, build_prompt
 import etl.config as config
 from etl.config import MD_JSON, TXT_JSON
 
