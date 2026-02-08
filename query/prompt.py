@@ -36,14 +36,14 @@ def llm_judge_sufficiency_prompt(query, representative_texts):
 llm_judge_sufficiency_response_schema = {
   "name": "SufficiencyVerdict",
   "strict": True,
-  "additionalProperties": False,
     "schema": {
         "type": "object",
         "properties": {
             "sufficient": {"type": "boolean"},
             "reason": {"type": "string"}
         },      
-        "required": ["sufficient", "reason"]
+        "required": ["sufficient", "reason"],
+        "additionalProperties": False
     }
 }
 
@@ -69,7 +69,6 @@ def final_answer_user_prompt(query, chunk_data_list):
 final_answer_response_schema = {
   "name": "FinalAnswer",
   "strict": True,
-  "additionalProperties": False,
     "schema": {
         "type": "object",
         "properties": {
@@ -79,6 +78,7 @@ final_answer_response_schema = {
                 "items": {"type": "string"}
             }
         },      
-        "required": ["answer", "citations"]
+        "required": ["answer", "citations"],
+        "additionalProperties": False
     }
 }
