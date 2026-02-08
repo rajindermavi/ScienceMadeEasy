@@ -153,7 +153,7 @@ def decide_next_step(state: AgentState) -> AgentState:
 
 def synthesize_answer(state: AgentState):
 
-    meta = {}
+    chunk_packet = {}
 
     for chunk_id in state.retrieved_chunks:
         chunk_data = {}
@@ -167,15 +167,24 @@ def synthesize_answer(state: AgentState):
         paper_meta = paper.get('meta')
         chunk_data['title'] = paper_meta.get('title')
         chunk_data['url'] = paper_meta.get('url')
-        meta[chunk_id] = chunk_data
+        chunk_packet[chunk_id] = chunk_data
 
-    answer = llm_answer(
-        state.query,
-        chunk_data
+    prompt = final_answer_user_prompt(state.query, list(chunk_packet.values()))
+
+    response = LLM.generate_json(
+        final_answer_system_prompt,
+        prompt,
+        final_answer_response_schema
     )
 
+    answer = response.get("answer", "No answer generated.")
+    citations = [chunk_packet[cid] for cid in response.get("citations", []) if cid in chunk_packet]
+    for cid in response.get("citations", []):
+        chunk_packet[cid]['cited'] = True
+
     return {
-        "answer": answer
+        "answer": answer,
+        "citations": citations
     }
 
 ## ------------------ AGENT CONSTRUCTION ------------------ ##

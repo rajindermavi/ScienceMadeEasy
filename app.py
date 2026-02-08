@@ -28,20 +28,20 @@ from query.rag_agent import (
     ChunkBelief,
     apply_feedback
 )
-
-from etl.config import (
-    MD_TOPK, 
-    TXT_TOPK, 
-    MD_BM25_INDEX_DIR,
-    MD_QDRANT_INDEX_DIR,
-    MD_QDRANT_COLLECTION,
-    MD_EMBEDDING_MODEL,
-    TXT_BM25_INDEX_DIR,
-    TXT_QDRANT_INDEX_DIR,
-    TXT_QDRANT_COLLECTION,
-    TXT_EMBEDDING_MODEL
-)
-
+# 
+# from etl.config import (
+#     MD_TOPK, 
+#     TXT_TOPK, 
+#     MD_BM25_INDEX_DIR,
+#     MD_QDRANT_INDEX_DIR,
+#     MD_QDRANT_COLLECTION,
+#     MD_EMBEDDING_MODEL,
+#     TXT_BM25_INDEX_DIR,
+#     TXT_QDRANT_INDEX_DIR,
+#     TXT_QDRANT_COLLECTION,
+#     TXT_EMBEDDING_MODEL
+# )
+# 
 load_dotenv()
 
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
@@ -133,7 +133,6 @@ if do_search:
     #context_str = query_context(query)
 
     #response = llm(query,context_str)
-    st.subheader("Results")
 
     initial_state = AgentState(
         query=query,
@@ -142,5 +141,7 @@ if do_search:
     )
 
     result = agent.invoke(initial_state)
+    st.subheader("Results")
     st.markdown(result.get("answer", ""))
+    st.markdown(result.get("citationsr", ""))
     #render_response(result)

@@ -2,8 +2,15 @@
 ## Prompt construction for LLM-based sufficiency judgment
 
 llm_judge_sufficiency_system_prompt = (
-    "You are an expert research assistant."
-    "Your task is to determine whether the following retrieved information is sufficient to answer the question."
+        "You are an evaluator deciding whether a limited set of retrieved excerpts "
+        "is sufficient to answer a question accurately.\n\n"
+        "Important constraints:\n"
+        "- The excerpts are NOT the full document or full knowledge base.\n"
+        "- Relevant information may exist outside what is shown.\n"
+        "- Answer 'sufficient = true' ONLY if the provided excerpts alone "
+        "clearly contain everything needed to answer the question correctly.\n\n"
+        "Be conservative. If key definitions, conditions, formal statements, "
+        "or required distinctions are missing, answer 'sufficient = false'."
     )
 llm_judge_sufficiency_evidence = (
     "Evidence\n"
