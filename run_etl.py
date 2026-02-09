@@ -15,7 +15,7 @@ DEFAULT_PHRASES = [
     "ergodic Schrodinger operators",
 ]
 DEFAULT_CATEGORIES = ["math-ph", "math.SP", "quant-ph"]
-DEFAULT_MAX_PAPERS = 5
+DEFAULT_MAX_PAPERS = 300
 
 def json_default(o):
     if isinstance(o, BaseModel):
@@ -106,29 +106,25 @@ def run_indexing():
     from etl.config import (
         MD_JSON,
         MD_BM25_INDEX_DIR,
-        MD_QDRANT_INDEX_DIR,
         TXT_JSON,
         TXT_BM25_INDEX_DIR,
-        TXT_QDRANT_INDEX_DIR,
     )
     md_json =  MD_JSON
     md_bm25_index_dir =  MD_BM25_INDEX_DIR
-    md_qdrant_index_dir =  MD_QDRANT_INDEX_DIR
     txt_json =  TXT_JSON
     txt_bm25_index_dir =  TXT_BM25_INDEX_DIR
-    txt_qdrant_index_dir =  TXT_QDRANT_INDEX_DIR
 
     logger.info("Calling index_md_bm25")
     out["md_bm25"] = index_md_bm25(md_json, md_bm25_index_dir)
 
     logger.info("Calling index_md_qdrant")
-    out["md_qdrant"] = index_md_qdrant(md_json, md_qdrant_index_dir)
+    out["md_qdrant"] = index_md_qdrant(md_json)
 
     logger.info("Calling index_txt_bm25")
     out["txt_bm25"] = index_txt_bm25(txt_json, txt_bm25_index_dir)
 
     logger.info("Calling index_txt_qdrant")
-    out["txt_qdrant"] = index_txt_qdrant(txt_json, txt_qdrant_index_dir)
+    out["txt_qdrant"] = index_txt_qdrant(txt_json)
 
     logger.info('\tmd_bm25: %s',out["md_bm25"])
     logger.info('\tmd_qdrant: %s',out["md_bm25"])

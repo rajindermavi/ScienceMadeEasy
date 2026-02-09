@@ -72,7 +72,6 @@ def index_md_bm25(json_path: str, bm_index_dir: str):
 
 def index_md_qdrant(
     json_path: str,
-    qdrant_index_path: str,
     collection_name: str = MD_QDRANT_COLLECTION,
     embedding_model: str = MD_EMBEDDING_MODEL,
     batch_size: int = MD_QDRANT_BATCH_SIZE,
@@ -92,9 +91,8 @@ def index_md_qdrant(
     """
     logger = logging.getLogger("etl")
     logger.info(
-        "Starting index_md_qdrant | json_path=%s | qdrant_index_path=%s | collection=%s | model=%s | batch_size=%s",
+        "Starting index_md_qdrant | json_path=%s | collection=%s | model=%s | batch_size=%s",
         json_path,
-        qdrant_index_path,
         collection_name,
         embedding_model,
         batch_size,
@@ -114,7 +112,6 @@ def index_md_qdrant(
 
     return build_qdrant_index(
         Path(json_path),
-        Path(qdrant_index_path),
         spec=spec,
         logger=logger,
     )

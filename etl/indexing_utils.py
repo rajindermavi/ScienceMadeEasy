@@ -128,7 +128,6 @@ class QdrantIndexSpec:
 
 def build_qdrant_index(
     json_path: Path,
-    storage_dir: Path,
     spec: QdrantIndexSpec,
     logger: Optional[logging.Logger] = None,
 ) -> Dict[str, Any]:
@@ -136,7 +135,6 @@ def build_qdrant_index(
     Build (or rebuild) a Qdrant local collection from JSON payloads.
     """
     logger = logger or logging.getLogger("etl")
-    storage_dir.mkdir(parents=True, exist_ok=True)
 
     logger.info("Loading embedding model %s", spec.embedding_model)
     model = SentenceTransformer(spec.embedding_model)
@@ -219,7 +217,6 @@ def build_qdrant_index(
         "skipped_empty_text": totals["skipped_empty_text"],
         "collection_name": spec.collection_name,
         "embedding_model": spec.embedding_model,
-        "index_path": str(storage_dir.resolve()),
     }
 
 

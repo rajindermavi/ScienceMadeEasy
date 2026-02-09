@@ -74,7 +74,6 @@ def index_txt_bm25(json_path: str, bm_index_path: str):
 
 def index_txt_qdrant(
     json_path: str,
-    qdrant_index_path: str,
     collection_name: str = TXT_QDRANT_COLLECTION,
     embedding_model: str = TXT_EMBEDDING_MODEL,
     batch_size: int = TXT_QDRANT_BATCH_SIZE,
@@ -84,9 +83,8 @@ def index_txt_qdrant(
     """
     logger = logging.getLogger("etl")
     logger.info(
-        "Starting index_txt_qdrant | json_path=%s | qdrant_index_path=%s | collection=%s | model=%s | batch_size=%s",
+        "Starting index_txt_qdrant | json_path=%s | collection=%s | model=%s | batch_size=%s",
         json_path,
-        qdrant_index_path,
         collection_name,
         embedding_model,
         batch_size,
@@ -106,7 +104,6 @@ def index_txt_qdrant(
 
     return build_qdrant_index(
         Path(json_path),
-        Path(qdrant_index_path),
         spec=spec,
         logger=logger,
     )

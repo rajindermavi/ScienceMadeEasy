@@ -54,16 +54,16 @@ TXT_JSON = DATA_ETL_DIR / "txt_data.json"
 
 MD_BM25_INDEX_DIR = DATA_INDEX_DIR / 'md_bm25_storage'
 MD_BM25_INDEX_DIR.mkdir(parents=True, exist_ok=True)
-MD_QDRANT_INDEX_DIR = DATA_INDEX_DIR / 'md_qrant_storage'
-MD_QDRANT_INDEX_DIR.mkdir(parents=True, exist_ok=True)
+#MD_QDRANT_INDEX_DIR = DATA_INDEX_DIR / 'md_qrant_storage'
+#MD_QDRANT_INDEX_DIR.mkdir(parents=True, exist_ok=True)
 TXT_BM25_INDEX_DIR = DATA_INDEX_DIR / 'txt_bm25_storage'
 TXT_BM25_INDEX_DIR.mkdir(parents=True, exist_ok=True)
-TXT_QDRANT_INDEX_DIR = DATA_INDEX_DIR / 'txt_qrant_storage'
-TXT_QDRANT_INDEX_DIR.mkdir(parents=True, exist_ok=True)
+#TXT_QDRANT_INDEX_DIR = DATA_INDEX_DIR / 'txt_qrant_storage'
+#TXT_QDRANT_INDEX_DIR.mkdir(parents=True, exist_ok=True)
 
 #QDRANT
 QDRANT_HOST = os.getenv("QDRANT_HOST")
-QDRANT_PORT = int(os.getenv("QDRANT_PORT","6333")) if os.getenv("MD_QDRANT_PORT") else None
+QDRANT_PORT = int(os.getenv("QDRANT_PORT","6333")) if os.getenv("QDRANT_PORT") else None
 
 # MD Indexing
 MD_QDRANT_COLLECTION = os.getenv("MD_QDRANT_COLLECTION","md_chunks")

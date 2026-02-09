@@ -44,8 +44,11 @@ def build_arxiv_query(phrases: Iterable[str], categories: Iterable[str]) -> str:
 def arxiv_client_search(query, max_results):
     logger.info(f'Run {sys._getframe().f_code.co_name}.')
     page_size = 25
-    delay_seconds = 1
+    delay_seconds = 5
     batch_size = 50
+    backoff_retries = 5
+    backoff_base_seconds = 5
+    backoff_max_seconds = 60
     total_collected = 0
     collected = []
     max_iterations = max_results//batch_size + 1
@@ -60,14 +63,23 @@ def arxiv_client_search(query, max_results):
                 collected.append(r)
             except StopIteration:
                 logger.info(f'End of batch. Collected: {len(collected)}. StopIteration.')
-                break
+                return collected, False
             except Exception as e:
+                msg = str(e)
+                if "HTTP 429" in msg:
+                    wait_seconds = backoff_base_seconds
+                    logger.info(
+                        "HTTP 429 from arXiv. Backing off for %s seconds (retry %s/%s).",
+                        wait_seconds,
+                        1,
+                        backoff_retries,
+                    )
+                    time.sleep(wait_seconds)
+                    return collected, True
                 logger.info(f'End of batch. Collected: {len(collected)}.')
-                
                 logger.info(f'\t\tException: {e}.')
                 #print(f'End of batch. Exception {e}. Collected: {len(collected)}.')
-                break  
-        return collected
+                return collected, False
 
     client = arxiv.Client(
         page_size=page_size,
@@ -75,7 +87,11 @@ def arxiv_client_search(query, max_results):
         num_retries=3,
     )
 
-    for _ in range(max_iterations):
+    iterations = 0
+    retries = 0
+    while iterations < max_iterations:
+        logger.info(f'iteration: {iterations}')
+        logger.info(f'retries: {retries}')
         search = arxiv.Search(
                 query=query,
                 max_results=batch_size+total_collected,
@@ -83,12 +99,23 @@ def arxiv_client_search(query, max_results):
                 sort_order=arxiv.SortOrder.Descending,
         )
         results = client.results(search,offset=total_collected)
-        batch = _iterate_results(results)
+        batch, retry_needed = _iterate_results(results)
         #print(f'batch size: {len(batch)}')
+        if retry_needed:
+            retries += 1
+            if retries > backoff_retries:
+                logger.info("Exceeded HTTP 429 retry limit. Stopping early.")
+                break
+            if batch:
+                total_collected += len(batch)
+                collected.extend(batch)
+            continue
+        retries = 0
         if len(batch) == 0:
             break
         total_collected += len(batch)
         collected.extend(batch)
+        iterations += 1
         time.sleep(3)
     logger.info(f'Completed {sys._getframe().f_code.co_name}.')
     return collected
