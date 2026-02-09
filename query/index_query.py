@@ -32,8 +32,6 @@ def connect_qdrant(
     Connect to Qdrant either in embedded mode (path=...) or server mode (host/port).
     Provide either qdrant_index_path OR (host[, port, api_key]).
     """
-    if qdrant_index_path:
-        return QdrantClient(path=str(Path(qdrant_index_path)))
     if host:
         return QdrantClient(host=host, port=port or 6333, api_key=api_key)
     raise ValueError("Provide qdrant_index_path for embedded OR host[/port] for server mode.")

@@ -61,10 +61,12 @@ TXT_BM25_INDEX_DIR.mkdir(parents=True, exist_ok=True)
 TXT_QDRANT_INDEX_DIR = DATA_INDEX_DIR / 'txt_qrant_storage'
 TXT_QDRANT_INDEX_DIR.mkdir(parents=True, exist_ok=True)
 
+#QDRANT
+QDRANT_HOST = os.getenv("QDRANT_HOST")
+QDRANT_PORT = int(os.getenv("QDRANT_PORT","6333")) if os.getenv("MD_QDRANT_PORT") else None
+
 # MD Indexing
 MD_QDRANT_COLLECTION = os.getenv("MD_QDRANT_COLLECTION","md_chunks")
-MD_QDRANT_HOST = os.getenv("MD_QDRANT_HOST")
-MD_QDRANT_PORT = int(os.getenv("MD_QDRANT_PORT","6333")) if os.getenv("MD_QDRANT_PORT") else None
 MD_QDRANT_API_KEY = os.getenv("MD_QDRANT_API_KEY")
 MD_EMBEDDING_MODEL = os.getenv("MD_EMBEDDING_MODEL","BAAI/bge-small-en")
 MD_EMBEDDING_DIM = int(os.getenv("MD_EMBEDDING_DIM","384"))
@@ -76,8 +78,6 @@ MD_TOPK = int(os.getenv("MD_TOPK","10"))
 
 # TXT Indexing
 TXT_QDRANT_COLLECTION = os.getenv("TXT_QDRANT_COLLECTION","txt_chunks")
-TXT_QDRANT_HOST = os.getenv("TXT_QDRANT_HOST")
-TXT_QDRANT_PORT = int(os.getenv("TXT_QDRANT_PORT","6333")) if os.getenv("TXT_QDRANT_PORT") else None
 TXT_QDRANT_API_KEY = os.getenv("TXT_QDRANT_API_KEY")
 TXT_EMBEDDING_MODEL = os.getenv("TXT_EMBEDDING_MODEL","BAAI/bge-base-en-v1.5")
 TXT_EMBEDDING_DIM = int(os.getenv("TXT_EMBEDDING_DIM","768"))

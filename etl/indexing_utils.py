@@ -12,6 +12,8 @@ from sentence_transformers import SentenceTransformer
 from whoosh import index
 from whoosh.fields import Schema
 
+from etl import config
+
 JsonDict = Dict[str, Any]
 
 
@@ -145,7 +147,7 @@ def build_qdrant_index(
             % (spec.embedding_model, dim, spec.expected_dim)
         )
 
-    client = QdrantClient(path=str(storage_dir))
+    client = QdrantClient(host = config.QDRANT_HOST ,port=config.QDRANT_PORT)
     existing = {c.name for c in client.get_collections().collections}
     if spec.collection_name in existing and spec.recreate_collection:
         logger.info("Deleting existing Qdrant collection %s", spec.collection_name)
@@ -207,6 +209,8 @@ def build_qdrant_index(
         totals["skipped_decode"],
         totals["skipped_empty_text"],
     )
+
+    client.close()
 
     return {
         "records_indexed": totals["indexed"],
