@@ -61,9 +61,12 @@ def final_answer_user_prompt(query, chunk_data_list):
     prompt = f"QUESTION:\n{query}\n\n"
     prompt += "RETRIEVED INFORMATION:\n"
     for chunk_data in chunk_data_list:
-        prompt += f"---\n\nPaper ID: {chunk_data.get('paper_id','N/A')}\nSection: {chunk_data.get('section','N/A')}\nText: {chunk_data['text']}\n\n"
-    prompt += "response format: {\n \"answer\": \"<your answer here>\" ,\n \"citations\": [\"<paper_id1>\", \"<paper_id2>\", ...] \n}"
-    prompt += "INSTRUCTIONS:\n- Answer the question using ONLY the RETRIEVED INFORMATION.\n- Cite each piece of evidence you use with its paper_id like [paper123].\n- If the answer is uncertain with the given information, state what is missing."
+        prompt += f"---\n\nPaper ID: {chunk_data.get('chunk_id','N/A')}\nSection: {chunk_data.get('section','N/A')}\nText: {chunk_data['text']}\n\n"
+    prompt += "response format: {\n \"answer\": \"<your answer with numbered citations here>\" ,\n \"citations\": {{1:\"<chunk_id#1>\", 2:\"<chunk_id#2>\", ...}} \n}"
+    prompt += "INSTRUCTIONS:"
+    prompt += "\n- Answer the question using ONLY the RETRIEVED INFORMATION."
+    prompt += "\n- Cite each piece of evidence you use with a number and map the number to its chunk_id like n: <chunk_d#n>."
+    prompt += "\n- If the answer is uncertain with the given information, state what is missing."
     return prompt
 
 final_answer_response_schema = {

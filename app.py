@@ -9,11 +9,14 @@
 # - Optional live LLM call if OPENAI_API_KEY is set (commented template)
 # ---------------------------------------------------------------
 
+from dotenv import load_dotenv
+load_dotenv()
+import os
+
 import os
 import re
 import textwrap
 import streamlit as st
-from dotenv import load_dotenv
 
 from openai import OpenAI
 
@@ -42,7 +45,6 @@ from query.rag_agent import (
 #     TXT_EMBEDDING_MODEL
 # )
 # 
-load_dotenv()
 
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
@@ -122,26 +124,73 @@ client = OpenAI()
 st.set_page_config(page_title="SME RAG", layout="wide")
 st.title("Science Made Easy")
 
-# Query box
-query = st.text_area("Enter your question/query", height=120, placeholder="e.g., Explain spectral statistics for quasiperiodic schrodinger operators with diophantine frequencies in the critical regime")
+# ---------------------------
+# Session state
+# ---------------------------
+if "qa_history" not in st.session_state:
+    st.session_state.qa_history = []
 
-# Search button
+if "current_query" not in st.session_state:
+    st.session_state.current_query = ""
+
+# ---------------------------
+# Render previous (frozen) Q&A
+# ---------------------------
+for idx, item in enumerate(st.session_state.qa_history):
+    st.text_area(
+        f"Question {idx + 1}",
+        value=item["query"],
+        height=120,
+        disabled=True,
+        key=f"frozen_query_{idx}",
+    )
+    st.button(
+        "Submitted",
+        use_container_width=True,
+        disabled=True,
+        key=f"frozen_submit_{idx}",
+    )
+    st.subheader(f"Results {idx + 1}")
+    st.markdown(f'answer: {item.get("answer","")}')
+    st.markdown(f'citations:\n {item.get("citations","")}')
+    st.markdown(f'raw:\n {item.get("raw","")}')
+
+st.divider()
+
+# ---------------------------
+# Current (active) Q&A input
+# ---------------------------
+query = st.text_area(
+    "Enter your question/query",
+    height=120,
+    placeholder="e.g., Describe the spectral properties of the Almost Mathieu Operator",
+    key="current_query",
+)
+
 do_search = st.button("Submit Query", use_container_width=True)
 
-if do_search:
-
-    #context_str = query_context(query)
-
-    #response = llm(query,context_str)
-
+if do_search and query.strip():
     initial_state = AgentState(
         query=query,
         k=10,
-        max_k = 20
+        max_k=20,
     )
 
     result = agent.invoke(initial_state)
-    st.subheader("Results")
-    st.markdown(result.get("answer", ""))
-    st.markdown(result.get("citationsr", ""))
-    #render_response(result)
+    answer = result.get("answer", "")
+    citations = result.get("citations", "")
+    raw = result.get("raw", "")
+
+    st.session_state.qa_history.append(
+        {
+            "query": query,
+            "answer": answer,
+            "citations": citations,
+            "raw": raw,
+        }
+    )
+
+    # Clear input for the next question
+    st.session_state.current_query = ""
+
+    st.rerun()
