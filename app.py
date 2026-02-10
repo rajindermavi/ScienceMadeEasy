@@ -102,20 +102,22 @@ client = OpenAI()
 #    return response.output_text
 #
 #
-#def render_response(raw_text: str) -> None:
-#    """Render plain Markdown with LaTeX segments handled via st.latex."""
-#    normalized = raw_text.replace("\\\\", "\\")
-#    normalized = normalized.replace(r"\(", "$").replace(r"\)", "$")
-#    tokens = re.split(r"(\\\[.*?\\\]|\\\(.*?\\\))", normalized, flags=re.DOTALL)
-#    for token in tokens:
-#        if not token:
-#            continue
-#        if token.startswith("\\[") and token.endswith("\\]"):
-#            st.latex(token[2:-2].strip())
-#        elif token.startswith("\\(") and token.endswith("\\)"):
-#            st.latex(token[2:-1].strip())
-#        else:
-#            st.markdown(token)
+def render_response(raw_text: str) -> None:
+    """Render plain Markdown with LaTeX segments handled via st.latex."""
+    normalized = raw_text.replace("\\\\", "\\")
+    normalized = normalized.replace(r"\(", "$").replace(r"\)", "$")
+    tokens = re.split(r"(\\\[.*?\\\]|\\\(.*?\\\))", normalized, flags=re.DOTALL)
+    for token in tokens:
+        if not token:
+            continue
+        if token.startswith("\\[") and token.endswith("\\]"):
+            st.latex(token[2:-2].strip())
+        elif token.startswith("\\(") and token.endswith("\\)"):
+            st.latex(token[2:-1].strip())
+        else:
+            st.markdown(token)
+
+
 
 
 # ---------------------------
@@ -138,11 +140,12 @@ if "current_query" not in st.session_state:
 # ---------------------------
 for idx, item in enumerate(st.session_state.qa_history):
     st.text_area(
-        f"Question {idx + 1}",
+        label="Previous query",
         value=item["query"],
         height=120,
         disabled=True,
         key=f"frozen_query_{idx}",
+        label_visibility="collapsed",
     )
     st.button(
         "Submitted",
@@ -150,30 +153,32 @@ for idx, item in enumerate(st.session_state.qa_history):
         disabled=True,
         key=f"frozen_submit_{idx}",
     )
-    st.subheader(f"Results {idx + 1}")
-    answer_string = item.get("answer","")
-    st.markdown(answer_string)
+    answer_string = item.get("answer", "")
+    render_response(answer_string)
     citations = item.get("citations","")
-    citation_string = ''
-    for key, reference in citations.items():
-        citation_string += f'[{key}]: ' + reference + '\n'
-    st.markdown(citation_string)
+    citation_lines = [f"[{key}]: {reference}" for key, reference in citations.items()]
+    st.markdown("<br>".join(citation_lines), unsafe_allow_html=True)
 
 st.divider()
 
 # ---------------------------
 # Current (active) Q&A input
 # ---------------------------
-with st.form("query_form", clear_on_submit=True):
+with st.form("query_form", clear_on_submit=False):
     query = st.text_area(
         "Enter your question/query",
         height=120,
         placeholder="e.g., Describe the spectral properties of the Almost Mathieu Operator",
         key="current_query",
     )
-    do_search = st.form_submit_button("Submit Query", use_container_width=True)
+    do_search = st.form_submit_button(
+        "Submit Query",
+        use_container_width=True,
+        disabled=st.session_state.get("is_submitting", False),
+    )
 
 if do_search and query.strip():
+    st.session_state.is_submitting = True
     initial_state = AgentState(
         query=query,
         k=10,
@@ -192,4 +197,5 @@ if do_search and query.strip():
         }
     )
 
+    st.session_state.is_submitting = False
     st.rerun()

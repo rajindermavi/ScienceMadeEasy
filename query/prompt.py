@@ -52,7 +52,8 @@ llm_judge_sufficiency_response_schema = {
 final_answer_system_prompt = (
     "You are a helpful and precise research assistant for answering complex scientific questions. "
     "Use ONLY the provided retrieved information to construct your answer. "
-    "Cite each piece of evidence you use with its paper_id."
+    "Cite each piece of evidence you use with numbered bracket citations like [1], [2]. "
+    "Do NOT include chunk IDs or section metadata in the answer text. "
     "If you use multiple pieces of evidence, cite each one where relevant. "
     "If the retrieved information is insufficient to answer the question, say so clearly and specify what is missing."
 )
@@ -62,10 +63,12 @@ def final_answer_user_prompt(query, chunk_data_list):
     prompt += "RETRIEVED INFORMATION:\n"
     for chunk_data in chunk_data_list:
         prompt += f"---\n\nPaper ID: {chunk_data.get('chunk_id','N/A')}\nSection: {chunk_data.get('section','N/A')}\nText: {chunk_data['text']}\n\n"
-    prompt += "response format: {\n \"answer\": \"<your answer with numbered citations here>\" ,\n \"citations\": {\"1\":\"<chunk_id#1>\", \"2\":\"<chunk_id#2>\", ...} \n}"
+    prompt += "response format: {\n \"answer\": \"<your answer with [1], [2] citations only>\",\n \"citations\": [{\"number\":\"1\",\"chunk_id\":\"<chunk_id#1>\"}, {\"number\":\"2\",\"chunk_id\":\"<chunk_id#2>\"}] \n}\n"
     prompt += "INSTRUCTIONS:"
     prompt += "\n- Answer the question using ONLY the RETRIEVED INFORMATION."
-    prompt += "\n- Cite each piece of evidence you use with a number and map the number to its chunk_id like n: <chunk_d#n>."
+    prompt += "\n- In the answer, use ONLY bracketed numbers like [1], [2] as citations."
+    prompt += "\n- Do NOT include chunk IDs, section labels, or line references in the answer text."
+    prompt += "\n- In the citations array, map each number to the chunk_id it refers to."
     prompt += "\n- If the answer is uncertain with the given information, state what is missing."
     return prompt
 

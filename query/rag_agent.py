@@ -190,7 +190,7 @@ def synthesize_answer(state: AgentState):
         chunk_id = reference['chunk_id']
         chunk = chunk_packet[chunk_id]
         ref = chunk.get('title') or ''
-        ref += '\n' + (paper.get('url') or '')
+        ref += '\n' + (chunk.get('url') or '')
         result_citations[key] = ref
         
 
