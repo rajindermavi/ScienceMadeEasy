@@ -127,9 +127,9 @@ def run_indexing():
     out["txt_qdrant"] = index_txt_qdrant(txt_json)
 
     logger.info('\tmd_bm25: %s',out["md_bm25"])
-    logger.info('\tmd_qdrant: %s',out["md_bm25"])
+    logger.info('\tmd_qdrant: %s',out["md_qdrant"])
     logger.info('\ttxt_bm25: %s',out["txt_bm25"])
-    logger.info('\ttxt_qdrant: %s',out["txt_bm25"])
+    logger.info('\ttxt_qdrant: %s',out["txt_qdrant"])
 
     logger.info("run_indexing complete")
 

@@ -38,7 +38,6 @@ def query_retrieval(query):
     resp_md = hybrid_search_from_disk(
         query=query,
         bm_index_path=config.MD_BM25_INDEX_DIR,
-        qdrant_index_path=config.MD_QDRANT_INDEX_DIR,
         collection_name=config.MD_QDRANT_COLLECTION,
         embedding_model=config.MD_EMBEDDING_MODEL,
         topk=config.MD_TOPK,
@@ -48,7 +47,6 @@ def query_retrieval(query):
     resp_txt = hybrid_search_from_disk(
         query=query,
         bm_index_path=config.TXT_BM25_INDEX_DIR,
-        qdrant_index_path=config.TXT_QDRANT_INDEX_DIR,
         collection_name=config.TXT_QDRANT_COLLECTION,
         embedding_model=config.TXT_EMBEDDING_MODEL,
         topk=config.TXT_TOPK,

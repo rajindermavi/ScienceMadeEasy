@@ -23,7 +23,6 @@ def open_bm25_index(bm_index_path: str):
 
 
 def connect_qdrant(
-    qdrant_index_path: Optional[str] = None,
     host: Optional[str] = None,
     port: Optional[int] = None,
     api_key: Optional[str] = None,
@@ -121,7 +120,6 @@ def rrf_fuse(*ranked_lists: List[Tuple[str, float]], k: int = 60) -> List[Tuple[
 class HybridSearchSettings:
     source: str
     bm_index_path: Path
-    qdrant_index_path: Optional[Path]
     qdrant_host: Optional[str]
     qdrant_port: Optional[int]
     qdrant_api_key: Optional[str]
@@ -137,7 +135,6 @@ class HybridSearchSettings:
         cls,
         source: str,
         bm_index_path: str,
-        qdrant_index_path: Optional[str],
         collection_name: Optional[str],
         embedding_model: Optional[str],
         bm25_candidates: Optional[int],
@@ -152,7 +149,6 @@ class HybridSearchSettings:
         return cls(
             source=source,
             bm_index_path=Path(bm_index_path),
-            qdrant_index_path=Path(qdrant_index_path) if qdrant_index_path else None,
             qdrant_host=qdrant_host,
             qdrant_port=qdrant_port,
             qdrant_api_key=qdrant_api_key,
@@ -172,7 +168,6 @@ class HybridSearchService:
         self.settings = settings
         self._bm25_index = open_bm25_index(str(settings.bm_index_path))
         self._qdrant = connect_qdrant(
-            qdrant_index_path=str(settings.qdrant_index_path) if settings.qdrant_index_path else None,
             host=settings.qdrant_host,
             port=settings.qdrant_port,
             api_key=settings.qdrant_api_key,
@@ -260,9 +255,7 @@ class HybridSearchService:
                 "bm25_candidates": len(bm_hits),
                 "dense_candidates": len(dense_hits),
                 "bm_index_path": str(self.settings.bm_index_path.resolve()),
-                "qdrant_mode": "embedded"
-                if self.settings.qdrant_index_path
-                else f"server:{self.settings.qdrant_host}:{self.settings.qdrant_port or 6333}",
+                "qdrant_mode": f"server:{self.settings.qdrant_host}:{self.settings.qdrant_port or 6333}",
                 "collection_name": self.settings.collection_name,
                 "embedding_model": self.settings.embedding_model,
                 "source": self.settings.source,
@@ -307,7 +300,6 @@ def fetch_payloads_for_ids(
 def hybrid_search_from_disk(
     query: str,
     bm_index_path: str,
-    qdrant_index_path: Optional[str] = None,
     qdrant_host: Optional[str] = None,
     qdrant_port: Optional[int] = None,
     qdrant_api_key: Optional[str] = None,
@@ -329,7 +321,6 @@ def hybrid_search_from_disk(
     settings = HybridSearchSettings.from_source(
         source=source,
         bm_index_path=bm_index_path,
-        qdrant_index_path=qdrant_index_path,
         collection_name=collection_name,
         embedding_model=embedding_model,
         bm25_candidates=bm25_candidates,

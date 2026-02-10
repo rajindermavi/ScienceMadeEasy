@@ -136,6 +136,48 @@ def build_qdrant_index(
     """
     logger = logger or logging.getLogger("etl")
 
+    if not config.QDRANT_HOST or not config.QDRANT_PORT:
+        logger.warning(
+            "Qdrant not configured (QDRANT_HOST/QDRANT_PORT missing). Skipping Qdrant indexing."
+        )
+        return {
+            "records_indexed": 0,
+            "skipped_blank": 0,
+            "skipped_decode": 0,
+            "skipped_empty_text": 0,
+            "collection_name": spec.collection_name,
+            "embedding_model": spec.embedding_model,
+            "skipped": True,
+            "reason": "missing_qdrant_config",
+        }
+
+    client = None
+    try:
+        client = QdrantClient(host=config.QDRANT_HOST, port=config.QDRANT_PORT)
+        existing = {c.name for c in client.get_collections().collections}
+    except Exception as exc:
+        if client is not None:
+            try:
+                client.close()
+            except Exception:
+                pass
+        logger.error(
+            "Qdrant unavailable at %s:%s; skipping Qdrant indexing. Error: %s",
+            config.QDRANT_HOST,
+            config.QDRANT_PORT,
+            exc,
+        )
+        return {
+            "records_indexed": 0,
+            "skipped_blank": 0,
+            "skipped_decode": 0,
+            "skipped_empty_text": 0,
+            "collection_name": spec.collection_name,
+            "embedding_model": spec.embedding_model,
+            "skipped": True,
+            "reason": "qdrant_unavailable",
+        }
+
     logger.info("Loading embedding model %s", spec.embedding_model)
     model = SentenceTransformer(spec.embedding_model)
     dim = model.get_sentence_embedding_dimension()
@@ -144,9 +186,6 @@ def build_qdrant_index(
             "Embedding dimension mismatch: model '%s' returns %s dims but spec expects %s"
             % (spec.embedding_model, dim, spec.expected_dim)
         )
-
-    client = QdrantClient(host = config.QDRANT_HOST ,port=config.QDRANT_PORT)
-    existing = {c.name for c in client.get_collections().collections}
     if spec.collection_name in existing and spec.recreate_collection:
         logger.info("Deleting existing Qdrant collection %s", spec.collection_name)
         client.delete_collection(spec.collection_name)

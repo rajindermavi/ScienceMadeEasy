@@ -56,13 +56,12 @@ class IndexRetrieval:
 
     @staticmethod
     def query_retrieval(query,md_topk = config.MD_TOPK,txt_topk = config.TXT_TOPK):
-        md_use_server = bool(config.MD_QDRANT_HOST)
+        md_use_server = bool(config.QDRANT_HOST)
         resp_md = hybrid_search_from_disk(
             query=query,
             bm_index_path=config.MD_BM25_INDEX_DIR,
-            qdrant_index_path=None if md_use_server else config.MD_QDRANT_INDEX_DIR,
-            qdrant_host=config.MD_QDRANT_HOST if md_use_server else None,
-            qdrant_port=config.MD_QDRANT_PORT if md_use_server else None,
+            qdrant_host=config.QDRANT_HOST if md_use_server else None,
+            qdrant_port=config.QDRANT_PORT if md_use_server else None,
             qdrant_api_key=config.MD_QDRANT_API_KEY if md_use_server else None,
             collection_name=config.MD_QDRANT_COLLECTION,
             embedding_model=config.MD_EMBEDDING_MODEL,
@@ -70,13 +69,12 @@ class IndexRetrieval:
             source="md",
             return_payloads=True,
         )
-        txt_use_server = bool(config.TXT_QDRANT_HOST)
+        txt_use_server = bool(config.QDRANT_HOST)
         resp_txt = hybrid_search_from_disk(
             query=query,
             bm_index_path=config.TXT_BM25_INDEX_DIR,
-            qdrant_index_path=None if txt_use_server else config.TXT_QDRANT_INDEX_DIR,
-            qdrant_host=config.TXT_QDRANT_HOST if txt_use_server else None,
-            qdrant_port=config.TXT_QDRANT_PORT if txt_use_server else None,
+            qdrant_host=config.QDRANT_HOST if txt_use_server else None,
+            qdrant_port=config.QDRANT_PORT if txt_use_server else None,
             qdrant_api_key=config.TXT_QDRANT_API_KEY if txt_use_server else None,
             collection_name=config.TXT_QDRANT_COLLECTION,
             embedding_model=config.TXT_EMBEDDING_MODEL,
