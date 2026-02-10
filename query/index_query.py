@@ -433,6 +433,6 @@ def rerank(query, items, text_key: str = "text", topk: int = 10, model_name: str
     """items = [{'chunk_id':..., 'text':..., ...}, ...]"""
     reranker = _load_reranker(model_name)
     pairs = [(query, it.get(text_key, "")) for it in items]
-    scores = reranker.predict(pairs)  # higher is better
+    scores = reranker.predict(pairs,batch_size=8)  # higher is better
     ranked = sorted(zip(items, scores), key=lambda x: x[1], reverse=True)
     return [it for it, _ in ranked[:topk]]

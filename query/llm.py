@@ -1,4 +1,5 @@
 import os
+import json
 from dotenv import load_dotenv
 
 
@@ -15,7 +16,7 @@ class LLM:
     client = OpenAI()
     
     @staticmethod
-    def generate_text(system_prompt: str, user_prompt: str) -> str:
+    def generate_text(system_prompt: str, user_prompt: str) -> dict:
         response = LLM.client.chat.completions.create(
             model="gpt-4o",
             messages=[
@@ -26,7 +27,7 @@ class LLM:
         return response.choices[0].message.content.strip()
 
     @staticmethod
-    def generate_json(system_prompt: str, user_prompt: str, schema:dict) -> str:
+    def generate_json(system_prompt: str, user_prompt: str, schema:dict) -> dict:
         response = LLM.client.chat.completions.create(
             model="gpt-4o",
             messages=[
@@ -35,4 +36,5 @@ class LLM:
             ],
             response_format={"type": "json_schema", "json_schema": schema}
         )
-        return response.choices[0].message.content.strip()
+        content = response.choices[0].message.content.strip()
+        return json.loads(content)

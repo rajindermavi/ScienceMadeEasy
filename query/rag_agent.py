@@ -1,5 +1,5 @@
 
-from typing import List, Set, Optional
+from typing import List, Set, Optional, Dict
 from pydantic import BaseModel, Field
 
 from langgraph.graph import StateGraph, END
@@ -82,6 +82,11 @@ class AgentState(BaseModel):
 
     # control flags
     stop: bool = False
+
+    # TEMP
+
+    citations:List = None
+    raw:Dict = None
 
 def search_index(state: AgentState) -> AgentState:
     chunks = retriever.search(state.query, k=state.k)
@@ -179,12 +184,13 @@ def synthesize_answer(state: AgentState):
 
     answer = response.get("answer", "No answer generated.")
     citations = [chunk_packet[cid] for cid in response.get("citations", []) if cid in chunk_packet]
-    for cid in response.get("citations", []):
-        chunk_packet[cid]['cited'] = True
+    #for cid in response.get("citations", []):
+    #    chunk_packet[cid]['cited'] = True
 
     return {
         "answer": answer,
-        "citations": citations
+        "citations": citations,
+        "raw":response
     }
 
 ## ------------------ AGENT CONSTRUCTION ------------------ ##
