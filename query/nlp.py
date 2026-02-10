@@ -21,13 +21,6 @@ def render_response(raw_text: str) -> None:
         else:
             st.markdown(token)
 
-## ------------------ MATHY QUERY DETECTION ------------------ ##
-
-def is_mathy(query: str) -> bool:
-    q = query.lower()
-    latex_tokens = ["\\lambda", "\\sum", "\\nabla", "\\alpha", "\\beta", "$", "eigenvalue", "spectral", "laplacian"]
-    return any(tok in q for tok in latex_tokens)
-
 ## ------------------ TEXT SCORING ------------------ ##
 
 boilerplate_verbs_score = -1.0

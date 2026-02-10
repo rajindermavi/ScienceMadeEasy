@@ -3,6 +3,10 @@ import sys
 from pydantic import BaseModel
 from pathlib import Path
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 from log.logger import  get_logger
 logger = get_logger(log_path=f'{Path(__file__).stem}.log', level='INFO')
 
@@ -16,6 +20,15 @@ DEFAULT_PHRASES = [
 ]
 DEFAULT_CATEGORIES = ["math-ph", "math.SP", "quant-ph"]
 DEFAULT_MAX_PAPERS = 300
+
+ARXIV_PHRASES = os.getenv('ARXIV_PHRASES')
+ARXIV_CATEGORIES = os.getenv('ARXIV_CATEGORIES')
+ARXIV_MAX_PAPERS = os.getenv('ARXIV_MAX_PAPERS')
+
+ARXIV_PHRASES = [phrase.strip() for phrase in ARXIV_PHRASES.split('\n')] if ARXIV_PHRASES else DEFAULT_PHRASES
+ARXIV_CATEGORIES = [category.strip() for category in ARXIV_CATEGORIES.split('\n')] if ARXIV_CATEGORIES else DEFAULT_CATEGORIES
+ARXIV_MAX_PAPERS = ARXIV_MAX_PAPERS if ARXIV_MAX_PAPERS else DEFAULT_MAX_PAPERS
+
 
 def json_default(o):
     if isinstance(o, BaseModel):
@@ -140,7 +153,7 @@ def run_etl(stages='abcd'):
 
     if 'a' in stages:
         logger.info("Stage A: Arxiv Extraction")
-        phrases,categories,max_papers = DEFAULT_PHRASES,DEFAULT_CATEGORIES,DEFAULT_MAX_PAPERS
+        phrases,categories,max_papers = ARXIV_PHRASES,ARXIV_CATEGORIES,ARXIV_MAX_PAPERS
 
         arxiv_extract_details = run_arxiv_extract(phrases, categories, max_papers)
         papers = arxiv_extract_details.get('papers')  
