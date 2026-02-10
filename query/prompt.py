@@ -62,7 +62,7 @@ def final_answer_user_prompt(query, chunk_data_list):
     prompt += "RETRIEVED INFORMATION:\n"
     for chunk_data in chunk_data_list:
         prompt += f"---\n\nPaper ID: {chunk_data.get('chunk_id','N/A')}\nSection: {chunk_data.get('section','N/A')}\nText: {chunk_data['text']}\n\n"
-    prompt += "response format: {\n \"answer\": \"<your answer with numbered citations here>\" ,\n \"citations\": {{1:\"<chunk_id#1>\", 2:\"<chunk_id#2>\", ...}} \n}"
+    prompt += "response format: {\n \"answer\": \"<your answer with numbered citations here>\" ,\n \"citations\": {\"1\":\"<chunk_id#1>\", \"2\":\"<chunk_id#2>\", ...} \n}"
     prompt += "INSTRUCTIONS:"
     prompt += "\n- Answer the question using ONLY the RETRIEVED INFORMATION."
     prompt += "\n- Cite each piece of evidence you use with a number and map the number to its chunk_id like n: <chunk_d#n>."
@@ -72,16 +72,24 @@ def final_answer_user_prompt(query, chunk_data_list):
 final_answer_response_schema = {
   "name": "FinalAnswer",
   "strict": True,
-    "schema": {
-        "type": "object",
-        "properties": {
-            "answer": {"type": "string"},
-            "citations": {
-                "type": "array",
-                "items": {"type": "string"}
-            }
-        },      
-        "required": ["answer", "citations"],
-        "additionalProperties": False
-    }
+  "schema": {
+    "type": "object",
+    "properties": {
+      "answer": { "type": "string" },
+      "citations": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "number": { "type": "string" },
+            "chunk_id": { "type": "string" }
+          },
+          "required": ["number", "chunk_id"],
+          "additionalProperties": False
+        }
+      }
+    },
+    "required": ["answer", "citations"],
+    "additionalProperties": False
+  }
 }

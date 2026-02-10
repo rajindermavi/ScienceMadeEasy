@@ -151,23 +151,27 @@ for idx, item in enumerate(st.session_state.qa_history):
         key=f"frozen_submit_{idx}",
     )
     st.subheader(f"Results {idx + 1}")
-    st.markdown(f'answer: {item.get("answer","")}')
-    st.markdown(f'citations:\n {item.get("citations","")}')
-    st.markdown(f'raw:\n {item.get("raw","")}')
+    answer_string = item.get("answer","")
+    st.markdown(answer_string)
+    citations = item.get("citations","")
+    citation_string = ''
+    for key, reference in citations.items():
+        citation_string += f'[{key}]: ' + reference + '\n'
+    st.markdown(citation_string)
 
 st.divider()
 
 # ---------------------------
 # Current (active) Q&A input
 # ---------------------------
-query = st.text_area(
-    "Enter your question/query",
-    height=120,
-    placeholder="e.g., Describe the spectral properties of the Almost Mathieu Operator",
-    key="current_query",
-)
-
-do_search = st.button("Submit Query", use_container_width=True)
+with st.form("query_form", clear_on_submit=True):
+    query = st.text_area(
+        "Enter your question/query",
+        height=120,
+        placeholder="e.g., Describe the spectral properties of the Almost Mathieu Operator",
+        key="current_query",
+    )
+    do_search = st.form_submit_button("Submit Query", use_container_width=True)
 
 if do_search and query.strip():
     initial_state = AgentState(
@@ -179,18 +183,13 @@ if do_search and query.strip():
     result = agent.invoke(initial_state)
     answer = result.get("answer", "")
     citations = result.get("citations", "")
-    raw = result.get("raw", "")
 
     st.session_state.qa_history.append(
         {
             "query": query,
             "answer": answer,
-            "citations": citations,
-            "raw": raw,
+            "citations": citations
         }
     )
-
-    # Clear input for the next question
-    st.session_state.current_query = ""
 
     st.rerun()

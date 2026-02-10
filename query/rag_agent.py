@@ -85,8 +85,8 @@ class AgentState(BaseModel):
 
     # TEMP
 
-    citations:List = None
-    raw:Dict = None
+    # citations:List = None
+    citations: Dict = None
 
 def search_index(state: AgentState) -> AgentState:
     chunks = retriever.search(state.query, k=state.k)
@@ -183,14 +183,26 @@ def synthesize_answer(state: AgentState):
     )
 
     answer = response.get("answer", "No answer generated.")
-    citations = [chunk_packet[cid] for cid in response.get("citations", []) if cid in chunk_packet]
-    #for cid in response.get("citations", []):
+    citations = response.get("citations",{})
+    result_citations = {}
+    for reference in citations:
+        key = reference['number']
+        chunk_id = reference['chunk_id']
+        chunk = chunk_packet[chunk_id]
+        ref = chunk.get('title') or ''
+        ref += '\n' + (paper.get('url') or '')
+        result_citations[key] = ref
+        
+
+
+
+    # citations = [chunk_packet[cid] for cid in response.get("citations", []) if cid in chunk_packet]
+    # for cid in response.get("citations", []):
     #    chunk_packet[cid]['cited'] = True
 
     return {
         "answer": answer,
-        "citations": citations,
-        "raw":response
+        "citations": result_citations
     }
 
 ## ------------------ AGENT CONSTRUCTION ------------------ ##
