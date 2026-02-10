@@ -5,7 +5,8 @@ from dotenv import load_dotenv
 load_dotenv()
 import os
 
-import os
+import uuid
+
 import streamlit as st
 
 from openai import OpenAI
@@ -42,10 +43,10 @@ if "current_query" not in st.session_state:
 # ---------------------------
 # Render previous (frozen) Q&A
 # ---------------------------
-for idx, item in enumerate(st.session_state.qa_history):
+for idx, qa_rec in enumerate(st.session_state.qa_history):
     st.text_area(
         label="Previous query",
-        value=item["query"],
+        value=qa_rec.query,
         height=120,
         disabled=True,
         key=f"frozen_query_{idx}",
@@ -57,9 +58,9 @@ for idx, item in enumerate(st.session_state.qa_history):
         disabled=True,
         key=f"frozen_submit_{idx}",
     )
-    answer_string = item.get("answer", "")
+    answer_string = qa_rec.answer
     render_response(answer_string)
-    citations = item.get("citations","")
+    citations = qa_rec.citations
     citation_lines = [f"[{key}]: {reference}" for key, reference in citations.items()]
     st.markdown("<br>".join(citation_lines), unsafe_allow_html=True)
 
@@ -93,13 +94,17 @@ if do_search and query.strip():
     answer = result.get("answer", "")
     citations = result.get("citations", "")
 
-    st.session_state.qa_history.append(
-        {
-            "query": query,
-            "answer": answer,
-            "citations": citations
-        }
-    )
+    qa_record = QARecord(
+        uuid.uuid4(),
+        query,
+        result.used_chunk_ids,
+        result.provenance,
+        result.sufficient,
+        result.answer,
+        result.citations
+        )
+
+    st.session_state.qa_history.append(qa_record)
 
     st.session_state.is_submitting = False
     st.rerun()

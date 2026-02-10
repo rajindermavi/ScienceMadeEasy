@@ -5,7 +5,6 @@ from pydantic import BaseModel, Field
 from langgraph.graph import StateGraph, END
 
 from query.retrieval import IndexRetrieval
-from query.rag_utils import llm_answer
 from query.nlp import get_top_scoring_segments_as_string
 from query.prompt import (
     llm_judge_sufficiency_system_prompt,
@@ -22,10 +21,11 @@ from query.llm import LLM
 class QARecord(BaseModel):
     question_id: str
     query: str
-    used_chunks: list[str]
+    used_chunk_ids: list[str]
     provenance: dict[str, str]  # chunk_id → "search" | "neighbor"
     judgment: bool              # agent thought sufficient
     answer: str
+    citations: dict[str,str]
     user_feedback: Optional[int] = None  # e.g. -1, 0, +1
 
 class ChunkBelief(BaseModel):
@@ -78,15 +78,14 @@ class AgentState(BaseModel):
     remembered_chunks: Set[str] = Field(default_factory=set)
     rejected_chunks: Set[str] = Field(default_factory=set)
 
+    # response
     answer: str = ""
+    citations: dict[str, str] = None
+    used_chunk_ids: List[str] = None
+    provenance: dict[str, str] = None
 
     # control flags
     stop: bool = False
-
-    # TEMP
-
-    # citations:List = None
-    citations: Dict = None
 
 def search_index(state: AgentState) -> AgentState:
     chunks = retriever.search(state.query, k=state.k)
@@ -158,6 +157,7 @@ def decide_next_step(state: AgentState) -> AgentState:
 
 def synthesize_answer(state: AgentState):
 
+
     chunk_packet = {}
 
     for chunk_id in state.retrieved_chunks:
@@ -184,11 +184,15 @@ def synthesize_answer(state: AgentState):
 
     answer = response.get("answer", "No answer generated.")
     citations = response.get("citations",{})
+    used_chunk_ids = []
+    provenance = {}
     result_citations = {}
     for reference in citations:
         key = reference['number']
         chunk_id = reference['chunk_id']
         chunk = chunk_packet[chunk_id]
+        used_chunk_ids.append(chunk_id)
+        provenance.update({chunk_id:'search'})
         ref = chunk.get('title') or ''
         ref += '\n' + (chunk.get('url') or '')
         result_citations[key] = ref
@@ -202,7 +206,9 @@ def synthesize_answer(state: AgentState):
 
     return {
         "answer": answer,
-        "citations": result_citations
+        "citations": result_citations,
+        "used_chunk_ids": used_chunk_ids,
+        "provenance":provenance
     }
 
 ## ------------------ AGENT CONSTRUCTION ------------------ ##
