@@ -1,6 +1,25 @@
+import re
+import streamlit as st
 import spacy
 
 nlp = spacy.load("en_core_web_sm")
+
+## ------------------ STREAMLIT MATH RENDERING --------------- ##
+
+def render_response(raw_text: str) -> None:
+    """Render plain Markdown with LaTeX segments handled via st.latex."""
+    normalized = raw_text.replace("\\\\", "\\")
+    normalized = normalized.replace(r"\(", "$").replace(r"\)", "$")
+    tokens = re.split(r"(\\\[.*?\\\]|\\\(.*?\\\))", normalized, flags=re.DOTALL)
+    for token in tokens:
+        if not token:
+            continue
+        if token.startswith("\\[") and token.endswith("\\]"):
+            st.latex(token[2:-2].strip())
+        elif token.startswith("\\(") and token.endswith("\\)"):
+            st.latex(token[2:-1].strip())
+        else:
+            st.markdown(token)
 
 ## ------------------ MATHY QUERY DETECTION ------------------ ##
 
