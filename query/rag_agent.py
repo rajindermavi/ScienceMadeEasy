@@ -38,19 +38,52 @@ class ChunkBelief(BaseModel):
     last_used_in: list[str] = []  # question_ids
 
 class SessionMemory(BaseModel):
-    chunk_stats: dict[str, ChunkBelief] = {}
-    question_links: dict[str, set[str]] = {}  # question_id → chunks
+    chunk_stats: dict[str, ChunkBelief] = Field(default_factory=dict)
+    questions: dict[str, str] = Field(default_factory=dict)  # question_id → question
+    question_links: dict[str, set[str]] = Field(default_factory=dict)  # question_id → chunks
+    question_feedback: dict[str, int] = Field(default_factory=dict)  # question_id → last feedback
+
+def record_usage(record: QARecord, session: SessionMemory):
+    # Count each chunk once per question_id
+    if record.question_id in session.question_links:
+        return
+
+    session.question_links[record.question_id] = set(record.used_chunk_ids)
+    for cid in record.used_chunk_ids:
+        belief = session.chunk_stats.setdefault(cid, ChunkBelief())
+        belief.support_count += 1
+        belief.last_used_in.append(cid)
+    
+    session.questions[record.question_id] = record.query
 
 def apply_feedback(record: QARecord, session: SessionMemory):
     if record.user_feedback is None:
         return
 
-    for cid in record.used_chunks:
+    prev_feedback = session.question_feedback.get(record.question_id)
+    if prev_feedback == record.user_feedback:
+        return
+
+    # Track which chunks were used for this question
+    session.question_links[record.question_id] = set(record.used_chunk_ids)
+
+    # If feedback changed, undo previous counts
+    if prev_feedback is not None:
+        for cid in record.used_chunk_ids:
+            belief = session.chunk_stats.setdefault(cid, ChunkBelief())
+            if prev_feedback > 0:
+                belief.positive_feedback = max(0, belief.positive_feedback - 1)
+            elif prev_feedback < 0:
+                belief.negative_feedback = max(0, belief.negative_feedback - 1)
+
+    for cid in record.used_chunk_ids:
         belief = session.chunk_stats.setdefault(cid, ChunkBelief())
         if record.user_feedback > 0:
             belief.positive_feedback += 1
         elif record.user_feedback < 0:
             belief.negative_feedback += 1
+
+    session.question_feedback[record.question_id] = record.user_feedback
 
 
 # SINGLE QUERY AGENT
@@ -65,6 +98,7 @@ class AgentState(BaseModel):
     # retrieval control
     k: int = 5
     max_k: int = 20
+    max_chunks: int = 30
     search_round: int = 1
     max_search_rounds: int = 3
 
@@ -104,16 +138,25 @@ def search_index(state: AgentState) -> AgentState:
     logger.info(state.provenance)
 
     current_ids = []
+    neighbor_ids = []
     provenance = state.provenance.copy()
+    # Add chunks from session memory on initialization
+    if state.sufficient == None:
+        logger.info('initialize with remembered chunks')
+        for chunk_id in state.remembered_chunks:
+            current_ids.append(chunk_id)
+            provenance.update({chunk_id:'remembered'})
+        logger.info(provenance)
+
     # Add neighbors of previously retrieved chunks
     for chunk_id in state.frontier_chunks:
         chunk_data = chunk_report(chunk_id)
         ngbrs = chunk_data.get('neighbors',[])
         for ngbr in ngbrs:
             ngbr_id = ngbr.get('id')
-            ngbr_direction = f'{chunk_id}:{ngbr.get('direction','')}'
-            if ngbr_id not in state.visited_chunks:
-                current_ids.append(ngbr_id)
+            ngbr_direction = f'{chunk_id}+{ngbr.get('direction','')}'
+            if ngbr_id not in state.visited_chunks and ngbr_id not in state.rejected_chunks:
+                neighbor_ids.append(ngbr_id)
                 provenance.update({ngbr_id:ngbr_direction})
 
     chunks = retriever.search(state.query, k=state.k)
@@ -121,11 +164,15 @@ def search_index(state: AgentState) -> AgentState:
     for chunk in chunks:
         if isinstance(chunk, dict):
             chunk_id = chunk.get("chunk_id") or chunk.get("id")
-            if chunk_id:
+            if chunk_id and chunk_id not in state.rejected_chunks:
                 current_ids.append(chunk_id)
                 provenance.update({chunk_id:'search'})
-                
+    # Do not add neighbors of neighbors
     front = [chunk_id for chunk_id in current_ids if chunk_id not in state.visited_chunks]
+
+    for ngbr_id in neighbor_ids:
+        if ngbr_id not in current_ids:
+            current_ids.append(ngbr_id)
 
     result = {
         "retrieved_chunks": current_ids,
@@ -173,9 +220,15 @@ def llm_judge(query: str, chunk_ids: List[str]) -> SufficiencyVerdict:
     return verdict
 
 def judge_sufficiency(state: AgentState) -> AgentState:
+
+    if len(state.retrieved_chunks) > state.max_chunks:
+        chunk_ids = state.retrieved_chunks[:state.max_chunks]
+    else:
+        chunk_ids = state.retrieved_chunks
+
     verdict = llm_judge(
         query=state.query,
-        chunk_ids=state.retrieved_chunks
+        chunk_ids=chunk_ids
     )
     return {
         "sufficient": verdict.sufficient,
@@ -191,6 +244,9 @@ def decide_next_step(state: AgentState) -> AgentState:
     if state.search_round >= state.max_search_rounds:
         return {"stop": True}
 
+    if len(state.retrieved_chunks) > state.max_chunks:
+        return {"stop": True}
+
     if state.k < state.max_k:
         return {
             "k": min(state.k + 5, state.max_k),
@@ -203,8 +259,17 @@ def decide_next_step(state: AgentState) -> AgentState:
 
 def synthesize_answer(state: AgentState):
 
-    chunk_packet = {}
+    token_limit = 2^15
+    token_estimate =0
+    chunk_ids = []
     for chunk_id in state.retrieved_chunks:
+        chunk_tokens = retriever.chunks[chunk_id]['token_estimate']
+        if token_estimate + chunk_tokens <= token_limit:
+            chunk_ids.append(chunk_id)
+            token_estimate += chunk_tokens
+
+    chunk_packet = {}
+    for chunk_id in chunk_ids:
         chunk_data = chunk_report(chunk_id)
         chunk_packet[chunk_id] = chunk_data
 

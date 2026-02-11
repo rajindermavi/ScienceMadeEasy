@@ -17,7 +17,8 @@ from query.rag_agent import (
     QARecord,
     SessionMemory,
     ChunkBelief,
-    apply_feedback
+    apply_feedback,
+    record_usage
 )
 from query.nlp import render_response
 
@@ -27,6 +28,11 @@ logger = get_logger(log_name= 'app', log_path = 'app.log')
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 client = OpenAI()
+
+if "session_memory" not in st.session_state:
+    st.session_state.session_memory = SessionMemory()
+
+session_memory = st.session_state.session_memory
 
 # ---------------------------
 # UI
@@ -94,7 +100,21 @@ for idx, qa_rec in enumerate(st.session_state.qa_history):
         key=f"feedback_{idx}",
         label_visibility="collapsed",
     )
-    qa_rec.user_feedback = feedback_map[selected_label]
+    new_feedback = feedback_map[selected_label]
+    if qa_rec.user_feedback != new_feedback:
+        qa_rec.user_feedback = new_feedback
+        apply_feedback(qa_rec, session_memory)
+
+# ---------------------------
+# Session memory (debug)
+# ---------------------------
+#with st.expander("Session memory (debug)"):
+#    st.write("Chunk stats")
+#    st.json(session_memory.chunk_stats)
+#    st.write("Question Links")
+#    st.json(session_memory.question_links)
+#    st.write("Question feedback")
+#    st.json(session_memory.question_feedback)
 
 
 st.divider()
@@ -106,7 +126,7 @@ with st.form("query_form", clear_on_submit=False):
     query = st.text_area(
         "Enter your question/query",
         height=120,
-        placeholder="e.g., Describe the spectral properties of the Almost Mathieu Operator",
+        placeholder="e.g. Describe the spectral properties of the Almost Mathieu Operator",
         key="current_query",
     )
     do_search = st.form_submit_button(
@@ -117,10 +137,21 @@ with st.form("query_form", clear_on_submit=False):
 
 if do_search and query.strip():
     st.session_state.is_submitting = True
+    # Reject chunks if they have gotten two or more downvotes than upvotes
+    rejected_chunks = []
+    remembered_chunks = []
+    for cid in session_memory.chunk_stats:
+        if session_memory.chunk_stats[cid].negative_feedback>=2+session_memory.chunk_stats[cid].positive_feedback:
+            rejected_chunks.append(cid)
+        if session_memory.chunk_stats[cid].positive_feedback >=2+session_memory.chunk_stats[cid].negative_feedback:
+            rejected_chunks.append(cid)
+
     initial_state = AgentState(
         query=query,
-        k=10,
+        k=5,
         max_k=20,
+        remembered_chunks=remembered_chunks,
+        rejected_chunks=rejected_chunks
     )
 
     result = agent.invoke(initial_state)
@@ -136,6 +167,7 @@ if do_search and query.strip():
         answer=result.get("answer", "Answer Missing"),
         citations=result.get("citations", {}),
     )
+    record_usage(qa_record, session_memory)
     logger.info(
         json.dumps(
             result,
@@ -144,9 +176,7 @@ if do_search and query.strip():
         )
     )
 
-
     st.session_state.qa_history.append(qa_record)
 
     st.session_state.is_submitting = False
     st.rerun()
-

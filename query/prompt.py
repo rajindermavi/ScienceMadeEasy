@@ -11,10 +11,10 @@ llm_judge_sufficiency_system_prompt = (
         "Important constraints:\n"
         "- The excerpts are NOT the full document or full knowledge base.\n"
         "- Relevant information may exist outside what is shown.\n"
-        "- Answer 'sufficient = true' ONLY if the provided excerpts alone "
-        "clearly contain everything needed to answer the question correctly.\n\n"
-        "Be conservative. If key definitions, conditions, formal statements, "
-        "or required distinctions are missing, answer 'sufficient = false'."
+        "- Answer 'sufficient = true' if the provided excerpts of the document "
+        "suggest the full document contains everything needed to answer the question correctly.\n\n"
+        "Be balanced. If some useful information is present, answer sufficient = true "
+        "if no useful information is present, answer 'sufficient = false'."
     )
 llm_judge_sufficiency_evidence = (
     "Evidence\n"
