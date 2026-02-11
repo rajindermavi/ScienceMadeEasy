@@ -156,6 +156,11 @@ def run_etl(stages='abcd'):
         phrases,categories,max_papers = ARXIV_PHRASES,ARXIV_CATEGORIES,ARXIV_MAX_PAPERS
 
         arxiv_extract_details = run_arxiv_extract(phrases, categories, max_papers)
+        arxiv_extract_details.update({
+            'phrases':phrases,
+            'categories':categories,
+            'max_papers':max_papers
+        })
         papers = arxiv_extract_details.get('papers')  
         #arxiv_extract_details['paper_index'] = list(papers.keys())
         from etl.config import STAGE_A

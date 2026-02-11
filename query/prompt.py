@@ -1,4 +1,8 @@
 
+
+
+
+
 ## Prompt construction for LLM-based sufficiency judgment
 
 llm_judge_sufficiency_system_prompt = (
@@ -96,3 +100,24 @@ final_answer_response_schema = {
     "additionalProperties": False
   }
 }
+
+## PROMPT CONSTRUCTION FOR TOPIC SUMMARY
+
+topic_summary_system_prompt = (
+    "You are a concise science explainer. Summarize the given topic for a general audience. "
+    "Keep it accurate, neutral, and easy to understand. "
+    "If the topic is too broad or ambiguous, state what needs clarification."
+)
+
+topic_summary_user_prompt = (
+    "TOPIC:\n"
+    "{topic}\n\n"
+    "INSTRUCTIONS:\n"
+    "- Provide a clear 5-8 sentence summary.\n"
+    "- Define key terms briefly on first mention.\n"
+    "- Avoid citations, links, or markdown.\n"
+    "- If the topic is ambiguous, say what is missing.\n"
+)
+
+def llm_topic_summary(topic):
+    return topic_summary_user_prompt.format(topic=topic)

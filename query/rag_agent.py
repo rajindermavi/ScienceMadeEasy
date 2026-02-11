@@ -16,6 +16,9 @@ from query.prompt import (
 )
 from query.llm import LLM 
 
+from log.logger import get_logger
+logger = get_logger(log_name= 'rag_agent', log_path = 'rag_agent.log')
+
 # SESSION MANAGEMENT
 
 class QARecord(BaseModel):
@@ -60,15 +63,16 @@ class AgentState(BaseModel):
     query: str
 
     # retrieval control
-    k: int = 10
+    k: int = 5
     max_k: int = 20
-    search_round: int = 0
+    search_round: int = 1
     max_search_rounds: int = 3
 
     # retrieved data
     retrieved_chunks: List[str] = Field(default_factory=list)
     frontier_chunks: List[str] = Field(default_factory=list)
     visited_chunks: Set[str] = Field(default_factory=set)
+    provenance: dict[str,str] = Field(default_factory=dict)
 
     # judgments
     sufficient: Optional[bool] = None
@@ -82,25 +86,67 @@ class AgentState(BaseModel):
     answer: str = ""
     citations: dict[str, str] = None
     used_chunk_ids: List[str] = None
-    provenance: dict[str, str] = None
 
     # control flags
     stop: bool = False
 
 def search_index(state: AgentState) -> AgentState:
-    chunks = retriever.search(state.query, k=state.k)
 
-    new_ids = []
+    logger.info('------ SEARCH ------')
+
+    logger.info('retrieved_chunks:')
+    logger.info(state.retrieved_chunks)
+    logger.info('frontier_chunks:')
+    logger.info(state.frontier_chunks)
+    logger.info('visited_chunks:')
+    logger.info(state.visited_chunks)
+    logger.info('provenance:')
+    logger.info(state.provenance)
+
+    current_ids = []
+    provenance = state.provenance.copy()
+    # Add neighbors of previously retrieved chunks
+    for chunk_id in state.frontier_chunks:
+        chunk_data = chunk_report(chunk_id)
+        ngbrs = chunk_data.get('neighbors',[])
+        for ngbr in ngbrs:
+            ngbr_id = ngbr.get('id')
+            ngbr_direction = f'{chunk_id}:{ngbr.get('direction','')}'
+            if ngbr_id not in state.visited_chunks:
+                current_ids.append(ngbr_id)
+                provenance.update({ngbr_id:ngbr_direction})
+
+    chunks = retriever.search(state.query, k=state.k)
+    
     for chunk in chunks:
         if isinstance(chunk, dict):
             chunk_id = chunk.get("chunk_id") or chunk.get("id")
             if chunk_id:
-                new_ids.append(chunk_id)
-    return {
-        "retrieved_chunks": new_ids,
-        "frontier_chunks": new_ids,
-        "visited_chunks": state.visited_chunks | set(new_ids)
+                current_ids.append(chunk_id)
+                provenance.update({chunk_id:'search'})
+                
+    front = [chunk_id for chunk_id in current_ids if chunk_id not in state.visited_chunks]
+
+    result = {
+        "retrieved_chunks": current_ids,
+        "frontier_chunks": front,
+        "visited_chunks": state.visited_chunks | set(current_ids),
+        "provenance":provenance
     }
+
+    logger.info('retrieved_chunks:')
+    logger.info(result.get('retrieved_chunks'))
+    logger.info('frontier_chunks:')
+    logger.info(result.get('frontier_chunks'))
+    logger.info('visited_chunks:')
+    logger.info(result.get('visited_chunks'))
+    logger.info('provenance:')
+    logger.info(result.get('provenance'))
+
+    logger.info('------ END SEARCH ------')
+
+    return result
+
 
 ## ------------------ LLM JUDGMENT ------------------ ##
 
@@ -157,21 +203,9 @@ def decide_next_step(state: AgentState) -> AgentState:
 
 def synthesize_answer(state: AgentState):
 
-
     chunk_packet = {}
-
     for chunk_id in state.retrieved_chunks:
-        chunk_data = {}
-        chunk = retriever.chunks.get(chunk_id)
-        paper_id = chunk.get('paper_id')
-        chunk_data['chunk_id'] = chunk_id        
-        chunk_data['paper_id'] = paper_id 
-        chunk_data['text'] = chunk.get('text')
-        chunk_data['eqns'] = chunk.get('equations_raw',None)
-        paper = retriever.papers.get(paper_id)
-        paper_meta = paper.get('meta')
-        chunk_data['title'] = paper_meta.get('title')
-        chunk_data['url'] = paper_meta.get('url')
+        chunk_data = chunk_report(chunk_id)
         chunk_packet[chunk_id] = chunk_data
 
     prompt = final_answer_user_prompt(state.query, list(chunk_packet.values()))
@@ -196,13 +230,6 @@ def synthesize_answer(state: AgentState):
         ref = chunk.get('title') or ''
         ref += '\n' + (chunk.get('url') or '')
         result_citations[key] = ref
-        
-
-
-
-    # citations = [chunk_packet[cid] for cid in response.get("citations", []) if cid in chunk_packet]
-    # for cid in response.get("citations", []):
-    #    chunk_packet[cid]['cited'] = True
 
     return {
         "answer": answer,
@@ -233,3 +260,23 @@ agent_builder.add_conditional_edges(
 agent_builder.add_edge("answer", END)
 
 agent = agent_builder.compile()
+
+## -------------------- HELPERS ---------------- ##
+
+def chunk_report(chunk_id):
+
+    chunk_data = {}
+    chunk = retriever.chunks.get(chunk_id)
+    paper_id = chunk.get('paper_id')
+    paper = retriever.papers.get(paper_id)
+    paper_meta = paper.get('meta')
+
+    chunk_data['chunk_id'] = chunk_id        
+    chunk_data['paper_id'] = paper_id 
+    chunk_data['text'] = chunk.get('text')
+    chunk_data['eqns'] = chunk.get('equations_raw',None)
+    chunk_data['neighbors'] = chunk.get('neighbors',[])
+    chunk_data['title'] = paper_meta.get('title')
+    chunk_data['url'] = paper_meta.get('url')
+
+    return chunk_data
