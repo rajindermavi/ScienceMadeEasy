@@ -1,4 +1,4 @@
-.PHONY: up down restart logs status wipe
+.PHONY: up down restart logs status
 
 up:
 	docker compose up -d
