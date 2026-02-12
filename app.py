@@ -145,7 +145,7 @@ if do_search and query.strip():
         if session_memory.chunk_stats[cid].negative_feedback>=2+session_memory.chunk_stats[cid].positive_feedback:
             rejected_chunks.append(cid)
         if session_memory.chunk_stats[cid].positive_feedback >=2+session_memory.chunk_stats[cid].negative_feedback:
-            rejected_chunks.append(cid)
+            remembered_chunks.append(cid)
 
     initial_state = AgentState(
         query=query,

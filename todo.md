@@ -3,7 +3,6 @@
 1. Fix execution blockers
    - `query/rag_agent.py`: fix string quoting in `ngbr_direction`.
    - `query/retrieval.py`: remove undefined `self.md_data`/`self.txt_data` usage or initialize them properly.
-   - `app.py`: positive feedback should populate `remembered_chunks`, not `rejected_chunks`.
 2. Make retrieval robust when Qdrant isn’t configured
    - `query/index_query.py`: support local/embedded Qdrant or allow dense search to be disabled with a clear fallback.
    - Validate config early and fail with explicit errors.
