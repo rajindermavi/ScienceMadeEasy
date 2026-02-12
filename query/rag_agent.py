@@ -258,8 +258,10 @@ def decide_next_step(state: AgentState) -> AgentState:
 ## ------------------ ANSWER SYNTHESIS ------------------ #
 
 def synthesize_answer(state: AgentState):
+    logger.info('Synthesize Answer')
 
-    token_limit = 2^15
+
+    token_limit = 30000
     token_estimate =0
     chunk_ids = []
     for chunk_id in state.retrieved_chunks:
@@ -267,6 +269,8 @@ def synthesize_answer(state: AgentState):
         if token_estimate + chunk_tokens <= token_limit:
             chunk_ids.append(chunk_id)
             token_estimate += chunk_tokens
+
+    logger.info(f'Chunk Ids: {chunk_ids}')
 
     chunk_packet = {}
     for chunk_id in chunk_ids:
@@ -289,9 +293,10 @@ def synthesize_answer(state: AgentState):
     for reference in citations:
         key = reference['number']
         chunk_id = reference['chunk_id']
-        chunk = chunk_packet[chunk_id]
+        chunk = chunk_packet.get(chunk_id,{})
         used_chunk_ids.append(chunk_id)
-        provenance.update({chunk_id:'search'})
+        chunk_provenance = state.provenance.get(chunk_id,'')
+        provenance.update({chunk_id:chunk_provenance})
         ref = chunk.get('title') or ''
         ref += '\n' + (chunk.get('url') or '')
         result_citations[key] = ref
