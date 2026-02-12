@@ -60,6 +60,17 @@ On retrieval, the user query is used to generate a collection of references usin
 References on each branch are combined and ranked using RRF and the top k are selected. 
 Finally both math aware and plain text references are combined and reranked using sentence_transformers.CrossEncoder and the top ranked are returned for responce generation. 
 
+The query pipeline is wrapped in an agentic controller that improves recall and answer quality without blindly expanding context. 
+The agent starts with an initial search, then iteratively expands retrieval when needed by increasing `k` and by pulling immediate neighbors of newly discovered chunks.
+After each round, an LLM judge evaluates whether the current evidence is sufficient; if so, the agent stops early to keep responses focused and efficient. 
+This loop is bounded by max rounds and max chunks to control latency and token usage. 
+For answer synthesis, the agent builds a token-budgeted packet of chunk reports (text, equations, metadata) and returns citations with explicit provenance (search vs neighbor vs remembered).
+Session memory tracks which chunks supported past answers and incorporates user feedback, allowing the agent to prefer reliable chunks over time and to avoid repeatedly using weak ones.
+
+
+![Science Made Easy screenshot](analysis/science_made_easy_shot1.png)
+
+
 ### Evaluation
 
 The source data is unstructured, real-world text. 
