@@ -53,16 +53,17 @@ if "current_query" not in st.session_state:
 # Get topic summary
 # --------------------------------
 
-from query.rag_agent import retriever
-from query.prompt import topic_summary_system_prompt, llm_topic_summary
-from query.llm import LLM
-topics = retriever.topics
-summary_prompt = llm_topic_summary(topics)
-summary = LLM.generate_text(topic_summary_system_prompt,summary_prompt)
+if "topic_summary" not in st.session_state:
+    from query.rag_agent import retriever
+    from query.prompt import topic_summary_system_prompt, llm_topic_summary
+    from query.llm import LLM
+    st.session_state.topics = retriever.topics
+    summary_prompt = llm_topic_summary(st.session_state.topics)
+    st.session_state.topic_summary = LLM.generate_text(topic_summary_system_prompt,summary_prompt)
 
-st.subheader(f'This RAG is prepared to answer questions on the following topic(s): {topics}.')
+st.subheader(f'This RAG is prepared to answer questions on the following topic(s): {st.session_state.topics}.')
 
-render_response(summary)
+render_response(st.session_state.topic_summary)
 
 # ---------------------------
 # Render previous (frozen) Q&A
