@@ -16,11 +16,11 @@ Upon download, SME contains a document database focused on the much studied fiel
 - Query 
     - Both markdown and plain text are retrieved using multiple indexing methods and combined reciprocal rank fusion.
     - Finally the txt and md sources combined and reranked using cross encoding.
+    - The query pipeline is wrapped in an agent layer to manage resource retrieval and answer generation.
 - Evaluation
     - Queries are generated based on a sample of text chunks.
     - The queries are fed into the normal RAG pipeline.
     - An LLM acts as a judge for the quality of the RAG responses vs the original text.
-
 
 ## Quick start
 
